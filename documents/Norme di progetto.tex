@@ -9,7 +9,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 \usepackage{graphicx}
-\graphicspath{{../Immagini/}}
+\graphicspath{{../Figures/}}
 \usepackage[hidelinks]{hyperref}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -46,23 +46,26 @@
 		
 		% TITLE SECTION
 		\HRule \\[0.4cm]
-		{ \huge \bfseries Titolo documento}\\[0.4cm] 
+		{ \huge \bfseries Norme di progetto}\\[0.4cm] 
 		\HRule \\[1.5cm]
 		
 		% AUTHOR SECTION
 		\begin{minipage}{0.4\textwidth}
 			\begin{flushleft} \large
 				\emph{Redattori:}\\
-				\dots
+				Bonato Enrico\\
+				Bonolo Marco\\
+				Pace Giulio\\
+				Pezzuto Francesco\\
 			\end{flushleft}
 		\end{minipage}
 		~
 		\begin{minipage}{0.4\textwidth}
 			\begin{flushright} \large
 				\emph{Approvazione:} \\
-				\dots \\
+				Sovilla Matteo\\
 				\emph{Verifica:} \\
-				\dots
+				Sanna Giovanni
 			\end{flushright}
 		\end{minipage}
 		
@@ -71,8 +74,27 @@
 			\centering
 			\includegraphics[width=\textwidth]{Figures/KaleidosCodeLogo.png}
 		\end{figure}
+		
+		%destinazione d'uso e lista di distribuzione	
+		\begin{minipage}{0.4\textwidth}
+			\begin{flushleft} \large
+				\emph{Uso:}\\
+				Interno \\
+				
+			\end{flushleft}
+		\end{minipage}
+		~
+		\begin{minipage}{0.4\textwidth}
+			\begin{flushright} \large
+				\emph{Lista di distribuzione:} \\
+				Prof. Vardanega Tullio\\
+				Prof. Cardin Riccardo\\
+				Zucchetti spa %Controllare sia scritto giusto
+			\end{flushright}
+		\end{minipage}
+		
 		\begin{center}
-			Versione x.y.z
+			Versione 1.0.0
 		\end{center}
 		% Date, change the \today to a set date if you want to be precise
 		{\large \today}\\[3cm] 
@@ -89,6 +111,7 @@
 				\noalign{\hrule height 1.5pt}
 				\rowcolor{orange!85} Versione & Data & Autore & Descrizione \\
 				\noalign{\hrule height 1.5pt}
+				1.0.0 & 2017/03/01 & Pace Giulio & Creazione scheletro del documento e stesura parziale dei documenti\\
 			\end{tabularx}
 			\caption{Diario delle modifiche \label{tab:table_label}}
 		\end{table}
@@ -98,11 +121,27 @@
 		\dots
 	\section{Scopo del prodotto}
 		\dots
+		\section{Glossario}
+		\dots
 	\section{Riferimenti}
 	\subsection{Informativi}	
 		\dots
-	\subsection{Normativi}
-		\dots
+	
+	\mychapter{2}{Comunicazioni}
+	
+	\mychapter{3}{Riunioni}
+	
+	\mychapter{4}{Documenti}
+	
+	\mychapter{5}{Analisi dei requisiti}
+	
+	\mychapter{6}{Codifica dei file e documentazione}
+	
+	\mychapter{7}{Glossario}
+	
+	\mychapter{8}{Protocollo per lo sviluppo dell'applicazione}
+	
+	\mychapter{9}{Ambiente di lavoro}
 		
 	\cleardoublepage
 	\addcontentsline{toc}{chapter}{\listfigurename}
