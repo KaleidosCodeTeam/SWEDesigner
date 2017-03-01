@@ -16,6 +16,7 @@
 \usepackage{pifont}
 \usepackage[table]{xcolor}
 \usepackage{float}
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}	% per scrivere indirizzi e-mail
 
 \newcolumntype{s}{>{\hsize=.21\hsize}X}
 \newcolumntype{f}{>{\hsize=.37\hsize}X}
@@ -89,7 +90,7 @@
 				\emph{Lista di distribuzione:} \\
 				Prof. Vardanega Tullio\\
 				Prof. Cardin Riccardo\\
-				Zucchetti spa %Controllare sia scritto giusto
+				Zucchetti spa
 			\end{flushright}
 		\end{minipage}
 		
@@ -111,6 +112,9 @@
 				\noalign{\hrule height 1.5pt}
 				\rowcolor{orange!85} Versione & Data & Autore & Descrizione \\
 				\noalign{\hrule height 1.5pt}
+				1.0.0 & 2017/03/01 & Bonolo Marco & Stesura capitolo Riunioni\\
+				1.0.0 & 2017/03/01 & Pezzuto \hbox{Francesco} & Stesura
+				capitoli Introduzione e Comunicazioni\\
 				1.0.0 & 2017/03/01 & Pace Giulio & Creazione scheletro del documento e stesura parziale dei documenti\\
 			\end{tabularx}
 			\caption{Diario delle modifiche \label{tab:table_label}}
@@ -118,16 +122,142 @@
 
 	\mychapter{1}{Introduzione}
 	\section{Scopo del documento}
-		\dots
+		Questo documento definisce le norme che i membri del gruppo
+		KaleidosCode adotteranno nello svolgimento del progetto
+		``SWEDesigner''.\\
+		Tutti i membri del gruppo sono tenuti a leggere il documento
+		e a seguirne le norme descritte per uniformare il materiale
+		prodotto, ridurre il numero di errori e migliorare l'efficienza.\\
+		In particolare verranno definite norme riguardanti:
+		\begin{itemize}
+		\item Interazioni tra i membri del gruppo;
+		\item Stesura di documenti e convenzioni;
+		\item Modalità di lavoro durante le varie fasi del progetto;
+		\item Ambiente di lavoro.
+		\end{itemize}
 	\section{Scopo del prodotto}
-		\dots
-		\section{Glossario}
-		\dots
+		Lo scopo del progetto è la realizzazione di un software di
+		costruzione di diagrammi UML\ped{G} con la relativa generazione
+		di codice Java\ped{G} e Javascript\ped{G} utilizzando tecnologie
+		web.
+	\section{Glossario}
+		Al fine di evitare ogni ambiguità di linguaggio e massimizzare la
+		comprensione dei documenti, i termini tecnici, di dominio, gli
+		acronimi e le parole che necessitano di essere chiarite, sono
+		riportate nel documento \textit{Glossario v1.0.0}.\\
+		Ogni occorrenza di vocaboli presenti nel \textit{Glossario} è
+		marcata da una ``G'' maiuscola in pedice.
 	\section{Riferimenti}
-	\subsection{Informativi}	
-		\dots
+		\subsection{Informativi}	
+			\begin{itemize}
+			\item\textbf{Specifiche UTF-8}\ped{G}:\\
+			\url{http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf};
+			\item\textbf{ISO}\ped{G} \textbf{8601}:
+			\url{it.wikipedia.org/wiki/ISO_8601};
+			\item\textbf{Piano di Progetto}: \textit{Piano di Progetto
+			v1.0.0};
+			\item\textbf{Piano di Qualifica}: \textit{Piano di Qualifica
+			v1.0.0}.
+			\end{itemize}
 	
 	\mychapter{2}{Comunicazioni}
+	\section{Comunicazioni esterne}
+		Per le comunicazioni esterne è stata creata la casella di posta
+		elettronica:
+		\begin{center}
+		\mail{kaleidos.codec6@gmail.com}
+		\end{center}
+		Tale indirizzo deve essere l'unico canale di comunicazione tra il
+		gruppo di lavoro e l'esterno.
+		Il \textit{Responsabile di Progetto} è l'unico ad accedere
+		all'indirizzo ed è quindi l'unico a poter comunicare con il
+		committente del progetto. È compito del \textit{Responsabile di
+		Progetto} informare i membri del gruppo delle discussioni avvenute e,
+		qualora fosse necessario, inoltrargli il messaggio attraverso
+		una mailing list\ped{G}.
+	\section{Comunicazioni interne}
+		Per le comunicazioni interne viene utilizzato il sistema di
+		comunicazione offerto in Asana.\\
+		Tale sistema deve essere utilizzato dai membri del gruppo
+		per comunicare tra loro. Tutte le conversazioni devono avere
+		come destinatario l'indirizzo ``Kaleidos Code''.
+		In questo modo, ogni componente è costantemente informato sullo
+		scambio di informazioni interne.
+		Qualora fosse necessario l'uso di e-mail, come ad esempio nel caso di
+		un inoltro di messaggio da parte del \textit{Responsabile di
+		Progetto}, è stata creata una mailing list:
+		\begin{center}
+		\mail{kaleidos.code@group.com}
+		\end{center}
+		Per facilitare le comunicazioni tra i membri del gruppo, viene
+		utilizzato anche il sistema di messaggistica e videoconferenza
+		Google Hangout.
+		L'uso di quest'ultimo, nel caso in cui
+		vengano prese decisioni	o emergano contenuti utili allo
+		sviluppo del progetto, comporta l'obbligo di redigere un verbale
+		da parte di un membro del gruppo,
+		che pubblicherà attraverso il sistema di comunicazione di Asana una
+		volta terminata la conversazione.
+		La verbalizzazione ha l'obiettivo di tenere
+		traccia di ogni argomento discusso, in
+		quanto una comunicazione verbale non documentata non è
+		accettabile per il corretto svolgimento del progetto.\\
+		Per una comunicazione istantanea è utilizzato anche il sistema
+		di messaggistica Telegram. Si richiede che la conversazione
+		venga documentata come sopra descritto.
+	\section{Composizione e-mail e conversazioni}
+		In questo paragrafo viene descritta la struttura che deve avere
+		un messaggio sia per una comunicazione esterna che per una
+		conversazione interna attraverso il servizio offerto in Asana e
+		mailing list\ped{G}.
+		\subsection{Destinatario}
+			\begin{itemize}
+			\item\textbf{Interno - Asana}: l'unico indirizzo utilizzabile è
+			il nome del gruppo: Kaleidos Code;
+			\item\textbf{Interno - e-mail}: l'unico indirizzo utilizzabile è
+			\mail{kaleidos.code@group.com};
+			\item\textbf{Esterno}: può variare a seconda che ci si debba
+			riferire  al Proponente, al Prof. Vardanega Tullio o al Prof.
+			Cardin Riccardo.
+			\end{itemize}
+		\subsection{Mittente}
+			\begin{itemize}
+			\item\textbf{Interno - Asana}: è rappresentato automaticamente
+			dallo username del creatore della conversazione;
+			\item\textbf{Interno - e-mail}: l'indirizzo di chi scrive
+			il messaggio;
+			\item\textbf{Esterno}: l'unico indirizzo utilizzabile è
+			\mail{kaleidos.codec6@gmail.com} e deve essere usato solamente dal
+			\textit{Responsabile di Progetto}.
+			\end{itemize}
+		\subsection{Oggetto}
+			L'oggetto deve essere chiaro ed esaustivo, possibilmente non
+			confondibile con altri preesistenti.\\
+			L'oggetto di una comunicazione,
+			una volta avviata, non deve mai essere cambiato.\\
+			Solamente per le e-mail, nel caso si debba
+			comporre un messaggio di risposta vi è l'obbligo di aggiungere la
+			particella ``Re:'' all'inizio dell'oggetto per poter distinguere i
+			livelli di risposta; se si dovesse trattare di un inoltro, si deve
+			usare invece la particella ``I:''.
+		\subsection{Corpo}
+			Il corpo di un messaggio deve contenere tutte le informazioni
+			necessarie alla piena comprensione della comunicazione.\\
+			Nel caso di e-mail, se alcune parti del messaggio hanno uno o più
+			destinatari specifici,
+			sarà necessario aggiungere il loro nome	prima del relativo paragrafo
+			attraverso la segnatura	\textit{@destinatario};
+			in Asana invece, si dovrà menzionare lo specifico destinatario
+			attraverso la determinata funzionalità alla creazione del messaggio.
+			\\Solamente per le e-mail, in caso di risposta od inoltro del
+			messaggio, il contenuto aggiunto deve essere sempre messo in testa.
+			Si consiglia di non cancellare il resto del messaggio,
+			per consentire una visione completa della discussione.
+		\subsection{Allegati}
+			Qualora fosse necessario, è permesso l'uso di allegati. Possono
+			essere usati ad esempio per inviare i verbali di una riunione dei
+			membri del gruppo oppure di un incontro con il proponente o con
+			il committente.
 	
 	\mychapter{3}{Riunioni}
 	\section{Frequenza}
@@ -207,7 +337,6 @@
 			della riunione, che dovrà poi essere inviato ai restanti membri del gruppo.
 			Tutti i partecipanti devono tenere un comportamento consono al miglior svolgimento
 			dell'assemblea e al raggiungimento degli obbiettivi della stessa. Il segretario deve inoltre assicurarsi che venga seguito l'ordine del giorno in modo da affrontare ogni argomento previsto.
-			\dots
 			\section{Verbale}
 			\subsection{Riunione interna}
 			Il verbale di Riunione interna è un documento informale che permette di tenere traccia
@@ -215,17 +344,15 @@
 			Il segretario, scelto a rotazione, ha il compito di redigere questo documento.
 			Il verbale prodotto deve poi essere condiviso con tutti i membri del gruppo con Google
 			Drive, in modo da rendere sempre disponibile e accessibile il contenuto dello stesso.
-			\dots
 		\subsection{Riunione esterna}
 			In caso di riunione esterna con il proponente e/o committente, il verbale è un documento
 			ufficiale che può avere valore normativo e quindi deve essere redatto seguendo criteri
 			specifici.
-			Per agevolare la scrittura di tale documento è stato preparato un template LATEX che
+			Per agevolare la scrittura di tale documento è stato preparato un template \LaTeX\ che
 			ne definisce la struttura e ne organizza i contenuti. Vi è quindi l'obbligo di seguire
 			il sopraccitato schema per creare il verbale, di inviare il verbale prodotto come allegato al 
 			proponente e/o committente in risposta all'email della riunione e di condividere il 
 			verbale prodotto con tutti i membri del gruppo con Google Drive.
-			\dots
 	
 	\mychapter{4}{Documenti}
 	
