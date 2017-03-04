@@ -1,0 +1,97 @@
+\documentclass[../NormeDiProgetto.tex]{subfiles}
+\begin{document}
+	\section{Processi di sviluppo}
+		\subsection{Analisi dei requisiti}
+			\subsubsection{Studio di fattibilità e analisi dei rischi}
+				Successivamente alla pubblicazione dei capitolati d'appalto, il
+				\responsabilediprogetto\ ha il compito di convocare il numero
+				di riunioni necessarie al confronto tra i membri del gruppo sui
+				capitolati proposti. In questo modo, gli \analisti\ avranno modo
+				di ottenere una base riguardante le conoscenze e preferenze di ogni
+				membro del gruppo. Sulla base delle decisioni prese, gli
+				\analisti\ devono redigere uno \studiodifattibilita\
+				dei capitolati secondo:
+				\begin{itemize}
+					\item \textbf{Dominio tecnologico}: conoscenze sulle
+					tecnologie impiegate nello sviluppo del progetto in questione;
+					\item \textbf{Dominio applicativo}: conoscenze sul dominio di
+					applicazione del prodotto;
+					\item \textbf{Individuazione di rischi e criticità}: punti
+					critici ed eventuali rischi percorribili durante lo sviluppo.
+				\end{itemize}
+			\subsubsection{Analisi dei requisiti}
+				Una volta completato lo \studiodifattibilita\ gli analisti
+				hanno il compito di redigere l'\analisideirequisiti\
+				strutturata nei paragrafi seguenti.
+				\paragraph{Classificazione dei requisiti\\}
+					Una lista dei requisiti individuati dal capitolato stesso e dalle
+					eventuali riunioni avvenute con il proponente. La classificazione
+					degli stessi, deve avvenire secondo la seguente codifica:
+					\begin{center}
+						R[Importanza][Tipo][Codice]
+					\end{center}
+					dove:
+					\begin{itemize}
+						\item \textbf{Importanza} può assumere i seguenti valori:
+						\begin{itemize}
+							\item \textbf{0} se il requisito è obbligatorio;
+							\item \textbf{1} se il requisito è desiderabile;
+							\item \textbf{2} se il requisito è opzionale.
+						\end{itemize}
+						\item \textbf{Tipo} può assumere i seguenti valori:
+						\begin{itemize}
+							\item \textbf{F} se il requisito è funzionale;
+							\item \textbf{Q} se il requisito è di qualità;
+							\item \textbf{P} se il requisito è prestazionale;
+							\item \textbf{V} se il requisito è di vincolo.
+						\end{itemize}
+						\item \textbf{Codice} è un codice che identifica univocamente
+						ciascun requisito in modo gerarchico.
+					\end{itemize}
+					Inoltre, per ciascun requisito deve essere indicata:
+					\begin{itemize}
+						\item \textbf{Fonte} dell'individuazione del requisito che può essere:
+						\begin{itemize}
+							\item \textbf{Capitolato};
+							\item \textbf{Caso d'uso};
+							\item \textbf{Interno} (discussioni del gruppo);
+						\end{itemize}
+						\item \textbf{Descrizione} breve e chiara.
+					\end{itemize}
+				\paragraph{Classificazione dei casi d'uso\\}
+					L'analisi e l'identificazione dei casi d'uso, o use case (UC), deve
+					procedere dal generale al particolare.\\
+					Ciascun caso d'uso sarà classificato gerarchicamente con la seguente dicitura:
+					\begin{center}
+						UC[Codice del padre].[Codice identificativo]
+					\end{center}
+					dove:
+					\begin{itemize}
+						\item \textbf{Codice del padre} rappresenta il codice univoco
+						del relativo caso d'uso padre qualora esistesse, altrimenti è omesso;
+						\item \textbf{Codice identificativo} rappresenta il codice
+						univoco e progressivo del corrispondente caso d'uso. Il codice
+						può includere diversi livelli di gerarchia che devono essere
+						separati da un punto.
+					\end{itemize}
+					Inoltre, per ciascun caso d'uso deve essere indicato:
+					\begin{itemize}
+						\item \textbf{Nome} del caso d'uso;
+						\item \textbf{Attori} coinvolti;
+						\item \textbf{Descrizione} chiara e sufficientemente
+						dettagliata;
+						\item \textbf{Precondizione};
+						\item \textbf{Postcondizione};
+						\item \textbf{Scenario principale degli eventi} che descrive
+						la sequenza dei casi d'uso figli;
+						\item \textbf{Scenari alternativi} che descrivono la sequenza
+						di eventuali casi d'uso non appartenenti allo scenario
+						principale;
+						\item \textbf{Requisiti} ricavati dal caso d'uso;
+						\item Eventuali \textbf{Inclusioni};
+						\item Eventuali \textbf{Estensioni};
+						\item Eventuali \textbf{Generalizzazioni}.
+					\end{itemize}
+					Infine, ogni caso d'uso deve essere rappresentato da un grafico \gl{UML}.
+	
+\end{document}
