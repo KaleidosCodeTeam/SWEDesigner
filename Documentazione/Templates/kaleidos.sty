@@ -1,0 +1,192 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{kaleidos}[2016/03/03 Custom Package]
+
+%%%%%%%%%%%%%%%%%%%%%%%%% PACCHETTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[english,italian]{babel} % lingua del documento
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{graphicx}				% pacchetto grafica
+\RequirePackage[a4paper,top=3cm,bottom=3 cm,left=2.5cm,right=2.5cm] {geometry} % pagina A4
+\RequirePackage{url}					% indirizzi Internet
+\RequirePackage{enumerate}				% liste lettere
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{subfiles}
+\RequirePackage[bookmarks=true,hyperfootnotes=false,colorlinks=true]{hyperref}
+	\hypersetup{
+  		colorlinks,
+  		citecolor=gray,
+  		filecolor=brown,
+  		linkcolor=black,
+  		urlcolor=blue
+	}
+\RequirePackage{fancyhdr}
+\RequirePackage{longtable}
+\RequirePackage{appendix}
+\RequirePackage{caption}
+\RequirePackage{tabu}
+\RequirePackage{pifont}
+\RequirePackage[official]{eurosym}	% per simbolo €
+\RequirePackage[table]{xcolor}
+\RequirePackage{float}
+
+\newcolumntype{s}{>{\hsize=.21\hsize}X}
+\newcolumntype{f}{>{\hsize=.37\hsize}X}
+\newcolumntype{m}{>{\hsize=.42\hsize}X}
+\captionsetup{tableposition=top,figureposition=bottom,font=small}
+\captionsetup{format=hang,labelfont={sf,bf}}
+\captionsetup[table]{position=bottom}
+\newcolumntype{C}{>{\centering\arraybackslash}X}	% nell'ambiente tabularx è possibile usare C invece di X per centrare
+
+\renewcommand{\arraystretch}{1.20}	% aumenta il padding delle tabelle
+
+%%%%%%%%%%%%%%%%%%%%%%% FINE PACCHETTI %%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% INTESTAZIONI E PIÈ PAGINA %%%%%%%%%%%%%%%%%%%
+
+\newcommand{\intestazioni}[1]{
+	\fancypagestyle{myfront}{
+		\hypersetup{
+			colorlinks=true,
+			linkcolor=black,
+		}
+		\pagenumbering{arabic}
+		\fancyhf{}
+		\lhead{\includegraphics[scale= 0.12]{../../../Immagini/KaleidosCodeLogo} \DeclareGraphicsExtensions{.png}}
+		\rhead{}
+		\lfoot{
+			{\small \textit{KaleidosCode}\\
+				Progetto \textit{SWEDesigner}}
+			}
+		\renewcommand{\headrulewidth}{0.4pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	}
+
+	\fancypagestyle{mymain}{
+		\hypersetup{
+			colorlinks=true,
+			linkcolor=blue,
+			anchorcolor=black,
+			citecolor=black,
+			urlcolor=blue,
+		}
+		\pagenumbering{arabic}
+		\fancyhf{}
+		\lhead{\includegraphics[scale=0.12]{../../../Immagini/KaleidosCodeLogo} \DeclareGraphicsExtensions{.png}}
+		\rhead{\small{ \emph{\MakeUppercase{#1}}} }
+		\lfoot{
+			{\small \textit{KaleidosCode}\\
+				Progetto \textit{SWEDesigner}}
+		}
+		\rfoot{
+			\hypersetup{
+				colorlinks=true,
+				linkcolor=black,
+			}
+			Pagina \thepage~di \pageref{LastPage}
+		}
+		\renewcommand{\headrulewidth}{0.4pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	}
+}
+
+%%%%%%%%%%%%%%%% FINE INTESTAZIONI E PIÈ PAGINA %%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% COMANDI PERSONALIZZATI %%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\kaleidoscode}{\textit{KaleidosCode}}
+\newcommand{\vardanega}{\textit{Prof. Vardanega Tullio}}
+\newcommand{\cardin}{\textit{Prof. Cardin Riccardo}}
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}	% per scrivere indirizzi e-mail
+\newcommand{\mailkaleidoscode}{\mail{kaleidos.codec6@gmail.com}}
+\newcommand{\mailinglist}{\mail{kaleidos.code@group.com}}
+\newcommand{\progetto}{\textit{SWEDesigner}}
+\newcommand{\proponente}{\textit{Zucchetti s.p.a.}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% RUOLI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% singolari
+\newcommand{\responsabilediprogetto}{\textit{Responsabile di progetto}}
+\newcommand{\amministratore}{\textit{Amministratore}}
+\newcommand{\analista}{\textit{Analista}}
+\newcommand{\progettista}{\textit{Progettista}}
+\newcommand{\programmatore}{\textit{Programmatore}}
+\newcommand{\verificatore}{\textit{Verificatore}}
+\newcommand{\segretario}{\textit{Segretario}}
+% plurali
+\newcommand{\amministratori}{\textit{Amministratori}}
+\newcommand{\analisti}{\textit{Analisti}}
+\newcommand{\progettisti}{\textit{Progettisti}}
+\newcommand{\programmatori}{\textit{Programmatori}}
+\newcommand{\verificatori}{\textit{Verificatori}}
+\newcommand{\segretari}{\textit{Segretari}}
+
+%%%%%%%%%%%%%%%%% DOCUMENTI SENZA VERSIONE %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pianodiprogetto}{\textit{Piano di progetto}}
+\newcommand{\pianodiqualifica}{\textit{Piano di qualifica}}
+\newcommand{\normediprogetto}{\textit{Norme di progetto}}
+\newcommand{\studiodifattibilita}{\textit{Studio di fattibilità}}
+\newcommand{\analisideirequisiti}{\textit{Analisi dei requisiti}}
+\newcommand{\specificatecnica}{\textit{Specifica tecnica}}
+\newcommand{\definizionediprodotto}{\textit{Definizione di prodotto}}
+\newcommand{\manualeutente}{\textit{Manuale utente}}
+\newcommand{\glossario}{\textit{Glossario}}
+
+%%%%%%%%%%%%%%%%%% DOCUMENTI CON VERSIONE %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% DA MODIFICARE AD OGNI AVANZAMENTO DI VERSIONE %%%%%%%%
+\newcommand{\pianodiprogettov}{\textit{Piano di progetto v1.0.0}}
+\newcommand{\pianodiqualificav}{\textit{Piano di qualifica v1.0.0}}
+\newcommand{\normediprogettov}{\textit{Norme di progetto v1.0.0}}
+\newcommand{\studiodifattibilitav}{\textit{Studio di fattibilità v1.0.0}}
+\newcommand{\analisideirequisitiv}{\textit{Analisi dei requisiti v1.0.0}}
+\newcommand{\specificatecnicav}{\textit{Specifica tecnica v1.0.0}}
+\newcommand{\definizionediprodottov}{\textit{Definizione di prodotto v1.0.0}}
+\newcommand{\manualeutentev}{\textit{Manuale utente v1.0.0}}
+\newcommand{\glossariov}{\textit{Glossario v1.0.0}}
+
+\newcommand{\pianodiprogettoRR}{\textit{Piano di progetto v1.0.0}}
+\newcommand{\pianodiqualificaRR}{\textit{Piano di qualifica v1.0.0}}
+\newcommand{\normediprogettoRR}{\textit{Norme di progetto v1.0.0}}
+\newcommand{\studiodifattibilitaRR}{\textit{Studio di fattibilità v1.0.0}}
+\newcommand{\analisideirequisitiRR}{\textit{Analisi dei requisiti v1.0.0}}
+\newcommand{\specificatecnicaRR}{\textit{Specifica tecnica v1.0.0}}
+\newcommand{\definizionediprodottoRR}{\textit{Definizione di prodotto v1.0.0}}
+\newcommand{\manualeutenteRR}{\textit{Manuale utente v1.0.0}}
+\newcommand{\glossarioRR}{\textit{Glossario v1.0.0}}
+
+%%%%%%%%% DOCUMENTI CON VERSIONE PER LE PRIME PAGINE %%%%%%%%%%%
+\newcommand{\pianodiprogettoi}{Piano di progetto v1.0.0}
+\newcommand{\pianodiqualificai}{Piano di qualifica v1.0.0}
+\newcommand{\normediprogettoi}{Norme di progetto v1.0.0}
+\newcommand{\studiodifattibilitai}{Studio di fattibilità v1.0.0}
+\newcommand{\analisideirequisitii}{Analisi dei requisiti v1.0.0}
+\newcommand{\specificatecnicai}{Specifica tecnica v1.0.0}
+\newcommand{\definizionediprodottoi}{Definizione di prodotto v1.0.0}
+\newcommand{\manualeutentei}{Manuale utente v1.0.0}
+\newcommand{\glossarioi}{Glossario v1.0.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% REVISIONI %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\revisionedeirequisiti}{\textbf{Revisione dei Requisiti}}
+\newcommand{\revisionediaccettazione}{\textbf{Revisione di Accettazione}}
+\newcommand{\revisionediprogettazione}{\textbf{Revisione di Progettazione}}
+\newcommand{\revisionediqualifica}{\textbf{Revisione di Qualifica}}
+
+%%% COMANDO PER DEFINIZIONE GLOSSARIO %%%
+\newcommand{\gl}[1]{#1\ped{\ped{G}}}	% esempio d'uso: questo \gl{termine} va inserito
+
+\newcommand{\frmdate}[3]{#3-#2-#1}
+\newcommand{\frmtime}[2]{#1:#2}
+\newcommand{\frmURI}[1]{\color{blue}\textit{#1}}
+\newcommand{\frmspath}[1]{\texttt{#1}}
+\newcommand{\frmrole}[1]{\textit{#1}}
+\newcommand{\frmdoc}[1]{\textit{“#1”}}
+\newcommand{\frmfile}[1]{\texttt{“#1”}}
+\newcommand{\frmrev}[1]{\textbf{#1}}
+\newcommand{\frmphase}[1]{\textbf{#1}}
+
+\newcommand{\logo}{ 
+	{\includegraphics[scale=0.4]{../../../Immagini/KaleidosCodeLogo}\DeclareGraphicsExtensions{.png}\\}}
+
+%%%%%%%%%%%%%%%%% FINE COMANDI PERSONALIZZATI %%%%%%%%%%%%%%%%%%
+
+\endinput
