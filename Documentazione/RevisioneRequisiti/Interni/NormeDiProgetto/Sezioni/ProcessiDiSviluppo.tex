@@ -8,7 +8,7 @@
 			\begin{itemize}
 				\item realizzare un prodotto e/o servizio che soddisfi i requisiti concordati
 				\item realizzare un prodotto e/o servizio che soddisfi le attività di validazione e verifica
-				\item determinare eventuali vincoli tecnologici
+				\item determinare eventuali vincoli tecnologici e requisiti
 				\item determinare gli obbiettivi di sviluppo
 			\end{itemize}
 		\subsection{Descrizione}
@@ -98,14 +98,47 @@
 				Infine, ogni caso d'uso deve essere rappresentato da un grafico \gl{UML}.
 		\subsection{Progettazione}
 			\subsubsection{Scopo}
+				In questa fase viene descritta una soluzione del problema, soddisfacente per tutti gli stakeholders.
 			\subsubsection{Aspettative}
+				I risultati ottenuti in seguito ad una corretta attuazione di tale fase sono:
+				\begin{itemize}
+					\item definire l'architettura logica di sistema che identifica gli elementi del sistema
+					\item definire l'architettura logica di sistema in conformità ai requisiti definiti
+					\item mantenere, tracciare e verificare i requisiti di sistema con l'architettura logica di sistema
+					\item garantire la qualità attraverso la correttezza per costruzione
+				\end{itemize}
 			\subsubsection{Descrizione}
+				Partendo dai requisiti sviluppati nella fase precedente, i \progettisti\ devono sviluppare l'architettura logica del sistema attuando i seguenti obbiettivi:
+				\begin{itemize}
+					\item utilizzare componenti con specifiche chiare e coese
+					\item realizzare l'architettura rispettando le risorse e i costi prefissati
+					\item adottare strutture che si adattano al cambiamento
+					\item utlizzare componenti riusabili
+					\item suddividere il sistema fino a quando ogni componente ha una complessità trattabile
+					\item riconoscere le componenti terminali
+				\end{itemize}
+				Per definire l'architettura logica del sistema i \progettisti\ utilizzeranno diversi tipi di diagrammi UML 2.0.
+			\subsubsection{Diagrammi UML}
+				I diagrammi UML 2.0 che verranno utilizzati nella fase di progettazione sono:
+				\begin{itemize}
+					\item Diagrammi delle attività
+					\item Diagrammi delle classi
+					\item Diagrammi dei package
+					\item Diagrammi di sequenza
+				\end{itemize}
 		\subsection{Codifica}
 			\subsubsection{Scopo}
+				Implementare il prodotto costruendo unità software eseguibili che riflettono le unità definite nella fase di progettazione.
 			\subsubsection{Aspettative}
+				I risultati ottenuti in seguito ad una corretta attuazione di tale fase sono:
+				\begin{itemize}
+					\item realizzare le unità software in conformità ai requisiti
+					\item tracciare le unità software e le relativi componenti dell'architettura logica di sistema
+					\item definire criteri di verifica delle unità software
+				\end{itemize}
 			\subsubsection{Descrizione}
-		\subsection{Qualificazione}
-			\subsubsection{Scopo}
-			\subsubsection{Aspettative}
-			\subsubsection{Descrizione}
+				Partendo dall'architettura logica di sistema definita nella fase precedente, i \programmatori\ devono implementare le unità software definendo anche i criteri di verifica di tali unità. Per svolgere tali attività devono attenersi ai metodi e agli standard di codifica utilizzati.
+			\subsubsection{Standard di codifica}
+				In questa sottosezione devono essere elencate le regole per l'indentazione delle unità software.
+		%Aggiungere eventualmente la subsection "Qualificazione" in accordo con lo standard ISO/IEC 12207:2008
 \end{document}
