@@ -1,0 +1,65 @@
+% Document-Author: KaleidosCode
+% Document-Date: 08/03/2017 aggiornare la data
+% Document-Description: Documento contenente lo Studio di Fattibilità per SWEDesigner
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{../../../Templates/kaleidos}
+\renewcommand{\abstractname}{Tabella contenuti}
+
+\author{KaleidosCode}
+\date{08/03/2017}	% aggiornare la data
+\intestazioni{Studio di Fattibilità}
+\pagestyle{myheadings}
+    
+\begin{document}
+	\begin{titlepage}
+		\centering Università degli Studi di Padova
+		\line(1,0){350}\\
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE KaleidosCode\\}
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE SWEDesigner\\}
+		{\scshape\Large Software per diagrammi UML\\}
+		\vspace{1cm}
+		{\scshape\Large \studiodifattibilitai\ \\}		% cambiare il titolo per ogni documento
+		\vspace{1.4cm}
+		\logo
+		\vspace{1.2cm}
+		\centering{\bfseries Informazioni sul documento\\}
+		\line(1,0){240}\\
+		% compilare i campi per ogni documento
+		\begin{tabular}{r|l}
+			{\hfill \textbf{Versione}} 			& 1.0.0\\
+			{\hfill \textbf{Data Redazione}} 	& 08/03/2017\\	% aggiornare la data
+			{\hfill \textbf{Redazione}} 		& Bonato Enrico\\ & Bonolo Marco\\ & Pezzuto Francesco\\
+			{\hfill \textbf{Verifica}} 			& Pace Giulio\\
+			{\hfill \textbf{Approvazione}} 		& Sanna Giovanni\\
+			{\hfill \textbf{Uso}} 				& Interno\\
+			{\hfill \textbf{Distribuzione}} 	& \vardanega \\ & \cardin \\ & \proponente\\
+		\end{tabular}\\
+		\vspace{2cm}
+		\texttt{kaleidos.codec6@gmail.com}
+	\end{titlepage}
+
+	\pagestyle{myfront}
+	\newpage
+		\subfile{DiarioModificheSdF}
+	\newpage
+		\tableofcontents
+	\pagestyle{mymain}
+	\newpage
+		\subfile{Sezioni/Introduzione}
+	\newpage
+		\subfile{Sezioni/c1}
+	\newpage
+		\subfile{Sezioni/c2}
+	\newpage
+		\subfile{Sezioni/c3}
+	\newpage
+		\subfile{Sezioni/c4}
+	\newpage
+		\subfile{Sezioni/c5}
+	\newpage
+		\subfile{Sezioni/c6}
+	\label{LastPage}
+\end{document}
