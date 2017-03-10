@@ -1,0 +1,66 @@
+% Document-Author: KaleidosCode
+% Document-Date: 10/03/2017 aggiornare la data
+% Document-Description: Glossario dei termini per SWEDesigner
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{../../../Templates/kaleidos}
+\usepackage[automake,section,shortcuts,nonumberlist,toc]{glossaries}
+\newglossarystyle{myaltlistgroup}{
+	\setglossarystyle{altlistgroup}
+	\renewcommand*{\glsgroupheading}[1]{
+		\item\makebox[\linewidth]{\LARGE\textbf{\glsgetgrouptitle{##1}}}
+		\vspace*{-\baselineskip}
+		\item\makebox[\linewidth]{\hspace*{2cm}\hrulefill\hspace*{2cm}}
+	}
+}
+
+\author{KaleidosCode}
+\date{10/03/2017}	% aggiornare la data
+\intestazioni{Glossario}
+\pagestyle{empty}
+\pagenumbering{gobble}
+\loadglsentries{Termini}
+\makeglossaries
+\date{\today}
+ 
+\begin{document}
+	\begin{titlepage}
+		\centering Università degli Studi di Padova
+		\line(1,0){350}\\
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE KaleidosCode\\}
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE SWEDesigner\\}
+		{\scshape\Large Software per diagrammi UML\\}
+		\vspace{1cm}
+		{\scshape\Large \glossarioi\ \\}		% cambiare il titolo per ogni documento
+		\vspace{1.4cm}
+		\logo
+		\vspace{1.2cm}
+		\centering{\bfseries Informazioni sul documento\\}
+		\line(1,0){240}\\
+		% compilare i campi per ogni documento
+		\begin{tabular}{r|l}
+			{\hfill \textbf{Versione}} 			& 1.0.0\\
+			{\hfill \textbf{Data Redazione}} 	& 10/03/2017\\	% aggiornare la data
+			{\hfill \textbf{Redazione}} 		& Bonolo Marco\\ & Pace Giulio\\ & Sanna Giovanni\\ & Sovilla Matteo\\
+			{\hfill \textbf{Verifica}} 			& Enrico Bonato\\
+			{\hfill \textbf{Approvazione}} 		& Pezzuto Francesco\\
+			{\hfill \textbf{Uso}} 				& Esterno\\
+			{\hfill \textbf{Distribuzione}} 	& \vardanega \\ & \cardin \\ & \proponente\\
+		\end{tabular}\\
+		\vspace{2cm}
+		\texttt{kaleidos.codec6@gmail.com}
+	\end{titlepage}
+	
+	\pagestyle{myfront}
+	\newpage
+		\subfile{DiarioModificheGl}
+	\newpage
+	\pagestyle{mymain}
+		\glsaddall
+		% title: titolo del glossario - toc: nome identificativo nell'indice
+		\printglossary[style=myaltlistgroup, title=, toctitle=Glossario dei termini]
+
+	\label{LastPage}
+\end{document}
