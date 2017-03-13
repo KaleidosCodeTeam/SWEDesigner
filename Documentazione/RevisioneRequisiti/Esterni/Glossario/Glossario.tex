@@ -5,14 +5,17 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{../../../Templates/kaleidos}
 \usepackage[automake,section,shortcuts,nonumberlist,toc]{glossaries}
+\usepackage{titlesec}
+\usepackage{titletoc}
 \newglossarystyle{myaltlistgroup}{
+	\setcounter{page}{1}
 	\setglossarystyle{altlistgroup}
 	\renewcommand*{\glsgroupheading}[1]{
-		\item\makebox[\linewidth]{\LARGE\textbf{\glsgetgrouptitle{##1}}}
-		\vspace*{-\baselineskip}
-		\item\makebox[\linewidth]{\hspace*{2cm}\hrulefill\hspace*{2cm}}
+		\newpage
+		\section{##1}
 	}
 }
+\renewcommand{\glossarysection}[2][]{}
 
 \author{KaleidosCode}
 \date{10/03/2017}	% aggiornare la data
@@ -57,10 +60,14 @@
 	\newpage
 		\subfile{DiarioModificheGl}
 	\newpage
+		\titlecontents{section}[1em]{}{\bfseries\fontsize{0.8em}{0.8em}}{}{\titlerule*[10pt]{.}\contentspage}
+		\tableofcontents
 	\pagestyle{mymain}
-		\glsaddall
+	\newpage
+		\titleformat{\section}[block]{\bfseries\fontsize{20pt}{20pt}\selectfont}{}{-0.8em}{}
 		% title: titolo del glossario - toc: nome identificativo nell'indice
 		\printglossary[style=myaltlistgroup, title=, toctitle=Glossario dei termini]
+		\glsaddall
 
 	\label{LastPage}
 \end{document}
