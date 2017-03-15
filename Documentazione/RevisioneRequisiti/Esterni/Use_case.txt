@@ -1,0 +1,42 @@
+Ottenere codice Java attraverso diagrammi UML {
+	Disegnare il diagramma UML {
+		Disegnare il diagramma delle classi{
+			Creare una nuova classe (vuota)
+			Modificare una classe{
+				Impostare il nome della classe
+				Aggiungere un campo dati alla classe
+				Aggiungere un metodo alla classe
+				Impostare la visibilità della classe
+				Commentare la classe
+				Marchiare una classe come statica
+				Marchiare una classe come astratta
+				Marchiare una classe come finale
+				Innestare una classe interna
+				Impostare l'importanza della classe
+			}
+			Eliminare una classe
+			Creare un'interfaccia
+			Modificare un'interfaccia
+			Eliminare un'interfaccia
+			Definire relazione tra classi e/o interfacce (ereditarietà)
+			Eliminare relazione tra classi e/o interfacce
+			Creare un pkg
+			Modificare un pkg
+			Eliminare un pkg
+			Cambiare layer di visualizzazione
+		}
+		Disegnare il diagramma delle attività{
+			
+		}
+	}	
+	Leggere il codice generato
+}
+
+
+
+
+
+/*
+	Namespace
+	raggruppare statica,astratta, finale oppure no?
+*/
