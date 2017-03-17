@@ -1,55 +1,327 @@
 \documentclass[../PianoDiProgetto.tex]{subfiles}
 \begin{document}
 	\section{Preventivo}
-		\subsection{Prospetto economico}
+		\subsection{Analisi}
+			\subsubsection{Prospetto orario}
+			\begin{table}[H]
+			\center
+				\begin{tabular}{cccccccc}
+				\noalign{\hrule height 1.5pt}
+				\textbf{Nome} & \textbf{Res} & \textbf{Amm} & \textbf{An} & \textbf{Pt} & \textbf{Pr} & \textbf{Ve} & \textbf{Totale} \\ \hline
+				Bonato Enrico & - & 5 & 14 & - & - & - & 19 \\ \hline
+				Bonolo Marco  & - & - & 10 & - & - & 10 & 20 \\ \hline
+				Pace Giulio  & - & 8 & 12 & - & - & - & 20 \\ \hline
+				Pezzuto Francesco  & - & 8 & - & - & - & 12 & 20 \\ \hline
+				Sanna Giovanni  & 15 & - & 9 & - & - & - & 24 \\ \hline
+				Sovilla Matteo  & - & - & 8 & - & - & 16 & 24  \\ \hline
+				\textbf{Ore Totali Ruolo} & \textbf{15} & \textbf{21} & \textbf{53} & \textbf{0} & \textbf{0} & \textbf{38} & \textbf{127} \\ \hline
+				\noalign{\hrule height 1.5pt}
+				\end{tabular}
+			\caption{Prospetto orario Analisi.  \label{tab:table_label}}
+			\end{table}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreComponenteAnalisi.png}
+				\caption{Analisi: ore per componente.}\label{fig:1}
+			\end{figure}
+			
+			\subsubsection{Prospetto economico}
 			\begin{table}[H]
 				\center
 				\begin{tabular}{|c|c|c|}
 					\noalign{\hrule height 1.5pt}
 					\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo(\euro)}     \\
 					\hline
-					Responsabile  &  &\\
+					Responsabile  & 15 &\\
 					\hline
-					Amministratore  &   &\\
+					Amministratore  & 21  &\\
 					\hline
-					Analista  &   &\\
+					Analista  & 53 &\\
 					\hline
-					Progettista  & &\\
+					Progettista  & 0 & 0\\
 					\hline
-					Programmatore  & &\\
+					Programmatore  & 0 & 0\\
 					\hline
-					Verificatore  & &\\
+					Verificatore  & 38 &\\
 					\hline
-					\textbf{Totale}  & \textbf{} & \textbf{}\\
+					\textbf{Totale}  & \textbf{127} & \textbf{}\\
 					\noalign{\hrule height 1.5pt}
 			\end{tabular}
-			\caption{Prospetto orario.  \label{tab:table_label}}
+			\caption{Prospetto economico Analisi.  \label{tab:table_label}}
 		\end{table}
-		
-		\subsection{Prospetto orario}
-			\begin{table}[H] 
+		\begin{figure}[H]
 				\centering
-				\resizebox{0.8\textwidth}{!}{
-				\begin{tabular}{|c|c|c|c|c|c|c|c|}
+				\includegraphics[scale=0.7]{Figures/OreRuoloAnalisi.png}
+				\caption{Analisi: ore per ruolo.}\label{fig:2}
+			\end{figure}
+		
+		\subsection{Analisi di dettaglio}
+			\subsubsection{Prospetto orario} 
+			\begin{table}[H]
+			\center
+				\begin{tabular}{cccccccc}
+				\noalign{\hrule height 1.5pt}
+				\textbf{Nome} & \textbf{Res} & \textbf{Amm} & \textbf{An} & \textbf{Pt} & \textbf{Pr} & \textbf{Ve} & \textbf{Totale} \\ \hline
+				Bonato Enrico & 6 & - & - & - & - & - & 6 \\ \hline
+				Bonolo Marco  & - & 5 & - & - & - & - & 5 \\ \hline
+				Pace Giulio  & - & - & - & - & - & 6 & 6 \\ \hline
+				Pezzuto Francesco  & - & - & 6 & - & - & - & 6 \\ \hline
+				Sanna Giovanni  & - & - & 5 & - & - & - & 5 \\ \hline
+				Sovilla Matteo  & - & 5 & - & - & - & - & 5 \\ \hline
+				\textbf{Ore Totali Ruolo} & \textbf{6} & \textbf{10} & \textbf{11} & \textbf{0} & \textbf{0} & \textbf{6} & \textbf{33} \\ \hline
+				\noalign{\hrule height 1.5pt}
+				\end{tabular}
+			\caption{Prospetto orario Analisi di dettaglio.  \label{tab:table_label}}
+			\end{table}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreComponenteAnalisiDett.png}
+				\caption{Analisi di dettaglio: ore per componente.}\label{fig:4}
+			\end{figure}
+			
+			\subsubsection{Prospetto economico}
+			\begin{table}[H]
+				\center
+				\begin{tabular}{|c|c|c|}
 					\noalign{\hrule height 1.5pt}
-					\textbf{Nominativo} & \textbf{Fase} & \textbf{Ore} & \textbf{Resp} & \textbf{Amm} & \textbf{An} & \textbf{Pt} & \textbf{Pm}     \\
+					\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo(\euro)}     \\
 					\hline
-					Bonato Enrico  & \roles & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0}  \\ 
+					Responsabile  & 6 &\\
 					\hline
-					Bonolo Marco  & \roles &  \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0}  \\  
+					Amministratore  & 10  &\\
 					\hline
-					Pace Giulio  & \roles & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0}  \\   
+					Analista  & 11  &\\
 					\hline
-					Pezzuto Francesco  & \roles &  \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0}  \\ 
+					Progettista  & 0 &\\
 					\hline
-					Sanna Giovanni  & \roles &  \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0}  \\ 
+					Programmatore  & 0 &\\
 					\hline
-					Sovilla Matteo  & \roles &  \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0} & \roleshours{0}{0}{0}{0}{0}{0}  \\ 
+					Verificatore  & 6 &\\
+					\hline
+					\textbf{Totale}  & \textbf{33} & \textbf{}\\
 					\noalign{\hrule height 1.5pt}
 			\end{tabular}
-			}
-			\caption{Prospetto orario.  \label{tab:table_label}}
+			\caption{Prospetto economico Analisi di dettaglio.  \label{tab:table_label}}
 		\end{table}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreRuoloAnalisiDett.png}
+				\caption{Analisi di dettaglio: ore per ruolo.}\label{fig:5}
+			\end{figure}
 		
+		\subsection{Progettazione architetturale}
+			\subsubsection{Prospetto orario}
+			\begin{table}[H]
+			\center
+				\begin{tabular}{cccccccc}
+				\noalign{\hrule height 1.5pt}
+				\textbf{Nome} & \textbf{Res} & \textbf{Amm} & \textbf{An} & \textbf{Pt} & \textbf{Pr} & \textbf{Ve} & \textbf{Totale} \\ \hline
+				Bonato Enrico & - & - & 10 & - & - & 13 & 23 \\ \hline
+				Bonolo Marco  & - & - & - & 18 & - & 8 & 26 \\ \hline
+				Pace Giulio  & 13 & - & - & 10 & - & - & 23 \\ \hline
+				Pezzuto Francesco  & - & - & 9 & 15 & - & - & 24 \\ \hline
+				Sanna Giovanni  & - & 8 & - & 13 & - & - & 21 \\ \hline
+				Sovilla Matteo  & - & - & 10 & - & - & 18 & 28 \\ \hline
+				\textbf{Ore Totali Ruolo} & \textbf{13} & \textbf{8} & \textbf{29} & \textbf{56} &  \textbf{0}& \textbf{39} & \textbf{145} \\ \hline
+				\noalign{\hrule height 1.5pt}
+				\end{tabular}
+			\caption{Prospetto orario Progettazione architetturale.  \label{tab:table_label}}
+			\end{table}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreComponenteProgArch.png}
+				\caption{Progettazione architetturale: ore per componente.}\label{fig:7}
+			\end{figure}
+			
+			\subsubsection{Prospetto economico}
+			\begin{table}[H]
+				\center
+				\begin{tabular}{|c|c|c|}
+					\noalign{\hrule height 1.5pt}
+					\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo(\euro)}     \\
+					\hline
+					Responsabile  & 13 &\\
+					\hline
+					Amministratore  &  8 &\\
+					\hline
+					Analista  & 29 &\\
+					\hline
+					Progettista  & 56 &\\
+					\hline
+					Programmatore  & 0 &\\
+					\hline 
+					Verificatore  & 39 &\\
+					\hline
+					\textbf{Totale}  & \textbf{145} & \textbf{}\\
+					\noalign{\hrule height 1.5pt}
+			\end{tabular}
+			\caption{Prospetto economico Progettazione architetturale.  \label{tab:table_label}}
+		\end{table}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreRuoloProgArch.png}
+				\caption{Progettazione architetturale: ore per ruolo.}\label{fig:8}
+			\end{figure}
 		
+		\subsection{Progettazione di dettaglio e Codifica}
+			\subsubsection{Prospetto orario}
+			\begin{table}[H]
+			\center
+				\begin{tabular}{cccccccc}
+				\noalign{\hrule height 1.5pt}
+				\textbf{Nome} & \textbf{Res} & \textbf{Amm} & \textbf{An} & \textbf{Pt} & \textbf{Pr} & \textbf{Ve} & \textbf{Totale} \\ \hline
+				Bonato Enrico & - & 10 & - & 22 & 19 & - & 51 \\ \hline
+				Bonolo Marco  & 10 & - & - & - & 16 & 23 & 49 \\ \hline
+				Pace Giulio  & - & - & - & 19 & 14 & 17 & 50 \\ \hline
+				Pezzuto Francesco  & - & - & - & 21 & 13 & 18 & 52 \\ \hline
+				Sanna Giovanni  & - & - & - & 18 & 13 & 20 & 51 \\ \hline
+				Sovilla Matteo  & - & - & 8 & 22 & 20 & - & 50 \\ \hline
+				\textbf{Ore Totali Ruolo} & \textbf{10} & \textbf{10} & \textbf{8} & \textbf{102} & \textbf{95} & \textbf{78} & \textbf{303} \\ \hline
+				\noalign{\hrule height 1.5pt}
+				\end{tabular}
+			\caption{Prospetto orario Progettazione di dettaglio e Codifica.  \label{tab:table_label}}
+			\end{table}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreComponenteProgDettCodifica.png}
+				\caption{Progettazione di dettaglio e codifica: ore per componente.}\label{fig:10}
+			\end{figure}
+			
+			\subsubsection{Prospetto economico}
+			\begin{table}[H]
+				\center
+				\begin{tabular}{|c|c|c|}
+					\noalign{\hrule height 1.5pt}
+					\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo(\euro)}     \\
+					\hline
+					Responsabile  & 10 &\\
+					\hline
+					Amministratore  & 10  &\\
+					\hline
+					Analista  & 8  &\\
+					\hline
+					Progettista  & 102 &\\
+					\hline
+					Programmatore  & 95 &\\
+					\hline
+					Verificatore  & 78 &\\
+					\hline
+					\textbf{Totale}  & \textbf{303} & \textbf{}\\
+					\noalign{\hrule height 1.5pt}
+			\end{tabular}
+			\caption{Prospetto economico Progettazione di dettaglio e Codifica.  \label{tab:table_label}}
+		\end{table}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreRuoloProgDettCodifica.png}
+				\caption{Progettazione di dettaglio e codifica: ore per ruolo.}\label{fig:11}
+			\end{figure}
+		
+		\subsection{Validazione}
+			\subsubsection{Prospetto orario}
+			\begin{table}[H]
+			\center
+				\begin{tabular}{cccccccc}
+				\noalign{\hrule height 1.5pt}
+				\textbf{Nome} & \textbf{Res} & \textbf{Amm} & \textbf{An} & \textbf{Pt} & \textbf{Pr} & \textbf{Ve} & \textbf{Totale} \\ \hline
+				Bonato Enrico & - & - & - & 7 & 0 & 14 & 21 \\ \hline
+				Bonolo Marco  & - & - & - & 8 & 14 & - & 22 \\ \hline
+				Pace Giulio  & - & - & - & - & 12 & 9 & 21 \\ \hline
+				Pezzuto Francesco  & 13 & - & - & - & - & 7 & 20 \\ \hline
+				Sanna Giovanni  & - & 6 & - & - & 13 & - & 19 \\ \hline
+				Sovilla Matteo  & - & - & - & - & - & 13 & 13 \\ \hline
+				\textbf{Ore Totali Ruolo} & \textbf{13} & \textbf{6} & \textbf{0} & \textbf{15} & \textbf{39} & \textbf{43} & \textbf{116} \\ \hline
+				\noalign{\hrule height 1.5pt}
+				\end{tabular}
+			\caption{Prospetto orario Validazione.  \label{tab:table_label}}
+			\end{table}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreComponenteValidazione.png}
+				\caption{Validazione: ore per componente.}\label{fig:13}
+			\end{figure}
+			
+			\subsubsection{Prospetto economico}
+			\begin{table}[H]
+				\center
+				\begin{tabular}{|c|c|c|}
+					\noalign{\hrule height 1.5pt}
+					\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo(\euro)}     \\
+					\hline
+					Responsabile  & \textbf{13} &\\
+					\hline
+					Amministratore  & \textbf{6}  &\\
+					\hline
+					Analista  & \textbf{0}  &\\
+					\hline
+					Progettista  & \textbf{15} &\\
+					\hline
+					Programmatore  & \textbf{39}  &\\
+					\hline
+					Verificatore  & \textbf{43} &\\
+					\hline
+					\textbf{Totale}  & \textbf{116} & \textbf{}\\
+					\noalign{\hrule height 1.5pt}
+			\end{tabular}
+			\caption{Prospetto economico Validazione.  \label{tab:table_label}}
+		\end{table}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreRuoloValidazione.png}
+				\caption{Validazione: ore per ruolo.}\label{fig:14}
+			\end{figure}
+		
+	\subsection{Riepilogo}
+		\subsubsection{Prospetto orario}
+		\begin{table}[H]
+			\center
+				\begin{tabular}{cccccccc}
+				\noalign{\hrule height 1.5pt}
+				\textbf{Nome} & \textbf{Res} & \textbf{Amm} & \textbf{An} & \textbf{Pt} & \textbf{Pr} & \textbf{Ve} & \textbf{Totale} \\ \hline
+				Bonato Enrico & 6 & 15 & 24 & 29 & 19 & 27 & 120 \\ \hline
+				Bonolo Marco  & 10 & 5 & 10 & 26 & 30 & 41 & 122 \\ \hline
+				Pace Giulio  & 13 & 8 & 12 & 29 & 26 & 32 & 120  \\ \hline
+				Pezzuto Francesco  & 13 & 8 & 15 & 36 & 13 & 37 & 122 \\ \hline
+				Sanna Giovanni  & 15 & 14 & 14 & 31 & 26 & 20 & 120 \\ \hline
+				Sovilla Matteo  & 0 & 5 & 26 & 22 & 20 & 47 & 120 \\ \hline
+				\textbf{Ore Totali Ruolo} & \textbf{57} & \textbf{55} & \textbf{101} & \textbf{173} & \textbf{134} & \textbf{204} & \textbf{724} \\ \hline
+				\noalign{\hrule height 1.5pt}
+				\end{tabular}
+			\caption{Riepilogo prospetto orario.  \label{tab:table_label}}
+			\end{table}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreComponenteRiepilogo.png}
+				\caption{Riepilogo: ore per componente.}\label{fig:15}
+			\end{figure}
+			
+		\subsubsection{Prospetto economico}
+			\begin{table}[H]
+				\center
+				\begin{tabular}{|c|c|c|}
+					\noalign{\hrule height 1.5pt}
+					\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo(\euro)}     \\
+					\hline
+					Responsabile  & \textbf{57} &\\
+					\hline
+					Amministratore  & \textbf{55}  &\\
+					\hline
+					Analista  & \textbf{101}  &\\
+					\hline
+					Progettista  & \textbf{173} &\\
+					\hline
+					Programmatore  & \textbf{134}  &\\
+					\hline
+					Verificatore  & \textbf{204} &\\
+					\hline
+					\textbf{Totale}  & \textbf{724} & \textbf{}\\
+					\noalign{\hrule height 1.5pt}
+			\end{tabular}
+			\caption{Riepilogo prospetto economico.  \label{tab:table_label}}
+		\end{table}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{Figures/OreRuoloRiepilogo.png}
+				\caption{Riepilogo: ore per ruolo.}\label{fig:5}
+			\end{figure}
 \end{document}
