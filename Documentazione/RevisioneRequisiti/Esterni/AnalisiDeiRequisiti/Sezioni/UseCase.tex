@@ -850,211 +850,211 @@
 	\subsection{Aggiungere pin}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve poter aggiungere pin ad una attività;
-		\item \textbf{Precondizione}: L’utente si trova nella schermata dell’editor del diagramma delle attività ed è presente almeno un’attività;
-		\item \textbf{Postcondizione}: L’utente ha modificato una attività aggiungendo un pin in input o in output con campi vuoti;
+		\item \textbf{Descrizione}: L’utente deve aggiungere un pin ad una attività;
+		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata un'attività;
+		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove è stato aggiunto ad una classe un pin in input o in output con campi vuoti;
 	\end{itemize}
 	
 	\subsection{Modificare pin}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve poter modificare i pin da lui inseriti così da impostare la variabile da essi rappresentata;
-		\item \textbf{Precondizione}: L’utente si trova nella schermata dell’editor del diagramma delle attività ed è presente almeno un’attività dotata di un pin;
-		\item \textbf{Postcondizione}: L’utente ha modificato il pin, che ora rappresenta correttamente la variabile corrispondente;
+		\item \textbf{Descrizione}: L’utente deve modificare i pin da lui inseriti così da impostare la variabile da essi rappresentata;
+		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata un'attività dotata di un pin;
+		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove il pin associato alla classe ora rappresenta correttamente la variabile corrispondente;
 	\end{itemize}
 	
 	\subsection{Rimuovere pin}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve poter eliminare un pin da un’attività;
-		\item \textbf{Precondizione}: L’utente si trova nella schermata dell’editor del diagramma delle attività ed è presente almeno un’attività dotata di un pin;
-		\item \textbf{Postcondizione}: L’utente ha eliminato il pin desiderato dalla attività;
+		\item \textbf{Descrizione}: L’utente deve eliminare un pin da un’attività;
+		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata un'attività dotata di un pin;
+		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove il pin associato alla classe è stato rimosso;
 	\end{itemize}
-	
+
 	\subsection{Aggiungere trasformazione}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve poter collegare tra di loro i pin di output di un’attività e i pin di input di una seconda mediante una trasformazione;
-		\item \textbf{Precondizione}: L’utente si trova nella schermata dell’editor del diagramma delle attività e sono presenti almeno due attività di cui una dotata di pin in output e una dotata di pin in input, con tipo tra di loro compatibile;
-		\item \textbf{Postcondizione}: L’utente ha collegato il pin di output della prima classe con il pin di input della seconda mediante una trasformazione con espressione di trasformazione vuota;
+		\item \textbf{Descrizione}: L’utente deve collegare tra di loro i pin di output di un’attività e i pin di input di una seconda mediante una trasformazione;
+		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività sono presenti almeno due attività di cui una dotata di pin in output e una dotata di pin in input, con tipo tra di loro compatibile;
+		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove il pin di output della prima classe è collegato con il pin di input della seconda mediante una trasformazione con espressione di trasformazione vuota;
 	\end{itemize}
-	
+
 	\subsection{Modificare trasformazione}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve poter modificare una trasformazione, in particolare editando l’\textit{espressione di trasformazione};
-		\item \textbf{Precondizione}: L’utente si trova nella schermata dell’editor del diagramma delle attività ed è presente almeno una trasformazione che collega pin di output e di input di due attività;
-		\item \textbf{Postcondizione}: L’utente ha modificato l’espressione di trasformazione voluta;
+		\item \textbf{Descrizione}: L’utente deve modificare una trasformazione, in particolare editando l’\textit{espressione di trasformazione};
+		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata una trasformazione che collega pin di output e di input di due attività;
+		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove l’espressione di trasformazione voluta è stata modificata;
 	\end{itemize}
-	
+
 	\subsection{Rimuovere trasformazione}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve poter eliminare una trasformazione che colleghi due pin di due attività;
-		\item \textbf{Precondizione}: L’utente si trova nella schermata dell’editor del diagramma delle attività ed è presente almeno una trasformazione che collega pin di output e di input di due attività;
-		\item \textbf{Postcondizione}: L’utente ha eliminato la trasformazione che collegava i due pin;
+		\item \textbf{Descrizione}: L’utente deve eliminare una trasformazione che collega due pin di due attività;
+		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata una trasformazione che collega pin di output e di input di due attività;
+		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove è stata eliminata la trasformazione che collegava i due pin;
 	\end{itemize}
-	
+		
 	\subsection{Aggiungere invio di segnale}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter aggiungere ad un'attività un invio di segnale;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività;
-		\item \textbf{Postcondizione}: L'utente ha modificato l'attività desiderata aggiungendo alla stessa un invio di segnale vuoto;
+		\item \textbf{Descrizione}: L'utente deve aggiungere ad un'attività un invio di segnale;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove l'attività è stata modificata con l'aggiunta un invio di segnale vuoto;
 	\end{itemize}
 	
 	\subsection{Modificare invio di segnale}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter modificare l'invio di segnale associato ad un'attività;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività con associato un invio di segnale;
-		\item \textbf{Postcondizione}: L'utente ha modificato i parametri dell'invio di segnale associato all'attività;
+		\item \textbf{Descrizione}: L'utente deve modificare l'invio di segnale associato ad un'attività;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività con associato un invio di segnale;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove sono stati modificati i parametri dell'invio di segnale associato all'attività;
 	\end{itemize}
 	
 	\subsection{Rimuovere invio di segnale}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter rimuovere un invio di segnale associato ad un'attività;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività con associato un invio di segnale;
-		\item \textbf{Postcondizione}: L'utente ha eliminato l'invio di segnale associato all'attività;
+		\item \textbf{Descrizione}: L'utente deve rimuovere un invio di segnale associato ad un'attività;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività con associato un invio di segnale;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove è stato eliminato l'invio di segnale associato all'attività;
 	\end{itemize}
-	
+		
 	\subsection{Aggiungere attesa di segnale}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter aggiungere ad un'attività un'attesa di segnale;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività;
-		\item \textbf{Postcondizione}: L'utente ha modificato l'attività desiderata aggiungendo alla stessa un'attesa di segnale vuota;
+		\item \textbf{Descrizione}: L'utente deve aggiungere ad un'attività un'attesa di segnale;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove l'attività è stata modificata con l'aggiunta un'attesa di segnale vuota;
 	\end{itemize}
 	
 	\subsection{Modificare attesa di segnale}
 	\begin{itemize}
 		\item \textbf{Attori} Utente;
-		\item \textbf{Descrizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività con associata un'attesa di segnale;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività con associata un'attesa di segnale;
-		\item \textbf{Postcondizione}: L'utente ha modificato i parametri dell'attesa di segnale associata all'attività;
+		\item \textbf{Descrizione}:  L'utente deve modificare l'attesa di segnale associata ad un'attività;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività con associata un'attesa di segnale;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove sono stati modificati i parametri dell'attesa di segnale associata all'attività;
 	\end{itemize}
 	
 	\subsection{Rimuovere attesa di segnale}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter rimuovere un'attesa di segnale associata ad un'attività;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività con associata un'attesa di segnale;
-		\item \textbf{Postcondizione}: L'utente ha eliminato l'attesa di segnale associata all'attività;
+		\item \textbf{Descrizione}: L'utente deve rimuovere un'attesa di segnale associata ad un'attività;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività con associato un'attesa di segnale;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove è stata eliminata l'attesa di segnale associata all'attività;
 	\end{itemize}
-	
+
 	\subsection{Aggiungere evento temporale}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter aggiungere un evento temporale al diagramma delle attività;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività;
-		\item \textbf{Postcondizione}: L'utente ha aggiunto un evento temporale vuoto al diagramma delle attività;
+		\item \textbf{Descrizione}: L'utente deve aggiungere un evento temporale al diagramma delle attività;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività il sistema è pronto per l'aggiunta di un elemento;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove è stato aggiunto un evento temporale vuoto;
 	\end{itemize}
 	
 	\subsection{Modificare evento temporale}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter modificare il tipo e i parametri di un evento temporale;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un evento temporale;
-		\item \textbf{Postcondizione}: L'utente ha modificato a suo piacimento il tipo ed i parametri dell'evento temporale;
+		\item \textbf{Descrizione}: L'utente deve modificare il tipo e i parametri di un evento temporale;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionato un evento temporale;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove sono stati modificati opportunamente il tipo ed i parametri dell'evento temporale;
 	\end{itemize}
 	
 	\subsection{Rimuovere evento temporale}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter eliminare un evento temporale;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un evento temporale;
-		\item \textbf{Postcondizione}: L'utente ha eliminato l'evento temporale;
+		\item \textbf{Descrizione}: L'utente deve eliminare un evento temporale;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionato un evento temporale;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove è stato eliminato l'evento temporale;
 	\end{itemize}
-	
+
 	\section{Editare bubble flowchart}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente vuole editare un bubble flowchart;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del bubble flowchart;
+		\item \textbf{Descrizione}: L'utente deve editare un bubble flowchart;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto per editare il bubble flowchart;
 		\item \textbf{Scenario principale degli eventi}
 		\begin{itemize}
-			\item Aggiungere una bubble(UC);
-			\item Modificare una bubble(UC);
-			\item Eliminare una bubble(UC);
-			\item Aggiungere un elemento di decisione(UC);
-			\item Modificare un elemento di decisione(UC);
-			\item Eliminare un elemento di decisione(UC);
+			\item L'utente può Aggiungere una bubble(UC);
+			\item L'utente può Modificare una bubble(UC);
+			\item L'utente può Eliminare una bubble(UC);
+			\item L'utente può Aggiungere un elemento di decisione(UC);
+			\item L'utente può Modificare un elemento di decisione(UC);
+			\item L'utente può Eliminare un elemento di decisione(UC);
 		\end{itemize}
-		\item \textbf{Postcondizione}: L'utente ha editato un bubble flowchart;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma editato;
 	\end{itemize}
 	
 	\subsection{Aggiungere una bubble}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter aggiungere una bubble di un tipo desiderato al bubble flowchart;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del bubble flowchart;
-		\item \textbf{Postcondizione}: L'utente ha aggiunto una bubble vuota del tipo voluto al bubble flowchart;
+		\item \textbf{Descrizione}: L'utente deve aggiungere una bubble di un tipo desiderato al bubble flowchart;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto per l'aggiunta di una bubble;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma a cui è stata aggiunta una bubble vuota del tipo voluto;
 	\end{itemize}
 	
 	\subsection{Modificare una bubble}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter modificare i parametri di una bubble;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del bubble flowchart ed è presente almento una bubble;
-		\item \textbf{Postcondizione}: L'utente ha modificato a suo piacimento i parametri della bubble;
+		\item \textbf{Descrizione}: L'utente deve modificare i parametri di una bubble;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stata selezionata una bubble;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui sono stati opportunamente modificati i parametri della bubble;
 	\end{itemize}
 	
-	\subsection{Rimuovere una bubble}
+	\subsection{Eliminare una bubble}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter rimuovere una bubble;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del bubble flowchart ed è presente almeno una bubble;
-		\item \textbf{Postcondizione}: L'utente ha eliminato la bubble;
+		\item \textbf{Descrizione}: L'utente deve eliminare una bubble;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stata selezionata una bubble;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui è stata eliminata la bubble;
 	\end{itemize}
 	
 	\subsection{Aggiungere un elemento di decisione}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter aggiungere un elemento di decisione al bubble flowchart;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del bubble flowchart;
-		\item \textbf{Postcondizione}: L'utente ha aggiunto un elemento di decisione vuoto al bubble flowchart;
+		\item \textbf{Descrizione}: L'utente deve aggiungere un elemento di decisione al bubble flowchart;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto per l'aggiunta di un elemento di decisione;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma a cui è stato aggiunto un elemento di decisione vuoto;
 	\end{itemize}
 	
 	\subsection{Modificare un elemento di decisione}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter modificare i parametri di un elemento di decisione;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del bubble flowchart ed è presente almeno un elemento di decisione;
-		\item \textbf{Postcondizione}: L'utente ha modificato a suo piacimento i parametri dell'elemento di decisione;
+		\item \textbf{Descrizione}: L'utente deve modificare i parametri di un elemento di decisione;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stato selezionato un elemento di decisione;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui sono stati opportunamente modificati i parametri dell'elemento di decisione;
 	\end{itemize}
 	
 	\subsection{Eliminare un elemento di decisione}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter eliminare un elemento di decisione;
-		\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del bubble flowchart ed è presente almeno un elemento di decisione;
-		\item \textbf{Postcondizione}: L'utente ha eliminato l'elemento di decisione;
+		\item \textbf{Descrizione}: L'utente deve eliminare un elemento di decisione;
+		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stato selezionato un elemento di decisione;
+		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui è stato eliminato l'elemento di decisione;
 	\end{itemize}
 	
 	
 	\section{Leggere il codice}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente desidera leggere il codice;
-		\item \textbf{Precondizione}: Il sistema ha il codice pronto per essere letto;
-		\item \textbf{Postcondizione}: L'utente legge il codice. 
+		\item \textbf{Descrizione}: L'utente deve leggere il codice;
+		\item \textbf{Precondizione}: Nella schermata del visualizzatore del codice il sistema è pronto a mostrare il codice prodotto;
+		\item \textbf{Postcondizione}: Nella schermata del visualizzatore del codice è mostrato il codice prodotto
 	\end{itemize}
 	
 	\subsection{Esportare il codice}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter esportare il codice generato nei file sorgente appropriati per il linguaggio corrispondente;
-		\item \textbf{Precondizione}: L'utente ha disegnato i diagrammi che rappresentano il codice da lui desiderato mediante gli editor messi a disposizione dal programma e questi sono attualmente aperti nel programma;
-		\item \textbf{Postcondizione}: Il programma ha generato in una cartella a scelta dell'utente tutti i file sorgenti voluti, organizzati secondo quanto specificato dall'utente tramite i diagrammi. Questi file contengono codice corretto e compilabile. Qualora il programma non avesse potuto tradurre efficacemente una parte del diagramma dell'utente, il programma ha comunicato un avvertimento all'utente e commentato opportunamente il codice nel sorgente;
+		\item \textbf{Descrizione}: L'utente deve esportare il codice generato nei file sorgente appropriati per il linguaggio corrispondente;
+		\item \textbf{Precondizione}: Nelle schermate degli editor messi a disposizione del programma sono stati disegnati i diagrammi che rappresentano il codice desiderato;
+		\item \textbf{Postcondizione}: In una cartella a scelta dell'utente il programma ha generato tutti i file sorgenti voluti, organizzati secondo quanto specificato dall'utente tramite i diagrammi. Questi file contengono codice corretto e compilabile. Qualora il programma non avesse potuto tradurre efficacemente una parte del diagramma dell'utente, il programma ha comunicato un avvertimento all'utente e commentato opportunamente il codice nel sorgente;
 	\end{itemize}
 	
 	\section{Salvare il progetto}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve poter salvare il lavoro fatto fino a quel momento;
-		\item \textbf{Precondizione}: L'utente ha disegnato i diagrammi che rappresentano il codice da lui desiderato mediante gli editor messi a disposizione dal programma e questi sono attualmente aperti nel programma;
-		\item \textbf{Postcondizione}: Il programma ha generato in una cartella a scelta dell'utente un file contenente tutte le informazioni necessarie al programma per ripristinare il suo stato attuale qualora venisse aperto questo file;
+		\item \textbf{Descrizione}: L'utente deve salvare il lavoro fatto fino a quel momento;
+		\item \textbf{Precondizione}: Nelle schermate degli editor messi a disposizione del programma sono stati disegnati i diagrammi che rappresentano il codice desiderato;
+		\item \textbf{Postcondizione}: In una cartella a scelta dell'utente il programma ha generato un file contenente tutte le informazioni necessarie per ripristinarne lo stato attuale;
 	\end{itemize}		
 			
 \end{document}
