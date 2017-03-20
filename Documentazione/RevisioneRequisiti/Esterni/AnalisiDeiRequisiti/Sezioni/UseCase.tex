@@ -431,6 +431,9 @@
 				\item \textbf{Scenario principale degli eventi}:
 					\begin{itemize}
 						\item L'utente può rinominare l'interfaccia (UC);
+						\item L'utente può aggiungere un attributo (UC);
+						\item L'utente può modificare un attributo (UC);
+						\item L'utente può rimuovere un attributo (UC);
 						\item L'utente può aggiungere un'operazione (UC);
 						\item L'utente può modificare un'operazione (UC);
 						\item L'utente può rimuovere un'operazione (UC).
@@ -451,6 +454,82 @@
 				sistema è visualizzato il diagramma dove è stato cambiato il nome
 				all'interfaccia.
 			\end{itemize}
+		\subsubsection{Caso d'uso UC : Aggiungere un attributo}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente;
+				\item \textbf{Descrizione}: L'utente ha scelto di aggiungere un attributo
+				all'interfaccia. L'utente deve definire il nuovo attributo;
+				\item \textbf{Precondizione}: L'utente desidera aggiungere un attributo
+				all'interfaccia selezionata dall'editor del diagramma delle classi del
+				sistema. Il sistema è pronto ad aggiungere un nuovo attributo;
+				\item \textbf{Scenario principale degli eventi}:
+					\begin{itemize}
+						\item L'utente può impostare la visibilità dell'attributo (UC);
+						\item L'utente può definire il nome dell'attributo (UC);
+						\item L'utente può definire tipo dell'attributo (UC).
+					\end{itemize}
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema
+				rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
+				sistema è visualizzato il diagramma dove è stato aggiunto il nuovo attributo.
+			\end{itemize}
+		\paragraph{Caso d'uso UC : Impostare la visibilità dell'attributo}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente;
+				\item \textbf{Descrizione}: L'utente può impostare la visibilità
+				dell'attributo;
+				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente selezioni il
+				tipo di visibilità da impostare all'attributo;
+				\item \textbf{Postcondizione}: Il sistema ha impostato la visibilità
+				dell'attributo.
+			\end{itemize}
+		\paragraph{Caso d'uso UC : Definire il nome dell'attributo}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente;
+				\item \textbf{Descrizione}: L'utente può definire il nome dell'attributo;
+				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
+				una stringa per rinominare l'attributo;
+				\item \textbf{Postcondizione}: Il sistema ha impostato il nome
+				dell'attributo.
+			\end{itemize}
+		\paragraph{Caso d'uso UC : Definire il tipo dell'attributo}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente;
+				\item \textbf{Descrizione}: L'utente può definire il tipo dell'attributo;
+				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
+				il tipo dell'attributo;
+				\item \textbf{Postcondizione}: Il sistema ha impostato il tipo dell'attributo.
+			\end{itemize}
+		\subsubsection{Caso d'uso UC : Modificare un attributo}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente;
+				\item \textbf{Descrizione}: L'utente ha scelto di modificare un attributo
+				dell'interfaccia. L'utente deve selezionare l'operazione;
+				\item \textbf{Precondizione}: L'utente desidera modificare un attributo
+				dell'interfaccia selezionata dall'editor del diagramma delle classi del
+				sistema. È stato selezionato l'attributo da modificare;
+				\item \textbf{Scenario principale degli eventi}:
+					\begin{itemize}
+						\item L'utente può impostare la visibilità (UC Sopra);
+						\item L'utente può definire il nome dell'attributo (UC Sopra);
+						\item L'utente può definire tipo dell'attributo (UC Sopra).
+					\end{itemize}
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema
+				rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
+				sistema è visualizzato il diagramma dove è stato modificato l'attributo.
+			\end{itemize}
+		\subsubsection{Caso d'uso UC : Rimuovere un attributo}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente;
+				\item \textbf{Descrizione}: L'utente può rimuovere un attributo
+				dell'interfaccia. L'utente deve selezionare l'attributo;
+				\item \textbf{Precondizione}: L'utente desidera rimuovere un attributo
+				dell'interfaccia selezionata dall'editor del diagramma delle classi del
+				sistema. È stato selezionato l'attributo da rimuovere;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
+				sistema è visualizzato il diagramma dove è stato rimosso l'attributo.
+			\end{itemize}
 		\subsubsection{Caso d'uso UC : Aggiungere un'operazione}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente;
@@ -461,7 +540,7 @@
 				sistema. Il sistema è pronto ad aggiungere una nuova operazione;
 				\item \textbf{Scenario principale degli eventi}:
 					\begin{itemize}
-						\item L'utente può impostare la visibilità (UC);
+						\item L'utente può impostare la visibilità dell'operazione (UC);
 						\item L'utente può definire il nome dell'operazione (UC);
 						\item L'utente può definire la lista parametri dell'operazione (UC);
 						\item L'utente può definire il tipo di ritorno dell'operazione (UC);
@@ -478,7 +557,7 @@
 				\item \textbf{Descrizione}: L'utente può impostare la visibilità
 				dell'operazione;
 				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente selezioni il
-				tipo di visualizzazione da impostare all'interfaccia;
+				tipo di visibilità da impostare all'operazione;
 				\item \textbf{Postcondizione}: Il sistema ha impostato la visibilità
 				dell'operazione.
 			\end{itemize}
@@ -487,7 +566,7 @@
 				\item \textbf{Attori}: Utente;
 				\item \textbf{Descrizione}: L'utente può definire il nome dell'operazione;
 				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
-				una stringa per rinominare l'interfaccia;
+				una stringa per rinominare l'operazione;
 				\item \textbf{Postcondizione}: Il sistema ha impostato il nome
 				dell'operazione.
 			\end{itemize}
