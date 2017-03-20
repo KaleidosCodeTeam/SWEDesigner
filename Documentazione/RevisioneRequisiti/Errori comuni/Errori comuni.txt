@@ -1,0 +1,6 @@
+Uso del futuro al posto del presente indicativo
+Punti e virgola finali in elenchi puntati non sempre presenti
+Minuscole iniziali negli elenchi non sempre rispettate
+Parole col tag /gl ma non inserite nel glossario
+Uso del tag /ped{G} invece del tag /gl
+Sinonimi non uniformati (e.g. "Qualifica" o "Qualificazione")
