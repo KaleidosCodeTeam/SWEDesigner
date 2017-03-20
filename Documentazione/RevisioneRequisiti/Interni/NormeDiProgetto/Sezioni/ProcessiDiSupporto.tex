@@ -5,26 +5,26 @@
 		
 		\subsection{Struttura dei documenti}
 		\subsubsection{Descrizione}
-		Di seguito verranno riportate le regole che si dovranno seguire per la scrittura dei documenti. 
+		Di seguito sono riportate le regole che si dovranno seguire per la scrittura dei documenti. 
 		
 		\subsubsection{Approvazione dei documenti}
-		Ogni documento dovrà seguire le seguenti fasi:
+		Ogni documento deve seguire le seguenti fasi:
 		\begin{itemize}
 			\item Il documento viene redatto dai vari redattori;
-			\item I \verificatore\  procederanno al controllo di eventuali errori o imprecisioni;
-			\item in caso di errori i \verificatore\ procederanno a segnalarli ai redattori i quali dovranno provvedere a correggere gli errori ripartendo dalla prima fase;
+			\item I \verificatore\  procedono al controllo di eventuali errori o imprecisioni;
+			\item in caso di errori i \verificatore\ procedono a segnalarli ai redattori i quali provvedono a correggere gli errori ripartendo dalla prima fase;
 			\item Se il documento passa la fase di verifica viene consegnato al \responsabilediprogetto\ che decide se approvarlo o meno.\\
-			Nel caso venga rifiutato il \responsabilediprogetto\ dovrà indicare le criticità ai redattori i quali dovranno provvedere a correggere gli errori ripartendo dalla prima fase.
+			Nel caso venga rifiutato il \responsabilediprogetto\ deve indicare le criticità ai redattori i quali provvedono a correggere gli errori ripartendo dalla prima fase.
 			
 		\end{itemize} 
 		\subsection{Template}
-		Per rendere omogenea e semplice la stesura dei documenti e stato creato un template in \LaTeX\ che rispetta le regole stilistiche riportate in questo documento. Questo template e condiviso tramite github nella repository  documents\textbackslash templates.
+		Per rendere omogenea e semplice la stesura dei documenti e stato creato un template in \LaTeX\ che rispetta le regole stilistiche riportate in questo documento. Questo template è condiviso tramite github nel repository  documents\textbackslash templates.
 		\subsection{Codifica e convenzioni}
-		Tutti i file dovranno seguire la convenzione \gl UTF-8  per la codifica dei caratteri e \gl LF (U+000A) per andare a capo.
-		Per indicare il nome di variabili, classi e funzioni si dovrà usare l'inglese.
+		Tutti i file devono seguire la convenzione UTF-8 per la codifica dei caratteri e LF (U+000A) per andare a capo.
+		Per indicare il nome di variabili, classi e funzioni si deve usare la lingua inglese.
 		
 		\subsection{Intestazione}
-		Tutti i file di documentazione dovranno avere la seguente intestazione:\\
+		Tutti i file di documentazione devono avere la seguente intestazione:\\
 		\\
 		\%Document-Author: Cognome Nome + Cognome Nome + ...\\
 		\%Document-Date: GG/MM/AAAA\\
@@ -32,7 +32,7 @@
 		\\
 		\\
 		indicando Cognome e nome dei vari autori, data di creazione e breve descrizione del documento.\\
-		Per quanto riguarda i file contenenti codice si dovrà:
+		Per quanto riguarda i file contenenti codice si deve:
 		\begin{itemize}
 			\item Usare le seguente intestazione all'inizio di ogni file:\\
 			\textcolor{green}{	\\/*\\
@@ -47,7 +47,7 @@
 				Class-Name: Nome della classe\\
 				File-Summary: Breve descrizione della classe\\
 				**/}
-			\item Per ogni metodo si dovrà scrivere un commento così strutturato:\\
+			\item Per ogni metodo si deve scrivere un commento così strutturato:\\
 			\textcolor{green}{	\\/*\\
 				Method-Name: Nome della classe\\
 				Method-Summary: Breve descrizione della classe\\
@@ -77,7 +77,7 @@
 			\item Email del gruppo.
 		\end{itemize} 
 		\subsubsection{Diario delle modifiche}
-		Subito dopo la prima pagina è presente una tabella che riassume le modifiche apportate al documento ordinate in modo decrescente	rispetto alla data.Per ogni riga viene indicato:
+		Subito dopo la prima pagina è presente una tabella che riassume le modifiche apportate al documento ordinate in modo decrescente rispetto alla data. Per ogni riga viene indicato:
 		\begin{itemize}
 			\item Versione del documento;
 			\item Data della modifica;
@@ -113,7 +113,7 @@
 				\item \textbf{Citazioni}: viene usato il corsivo quando una frase viene citata;
 				\item \textbf{Abbreviazioni}: viene usato per evidenziare abbreviazioni;  
 				\item \textbf{Nomi particolari}: i nomi di figure particolari come \textit{Progettista} o \textit{Analista};  
-				\item \textbf{Documenti}: il corsivo verrà usato per i nomi dei vari documenti.
+				\item \textbf{Documenti}: viene usato il corsivo per i nomi dei vari documenti.
 			\end{itemize}
 			
 			\item \textbf{Grassetto}: usato nei seguenti casi:
@@ -122,7 +122,7 @@
 				
 			\end{itemize}			
 			viene inoltre usato per parole o particolari passaggi importanti;
-			\item \textbf{Maiuscolo}: usato soltatnto per acronimi o eventuali macro \LaTeX\ nei documenti;
+			\item \textbf{Maiuscolo}: usato soltanto per acronimi o eventuali macro \LaTeX\ nei documenti;
 			\item \textbf{\LaTeX }: per ogni riferimento a \LaTeX\ bisogna utilizzare il comando \textbackslash LaTeX.
 			
 		\end{itemize}
@@ -147,9 +147,9 @@
 			\end{center}  
 			dove AAAA indica 4 cifre per l'anno, MM indica 2 cifre per il mese e GG indica 2 cifre per il giorno;
 		\end{itemize}
-			\subsubsection{Riferimenti Vari}: Per i vari riferimenti si dovranno usare i seguenti comandi \LaTeX: (che garantiscono la corretta scrittura, con la prima lettera di ogni parola che non sia una preposizione maiuscola).
+			\subsubsection{Riferimenti Vari}: Per i vari riferimenti si devono usare i seguenti comandi \LaTeX: (che garantiscono la corretta scrittura, con la prima lettera di ogni parola che non sia una preposizione maiuscola).
 			\begin{itemize}
-				\item \textbf{Ruoli}: per i ruoli si dovrà usare \textbackslash role\{Nome del ruolo\} come riportato di seguito:
+				\item \textbf{Ruoli}: per i ruoli si deve usare il comando \textbackslash role\{Nome del ruolo\} come riportato di seguito:
 					\begin{itemize}
 					 	\item \textbackslash responsabilediprogetto = \responsabilediprogetto ; 
 					 	\item \textbackslash amministratore = \amministratore ;
@@ -166,7 +166,7 @@
 					 	\item \textbackslash verificatori =\verificatori ;
 					 	\item \textbackslash segretari =\segretari .
 					\end{itemize}	
-				\item \textbf{Documenti}: per i documenti si dovrà usare \textbackslash doc\{Nome del documento\} come riportato di seguito:
+				\item \textbf{Documenti}: per i documenti si deve usare il comando \textbackslash doc\{Nome del documento\} come riportato di seguito:
 					\begin{itemize}
 						\item \textbackslash pianodiprogetto =\pianodiprogetto ;
 						\item \textbackslash pianodiqualifica=\pianodiqualifica ;
@@ -179,7 +179,7 @@
 						\item \textbackslash glossario=\glossario .
 								
 					\end{itemize}	
-				\item \textbf{Documenti con versione}: per i documenti con versione si dovrà usare \textbackslash doc\{Nome del documentov\} come riportato di seguito:
+				\item \textbf{Documenti con versione}: per i documenti con versione si deve usare il comando \textbackslash doc\{Nome del documentov\} come riportato di seguito:
 				\begin{itemize}
 					\item \textbackslash pianodiprogettov =\pianodiprogettov ;
 					\item \textbackslash pianodiqualificav=\pianodiqualificav ;
@@ -191,7 +191,7 @@
 					\item \textbackslash manualeutentev=\manualeutente ;
 					\item \textbackslash glossariov=\glossariov .
 				\end{itemize}	
-				\item \textbf{Revisione}: per le revisioni si dovrà usare \textbackslash rev\{Nome Revisione\} come riportato di seguito:
+				\item \textbf{Revisione}: per le revisioni si deve usare il comando \textbackslash rev\{Nome Revisione\} come riportato di seguito:
 					\begin{itemize}
 						\item \textbackslash revisionedeirequisiti=\revisionedeirequisiti ;
 						\item \textbackslash revisionediaccettazione=\revisionediaccettazione ;
@@ -204,11 +204,11 @@
 				\item \textbf{Nome del Committente}: per riferirsi al Committente come “\vardanega "  si dovrà usare \textbackslash vardanega;
 				\item \textbf{Nome del progetto}: per riferirsi al proponente come “\progetto ”. si dovrà usare \textbackslash progetto.
 			\end{itemize}
-		Inoltre i nomi di file senza percorso completo si dovrà scrivere usando il formato \gl monospace e per scrivere nomi dei componenti si dovrà usare il formato "Cognome Nome". 
+		Inoltre i nomi di file senza percorso completo si devono scrivere usando il formato monospace e per scrivere nomi dei componenti si deve usare il formato "Cognome Nome". 
 		
 
 		\subsubsection{Sigle}
-		per rendere più accessibili tabelle e diagrammi si dovranno usare (dove 
+		per rendere più accessibili tabelle e diagrammi si devono usare (dove 
 		necessario) le seguenti sigle:
 		\begin{itemize}
 			\item \textbf{AdR}:\analisideirequisiti ;
@@ -227,7 +227,7 @@
 		\subsubsection{Tabelle}
 		Ogni tabella deve essere accompagnata da una descrizione che specifichi anche l'indice ad essa associata per renderla tracciabile all'interno del documento.
 		\subsubsection{Immagini}
-		Le immagini dovranno essere convertite in pdf prima di essere incorporate nei documenti e ciascuna dovrà essere accompagnata da una descrizione e l'indice ad essa associata.  
+		Le immagini devono essere convertite in pdf prima di essere incorporate nei documenti e ciascuna deve essere accompagnata da una descrizione e l'indice ad essa associata.  
 		
 		
 		\subsection{Classificazione documenti}
@@ -235,54 +235,54 @@
 		\subsubsection{Documenti formali}
 		Un documento è ritenuto formale solo dopo essere stato approvato dal \responsabilediprogetto , dopo l'approvazione viene considerato pronto per la revisione da parte del Committente.
 		\subsubsection{Documenti informali}
-		Un documento è ritenuto finormale fino all' approvazione del \responsabilediprogetto\ di Progetto, fino a quel momento viene considerato ad uso interno. 
+		Un documento è ritenuto informale fino all'approvazione del \responsabilediprogetto\ di Progetto, fino a quel momento è considerato ad uso interno. 
 		
 		\subsection{Versionamento}
-		Ogni documento dovrà essere accompagnato dal numero della versione attuale così formato:
+		Ogni documento deve essere accompagnato dal numero della versione attuale così formato:
 		\begin{center}
 			vX.Y.Z
 		\end{center}
 		dove:
 		\begin{itemize}
-			\item \textbf{X} indica il numero di uscite formali del documento e  aumenta a ogni approvazione da parte del \responsabilediprogetto ;
+			\item \textbf{X}: numero di uscite formali del documento e  aumenta a ogni approvazione da parte del \responsabilediprogetto ;
 			\item \textbf{Y}: usato per modifiche sostanziali e verifiche;
 			\item \textbf{Z}: usato per indicare modifiche minori. 
 		\end{itemize}
-		Per riferirsi a una specifica versione del documento dovremo usare il seguente formato:\\
+		Per riferirsi a una specifica versione del documento si deve usare il seguente formato:\\
 		\begin{center}
 			\textit{Nome Documento vX.Y.Z}
 		\end{center}
-		mentre il nome da applicare ai file sarà:
+		mentre il nome da applicare ai file è:
 		\begin{center}
 			NomeDocumento\_vX.Y.Z.pdf
 		\end{center}
 		\subsubsection{Variazione indici}
 		Le variazione degli indici avvengono da parte di:
 		\begin{itemize}
-			\item \textbf{X}: dovrà essere aggiornata dal \responsabilediprogetto\ dopo la sua approvazione;
-			\item \textbf{Y}: dovrà essere incrementato da chi esegue la modifica o la verifica;
-			\item \textbf{Z}: dovrà essere incrementato da chi esegue la modifica.
+			\item \textbf{X}: deve essere aggiornata dal \responsabilediprogetto\ dopo la sua approvazione;
+			\item \textbf{Y}: deve essere incrementato da chi esegue la modifica o la verifica;
+			\item \textbf{Z}: deve essere incrementato da chi esegue la modifica.
 		\end{itemize}
-		queste modifiche verranno mostrate nel diario delle modifiche.
+		queste modifiche sono mostrate dal diario delle modifiche.
 		
 		\subsection{Verifica}
 		\subsubsection{Scopo del processo}
-		Si occupa di accertare che i documenti prodotti non contengano errori e che rispettino le regole riportate in questo documento.
+		Scopo della verifica è quello di accertare che i documenti prodotti non contengano errori e che rispettino le regole riportate in questo documento.
 		
 		\subsection{Attività}
-		\subsubsection{Analisi Statica}Una tecnica di verifica che si applica al codice sorgente e alla documentazione e non richiede l'esecuzione del prodotto softwere. Le principali strategie sono due:
-		\paragraph{Inspection:}	questa tecnica si applica quando si conoscono le problematiche che si devono verificare. Consiste in una ricerca mirata attraveso il documento alla ricerca dei problemi spesso basandosi su una lista di errori precedentemente stilata.
-		\paragraph{Walkthrough:} questa tecnica consiste nello scorrere l'intero documento alla ricerca di errori generici e viene applicata sopratutto nelle prime fasi di stesura del documento o di codifica per via dell'impegno necessario per attuarla che aumenta notevolmente con l'aumentare delle dimensioni del documento da verificare.
+		\subsubsection{Analisi Statica}Una tecnica di verifica che si applica al codice sorgente e alla documentazione e non richiede l'esecuzione del prodotto software. Le principali strategie sono due:
+		\paragraph{Inspection:}	questa tecnica si applica quando si conoscono le problematiche oggetto di verifica. Consiste in una ricerca mirata attraverso il documento per l'identificazione dei problemi, spesso basandosi su una lista di errori precedentemente stilata.
+		\paragraph{Walkthrough:} questa tecnica consiste nello scorrere l'intero documento alla ricerca di errori generici. Viene applicata sopratutto nelle prime fasi di stesura del documento o di codifica a causa dell'impegno necessario per attuarla, che aumenta notevolmente con l'aumentare delle dimensioni del documento da verificare.
 		\subsubsection{Analisi Dinamica}
 		Questa tecnica può essere applicata solo al software,nella sua interezza o solo in parte.\\ Consiste nell'usare una rerie di test automatici creati dal gruppo che mettano alla prova il software prodotto e restituiscano risultati relativi a eventuali problemi rilevati.\\
-		I test dovranno essere ripetibili durante l'intero ciclo di vita e devono coprire un insieme finito di casi, con valori di ingresso,uno stato iniziale e esito decidibile.	
+		I test devono essere ripetibili durante l'intero ciclo di vita e devono coprire un insieme finito di casi, con valori di ingresso,uno stato iniziale e esito decidibile.	
 		
 		\subsection{Validazione}
 		\subsubsection{Scopo del processo}
 		La validazione si occupa di accertare che il prodotto realizzato sia conforme alle attese.\\
 		\subsubsection{Attività}
-		Di questa fase se ne occupa il \responsabilediprogetto\ il quale dovrà verificare che i documenti e il codice sorgente rispetti a pieno i requisiti imposti dal Committente e dal proponente.\\Il \responsabilediprogetto\ una volta che i documenti ottengono l'approvazione dei \verificatori\ controlla eventuali errori o mancanze.
-		Nel caso ne vengano trovati si dovrà segnalare le criticità ai redattori che provvederanno a correggere.
+		Di questa fase si occupa il \responsabilediprogetto\ il quale deve verificare che i documenti e il codice sorgente rispetti a pieno i requisiti imposti dal Committente e dal proponente.\\Il \responsabilediprogetto\ una volta che i documenti ottengono l'approvazione dei \verificatori\ controlla eventuali errori o mancanze.
+		Nel caso se ne identifichino, si deve segnalare le criticità ai redattori che provvederanno a correggerle.
 		
 		
 		
@@ -290,16 +290,16 @@
 		\subsubsection{Issue Tracking}
 		L'issue tracking è un'attività che permette di tenere traccia di tutti gli errori riscontrati durante la verifica dei documenti e del software da parte dei \verificatori\.\\
 		\subsubsection{Gestione delle issue}
-		Nel caso un \verificatore\ dovesse riscontrare delle anomalie dovrà seguire la seguente procedura:
+		Nel caso un \verificatore\ riscontri delle anomalie deve seguire la seguente procedura:
 		\begin{itemize}
-			\item il \verificatore\ dovrà aprire una nuova issue con la descrizione del problema;
-			\item il \responsabilediprogetto\ dovrà verificare questa issue e provvederà ad assegnarla a uno dei redattori del documento o al programmatore in caso di un errore relativo al codice;
-			\item una volta risolta e verificata verrà segnata come risolta da parte del \responsabilediprogetto .
+			\item il \verificatore\ deve aprire una nuova issue con la descrizione del problema;
+			\item il \responsabilediprogetto\ deve verificare questa issue e provvede ad assegnarla a uno dei redattori del documento o al programmatore in caso di un errore relativo al codice;
+			\item una volta risolta e verificata viene segnata come risolta da parte del \responsabilediprogetto .
 		\end{itemize}
 		\subsubsection{Strumenti per l'issue tracking}
-		Per tracciare gli issue vsi dovrà usare il servizio Issues messo a disposizione da GitHub.
+		Per tracciare gli issue si deve usare il servizio Issues messo a disposizione da GitHub.
 		\subsubsection{Verifica ortografica}
-		Per eseguire una prima verifica automatica viene usato il controllo ortografico implementato in TexStudio.
+		Per eseguire una prima verifica automatica viene usato il controllo ortografico LanguageTool versione 3.6, integrabile in TexStudio.
 		
 		
 		
