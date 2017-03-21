@@ -1138,27 +1138,112 @@
 		\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi, l'utente visualizza solo la classe selezionata, di cui viene mostrata la segnatura completa di ogni attributo, operazione e ogni altra eventuale proprietà della classe; l'utente ha la possibilità di selezionare ognuno di questi elementi.
 	\end{itemize}	
 	
+	\section{Inserimento nuova stringa}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole inserire una nuova stringa, al fine di etichettare un particolare elemento del diagramma;
+		\item \textbf{Precondizione}: L'utente ha segnalato l'intenzione di voler etichettare un elemento del diagramma con una nuova stringa; Il sistema è pronto a ricevere il input la nuova stringa inserita dall'utente;
+		\item \textbf{Postcondizione}: Il sistema ha etichettato l'elemento del diagramma con la nuova stringa ricevuta in input dall'utente;
+	\end{itemize}	
+	
 	\section{Seleziona singola classe}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
 		\item \textbf{Descrizione}: L'utente vuole selezionare una singola classe per poter concentrare il focus solo su di essa, permettendogli di mostrare (e avere la possibilità di modificare) per intero il suo contenuto e le sue proprietà;
 		\item \textbf{Flusso principale degli eventi}: 
 		\begin{itemize}
-		\item L'utente può selezionare un'attributo o crearne uno;
-		\item L'utente può selezionare un'operazione o crearne una;
-		\item L'utente può aggiungere, modificare o eliminare una proprietà della classe;
+		\item L'utente può modificare il nome della classe;
+		\item L'utente può aggiungere un attributo alla classe ;
+		\item L'utente può aggiungere un'operazione alla classe;
+		\item L'utente può selezionare un'attributo della classe;
+		\item L'utente può selezionare un'operazione della classe;
+		\item L'utente può gestire le proprietà della classe;
 		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi; l'utente sta visualizzando l'intero diagramma delle classi o un suo specifico layer. Il diagramma delle classi contiene almeno una classe;
 		\end{itemize}
-		\item \textbf{Postcondizione}: L'utente visualizza solo la classe selezionata, di cui viene mostrata la segnatura completa degli attributi, operazioni e proprietà, con la possibilità di selezionarli singolarmente;
+		\item \textbf{Postcondizione}: L'utente visualizza solo la classe selezionata, di cui viene mostrata la segnatura completa degli attributi, operazioni e proprietà, con la possibilità di aggiungerli o modificarli singolarmente;
 	\end{itemize}	
 	
-	\section{Seleziona singola operazione}
+	\subsection{Modifica del nome della classe}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole modificare il nome di  una classe;
+		\item \textbf{Flusso principale degli eventi}: 
+		\begin{itemize}
+		\item L'utente inserisce la nuova stringa (UC sopra);
+		\item \textbf{Precondizione}: L'utente ha segnalato l'intenzione di voler modificare il nome della classe; il sistema è pronto a ricevere in input la nuova stringa;
+		\end{itemize}
+		\item \textbf{Postcondizione}: Il sistema ha modificato il nome della classe, impostandolo con la nuova stringa ricevuta in input dall'utente;
+	\end{itemize}	
+	
+	\subsection{Aggiungere un'attributo alla classe}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		
+		\item \textbf{Descrizione}: L'utente vuole aggiungere un nuovo attributo a una classe;
+		\item \textbf{Flusso principale degli eventi}: 
+		\begin{itemize}
+		\item L'utente definisce il nome dell'attributo;
+		\item L'utente definisce il tipo dell'attributo;
+		\item L'utente può definire il valore di default per l'attributo;
+		\item L'utente può definire la visibillità dell'attributo;
+		\item L'utente può definire la molteplicità dell'attributo;
+		\item L'utente può gestire le proprietà dell'attributo;
+		\end{itemize}
+		\item \textbf{Precondizione}: L'utente ha selezionato una classe all'interno del diagramma delle classi alla quale vuole aggiungere un'attributo;
+		
+		\item \textbf{Scenari alternativi}: Viene annullato l'inserimento, la classe
+		rimane nello stato precedente al tentativo di aggiunta;
+		
+		\item \textbf{Postcondizione}: l'attributo viene aggiunto alla classe con i parametri decisi dall'utente.
+	\end{itemize}
+	
+	\subsection{Aggiungere un'operazione alla classe}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		
+		\item \textbf{Descrizione}: L'utente vuole aggiungere una nuova operazione a una classe;
+		\item \textbf{Flusso principale degli eventi}: 
+		\begin{itemize}
+		\item L'utente definisce il nome dell'operazione;
+		\item L'utente definisce il tipo di ritorno dell'operazione;
+		\item L'utente può aggiungere un parametro alla lista;
+		\item L'utente può definire la visibillità dell'operazione;
+		\item L'utente può gestire le proprietà dell'operazione;
+		\end{itemize}
+		\item \textbf{Precondizione}: L'utente ha selezionato una classe all'interno del diagramma delle classi alla quale vuole aggiungere un'operazione;
+		
+		\item \textbf{Scenari alternativi}: Viene annullato l'inserimento, la classe
+		rimane nello stato precedente al tentativo di aggiunta;
+		
+		\item \textbf{Postcondizione}: operazione viene aggiunta alla classe con i parametri decisi dall'utente.
+	\end{itemize}
+
+	\subsection{Seleziona singolo attributo}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole selezionare un singolo attributo, appartenente ad una classe,  allo scopo di modificarne il contenuto e le proprietà.
+		\item \textbf{Flusso principale degli eventi}: 
+		\begin{itemize}
+		\item L'utente può modificare il nome dell'attributo;
+		\item L'utente può modificare il tipo dell'attributo;
+		\item L'utente può modificare il valore di default per l'attributo;
+		\item L'utente può eliminare il valore di default per l'attributo;
+		\item L'utente può modificare la visibillità dell'attributo;
+		\item L'utente può modificare la molteplicità dell'attributo;
+		\item L'utente può gestire le proprietà dell'attributo;
+		\item L'utente può eliminare l'intero attributo;
+		\end{itemize}
+		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi; l'utente ha selezionato una singola classe che contiene almeno un'attributo; 
+		\item \textbf{Postcondizione}: L'utente ha selezionato un singolo attributo; L'utente ha la possibilità di modificarne il contenuto e le proprietà;
+	\end{itemize}	
+	
+	\subsection{Seleziona singola operazione}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
 		\item \textbf{Descrizione}: L'utente vuole selezionare una singola operazione, appartenente ad una classe,  allo scopo di modificarne il contenuto oppure di creare o selezionare il diagramma delle attività associato a tale operazione;
 		\item \textbf{Flusso principale degli eventi}: 
 		\begin{itemize}
-		\item L'utente può modificare la segnatura del metodo;
+		\item L'utente può modificare la segnatura dell'operazione;
 		\item L'utente può creare il diagramma delle attività associato all'operazione ;
 		\item L'utente può selezionare il diagramma delle attività associato all'operazione;
 		\end{itemize}
@@ -1166,7 +1251,50 @@
 		\item \textbf{Postcondizione}: L'utente ha selezionato una singola operazione; L'utente ha la possibilità di modificare la firma dell'operazione, creare un diagramma delle attività associato all'operazione o selezionare il diagramma delle attività esistente.
 	\end{itemize}	
 
-	\section{Marchiare statico un'attributo o operazione}
+		\subsection{Gestisci proprietà classe}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: 
+		\item \textbf{Flusso principale degli eventi}: 
+		\item \textbf{Precondizione}: ; 
+		\item \textbf{Postcondizione}: ;
+	\end{itemize}	
+
+	
+
+	\section{Gestisci proprietà attributo}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole gestire le proprietà di un attributo, ovvero poterlo marchiare come: readOnly, addOnly, frozen e/o static; l'utente non può impostare contemporaneamente proprietà tra loro incompatibili; 
+		\item \textbf{Flusso principale degli eventi}: 
+		\begin{itemize}
+		%  Speculare per la deselezione delle proprietà
+		\item L'utente può settare l'attributo come readOnly;
+		\item L'utente può settare l'attributo come addOnly;
+		\item L'utente può settare l'attributo come static;
+		\item L'utente può settare l'attributo come frozen;
+		\end{itemize}
+		\item \textbf{Precondizione}: L'utente ha selezionato la gestione delle proprietà di un attributo; il sistema è pronto a riceve il settaggio deciso dall'utente; 
+		\item \textbf{Postcondizione}: Il sistema ha aggiornato le proprietà dell'attributo con le specifiche settate dall'utente.
+	\end{itemize}	
+
+	\section{Gestisci proprietà operazione}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole gestire le proprietà di un operazione, ovvero poterla marchiare come: isQuery, sequential, guarded e/o static; l'utente non può impostare contemporaneamente proprietà tra loro incompatibili; 
+		\item \textbf{Flusso principale degli eventi}: 
+		\begin{itemize}
+		%  Speculare per la deselezione delle proprietà
+		\item L'utente può settare l'operazione come isQuery;
+		\item L'utente può settare l'operazione come sequential;
+		\item L'utente può settare l'operazione come static;
+		\item L'utente può settare l'operazione come guarded;
+		\end{itemize}
+		\item \textbf{Precondizione}: L'utente ha selezionato la gestione delle proprietà di un'operazione; il sistema è pronto a riceve il settaggio deciso dall'utente; 
+		\item \textbf{Postcondizione}: Il sistema ha aggiornato le proprietà dell'operazione con le specifiche settate dall'utente.
+	\end{itemize}	
+
+	\section{Settare static un'attributo o operazione}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
 		\item \textbf{Descrizione}: L'utente vuole marchiare statico un'attributo o un'operazione di una classe;
