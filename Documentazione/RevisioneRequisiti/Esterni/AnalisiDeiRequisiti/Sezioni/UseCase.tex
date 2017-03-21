@@ -1120,6 +1120,58 @@
 		\item \textbf{Descrizione}: L'utente deve salvare il lavoro fatto fino a quel momento;
 		\item \textbf{Precondizione}: Nelle schermate degli editor messi a disposizione del programma sono stati disegnati i diagrammi che rappresentano il codice desiderato;
 		\item \textbf{Postcondizione}: In una cartella a scelta dell'utente il programma ha generato un file contenente tutte le informazioni necessarie per ripristinarne lo stato attuale;
+	\end{itemize}	
+	
+	\section{Annulla ultimo comando eseguito}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole annullare l'effetto dell'ultimo comando eseguito nell'editor del diagramma correntemente in uso;
+		\item \textbf{Precondizione}: L'utente sta utilizzando l'editor di un diagramma tra quelli disponibili. In tale editor, l'utente ha eseguito almeno un comando; il sistema ha memorizzato tale comando;
+		\item \textbf{Postcondizione}: Il sistema ha ripristinato lo stato in cui si trovava il diagramma, correntemente in uso, prima che venisse eseguito il comando che è stato annullato; Il sistema ha memorizzato tale comando;
+	\end{itemize}		
+
+	\section{Ripristina ultimo comando annullato}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole ripristinare l'effetto dell'ultimo comando precedentemente annullato nell'editor del diagramma correntemente in uso;
+		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi; l'utente sta visualizzando l'intero diagramma delle classi o un specifico layer. Il diagramma delle classi contiene almeno una classe;
+		\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi, l'utente visualizza solo la classe selezionata, di cui viene mostrata la segnatura completa di ogni attributo, operazione e ogni altra eventuale proprietà della classe; l'utente ha la possibilità di selezionare ognuno di questi elementi.
+	\end{itemize}	
+	
+	\section{Seleziona singola classe}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole selezionare una singola classe per poter concentrare il focus solo su di essa, permettendogli di mostrare (e avere la possibilità di modificare) per intero il suo contenuto e le sue proprietà;
+		\item \textbf{Flusso principale degli eventi}: 
+		\begin{itemize}
+		\item L'utente può selezionare un'attributo o crearne uno;
+		\item L'utente può selezionare un'operazione o crearne una;
+		\item L'utente può aggiungere, modificare o eliminare una proprietà della classe;
+		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi; l'utente sta visualizzando l'intero diagramma delle classi o un suo specifico layer. Il diagramma delle classi contiene almeno una classe;
+		\end{itemize}
+		\item \textbf{Postcondizione}: L'utente visualizza solo la classe selezionata, di cui viene mostrata la segnatura completa degli attributi, operazioni e proprietà, con la possibilità di selezionarli singolarmente;
+	\end{itemize}	
+	
+	\section{Seleziona singola operazione}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole selezionare una singola operazione, appartenente ad una classe,  allo scopo di modificarne il contenuto oppure di creare o selezionare il diagramma delle attività associato a tale operazione;
+		\item \textbf{Flusso principale degli eventi}: 
+		\begin{itemize}
+		\item L'utente può modificare la segnatura del metodo;
+		\item L'utente può creare il diagramma delle attività associato all'operazione ;
+		\item L'utente può selezionare il diagramma delle attività associato all'operazione;
+		\end{itemize}
+		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi; l'utente ha selezionato una singola classe che contiene almeno un'operazione; 
+		\item \textbf{Postcondizione}: L'utente ha selezionato una singola operazione; L'utente ha la possibilità di modificare la firma dell'operazione, creare un diagramma delle attività associato all'operazione o selezionare il diagramma delle attività esistente.
+	\end{itemize}	
+
+	\section{Marchiare statico un'attributo o operazione}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole marchiare statico un'attributo o un'operazione di una classe;
+		\item \textbf{Precondizione}: L'utente ha selezionato la modifica di un'attributo o di un'operazione; Il sistema è pronto a impostarlo come statico;
+		\item \textbf{Postcondizione}: L'attributo o l'operazione è stato marchiato statico. Nell'editor del diagramma delle classi esso è visualizzato sottolineato.
 	\end{itemize}		
 			
 \end{document}
