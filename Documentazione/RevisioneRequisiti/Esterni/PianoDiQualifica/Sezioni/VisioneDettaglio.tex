@@ -1,54 +1,158 @@
 \documentclass[../PianoDiQualifica.tex]{subfiles}
 \begin{document}
-
-\section{Risorse}
-\subsection{Necessarie}
-per la realizzazione del prodotto sono necessarie le risorse umane e tecnologiche citate di seguito.
-\begin{itemize}
-	\item \textbf{risorse umane}: sono descritte dettagliatamente nel \pianodiprogetto. 
-	\begin{itemize}
-		\item \responsabilediprogetto;
-		\item \amministratore;
-		\item \analista;
-		\item \progettista;
-		\item \programmatore;
-		\item \verificatore.
-	\end{itemize}
-	\item \textbf{risorse software}: sono descritte dettagliatamente nelle \normediprogetto.
-	Si tratta di software che permettano:
-	\begin{itemize}
-		\item la comunicazione e la condivisione del lavoro tra gli elementi del team;
-		\item la stesura della documentazione in formato LaTeX;
-		\item la creazione di diagrammi UML;
-		\item la codifica nei linguaggi di programmazione scelti;
-		\item la semplificazione delle attività di verifica;
-		\item la gestione dei test sul codice.
-	\end{itemize}
-\item \textbf{risorse hardware}: ciascun componente del gruppo ha bisogno di un computer con tutti i software necessari. È necessario avere a disposizione almeno un luogo dove poter effettuare le riunioni del team.
-\end{itemize}
-\subsection{Disponibili}
-Ogni membro del team ha a disposizione uno o più computer personali dotati degli strumenti necessari. \\
-Le riunioni interne si svolgono presso le aule del dipartimento di Matematica dell'Università degli Studi di Padova.
-\section{Misure e metriche}
-Il processo di verifica deve essere quantificabile per fornire informazioni utili, bisogna quindi stabilire le metriche da adottare per le misurazioni. Si definiranno due intervalli di misure:
-\begin{itemize}
-	\item \textbf{range di accettazione}: intervallo di valori vincolante per l'accettazione del prodotto;
-	\item \textbf{range ottimale}: intervallo di valori entro cui è consigliabile rientri la misurazione. Il mancato rispetto di questa condizione non pregiudica l'accettazione del prodotto, ma richiede verifiche più approfondite in merito.
-\end{itemize}
-\subsection{Metriche per i processi}
-\subsubsection{Schedule Variance}
-È una metrica di progetto standard, indica se si è in linea, in anticipo o in ritardo rispetto alla schedulazione pianificata delle attività di progetto. È pari alla differenza tra il valore delle attività pianificate e il valore delle attività svolte alla data corrente.
-\paragraph{Parametri utilizzati}
-\begin{itemize}
-	\item \textbf{Range di accettazione}: $\geq -(preventivo*5\%)$;
-	\item \textbf{Range ottimale}: $\geq 0$.
-\end{itemize}
-\subsubsection{Budget Variance}
-È una metrica di progetto standard, indica se si spende di più o di meno rispetto a quanto preventivato alla data corrente. È pari alla differenza tra costo pianificato e costo effettivamente sostenuto alla data corrente.
-\paragraph{Parametri utilizzati}
-\begin{itemize}
-	\item \textbf{Range di accettazione}: $\geq -(preventivo*10\%)$;
-	\item \textbf{Range ottimale}: $\geq 0$.
-\end{itemize}
-
+	\section{La strategia di gestione della qualità nel dettaglio}
+		\subsection{Risorse}
+			\subsubsection{Necessarie}
+				Per la realizzazione del prodotto sono necessarie le risorse umane e
+				tecnologiche citate di seguito.
+				\begin{itemize}
+					\item \textbf{Risorse umane}: sono descritte dettagliatamente nel
+					\pianodiprogetto. 
+					\begin{itemize}
+						\item \responsabilediprogetto;
+						\item \amministratore;
+						\item \analista;
+						\item \progettista;
+						\item \programmatore;
+						\item \verificatore.
+					\end{itemize}
+					\item \textbf{Risorse software}: sono descritte dettagliatamente
+					nelle \normediprogetto.
+					Si tratta di software che permettano:
+					\begin{itemize}
+						\item la comunicazione e la condivisione del lavoro tra gli
+						elementi del team;
+						\item la stesura della documentazione in formato LaTeX;
+						\item la creazione di diagrammi UML;
+						\item la codifica nei linguaggi di programmazione scelti;
+						\item la semplificazione delle attività di verifica;
+						\item la gestione dei test sul codice.
+					\end{itemize}
+				\item \textbf{Risorse hardware}: ciascun componente del gruppo ha bisogno
+				di un computer con tutti i software necessari. È necessario avere a
+				disposizione almeno un luogo dove poter effettuare le riunioni del team.
+				\end{itemize}
+			\subsubsection{Disponibili}
+				Ogni membro del team ha a disposizione uno o più computer personali
+				dotati degli strumenti necessari.\\
+				Le riunioni interne si svolgono presso le aule del dipartimento di
+				Matematica dell'Università degli Studi di Padova.
+		\subsection{Misure e metriche}
+			Il processo di verifica deve essere quantificabile per fornire informazioni
+			utili, bisogna quindi stabilire le metriche da adottare per le misurazioni.
+			Si definiranno due intervalli di misure:
+			\begin{itemize}
+				\item \textbf{Range di accettazione}: intervallo di valori vincolante per
+				l'accettazione del prodotto;
+				\item \textbf{Range ottimale}: intervallo di valori entro cui è
+				consigliabile rientri la misurazione. Il mancato rispetto di questa
+				condizione non pregiudica l'accettazione del prodotto, ma richiede
+				verifiche più approfondite in merito.
+			\end{itemize}
+			\subsubsection{Metriche per i processi}
+				\paragraph{Schedule Variance\\}
+					È una metrica di progetto standard, indica se si è in linea, in
+					anticipo o in ritardo rispetto alla schedulazione pianificata delle
+					attività di progetto. È pari alla differenza tra il valore delle
+					attività pianificate e il valore delle attività svolte alla data
+					corrente.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: $\geq -(preventivo*5\%)$;
+							\item \textbf{Range ottimale}: $\geq 0$.
+						\end{itemize}
+				\paragraph{Budget Variance\\}
+					È una metrica di progetto standard, indica se si spende di più o di
+					meno rispetto a quanto preventivato alla data corrente. È pari alla
+					differenza tra costo pianificato e costo effettivamente sostenuto
+					alla data corrente.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: $\geq -(preventivo*10\%)$;
+							\item \textbf{Range ottimale}: $\geq 0$.
+						\end{itemize}
+			\subsubsection{Metriche per i documenti}
+				\paragraph{Indice Gulpease\\}
+					Definito nel 1988 all'Università degli Studi di Roma ``La
+					Sapienza'' per valutare la leggibilità di un documento redatto in
+					lingua italiana, l'indice \gl{Gulpease} si basa sul calcolo del
+					numero di caratteri contenuto in una parola rapportato con altri
+					fattori quali il numero di parole e di frasi.
+					La formula per il calcolo dell'indice Gulpease è la seguente:
+					\begin{equation*}
+						89+\frac{300\left(\textit{numero di frasi}\right)-10\left(\textit{numero di lettere}\right)}{\textit{numero di parole}}
+					\end{equation*}
+					Il risultato indica	quindi la complessità del documento con un
+					valore compreso tra 0 e 100, dove 100 indica la più alta
+					leggibilità. Attraverso gli studi condotti,	risulta che testi con
+					un indice:
+					\begin{itemize}
+						\item \textbf{inferiore a 80} sono difficili da leggere per chi
+						ha la licenza elementare;
+						\item \textbf{inferiore a 60} sono difficili da leggere per chi
+						ha licenza media;
+						\item \textbf{inferiore a 40} sono difficili da leggere per chi
+						ha un diploma superiore.
+					\end{itemize}
+					Tale indice, però, non indica la comprensibilità del testo. Il
+					documento potrebbe contenere frasi incomprensibili ed avere comunque
+					un alto indice Gulpease. Per la tipologia dei documenti redatti, la
+					formalità nella scrittura e gli argomenti trattati risulta difficile
+					adeguare la stesura del testo ad un indice Gulpease ottimale. Per
+					questo motivo, ogni documento sarà valutato anche da un individuo
+					che avrà il compito di valutare se parti di testo dovranno essere
+					semplificate o meno. Inoltre, i limiti imposti da tale indice
+					saranno sufficientemente rilassati per accettare anche frasi poco
+					più complesse.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 40 - 100;
+							\item \textbf{Range ottimale}: 50 - 100.
+						\end{itemize}
+			\subsubsection{Metriche per il codice}
+				\paragraph{Rapporto linee di commento su linee di codice\\}
+					Indica il rapporto tra linee di commento e linee di codice in un
+					file (linee vuote escluse). Ritenendo importante la rapidità di
+					comprensione del codice, questa metrica è utile per stimare la
+					manutenibilità.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: $\geq$ 0.25;
+							\item \textbf{Range ottimale}: $\geq$ 0.30.
+						\end{itemize}
+				\paragraph{Numero di parametri\\}
+					Indica il numero di parametri formali di un metodo. Più alto è il
+					numero dei parametri formali, più aumenta la quantità di memoria
+					occupata nella pila dei processi.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 8;
+							\item \textbf{Range ottimale}: 0 - 5.
+						\end{itemize}
+				\paragraph{Numero di campi dati\\}
+					Indica il numero di campi dati interni ad una classe. Un numero
+					elevato può rendere difficile la manutenibilità del codice della
+					classe, oltre ad essere indice di cattiva programmazione.\\
+					È possibile ridurre il numero di campi dati attraverso
+					l'incapsulamento di ulteriori classi.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 16;
+							\item \textbf{Range ottimale}: 0 - 10.
+						\end{itemize}
+				\paragraph{Complessità ciclomatica\\}
+					Indica il numero di cammini linearmente indipendenti attraverso il
+					grafo di controllo di flusso del metodo/funzione: i nodi del grafo
+					corrispondono a gruppi indivisibili di istruzioni, mentre gli archi
+					connettono due nodi se il secondo gruppo può essere eseguito
+					immediatamente dopo il primo.\\
+					È possibile ridurre l'indice di complessità attraverso la
+					suddivisione del metodo/funzione in più parti.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 10;
+							\item \textbf{Range ottimale}: 0 - 6.
+						\end{itemize}
+						\par È accettato anche un valore più elevato, qualora
+						dovesse influire positivamente sulla velocità di esecuzione.
 \end{document}
