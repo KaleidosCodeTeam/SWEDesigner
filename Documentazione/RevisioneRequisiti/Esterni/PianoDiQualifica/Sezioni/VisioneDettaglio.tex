@@ -155,4 +155,71 @@
 						\end{itemize}
 						\par È accettato anche un valore più elevato, qualora
 						dovesse influire positivamente sulla velocità di esecuzione.
+					
+					
+					\paragraph{Livello di annidamento}
+					Indica quante volte le strutture di controllo sono inserite l'una all'interno dell'altra. Un alto grado di annidamento può portare a una complessità maggiore del codice che porta a una difficoltà nella verifica, nella comprensione e nella modifica.
+					\subparagraph{Parametri utilizzati}
+					\begin{itemize}
+						\item \textbf{Range di accettazione}: 0 - 6;
+						\item \textbf{Range ottimale}: 0 - 4.
+					\end{itemize}
+					
+					\paragraph{Grado di accoppiamento}
+					Viene calcolato in base a due indici:
+					\begin{itemize}
+						\item \textbf{Accoppiamento afferente}: Numero di classi esterne al package che dipendono da classi del package. Se il numero è troppo alto troppe classi dipendono da tale package quindi modifiche una classe del package ha effetti che si ripercuotono su più classi. Se il numero è troppo basso il package risulta poco utile;
+						\item \textbf{Accoppiamento efferente}: numero di classi interne a un package dipendenti da classi esterne al package. Un numero alto può essere sintomo di una scarsa progettazione.
+					\end{itemize}
+					
+					\paragraph{Grado di instabilità}
+					Tale metrica viene utilizzata per misurare l'instabilità delle componenti di un sistema basandosi sul grado di accoppiamento delle classi. Un valore alto indica alta instabilità e quindi una bassa libertà di modifica del codice, in quanto ogni modifica ha effetti su più classi. Tale indice viene calcolato così:
+					\[
+					\frac{C \ped{e} }{C \ped{e}  +C \ped{e} }
+					\]
+					
+					dove:
+					\begin{itemize}
+						\item \textbf{C \ped a }: rappresenta l'accoppiamento afferente;
+						\item \textbf{C \ped e }: rappresenta l'accoppiamento efferente;
+					\end{itemize}
+					\subparagraph{Parametri utilizzati}
+					\begin{itemize}
+						\item \textbf{Range di accettazione}: 0 - 0.8;
+						\item \textbf{Range ottimale}: 0.3 - 0.7.
+					\end{itemize}
+					
+					\paragraph{Chiamate innestate di metodi}
+					Indica quante volte le strutture di controllo sono inserite l'una all'interno dell'altra. Un alto grado di annidamento può portare a una complessità maggiore del codice che porta a una difficoltà nella verifica, nella comprensione e nella modifica.
+					\subparagraph{Parametri utilizzati}
+					\begin{itemize}
+						\item \textbf{Range di accettazione}: 0 - 6;
+						\item \textbf{Range ottimale}: 0 - 4.
+					\end{itemize}
+					
+					\paragraph{Copertura del codice}
+					Rappresenta la percentuale di codice eseguita durante i test. Maggiore è questo valore, più esaurienti saranno i test e maggiori sono le probabilità di scoprire eventuali errori.
+					\subparagraph{Parametri utilizzati}
+					\begin{itemize}
+						\item \textbf{Range di accettazione}: 80 \% -100 \% ;   
+						\item \textbf{Range ottimale}: 90 \% -100 \% ; 
+					\end{itemize}
+					
+					\paragraph{Numero di linee per metodo}
+					Indica il numero di statement che compongono un metodo. Se un metodo risulta troppo lungo il suo funzionamento risulterà più complicato da comprendere, quindi può essere opportuno dividerlo in più sotto-funzioni.
+					\subparagraph{Parametri utilizzati}
+					\begin{itemize}
+						\item \textbf{Range di accettazione}: meno di 60;
+						\item \textbf{Range ottimale}: meno di 40.
+					\end{itemize}
+					
+					\paragraph{Validazione W3C}
+					L'applicativo web deve superare il test di validazione offerto da W3C con 0 errori gravi.
+					Sono accettati gli avvisi e le incertezze che non compromettono la funzionalità del sito fino a un massimo di 10 per pagina.
+					\subparagraph{Parametri utilizzati}
+					\begin{itemize}
+						\item \textbf{Range di accettazione}: 0 - 10 (per pagina);
+						\item \textbf{Range ottimale}: 0 - 0 (per pagina).
+					\end{itemize}	
+						
 \end{document}
