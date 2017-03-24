@@ -20,8 +20,19 @@
 	Il codice identificativo può includere diversi livelli di gerarchia che saranno
 	separati da un punto.
 	
-	\subsection{Caso d'uso UC: Creare/Caricare un nuovo progetto}
-		In pratica quando crei un progetto ti si apre subito il diagramma delle classi pronto da editare
+	\subsection{Caso d'uso UC: Creare un nuovo progetto}
+		\item \textbf{Attori}: Utente;
+		\item \textbf{Descrizione}: L'utente vuole creare un nuovo progetto.
+		\item \textbf{Precondizione}: Il progamma si è avviato correttamente ed è pronto a ricevere un input dall'utente. 
+		\item \textbf{Postcondizione}: È stato creato un nuovo progetto che è pronto ad essere modificato.
+	
+	\subsection{Caso d'uso UC: Caricare un progetto}
+	\item \textbf{Attori}: Utente. 
+	\item \textbf{Descrizione}: L'utente vuole caricare un progetto precedentemente creato
+	\item \textbf{Precondizione}: Il progamma si è avviato correttamente ed è pronto a ricevere un input dall'utente.
+	\item \textbf{Postcondizione}: È stato caricato un nuovo progetto che è pronto ad essere modificato.
+	
+		
 	\subsection{Caso d'uso UC1: Editare il diagramma delle classi}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente;
@@ -288,6 +299,20 @@
 				sistema è visualizzato il diagramma dove è stato cambiato il nome
 				all'interfaccia.
 			\end{itemize}
+			
+%%%%%%%%%%%%%%%%%%%% LAYER DI VISUALIZZAZIONE %%%%%%%%%%%%%%%%%%%
+		\subsection{Caso d'uso UC : Cambiare layer di visualizzazione}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente;
+				\item \textbf{Descrizione}: L'utente sceglie di cambiare il layer degli
+				oggetti visualizzabili;
+				\item \textbf{Precondizione}: Nell'editor del diagramma delle classi, sono
+				presenti almeno due layer, l'utente desidera cambiare il layer di
+				visualizzazione;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
+				sistema sono visualizzati le classi del diagramma appartenenti al layer
+				selezionato.
+			\end{itemize}
 		
 				
 	\subsection{Seleziona singola classe}
@@ -304,7 +329,13 @@
 			\item \textbf{Postcondizione}: L'utente visualizza solo la classe selezionata, di cui viene mostrata la segnatura completa degli attributi, operazioni e proprietà, con la possibilità di selezionarli singolarmente;
 	\end{itemize}
 				
-	\subsection{Caso d'uso UC: Torna al diagramma delle classi}			
+			\subsection{Caso d'uso UC: Torna al diagramma delle classi}	
+			\begin{itemize}
+				\item \textbf{Attori}: Utente;
+				\item \textbf{Descrizione}: L'utente torna al diagramma delle classi
+				\item \textbf{Precondizione}: Il sistema visualizza l'editor di classe della classe selezionata;
+				\item \textbf{Postcondizione}: Il sistema visualizza il diagramma delle classi
+			\end{itemize}		
 				
 			\subsection{Caso d'uso UC: Modificare una classe}
 			\begin{itemize}
@@ -777,19 +808,7 @@
 				sistema è visualizzato il diagramma dove è stata rimossa la realizzazione.
 			\end{itemize}
 			
-%%%%%%%%%%%%%%%%%%%% LAYER DI VISUALIZZAZIONE %%%%%%%%%%%%%%%%%%%
-		\subsection{Caso d'uso UC : Cambiare layer di visualizzazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di cambiare il layer degli
-				oggetti visualizzabili;
-				\item \textbf{Precondizione}: Nell'editor del diagramma delle classi, sono
-				presenti almeno due layer, l'utente desidera cambiare il layer di
-				visualizzazione;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema sono visualizzati gli oggetti del diagramma appartenenti al layer
-				selezionato.
-			\end{itemize}
+
 			
 %%%%%%%%%%%%%%%%%%% SEZIONE PACKAGE %%%%%%%%%%%%%%%%%%%
 		\subsection{Spostarsi nel diagramma dei package}
