@@ -1,17 +1,17 @@
 aggiorna diario modifiche
-3.1 marchet
-3.3 microservizzi
-3.4.1 linguaggi per la parte web linguaggia
-3.4.2 meno personale rispetto a?
-3.5 esperianza
+OK 3.1 marchet
+OK 3.3 microservizzi
+OK 3.4.1 linguaggi per la parte web linguaggia
+OK 3.4.2 meno personale rispetto a?
+OK 3.5 esperianza
 3.4 e 4.4, in generale i ".4" differenza in frase introduttiva aspetti positivi, da uniformare
 	idem per frase introduttiva fattori di rischio
-4.5 propendere verso?
+OK 4.5 propendere verso?
 5.2 "l'applicazione è rivolta ad ogni azienda"
-5.4.2 difficoltà contatto: come in 3.4? da sistemare un po'
+OK 5.4.2 difficoltà contatto: come in 3.4? da sistemare un po'
 5.5 il proponente si *trovi all'estero
 	interessante per lo stack che è solo consigliato? Sa da presa per il culo xD
-6.4 "fornirebbe nuove conoscenze" al team, non al mondo. Consigliata la forma "sarebbe formativo"
+OK 6.4 "fornirebbe nuove conoscenze" al team, non al mondo. Consigliata la forma "sarebbe formativo"
 6.5 "vista la scarsa conoscenza del dominio tecnologico ed singolo ma vasto ambiente di sviluppo quale Android"
 	non uniformata alle altre ".5"
 7.1 "obbiettivo". è la forma corretta, ma è più diffusa "obiettivo" e abbiamo usato questa seconda forma nella maggior parte dei casi
