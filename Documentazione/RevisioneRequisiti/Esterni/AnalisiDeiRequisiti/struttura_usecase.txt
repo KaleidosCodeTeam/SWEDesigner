@@ -1,0 +1,174 @@
+Gestisci progetto
+	\subsection{Caso d'uso UC: Creare un nuovo progetto}
+	\subsection{Caso d'uso UC: Caricare un progetto}
+	chiudere progetto
+	\subsection{Salvare il progetto}
+	\subsection{Annulla ultimo comando eseguito}
+	\subsection{Ripristina ultimo comando annullato}
+	\subsection{Leggere il codice}
+	\subsection{Esportare il codice}
+
+\subsection{Caso d'uso UC1: Editare il diagramma delle classi}
+	\item L'utente può creare una nuova classe (UC);
+	\item L'utente può modificare una classe (UC);
+		Rinominare l'elemento
+		\subsection{Caso d'uso UC: Innestare una classe interna}
+		\subsection{Caso d'uso UC: Impostare l'importanza dell'elemento'}
+	\item L'utente può eliminare una classe (UC);
+	\item L'utente può definire una nuova relazione (UC);
+		\item L'utente vuole definire la dipendenza tra due elementi (UC)
+		\item L'utente vuole definire l'associazione tra due elementi (UC).
+		\item L'utente vuole definire l'ereditarietà tra due elementi (UC).
+		\item L'utente vuole definire l'aggregazione tra due elementi (UC).
+		\item L'utente vuole definire la composizione tra due elementi (UC).
+		\item L'utente vuole definire il raffinamento di una classe parametrica (UC).
+		\subsection{Caso d'uso UC : Definire la realizzazione di un'interfaccia}
+	\item L'utente può modificare una relazione (UC);
+		\item L'utente vuole modificare la dipendenza tra due elementi (UC).
+		\item L'utente vuole modificare l'associazione tra due elementi (UC).
+		\item L'utente vuole modificare l'ereditarietà tra due elementi (UC).
+		\item L'utente vuole modificare l'aggregazione tra due elementi (UC).
+		\item L'utente vuole modificare la composizione tra due elementi (UC).
+		\item L'utente vuole modificare il raffinamento di una classe parametrica (UC).
+		\subsection{Caso d'uso UC : modificare la realizzazione di un'interfaccia}
+	\item L'utente può eliminare una relazione (UC);
+		\item L'utente vuole eliminare la dipendenza tra due elementi (UC).
+		\item L'utente vuole eliminare l'associazione tra due elementi (UC).
+		\item L'utente vuole eliminare l'ereditarietà tra due elementi (UC).
+		\item L'utente vuole eliminare l'aggregazione tra due elementi (UC).
+		\item L'utente vuole eliminare la composizione tra due elementi (UC).
+		\item L'utente vuole eliminare il raffinamento di una classe parametrica (UC).
+		\subsection{Caso d'uso UC : Rimuovere la realizzazione di un'interfaccia}
+	\item L'utente può creare una nuova interfaccia (UC);
+	\item L'utente può modificare un'interfaccia (UC);
+			\item L'utente può rinominare l'interfaccia (UC);
+			impostare l'importanza
+	\item L'utente può eliminare un'interfaccia (UC);
+	Creare un commento
+	Collegare un commento
+	Modificare un commento
+	Eliminare un commento
+	\item L'utente può cambiare layer di visualizzazione (UC).
+	\subsection{Apri la schermata di modifica di classe}
+	Apri la schermata di modifica di interfaccia
+	Apri l'editor del diagramma dei package
+
+Modificare una classe mediante la schermata di modifica di classe
+	L'utente può aggiungere un attributo
+	L'utente può modificare un attributo
+			Definire la direzione dell'attributo
+			Rinominare l'attributo
+			Cambiare tipo dell'attributo
+			definire valore di default dell'attributo
+	L'utente può eliminare un attributo
+	\item L'utente può aggiungere un' operazione(UC);
+	\item L'utente può modificare un'operazione (UC).
+		Impostare la visibilità
+		Rinominare
+		Definire la lista parametri
+			\subsection{Caso d'uso UC : Aggiungere un parametro}
+			\subsection{Caso d'uso UC : Modificare un parametro}
+				\subsection{Caso d'uso UC : Definire la direzione del parametro}
+				\subsection{Caso d'uso UC : Definire il nome del parametro}
+				\subsection{Caso d'uso UC : Definire il tipo del parametro}
+				\subsection{Caso d'uso UC : Definire il valore di default del parametro}
+			\subsection{Caso d'uso UC : Rimuovere un parametro}
+		\subsection{Caso d'uso UC : Definire il tipo di ritorno dell'operazione}
+		\subsection{Caso d'uso UC : Definire proprietà aggiuntive dell'operazione}
+		Passa all'editor del diagramma delle attività
+	\item L'utente può rimuovere un' operazione (UC);
+	\item L'utente può impostare il nome della classe (UC);
+	L'utente può impostare la visibilità della classe
+	Commentare una classe
+	Marchiare una classe statica
+	Marchiare una classe astratta
+	Marchiare una classe finale
+	Marchiare una classe "frozen"
+	Marchiare una classe "readOnly"
+	Marchiare una classe "enum"
+	Marchiare una classe parametrica
+	%% Aggiungere un'attesa di segnale
+	\subsection{Caso d'uso UC: Torna al diagramma delle classi}
+
+Modificare un'interfaccia mediante la schermata di modifica di interfaccia
+	\item L'utente può aggiungere un'operazione (UC);
+	eliminare un'operazione
+	\item L'utente può modificare un'operazione (UC);
+		Impostare la visibilità
+		Definire il nome dell'operazione
+		Definire la lista parametri
+			\subsection{Caso d'uso UC : Aggiungere un parametro}
+			\subsection{Caso d'uso UC : Modificare un parametro}
+				\subsection{Caso d'uso UC : Definire la direzione del parametro}
+				\subsection{Caso d'uso UC : Definire il nome del parametro}
+				\subsection{Caso d'uso UC : Definire il tipo del parametro}
+				\subsection{Caso d'uso UC : Definire il valore di default del parametro}
+			\subsection{Caso d'uso UC : Rimuovere un parametro}
+		\subsection{Caso d'uso UC : Definire il tipo di ritorno dell'operazione}
+		\subsection{Caso d'uso UC : Definire proprietà aggiuntive dell'operazione}
+	\item L'utente può rimuovere un'operazione (UC).
+	Rinominare l'interfaccia
+	Impostare la visibilità dell'interfaccia
+	Commentare l'interfaccia
+	Marchiare un'interfaccia
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COSA SI PUO' MARCHIARE?
+	%% Aggiungere un'attesa di segnale
+	Tornare al diagramma delle classi
+
+\subsection{Caso d'uso UC : Editare il diagramma dei package }
+	\item L'utente può creare un package (UC);
+	\item L'utente può modificare un package (UC);
+		\item L'utente può definire il nome del package (UC);
+		\item L'utente può impostare la visibilità del package (UC);
+		\item L'utente può definire una dipendenza tra package (UC);
+		\item L'utente può rimuovere una dipendenza tra package (UC);
+				%%%%%%% ESISTONO DIPENDENZE? E ASSOCIAZIONE, EREDITARIETA' AGGREGAZIONE, COMPOSIZIONE?
+		\item L'utente può innestare un elemento nel package (UC);
+		\item L'utente può rimuovere un elemento dal package (UC);
+	\item L'utente può rimuovere un package (UC).
+	\subsection{Tornare al diagramma delle classi}
+
+Editare il diagramma delle attività
+	creare un'attività
+	modificare un'attività
+		%%%%%%%%%%%%%% RIEMPIRE
+		Aprire l'editor del bubble flowchart
+	eliminare un'attività
+	aggiungere un elemento di decisione
+	modificare un elemento di decisione
+		%%%%%%%%%%%%%% RIEMPIRE
+	eliminare una decisione
+	aggiungere una regione di espansione
+	modificare una regione di espansione
+		%%%%%%%%%%%%%% RIEMPIRE
+	eliminare una regione di espansione
+	\subsection{Aggiungere pin}
+	\subsection{Modificare pin}
+		Definire la direzione del parametro corrispondente
+		definire il nome del parametro corrispondente
+		definire il tipo del parametro corrispondente
+		definire il valore di default del parametro corrispondente
+	\subsection{Rimuovere pin}
+	\subsection{Aggiungere trasformazione tra pin}
+	\subsection{Modificare trasformazione}
+	\subsection{Rimuovere trasformazione}
+	%% \subsection{Aggiungere invio di segnale}
+	%% \subsection{Modificare invio di segnale}
+	%% \subsection{Rimuovere invio di segnale}
+	%% \subsection{Aggiungere attesa di segnale}
+	%% \subsection{Modificare attesa di segnale}
+	%% \subsection{Rimuovere attesa di segnale}
+	\subsection{Aggiungere evento temporale}
+	\subsection{Modificare evento temporale}
+		definire il nome dell'evento temporale
+		definire la durata dell'evento temporale
+	\subsection{Rimuovere evento temporale}
+
+\subsection{Editare bubble flowchart}
+	\item L'utente può Aggiungere una bubble(UC);
+	\item L'utente può Modificare una bubble(UC);
+	\item L'utente può Eliminare una bubble(UC);
+	\item L'utente può Aggiungere un elemento di decisione(UC);
+	\item L'utente può Modificare un elemento di decisione(UC);
+	\item L'utente può Eliminare un elemento di decisione(UC);
+	Tornare all'editor del diagramma delle attività
