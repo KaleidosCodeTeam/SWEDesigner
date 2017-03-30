@@ -1,15 +1,19 @@
-UC1:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+UC1:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di gestire un progetto.
 	-Il sistema deve permettere di creare un nuovo progetto.
+		-Il sistema deve permettere di definire il nome del nuovo progetto.
 	-Il sistema deve permettere di caricare un progetto.
 	-Il sistema deve permettere di chiudere il progetto attuale.
+		-Il sistema deve chiedere se al momento della chiusura si desidera salvare le modifiche effettuate successivamente all'ultimo salvataggio.
 	-Il sistema deve permettere di salvare il progetto attuale.
+		-Il sistema deve permettere di salvare il progetto attuale sovrascrivendolo.
+		-Il sistema deve permettere di salvare con nome il progetto in una directory scelta.
 	-Il sistema deve permettere di annullare l'effetto dell'ultimo comando eseguito.
 	-Il sistema deve permettere di ripristinare l'effetto dell'ultimo comando annullato.
 	-Il sistema deve permettere di leggere il codice prodotto.
 	-Il sistema deve permettere di esportare il codice prodotto. 
 
-UC2:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+UC2:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di editare il diagramma delle classi.
 
 	-Il sistema deve permettere di aggiungere una nuova classe vuota al diagramma delle classi.
@@ -19,6 +23,9 @@ UC2:----------------------------------------------------------------------------
 		-Il sistema deve permettere di innestare una classe all'interno di un'altra classe.
 		-Il sistema deve permettere di impostare l'importanza di una classe.
 		-Il sistema deve permettere di modificare l'importanza di una classe.
+			-Il sistema deve permettere di modificare l'importanza di una classea a "bassa".
+			-Il sistema deve permettere di modificare l'importanza di una classe a "media".
+			-Il sistema deve permettere di modificare l'importanza di una classe ad "alta".
 
 	-Il sistema deve permettere l'eliminazione di una classe presente nel diagramma delle classi.
 	
@@ -32,13 +39,29 @@ UC2:----------------------------------------------------------------------------
 		-Il sistema deve permettere di definire la realizzazione di un'interfaccia.
 
 	-Il sistema deve permettere la modifica di una relazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di modificare una dipendenza tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di modificare un'associazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di modificare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di modificare un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di modificare un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di modificare il raffinamento di una classe parametrica. 
+		-Il sistema deve permettere di modificare la realizzazione di un'interfaccia.
 	
 	-Il sistema deve permettere l'eliminazione di una relazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di eliminare una dipendenza tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di eliminare un'associazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di eliminare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di eliminare un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di eliminare un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di eliminare il raffinamento di una classe parametrica. 
+		-Il sistema deve permettere di eliminare la realizzazione di un'interfaccia.
 	
 	-Il sistema deve permettere di aggiungere una nuova interfaccia al diagramma delle classi.
 	
 	-Il sistema deve permettere la modifica di un'interfaccia presente nel diagramma delle classi.
-	
+		-Il sistema deve permettere di rinominare un'interfaccia
+		-Il sistema deve permettere di impostare l'importanza dell'interfaccia.
+		
 	-Il sistema deve permettere l'eliminazione di un'interfaccia presente nel diagramma delle classi.
 	
 	-Il sistema deve permettere di aggiungere un commento all'interno del diagramma delle classi.
@@ -57,7 +80,7 @@ UC2:----------------------------------------------------------------------------
 	
 	-Il sistema deve permettere di aprire l'editor del diagramma dei package.
 
-UC3:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+UC3:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di modificare una classe mediante la schermata di modifica di classe.
 	
 	-Il sistema deve permettere di aggiungere un nuovo attributo alla classe.
@@ -94,7 +117,7 @@ UC3:----------------------------------------------------------------------------
 
 	-Il sistema deve permettere di commentare una classe.
 
-UC4:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+UC4:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di modificare un'interfaccia mediante la schermata di modifica di interfaccia.
 	-Il sistema deve permettere di aggiungere un'operazione all'interfaccia.
 	
@@ -126,7 +149,7 @@ UC4:----------------------------------------------------------------------------
 	
 	-Il sistema deve permettere di passare dalla modifica di un'interfaccia al diagramma delle classi. (????????????????????)
 
-UC5:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+UC5:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di editare il diagramma dei package.
 	
 	-Il sistema deve permettere di creare un nuovo package vuoto al diagramma dei package.
@@ -143,7 +166,7 @@ UC5:----------------------------------------------------------------------------
 	
 	-Il sistema deve permettere di passare dal diagramma dei package al diagramma delle classi. (????????????????????)
 
-UC6:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+UC6---------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di editare il diagramma delle attività.
 	
 	-Il sistema deve permettere di creare una nuova attività nel diagramma delle attività.
@@ -179,7 +202,7 @@ UC6:----------------------------------------------------------------------------
 		-Il sistema deve permettere di rimuovere un elemento dalla regione di espansione.
 	-Il sistema deve permettere di eliminare una regione di espansione del diagramma delle attività.
 	
-UC7:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+UC7:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di editare il bubble flowchart.
 	
 	-Il sistema deve permettere di aggiungere una nuova bubble al diagramma delle bubble flowchart.
