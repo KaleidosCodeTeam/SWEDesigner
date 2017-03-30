@@ -1,4 +1,4 @@
-UC1:--------------------------------------------------------------------------------------------------------------------------------------------------------
+UC1:----------------A POSTO--------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di gestire un progetto.
 	-Il sistema deve permettere di creare un nuovo progetto.
 		-Il sistema deve permettere di definire il nome del nuovo progetto.
@@ -13,7 +13,7 @@ UC1:----------------------------------------------------------------------------
 	-Il sistema deve permettere di leggere il codice prodotto.
 	-Il sistema deve permettere di esportare il codice prodotto. 
 
-UC2:--------------------------------------------------------------------------------------------------------------------------------------------------------
+UC2:------------------A POSTO---------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di realizzare il diagramma delle classi.
 
 	-Il sistema deve permettere di aggiungere una nuova classe al diagramma delle classi.
@@ -56,15 +56,6 @@ UC2:----------------------------------------------------------------------------
 		-Il sistema deve permettere di eliminare il raffinamento di una classe parametrica. 
 		-Il sistema deve permettere di eliminare la realizzazione di un'interfaccia.
 	
-	-Il sistema deve permettere di marchiare una classe.
-		-Il sistema deve permettere di marchiare una classe statica.
-		-Il sistema deve permettere di marchiare una classe astratta.
-		-Il sistema deve permettere di marchiare una classe finale.
-		-Il sistema deve permettere di marchiare una classe "frozen".
-		-Il sistema deve permettere di marchiare una classe "readOnly".
-		-Il sistema deve permettere di marchiare una classe "enum".
-		-Il sistema deve permettere di marchiare una classe parametrica.
-
 	-Il sistema deve permettere di aggiungere una nuova interfaccia al diagramma delle classi.
 	
 	-Il sistema deve permettere la modifica di un'interfaccia presente nel diagramma delle classi.
@@ -93,6 +84,15 @@ UC2:----------------------------------------------------------------------------
 	-Il sistema deve permettere di aprire la schermata di modifica di un'interfaccia.
 	
 	-Il sistema deve permettere di aprire l'editor del diagramma dei package.
+
+	-Il sistema deve permettere di marchiare una classe.
+		-Il sistema deve permettere di marchiare una classe statica.
+		-Il sistema deve permettere di marchiare una classe astratta.
+		-Il sistema deve permettere di marchiare una classe finale.
+		-Il sistema deve permettere di marchiare una classe "frozen".
+		-Il sistema deve permettere di marchiare una classe "readOnly".
+		-Il sistema deve permettere di marchiare una classe "enum".
+		-Il sistema deve permettere di marchiare una classe parametrica.
 
 UC3:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di modificare una classe mediante la schermata di modifica di classe.
