@@ -83,7 +83,6 @@
 	5.	Rimuovere una dipendenza
 	6.	Tornare all'editor del diagramma delle classi
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 6.	Editare il diagramma delle attività
 	1.	Aggiungere un'attività
 	2.	Modificare un'attività
@@ -91,19 +90,20 @@
 		2.	Aggiungere un pin
 		3.	Modificare un pin
 		4.	Eliminare un pin
-	3.	Aggiungere una trasformazione tra pin
-	4.	Modificare una trasformazione tra pin
-	5.	Eliminare una trasformazione tra pin
-	6.	Aggiungere un elemento di decisione
-	7.	Modificare un elemento di decisione
-	8.	Eliminare un elemento di decisione
-	9.	Creare una regione di espansione
-	10.	Modificare una regione di espansione
-	11.	Eliminare una regione di espansione
-	12.	Aggiungere un evento temporale
-	13.	Modificare un evento temporale
-	14.	Eliminare un evento temporale
-	15.	Tornare all'editor del diagramma delle classi
+	3.	Eliminare un'attività
+	4.	Aggiungere un elemento di decisione
+	5.	Modificare un elemento di decisione
+	6.	Eliminare un elemento di decisione
+	7.	Creare una regione di espansione
+	8.	Modificare una regione di espansione
+	9.	Eliminare una regione di espansione
+	10.	Aggiungere una trasformazione tra pin
+	11.	Modificare una trasformazione tra pin
+	12.	Eliminare una trasformazione tra pin
+	13.	Aggiungere un evento temporale
+	14.	Modificare un evento temporale
+	15.	Eliminare un evento temporale
+	16.	Tornare all'editor del diagramma delle classi
 
 7.	Editare il bubble flowchart
 	1.	Aggiungere una bubble
