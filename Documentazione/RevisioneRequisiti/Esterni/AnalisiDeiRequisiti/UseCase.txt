@@ -1,0 +1,113 @@
+Gestisci progetto
+	Creare un progetto
+	Caricare un progetto
+	Salvare un progetto
+	Annulla ultimo comando
+	Ripristina ultimo comando
+	Leggere il codice
+	Esportare il codice
+
+Editare il diagramma delle classi
+	Creare una classe
+	Modificare una classe
+		Aprire la schermata di modifica di classe corrispondente
+	Eliminare una classe
+	Creare una relazione
+		Creare una dipendenza
+		Creare un'associazione
+		Creare un'ereditarietà
+		Creare un'aggregazione
+		Creare una composizione
+		Creare un raffinamento
+		Creare una realizzazione di interfaccia
+	Modificare una relazione
+		Modificare una dipendenza
+		Modificare un'associazione
+		Modificare un'ereditarietà
+		Modificare un'aggregazione
+		Modificare una composizione
+		Modificare un raffinamento
+		Modificare una realizzazione di interfaccia
+	Eliminare una relazione
+		Eliminare una dipendenza
+		Eliminare un'associazione
+		Eliminare un'ereditarietà
+		Eliminare un'aggregazione
+		Eliminare una composizione
+		Eliminare un raffinamento
+		Eliminare una realizzazione di interfaccia
+	Creare un'interfaccia
+	Modificare un'interfaccia
+		Aprire la schermata di modifica di interfaccia corrispondente
+	Eliminare un'interfaccia
+	Creare un commento
+	Collegare un commento
+	Modificare un commento
+	Eliminare un commento
+	Aprire il diagramma dei package
+
+Editare una classe mediante la schermata di modifica di classe
+	Aggiungere un attributo
+	Modificare un attributo
+	Eliminare un attributo
+	Aggiungere un'operazione
+	Modificare un'operazione
+		Aggiungere un parametro
+		Modificare un parametro
+		Eliminare un parametro
+	Eliminare un'operazione
+	Commentare una classe
+	Marchiare una classe
+	Tornare all'editor del diagramma delle classi
+
+Editare un'interfaccia mediante la schermata di modifica di interfaccia
+	Aggiungere un'operazione
+	Modificare un'operazione
+		Aprire il diagramma delle attività corrispondente
+		Aggiungere un parametro
+		Modificare un parametro
+		Eliminare un parametro
+	Eliminare un'operazione
+	Commentare un'interfaccia
+	Marchiare un'interfaccia
+	Tornare all'editor del diagramma delle classi
+
+Editare il diagramma dei package
+	Creare un package
+	Modificare un package
+		Innestare un elemento
+		Rimuovere un elemento
+	Eliminare un package
+	Definire una dipendenza
+	Rimuovere una dipendenza
+	Tornare all'editor del diagramma delle classi
+
+Editare il diagramma delle attività
+	Aggiungere un'attività
+	Modificare un'attività
+		Aprire il bubble flowchart corrispondente
+		Aggiungere un pin
+		Modificare un pin
+		Eliminare un pin
+	Aggiungere una trasformazione tra pin
+	Modificare una trasformazione tra pin
+	Eliminare una trasformazione tra pin
+	Aggiungere un elemento di decisione
+	Modificare un elemento di decisione
+	Eliminare un elemento di decisione
+	Creare una regione di espansione
+	Modificare una regione di espansione
+	Eliminare una regione di espansione
+	Aggiungere un evento temporale
+	Modificare un evento temporale
+	Eliminare un evento temporale
+	Tornare all'editor del diagramma delle classi
+
+Editare il bubble flowchart
+	Aggiungere una bubble
+	Modificare una bubble
+	Eliminare una bubble
+	Aggiungere un elemento di decisione
+	Modificare un elemento di decisione
+	Eliminare un elemento di decisione
+	Tornare all'editor del diagramma delle attività
