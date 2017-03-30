@@ -6,10 +6,17 @@
 	In questa sezione verranno presentati i requisiti individuali che il team ha individuato durante l'analisi del capitolato e dei casi d'uso, quelli discussi con il proponente durante le riunioni esterne e quelli decisi durante le riunioni interne dal gruppo. 
 	Ogni requisito avrà un codice identificativo univoco così formato:
 	
-	\begin{center} R{Tipo}{Importanza}{Codice} \end{center}
+	\begin{center} R[{Importanza}][{Tipo}][{Codice}] \end{center}
 	
 	dove:
 	\begin{itemize}
+		\item \textbf{Importanza:} può assumere i seguenti valori:
+			\begin{itemize}
+				\item \textbf{0:} indica un requisito obbligatorio;
+				\item \textbf{1:} indica un requisito desiderabile;
+				\item \textbf{2:} indica un requisito facoltativo.
+			\end{itemize}
+		
 		\item \textbf{Tipo:} può assumere i seguenti valori:
 			\begin{itemize}
 				\item \textbf{F:} indica un requisito funzionale;
@@ -17,13 +24,8 @@
 				\item \textbf{P:} indica un requisito prestazionale;
 				\item \textbf{V:} indica un requisito di vincolo.
 			\end{itemize}
-			\item \textbf{Importanza:} può assumere i seguenti valori:
-			\begin{itemize}
-				\item \textbf{O:} indica un requisito obbligatorio;
-				\item \textbf{D:} indica un requisito desiderabile;
-				\item \textbf{F:} indica un requisito facoltativo.
-			\end{itemize}
-			\item \textbf{Codice:} indica il codice identificativo del requisito. Deve essere univoco e deve essere identificato in forma gerarchica.
+			
+		\item \textbf{Codice:} indica il codice identificativo del requisito. Deve essere univoco e deve essere identificato in forma gerarchica.
 	\end{itemize}
 	Per ogni requisito verranno inoltre riportate:
 	\begin{itemize}

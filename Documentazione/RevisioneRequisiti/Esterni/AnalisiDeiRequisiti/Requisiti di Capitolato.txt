@@ -2,72 +2,54 @@
 
 	OBBLIGATORI
 
-	-Il sistema deve essere in grado di realizzare diagrammi delle classi
-	-deve essere presente un disegnatore per il diagramma delle classi
-	-Il sistema deve essere in grado di realizzare diagrammi delle attività
-	-deve essere presente un disegnatore per il diagramma delle classi
-	-Il sistema deve essere in grado di produrre codice sorgente in linguaggio Java
-	-Il sistema deve essere in grado di produrre codice sorgente in linguaggio Javascript
-	-Il codice generato deve essere quanto più completo possibilie ma senza errori
-	-Il sistema deve essere in grado di indicare quando non è possibile realizzare codice sorgente
-	-deve essere presente almeno un coordinatore dche governa la traduzione in codice dei diagrammi disegnati
-	-Il sistema deve essere in grado di associare un diagramma delle attività a un paricolare metodo di una classe rappresentata nel diagramma delle classi
-	-Il sistema deve rendere disponibili le informazioni specificate nel diagramma associato (es. attributi e metodi della classe mentre viene disegnato il diagramma di attività per un metodo)
-
+	-Il sistema deve essere in grado di realizzare diagrammi delle classi.F
+	-Deve essere presente un disegnatore per il diagramma delle classi.F
+	-Il sistema deve essere in grado di realizzare diagrammi delle attività.F
+	-Deve essere presente un disegnatore per il diagramma delle classi.F
+	-Il sistema deve essere in grado di produrre codice sorgente in linguaggio Java.F
+	-Il sistema deve essere in grado di produrre codice sorgente in linguaggio Javascript.F
+	-Il sistema deve essere in grado di indicare quando non è possibile realizzare codice sorgente.F
+	-Deve essere presente almeno un coordinatore che governa la traduzione in codice dei diagrammi disegnati.F
+	-Il sistema deve essere in grado di associare un diagramma delle attività a un paricolare metodo di una classe rappresentata nel diagramma delle classi.F
+	-Il sistema deve rendere disponibili le informazioni specificate nel diagramma associato. (es. attributi e metodi della classe mentre viene disegnato il diagramma di attività per un metodo)F
+	-Il sistema dovrà essere realizzato con tecnologie Web.V
+	-La parte server deve essere realizzata in Java con server Tomcat o Javascaript con server Node.Js.V
+	-La parte client dovrà essere eseguibile in un browser HTML5 ed utilizzare fogli stile CSS per l’ aspetto estetico e Javascript per la parte attiva.V
 	
-	OPZIONALI 
+
 	Desiderabili
-	-Il sistema deve essere in grado di realizzare un diagramma flowchart
-	-Realizzare un gioco Hex utilizzando l'editor creato
-	-L'applicazione dovrà essere opensource
-	-Introdurre nei disegnatori la possibilità di creare dei "Pattern"
+	-Il sistema deve essere in grado di realizzare un diagramma flowchart.F
+	-L'applicazione dovrà essere open-source. V
+	-L'applicazione dovrà essere pubblicata su repository GitHub. V
+	-Introdurre nei disegnatori la possibilità di creare dei "Pattern". F
+	-Realizzare un gioco Hex utilizzando l'editor creato. (vedi Appendice A) Q
 	
-	Facoltativi
-	-Il sistema deve essere in grado di realizzare un sequence diagram
-	-Il sistema deve essere in grado di realizzare un diagramma dei package
-	-Estendere o modificare i diagrammi già presenti al fine di migliorare la qualità del codice
-	-Creare un sistema che permetta la realizzazione di piccole modifiche al sorgente generato
+	Opzionale
+	-Il sistema deve essere in grado di realizzare un sequence diagram. F
+	-Il sistema deve essere in grado di realizzare un diagramma dei package. F
+	-Creare un sistema che permetta la realizzazione di piccole modifiche al sorgente generato. F
 
 
-	OBBLIGATORI MA PROBABILMENTE INTERNI 
+OBLIGATORI MA PROBABILMENTE INTERNI 
 
-	-Dovrà essere fornito un manuale d'utilizzo dell'applicazione
-	-Dovrà essere fornito un manuale per estendere l'applicazione
+	-Dovrà essere fornito un manuale d'utilizzo dell'applicazione. Q
+		Figli
+	-Dovrà essere fornito un manuale per estendere l'applicazione. Q
+		Figli
 
 2 RIUNIONE 23/2/2017
 	
 	OBBLIGATORI
 
-	-Il progetto deve essere un'applicazione web
-	-il progetto deve essere hostato su un server locale
-	-Le realtà che si possono modellare con i diagrammi prodotti dal disegnatore devono fare parte di un dominio specifico (es. giochi)
-	-E' necessaria un'analisi approfondita del dominio scelto. (??)
-	-Prevedere più viste del diagramma delle classi (vari livelli di profondità e zoom)
-	-Prevedere l'innestamento per i diagrammi delle attività
+	-Il prodotto deve essere hostato su un server. V
+	-Il prodotto deve permettere la creazione di diagrammi che modellino realtà appartenenti al dominio dei giochi da tavolo. F
 
-	OPZIONALI
 	Desiderabili
-	-creare modelli che si adattino a casi specifici ricorrenti nel dominio(es.scacchiera)
-	-implementare l'applicazione lato server in Java, in quanto facilita il test (compilatore) e non bisogna simulare l'ereditarietà.
+	-Implementare l'applicazione lato server in Java, in quanto facilita il test (compilatore) e non bisogna simulare l'ereditarietà. V
 	
-	Facoltativi
-	-creare diagrammi ibridi per garantire continuità tra diagrammi diversi
 
 3 RIUNIONE 17/3/2017
 
-	
-	OBBLIGATORI
-	
-	-Il sistema deve essere usabile più che completo. (è meglio che manchino pezzi piuttosto che siano fatti male)
-
-
-	OPZIONALI
 	Desiderabili
-	-Una sessione di lavoro deve essere salvata in local storage
-	
-	
-	Facoltativi
-	-Inserire restrizioni al disegnatore
-	-Controllare che le restrizioni vengano rispettate
-	-Il sistema deve essere in grado di realizzare un diagramma dei pattern
+	-Una sessione di lavoro deve essere salvata in local storage. V
 	
