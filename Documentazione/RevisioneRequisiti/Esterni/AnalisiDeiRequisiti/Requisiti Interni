@@ -1,0 +1,197 @@
+UC1:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Il sistema deve permettere di gestire un progetto.
+	-Il sistema deve permettere di creare un nuovo progetto.
+	-Il sistema deve permettere di caricare un progetto.
+	-Il sistema deve permettere di chiudere il progetto attuale.
+	-Il sistema deve permettere di salvare il progetto attuale.
+	-Il sistema deve permettere di annullare l'effetto dell'ultimo comando eseguito.
+	-Il sistema deve permettere di ripristinare l'effetto dell'ultimo comando annullato.
+	-Il sistema deve permettere di leggere il codice prodotto.
+	-Il sistema deve permettere di esportare il codice prodotto. 
+
+UC2:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Il sistema deve permettere di editare il diagramma delle classi.
+
+	-Il sistema deve permettere di aggiungere una nuova classe vuota al diagramma delle classi.
+	
+	-Il sistema deve permettere la modifica di una classe presente nel diagramma delle classi.
+		-Il sistema deve permettere di rinominare una classe presente nel diagramma delle classi.
+		-Il sistema deve permettere di innestare una classe all'interno di un'altra classe.
+		-Il sistema deve permettere di impostare l'importanza di una classe.
+		-Il sistema deve permettere di modificare l'importanza di una classe.
+
+	-Il sistema deve permettere l'eliminazione di una classe presente nel diagramma delle classi.
+	
+	-Il sistema deve permettere la definizione di una relazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di definire una dipendenza tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di definire un'associazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di definire un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di definire un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere di definire un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
+		-Il sistema deve permettere il raffinamento di una classe parametrica. 
+		-Il sistema deve permettere di definire la realizzazione di un'interfaccia.
+
+	-Il sistema deve permettere la modifica di una relazione tra due elementi presenti nel diagramma delle classi.
+	
+	-Il sistema deve permettere l'eliminazione di una relazione tra due elementi presenti nel diagramma delle classi.
+	
+	-Il sistema deve permettere di aggiungere una nuova interfaccia al diagramma delle classi.
+	
+	-Il sistema deve permettere la modifica di un'interfaccia presente nel diagramma delle classi.
+	
+	-Il sistema deve permettere l'eliminazione di un'interfaccia presente nel diagramma delle classi.
+	
+	-Il sistema deve permettere di aggiungere un commento all'interno del diagramma delle classi.
+	
+	-Il sistema deve permettere il collegamento di un commento ad un elemento presente nel diagramma delle classi.
+	
+	-Il sistema deve permettere la modifica di un commento presente nel diagramma delle classi.
+	
+	-Il sistema deve permettere l'eliminazione di un commento presente nel diagramma delle classi.
+	
+	-Il sistema deve permettere di cambiare layer di visualizzazione.
+	
+	-Il sistema deve permettere di aprire la schermata di modifica classe.
+	
+	-Il sistema deve permettere di aprire la schermata di modifica di un'interfaccia.
+	
+	-Il sistema deve permettere di aprire l'editor del diagramma dei package.
+
+UC3:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Il sistema deve permettere di modificare una classe mediante la schermata di modifica di classe.
+	
+	-Il sistema deve permettere di aggiungere un nuovo attributo alla classe.
+	
+	-Il sistema deve permettere di modificare un attributo della classe.
+		-Il sistema deve permettere di definire la direzione dell'attributo.
+		-Il sistema deve permettere di rinominare l'attributo.
+		-Il sistema deve permettere di cambiare il tipo dell'attributo.
+		-Il sistema deve permettere di definire un valore di default per l'attributo.
+
+	-Il sistema deve permettere di eliminare un attributo della classe.
+		
+	-Il sistema deve permettere di aggiungere una nuova operazione alla classe.
+	
+	-Il sistema deve permettere di modificare un'operazione della classe.
+		-Il sistema deve permettere di impostare la visibilità dell'operazione.
+		-Il sistema deve permettere di rinominare un'operazione. 
+		-Il sistema deve permettere di definire la lista dei parametri dell'operazione.
+			-Il sistema deve permettere di aggiungere un nuovo parametro alla lista.
+			-Il sistema deve permettere di modificare un parametro della lista.
+				-Il sistema deve permettere di definire la direzione del parametro.
+				-Il sistema deve permettere di rinominare il parametro
+				-Il sistema deve permettere di definire il tipo del parametro.
+				-Il sistema deve permettere di definire il valore di default del parametro. 
+			-Il sistema deve permettere di eliminare un parametro della lista.	
+		
+		-Il sistema deve permettere di definire proprietà aggiuntive dell'operazione.
+	
+	-Il sistema deve permettere di eliminare un'operazione. 
+
+	-Il sistema deve permettere di impostare il nome della classe.
+
+	-Il sistema deve permettere di impostare la visibilità della classe.
+
+	-Il sistema deve permettere di commentare una classe.
+
+UC4:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Il sistema deve permettere di modificare un'interfaccia mediante la schermata di modifica di interfaccia.
+	-Il sistema deve permettere di aggiungere un'operazione all'interfaccia.
+	
+	-Il sistema deve permettere di modificare un'operazione all'interfaccia.
+		-Il sistema deve permettere di impostare la visibilità dell'operazione.
+		-Il sistema deve permettere di rinominare l'operazione.
+		-Il sistema deve permettere di definire la lista dei parametri dell'operazione.
+			-Il sistema deve permettere di aggiungere un nuovo parametro alla lista.
+			-Il sistema deve permettere di modificare un parametro della lista.
+				-Il sistema deve permettere di definire la direzione del parametro.
+				-Il sistema deve permettere di rinominare il parametro
+				-Il sistema deve permettere di definire il tipo del parametro.
+				-Il sistema deve permettere di definire il valore di default del parametro.
+			-Il sistema deve permettere di eliminare il parametro.
+			
+		-Il sistema deve permettere di definire il tipo di ritorno dell'operazione.
+	
+		-Il sistema deve permettere di definire proprietà aggiuntive dell'operazione.
+	
+	-Il sistema deve permettere di eliminare un'operazione dall'interfaccia. 
+	
+	-Il sistema deve permettere di rinominare l'interfaccia.
+	
+	-Il sistema deve permettere di impostare la visibilità dell'interfaccia.
+	
+	-Il sistema deve permettere di commentare l'interfaccia.
+	
+	-Il sistema deve permettere di marchiare l'interfaccia.
+	
+	-Il sistema deve permettere di passare dalla modifica di un'interfaccia al diagramma delle classi. (????????????????????)
+
+UC5:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Il sistema deve permettere di editare il diagramma dei package.
+	
+	-Il sistema deve permettere di creare un nuovo package vuoto al diagramma dei package.
+	
+	-Il sistema deve permettere di modificare un package presente nel diagramma dei package.
+		-Il sistema deve permettere di rinominare il package.
+		-Il sistema deve permettere di impostare la visibilità del package.
+		-Il sistema deve permettere di definire una dipendenza tra package.
+		-Il sistema deve permettere di rimuovere una dipendenza tra package.
+		-Il sistema deve permettere di innestare un elemento nel package.
+		-Il sistema deve permettere di rimuovere un elemento dal package.
+	
+	-Il sistema deve permettere di eliminare un package.
+	
+	-Il sistema deve permettere di passare dal diagramma dei package al diagramma delle classi. (????????????????????)
+
+UC6:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Il sistema deve permettere di editare il diagramma delle attività.
+	
+	-Il sistema deve permettere di creare una nuova attività nel diagramma delle attività.
+	
+	-Il sistema deve permettere di modificare un'attività presente nel diagramma delle attività.
+		-Il sistema deve permettere di rinominare l'attività.
+		-Il sistema deve permettere di commentare l'attività.
+		-Il sistema deve permettere di aggiungere un nuovo pin all'attività.
+		-Il sistema deve permettere di modificare un pin presente nell'attività.
+			-Il sistema deve permettere di definire la direzione del parametro.
+			-Il sistema deve permettere di rinominare il parametro.
+			-Il sistema deve permettere di definire il tipo del parametro.
+			-Il sistema deve permettere di definire i valori di default del parametro.
+		-Il sistema deve permettere di 	rimuovere un pin dall'attività.
+		-Il sistema deve permettere di aprire l'editor del bubble flowchart.
+	
+	-Il sistema deve permettere di eliminare un'attività presente nel diagramma delle attività.
+	
+	-Il sistema deve permettere di aggiungere un nuovo elemento di decisione al diagramma delle attività.
+	
+	-Il sistema deve permettere di modificare un elemento di decisione del diagramma delle attività.
+	
+	-Il sistema deve permettere di eliminare un elemento di decisione del diagramma delle attività.
+	
+	-Il sistema deve permettere di aggiungere una nuova regione di espansione al diagramma delle attività.
+	
+	-Il sistema deve permettere di modificare una regione di espansione del diagramma delle attività.
+		-Il sistema deve permettere di innestare un elemento nella regione di espansione.
+		-Il sistema deve permettere di editare la lista degli argomenti della regione di espansione.
+			-Il sistema deve permettere di aggiungere un nuovo argomento.
+			-Il sistema deve permettere di modificare un argomento.
+			-Il sistema deve permettere di rimuovere un argomento.
+		-Il sistema deve permettere di rimuovere un elemento dalla regione di espansione.
+	-Il sistema deve permettere di eliminare una regione di espansione del diagramma delle attività.
+	
+UC7:---------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Il sistema deve permettere di editare il bubble flowchart.
+	
+	-Il sistema deve permettere di aggiungere una nuova bubble al diagramma delle bubble flowchart.
+	
+	-Il sistema deve permettere di modificare una bubble presente nel diagramma delle bubble flowchart.
+	
+	-Il sistema deve permettere di eliminare una bubble presente nel diagramma delle bubble flowchart.
+	
+	-Il sistema deve permettere di aggiungere un nuovo elemento di decisione al diagramma delle bubble flowchart.
+
+	-Il sistema deve permettere di modificare un elemento di decisione presente nel diagramma delle bubble flowchart.
+
+	-Il sistema deve permettere di eliminare un elemento di decisione presente nel diagramma delle bubble flowchart.
+
+	-Il sistema deve permettere di passare dal bubble flowchart al diagramma delle attività. (????????????????????)
