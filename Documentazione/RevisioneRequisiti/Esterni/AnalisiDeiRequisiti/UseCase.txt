@@ -1,64 +1,66 @@
-Gestisci progetto
-	Creare un progetto
-	Caricare un progetto
-	Salvare un progetto
-	Annulla ultimo comando
-	Ripristina ultimo comando
-	Leggere il codice
-	Esportare il codice
+1.	Gestisci progetto
+	1.	Creare un progetto
+	2.	Caricare un progetto
+	3.	Chiudere il progetto attuale
+	4.	Salvare un progetto
+	5.	Annulla ultimo comando
+	6.	Ripristina ultimo comando
+	7.	Leggere il codice
+	8.	Esportare il codice
 
-Editare il diagramma delle classi
-	Creare una classe
-	Modificare una classe
-		Aprire la schermata di modifica di classe corrispondente
-	Eliminare una classe
-	Creare una relazione
-		Creare una dipendenza
-		Creare un'associazione
-		Creare un'ereditarietà
-		Creare un'aggregazione
-		Creare una composizione
-		Creare un raffinamento
-		Creare una realizzazione di interfaccia
-	Modificare una relazione
-		Modificare una dipendenza
-		Modificare un'associazione
-		Modificare un'ereditarietà
-		Modificare un'aggregazione
-		Modificare una composizione
-		Modificare un raffinamento
-		Modificare una realizzazione di interfaccia
-	Eliminare una relazione
-		Eliminare una dipendenza
-		Eliminare un'associazione
-		Eliminare un'ereditarietà
-		Eliminare un'aggregazione
-		Eliminare una composizione
-		Eliminare un raffinamento
-		Eliminare una realizzazione di interfaccia
-	Creare un'interfaccia
-	Modificare un'interfaccia
-		Aprire la schermata di modifica di interfaccia corrispondente
-	Eliminare un'interfaccia
-	Creare un commento
-	Collegare un commento
-	Modificare un commento
-	Eliminare un commento
-	Aprire il diagramma dei package
+2.	Editare il diagramma delle classi
+	1.	Creare una classe
+	2.	Modificare una classe
+		1.	Aprire la schermata di modifica di classe corrispondente
+	3.	Eliminare una classe
+	4.	Creare una relazione
+		1.	Creare una dipendenza
+		2.	Creare un'associazione
+		3.	Creare un'ereditarietà
+		4.	Creare un'aggregazione
+		5.	Creare una composizione
+		6.	Creare un raffinamento
+		7.	Creare una realizzazione di interfaccia
+	5.	Modificare una relazione
+		1.	Modificare una dipendenza
+		2.	Modificare un'associazione
+		3.	Modificare un'ereditarietà
+		4.	Modificare un'aggregazione
+		5.	Modificare una composizione
+		6.	Modificare un raffinamento
+		7.	Modificare una realizzazione di interfaccia
+	6.	Eliminare una relazione
+		1.	Eliminare una dipendenza
+		2.	Eliminare un'associazione
+		3.	Eliminare un'ereditarietà
+		4.	Eliminare un'aggregazione
+		5.	Eliminare una composizione
+		6.	Eliminare un raffinamento
+		7.	Eliminare una realizzazione di interfaccia
+	7.	Creare un'interfaccia
+	8.	Modificare un'interfaccia
+		1.	Aprire la schermata di modifica di interfaccia corrispondente
+	9.	Eliminare un'interfaccia
+	10.	Creare un commento
+	11.	Collegare un commento
+	12.	Modificare un commento
+	13.	Eliminare un commento
+	14.	Aprire il diagramma dei package
 
-Editare una classe mediante la schermata di modifica di classe
-	Aggiungere un attributo
-	Modificare un attributo
-	Eliminare un attributo
-	Aggiungere un'operazione
-	Modificare un'operazione
-		Aggiungere un parametro
-		Modificare un parametro
-		Eliminare un parametro
-	Eliminare un'operazione
-	Commentare una classe
-	Marchiare una classe
-	Tornare all'editor del diagramma delle classi
+3.	Editare una classe mediante la schermata di modifica di classe
+	1.	Aggiungere un attributo
+	2.	Modificare un attributo
+	3.	Eliminare un attributo
+	4.	Aggiungere un'operazione
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~BORDELLO
+	5.	Modificare un'operazione
+		1.	Aggiungere un parametro
+		2.	Modificare un parametro
+		3.	Eliminare un parametro
+	6.	Eliminare un'operazione
+	7.	Commentare una classe
+	8.	Marchiare una classe
+	9.	Tornare all'editor del diagramma delle classi
 
 Editare un'interfaccia mediante la schermata di modifica di interfaccia
 	Aggiungere un'operazione
