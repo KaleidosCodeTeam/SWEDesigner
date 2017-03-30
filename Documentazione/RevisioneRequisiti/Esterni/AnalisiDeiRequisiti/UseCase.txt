@@ -52,7 +52,6 @@
 	2.	Modificare un attributo
 	3.	Eliminare un attributo
 	4.	Aggiungere un'operazione
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~BORDELLO
 	5.	Modificare un'operazione
 		1.	Aggiungere un parametro
 		2.	Modificare un parametro
@@ -62,54 +61,55 @@
 	8.	Marchiare una classe
 	9.	Tornare all'editor del diagramma delle classi
 
-Editare un'interfaccia mediante la schermata di modifica di interfaccia
-	Aggiungere un'operazione
-	Modificare un'operazione
-		Aprire il diagramma delle attività corrispondente
-		Aggiungere un parametro
-		Modificare un parametro
-		Eliminare un parametro
-	Eliminare un'operazione
-	Commentare un'interfaccia
-	Marchiare un'interfaccia
-	Tornare all'editor del diagramma delle classi
+4.	Editare un'interfaccia mediante la schermata di modifica di interfaccia
+	1.	Aggiungere un'operazione
+	2.	Modificare un'operazione
+		1.	Aprire il diagramma delle attività corrispondente
+		2.	Aggiungere un parametro
+		3.	Modificare un parametro
+		4.	Eliminare un parametro
+	3.	Eliminare un'operazione
+	4.	Commentare un'interfaccia
+	5.	Marchiare un'interfaccia
+	6.	Tornare all'editor del diagramma delle classi
 
-Editare il diagramma dei package
-	Creare un package
-	Modificare un package
-		Innestare un elemento
-		Rimuovere un elemento
-	Eliminare un package
-	Definire una dipendenza
-	Rimuovere una dipendenza
-	Tornare all'editor del diagramma delle classi
+5.	Editare il diagramma dei package
+	1.	Creare un package
+	2.	Modificare un package
+		1.	Innestare un elemento
+		2.	Rimuovere un elemento
+	3.	Eliminare un package
+	4.	Definire una dipendenza
+	5.	Rimuovere una dipendenza
+	6.	Tornare all'editor del diagramma delle classi
 
-Editare il diagramma delle attività
-	Aggiungere un'attività
-	Modificare un'attività
-		Aprire il bubble flowchart corrispondente
-		Aggiungere un pin
-		Modificare un pin
-		Eliminare un pin
-	Aggiungere una trasformazione tra pin
-	Modificare una trasformazione tra pin
-	Eliminare una trasformazione tra pin
-	Aggiungere un elemento di decisione
-	Modificare un elemento di decisione
-	Eliminare un elemento di decisione
-	Creare una regione di espansione
-	Modificare una regione di espansione
-	Eliminare una regione di espansione
-	Aggiungere un evento temporale
-	Modificare un evento temporale
-	Eliminare un evento temporale
-	Tornare all'editor del diagramma delle classi
+6.	Editare il diagramma delle attività
+	1.	Aggiungere un'attività
+	2.	Modificare un'attività
+		1.	Aprire il bubble flowchart corrispondente
+		2.	Aggiungere un pin
+		3.	Modificare un pin
+		4.	Eliminare un pin
+	3.	Eliminare un'attività
+	4.	Aggiungere un elemento di decisione
+	5.	Modificare un elemento di decisione
+	6.	Eliminare un elemento di decisione
+	7.	Creare una regione di espansione
+	8.	Modificare una regione di espansione
+	9.	Eliminare una regione di espansione
+	10.	Aggiungere una trasformazione tra pin
+	11.	Modificare una trasformazione tra pin
+	12.	Eliminare una trasformazione tra pin
+	13.	Aggiungere un evento temporale
+	14.	Modificare un evento temporale
+	15.	Eliminare un evento temporale
+	16.	Tornare all'editor del diagramma delle classi
 
-Editare il bubble flowchart
-	Aggiungere una bubble
-	Modificare una bubble
-	Eliminare una bubble
-	Aggiungere un elemento di decisione
-	Modificare un elemento di decisione
-	Eliminare un elemento di decisione
-	Tornare all'editor del diagramma delle attività
+7.	Editare il bubble flowchart
+	1.	Aggiungere una bubble
+	2.	Modificare una bubble
+	3.	Eliminare una bubble
+	4.	Aggiungere un elemento di decisione
+	5.	Modificare un elemento di decisione
+	6.	Eliminare un elemento di decisione
+	7.	Tornare all'editor del diagramma delle attività
