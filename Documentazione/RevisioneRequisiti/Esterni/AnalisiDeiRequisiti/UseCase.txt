@@ -40,15 +40,17 @@
 	7.	Creare un'interfaccia                                       E---->modificare il nome (ma non è uc) 
 	8.	Modificare un'interfaccia				
 		1.	Aprire la schermata di modifica di interfaccia corrispondente
+			ALTERNATIVO: Viene annullata la modifica, l'interfaccia rimane nello stato precedente al tentativo di modifica;
 	9.	Eliminare un'interfaccia									I---->eliminare una(o più) relazione(UC2.6)   I----->eliminare diagramma delle attività(UC6.3)
 	10.	Creare un commento
 	11.	Collegare un commento
 	12.	Modificare un commento
 	13.	Eliminare un commento
 	14.	Aprire il diagramma dei package
+	15.	Riposizionare un elemento
 
 3.	Editare una classe mediante la schermata di modifica di classe
-	1.	Aggiungere un attributo											E--->errore	none
+	1.	Aggiungere un attributo											E--->errore	nome
 	2.	Modificare un attributo											E--->errore nome
 	3.	Eliminare un attributo
 	4.	Aggiungere un'operazione										E--->errore nome
@@ -82,10 +84,11 @@
 	4.	Definire una dipendenza
 	5.	Rimuovere una dipendenza
 	6.	Tornare all'editor del diagramma delle classi
+	7.	Riposizionare un elemento
 
 6.	Editare il diagramma delle attività
 	1.	Aggiungere un'attività										
-		2.	Modificare un'attività										
+	2.	Modificare un'attività										
 		1.	Aprire il bubble flowchart corrispondente
 		2.	Aggiungere un pin										
 		3.	Modificare un pin										
@@ -104,6 +107,7 @@
 	14.	Modificare un evento temporale
 	15.	Eliminare un evento temporale
 	16.	Tornare all'editor del diagramma delle classi
+	17. Riposizionare un elemento
 
 7.	Editare il bubble flowchart
 	1.	Aggiungere una bubble										E--->errore nome di eventuali variabili
@@ -113,3 +117,4 @@
 	5.	Modificare un elemento di decisione
 	6.	Eliminare un elemento di decisione
 	7.	Tornare all'editor del diagramma delle attività
+	8.	Riposizionare un elemento
