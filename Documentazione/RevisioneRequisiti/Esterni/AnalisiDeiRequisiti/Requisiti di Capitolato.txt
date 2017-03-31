@@ -43,9 +43,6 @@ OBLIGATORI MA PROBABILMENTE INTERNI
 
 	-Il prodotto deve essere hostato su un server. V
 	-Il prodotto deve permettere la creazione di diagrammi che modellino realtà appartenenti al dominio dei giochi da tavolo. F
-
-	Desiderabili
-	-Implementare l'applicazione lato server in Java, in quanto facilita il test (compilatore) e non bisogna simulare l'ereditarietà. V
 	
 
 3 RIUNIONE 17/3/2017
