@@ -1,19 +1,19 @@
 1.	Gestisci progetto
-	1.	Creare un progetto
+	1.	Creare un progetto    										E--->errore nome
 	2.	Caricare un progetto
 	3.	Chiudere il progetto attuale
-	4.	Salvare un progetto
+	4.	Salvare un progetto											E--->errore nome se salva con nome
 	5.	Annulla ultimo comando
 	6.	Ripristina ultimo comando
 	7.	Leggere il codice
 	8.	Esportare il codice
 
 2.	Editare il diagramma delle classi
-	1.	Creare una classe
+	1.	Creare una classe                                           E---->modificare il nome (ma non è uc)
 	2.	Modificare una classe
 		1.	Aprire la schermata di modifica di classe corrispondente
-	3.	Eliminare una classe
-	4.	Creare una relazione
+	3.	Eliminare una classe										I---->eliminare una(o più) relazione(UC2.6)   I----->eliminare diagramma delle attività(UC6.3)
+	4.	Creare una realizzazione                                    E---->modificare il nome (ma non è uc) 
 		1.	Creare una dipendenza
 		2.	Creare un'associazione
 		3.	Creare un'ereditarietà
@@ -37,10 +37,10 @@
 		5.	Eliminare una composizione
 		6.	Eliminare un raffinamento
 		7.	Eliminare una realizzazione di interfaccia
-	7.	Creare un'interfaccia
-	8.	Modificare un'interfaccia
+	7.	Creare un'interfaccia                                       E---->modificare il nome (ma non è uc) 
+	8.	Modificare un'interfaccia				
 		1.	Aprire la schermata di modifica di interfaccia corrispondente
-	9.	Eliminare un'interfaccia
+	9.	Eliminare un'interfaccia									I---->eliminare una(o più) relazione(UC2.6)   I----->eliminare diagramma delle attività(UC6.3)
 	10.	Creare un commento
 	11.	Collegare un commento
 	12.	Modificare un commento
@@ -48,13 +48,13 @@
 	14.	Aprire il diagramma dei package
 
 3.	Editare una classe mediante la schermata di modifica di classe
-	1.	Aggiungere un attributo
-	2.	Modificare un attributo
+	1.	Aggiungere un attributo											E--->errore	none
+	2.	Modificare un attributo											E--->errore nome
 	3.	Eliminare un attributo
-	4.	Aggiungere un'operazione
-	5.	Modificare un'operazione
+	4.	Aggiungere un'operazione										E--->errore nome
+	5.	Modificare un'operazione										
 		1.	Aggiungere un parametro
-		2.	Modificare un parametro
+		2.	Modificare un parametro										E--->errore nome
 		3.	Eliminare un parametro
 	6.	Eliminare un'operazione
 	7.	Commentare una classe
@@ -62,11 +62,11 @@
 	9.	Tornare all'editor del diagramma delle classi
 
 4.	Editare un'interfaccia mediante la schermata di modifica di interfaccia
-	1.	Aggiungere un'operazione
+	1.	Aggiungere un'operazione										E--->errore nome
 	2.	Modificare un'operazione
 		1.	Aprire il diagramma delle attività corrispondente
 		2.	Aggiungere un parametro
-		3.	Modificare un parametro
+		3.	Modificare un parametro										E--->errore nome
 		4.	Eliminare un parametro
 	3.	Eliminare un'operazione
 	4.	Commentare un'interfaccia
@@ -74,7 +74,7 @@
 	6.	Tornare all'editor del diagramma delle classi
 
 5.	Editare il diagramma dei package
-	1.	Creare un package
+	1.	Creare un package										E--->errore nome
 	2.	Modificare un package
 		1.	Innestare un elemento
 		2.	Rimuovere un elemento
@@ -84,16 +84,16 @@
 	6.	Tornare all'editor del diagramma delle classi
 
 6.	Editare il diagramma delle attività
-	1.	Aggiungere un'attività
-	2.	Modificare un'attività
+	1.	Aggiungere un'attività										
+		2.	Modificare un'attività										
 		1.	Aprire il bubble flowchart corrispondente
-		2.	Aggiungere un pin
-		3.	Modificare un pin
+		2.	Aggiungere un pin										
+		3.	Modificare un pin										
 		4.	Eliminare un pin
-	3.	Eliminare un'attività
-	4.	Aggiungere un elemento di decisione
-	5.	Modificare un elemento di decisione
-	6.	Eliminare un elemento di decisione
+	3.	Eliminare un'attività										I--->Eliminare bubble flow chart UC7.7
+	4.	Aggiungere un elemento di decisione										
+	5.	Modificare un elemento di decisione							
+	6.	Eliminare un elemento di decisione							I--->Eliminare bubble flow chart UC7.7
 	7.	Creare una regione di espansione
 	8.	Modificare una regione di espansione
 	9.	Eliminare una regione di espansione
@@ -106,8 +106,8 @@
 	16.	Tornare all'editor del diagramma delle classi
 
 7.	Editare il bubble flowchart
-	1.	Aggiungere una bubble
-	2.	Modificare una bubble
+	1.	Aggiungere una bubble										E--->errore nome di eventuali variabili
+	2.	Modificare una bubble										E--->errore nome di eventuali variabili
 	3.	Eliminare una bubble
 	4.	Aggiungere un elemento di decisione
 	5.	Modificare un elemento di decisione
