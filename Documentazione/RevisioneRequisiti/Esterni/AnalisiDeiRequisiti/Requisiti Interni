@@ -14,85 +14,76 @@ UC1:----------------A POSTO-----------------------------------------------------
 	-Il sistema deve permettere di esportare il codice prodotto. 
 
 UC2:------------------A POSTO---------------------------------------------------------------------------------------------------------------------------
--Il sistema deve permettere di realizzare il diagramma delle classi.
+R0F15 -Il sistema deve permettere di realizzare il diagramma delle classi.
 
-	-Il sistema deve permettere di aggiungere una nuova classe al diagramma delle classi.
+	1-Il sistema deve permettere di aggiungere una nuova classe al diagramma delle classi.
 	
-	-Il sistema deve permettere la modifica di una classe presente nel diagramma delle classi.
-		-Il sistema deve permettere di rinominare una classe presente nel diagramma delle classi.
-		-Il sistema deve permettere di innestare una classe all'interno di un'altra classe.
-		-Il sistema deve permettere di impostare l'importanza di una classe.
-		-Il sistema deve permettere di modificare l'importanza di una classe.
-			-Il sistema deve permettere di modificare l'importanza di una classea a "bassa".
-			-Il sistema deve permettere di modificare l'importanza di una classe a "media".
-			-Il sistema deve permettere di modificare l'importanza di una classe ad "alta".
+	2-Il sistema deve permettere la modifica di una classe presente nel diagramma delle classi.
+		1-Il sistema deve permettere di rinominare una classe presente nel diagramma delle classi.
+		2-Il sistema deve permettere di innestare una classe all'interno di un'altra classe.
+		3-Il sistema deve permettere di impostare l'importanza di una classe.
+		4-Il sistema deve permettere di modificare l'importanza di una classe.
+			1-Il sistema deve permettere di modificare l'importanza di una classea a "bassa".
+			2-Il sistema deve permettere di modificare l'importanza di una classe a "media".
+			3-Il sistema deve permettere di modificare l'importanza di una classe ad "alta".
+		5-Il sistema deve permettere di passare alla schermata di modifica di classe.
 
-	-Il sistema deve permettere l'eliminazione di una classe presente nel diagramma delle classi.
+	3-Il sistema deve permettere l'eliminazione di una classe presente nel diagramma delle classi.
 	
+
 	-Il sistema deve permettere la definizione di una relazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di definire una dipendenza tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di definire un'associazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di definire un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di definire un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di definire un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere il raffinamento di una classe parametrica. 
-		-Il sistema deve permettere di definire la realizzazione di un'interfaccia.
+		1-Il sistema deve permettere di definire una dipendenza tra due elementi presenti nel diagramma delle classi.
+		2-Il sistema deve permettere di definire un'associazione tra due elementi presenti nel diagramma delle classi.
+		3-Il sistema deve permettere di definire un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
+		4-Il sistema deve permettere di definire un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
+		5-Il sistema deve permettere di definire un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
+		6-Il sistema deve permettere il raffinamento di una classe parametrica. 
+		7-Il sistema deve permettere di definire la realizzazione di un'interfaccia.
 
-	-Il sistema deve permettere la modifica di una relazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di modificare una dipendenza tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di modificare un'associazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di modificare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di modificare un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di modificare un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di modificare il raffinamento di una classe parametrica. 
-		-Il sistema deve permettere di modificare la realizzazione di un'interfaccia.
+R0F15.5-Il sistema deve permettere la modifica di una relazione tra due elementi presenti nel diagramma delle classi.
+		1-Il sistema deve permettere di modificare una dipendenza tra due elementi presenti nel diagramma delle classi.
+		2-Il sistema deve permettere di modificare un'associazione tra due elementi presenti nel diagramma delle classi.
+		3-Il sistema deve permettere di modificare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
+		4-Il sistema deve permettere di modificare un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
+		5-Il sistema deve permettere di modificare un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
+		6-Il sistema deve permettere di modificare il raffinamento di una classe parametrica. 
+		7-Il sistema deve permettere di modificare la realizzazione di un'interfaccia.
 	
-	-Il sistema deve permettere l'eliminazione di una relazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di eliminare una dipendenza tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di eliminare un'associazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di eliminare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di eliminare un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di eliminare un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
-		-Il sistema deve permettere di eliminare il raffinamento di una classe parametrica. 
-		-Il sistema deve permettere di eliminare la realizzazione di un'interfaccia.
+R015.6-Il sistema deve permettere l'eliminazione di una relazione tra due elementi presenti nel diagramma delle classi.
+		1-Il sistema deve permettere di eliminare una dipendenza tra due elementi presenti nel diagramma delle classi.
+		2-Il sistema deve permettere di eliminare un'associazione tra due elementi presenti nel diagramma delle classi.
+		3-Il sistema deve permettere di eliminare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi.
+		4-Il sistema deve permettere di eliminare un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi.
+		5-Il sistema deve permettere di eliminare un vincolo di composizione tra due elementi presenti nel diagramma delle classi.
+		6-Il sistema deve permettere di eliminare il raffinamento di una classe parametrica. 
+		7-Il sistema deve permettere di eliminare la realizzazione di un'interfaccia.
 	
-	-Il sistema deve permettere di aggiungere una nuova interfaccia al diagramma delle classi.
+	7-Il sistema deve permettere di aggiungere una nuova interfaccia al diagramma delle classi.
 	
-	-Il sistema deve permettere la modifica di un'interfaccia presente nel diagramma delle classi.
-		-Il sistema deve permettere di rinominare un'interfaccia
-		-Il sistema deve permettere di impostare l'importanza dell'interfaccia.
-			-Il sistema deve permettere di modificare l'importanza di una classe a a "bassa".
-			-Il sistema deve permettere di modificare l'importanza di una classe a "media".
-			-Il sistema deve permettere di modificare l'importanza di una classe ad "alta".
+	8-Il sistema deve permettere la modifica di un'interfaccia presente nel diagramma delle classi.
+		1-Il sistema deve permettere di rinominare un'interfaccia
+		2-Il sistema deve permettere di impostare l'importanza dell'interfaccia.
+			1-Il sistema deve permettere di modificare l'importanza di una classe a a "bassa".
+			2-Il sistema deve permettere di modificare l'importanza di una classe a "media".
+			3-Il sistema deve permettere di modificare l'importanza di una classe ad "alta".
+		3-Il sistema deve permettere di aprire la schermata di modifica di un'interfaccia.
 
-	-Il sistema deve permettere l'eliminazione di un'interfaccia presente nel diagramma delle classi.
+	9-Il sistema deve permettere l'eliminazione di un'interfaccia presente nel diagramma delle classi.
 	
-	-Il sistema deve permettere di aggiungere un commento all'interno del diagramma delle classi.
+	10-Il sistema deve permettere di aggiungere un commento all'interno del diagramma delle classi.
 	
-	-Il sistema deve permettere il collegamento di un commento ad un elemento presente nel diagramma delle classi.
+	11-Il sistema deve permettere il collegamento di un commento ad un elemento presente nel diagramma delle classi.
 	
-	-Il sistema deve permettere di modificare un commento presente nel diagramma delle classi.
+	12-Il sistema deve permettere di modificare un commento presente nel diagramma delle classi.
 	
-	-Il sistema deve permettere l'eliminazione di un commento presente nel diagramma delle classi.
+	13-Il sistema deve permettere l'eliminazione di un commento presente nel diagramma delle classi.
 	
-	-Il sistema deve permettere di cambiare layer di visualizzazione.
-		-Il sistema deve permettere di visualizzare il layer superiore.
-		-Il sistema deve permettere di visualizzare il layer inferiore.
+	14-Il sistema deve permettere di cambiare layer di visualizzazione.
+		1-Il sistema deve permettere di visualizzare il layer superiore.
+		2-Il sistema deve permettere di visualizzare il layer inferiore.
 	
-	-Il sistema deve permettere di aprire la schermata di modifica classe.
-	
-	-Il sistema deve permettere di aprire la schermata di modifica di un'interfaccia.
-	
-	-Il sistema deve permettere di aprire l'editor del diagramma dei package.
+	17-Il sistema deve permettere di aprire l'editor del diagramma dei package.
 
-	-Il sistema deve permettere di marchiare una classe.
-		-Il sistema deve permettere di marchiare una classe statica.
-		-Il sistema deve permettere di marchiare una classe astratta.
-		-Il sistema deve permettere di marchiare una classe finale.
-		-Il sistema deve permettere di marchiare una classe "frozen".
-		-Il sistema deve permettere di marchiare una classe "readOnly".
-		-Il sistema deve permettere di marchiare una classe "enum".
-		-Il sistema deve permettere di marchiare una classe parametrica.
 
 UC3:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di modificare una classe mediante la schermata di modifica di classe.
@@ -131,6 +122,14 @@ UC3:----------------------------------------------------------------------------
 
 	-Il sistema deve permettere di commentare una classe.
 
+	-Il sistema deve permettere di marchiare una classe.
+		1-Il sistema deve permettere di marchiare una classe statica.
+		2-Il sistema deve permettere di marchiare una classe astratta.
+		3-Il sistema deve permettere di marchiare una classe finale.
+		4-Il sistema deve permettere di marchiare una classe "frozen".
+		5-Il sistema deve permettere di marchiare una classe "readOnly".
+		6-Il sistema deve permettere di marchiare una classe "enum".
+		7-Il sistema deve permettere di marchiare una classe parametrica.
 UC4:--------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di modificare un'interfaccia mediante la schermata di modifica di interfaccia.
 	-Il sistema deve permettere di aggiungere un'operazione all'interfaccia.
@@ -171,14 +170,15 @@ UC5:----------------------------------------------------------------------------
 	-Il sistema deve permettere di modificare un package presente nel diagramma dei package.
 		-Il sistema deve permettere di rinominare il package.
 		-Il sistema deve permettere di impostare la visibilità del package.
-		-Il sistema deve permettere di definire una dipendenza tra package.
-		-Il sistema deve permettere di rimuovere una dipendenza tra package.
 		-Il sistema deve permettere di innestare un elemento nel package.
 		-Il sistema deve permettere di rimuovere un elemento dal package.
 	
 	-Il sistema deve permettere di eliminare un package.
 	
 	-Il sistema deve permettere di passare dal diagramma dei package al diagramma delle classi. (????????????????????)
+
+	-Il sistema deve permettere di definire una dipendenza tra package.
+	-Il sistema deve permettere di rimuovere una dipendenza tra package.
 
 UC6---------------------------------------------------------------------------------------------------------------------------------------------------------
 -Il sistema deve permettere di editare il diagramma delle attività.
