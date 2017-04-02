@@ -34,8 +34,8 @@
 					\\
 					indicando data di creazione e breve descrizione del documento.\\
 					Per permettere una migliore lettura del codice \LaTeX, lo stile di indentazione da
-					adottare per la stesura dei file di documentazione è quella di indentare il contenuto
-					con una tabulazione ogni qualvolta si scrive un nuovo elemento di testo: sezione,
+					adottare per la stesura dei file di documentazione prevede di indentare il contenuto
+					con una tabulazione ogni qualvolta si scriva un nuovo elemento di testo: sezione,
 					sottosezione, sotto-sottosezione, paragrafo, ecc.\\
 			\subsubsection{Struttura dei documenti}
 				\paragraph{Prima pagina\\}
@@ -104,7 +104,7 @@
 						essere preceduti da spaziatura;
 						\item \textbf{Maiuscole}: l'iniziale maiuscola viene usata per il nome del
 						team, del progetto, dei documenti, dei ruoli, delle varie fasi di lavoro e
-						per le parole Proponente e Committente.\\
+						per le parole Fornitore, Proponente e Committente qualora usate pronominalmente.\\
 						Inoltre viene usata negli elenchi puntati e nei casi indicati dalla lingua
 						italiana.
 					\end{itemize}
@@ -250,7 +250,7 @@
 					Ogni tabella deve essere accompagnata da una descrizione che specifichi anche
 					l'indice ad essa associata per renderla tracciabile all'interno del documento.
 				\paragraph{Immagini\\}
-					Le immagini devono essere convertite in pdf prima di essere incorporate nei
+					Le immagini devono essere convertite in formato png o jpg prima di essere incorporate nei
 					documenti e ciascuna deve essere accompagnata da una descrizione che specifichi anche l'indice ad
 					essa associata.
 			\subsubsection{Classificazione documenti}
@@ -425,7 +425,7 @@
 				Committente e dal Proponente.\\
 				Una volta che i	documenti ottengono l'approvazione dei \verificatori, il
 				\responsabilediprogetto\ controlla eventuali errori o mancanze.
-				Nel caso se ne identifichino, si deve segnalare le criticità ai
+				Nel caso se ne identifichino, si devono segnalare le criticità ai
 				redattori che provvederanno a correggerle.
 		\subsection{Strumento di coordinamento}
 			Come piattaforma di gestione del gruppo è stato scelto \textbf{Asana}. Asana fornisce:
@@ -434,7 +434,7 @@
 				\item Un calendario per organizzare i compiti;
 				\item La visualizzazione del repository associato al progetto;
 				\item Un sistema di rendicontazione del tempo;
-				\item La possibilità di integrare Google Drive, GitHub e web app come Instagant.
+				\item La possibilità di integrare Google Drive, GitHub e web app come Instagantt.
 			\end{itemize}
 			Sono state valutate diverse alternative ma, dopo un'attenta fase di test, nessuna di queste è
 			stata ritenuta all'altezza di Asana per quantità e qualità delle caratteristiche proposte.\\
@@ -448,13 +448,12 @@
 			\end{itemize}
 			La gestione delle attività sarà effettuata utilizzando i task di Asana.
 			Ogni attività è rappresentata da uno o più task che devono essere creati dal
-			\responsabilediprogetto, il	quale provvederà ad assegnarne lo svolgimento ad uno o più membri
-			del gruppo. Il \responsabilediprogetto\ provvederà anche ad assegnare almeno un \verificatore\ in
-			ogni attività che avrà il compito di svolgere il task di verifica rispettivamente dedicato
-			(solamente al termine di quelli di "produzione").
+			\responsabilediprogetto, il	quale provvederà ad assegnarne lo svolgimento ciascuno ad un mambro del gruppo. Il \responsabilediprogetto\ provvederà anche ad assegnare un \verificatore\ ad
+			ogni attività, che avrà il compito di svolgere il task di verifica rispettivamente dedicato
+			(da iniziare solamente al termine di quelli di "produzione").
 			Qualora un membro svolga un task di un'attività assegnatagli, dovrà segnalarne il completamento
 			spuntandolo dalla rispettiva lista.\\
-			Su ogni task il \responsabilediprogetto\ deve inserire il tempo previsto per completarlo e al
+			Per ogni task il \responsabilediprogetto\ deve inserire il tempo previsto per completarlo e al
 			completamento di quest'ultimo, deve essere segnato in quanto tempo
 			è effettivamente stato svolto.\\
 			Al termine di tutti i task di un'attività, il \responsabilediprogetto\ può chiuderne la lista.
@@ -476,7 +475,7 @@
 				del gruppo \kaleidoscode.
 			\end{itemize}
 			In particolare, si è deciso di utilizzare il servizio di hosting GitHub, vista la richiesta
-			del proponente all'interno del capitolato d'appalto.
+			del Proponente all'interno del capitolato d'appalto.
 			In ogni repository il branch ``Master'' deve contenere solamente versioni di documentazione e/o
 			codice approvate dal \responsabilediprogetto. Per questo motivo deve essere creato almeno un
 			branch alternativo nel quale lavorare liberamente.
@@ -528,15 +527,14 @@
 			\subsubsection{\LaTeX}
 				Per la stesura dei documenti è stato scelto di utilizzare il linguaggio \LaTeX.
 				La scelta è stata quasi obbligata in quanto \LaTeX\ permette di separare il contenuto dalla
-				formattazione, permettendo un versionamento più semplice e consentendo di definire templates
-				condivisi per uniformare i documenti. Altre soluzioni come Microsoft Office, LibreOffice o
+				formattazione, permettendo un versionamento più semplice e consentendo di definire template condivisi per uniformare i documenti. Altre soluzioni come Microsoft Office, LibreOffice o
 				Google Docs non avrebbero consentito un livello altrettanto elevato di separazione portando
 				ad un aumento del lavoro da parte dei membri del gruppo e una maggior difficoltà di
 				uniformazione dei contenuti.
 				Per la scrittura di documenti \LaTeX\ l'editor consigliato è \textbf{TeXstudio}.
 			\subsubsection{Strumenti per il controllo ortografico}
 				Per eseguire una verifica automatica dei documenti approssimativa,
-				viene usato il controllo ortografico LanguageTool versione 3.6, integrabile
+				viene usato il programma di controllo ortografico LanguageTool versione 3.6, integrabile
 				nell'editor \LaTeX\ TexStudio.
 			\subsubsection{Strumenti per i diagrammi UML}	
 				Per creare i diagrammi UML dei casi d'uso presenti nel documento \analisideirequisitiv,
@@ -565,8 +563,8 @@
 			\subsubsection{Strumenti per la validazione W3C}
 				L'applicativo web verrà testato anche attraverso gli strumenti di validazione online:
 				\begin{itemize}
-					\item \url{https://validator.w3.org/} per le pagine web;
-					\item \url{https://jigsaw.w3.org/css-validator/} per i fogli di stile.
+					\item \url{https://validator.w3.org/} (02/04/2017) per le pagine web;
+					\item \url{https://jigsaw.w3.org/css-validator/} (02/04/2017) per i fogli di stile.
 				\end{itemize}
 			\subsubsection{Script}
 				È stato deciso di usare script dedicati per le seguenti operazioni:
