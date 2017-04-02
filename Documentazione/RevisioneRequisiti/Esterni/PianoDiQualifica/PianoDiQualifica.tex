@@ -5,6 +5,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{../../../Templates/kaleidos}
 \renewcommand{\abstractname}{Tabella contenuti}
+\newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}
 
 \author{KaleidosCode}
 \date{09/03/2017}	% aggiornare la data
@@ -46,14 +47,18 @@
 		\subfile{DiarioModifichePdQ}
 	\newpage
 		\tableofcontents
+	\newpage
+		\listoftables
+	\newpage
 	\pagestyle{mymain}
-	\newpage
 		\subfile{Sezioni/IntroduzionePdQ}
-	\newpage
-		\subfile{Sezioni/DefinizioneObiettiviDiQualita}
 	\newpage
 		\subfile{Sezioni/VisioneGenerale}
 	\newpage
 		\subfile{Sezioni/VisioneDettaglio}
+	\newpage
+		\subfile{Sezioni/GestioneAmministrativa}
+%	\newpage
+%		\subfile{Sezioni/ResocontoAttivita}
 	\label{LastPage}
 \end{document}
