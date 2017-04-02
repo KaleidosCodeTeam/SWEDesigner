@@ -1,41 +1,182 @@
 \documentclass[../PianoDiQualifica.tex]{subfiles}
 \begin{document}
 	\section{Visione generale della strategia}
-	Per garantire la qualità dei prodotti realizzati durante lo sviluppo del progetto, è indispensabile definire e perseguire strategie che assicurino la qualità dei processi adottati, nonchè il loro continuo miglioramento; inoltre, è necessario definire metriche e pianificare attività che valutino in modo preciso la qualità dei prodotti ottenuti e dei processi adottati. A tal scopo, verranno adottate le seguenti strategie:
-	\begin{itemize}
-	\item Definizione accurata di norme che regolamentano e standardizzano i processi coinvolti nel progetto, in termini di:
+		Per garantire la qualità dei prodotti realizzati durante lo sviluppo del
+		progetto è indispensabile definire e perseguire strategie che assicurino la
+		qualità dei processi adottati nonché il loro continuo miglioramento;
+		inoltre, è necessario definire metriche e pianificare attività che valutino in
+		modo preciso la qualità dei prodotti ottenuti e dei processi adottati. A tal
+		scopo verranno adottate le seguenti strategie:
 		\begin{itemize}
-		\item Processi di fornitura;
-		\item Processi di sviluppo;
-		\item Processi di supporto;
-		\item Processi organizzativi;
+			\item Definizione accurata di norme che regolamentano e standardizzano i
+			processi coinvolti nel progetto in termini di:
+				\begin{itemize}
+					\item Processi di fornitura;
+					\item Processi di sviluppo;
+					\item Processi di supporto;
+					\item Processi organizzativi.
+				\end{itemize}
+			\item Descrizione dettagliata delle strategie di pianificazione adottate
+			per lo sviluppo del progetto in termini di:
+				\begin{itemize}
+					\item Modello di sviluppo adottato;
+					\item Analisi dei rischi che si possono incontrare;
+					\item Pianificazione delle attività e dei tempi;
+					\item Stima preventiva delle risorse che saranno impiegate;
+					\item Assegnazione delle risorse al fine di portare a termine le
+					attività pianificate nei tempi previsti;
+					\item Consuntivo, durante lo sviluppo del progetto, delle risorse
+					impiegate.
+				\end{itemize}
+			\item Ad ogni processo coinvolto nello sviluppo del progetto verrà applicato
+			il principio \gl{PDCA} affiancato dal modello CMM. Essi permettono il
+			controllo, la valutazione e il miglioramento continuo dei processi nonché
+			la determinazione del livello di maturità dell'organizzazione nel gestirli.
 		\end{itemize}
-	\item Descrizione dettagliata delle strategie di pianificazione adottate per sviluppo del progetto, in termini di:
-		\begin{itemize}
-		\item Modello di sviluppo adottato;
-		\item Analisi dei rischi che si possono incontrare;
-		\item Pianificazione delle attività e dei tempi;
-		\item Stima preventiva delle risorse che saranno impiegate;
-		\item Assegnazione delle risorse, al fine di portare a termine le attività pianificate nei tempi previsti;
-		\item Consultivo, durante lo sviluppo del progetto, delle risorse impiegate;
-		\end{itemize}
-	\item Ad ogni processo coinvolto nello sviluppo del progetto verrà applicato il principio \gl{PDCA}, affiancato dal modello \gl{CMM}. Essi permettono il controllo, la valutazione e il miglioramento continuo dei processi, nonchè la determinazione del livello di maturità dell'organizzazione nel gestire tali processi.
-	\end{itemize}
-	
+		\subsection{Obiettivi di qualità}
+			Prendendo come riferimento lo standard [ISO/IEC 9126] e lo
+			standard [ISO/IEC 12207], il gruppo \kaleidoscode\ si impegna a
+			garantire che il prodotto \progetto\ abbia le seguenti qualità:
+			\subsubsection{Funzionalità}
+				Si garantisce che il sistema prodotto abbia tutte le funzionalità
+				indicate nel documento \analisideirequisitiv. L'implementazione di
+				ogni requisito deve essere quanto più completa ed economica.
+				\begin{itemize}
+					\item \textbf{Misura}: l'unità di misura utilizzata sarà la
+					quantità di requisiti mappati in componenti del sistema create
+					e funzionanti.
+					\item \textbf{Metrica}: la sufficienza è raggiunta quando
+					vengono soddisfatti tutti i requisiti obbligatori.
+					\item \textbf{Strumenti}: il sistema deve superare tutti i
+					test che saranno previsti in fase di progettazione.
+				\end{itemize}
+			\subsubsection{Affidabilità}
+				Il sistema deve essere quanto più possibile robusto. Nel caso di
+				eventuali errori deve essere di facile ripristino.
+				\begin{itemize}
+					\item \textbf{Misura}: l'unità di misura utilizzata sarà la
+					quantità di esecuzioni che vanno a buon fine.
+					\item \textbf{Metrica}: poiché non è possibile valutare ancora
+					tutte le casistiche di utilizzo, le esecuzioni dovranno
+					coprire al meglio la gamma di possibilità. Risulta quindi
+					impossibile stabilire oggettivamente una soglia di
+					sufficienza.
+					\item \textbf{Strumenti}: da definire.
+				\end{itemize}
+			\subsubsection{Usabilità}
+				Il sistema deve coniugare la facilità di apprendimento e
+				utilizzo con il soddisfacimento di tutte le necessità dell'utente.
+				\begin{itemize}
+					\item \textbf{Misura}: vista la mancanza di una metrica
+					oggettiva adatta, l'unità di misura utilizzata sarà una
+					valutazione soggettiva dell'usabilità.
+					\item \textbf{Metrica}: non esistendo una metrica oggettiva
+					adatta, è impossibile stabilire una soglia di sufficienza.
+					I membri del gruppo si impegneranno comunque a garantire
+					un'elevata esperienza d'uso.
+					\item \textbf{Strumenti}: ci si affiderà ad un piccolo
+					campione di utilizzatori esterni per avere un riscontro
+					quantomeno realistico dell'usabilità. Per maggiori
+					informazioni si vedano \normediprogettov.
+				\end{itemize}
+			\subsubsection{Efficienza}
+				Il sistema deve ridurre al minimo l'utilizzo delle risorse
+				impiegate e deve fornire le funzionalità richieste nel minor tempo
+				possibile.
+				\begin{itemize}
+					\item \textbf{Misura}: il tempo di latenza dell'editor per
+					eseguire un comando.
+					\item \textbf{Metrica}: la sufficienza viene definita come un
+					tempo di latenza inferiore ai 2 secondi.
+					\item \textbf{Strumenti}: da definire.
+				\end{itemize}
+			\subsubsection{Manutenibilità}
+				Il sistema deve essere comprensibile ed estensibile.
+				\begin{itemize}
+					\item \textbf{Misura}: le unità di misura utilizzate saranno
+					quelle descritte nella sezione \ref{MetrichePerIlCodice}.
+					\item \textbf{Metrica}: il prodotto deve ottenere la
+					sufficienza in tutte le metriche descritte nella sezione
+					\ref{MetrichePerIlCodice}.
+					\item \textbf{Strumenti}: consultare sezione ``Norme di codifica''
+					in \normediprogettov.
+				\end{itemize}
+			\subsubsection{Portabilità}
+				Il sistema deve essere più portabile possibile. Il \gl{front-end}
+				deve essere utilizzabile dal maggior numero di \gl{browser}
+				possibili.
+				\begin{itemize}
+					\item \textbf{Misura}: il front-end deve rispettare gli
+					standard del \gl{W3C}.
+					\item \textbf{Metrica}: il software deve avere le
+					caratteristiche di portabilità descritte. È necessario che il
+					prodotto raggiunga la sufficienza in tutte le metriche
+					descritte nella sezione \ref{MetrichePerIlCodice}.
+					\item \textbf{Strumenti}: consultare \normediprogettov.	
+				\end{itemize}
+			\subsubsection{Altre qualità}
+				Saranno importanti per il prodotto anche le seguenti proprietà:
+				\begin{itemize}
+					\item \textbf{Incapsulamento}: aumenta il riuso e la
+					manutenibilità del codice. Saranno utilizzate interfacce ove
+					possibile;
+					\item \textbf{Coesione}: le funzionalità che hanno gli stessi
+					obiettivi devono risiedere nello stesso componente in modo da
+					favorire semplicità e manutenibilità, oltre a ridurre l'indice
+					di dipendenza.
+				\end{itemize}		
 		\subsection{Organizzazione}
-		La gestione della strategia di verifica si basa sull'attuazione delle relative attività descritte nelle \normediprogetto\ . Tali attività vengono eseguite per ogni processo attuato, allo scopo di verifica della qualità del processo stesso e dell'eventuale prodotto ottenuto, facendo riferimento anche alle metriche definite nel presente documento [..].
-		Ogni documento prevede un diario delle modifiche che permette di concentrare l'attività di verifica solo nelle parti modificate dopo l'ultima verifica eseguita.
-		Data la diversa natura dei prodotti ottenuti dalle fasi del progetto, si necessita, per ognuna di esse, una diversa procedura di verifica:
-		\begin{itemize}
-		\item \textbf{Analisi}: I metodi di verifica utilizzati per questa fase sono descritti nelle \normediprogetto\ ;
-		\item \textbf{Analisi di dettaglio}: in tale fase verranno verificati i processi che porteranno all'incremento dei prodotti realizzati nella fase precedente; verrà inoltre garantito che tutti i requisiti possano essere rintracciabili. I metodi utilizzati per la verifica di questa fase saranno descritti nelle \normediprogetto\ e incrementati nelle fasi successive.
-		\item \textbf{Progettazione e codifica}: in tale fase verranno verificati i processi che porteranno all'incremento dei prodotti realizzati nella fase precedente. L' attività di verifica per questa fase prevede l'esecuzione di test pianificati, come in [???].  I metodi utilizzati per la verifica di questa fase saranno descritti nelle \normediprogetto\ e incrementati nelle fasi successive.
-		\end{itemize} 
-		
+			La gestione della strategia di verifica si basa sull'attuazione delle
+			relative attività descritte nelle \normediprogettov. Tali attività vengono
+			eseguite per ogni processo attuato allo scopo di verifica della qualità del
+			processo stesso e dell'eventuale prodotto ottenuto facendo riferimento
+			anche alle metriche definite nella sezione \ref{Misure&Metriche}.
+			Ogni documento prevede un diario delle modifiche che permette di concentrare
+			l'attività di verifica solo nelle parti modificate dopo l'ultima eseguita.
+			Data la diversa natura dei prodotti ottenuti dalle fasi del progetto si
+			applicherà, per ognuno di essi, una diversa procedura di verifica:
+			\begin{itemize}
+				\item \textbf{Analisi e Analisi di dettaglio}: in questa fase si effettuerà
+				una prima stesura dei documenti illustrati nel \pianodiprogettov.
+				\begin{itemize}
+					\item Verrà controllata la correttezza ortografica con \textit{LanguageTool 3.6},
+					opportunamente integrato in \textit{TexStudio};
+					\item Verrà controllata la correttezza lessicale con un'attenta ed accurata
+					rilettura affiancata dal controllo di \textit{LanguageTool 3.6};
+					\item Verrà controllata la correttezza dei contenuti rispetto alle aspettative
+					del documento;
+					\item Verrà controllata la corrispondenza di ciascun caso d'uso con un requisito,
+					mediante l'utilizzo dell'applicativo web creato appositamente;
+					\item Verrà controllato il rispetto delle \normediprogettov\ da parte di ciascun
+					documento;
+					\item Verranno controllate le rappresentazioni grafiche, figure e tabelle
+					assicurandosi che per ciascuna di esse sia presente un'opportuna didascalia;
+				\end{itemize}
+				\item \textbf{Progettazione architetturale}: verrà controllato che tutti i requisiti
+				corrispondano ad un componente individuato in questa fase e se ne assicurerà la
+				tracciabilità;
+				\item \textbf{Progettazione di dettaglio e Codifica}: durante ciascuna delle
+				iterazioni di questa fase si svolgeranno i test per la verifica del codice. Tali
+				attività avverranno nel modo più automatizzato possibile. I \verificatori\
+				supervisioneranno questa fase controllando la presenza di eventuali errori;
+				\item \textbf{Validazione e verifica}: in questa fase verrà effettuato il collaudo
+				del prodotto, in modo da assicurare il suo corretto funzionamento al momento
+				della consegna.
+			\end{itemize} 
 		\subsection{Scadenze temporali}
-		Dato l'obiettivo di rispettare le scadenze fissate nel \pianodiprogetto\, è indispensabile pianificare l'attività di verifica della documentazione e del codice prodotto, in modo che risulti sistematica e organizzata; grazie all'applicazione di tale strategia, l'individuazione e la correzione degli errori averrà il prima possibile, impedendo la loro rapida diffusione e mitigando la possibilità che gli stessi si ripresentino in futuro; diminuendo così il rischio di ritardi. Tale pianificazione è documentata nel \pianodiprogetto\, il quale contiene, nella sottosezione 1.4, anche le scadenze temporali che il gruppo \kaleidoscode\ si impegna a rispettare.
+			Dato l'obiettivo di rispettare le scadenze fissate nel \pianodiprogettov, è
+			indispensabile pianificare l'attività di verifica della documentazione e del
+			codice prodotto in modo che risulti sistematica e organizzata. Grazie
+			all'applicazione di tale strategia l'individuazione e la correzione degli
+			errori avverrà il prima possibile, impedendo la loro rapida diffusione e
+			mitigando la possibilità che gli stessi si ripresentino in futuro,
+			diminuendo così il rischio di ritardi. Tale pianificazione è documentata nel
+			\pianodiprogettov\ il quale contiene, nella sottosezione 1.4, anche le
+			scadenze temporali che il gruppo \kaleidoscode\ si impegna a rispettare.
 		\subsection{Responsabilità}
-		I ruoli responsabili delle attività di verifica sono il \responsabilediprogetto\ e il \verificatore. I loro compiti e responsabilità, descritti nelle \normediprogetto, permettono alle attività di verifica di essere efficienti e sistematiche.
-
-
+			I ruoli responsabili delle attività di verifica sono il
+			\responsabilediprogetto\ e il \verificatore. I loro compiti e
+			responsabilità, descritti nelle \normediprogettov, permettono alle attività
+			di verifica di essere efficienti e sistematiche.
+			Ogni componente del team è responsabile del materiale da lui prodotto.
 \end{document}
