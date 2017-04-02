@@ -1,1213 +1,1067 @@
 \documentclass[../AnalisiDeiRequisiti.tex]{subfiles}
-
-	
-		
-% DA INSERIRE EVENTUALI REQUISITI, INCLUSIONI, ESTENSIONI, GENERALIZZAZIONI.
-% DA INSERIRE RIFERIMENTI A CASI D'USO
-% DA INSERIRE DIAGRAMMI CASI D'USO
-
 \begin{document}
-	\section{Casi d'uso }
-	I seguenti casi d'uso sono frutto dell'analisi del capitolato, della discussione degli
-	\analisti\ e degli incontri con	\proponente\ ed il committente \vardanega.
-	Tali casi d'uso hanno quindi origine sia interna che esterna al gruppo.\\
-	Le aspettative di esperienza utente derivano dalla sua conoscenza del
-	linguaggio UML.\\
-	Ciascun caso d'uso è classificato gerarchicamente con la seguente dicitura:
-	\begin{center}
-		UC[Codice del padre].[Codice identificativo]
-	\end{center}
-	Il codice identificativo può includere diversi livelli di gerarchia che saranno
-	separati da un punto.
-	
-	\subsection{Caso d'uso UC: Creare un nuovo progetto}
+	\section{Use Case}
+	\subsection{Caso d'uso UC1: Gestire un progetto}
 	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente vuole creare un nuovo progetto.
-		\item \textbf{Precondizione}: Il programma si è avviato correttamente ed è pronto a ricevere un input dall'utente. 
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole gestire il progetto su cui lavorare;
+		\item \textbf{Precondizione}: Il programma si è avviato correttamente ed è pronto a ricevere un input dall'utente;
+		\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+			\item L'utente può creare un nuovo progetto (UC1.1);
+			\item L'utente può caricare un progetto (UC1.2);
+			\item L'utente può chiudere il progetto attuale (UC1.3);
+			\item L'utente può salvare il progetto attuale (UC1.4);
+			\item L'utente può annullare l'ultimo comando eseguito (UC1.5);
+			\item L'utente può ripristinare l'ultimo comando annullato (UC1.6);
+			\item L'utente può leggere il codice prodotto (UC1.7);
+			\item L'utente può esportare il codice prodotto (UC1.8);
+		\end{itemize}
+		\item \textbf{Postcondizione}: È stata completata l'operazione sul progetto desiderata.
+	\end{itemize}
+	\subsection{Caso d'uso UC1.1: Creare un nuovo progetto}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole creare un nuovo progetto;
+		\item \textbf{Precondizione}: Il programma si è avviato correttamente ed è pronto a ricevere un input dall'utente;
+		\item \textbf{Flusso principale degli eventi}: L'utente crea un nuovo progetto;
 		\item \textbf{Postcondizione}: È stato creato un nuovo progetto che è pronto ad essere modificato.
 	\end{itemize}
-	
-	\subsection{Caso d'uso UC: Caricare un progetto}
+	\subsection{Caso d'uso UC1.2: Caricare un progetto}
 	\begin{itemize}
-		\item \textbf{Attori}: Utente. 
-		\item \textbf{Descrizione}: L'utente vuole caricare un progetto precedentemente creato
-		\item \textbf{Precondizione}: Il programma si è avviato correttamente ed è pronto a ricevere un input dall'utente.
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole caricare un progetto precedentemente creato;
+		\item \textbf{Precondizione}: Il programma si è avviato correttamente ed è pronto a ricevere un input dall'utente;
+		\item \textbf{Flusso principale degli eventi}: L'utente carica un progetto precedentemente creato;
 		\item \textbf{Postcondizione}: È stato caricato un nuovo progetto che è pronto ad essere modificato.
 	\end{itemize}
-		
-	\subsection{Caso d'uso UC1: Editare il diagramma delle classi}
+	\subsection{Caso d'uso UC1.3: Chiudere il progetto attuale}
 	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		
-		\item \textbf{Descrizione}: L'utente ha avviato correttamente il programma e ha aperto un progetto. Ora l'utente può editare il diagramma delle classi;
-		
-		\item \textbf{Precondizione}: L'utente ha avviato correttamente il programma e ha aperto un progetto;
-		\item \textbf{Flusso principale degli eventi}:
-		\begin{enumerate}
-			\item L'utente può creare una nuova classe (UC);
-			\item L'utente può modificare una classe (UC);
-			\item L'utente può eliminare una classe (UC);
-			\item L'utente può definire una nuova relazione (UC);
-			\item L'utente può modificare una relazione (UC);
-			\item L'utente può eliminare una relazione (UC);
-			\item L'utente può creare una nuova interfaccia (UC);
-			\item L'utente può modificare una interfaccia (UC);
-			\item L'utente può eliminare una interfaccia (UC);
-			\item L'utente può cambiare layer di visualizzazione (UC).
-		\end{enumerate}
-		
-		\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema
-		rimane nello stato precedente al tentativo di modifica
-		
-		\item \textbf{Postcondizione}: Il sistema apporta le modifiche desiderate al diagramma delle classi.
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole chiudere il progetto correntemente aperto;
+		\item \textbf{Precondizione}: Il programma è in attesa di un comando dall'utente e ha un progetto aperto;
+		\item \textbf{Flusso principale degli eventi}: L'utente chiude il progetto correntemente aperto;
+		\item \textbf{Postcondizione}: Il progetto aperto in precedenza è stato chiuso.
 	\end{itemize}
-	
-	\subsection{Caso d'uso UC1.1: Creare una nuova classe}
+	\subsection{Caso d'uso UC1.4: Salvare il progetto attuale}
 	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		
-		\item \textbf{Descrizione}: L'utente può aggiungere una nuova classe vuota al diagramma delle classi;
-		
-		\item \textbf{Precondizione }: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi
-		
-	%	!!!!!!!! da decidere se e' possibile annullare !!!!!!!!     %
-		
-		\item \textbf{Scenari alternativi}: Viene annullata la creazione, il sistema
-		rimane nello stato precedente al tentativo di creazione;
-		
-		\item \textbf{Postcondizione}: Viene aggiunta una nuova classe al diagramma delle classi.
-	\end{itemize}
-	
-		\subsection{Caso d'uso UC: Innestare una classe interna}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole innestare una classe all'interno di un'altra classe.
-			\item\textbf{Precondizione}: Sono presenti due classi distinte e non innestate l'una nell'altra.
-			\item\textbf{Postcondizione}: Nell'editor del diagramma delle classi le due classi sono visualizzate una innestata dentro l'altra.	
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Impostare l'importanza della classe}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente
-			\item\textbf{Descrizione}: L'utente vuole impostare l'importanza di una classe.
-			\item\textbf{Precondizione}: Esiste una classe e l'utente vuole modificare l'importanza.
-			\item\textbf{Postcondizione}:L'importanza è settata sul valore che l'utente desidera.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Eliminare una classe}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole eliminare una classe.
-			\item\textbf{Precondizione}: Esiste una classe che l'utente desidera eliminare.
-			\item\textbf{Postcondizione}: La classe non è più visualizzata nell'editor del diagramma delle classi.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Definire una relazione}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole definire una relazione.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente desiderano che presentino una relazione l'una dall'altra.
-			\item\textbf{Scenario principale}: 
-			\begin{itemize}
-				\item L'utente vuole definire la dipendenza tra due classi (UC).
-				\item L'utente vuole definire l'associazione tra due classi (UC).
-				\item L'utente vuole definire l'ereditarietà tra due classi (UC).
-				\item L'utente vuole definire l'aggregazione tra due classi (UC).
-				\item L'utente vuole definire la composizione tra due classi (UC).
-			\end{itemize}
-			\item\textbf{Postcondizione}: Le due classi presentano una relazione.
-			
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Modificare una relazione}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole modificare una relazione tra due classi.
-			\item\textbf{Precondizione}: È presente una relazione che l'utente vuole modificare.
-			\item\textbf{Scenario principale}: 
-			\begin{itemize}
-				\item L'utente vuole modificare la dipendenza tra due classi (UC).
-				\item L'utente vuole modificare l'associazione tra due classi (UC).
-				\item L'utente vuole modificare l'ereditarietà tra due classi (UC).
-				\item L'utente vuole modificare l'aggregazione tra due classi (UC).
-				\item L'utente vuole modificare la composizione tra due classi (UC).
-			\end{itemize}
-			\item\textbf{Postcondizione}: La relazione viene modificata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Eliminare una relazione}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole eliminare una relazione.
-			\item\textbf{Precondizione}: Esiste una relazione che l'utente desidera eliminare.
-			\item\textbf{Scenario principale}: 
-			\begin{itemize}
-				\item L'utente vuole eliminare la dipendenza tra due classi (UC).
-				\item L'utente vuole eliminare l'associazione tra due classi (UC).
-				\item L'utente vuole eliminare l'ereditarietà tra due classi (UC).
-				\item L'utente vuole eliminare l'aggregazione tra due classi (UC).
-				\item L'utente vuole eliminare la composizione tra due classi (UC).
-			\end{itemize}
-			\item\textbf{Postcondizione}: La relazione viene eliminata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Definire dipendenza tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole definire la dipendenza tra due classi.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente vuole evidenziarne la dipendenza.
-			\item\textbf{Postcondizione}: La dipendenza tra le due classi è stata definita.
-		\end{itemize}
-		
-		\subsection{Caso d'uso 5: Modificare dipendenza tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole definire la dipendenza tra due classi.
-			\item\textbf{Precondizione}: Sono presenti due classi che presentano una dipendenza l'una dall'altra.
-			\item\textbf{Postcondizione}: La dipendenza tra le due classi è stata modificata nel modo che l'utente desidera.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Eliminare dipendenza tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole eliminare una dipendenza tra classi.
-			\item\textbf{Precondizione}: Esiste una dipendenza tra classi che l'utente desidera eliminare.
-			\item\textbf{Postcondizione}: La dipendenza tra classi viene eliminata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Definire associazione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole definire un'associazione tra due classi.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente vuole evidenziarne l'associazione.
-			\item\textbf{Postcondizione}: L'associazione tra le due classi è stata definita.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Modificare associazione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole eliminare un'associazione tra classi.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente vuole modificarne l'associazione.
-			\item\textbf{Postcondizione}: L'associazione tra le due classi è stata modificata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Eliminare associazione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole eliminare un'associazione tra classi.
-			\item\textbf{Precondizione}: Esiste un'associazione tra classi che l'utente desidera eliminare.
-			\item\textbf{Postcondizione}: L'associazione tra classi viene eliminata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Definire ereditarietà tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole definire un vincolo di ereditarietà tra due classi.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente vuole evidenziarne il vincolo di ereditarietà.
-			\item\textbf{Postcondizione}: L'ereditarietà tra le due classi è stata definita.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Modificare ereditarietà tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole modificare un vincolo di ereditarietà tra due classi.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente vuole modificarne il vincolo di ereditarietà.
-			\item\textbf{Postcondizione}: L'ereditarietà tra le due classi è stata modificata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Eliminare ereditarietà tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole eliminare un'ereditarietà tra classi
-			\item\textbf{Precondizione}: Esiste un'ereditarietà tra classi che l'utente desidera eliminare.
-			\item\textbf{Postcondizione}: L'ereditarietà tra classi viene eliminata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Definire aggregazione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole definire una relazione di aggregazione tra due classi.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente vuole evidenziarne l'aggregazione.
-			\item\textbf{Postcondizione}: La relazione di aggregazione tra le due classi è stata definita.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Modificare aggregazione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole modificare una relazione di aggregazione tra due classi.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente vuole modificarne l'aggregazione.
-			\item\textbf{Postcondizione}: La relazione di aggregazione tra le due classi è stata modificata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Eliminare aggregazione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole eliminare una relazione di aggregazione tra classi.
-			\item\textbf{Precondizione}: Esiste una relazione di aggregazione tra classi che l'utente desidera eliminare.
-			\item\textbf{Postcondizione}: La relazione di aggregazione tra classi viene eliminata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Definire composizione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole definire una composizione tra due classi.
-			\item\textbf{Precondizione}: Sono presenti due classi e l'utente vuole evidenziarne la composizione.
-			\item\textbf{Postcondizione}: La relazione di composizione tra le due classi è stata definita.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC:  Modificare composizione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole modificare una relazione di composizione tra classi.
-			\item\textbf{Precondizione}: Esiste una relazione di composizione tra classi che l'utente desidera modificare.
-			\item\textbf{Postcondizione}: La relazione di composizione tra classi viene modificata.
-		\end{itemize}
-		
-		\subsection{Caso d'uso UC: Eliminare composizione tra classi}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole eliminare una relazione di composizione tra classi.
-			\item\textbf{Precondizione}: Esiste una relazione di composizione tra classi che l'utente desidera eliminare.
-			\item\textbf{Postcondizione}: La relazione di composizione tra classi viene eliminata.
-		\end{itemize}
-		
-			\subsection{Caso d'uso UC : Modificare un'interfaccia}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di modificare un'interfaccia
-				all'interno dell'editor del diagramma delle classi;
-				\item \textbf{Precondizione}: Nell'editor del diagramma delle classi del
-				sistema è stata selezionata un'interfaccia che l'utente desidera modificare;
-				\item \textbf{Scenario principale degli eventi}:
-				\begin{itemize}
-					\item L'utente può rinominare l'interfaccia (UC);
-					\item L'utente può aggiungere un'operazione (UC);
-					\item L'utente può modificare un'operazione (UC);
-					\item L'utente può rimuovere un'operazione (UC).
-				\end{itemize}
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema
-				rimane nello stato precedente al tentativo di modifica;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema è visualizzato il diagramma dove sono state apportate le modifiche
-				all'interfaccia.
-			\end{itemize}
-			\subsection{Caso d'uso UC : Rinominare un'interfaccia}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente cambia il nome dell'interfaccia;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
-				una stringa per rinominare l'interfaccia;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema è visualizzato il diagramma dove è stato cambiato il nome
-				all'interfaccia.
-			\end{itemize}
-			
-%%%%%%%%%%%%%%%%%%%% LAYER DI VISUALIZZAZIONE %%%%%%%%%%%%%%%%%%%
-		\subsection{Caso d'uso UC : Cambiare layer di visualizzazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di cambiare il layer degli
-				oggetti visualizzabili;
-				\item \textbf{Precondizione}: Nell'editor del diagramma delle classi, sono
-				presenti almeno due layer, l'utente desidera cambiare il layer di
-				visualizzazione;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema sono visualizzati le classi del diagramma appartenenti al layer
-				selezionato.
-			\end{itemize}
-		
-				
-	\subsection{Seleziona singola classe}
-	\begin{itemize}
-			\item \textbf{Attori}: Utente;
-			\item \textbf{Descrizione}: L'utente vuole selezionare una singola classe per poter concentrare il focus solo su di essa, permettendogli di mostrare (e avere la possibilità di modificare) per intero il suo contenuto e le sue proprietà;
-			\item \textbf{Flusso principale degli eventi}: 
-		\begin{itemize}
-			\item L'utente può selezionare un'attributo o crearne uno;
-			\item L'utente può selezionare un'operazione o crearne una;
-			\item L'utente può aggiungere, modificare o eliminare una proprietà della classe;
-			\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi; l'utente sta visualizzando l'intero diagramma delle classi o un suo specifico layer. Il diagramma delle classi contiene almeno una classe;
-		\end{itemize}
-			\item \textbf{Postcondizione}: L'utente visualizza solo la classe selezionata, di cui viene mostrata la segnatura completa degli attributi, operazioni e proprietà, con la possibilità di selezionarli singolarmente;
-	\end{itemize}
-				
-			\subsection{Caso d'uso UC: Torna al diagramma delle classi}	
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente torna al diagramma delle classi
-				\item \textbf{Precondizione}: Il sistema visualizza l'editor di classe della classe selezionata;
-				\item \textbf{Postcondizione}: Il sistema visualizza il diagramma delle classi
-			\end{itemize}		
-				
-			\subsection{Caso d'uso UC: Modificare una classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				
-				\item \textbf{Descrizione}: L'utente vuole modificare uno dei vari attributi della classe selezionata;
-				
-				\item \textbf{Precondizione}: L'utente ha selezionato una classe da modificare all'interno di un progetto;
-				
-				\item \textbf{Flusso principale degli eventi}:
-				\begin{enumerate}
-					\item L'utente può creare impostare il nome della classe (UC);
-					\item L'utente può aggiungere un campo dati a una classe (UC);
-					\item L'utente può eliminare un campo dati a una classe (UC);
-					\item L'utente può modificare un campo dati a una classe (UC);
-					\item L'utente può aggiungere un' operazione a una classe (UC);
-					\item L'utente può eliminare un' operazione a una classe (UC);
-					\item L'utente può modificare un'operazione a una classe (UC).
-				\end{enumerate}
-				
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema 
-				rimane nello stato precedente al tentativo di modifica;
-				
-				
-				\item \textbf{Postcondizione}: Le varie modifiche decise dall'utente verranno applicate alla classe nel diagramma delle classi.
-			\end{itemize}
-			
-			\subsection{Caso d'uso UC: Impostare il nome della classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				
-				\item \textbf{Descrizione}: L'utente vuole impostare il nome di una classe;
-				
-				\item \textbf{Precondizione}: L'utente ha creato una classe all'interno del diagramma delle classi;
-				
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe
-				rimane con il nome precedente al tentativo di modifica;
-				
-				\item \textbf{Postcondizione}: Il nuovo nome deciso dall'utente viene impostato come nome della classe all'interno del diagramma delle classi.
-			\end{itemize}
-			
-			\subsection{Caso d'uso UC: Aggiungere un campo dati alla classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				
-				\item \textbf{Descrizione}: L'utente vuole aggiungere un nuovo campo dati a una classe;
-				
-				\item \textbf{Precondizione}: L'utente ha selezionato una classe all'interno del diagramma delle classi alla quale vuole aggiungere un campo dati;
-				
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe
-				rimane nello stato precedente al tentativo di aggiunta;
-				
-				\item \textbf{Postcondizione}: Il campo dati viene aggiunto alla classe con i parametri decisi dall'utente.
-			\end{itemize}
-			
-			\subsection{Caso d'uso UC: Eliminare un campo dati alla classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				
-				\item \textbf{Descrizione}: L'utente vuole eliminare un campo dati all'interno di una classe;
-				
-				\item \textbf{Precondizione}: L'utente ha selezionato il campo dati che vuole eliminare;
-				
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe
-				rimane nello stato precedente al tentativo di cancellazione;
-				
-				
-				\item \textbf{Postcondizione}: Il campo dati viene rimosso dalla classe dopo eventuali avvisi nel caso ci siano dipendenze da controllare.
-			\end{itemize}
-			
-			\subsection{Caso d'uso UC: Modificare un campo dati alla classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				
-				\item \textbf{Descrizione}: L'utente vuole modificare un campo dati all'interno di una classe del diagramma delle classi;
-				
-				\item \textbf{Precondizione}: L'utente ha selezionato il campo dati che vuole modificare all'interno di una classe;
-				
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il campo dati
-				rimane nello stato precedente al tentativo di modifica;
-				
-				\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate al campo dati all'interno della classe.
-			\end{itemize}
-			
-			\subsection{Caso d'uso UC: Aggiungere un' operazione alla classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				
-				\item \textbf{Descrizione}: L'utente vuole aggiungere un' operazione a una classe;
-				
-				\item \textbf{Precondizione}: L'utente ha selezionato una classe all'interno del diagramma delle classi alla quale vuole aggiungere un'operazione;
-				
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe
-				rimane nello stato precedente al tentativo di aggiunta;
-				
-				\item \textbf{Postcondizione}: L'operazione viene aggiunta alla classe con i parametri decisi dall'utente.
-			\end{itemize}
-			
-			\subsection{Caso d'uso UC: Eliminare un' operazione dalla classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				
-				\item \textbf{Descrizione}: L'utente vuole eliminare un'operazione all'interno di una classe;
-				
-				\item \textbf{Precondizione}: L'utente ha selezionato L'operazione che vuole eliminare;
-				
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe
-				rimane nello stato precedente al tentativo di cancellazione;
-				
-				\item \textbf{Postcondizione}: L'operazione viene rimossa dalla classe dopo
-				eventuali avvisi nel caso ci siano dipendenze da controllare.
-			\end{itemize}
-			
-			\subsection{Caso d'uso UC: Modificare un' operazione alla classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				
-				\item \textbf{Descrizione}: L'utente vuole modificare un' operazione all'interno di una classe del diagramma delle classi;
-				
-				\item \textbf{Precondizione}: L'utente ha selezionato l'operazione che vuole modificare all'interno di una classe;
-				
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, l'operazione 
-				rimane nello stato precedente al tentativo di modifica;
-				
-				\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate all'operazione all'interno della classe.
-			\end{itemize}
-			
-			%parte 2
-			
-			\subsection{Impostare visibilità classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare i parametri di visibilità di una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera modificare;
-				\item \textbf{Postcondizione}: I parametri di visibilità richiesti sono stati impostati;
-			\end{itemize}
-			
-			\subsection{Commentare classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può commentare una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera modificare;
-				\item \textbf{Postcondizione}: Il commento relativo alla classe viene impostato;
-			\end{itemize}
-			
-			\subsection{Marchiare classe statica}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare come "statica" una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera definire "statica";
-				\item \textbf{Postcondizione}: La classe viene marchiata come "statica";
-			\end{itemize}
-			
-			\subsection{Marchiare classe astratta}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare come "astratta" una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera definire "astratta";
-				\item \textbf{Postcondizione}: La classe viene marchiata come "astratta";
-			\end{itemize}
-			
-			\subsection{Marchiare classe finale}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare come "finale" una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera definire "finale";
-				\item \textbf{Postcondizione}: La classe viene marchiata come "finale";
-			\end{itemize}
-			
-			\subsection{Marchiare classe “frozen”}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare come "frozen" una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera definire "frozen";
-				\item \textbf{Postcondizione}: La classe viene marchiata come "frozen";
-			\end{itemize}
-			
-			\subsection{Marchiare classe “readOnly”}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare come "readOnly" una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera definire "readOnly";
-				\item \textbf{Postcondizione}: La classe viene marchiata come "readOnly";
-			\end{itemize}
-			
-			\subsection{Marchiare classe “enum”}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare come "enum" una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera definire "enum";
-				\item \textbf{Postcondizione}: La classe viene marchiata come "enum";
-			\end{itemize}
-			
-			\subsection{Definire classe parametrica}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare come parametrica una classe;
-				\item \textbf{Precondizione}: L’utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe che desidera definire parametrica;
-				\item \textbf{Postcondizione}: La classe viene marchiata come parametrica;
-			\end{itemize}
-			
-			\subsection{Aggiungere attesa di segnale}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente deve poter aggiungere ad un'attività un'attesa di segnale;
-				\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività;
-				\item \textbf{Postcondizione}: L'utente ha modificato l'attività desiderata aggiungendo alla stessa un'attesa di segnale vuota;
-			\end{itemize}
-			
-			\subsection{Raffinare classe parametrica}
-			\begin{itemize}
-				\item \textbf{Attori} Utente;
-				\item \textbf{Descrizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi e identifica la classe parametrica che desidera raffinare;
-				\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività ed è presente almeno un'attività con associata un'attesa di segnale;
-				\item \textbf{Postcondizione}: La classe parametrica viene raffinata;
-			\end{itemize}
-		
-		%%%%%%%%%%%%%%%%%%%%%%%%%%SEZIONE INTERFACCIA%%%%%%%%%%%%%%%%%%%%%%%%
-		
-		\subsection{Caso d'uso UC: Creare un'interfaccia}
-		\begin{itemize}
-			\item\textbf{Attori}: Utente.
-			\item\textbf{Descrizione}: L'utente vuole creare un'interfaccia.
-			\item\textbf{Precondizione}: Il sistema è pronto alla creazione di un'interfaccia, l'utente desidera creare un'interfaccia.
-			\item\textbf{Postcondizione}: Nell'editor del diagramma delle classi l'interfaccia è correttamente visualizzato il diagramma nel quale è stata creata l'interfaccia.
-		\end{itemize}
-			
-				
-	
-		\subsection{Caso d'uso UC : Aggiungere un'operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente ha scelto di aggiungere un'operazione
-				all'interfaccia. L'utente deve definire la nuova operazione;
-				\item \textbf{Precondizione}: L'utente desidera aggiungere un'operazione
-				all'interfaccia selezionata dall'editor del diagramma delle classi del
-				sistema. Il sistema è pronto ad aggiungere una nuova operazione;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può impostare la visibilità (UC);
-						\item L'utente può definire il nome dell'operazione (UC);
-						\item L'utente può definire la lista parametri dell'operazione (UC);
-						\item L'utente può definire il tipo di ritorno dell'operazione (UC);
-						\item L'utente può definire proprietà aggiuntive dell'operazione (UC).
-					\end{itemize}
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema
-				rimane nello stato precedente al tentativo di modifica;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema è visualizzato il diagramma dove è stata aggiunta la nuova operazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Impostare la visibilità dell'operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare la visibilità
-				dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente selezioni il
-				tipo di visualizzazione da impostare all'interfaccia;
-				\item \textbf{Postcondizione}: Il sistema ha impostato la visibilità
-				dell'operazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire il nome dell'operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può definire il nome dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
-				una stringa per rinominare l'interfaccia;
-				\item \textbf{Postcondizione}: Il sistema ha impostato il nome
-				dell'operazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire la lista parametri dell'operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può definire la lista parametri
-				dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente definisca
-				la lista dei parametri dell'operazione;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può aggiungere un parametro (UC);
-						\item L'utente può modificare un parametro (UC);
-						\item L'utente può rimuovere un parametro (UC).
-					\end{itemize}
-				\item \textbf{Postcondizione}: Il sistema ha impostato la lista parametri
-				dell'operazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Aggiungere un parametro}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può aggiungere un parametro alla lista
-				parametri dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è pronto per definire il parametro;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può definire la direzione del parametro (UC);
-						\item L'utente può definire il nome del parametro (UC);
-						\item L'utente può definire il tipo del parametro (UC);
-						\item L'utente può definire il valore di default del parametro (UC).
-					\end{itemize}
-				\item \textbf{Postcondizione}: Il sistema ha aggiunto il parametro alla lista.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire la direzione del parametro}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può definire la direzione di un parametro
-				della lista parametri dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente imposti
-				la direzione del parametro;
-				\item \textbf{Postcondizione}: Il sistema ha impostato la direzione al
-				parametro della lista.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire il nome del parametro}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può definire il nome di un parametro
-				della lista parametri dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
-				il nome del parametro;
-				\item \textbf{Postcondizione}: Il sistema ha impostato il nome al parametro
-				della lista.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire il tipo del parametro}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può definire il tipo di un parametro
-				della lista parametri dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
-				il tipo del parametro;
-				\item \textbf{Postcondizione}: Il sistema ha impostato il tipo al parametro
-				della lista.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire il valore di default del parametro}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può definire il valore di default di un
-				parametro della lista parametri dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente imposti
-				il valore di default del parametro;
-				\item \textbf{Postcondizione}: Il sistema ha impostato il valore di default al
-				parametro della lista.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Modificare un parametro}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può modificare un parametro della lista
-				parametri dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è pronto per modificare il parametro;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può definire la direzione del parametro (UC Sopra);
-						\item L'utente può definire il nome del parametro (UC Sopra);
-						\item L'utente può definire il tipo del parametro (UC Sopra);
-						\item L'utente può definire il valore di default del parametro (UC Sopra).
-					\end{itemize}
-				\item \textbf{Postcondizione}: Il sistema ha modificato il parametro della
-				lista.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Rimuovere un parametro}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può rimuovere un parametro della lista
-				parametri dell'operazione;
-				\item \textbf{Precondizione}: L'utente ha selezionato il parametro da
-				rimuovere;
-				\item \textbf{Postcondizione}: Il sistema ha rimosso il parametro dalla lista.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire il tipo di ritorno dell'operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può inserire il tipo di ritorno
-				dell'operazione;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
-				il tipo di ritorno;
-				\item \textbf{Postcondizione}: Il sistema ha impostato il tipo di ritorno
-				all'operazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire proprietà aggiuntive dell'operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare proprietà aggiuntive
-				all'operazione;
-				\item \textbf{Precondizione}: Il sistema è pronto per ricevere proprietà
-				aggiuntive;
-				\item \textbf{Postcondizione}: Il sistema ha impostato le proprietà
-				aggiuntive, scritte dall'utente, all'operazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Modificare un'operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente ha scelto di modificare un'operazione
-				dell'interfaccia. L'utente deve selezionare l'operazione;
-				\item \textbf{Precondizione}: L'utente desidera modificare un'operazione
-				dell'interfaccia selezionata dall'editor del diagramma delle classi del
-				sistema. È stata selezionata l'operazione da modificare;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può impostare la visibilità (UC Sopra);
-						\item L'utente può definire il nome dell'operazione (UC Sopra);
-						\item L'utente può definire la lista parametri dell'operazione (UC Sopra);
-						\item L'utente può definire il tipo di ritorno dell'operazione (UC Sopra);
-						\item L'utente può definire proprietà aggiuntive dell'operazione (UC Sopra).
-					\end{itemize}
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema
-				rimane nello stato precedente al tentativo di modifica;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema è visualizzato il diagramma dove è stata modificata l'operazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Rimuovere un'operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può rimuovere un'operazione
-				dell'interfaccia. L'utente deve selezionare l'operazione;
-				\item \textbf{Precondizione}: L'utente desidera rimuovere un'operazione
-				dell'interfaccia selezionata dall'editor del diagramma delle classi del
-				sistema. È stata selezionata l'operazione da rimuovere;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema è visualizzato il diagramma dove è stata rimossa l'operazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Rimuovere un'interfaccia}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può rimuovere un'interfaccia nell'editor
-				del diagramma delle classi. L'utente deve selezionare l'interfaccia;
-				\item \textbf{Precondizione}: L'utente desidera rimuovere un'interfaccia
-				selezionata dall'editor del diagramma delle classi del sistema;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema è visualizzato il diagramma dove è stata rimossa l'interfaccia.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire la realizzazione di un'interfaccia}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di definire un'associazione di
-				realizzazione tra una classe ed un'interfaccia;
-				\item \textbf{Precondizione}: Il sistema è pronto a creare l'associazione di
-				realizzazione che l'utente desidera definire;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può selezionare un'interfaccia (UC);
-						\item L'utente può selezionare una classe (UC).
-					\end{itemize}
-				\item \textbf{Scenari alternativi}: La definizione della realizzazione di
-				un'interfaccia viene annullata, il sistema rimane nello stato precedente al
-				tentativo di modifica;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema è visualizzato il diagramma dove è stata definita la realizzazione.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Selezionare un'interfaccia}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente seleziona l'interfaccia di interesse;
-				\item \textbf{Precondizione}: Il sistema mostra il diagramma delle classi;
-				\item \textbf{Postcondizione}: Il sistema evidenzia l'interfaccia selezionata
-				dall'utente.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Selezionare una classe}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente seleziona la classe di interesse;
-				\item \textbf{Precondizione}: Il sistema mostra il diagramma delle classi;
-				\item \textbf{Postcondizione}: Il sistema evidenzia la classe selezionata
-				dall'utente.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Rimuovere la realizzazione di un'interfaccia}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di rimuovere un'associazione di
-				realizzazione tra una classe ed un'interfaccia;
-				\item \textbf{Precondizione}: Il sistema è pronto a rimuovere l'associazione
-				di realizzazione che l'utente desidera;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del
-				sistema è visualizzato il diagramma dove è stata rimossa la realizzazione.
-			\end{itemize}
-			
-
-			
-%%%%%%%%%%%%%%%%%%% SEZIONE PACKAGE %%%%%%%%%%%%%%%%%%%
-		\subsection{Spostarsi nel diagramma dei package}
-		
-		\subsection{Caso d'uso UC : Editare il diagramma dei package }
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di usare l'editor per il
-				diagramma dei package;
-				\item \textbf{Precondizione}: Il sistema è pronto all'utilizzo dell'editor per
-				il diagramma dei package, l'utente desidera utilizzarlo;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può creare un package (UC);
-						\item L'utente può modificare un package (UC);
-						\item L'utente può rimuovere un package (UC).
-					\end{itemize}
-				\item \textbf{Postcondizione}: L'utente genera un diagramma dei package
-				attraverso l'editor.
-			\end{itemize}
-			
-		\subsection{Tornare al diagramma delle classi}
-		\subsection{Caso d'uso UC : Creare un package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di creare un package;
-				\item \textbf{Precondizione}: Il sistema è pronto alla creazione di package,
-				l'utente desidera creare un package;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package del
-				sistema è visualizzato il diagramma dove è stato aggiunto il package creato.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Modificare un package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di modificare un package
-				all'interno dell'editor del diagramma dei package;
-				\item \textbf{Precondizione}: Nell'editor del diagramma dei package del
-				sistema è stato selezionato un package che l'utente desidera modificare;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può definire il nome del package (UC);
-						\item L'utente può impostare la visibilità del package (UC);
-						\item L'utente può definire una dipendenza tra package (UC);
-						\item L'utente può rimuovere una dipendenza tra package (UC);
-						\item L'utente può innestare una classe nel package (UC);
-						\item L'utente può rimuovere una classe dal package (UC);
-						\item L'utente può innestare un'interfaccia nel package (UC);
-						\item L'utente può rimuovere un'interfaccia dal package (UC);
-						\item L'utente può innestare un package nel package (UC);
-						\item L'utente può rimuovere un package dal package (UC);
-					\end{itemize}
-				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema
-				rimane nello stato precedente al tentativo di modifica;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package del
-				sistema è visualizzato il diagramma dove sono state apportate le modifiche
-				al package.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire il nome del package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può dare un nome ad un package;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente inserisca
-				una stringa per rinominare il package;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package del
-				sistema è visualizzato il diagramma dove è stato cambiato il nome
-				al package.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Impostare la visibilità del package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può impostare la visibilità
-				del package;
-				\item \textbf{Precondizione}: Il sistema è in attesa che l'utente selezioni il
-				tipo di visualizzazione da impostare al package;
-				\item \textbf{Postcondizione}: Il sistema ha impostato la visibilità
-				del package.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Definire dipendenza tra package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di definire una dipendenza tra
-				due package;
-				\item \textbf{Precondizione}: Il sistema è pronto a creare la dipendenza che
-				l'utente desidera definire;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può selezionare un package (il package con dipendenza
-						uscente) (UC);
-						\item L'utente può selezionare un package (il package con dipendenza
-						entrante) (UC).
-					\end{itemize}
-				\item \textbf{Scenari alternativi}: La definizione della dipendenza viene
-				annullata, il sistema rimane nello stato precedente al tentativo di modifica;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package del
-				sistema è visualizzato il diagramma dove è stata definita la dipendenza.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Selezionare un package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente seleziona il package di interesse;
-				\item \textbf{Precondizione}: Il sistema mostra il diagramma dei package;
-				\item \textbf{Postcondizione}: Il sistema evidenzia il package selezionato
-				dall'utente.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Rimuovere dipendenza tra package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di rimuovere una dipendenza tra
-				due package;
-				\item \textbf{Precondizione}: Il sistema è pronto a rimuovere la dipendenza
-				che l'utente desidera;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package del
-				sistema è visualizzato il diagramma dove è stata rimossa la dipendenza.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Innestare una classe nel package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente sceglie di innestare una classe
-				all'interno di un package;
-				\item \textbf{Precondizione}: Il sistema è pronto per effettuare l'operazione;
-				\item \textbf{Scenario principale degli eventi}:
-					\begin{itemize}
-						\item L'utente può selezionare una classe (UC Sopra);
-						\item L'utente può selezionare un package (UC Sopra);
-					\end{itemize}
-				\item \textbf{Scenari alternativi}: L'innesto viene annullato, il sistema
-				rimane nello stato precedente al tentativo di modifica;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package del
-				sistema è visualizzato il diagramma dove è stato effettuato l'innesto.
-			\end{itemize}
-		\subsection{Caso d'uso UC : Rimuovere una classe dal package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente può rimuovere una classe da un package
-				nell'editor del diagramma dei package. L'utente deve selezionare
-				la classe;
-				\item \textbf{Precondizione}: L'utente desidera rimuovere una classe
-				selezionata da un package nell'editor del diagramma dei package del sistema;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package del
-				sistema è visualizzato il diagramma dove è stata rimossa la classe.
-			\end{itemize}
-			
-			\subsection{Seleziona singola operazione}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente;
-				\item \textbf{Descrizione}: L'utente vuole selezionare una singola operazione, appartenente ad una classe,  allo scopo di modificarne il contenuto oppure di creare o selezionare il diagramma delle attività associato a tale operazione;
-				\item \textbf{Flusso principale degli eventi}: 
-				\begin{itemize}
-					\item L'utente può modificare la segnatura del metodo;
-					\item L'utente può creare il diagramma delle attività associato all'operazione ;
-					\item L'utente può selezionare il diagramma delle attività associato all'operazione;
-				\end{itemize}
-				\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi; l'utente ha selezionato una singola classe che contiene almeno un'operazione; 
-				\item \textbf{Postcondizione}: L'utente ha selezionato una singola operazione; L'utente ha la possibilità di modificare la firma dell'operazione, creare un diagramma delle attività associato all'operazione o selezionare il diagramma delle attività esistente.
-			\end{itemize}
-	\subsection{Tornare al diagramma di visualizzazione classe}
-	%
-	\subsection{Editare il diagramma delle attività}
-	%
-	\subsection{Aggiungere pin}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve aggiungere un pin ad una attività;
-		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata un'attività;
-		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove è stato aggiunto ad una classe un pin in input o in output con campi vuoti;
-	\end{itemize}
-	
-	\subsection{Modificare pin}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve modificare i pin da lui inseriti così da impostare la variabile da essi rappresentata;
-		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata un'attività dotata di un pin;
-		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove il pin associato alla classe ora rappresenta correttamente la variabile corrispondente;
-	\end{itemize}
-	
-	\subsection{Rimuovere pin}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve eliminare un pin da un’attività;
-		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata un'attività dotata di un pin;
-		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove il pin associato alla classe è stato rimosso;
-	\end{itemize}
-
-	\subsection{Aggiungere trasformazione}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve collegare tra di loro i pin di output di un’attività e i pin di input di una seconda mediante una trasformazione;
-		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività sono presenti almeno due attività di cui una dotata di pin in output e una dotata di pin in input, con tipo tra di loro compatibile;
-		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove il pin di output della prima classe è collegato con il pin di input della seconda mediante una trasformazione con espressione di trasformazione vuota;
-	\end{itemize}
-
-	\subsection{Modificare trasformazione}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve modificare una trasformazione, in particolare editando l’\textit{espressione di trasformazione};
-		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata una trasformazione che collega pin di output e di input di due attività;
-		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove l’espressione di trasformazione voluta è stata modificata;
-	\end{itemize}
-
-	\subsection{Rimuovere trasformazione}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L’utente deve eliminare una trasformazione che collega due pin di due attività;
-		\item \textbf{Precondizione}: Nell'editor del diagramma delle attività è stata selezionata una trasformazione che collega pin di output e di input di due attività;
-		\item \textbf{Postcondizione}: Nell'editor del diagramma delle attività è visualizzato il diagramma dove è stata eliminata la trasformazione che collegava i due pin;
-	\end{itemize}
-		
-	\subsection{Aggiungere invio di segnale}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve aggiungere ad un'attività un invio di segnale;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove l'attività è stata modificata con l'aggiunta un invio di segnale vuoto;
-	\end{itemize}
-	
-	\subsection{Modificare invio di segnale}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve modificare l'invio di segnale associato ad un'attività;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività con associato un invio di segnale;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove sono stati modificati i parametri dell'invio di segnale associato all'attività;
-	\end{itemize}
-	
-	\subsection{Rimuovere invio di segnale}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve rimuovere un invio di segnale associato ad un'attività;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività con associato un invio di segnale;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove è stato eliminato l'invio di segnale associato all'attività;
-	\end{itemize}
-		
-	\subsection{Aggiungere attesa di segnale}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve aggiungere ad un'attività un'attesa di segnale;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove l'attività è stata modificata con l'aggiunta un'attesa di segnale vuota;
-	\end{itemize}
-	
-	\subsection{Modificare attesa di segnale}
-	\begin{itemize}
-		\item \textbf{Attori} Utente;
-		\item \textbf{Descrizione}:  L'utente deve modificare l'attesa di segnale associata ad un'attività;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività con associata un'attesa di segnale;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove sono stati modificati i parametri dell'attesa di segnale associata all'attività;
-	\end{itemize}
-	
-	\subsection{Rimuovere attesa di segnale}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve rimuovere un'attesa di segnale associata ad un'attività;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata un'attività con associato un'attesa di segnale;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove è stata eliminata l'attesa di segnale associata all'attività;
-	\end{itemize}
-
-	\subsection{Aggiungere evento temporale}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve aggiungere un evento temporale al diagramma delle attività;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività il sistema è pronto per l'aggiunta di un elemento;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove è stato aggiunto un evento temporale vuoto;
-	\end{itemize}
-	
-	\subsection{Modificare evento temporale}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve modificare il tipo e i parametri di un evento temporale;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionato un evento temporale;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove sono stati modificati opportunamente il tipo ed i parametri dell'evento temporale;
-	\end{itemize}
-	
-	\subsection{Rimuovere evento temporale}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve eliminare un evento temporale;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionato un evento temporale;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma dove è stato eliminato l'evento temporale;
-	\end{itemize}
-	\subsection{Selezionare una singola attività}
-	\subsection{Tornare al diagramma delle attività}
-	\subsection{Editare bubble flowchart}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve editare un bubble flowchart;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto per editare il bubble flowchart;
-		\item \textbf{Scenario principale degli eventi}
-		\begin{itemize}
-			\item L'utente può Aggiungere una bubble(UC);
-			\item L'utente può Modificare una bubble(UC);
-			\item L'utente può Eliminare una bubble(UC);
-			\item L'utente può Aggiungere un elemento di decisione(UC);
-			\item L'utente può Modificare un elemento di decisione(UC);
-			\item L'utente può Eliminare un elemento di decisione(UC);
-		\end{itemize}
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma editato;
-	\end{itemize}
-	
-	\subsection{Aggiungere una bubble}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve aggiungere una bubble di un tipo desiderato al bubble flowchart;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto per l'aggiunta di una bubble;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma a cui è stata aggiunta una bubble vuota del tipo voluto;
-	\end{itemize}
-	
-	\subsection{Modificare una bubble}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve modificare i parametri di una bubble;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stata selezionata una bubble;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui sono stati opportunamente modificati i parametri della bubble;
-	\end{itemize}
-	
-	\subsection{Eliminare una bubble}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve eliminare una bubble;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stata selezionata una bubble;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui è stata eliminata la bubble;
-	\end{itemize}
-	
-	\subsection{Aggiungere un elemento di decisione}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve aggiungere un elemento di decisione al bubble flowchart;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto per l'aggiunta di un elemento di decisione;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma a cui è stato aggiunto un elemento di decisione vuoto;
-	\end{itemize}
-	
-	\subsection{Modificare un elemento di decisione}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve modificare i parametri di un elemento di decisione;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stato selezionato un elemento di decisione;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui sono stati opportunamente modificati i parametri dell'elemento di decisione;
-	\end{itemize}
-	
-	\subsection{Eliminare un elemento di decisione}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve eliminare un elemento di decisione;
-		\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stato selezionato un elemento di decisione;
-		\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui è stato eliminato l'elemento di decisione;
-	\end{itemize}
-	
-	
-	\subsection{Leggere il codice}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve leggere il codice;
-		\item \textbf{Precondizione}: Nella schermata del visualizzatore del codice il sistema è pronto a mostrare il codice prodotto;
-		\item \textbf{Postcondizione}: Nella schermata del visualizzatore del codice è mostrato il codice prodotto
-	\end{itemize}
-	
-	\subsection{Esportare il codice}
-	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve esportare il codice generato nei file sorgente appropriati per il linguaggio corrispondente;
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole salvare il lavoro fatto fino a quel momento;
 		\item \textbf{Precondizione}: Nelle schermate degli editor messi a disposizione del programma sono stati disegnati i diagrammi che rappresentano il codice desiderato;
+		\item \textbf{Flusso principale degli eventi}: L'utente salva il lavoro fatto fino a quel momento;
+		\item \textbf{Postcondizione}: In una cartella a scelta dell'utente il programma ha generato un file contenente tutte le informazioni necessarie per ripristinarne lo stato attuale.
+	\end{itemize}
+	\subsection{Caso d'uso UC1.5: Annullare l'ultimo comando eseguito}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole annullare l'effetto dell'ultimo comando eseguito nell'editor del diagramma correntemente in uso;
+		\item \textbf{Precondizione}: L'utente sta utilizzando l'editor di un diagramma tra quelli disponibili, ha eseguito almeno un comando e il sistema lo ha memorizzato;
+		\item \textbf{Flusso principale degli eventi}: L'utente annulla l'effetto dell'ultimo comando eseguito nell'editor del diagramma correntemente in uso;
+		\item \textbf{Postcondizione}: Il sistema ha ripristinato lo stato in cui si trovava il diagramma, correntemente in uso, prima che venisse eseguito il comando che è stato annullato; Il sistema ha memorizzato tale comando.
+	\end{itemize}
+	\subsection{Caso d'uso UC1.6: Ripristinare l'ultimo comando annullato}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole ripristinare l'effetto dell'ultimo comando precedentemente annullato nell'editor del diagramma correntemente in uso;
+		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto ed è appena stato annullato un comando;
+		\item \textbf{Flusso principale degli eventi}: L'utente ripristina l'effetto dell'ultimo comando precedentemente annullato nell'editor del diagramma correntemente in uso;
+		\item \textbf{Postcondizione}: Il programma è tornato nello stato precedente all'annullamento.
+	\end{itemize}
+	\subsection{Caso d'uso UC1.7: Leggere il codice prodotto}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole leggere il codice;
+		\item \textbf{Precondizione}: Il sistema è pronto a mostrare il codice prodotto e in attesa di un comando da parte dell'utente;
+		\item \textbf{Flusso principale degli eventi}: L'utente legge il codice;
+		\item \textbf{Postcondizione}: Nella schermata del visualizzatore del codice è mostrato il codice prodotto.
+	\end{itemize}
+	\subsection{Caso d'uso UC1.8: Esportare il codice prodotto}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole esportare il codice generato nei file sorgente appropriati per il linguaggio corrispondente;
+		\item \textbf{Precondizione}: Nelle schermate degli editor messi a disposizione del programma sono stati disegnati i diagrammi che rappresentano il codice desiderato;
+		\item \textbf{Flusso principale degli eventi}: L'utente esporta il codice generato nei file sorgente appropriati per il linguaggio corrispondente;
 		\item \textbf{Postcondizione}: In una cartella a scelta dell'utente il programma ha generato tutti i file sorgenti voluti, organizzati secondo quanto specificato dall'utente tramite i diagrammi. Questi file contengono codice corretto e compilabile. Qualora il programma non avesse potuto tradurre efficacemente una parte del diagramma dell'utente, il programma ha comunicato un avvertimento all'utente e commentato opportunamente il codice nel sorgente;
 	\end{itemize}
-	
-	\subsection{Salvare il progetto}
+	\subsection{Caso d'uso UC2: Editare il diagramma delle classi}
 	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente deve salvare il lavoro fatto fino a quel momento;
-		\item \textbf{Precondizione}: Nelle schermate degli editor messi a disposizione del programma sono stati disegnati i diagrammi che rappresentano il codice desiderato;
-		\item \textbf{Postcondizione}: In una cartella a scelta dell'utente il programma ha generato un file contenente tutte le informazioni necessarie per ripristinarne lo stato attuale;
-	\end{itemize}	
-	
-	\subsection{Annulla ultimo comando eseguito}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente ha avviato correttamente il programma e ha aperto un progetto. Ora l'utente può editare il diagramma delle classi;
+		\item \textbf{Precondizione}: L'utente ha avviato correttamente il programma e ha aperto un progetto;
+		\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+			\item L'utente può creare una classe (UC2.1);
+			\item L'utente può modificare una classe (UC2.2);
+			\item L'utente può eliminare una classe (UC2.3);
+			\item L'utente può definire una relazione (UC2.4);
+			\item L'utente può modificare una relazione (UC2.5);
+			\item L'utente può eliminare una relazione (UC2.6);
+			\item L'utente può creare una interfaccia (UC2.7);
+			\item L'utente può modificare una interfaccia (UC2.8);
+			\item L'utente può eliminare una interfaccia (UC2.9);
+			\item L'utente può creare un commento (UC2.10);
+			\item L'utente può collegare un commento (UC2.11);
+			\item L'utente può modificare un commento (UC2.12);
+			\item L'utente può eliminare un commento (UC2.13);
+			\item L'utente può aprire l'editor del diagramma dei package (UC2.14);
+			\item L'utente può riposizionare un elemento (UC2.15);
+		\end{itemize}
+		\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
+		\item \textbf{Postcondizione}: Il sistema apporta le modifiche desiderate al diagramma delle classi.
+	\end{itemize}
+	\subsection{Caso d'uso UC2.1: Creare una classe}
 	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente vuole annullare l'effetto dell'ultimo comando eseguito nell'editor del diagramma correntemente in uso;
-		\item \textbf{Precondizione}: L'utente sta utilizzando l'editor di un diagramma tra quelli disponibili. In tale editor, l'utente ha eseguito almeno un comando; il sistema ha memorizzato tale comando;
-		\item \textbf{Postcondizione}: Il sistema ha ripristinato lo stato in cui si trovava il diagramma, correntemente in uso, prima che venisse eseguito il comando che è stato annullato; Il sistema ha memorizzato tale comando;
-	\end{itemize}		
-
-	\subsection{Ripristina ultimo comando annullato}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente può aggiungere una nuova classe vuota al diagramma delle classi;
+		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi;
+		\item \textbf{Flusso principale degli eventi}: L'utente aggiunge una nuova classe vuota al diagramma delle classi;
+		\item \textbf{Postcondizione}: Viene aggiunta una nuova classe al diagramma delle classi.
+	\end{itemize}
+	\subsection{Caso d'uso UC2.2: Modificare una classe}
 	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente vuole ripristinare l'effetto dell'ultimo comando precedentemente annullato nell'editor del diagramma correntemente in uso;
-		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi; l'utente sta visualizzando l'intero diagramma delle classi o un specifico layer. Il diagramma delle classi contiene almeno una classe;
-		\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi, l'utente visualizza solo la classe selezionata, di cui viene mostrata la segnatura completa di ogni attributo, operazione e ogni altra eventuale proprietà della classe; l'utente ha la possibilità di selezionare ognuno di questi elementi.
-	\end{itemize}	
-	
-		
-	
-		
-%??
-	\subsection{Marchiare statico un'attributo o operazione}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole apportare modifiche minori ad una classe;
+		\item \textbf{Precondizione}: L'utente ha avviato il programma, sta visualizzando il diagramma delle classi e ha selezionato la classe che vuole modificare;
+		\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+			\item L'utente apporta le modifiche minori desiderate;
+			\item L'utente può aprire la schermata di modifica di classe corrispondente (UC2.2.1);
+		\end{itemize}
+		\item \textbf{Postcondizione}: Le modifiche vengono applicate alla classe nel diagramma delle classi.
+	\end{itemize}
+	\subsection{Caso d'uso UC2.2.1: Aprire la schermata di modifica di classe corrispondente}
 	\begin{itemize}
-		\item \textbf{Attori}: Utente;
-		\item \textbf{Descrizione}: L'utente vuole marchiare statico un'attributo o un'operazione di una classe;
-		\item \textbf{Precondizione}: L'utente ha selezionato la modifica di un'attributo o di un'operazione; Il sistema è pronto a impostarlo come statico;
-		\item \textbf{Postcondizione}: L'attributo o l'operazione è stato marchiato statico. Nell'editor del diagramma delle classi esso è visualizzato sottolineato.
-	\end{itemize}		
-			
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole modificare nel dettaglio una classe;
+		\item \textbf{Precondizione}: L'utente ha avviato il programma, ha aperto il diagramma delle classi e ha selezionato la classe che vuole modificare;
+		\item \textbf{Flusso principale degli eventi}: L'utente modifica nel dettaglio una classe;
+		\item \textbf{Postcondizione}: Il sistema visualizza la schermata di modifica di classe corrispondente alla classe selezionata dall'utente.
+	\end{itemize}
+	\subsection{Caso d'uso UC2.3: Eliminare una classe}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole eliminare una classe;
+		\item \textbf{Precondizione}: Esiste una classe che l'utente desidera eliminare;
+		\item \textbf{Flusso principale degli eventi}: L'utente elimina una classe;
+		\item \textbf{Postcondizione}: La classe non viene più visualizzata nell'editor del diagramma delle classi.
+	\end{itemize}
+	\subsection{Caso d'uso UC2.4: Definire una relazione}
+	\begin{itemize}
+		\item \textbf{Attori}: Utente
+		\item \textbf{Descrizione}: L'utente vuole definire una relazione tra due elementi.
+		\item \textbf{Precondizione}: Sono presenti due elementi e l'utente desidera che presentino una relazione l'una dall'altra.
+		\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+			\item L'utente vuole definire la dipendenza tra due elementi (UC2.4.1);
+			\item L'utente vuole definire l'associazione tra due elementi (UC2.4.2);
+			\item L'utente vuole definire l'ereditarietà  tra due elementi (UC2.4.3);
+			\item L'utente vuole definire l'aggregazione tra due elementi (UC2.4.4);
+			\item L'utente vuole definire la composizione tra due elementi (UC2.4.5);
+			\item L'utente vuole definire il raffinamento di una classe parametrica (UC2.4.6);
+			\item L'utente vuole definire la realizzazione di un'interfaccia (UC2.4.7).
+		\end{itemize}
+		\item \textbf{Postcondizione}: I due elementi vengono messi in relazione.
+	\end{itemize}
+		\subsection{Caso d'uso UC2.4.1: Definire la dipendenza tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole definire la dipendenza tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi e l'utente vuole evidenziarne la dipendenza;
+			\item \textbf{Flusso principale degli eventi}: L'utente definisce la dipendenza tra due elementi;
+			\item \textbf{Postcondizione}: La dipendenza tra le due elementi è stata definita.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.4.2: Definire associazione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole definire un'associazione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi e l'utente vuole evidenziarne l'associazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente definisce un'associazione tra due elementi;
+			\item \textbf{Postcondizione}: L'associazione tra le due elementi è stata definita.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.4.3: Definire ereditarietà  tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole definire un vincolo di ereditarietà  tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi e l'utente vuole evidenziarne il vincolo di ereditarietà ;
+			\item \textbf{Flusso principale degli eventi}: L'utente definisce un vincolo di ereditarietà  tra due elementi;
+			\item \textbf{Postcondizione}: L'ereditarietà  tra le due elementi è stata definita.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.4.4: Definire aggregazione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole definire un vincolo di aggregazione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi e l'utente vuole evidenziarne il vincolo di aggregazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente definisce un vincolo di aggregazione tra due elementi;
+			\item \textbf{Postcondizione}: L'aggregazione tra le due elementi è stata definita.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.4.5: Definire la composizione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole definire una composizione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi e l'utente vuole evidenziarne la composizione;
+			\item \textbf{Flusso principale degli eventi}: L'utente definisce una composizione tra due elementi;
+			\item \textbf{Postcondizione}: La relazione di composizione tra i due elementi è stata definita.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.4.6: Definire il raffinamento di una classe parametrica}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole definire il raffinamento di una classe parametrica;
+			\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi ha selezionato la classe parametrica che desidera raffinare;
+			\item \textbf{Flusso principale degli eventi}: L'utente definisce il raffinamento di una classe parametrica;
+			\item \textbf{Postcondizione}: La classe parametrica viene raffinata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.4.7: Definire la realizzazione di un'interfaccia}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole inserire la relazione di realizzazione tra  un'interfaccia e una classe all'interno del diagramma delle classi;
+			\item \textbf{Precondizione}: L'utente sta visualizzando il diagramma delle classi e sono presenti un'interfaccia e una classe ;
+			\item \textbf{Flusso principale degli eventi}: L'utente inserisce la relazione di realizzazione tra  un'interfaccia e una classe all'interno del diagramma delle classi;
+			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del sistema è visualizzato il diagramma dove è stata definita la realizzazione.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.5: Modificare una relazione}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare una relazione tra due elementi;
+			\item \textbf{Precondizione}: È presente una relazione che l'utente vuole modificare;
+			\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+				\item L'utente vuole modificare la dipendenza tra elementi (UC2.5.1).
+				\item L'utente vuole modificare l'associazione tra due elementi (UC2.5.2).
+				\item L'utente vuole modificare l'ereditarietà  tra due elementi (UC2.5.3).
+				\item L'utente vuole modificare l'aggregazione tra due elementi (UC2.5.4).
+				\item L'utente vuole modificare la composizione tra due elementi (UC2.5.5).
+				\item L'utente vuole modificare il raffinamento di una classe parametrica (UC2.5.6).
+				\item L'utente vuole modificare la realizzazione di un'interfaccia (UC2.5.7).
+			\end{itemize}
+			\item \textbf{Postcondizione}: .
+		\end{itemize}
+		\subsection{Caso d'uso UC2.5.1: Modificare la dipendenza tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare la dipendenza tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi che hanno una relazione di dipendenza e l'utente vuole modificare questa relazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica la dipendenza tra due elementi;
+			\item \textbf{Postcondizione}: La dipendenza tra le due elementi è stata modificata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.5.2: Modificare l'associazione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare un'associazione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi che hanno una relazione di associazione e l'utente vuole modificarne la relazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica un'associazione tra due elementi;
+			\item \textbf{Postcondizione}: L'associazione tra le due elementi è stata modificata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.5.3: Modificare l'ereditarietà  tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare una relazione di ereditarietà  tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi che hanno una relazione di ereditarietà  e l'utente vuole modificare questa relazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica una relazione di ereditarietà  tra due elementi;
+			\item \textbf{Postcondizione}: L'ereditarietà  tra le due elementi è stata modificata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.5.4: Modificare l'aggregazione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare un vincolo di aggregazione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi che hanno un vinscolo di aggregazione e l'utente vuole modificare la relazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica un vincolo di aggregazione tra due elementi;
+			\item \textbf{Postcondizione}: L'aggregazione tra le due elementi è stata definita.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.5.5: Modificare la composizione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare una composizione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi con relazione di composizione e l'utente vuole modificarne la relazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica una composizione tra due elementi;
+			\item \textbf{Postcondizione}: La relazione di composizione tra i due elementi è stata definita.	
+		\end{itemize}
+		\subsection{Caso d'uso UC2.5.6: Modificare il raffinamento di una classe parametrica}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare il raffinamento di una classe parametrica;
+			\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi ha selezionato il raffinamento di una classe parametrica che desidera modificare;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica il raffinamento di una classe parametrica;
+			\item \textbf{Postcondizione}: La relazione di raffinamento viene modificata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.5.7: Modificare la realizzazione di un'interfaccia}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare la relazione di realizzazione tra un'interfaccia e una classe all'interno del diagramma delle classi;
+			\item \textbf{Precondizione}: L'utente sta visualizzando il diagramma delle classi e sono presenti un'interfaccia e una classe che la realizza;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica la relazione di realizzazione tra un'interfaccia e una classe all'interno del diagramma delle classi;
+			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del sistema è visualizzato il diagramma dove è stata modificatala realizzazione.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.6: Eliminare una relazione}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare una relazione;
+			\item \textbf{Precondizione}: Esiste una relazione che l'utente desidera eliminare;
+			\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+				\item L'utente vuole eliminare la dipendenza tra due elementi (UC2.6.1);
+				\item L'utente vuole eliminare l'associazione tra due elementi (UC2.6.2);
+				\item L'utente vuole eliminare l'ereditarietà  tra due elementi (UC2.6.3);
+				\item L'utente vuole eliminare l'aggregazione tra due elementi(UC2.6.4);
+				\item L'utente vuole eliminare la composizione tra due elementi (UC2.6.5);
+				\item L'utente vuole eliminare il raffinamenti di una classe parametrica (UC2.6.6);
+				\item L'utente vuole eliminare la realizzazione di un'interfaccia (UC2.6.7).
+			\end{itemize}
+			\item \textbf{Postcondizione}: La relazione viene eliminata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.6.1: Eliminare la dipendenza tra due elementi }
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare una dipendenza tra due elementi;
+			\item \textbf{Precondizione}: Esiste una dipendenza tra classi che l'utente desidera eliminare;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina una dipendenza tra due elementi;
+			\item \textbf{Postcondizione}: La dipendenza tra classi viene eliminata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.6.2: Eliminare l'associazione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare un'associazione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi che hanno una relazione di associazione che l'utente vuole eliminare la relazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina un'associazione tra due elementi;
+			\item \textbf{Postcondizione}: L'associazione tra le due elementi è stata eliminata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.6.3: Eliminare l'ereditarietà  tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare l'ereditarietà  tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi che hanno una relazione di ereditarietà  che l'utente vuole eliminare;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina l'ereditarietà  tra due elementi;
+			\item \textbf{Postcondizione}: L'ereditarietà  tra le due elementi è stata eliminata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.6.4: Eliminare l'aggregazione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare un vincolo di aggregazione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi che hanno un vinscolo di aggregazione che l'utente vuole eliminare;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina un vincolo di aggregazione tra due elementi;
+			\item \textbf{Postcondizione}: L'aggregazione tra le due elementi è stata eliminata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.6.5: Eliminare la composizione tra due elementi}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare una composizione tra due elementi;
+			\item \textbf{Precondizione}: Sono presenti due elementi con relazione di composizione che l'utente vuole eliminare;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina una composizione tra due elementi;
+			\item \textbf{Postcondizione}: La relazione di composizione tra i due elementi è stata eliminata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.6.6: Eliminare il raffinamento di una classe parametrica}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare il raffinamento di una classe parametrica;
+			\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi e ha selezionato il raffinamento di una classe parametrica che desidera eliminare;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina il raffinamento di una classe parametrica;
+			\item \textbf{Postcondizione}: La relazione di raffinamento viene eliminata.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.6.7: Eliminare la realizzazione di un'interfaccia}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare la relazione di realizzazione tra un'interfaccia e una classe all'interno del diagramma delle classi;
+			\item \textbf{Precondizione}: L'utente sta visualizzando il diagramma delle classi e sono presenti un'interfaccia e una classe che la realizza;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina la relazione di realizzazione tra un'interfaccia e una classe all'interno del diagramma delle classi;
+			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del sistema è visualizzato il diagramma dove è stata eliminata realizzazione.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.7: Creare una interfaccia}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole creare un'interfaccia;
+			\item \textbf{Precondizione}: Il sistema è pronto alla creazione di un'interfaccia, l'utente desidera creare un'interfaccia;
+			\item \textbf{Flusso principale degli eventi}: L'utente crea un'interfaccia;
+			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi l'interfaccia è correttamente visualizzato il diagramma nel quale è stata creata l'interfaccia.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.8: Modificare una interfaccia}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente sceglie di modificare un'interfaccia all'interno dell'editor del diagramma delle classi;
+			\item \textbf{Precondizione}: Nell'editor del diagramma delle classi è stata selezionata l'interfaccia che l'utente desidera modificare;
+			\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+				\item L'utente può apportare modifiche minori all'interfaccia;
+				\item L'utente può aprire la schermata di modifica interfaccia (UC2.8.1);
+			\end{itemize}
+			\item \textbf{Scenari alternativi}: Viene annullata la modifica, l'interfaccia rimane nello stato precedente al tentativo di modifica;
+			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi è visualizzato il diagramma dove sono state apportate le modifiche all'interfaccia.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.8.1: Aprire la schermata di modifica di interfaccia corrispondente}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare nel dettaglio un'interfaccia;
+			\item \textbf{Precondizione}: L'utente ha avviato il programma, ha aperto il diagramma delle classi e ha selezionato l'interfaccia che vuole modificare;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica nel dettaglio un'interfaccia;
+			\item \textbf{Postcondizione}: Il sistema visualizza la schermata di modifica di interfaccia corrispondente all'interfaccia selezionata dall'utente.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.9: Eliminare una interfaccia}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare un'interfaccia dal diagramma delle classi;
+			\item \textbf{Precondizione}: L'utente ha selezionato l'interfaccia che vuole rimuovere;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina un'interfaccia dal diagramma delle classi;
+			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi è visualizzato il diagramma dove è stata rimossa l'interfaccia.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.10: Creare un commento}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole creare commento all'interno del diagramma delle classi;
+			\item \textbf{Precondizione}: L'utente ha avviato il programma aperto nel diagramma delle classi;
+			\item \textbf{Flusso principale degli eventi}: L'utente crea un commento all'interno del diagramma delle classi;
+			\item \textbf{Postcondizione}: Il commento viene aggiunto al diagramma delle classi;
+		\end{itemize}
+		\subsection{Caso d'uso UC2.11: Collegare un commento}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole collegare un commento a un altro elemento;
+			\item \textbf{Precondizione}: L'utente ha avviato il programma e ha il diagramma delle classi aperto;
+			\item \textbf{Flusso principale degli eventi}: L'utente collega un commento a un altro elemento;
+			\item \textbf{Postcondizione}: Il commento viene collegato all'elemento nel diagramma delle classi.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.12: Modificare un commento}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare un commento nel diagramma delle classi;
+			\item \textbf{Precondizione}: L'utente ha selezioneto il commento che cuole modificare all'interno del diagramma delle classi;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica un commento nel diagramma delle classi;
+			\item \textbf{Postcondizione}: Il commento all'interno del diagramma delle classi viene modificato.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.13: Eliminare un commento}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare un commento dal diagramma delle classi;
+			\item \textbf{Precondizione}: L'utente ha selezionato il commento che vuole eliminare;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina un commento dal diagramma delle classi;
+			\item \textbf{Postcondizione}: Il commento viene eliminato dal diagramma delle classi.
+		\end{itemize}
+		\subsection{Caso d'uso UC2.14: Aprire l'editor del diagramma dei package}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole aprire l'editor del diagramma dei package;
+			\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi e il sistema è pronto a ricevere un comando dall'utente;
+			\item \textbf{Flusso principale degli eventi}: L'utente apre l'editor del diagramma dei package;
+			\item \textbf{Postcondizione}: Il sistema visualizza la schermata dell'editor del diagramma dei package;
+		\end{itemize}
+		\subsection{Caso d'uso UC2.15: Riposizionare un elemento}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole cambiare la posizione di un elemento all'interno del diagramma;
+			\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi e il sistema è pronto a ricevere un comando dall'utente;
+			\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento;
+			\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
+		\end{itemize}
+		\subsection{Caso d'uso UC3: Modificare una classe mediante la schermata di modifica di classe}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare una classe;
+			\item \textbf{Precondizione}: L'utente ha selezionato una classe all'interno del diagramma delle classi che vuole modificare;
+			\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+				\item L'utente può aggiungere un attributo (UC3.1);
+				\item L'utente può modificare un attributo (UC3.2);
+				\item L'utente può eliminare un attributo (UC3.3);
+				\item L'utente può aggiungere un'operazione (UC3.4);
+				\item L'utente può modificare un'operazione (UC3.5);
+				\item L'utente può rimuovere un'operazione (UC3.6);
+				\item L'utente può commentare una classe (UC3.7);
+				\item L'utente può marchiare una classe (UC3.8);
+				\item L'utente può passare al diagramma delle classi (UC3.9);
+			\end{itemize}
+			\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di modifica;
+			\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate alla classe.
+		\end{itemize}
+		\subsection{Caso d'uso UC3.1: Aggiungere un attributo}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole aggiungere un attributo ad una classe;
+			\item \textbf{Precondizione}: L'utente ha selezionato una classe all'interno del diagramma delle classi alla quale vuole aggiungere un attributo;
+			\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un attributo alla classe;
+			\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di aggiunta;
+			\item \textbf{Postcondizione}: L'attributo viene aggiunto alla classe con i parametri decisi dall'utente.
+		\end{itemize}
+		\subsection{Caso d'uso UC3.2: Modificare un attributo}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare un attributo di una classe;
+			\item \textbf{Precondizione}: L'utente ha selezionato l'attributo che vuole modificare all'interno di una classe;
+			\item \textbf{Flusso principale degli eventi}: L'utente modifica l'attributo della classe;
+			\item \textbf{Scenari alternativi}: Viene annullata la modifica, il campo dati rimane nello stato precedente al tentativo di modifica;
+			\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate all'attributo all'interno della classe.
+		\end{itemize}
+		\subsection{Caso d'uso UC3.3: Eliminare un attributo}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole eliminare un attributo all'interno di una classe;
+			\item \textbf{Precondizione}: L'utente ha selezionato l'attributo che vuole eliminare;
+			\item \textbf{Flusso principale degli eventi}: L'utente elimina un attributo;
+			\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di eliminazione;
+			\item \textbf{Postcondizione}: L'attributo viene eliminato dalla classe dopo eventuali avvisi nel caso ci siano dipendenze da controllare.
+		\end{itemize}
+		\subsection{Caso d'uso UC3.4: Aggiungere un'operazione}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole aggiungere un'operazione ad una classe;
+			\item \textbf{Precondizione}: L'utente ha selezionato una classe all'interno del diagramma delle classi alla quale vuole aggiungere un'operazione;
+			\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un'operazione ad una classe;
+			\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di aggiunta;
+			\item \textbf{Postcondizione}: L'operazione viene aggiunta alla classe con i parametri decisi dall'utente.
+		\end{itemize}
+		\subsection{Caso d'uso UC3.5: Modificare un'operazione}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare un' operazione all'interno di una classe;
+			\item \textbf{Precondizione}: L'utente ha selezionato l'operazione che vuole modificare all'interno di una classe;
+			\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+				\item L'utente può aggiungere un parametro (UC3.5.1);
+				\item L'utente può modificare un parametro (UC3.5.2);
+				\item L'utente può eliminare un parametro (UC3.5.3);
+				\item L'utente può apportare modifiche minori;
+			\end{itemize}
+			\item \textbf{Scenari alternativi}: Viene annullata la modifica, l'operazione rimane nello stato precedente al tentativo di modifica;
+			\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate all'operazione all'interno della classe.
+		\end{itemize}
+		\subsection{Caso d'uso UC3.5.1: Aggiungere un parametro}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole aggiungere un parametro alla lista parametri dell'operazione;
+			\item \textbf{Precondizione}: Nella schermata di modifica delle classi è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+			\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un parametro alla lista parametri dell'operazione;
+			\item \textbf{Postcondizione}: Nella schermata di modifica delle classi è visualizzato il parametro che è stato aggiunto alla lista parametri dell'operazione.
+		\end{itemize}
+		\subsection{Caso d'uso UC3.5.2: Modificare un parametro}
+		\begin{itemize}
+			\item \textbf{Attori}: Utente
+			\item \textbf{Descrizione}: L'utente vuole modificare un parametro della lista parametri dell'operazione;
+			\item \textbf{Precondizione}: Nella schermata di modifica delle classi è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+			\item \textbf{Flusso principale degli eventi}: \begin{itemize} \item L'utente può definire la direzione del parametro (UC); \item L'utente può rinominare il parametro (UC); \item L'utente può definire il tipo del parametro (UC); \item L'utente può definire il valore di default del parametro (UC). \end{itemize}
+				\item \textbf{Postcondizione}: Nella schermata di modifica delle classi è visualizzato il parametro che è stato modificato nella lista parametri dell'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC3.5.3: Rimuovere un parametro}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole rimuovere un parametro;
+				\item \textbf{Precondizione}: Nella schermata di modifica delle classi è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente rimuove un parametro;
+				\item \textbf{Postcondizione}: Nella schermata di modifica delle classi è visualizzato il parametro che è stato rimosso dalla lista parametri dell'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC3.6: Rimuovere un'operazione}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole rimuovere un'operazione all'interno di una classe;
+				\item \textbf{Precondizione}: L'utente ha selezionato l'operazione che vuole rimuovere;
+				\item \textbf{Flusso principale degli eventi}: L'utente rimuove un'operazione all'interno di una classe;
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di rimozione;
+				\item \textbf{Postcondizione}: L'operazione viene rimossa dalla classe dopo eventuali avvisi nel caso ci siano dipendenze da controllare.
+			\end{itemize}
+			\subsection{Caso d'uso UC3.7: Commentare una classe}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole commentare una classe;
+				\item \textbf{Precondizione}: L'utente ha selezionato la classe che desidera commentare;
+				\item \textbf{Flusso principale degli eventi}: L'utente commenta una classe;
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Il commento relativo alla classe viene impostato.
+			\end{itemize}
+			\subsection{Caso d'uso UC3.8: Marchiare una classe}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole marchiare una classe con un attributo;
+				\item \textbf{Precondizione}: L'utente ha selezionato la classe che desidera marchiare;
+				\item \textbf{Flusso principale degli eventi}: L'utente marchia una classe con un attributo;
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: La classe è stata marchiata con un attributo.
+			\end{itemize}
+			\subsection{Caso d'uso UC3.9: Passare dalla modifica di una classe al diagramma delle classi}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole spostarsi nella schermata del diagramma delle classi;
+				\item \textbf{Precondizione}: L'utente si trova nella schermata di modifica delle classi;
+				\item \textbf{Flusso principale degli eventi}: L'utente si sposta nella schermata del diagramma delle classi;
+				\item \textbf{Postcondizione}: L'utente si trova nella schermata del diagramma delle classi.
+			\end{itemize}
+			\subsection{Caso d'uso UC4: Modificare un'interfaccia mediante la schermata di modifica di interfaccia}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole modificare un'interfaccia;
+				\item \textbf{Precondizione}: L'utente si trova nell'editor delle classi ed il sistema è pronto per ricevere un comando;
+				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+					\item L'utente può aggiungere un'operazione (UC4.1);
+					\item L'utente può modificare un'operazione (UC4.2);
+					\item L'utente può rimuovere un'operazione (UC4.3);
+					\item L'utente può commentare l'interfaccia (UC4.4);
+					\item L'utente può marchiare l'interfaccia (UC4.5);
+					\item L'utente può passare dalla modifica dell'interfaccia al diagramma delle classi (UC4.6);
+				\end{itemize}
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, l'interfaccia rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate all'interfaccia;
+			\end{itemize}
+			\subsection{Caso d'uso UC4.1: Aggiungere un'operazione}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole aggiungere un'operazione all'interfaccia;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un'operazione all'interfaccia;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzata la classe a cui è stata aggiunta l'operazione desiderata;
+			\end{itemize}
+			\subsection{Caso d'uso UC4.2: Modificare un'operazione}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole modificare un'operazione già  inserita in un'interfaccia;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+					\item L'utente può apportare modifiche minori;
+					\item L'utente può aprire il diagramma delle attività  corrispondente (UC4.2.1);
+					\item L'utente può aggiungere un parametro (UC4.2.2);
+					\item L'utente può modificare un parametro (UC4.2.3);
+					\item L'utente può eliminare un parametro (UC4.2.4);
+				\end{itemize}
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata modificata l'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC4.2.1: Aprire il diagramma delle attività  corrispondente}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole aprire il diagramma delle attività  associato all'operazione che vuole modificare;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente apre il diagramma delle attività  associato all'operazione che vuole modificare;
+				\item \textbf{Postcondizione}: Il sistema visualizza il diagramma delle attività  corrispondente all'operazione che l'utente vuole modificare;
+			\end{itemize}
+			\subsection{Caso d'uso UC4.2.2: Aggiungere un parametro}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole aggiungere un parametro alla lista parametri dell'operazione;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un parametro alla lista parametri dell'operazione;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato aggiunto un parametro alla lista parametri dell'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC4.2.3: Modificare un parametro}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole modificare un parametro della lista parametri dell'operazione;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente modifica il parametro;
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il parametro rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato modificato un parametro nella lista parametri dell'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC4.2.4: Eliminare un parametro}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole eliminare un parametro;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionato il parametro da rimuovere e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente elimina un parametro;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato rimosso il parametro dalla lista parametri dell'operazione.	
+			\end{itemize}
+			\subsection{Caso d'uso UC4.3: Rimuovere un'operazione}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole rimuovere un'operazione;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da rimuovere e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente rimuove l'operazione;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata rimossa l'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC4.4: Commentare l'interfaccia}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole commentare l'interfaccia;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'interfaccia da commentare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente commenta l'interfaccia;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata commentata l'interfaccia.
+			\end{itemize}
+			\subsection{Caso d'uso UC4.5: Marchiare l'interfaccia}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole marchiare l'interfaccia;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'interfaccia da marchiare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente marchia l'interfaccia;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata marchiata l'interfaccia.
+			\end{itemize}
+			\subsection{Caso d'uso UC4.6: Passare dalla modifica di interfaccia al diagramma delle classi}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole tornare al diagramma delle classi dalla schermata di modifica di interfaccia;
+				\item \textbf{Precondizione}: Il sistema visualizza la schermata di modifica di interfaccia;
+				\item \textbf{Flusso principale degli eventi}: L'utente torna al diagramma delle classi dalla schermata di modifica di interfaccia;
+				\item \textbf{Postcondizione}: Il sistema visualizza l'editor del diagramma delle classi
+			\end{itemize}
+			\subsection{Caso d'uso UC5: Editare il diagramma dei package}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole editare il diagramma dei package;
+				\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma dei package il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+					\item L'utente può creare un package (UC5.1);
+					\item L'utente può modificare un package (UC5.2);
+					\item L'utente può rimuovere un package (UC5.3);
+					\item L'utente può definire una dipendenza (UC5.4);
+					\item L'utente può rimuovere una dipendenza (UC5.5);
+					\item L'utente può tornare all'editor del diagramma delle classi (UC5.6);
+					\item L'utente può riposizionare un elemento (UC5.7);
+				\end{itemize}
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il diagramma rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: L'utente ha editato diagramma dei package come voluto e il sistema è pronto a ricevere un nuovo comando.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.1: Creare un package}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole creare un package;
+				\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma dei package il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente crea un package;
+				\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma dei package è visualizzato il diagramma a cui è stato aggiunto un nuovo package.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.2: Modificare un package}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole modificare un package;
+				\item \textbf{Precondizione}: Nell'editor del diagramma dei package è stato selezionato un package che l'utente desidera modificare;
+				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+					\item L'utente modifica il package;
+					\item L'utente può innestare un elemento nel package (UC5.2.1);
+					\item L'utente può rimuovere un elemento dal package (UC5.2.2);
+				\end{itemize}
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema	rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package è visualizzato il diagramma dove sono state apportate le modifiche al package e il sistema è pronto a ricevere un nuovo comando.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.2.1: Innestare un elemento nel package}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole innestare un elemento all'interno di un package;
+				\item \textbf{Precondizione}: Nell'editor del diagramma dei package il sistema è pronto ad effettuare l'innesto;
+				\item \textbf{Flusso principale degli eventi}: L'utente innesta un elemento all'interno del package;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package è visualizzato il diagramma dove è stato effettuato l'innesto e il sistema è pronto a ricevere un nuovo comando.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.2.2: Rimuovere un elemento dal package}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole rimuovere un elemento da un package;
+				\item \textbf{Precondizione}: Nell'editor del diagramma dei package è selezionato l'elemento che l'utente desidera rimuovere;
+				\item \textbf{Flusso principale degli eventi}: L'utente rimuove un elemento da un package;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package è visualizzato il diagramma dove è stato rimosso l'elemento e il sistema è pronto a ricevere un nuovo comando.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.3: Eliminare un package}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole eliminare un package;
+				\item \textbf{Precondizione}: Nell'editor del diagramma dei package è selezionato il package che l'utente desidera rimuovere;
+				\item \textbf{Flusso principale degli eventi}: L'utente elimina un package;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package è visualizzato il diagramma dove è stato eliminato il package e il sistema è pronto a ricevere un nuovo comando.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.4: Definire una dipendenza tra package}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole definire una dipendenza tra due package;
+				\item \textbf{Precondizione}: Nell'editor del diagramma dei package il sistema è pronto a creare la dipendenza che l'utente desidera definire;
+				\item \textbf{Flusso principale degli eventi}: L'utente definisce una dipendenza tra due package;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package del sistema è visualizzato il diagramma dove è stata definita la dipendenza e il sistema è pronto a ricevere un nuovo comando.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.5: Rimuovere una dipendenza tra package}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole rimuovere una dipendenza tra due package;
+				\item \textbf{Precondizione}: Nell'editor del diagramma dei package il sistema è pronto a eliminare la dipendenza che l'utente desidera rimuovere;
+				\item \textbf{Flusso principale degli eventi}: L'utente rimuove una dipendenza tra due package;
+				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package è visualizzato il diagramma dove è stata rimossa la dipendenza e il sistema è pronto a ricevere un nuovo comando.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.6: Passare dal diagramma dei package al diagramma delle classi}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole tornare alla schermata dell'editor del diagramma delle classi di un particolare package;
+				\item \textbf{Precondizione}: Il sistema visualizza l'editor del diagramma dei package;
+				\item \textbf{Flusso principale degli eventi}: L'utente torna alla schermata dell'editor del diagramma delle classi di un particolare package;
+				\item \textbf{Postcondizione}: Il sistema visualizza nell'editor del diagramma delle classi il package desiderato.
+			\end{itemize}
+			\subsection{Caso d'uso UC5.7: Riposizionare un elemento}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole cambiare la posizione di un elemento all'interno del diagramma;
+				\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma dei package e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento;
+				\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
+			\end{itemize}
+			\subsection{Caso d'uso UC6: Editare il diagramma delle attività }
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole editare il diagramma delle attività ;
+				\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività  e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+					\item L'utente può creare un'attività  (UC6.1);
+					\item L'utente può modificare un'attità  (UC6.2);
+					\item L'utente può eliminare un'attività  (UC6.3);
+					\item L'utente può aggiungere un elemento di decisione (UC6.4);
+					\item L'utente può modificare un elemento di decisione (UC6.5);
+					\item L'utente può eliminare un elemento di decisione (UC6.6);
+					\item L'utente può aggiungere una regione di espansione (UC6.7);
+					\item L'utente può modificare una regione di espansione (UC6.8);
+					\item L'utente può eliminare una regione di espansione (UC6.9);
+					\item L'utente può aggiungere una trasformazione tra pin (UC6.10);
+					\item L'utente può modificare trasformazione tra pin (UC6.11);
+					\item L'utente può eliminare trasformazione tra pin (UC6.12);
+					\item L'utente può aggiungere evento temporale (UC6.13);
+					\item L'utente può modificare evento temporale (UC6.14);
+					\item L'utente può eliminare evento temporale (UC6.15);
+					\item L'utente può tornare al diagramma delle classi (UC6.16);
+					\item L'utente può riposizionare un elemento (UC6.17).
+				\end{itemize}
+					\item \textbf{Scenari alternativi}: Viene annullata la modifica, l'interfaccia rimane nello stato precedente al tentativo di modifica;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è mostrato il diagramma come è stato editato dall'utente e il sistema è pronto a ricevere un nuovo comando.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.1: Creare un'attività }
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole creare un'attività ;
+					\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività  e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente crea una nuova attività  che viene aggiunta nel diagramma delle attività .
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma a cui è stata aggiunta la nuova attività .
+				\end{itemize}
+				\subsection{Caso d'uso UC6.2: Modificare un'attività }
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole modificare un'attività ;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stata selezionata l'attività  da modificare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+						\item L'utente può apportare modifiche minori;
+						\item L'utente può aggiungere un pin all'attività  (UC6.2.1);
+						\item L'utente può modificare un pin dell'attività  (UC6.2.2);
+						\item L'utente può rimuovere un pin dell'attività  (UC6.2.3);
+						\item L'utente può aprire l'editor del bubble flowchart (UC6.2.4);
+					\end{itemize}
+					\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma in cui è stata modificata l'attività .
+				\end{itemize}
+				\subsection{Caso d'uso UC6.2.1: Aprire l'editor del bubble flowchart}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole aprire l'editor del bubble flowchart; 
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stata selezionata l'attività  di cui si vuole editare il bubble flowchart e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente apre l'editor del bubble flowchart;
+					\item \textbf{Postcondizione}: Il sistema visualizza la schermata dell'editor del bubble flowchart con aperto il diagramma della attività  corrispondente. Il sistema è pronto a ricevere un nuovo comando dall'utente.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.2.2: Aggiungere un pin all'attività }
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole aggiungere un pin all'attività ;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stata selezionata l'attività  a cui aggiungere un pin e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un pin all'attività ;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma in cui è stato aggiunto il pin all'attività .
+				\end{itemize}
+				\subsection{Caso d'uso UC6.2.3: Modificare un pin dell'attività }
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole modificare un pin dell'attività ;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stato selezionato il pin da modificare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+					\item L'utente può definire la direzione del parametro corrispondente;
+					\item L'utente può rinominare il parametro corrispondente;
+					\item L'utente può definire il tipo del parametro corrispondente;
+					\item L'utente può definire il valore di default del parametro corrispondente.
+				\end{itemize}
+					\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma in cui è stato modificato il pin dell'attività .
+				\end{itemize}
+				\subsection{Caso d'uso UC6.2.4: Rimuovere un pin dell'attività }
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole rimuovere un pin dell'attività ;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stato selezionato il pin da rimuovere e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente rimuove il pin selezionato dal diagramma delle attività ;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma in cui è stato rimosso il pin all'attività .
+				\end{itemize}
+				\subsection{Caso d'uso UC6.3: Eliminare un'attività }
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole eliminare un'attività ;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stata selezionata l'attività  da eliminare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente elimina un'attività ;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma da cui è stata rimossa l'attività .
+				\end{itemize}
+				\subsection{Caso d'uso UC6.4: Aggiungere un elemento di decisione}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole aggiungere un elemento di decisione;
+					\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività  e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un elemento di decisione, il quale viene visualizzato nel diagramma delle attività ;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma a cui è stato aggiunto l'elemento di decisione.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.5: Modificare un elemento di decisione}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole modificare un elemento di decisione;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stato selezionato l'elemento di decisione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente modifica l'elemento di decisione selezionato nel diagramma delle attività ;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma in cui è stato modificato l'elemento di decisione.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.6: Eliminare un elemento di decisione}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole eliminare un elemento di decisione;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stato selezionato l'elemento di decisione da eliminare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente elimina un elemento di decisione;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma da cui è stato rimosso l'elemento di decisione.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.7: Aggiungere una regione di espansione}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole aggiungere una regione di espansione;
+					\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività  e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge una regione di espansione;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma a cui è stata aggiunta la regione di espansione;
+				\end{itemize}
+				\subsection{Caso d'uso UC6.8: Modificare una regione di espansione}
+				\begin{itemize}
+					\item \textbf{Attori}: Editor UML
+					\item \textbf{Descrizione}: L'utente vuole modificare una regione di espansione;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stata selezionata la regione di espansione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente modifica la regione di espansione;
+					\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma in cui è stata modificata la regione di espansione.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.9: Eliminare una regione di espansione}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole eliminare una regione di espansione;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stata selezionata la regione di espansione da eliminare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente elimina una regione di espansione;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma da cui è stata rimossa la regione di espansione.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.10: Aggiungere una trasformazione tra pin}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole aggiungere una trasformazione tra pin;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stato selezionato il pin da cui far partire la trasformazione e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge una trasformazione tra pin;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma a cui è stata aggiunta la trasformazione tra pin.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.11: Modificare una trasformazione tra pin}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole modificare una trasformazione tra pin;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stata selezionata la trasformazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente modifica una trasformazione tra pin;
+					\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma in cui è stata modificata la trasformazione tra pin.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.12: Eliminare una trasformazione tra pin}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole eliminare una trasformazione tra pin;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stata selezionata la trasformazione da eliminare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente elimina una trasformazione tra pin;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma da cui è stata rimossa la trasformazione tra pin.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.13: Aggiungere un evento temporale}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole aggiungere un evento temporale;
+					\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività  e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un evento temporale;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma a cui è stato aggiunto l'evento temporale.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.14: Modificare un evento temporale}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole modificare un evento temporale;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stato selezionato l'evento temporale da modificare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+						\item L'utente può rinominare l'evento temporale;
+						\item L'utente può definire la durata dell'evento temporale;
+					\end{itemize}
+					\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma in cui è stato modificato l'evento temporale.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.15: Eliminare un evento temporale}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole eliminare un evento temporale;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività  è stato selezionato l'evento temporale da eliminare e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente elimina un evento temporale;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività  è visualizzato il diagramma da cui è stato rimosso l'evento temporale.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.16: Passare dal diagramma delle attività  al diagramma delle classi}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole passare dal diagramma delle attività  al diagramma delle classi;
+					\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività  e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente passa dal diagramma delle attività  al diagramma delle classi;
+					\item \textbf{Postcondizione}: Il sistema visualizza la schermazta dell'editor del diagramma delle classi ed è pronto a ricevere un nuovo comando dall'utente.
+				\end{itemize}
+				\subsection{Caso d'uso UC6.17: Riposizionare un elemento}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole cambiare la posizione di un elemento all'interno del diagramma;
+					\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle attività  e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento all'interno del diagramma;
+					\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
+				\end{itemize}
+				\subsection{Caso d'uso UC7: Editare il bubble flowchart}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole editare un bubble flowchart;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+						\item L'utente può aggiungere una bubble (UC7.1);
+						\item L'utente può modificare una bubble (UC7.2);
+						\item L'utente può eliminare una bubble (UC7.3);
+						\item L'utente può aggiungere un elemento di decisione (UC7.4);
+						\item L'utente può modificare un elemento di decisione (UC7.5);
+						\item L'utente può eliminare un elemento di decisione (UC7.6);
+						\item L'utente può passare all'editor del diagramma delle attività  (UC7.7);
+						\item L'utente può riposizionare un elemento (UC7.8);
+					\end{itemize}
+					\item \textbf{Postcondizione}: L'utente ha editato il bubble flowchart come voluto e il sistema è pronto a ricevere un nuovo comando.
+				\end{itemize}
+				\subsection{Caso d'uso UC7.1: Aggiungere una bubble}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole aggiungere una bubble di un tipo desiderato al bubble flowchart;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto per l'aggiunta di una bubble;
+					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge una bubble di un tipo desiderato al bubble flowchart;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma a cui è stata aggiunta una bubble vuota del tipo voluto.
+				\end{itemize}
+				\subsection{Caso d'uso UC7.2: Modificare una bubble}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole modificare i parametri di una bubble. Questi saranno specifici per ciascuna bubble, i relativi casi d'uso saranno quindi approfonditi nelle successive fasi di progettazione;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stata selezionata una bubble;
+					\item \textbf{Flusso principale degli eventi}: L'utente modifica i parametri di una bubble;
+					\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema	rimane nello stato precedente al tentativo di modifica;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui sono stati opportunamente modificati i parametri della bubble.
+				\end{itemize}
+				\subsection{Caso d'uso UC7.3: Eliminare una bubble}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole eliminare una bubble;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stata selezionata una bubble;
+					\item \textbf{Flusso principale degli eventi}: L'utente elimina una bubble;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui è stata eliminata la bubble.
+				\end{itemize}
+				\subsection{Caso d'uso UC7.4: Aggiungere un elemento di decisione}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole aggiungere un elemento di decisione al bubble flowchart;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart il sistema è pronto per l'aggiunta di un elemento di decisione;
+					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un elemento di decisione al bubble flowchart;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma a cui è stato aggiunto un elemento di decisione vuoto.
+				\end{itemize}
+				\subsection{Caso d'uso UC7.5: Modificare un elemento di decisione}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole modificare i parametri di un elemento di decisione;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stato selezionato un elemento di decisione;
+					\item \textbf{Flusso principale degli eventi}: L'utente modifica i parametri di un elemento di decisione;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui sono stati opportunamente modificati i parametri dell'elemento di decisione.
+				\end{itemize}
+				\subsection{Caso d'uso UC7.6: Eliminare un elemento di decisione}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole eliminare un elemento di decisione;
+					\item \textbf{Precondizione}: Nella schermata dell'editor del bubble flowchart è stato selezionato un elemento di decisione;
+					\item \textbf{Flusso principale degli eventi}: L'utente elimina un elemento di decisione;
+					\item \textbf{Postcondizione}: Nella schermata dell'editor del bubble flowchart è visualizzato il diagramma in cui è stato eliminato l'elemento di decisione.
+				\end{itemize}
+				\subsection{Caso d'uso UC7.7: Passare dal bubble flowchart al diagramma delle attività }
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole tornare alla schermata dell'editor del diagramma delle attività ;
+					\item \textbf{Precondizione}: Il sistema visualizza l'editor del bubble flowchart;
+					\item \textbf{Flusso principale degli eventi}: L'utente torna alla schermata dell'editor del diagramma delle attività ;
+					\item \textbf{Postcondizione}: Il sistema visualizza l'editor del diagramma delle attività .
+				\end{itemize}
+				\subsection{Caso d'uso UC7.8: Riposizionare un elemento}
+				\begin{itemize}
+					\item \textbf{Attori}: Utente
+					\item \textbf{Descrizione}: L'utente vuole cambiare la posizione di un elemento all'interno del diagramma;
+					\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del bubble flowchart e il sistema è pronto a ricevere un comando dall'utente;
+					\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento;
+					\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
+				\end{itemize}
 \end{document}
