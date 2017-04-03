@@ -188,6 +188,13 @@
 \newcommand{\logo}{ 
 	{\includegraphics[scale=0.4]{../../../Immagini/KaleidosCodeLogo}\DeclareGraphicsExtensions{.png}\\}}
 
+\newcommand{\myincludegraphics}[2][]{%
+	\setbox0=\hbox{\phantom{X}}%
+	\vtop{
+		\hbox{\phantom{X}}
+		\vskip-\ht0
+		\hbox{\includegraphics[#1]{#2}}}}
+
 %%%%%%%%%%%%%%%%% FINE COMANDI PERSONALIZZATI %%%%%%%%%%%%%%%%%%
 
 \endinput
