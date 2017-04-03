@@ -9,10 +9,10 @@
 	8.	Esportare il codice
 
 2.	Editare il diagramma delle classi
-	1.	Creare una classe                                           E---->modificare il nome (ma non è uc)
-	2.	Modificare una classe
+	1.	Creare una classe                                           E---->modificare classe (2.2)
+	2.	Modificare una classe	
 		1.	Aprire la schermata di modifica di classe corrispondente
-	3.	Eliminare una classe										I---->eliminare una(o più) relazione(UC2.6)   I----->eliminare diagramma delle attività(UC6.3)
+	3.	Eliminare una classe										I---->eliminare una(o più) relazione(UC2.6)   E----->eliminare diagramma delle attività(UC6.3)
 	4.	Creare una realizzazione                                    E---->modificare il nome (ma non è uc) 
 		1.	Creare una dipendenza
 		2.	Creare un'associazione
@@ -37,11 +37,11 @@
 		5.	Eliminare una composizione
 		6.	Eliminare un raffinamento
 		7.	Eliminare una realizzazione di interfaccia
-	7.	Creare un'interfaccia                                       E---->modificare il nome (ma non è uc) 
+	7.	Creare un'interfaccia                                       E---->modificare il nome (2.8) 
 	8.	Modificare un'interfaccia				
 		1.	Aprire la schermata di modifica di interfaccia corrispondente
 			ALTERNATIVO: Viene annullata la modifica, l'interfaccia rimane nello stato precedente al tentativo di modifica;
-	9.	Eliminare un'interfaccia									I---->eliminare una(o più) relazione(UC2.6)   I----->eliminare diagramma delle attività(UC6.3)
+	9.	Eliminare un'interfaccia									I---->eliminare una(o più) relazione(UC2.6)   E----->eliminare diagramma delle attività(UC6.3)
 	10.	Creare un commento
 	11.	Collegare un commento
 	12.	Modificare un commento
@@ -58,7 +58,7 @@
 		1.	Aggiungere un parametro
 		2.	Modificare un parametro										E--->errore nome
 		3.	Eliminare un parametro
-	6.	Eliminare un'operazione
+	6.	Eliminare un'operazione				
 	7.	Commentare una classe
 	8.	Marchiare una classe
 	9.	Tornare all'editor del diagramma delle classi
@@ -76,7 +76,7 @@
 	6.	Tornare all'editor del diagramma delle classi
 
 5.	Editare il diagramma dei package
-	1.	Creare un package										E--->errore nome
+	1.	Creare un package												E--->errore nome
 	2.	Modificare un package
 		1.	Innestare un elemento
 		2.	Rimuovere un elemento
@@ -93,10 +93,10 @@
 		2.	Aggiungere un pin										
 		3.	Modificare un pin										
 		4.	Eliminare un pin
-	3.	Eliminare un'attività										I--->Eliminare bubble flow chart UC7.7
+	3.	Eliminare un'attività										E--->Eliminare bubble flow chart UC7.3
 	4.	Aggiungere un elemento di decisione										
 	5.	Modificare un elemento di decisione							
-	6.	Eliminare un elemento di decisione							I--->Eliminare bubble flow chart UC7.7
+	6.	Eliminare un elemento di decisione							
 	7.	Creare una regione di espansione
 	8.	Modificare una regione di espansione
 	9.	Eliminare una regione di espansione
