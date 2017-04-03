@@ -88,7 +88,7 @@
 					Per rendere omogenea e semplice la stesura dei documenti e stato creato un
 					template in \LaTeX\ che rispetta le regole stilistiche riportate in
 					questo documento.
-					Questo template è reperibile nel repository GitHub attraverso il path
+					Questo template è reperibile nel \gl{repository} \gl{GitHub} attraverso il path
 					"Documentazione/Templates".\\
 					È stato creato anche un template per facilitare la stesura dei verbali che si
 					trova nella medesima directory sopra descritta.
@@ -294,11 +294,11 @@
 					\end{itemize}
 					Queste modifiche sono visibili dal diario delle modifiche.
 			\subsubsection{Verbale}
-					\paragraph{Riunione interna (chat/videoconferenze incluse)\\}
+					\paragraph{Riunione interna (\gl{chat}/videoconferenze incluse)\\}
 						Il verbale di riunione interna è un documento informale che permette di tenere traccia
 						degli argomenti discussi in ogni riunione. Il segretario, scelto a rotazione, ha il
 						compito di redigere questo documento. Il verbale prodotto deve poi essere condiviso
-						con tutti i membri del gruppo mediante Google Drive, in modo da rendere sempre
+						con tutti i membri del gruppo mediante \gl{Google Drive}, in modo da rendere sempre
 						disponibile e accessibile il contenuto dello stesso.\\
 						Qualora un verbale di riunione interna debba essere fornito in sede di revisione,
 						dovrà essere redatto in \LaTeX\ utilizzando il template fornito allo scopo.
@@ -364,7 +364,7 @@
 						dell'indice possono essere corretti dal \verificatore;
 						\item Errore \textbf{grave}: errori quali la mancanza di sezioni nel documento o una
 						grande disorganizzazione dell'indice e dei contenuti, devono essere segnalati ai
-						redattori, attraverso lo strumento di comunicazione Slack, i quali devono
+						redattori, attraverso lo strumento di comunicazione \gl{Slack}, i quali devono
 						provvedere alla correzione e sistemazione.
 					\end{itemize}
 				\paragraph{Gestione degli errori trovati nel codice\\}\label{GestioneErroriCodice}
@@ -433,7 +433,7 @@
 				\includegraphics[scale=0.2]{./Immagini/Asana.png}
 				\caption{Lista di Task in Asana}\label{}
 			\end{figure}
-			Come piattaforma di gestione del gruppo è stato scelto \textbf{Asana}. Asana fornisce:
+			Come piattaforma di gestione del gruppo è stato scelto \gl{\textbf{Asana}}. Asana fornisce:
 			\begin{itemize}
 				\item Un sistema di gestione dei task;
 				\item Un calendario per organizzare i compiti;
@@ -476,7 +476,7 @@
 					laterale. Da qui è possibile vedere le scadenze indicative disposte
 					in un calendario.
 		\subsection{Strumento di versionamento}\label{StrumentoDiVersionamento}
-			Sono stati presi in considerazione diversi software di versionamento (Git, SVN, Mercurial)
+			Sono stati presi in considerazione diversi software di versionamento (\gl{Git}, SVN, Mercurial)
 			prima di decidere di usare \textbf{Git}. I motivi principali della scelta sono: 
 			\begin{itemize}
 				\item \textbf{Flessibilità}: Git è un repository distribuito con la possibilità di
@@ -486,7 +486,7 @@
 			\end{itemize}
 			In particolare, si è deciso di utilizzare il servizio di hosting GitHub, vista la richiesta
 			del Proponente all'interno del capitolato d'appalto.
-			In ogni repository il branch ``Master'' deve contenere solamente versioni di documentazione e/o
+			In ogni repository il \gl{branch} ``Master'' deve contenere solamente versioni di documentazione e/o
 			codice approvate dal \responsabilediprogetto. Per questo motivo deve essere creato almeno un
 			branch alternativo nel quale lavorare liberamente.
 			Nel caso di repository contenenti codice, i branch ``Master'' e di sviluppo devono essere
@@ -495,7 +495,7 @@
 			implementazione di una modifica rilevante.
 			L'operazione di integrazione continua verrà svolta dallo strumento descritto in sezione
 			\ref{IntegrazioneContinua}.
-			Al completamento di un incremento, è possibile effettuare una richiesta di merge.
+			Al completamento di un incremento, è possibile effettuare una richiesta di \gl{merge}.
 			Un \verificatore\ avrà in compito di controllare il merge e di accettarlo oppure di segnalare
 			la presenza di eventuali errori come descritto in sezione \ref{GestioneErroriCodice}.
 		\subsection{Altri strumenti}
@@ -509,7 +509,7 @@
 				controllo di versione.
 				Esso conterrà:
 				\begin{itemize}
-					\item Documenti che sono recuperabili da altre fonti (es. internet);
+					\item Documenti che sono recuperabili da altre fonti (es. \gl{internet});
 					\item File di installazione dei software utilizzati dal gruppo.
 					In questo modo si punta a garantire l'uso della stessa versione software per ogni
 					componente del gruppo;
@@ -535,16 +535,16 @@
 				\begin{itemize}
 					\item È portabile, essendo basato su Java;
 					\item È open-source;
-					\item Genera diagrammi Gantt;
-					\item Genera automaticamente diagrammi Program Evaluation and Review Technique (PERT)
+					\item Genera \gl{diagrammi Gantt};
+					\item Genera automaticamente diagrammi Program Evaluation and Review Technique (\gl{PERT})
 					a partire dal Gantt;
-					\item Genera automaticamente la Work Breakdown Structure (WBS), a partire dal Gantt
+					\item Genera automaticamente la \gl{Work Breakdown Structure} (WBS), a partire dal Gantt
 					con allocazione di risorse;
-					\item Calcola i parametri Schedule Variance(SV) e Budget Variance (BV);
-					\item Permette il salvataggio su file XML: essendo un file testuale è possibile
+					\item Calcola i parametri \gl{Schedule Variance}(SV) e \gl{Budget Variance} (BV);
+					\item Permette il salvataggio su file \gl{XML}: essendo un file testuale è possibile
 					fare il merge dei file in caso di conflitti su repository. 
 				\end{itemize}
-			\subsubsection{\LaTeX}
+			\subsubsection{\gl{\LaTeX}}
 				Per la stesura dei documenti è stato scelto di utilizzare il linguaggio \LaTeX.
 				La scelta è stata quasi obbligata in quanto \LaTeX\ permette di separare il contenuto dalla
 				formattazione, permettendo un versionamento più semplice e consentendo di definire template condivisi per uniformare i documenti. Altre soluzioni come Microsoft Office, LibreOffice o
@@ -563,7 +563,7 @@
 				I diagrammi dei casi d'uso sono in gran parte generati automaticamente utilizzando PlantUML.
 			\subsubsection{SWEgo}
 				Per effettuare il tracciamento dei requisiti è stato scelto di realizzare un'applicazione
-				web accessibile attraverso browser ed ospitata su un server dedicato: SWEgo.
+				web accessibile attraverso \gl{browser} ed ospitata su un server dedicato: SWEgo.
 				Tale applicativo permette di aggiungere casi d'uso, attori partecipanti e requisiti.
 				Casi d'uso e requisiti sono automaticamente identificati attraverso i codici auto-generati
 				dall'applicazione; È inoltre possibile esportare il codice \LaTeX\ elenca casi d'uso,
@@ -586,14 +586,14 @@
 				\ref{StrumentoDiVersionamento}).
 				La sua esecuzione è azionata ad ogni commit.
 				Jenkins sarà utilizzato principalmente nella fase di codifica.
-			\subsubsection{Strumenti per la validazione W3C}
+			\subsubsection{Strumenti per la validazione \gl{W3C}
 				L'applicativo web verrà testato anche attraverso gli strumenti di validazione online:
 				\begin{itemize}
 					\item \url{https://validator.w3.org/} (02/04/2017) per le pagine web;
 					\item \url{https://jigsaw.w3.org/css-validator/} (02/04/2017) per i fogli di stile.
 				\end{itemize}
 			\subsubsection{Script}
-				È stato deciso di usare script dedicati per le seguenti operazioni:
+				È stato deciso di usare \gl{script} dedicati per le seguenti operazioni:
 				\begin{itemize}
 					\item Calcolo dell'indice Gulpease, dove uno script dedicato provvede a fornire i valori
 					calcolati per i vari documenti.
