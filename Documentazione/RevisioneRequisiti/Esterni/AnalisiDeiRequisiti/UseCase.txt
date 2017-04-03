@@ -58,7 +58,7 @@
 		1.	Aggiungere un parametro
 		2.	Modificare un parametro										E--->errore nome
 		3.	Eliminare un parametro
-	6.	Eliminare un'operazione				
+	6.	Eliminare un'operazione											E--->eliminare un'attivita(6.3)
 	7.	Commentare una classe
 	8.	Marchiare una classe
 	9.	Tornare all'editor del diagramma delle classi
@@ -70,7 +70,7 @@
 		2.	Aggiungere un parametro
 		3.	Modificare un parametro										E--->errore nome
 		4.	Eliminare un parametro
-	3.	Eliminare un'operazione
+	3.	Eliminare un'operazione											E--->eliminare un'attivita(6.3)
 	4.	Commentare un'interfaccia
 	5.	Marchiare un'interfaccia
 	6.	Tornare all'editor del diagramma delle classi
