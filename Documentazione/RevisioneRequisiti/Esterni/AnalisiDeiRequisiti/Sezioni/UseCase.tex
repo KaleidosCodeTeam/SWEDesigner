@@ -1,7 +1,23 @@
 \documentclass[../AnalisiDeiRequisiti.tex]{subfiles}
 \begin{document}
-	\section{Use Case}
+	\section{Casi d'uso}
+	I seguenti casi d'uso sono frutto dell'analisi del capitolato, della discussione degli
+	\analisti\ e degli incontri con	\proponente\ ed il committente \vardanega.
+	Tali casi d'uso hanno quindi origine sia interna che esterna al gruppo.\\
+	Le aspettative di esperienza utente derivano dalla sua conoscenza del
+	linguaggio UML.\\
+	Ciascun caso d'uso è classificato gerarchicamente con la seguente dicitura:
+	\begin{center}
+		UC[Codice del padre].[Codice identificativo]
+	\end{center}
+	Il codice identificativo può includere diversi livelli di gerarchia che saranno
+	separati da un punto.
 	\subsection{Caso d'uso UC1: Gestire un progetto}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[scale=0.45]{./Figures/UC1.png}
+		\caption{Diagramma UC1}\label{}
+	\end{figure}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente
 		\item \textbf{Descrizione}: L'utente vuole gestire il progetto su cui lavorare;
@@ -83,6 +99,16 @@
 		\item \textbf{Postcondizione}: In una cartella a scelta dell'utente il programma ha generato tutti i file sorgenti voluti, organizzati secondo quanto specificato dall'utente tramite i diagrammi. Questi file contengono codice corretto e compilabile. Qualora il programma non avesse potuto tradurre efficacemente una parte del diagramma dell'utente, il programma ha comunicato un avvertimento all'utente e commentato opportunamente il codice nel sorgente;
 	\end{itemize}
 	\subsection{Caso d'uso UC2: Editare il diagramma delle classi}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[scale=0.45]{./Figures/UC2parte1.png}
+		\caption{Diagramma UC2 prima parte}\label{}
+	\end{figure}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[scale=0.45]{./Figures/UC2parte2.png}
+		\caption{Diagramma UC2 seconda parte}\label{}
+	\end{figure}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente
 		\item \textbf{Descrizione}: L'utente ha avviato correttamente il programma e ha aperto un progetto. Ora l'utente può editare il diagramma delle classi;
@@ -108,14 +134,25 @@
 		\item \textbf{Postcondizione}: Il sistema apporta le modifiche desiderate al diagramma delle classi.
 	\end{itemize}
 	\subsection{Caso d'uso UC2.1: Creare una classe}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[scale=0.45]{./Figures/UC2_1.png}
+		\caption{Diagramma UC2.1}\label{}
+	\end{figure}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente
 		\item \textbf{Descrizione}: L'utente vuole aggiungere una nuova classe vuota al diagramma delle classi;
 		\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto nel diagramma delle classi;
 		\item \textbf{Flusso principale degli eventi}: L'utente aggiunge una nuova classe vuota al diagramma delle classi;
+		\item \textbf{Estensioni}: UC2.2;
 		\item \textbf{Postcondizione}: Viene aggiunta una nuova classe al diagramma delle classi.
 	\end{itemize}
 	\subsection{Caso d'uso UC2.2: Modificare una classe}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[scale=0.45]{./Figures/UC2_2.png}
+		\caption{Diagramma UC2.2}\label{}
+	\end{figure}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente
 		\item \textbf{Descrizione}: L'utente vuole apportare modifiche minori ad una classe;
@@ -135,14 +172,26 @@
 		\item \textbf{Postcondizione}: Il sistema visualizza la schermata di modifica di classe corrispondente alla classe selezionata dall'utente.
 	\end{itemize}
 	\subsection{Caso d'uso UC2.3: Eliminare una classe}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[scale=0.45]{./Figures/UC2_3.png}
+		\caption{Diagramma UC2.3}\label{}
+	\end{figure}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente
 		\item \textbf{Descrizione}: L'utente vuole eliminare una classe;
 		\item \textbf{Precondizione}: Esiste una classe che l'utente desidera eliminare;
 		\item \textbf{Flusso principale degli eventi}: L'utente elimina una classe;
+		\item \textbf{Inclusioni}: UC2.6;
+		\item \textbf{Estensioni}: UC6.3;
 		\item \textbf{Postcondizione}: La classe non viene più visualizzata nell'editor del diagramma delle classi.
 	\end{itemize}
 	\subsection{Caso d'uso UC2.4: Definire una relazione}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[scale=0.45]{./Figures/UC2_4.png}
+		\caption{Diagramma UC2.4}\label{}
+	\end{figure}
 	\begin{itemize}
 		\item \textbf{Attori}: Utente
 		\item \textbf{Descrizione}: L'utente vuole definire una relazione tra due elementi.
@@ -215,6 +264,11 @@
 			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del sistema è visualizzato il diagramma dove è stata definita la realizzazione.
 		\end{itemize}
 		\subsection{Caso d'uso UC2.5: Modificare una relazione}
+		\begin{figure} [H]
+			\centering
+			\includegraphics[scale=0.45]{./Figures/UC2_5.png}
+			\caption{Diagramma UC2.5}\label{}
+		\end{figure}
 		\begin{itemize}
 			\item \textbf{Attori}: Utente
 			\item \textbf{Descrizione}: L'utente vuole modificare una relazione tra due elementi;
@@ -287,6 +341,11 @@
 			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del sistema è visualizzato il diagramma dove è stata modificata la realizzazione.
 		\end{itemize}
 		\subsection{Caso d'uso UC2.6: Eliminare una relazione}
+		\begin{figure} [H]
+			\centering
+			\includegraphics[scale=0.45]{./Figures/UC2_6.png}
+			\caption{Diagramma UC2.6}\label{}
+		\end{figure}
 		\begin{itemize}
 			\item \textbf{Attori}: Utente
 			\item \textbf{Descrizione}: L'utente vuole eliminare una relazione;
@@ -359,14 +418,25 @@
 			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi del sistema è visualizzato il diagramma dove è stata eliminata la realizzazione.
 		\end{itemize}
 		\subsection{Caso d'uso UC2.7: Creare una interfaccia}
+		\begin{figure} [H]
+			\centering
+			\includegraphics[scale=0.45]{./Figures/UC2_7.png}
+			\caption{Diagramma UC2.7}\label{}
+		\end{figure}
 		\begin{itemize}
 			\item \textbf{Attori}: Utente
 			\item \textbf{Descrizione}: L'utente vuole creare un'interfaccia;
 			\item \textbf{Precondizione}: Il sistema è pronto alla creazione di un'interfaccia, l'utente desidera creare un'interfaccia;
 			\item \textbf{Flusso principale degli eventi}: L'utente crea un'interfaccia;
+			\item \textbf{Estensioni}: UC2.8;
 			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi è correttamente visualizzato il diagramma nel quale è stata creata l'interfaccia.
 		\end{itemize}
 		\subsection{Caso d'uso UC2.8: Modificare una interfaccia}
+		\begin{figure} [H]
+			\centering
+			\includegraphics[scale=0.45]{./Figures/UC2_8.png}
+			\caption{Diagramma UC2.8}\label{}
+		\end{figure}
 		\begin{itemize}
 			\item \textbf{Attori}: Utente
 			\item \textbf{Descrizione}: L'utente vuole modificare un'interfaccia all'interno dell'editor del diagramma delle classi;
@@ -387,11 +457,18 @@
 			\item \textbf{Postcondizione}: Il sistema visualizza la schermata di modifica di interfaccia corrispondente all'interfaccia selezionata dall'utente.
 		\end{itemize}
 		\subsection{Caso d'uso UC2.9: Eliminare una interfaccia}
+		\begin{figure} [H]
+			\centering
+			\includegraphics[scale=0.45]{./Figures/UC2_9.png}
+			\caption{Diagramma UC2.9}\label{}
+		\end{figure}
 		\begin{itemize}
 			\item \textbf{Attori}: Utente
 			\item \textbf{Descrizione}: L'utente vuole eliminare un'interfaccia dal diagramma delle classi;
 			\item \textbf{Precondizione}: L'utente ha selezionato l'interfaccia che vuole eliminare;
 			\item \textbf{Flusso principale degli eventi}: L'utente elimina un'interfaccia dal diagramma delle classi;
+			\item \textbf{Inclusioni}: UC2.6;
+			\item \textbf{Estensioni}: UC6.3;
 			\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi è visualizzato il diagramma dove è stata eliminata l'interfaccia.
 		\end{itemize}
 		\subsection{Caso d'uso UC2.10: Creare un commento}
@@ -443,6 +520,11 @@
 			\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
 		\end{itemize}
 		\subsection{Caso d'uso UC3: Modificare una classe mediante la schermata di modifica di una classe}
+		\begin{figure} [H]
+			\centering
+			\includegraphics[scale=0.45]{./Figures/UC3.png}
+			\caption{Diagramma UC3}\label{}
+		\end{figure}
 		\begin{itemize}
 			\item \textbf{Attori}: Utente
 			\item \textbf{Descrizione}: L'utente vuole modificare una classe;
@@ -498,6 +580,11 @@
 			\item \textbf{Postcondizione}: L'operazione viene aggiunta alla classe con i parametri decisi dall'utente.
 		\end{itemize}
 		\subsection{Caso d'uso UC3.5: Modificare un'operazione}
+		\begin{figure} [H]
+			\centering
+			\includegraphics[scale=0.45]{./Figures/UC3_5.png}
+			\caption{Diagramma UC3.5}\label{}
+		\end{figure}
 		\begin{itemize}
 			\item \textbf{Attori}: Utente
 			\item \textbf{Descrizione}: L'utente vuole modificare un' operazione all'interno di una classe;
@@ -536,12 +623,18 @@
 				\item \textbf{Postcondizione}: Nella schermata di modifica delle classi è visualizzato il parametro che è stato eliminato dalla lista parametri dell'operazione.
 			\end{itemize}
 			\subsection{Caso d'uso UC3.6: Rimuovere un'operazione}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC3_6.png}
+				\caption{Diagramma UC3.6}\label{}
+			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole rimuovere un'operazione all'interno di una classe;
 				\item \textbf{Precondizione}: L'utente ha selezionato l'operazione che vuole rimuovere;
 				\item \textbf{Flusso principale degli eventi}: L'utente rimuove un'operazione all'interno di una classe;
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di rimozione;
+				\item \textbf{Estensioni}: UC6.3;
 				\item \textbf{Postcondizione}: L'operazione viene rimossa dalla classe dopo eventuali avvisi nel caso ci siano dipendenze da controllare.
 			\end{itemize}
 			\subsection{Caso d'uso UC3.7: Commentare una classe}
@@ -571,6 +664,11 @@
 				\item \textbf{Postcondizione}: L'utente si trova nella schermata del diagramma delle classi.
 			\end{itemize}
 			\subsection{Caso d'uso UC4: Modificare un'interfaccia mediante la schermata di modifica dell'interfaccia}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC4.png}
+				\caption{Diagramma UC4}\label{}
+			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole modificare un'interfaccia;
@@ -595,6 +693,11 @@
 				\item \textbf{Postcondizione}: Nella schermata di modifica dell'interfaccia è visualizzata la classe a cui è stata aggiunta l'operazione desiderata;
 			\end{itemize}
 			\subsection{Caso d'uso UC4.2: Modificare un'operazione}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC4_2.png}
+				\caption{Diagramma UC4.2}\label{}
+			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole modificare un'operazione già  inserita in un'interfaccia;
@@ -643,11 +746,17 @@
 				\item \textbf{Postcondizione}: Nella schermata di modifica dell'interfaccia è visualizzato il diagramma dove è stato eliminato il parametro dalla lista parametri dell'operazione.	
 			\end{itemize}
 			\subsection{Caso d'uso UC4.3: Rimuovere un'operazione}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC4_3.png}
+				\caption{Diagramma UC4.3}\label{}
+			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole rimuovere un'operazione;
 				\item \textbf{Precondizione}: Nella schermata di modifica dell'interfaccia è stata selezionata l'operazione da rimuovere e il sistema è pronto a ricevere un comando dall'utente;
 				\item \textbf{Flusso principale degli eventi}: L'utente rimuove l'operazione;
+				\item \textbf{Estensioni}: UC6.3;
 				\item \textbf{Postcondizione}: Nella schermata di modifica dell'interfaccia è visualizzato il diagramma dove è stata rimossa l'operazione.
 			\end{itemize}
 			\subsection{Caso d'uso UC4.4: Commentare l'interfaccia}
@@ -675,6 +784,11 @@
 				\item \textbf{Postcondizione}: Il sistema visualizza l'editor del diagramma delle classi
 			\end{itemize}
 			\subsection{Caso d'uso UC5: Editare il diagramma dei package}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC5.png}
+				\caption{Diagramma UC5}\label{}
+			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole editare il diagramma dei package;
@@ -700,6 +814,11 @@
 				\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma dei package è visualizzato il diagramma a cui è stato aggiunto un nuovo package.
 			\end{itemize}
 			\subsection{Caso d'uso UC5.2: Modificare un package}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC5_2.png}
+				\caption{Diagramma UC5.2}\label{}
+			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole modificare un package;
@@ -729,11 +848,17 @@
 				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package è visualizzato il diagramma dove è stato rimosso l'elemento.
 			\end{itemize}
 			\subsection{Caso d'uso UC5.3: Eliminare un package}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC5_3.png}
+				\caption{Diagramma UC5.3}\label{}
+			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole eliminare un package;
 				\item \textbf{Precondizione}: Nell'editor del diagramma dei package è selezionato il package che l'utente desidera eliminare;
 				\item \textbf{Flusso principale degli eventi}: L'utente elimina un package;
+				\item \textbf{Inclusioni}: UC5.5;
 				\item \textbf{Postcondizione}: Nell'editor del diagramma dei package è visualizzato il diagramma dove è stato eliminato il package.
 			\end{itemize}
 			\subsection{Caso d'uso UC5.4: Definire una dipendenza tra package}
@@ -768,7 +893,17 @@
 				\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento;
 				\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
 			\end{itemize}
-			\subsection{Caso d'uso UC6: Editare il diagramma delle attività }
+			\subsection{Caso d'uso UC6: Editare il diagramma delle attività}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC6parte1.png}
+				\caption{Diagramma UC6 prima parte}\label{}
+			\end{figure}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC6parte2.png}
+				\caption{Diagramma UC6 seconda parte}\label{}
+			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole editare il diagramma delle attività;
@@ -804,6 +939,11 @@
 					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma a cui è stata aggiunta la nuova attività.
 				\end{itemize}
 				\subsection{Caso d'uso UC6.2: Modificare un'attività}
+				\begin{figure} [H]
+					\centering
+					\includegraphics[scale=0.45]{./Figures/UC6_2.png}
+					\caption{Diagramma UC6.2}\label{}
+				\end{figure}
 				\begin{itemize}
 					\item \textbf{Attori}: Utente
 					\item \textbf{Descrizione}: L'utente vuole modificare un'attività;
@@ -857,11 +997,17 @@
 					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma in cui è stato rimosso il pin.
 				\end{itemize}
 				\subsection{Caso d'uso UC6.3: Eliminare un'attività}
+				\begin{figure} [H]
+					\centering
+					\includegraphics[scale=0.45]{./Figures/UC6_3.png}
+					\caption{Diagramma UC6.3}\label{}
+				\end{figure}
 				\begin{itemize}
 					\item \textbf{Attori}: Utente
 					\item \textbf{Descrizione}: L'utente vuole eliminare un'attività;
 					\item \textbf{Precondizione}: Nella schermata dell'editor del diagramma delle attività è stata selezionata l'attività da eliminare e il sistema è pronto a ricevere un comando dall'utente;
 					\item \textbf{Flusso principale degli eventi}: L'utente elimina un'attività;
+					\item \textbf{Estensioni}: UC7.3;
 					\item \textbf{Postcondizione}: Nella schermata dell'editor del diagramma delle attività è visualizzato il diagramma da cui è stata rimossa l'attività selezionata dall'utente.
 				\end{itemize}
 				\subsection{Caso d'uso UC6.4: Aggiungere un elemento di decisione}
@@ -982,7 +1128,11 @@
 					\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento all'interno del diagramma;
 					\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
 				\end{itemize}
-				\subsection{Caso d'uso UC7: Editare il bubble flowchart}
+				\subsection{Caso d'uso UC7: Editare il bubble flowchart}\begin{figure} [H]
+					\centering
+					\includegraphics[scale=0.45]{./Figures/UC7.png}
+					\caption{Diagramma UC7}\label{}
+				\end{figure}
 				\begin{itemize}
 					\item \textbf{Attori}: Utente
 					\item \textbf{Descrizione}: L'utente vuole editare un bubble flowchart;
