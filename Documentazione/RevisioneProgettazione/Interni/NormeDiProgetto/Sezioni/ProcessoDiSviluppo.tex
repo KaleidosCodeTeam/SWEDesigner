@@ -1,0 +1,208 @@
+\documentclass[../NormeDiProgetto.tex]{subfiles}
+\begin{document}
+	\subsection{Sviluppo}
+		\subsubsection{Scopo}
+			In questa fase vengono incluse tutte le attività volte a creare il prodotto.
+		\subsubsection{Aspettative}
+			I risultati ottenuti in seguito ad una corretta attuazione del
+			\textit{Processo di sviluppo} sono:
+			\begin{itemize}
+				\item Realizzare un prodotto e/o servizio che soddisfi i requisiti concordati;
+				\item Realizzare un prodotto e/o servizio che soddisfi le attività di validazione
+				e verifica;
+				\item Determinare eventuali vincoli tecnologici e requisiti;
+				\item Determinare gli obiettivi di sviluppo.
+			\end{itemize}
+		\subsubsection{Descrizione}
+			Prendendo come riferimento lo standard [ISO/IEC 12207], si devono svolgere le seguenti
+			attività:
+			\begin{itemize}
+				\item Analisi dei requisiti;
+				\item Progettazione;
+				\item Codifica.
+			\end{itemize}
+		\subsubsection{Analisi dei requisiti}
+			\paragraph{Scopo\\}
+				Determinare tutti i requisiti del progetto. Il risultato di questa attività è un
+				documento in cui vengono elencati i requisiti e i relativi casi d'uso.
+			\paragraph{Aspettative\\}
+				Produrre il documento \analisideirequisiti\ in conformità ai requisiti richiesti
+				dal Proponente.
+			\paragraph{Descrizione\\}
+				Vengono analizzati e tracciati tutti i requisiti attraverso l'analisi della
+				specifica del capitolato e la convocazione di riunioni con il proponente
+				\proponente\ volte al chiarimento di eventuali dubbi o all'approfondimento di
+				requisiti già noti.
+			\paragraph{Classificazione dei requisiti\\}
+				Viene stilata una lista dei requisiti individuati nel capitolato e nelle
+				riunioni avvenute con il Proponente. La classificazione
+				degli stessi deve avvenire secondo la seguente codifica:
+				\begin{center}
+					R[Importanza][Tipo][Codice]
+				\end{center}
+				dove:
+				\begin{itemize}
+					\item \textbf{Importanza} può assumere i seguenti valori:
+					\begin{itemize}
+						\item \textbf{0} se il requisito è obbligatorio;
+						\item \textbf{1} se il requisito è desiderabile;
+						\item \textbf{2} se il requisito è opzionale.
+					\end{itemize}
+					\item \textbf{Tipo} può assumere i seguenti valori:
+					\begin{itemize}
+						\item \textbf{F} se il requisito è funzionale;
+						\item \textbf{Q} se il requisito è di qualità;
+						\item \textbf{P} se il requisito è prestazionale;
+						\item \textbf{V} se il requisito è di vincolo.
+					\end{itemize}
+					\item \textbf{Codice} identifica univocamente
+					ciascun requisito in modo gerarchico.
+				\end{itemize}
+				Inoltre, per ciascun requisito deve essere indicata:
+				\begin{itemize}
+					\item \textbf{Fonte} dell'individuazione del requisito che può essere:
+					\begin{itemize}
+						\item \textbf{Capitolato};
+						\item \textbf{Riunione};
+						\item \textbf{Caso d'uso};
+						\item \textbf{Interno} (discussioni del gruppo);
+					\end{itemize}
+					\item \textbf{Descrizione} breve e chiara.
+				\end{itemize}
+				Tutti i requisiti devono essere inseriti nell'apposito sistema di tracciamento ``SWEgo''
+				realizzato all'interno del gruppo, che provvederà alla generazione
+				dei codici identificativi univoci.
+			\paragraph{Classificazione dei casi d'uso\\}
+				L'analisi e l'identificazione dei casi d'uso, o use case (UC), deve
+				procedere dal generale al particolare.\\
+				Ciascun caso d'uso sarà classificato gerarchicamente con la seguente dicitura:
+				\begin{center}
+					UC[Codice del padre].[Codice identificativo]
+				\end{center}
+				dove:
+				\begin{itemize}
+					\item \textbf{Codice del padre} rappresenta il codice univoco
+					del relativo caso d'uso padre qualora esistesse, altrimenti è omesso;
+					\item \textbf{Codice identificativo} rappresenta il codice
+					univoco e progressivo del corrispondente caso d'uso. Il codice
+					può includere diversi livelli di gerarchia che devono essere
+					separati da un punto.
+				\end{itemize}
+				Inoltre, per ciascun caso d'uso deve essere indicato:
+				\begin{itemize}
+					\item \textbf{Nome} del caso d'uso;
+					\item \textbf{Attori} coinvolti;
+					\item \textbf{Descrizione} chiara e sufficientemente
+					dettagliata;
+					\item \textbf{Precondizione};
+					\item \textbf{Scenario principale degli eventi} che descrive il principale flusso di svolgimento e l'eventuale sequenza dei casi d'uso figli;
+					\item \textbf{Scenari alternativi} che descrivono la sequenza
+					di eventuali casi d'uso non appartenenti allo scenario
+					principale;
+					\item \textbf{Requisiti} ricavati dal caso d'uso;
+					\item Eventuali \textbf{Inclusioni};
+					\item Eventuali \textbf{Estensioni};
+					\item Eventuali \textbf{Generalizzazioni};
+					\item \textbf{Postcondizione}.
+				\end{itemize}
+				Infine, tutti i principali casi d'uso devono essere rappresentati da un diagramma UML.\\
+				Tutti i casi d'uso devono essere inseriti nell'apposito sistema di tracciamento ``SWEgo''
+				realizzato all'interno del gruppo, che provvederà alla generazione
+				dei codici identificativi univoci.
+		\subsubsection{Progettazione}
+			\paragraph{Scopo\\}
+				In questa fase viene descritta una soluzione del problema soddisfacente per tutti
+				gli \gl{stakeholder}.
+			\paragraph{Aspettative\\}
+				I risultati ottenuti in seguito ad una corretta attuazione di tale fase sono:
+				\begin{itemize}
+					\item Definire l'architettura logica di sistema che identifica gli elementi
+					del sistema;
+					\item Definire l'architettura logica di sistema in conformità ai requisiti
+					definiti;
+					\item Tracciare, verificare, mantenere coerenti e sincronizzati i requisiti di sistema con
+					l'architettura logica di sistema;
+					\item Garantire la qualità attraverso la correttezza per costruzione.
+				\end{itemize}
+			\paragraph{Descrizione\\}
+				Partendo dai requisiti sviluppati nella fase precedente, i \progettisti\ devono
+				sviluppare l'architettura logica del sistema seguendo le sottostanti linee guida:
+				\begin{itemize}
+					\item Utilizzare componenti con specifiche chiare e coese;
+					\item Realizzare l'architettura rispettando le risorse e i costi prefissati;
+					\item Adottare strutture che si adattino al cambiamento;
+					\item Utilizzare componenti riusabili;
+					\item Suddividere il sistema fino a quando ogni componente ha una
+					complessità trattabile;
+					\item Riconoscere le componenti terminali.
+				\end{itemize}
+			\paragraph{Diagrammi UML\\}
+				Per definire l'architettura logica del sistema nella fase di progettazione,
+				verranno utilizzati	diversi tipi di diagrammi UML 2.0:
+				\begin{itemize}
+					\item Diagrammi delle attività;
+					\item Diagrammi delle classi;
+					\item Diagrammi dei \gl{package};
+					\item Diagrammi di sequenza.
+				\end{itemize}
+			\paragraph{\gl{Design pattern}\\}
+				I \progettisti\ devono descrivere i design pattern utilizzati per realizzare l'architettura.
+				È necessario fornire una breve descrizione ed un diagramma semplificato per ognuno di essi.
+		\subsubsection{Codifica}
+			\paragraph{Scopo\\}
+				Lo scopo della fase di codifica è quello di implementare il prodotto costruendo
+				unità software eseguibili che riflettano la struttura definita in fase di
+				progettazione.
+			\paragraph{Aspettative\\}
+				I risultati ottenuti in seguito ad una corretta attuazione di tale fase sono:
+				\begin{itemize}
+					\item Realizzare le unità software in conformità ai requisiti;
+					\item Tracciare le unità software e le relativi componenti dell'architettura
+					logica di sistema;
+					\item Definire criteri di verifica delle unità software.
+				\end{itemize}
+			\paragraph{Descrizione\\}
+				Partendo dall'architettura logica di sistema definita nella fase precedente, i
+				\programmatori\ devono implementare le unità software definendone anche i criteri di
+				verifica. Nello svolgimento di tali attività devono attenersi ai metodi e
+				agli standard di codifica utilizzati.
+			\paragraph{Standard di codifica\\}
+				Ulteriori norme di codifica potrebbero essere aggiunte nelle fasi successive.
+				\subparagraph{Intestazione dei file\\}
+					Per i file contenenti codice si deve:
+					\begin{itemize}
+						\item Usare le seguente intestazione all'inizio di ogni file:\\
+						\textcolor{purple}{	\\/*\\
+							* File-Name: Nome del file\\
+							* File-Author: Cognome Nome dell'autore\\
+							* File-Date: Data di creazione\\
+							* File-Summary: Breve descrizione del file\\
+							* File-Description: Descrizione dettagliata del file\\
+							**/}
+						\item Prima di ogni classe scrivere un commento con la seguente struttura:\\
+						\textcolor{purple}{	\\/*\\
+							Class-Name: Nome della classe\\
+							Class-Summary: Breve descrizione della classe\\
+							**/}
+						\item Per ogni metodo si deve scrivere un commento così strutturato:\\
+						\textcolor{purple}{	\\/*\\
+							Method-Name: Nome della classe\\
+							Method-Summary: Breve descrizione della classe\\
+							Method-Input: breve descrizione dei parametri della funzione nel caso
+							ci siano\\
+							Method-Output: breve descrizione dei valori di ritorno nel caso ci siano\\ 
+							**/ }
+					\end{itemize}
+				\subparagraph{Codifica e convenzioni\\}
+					Tutti i file devono seguire la convenzione UTF-8 per la codifica dei caratteri e
+					LF (U+000A) per andare a capo.\\
+					Per indicare il nome di variabili, classi, metodi e funzioni si deve usare la lingua
+					inglese ed la notazione ``\gl{CamelCase}''. È preferibile evitare di usare nomi ambigui che
+					potrebbero generare confusione.\\
+					Lo stile di indentazione del codice da seguire è una variante del ``\gl{K\&R}'' dove lo stile
+					di indentazione delle parentesi del corpo di una funzione è uguale a quello usato per
+					i blocchi. L'indentazione deve essere effettuata utilizzando il tasto di tabulazione.\\
+					È preferibile evitare lo sviluppo di metodi e funzioni ricorsive. Qualora fossero
+					comunque usate si deve dimostrarne la corretta terminazione e valutarne l'impatto sulle
+					performace del prodotto in termini di memoria utilizzata.\\
+\end{document}

@@ -1,0 +1,271 @@
+\documentclass[../PianoDiQualifica.tex]{subfiles}
+\begin{document}
+	\section{La strategia di gestione della qualità nel dettaglio}
+		\subsection{Risorse}
+			\subsubsection{Necessarie}
+				Per la realizzazione del prodotto sono necessarie le risorse
+				umane e tecnologiche elencate di seguito.
+				\begin{itemize}
+					\item \textbf{Risorse umane}: sono descritte
+					dettagliatamente nel \pianodiprogettov:
+					\begin{itemize}
+						\item \responsabilediprogetto;
+						\item \amministratore;
+						\item \analista;
+						\item \progettista;
+						\item \programmatore;
+						\item \verificatore.
+					\end{itemize}
+					\item \textbf{Risorse software}: sono descritte
+					dettagliatamente nelle \normediprogettov. Si tratta di
+					software che permettono:
+					\begin{itemize}
+						\item la comunicazione e la condivisione del lavoro
+						tra gli elementi del team;
+						\item la stesura della documentazione in
+						formato \gl{\LaTeX};
+						\item la creazione di diagrammi UML;
+						\item la codifica nei linguaggi di programmazione scelti;
+						\item la semplificazione delle attività di verifica;
+						\item la gestione dei test sul codice.
+					\end{itemize}
+					\item \textbf{Risorse hardware}: ciascun componente del
+					gruppo deve avere un computer con tutti i software necessari
+					descritti nelle \normediprogettov. È necessario avere a
+					disposizione almeno un luogo dove poter effettuare le
+					riunioni interne.
+				\end{itemize}
+			\subsubsection{Disponibili}
+				Ogni membro del team ha a disposizione uno o più computer
+				personali dotati degli strumenti necessari.\\
+				Le riunioni interne si svolgono presso le aule del dipartimento
+				di Matematica dell'Università degli Studi di Padova.
+		\subsection{Misure e metriche}\label{Misure&Metriche}
+			Il processo di verifica deve essere quantificabile per fornire
+			informazioni utili. Bisogna quindi stabilire le metriche da adottare
+			per le misurazioni durante i processi di verifica.\\
+			Si definiranno due intervalli di misure (\gl{range}):
+			\begin{itemize}
+				\item \textbf{Range di accettazione}: intervallo di valori
+				vincolante per l'accettazione del prodotto;
+				\item \textbf{Range ottimale}: intervallo di valori entro cui è
+				consigliabile rientri la misurazione. Il mancato rispetto di
+				questa condizione non pregiudica l'accettazione del prodotto, ma
+				richiede verifiche più approfondite in merito.
+			\end{itemize}
+			\subsubsection{Metriche per i processi}
+				\paragraph{\gl{Schedule Variance}\\}
+					È una metrica di progetto standard, indica se si è in linea, in
+					anticipo o in ritardo rispetto alla schedulazione pianificata delle
+					attività di progetto. È pari alla differenza tra il valore delle
+					attività realizzate ed il valore delle attività pianificate alla
+					data corrente.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: $\geq -(preventivo*5\%)$;
+							\item \textbf{Range ottimale}: $\geq 0$.
+						\end{itemize}
+				\paragraph{\gl{Budget Variance}\\}
+					È una metrica di progetto standard, indica se si è speso di più o
+					di meno rispetto a quanto preventivato alla data corrente. È pari
+					alla differenza tra costo pianificato e costo effettivamente
+					sostenuto alla data corrente.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: $\geq -(preventivo*10\%)$;
+							\item \textbf{Range ottimale}: $\geq 0$.
+						\end{itemize}
+			\subsubsection{Metriche per i documenti}
+				\paragraph{Indice Gulpease\\}
+					Definito nel 1988 all'Università degli Studi di Roma ``La
+					Sapienza'' per valutare la leggibilità di un documento redatto in
+					lingua italiana, l'indice Gulpease si basa sul calcolo del
+					numero di caratteri contenuto in una parola rapportato con altri
+					fattori quali il numero di parole e di frasi.
+					La formula per il calcolo dell'indice Gulpease è la seguente:
+					\begin{equation*}
+						89+\frac{300\left(\textit{numero di frasi}\right)-10\left(\textit{numero di lettere}\right)}{\textit{numero di parole}}
+					\end{equation*}
+					Il risultato indica	quindi la complessità del documento con un
+					valore compreso tra 0 e 100, dove 100 indica la più alta
+					leggibilità. Attraverso gli studi condotti,	risulta che testi con
+					un indice:
+					\begin{itemize}
+						\item \textbf{inferiore a 80} sono difficili da leggere per chi
+						ha la licenza elementare;
+						\item \textbf{inferiore a 60} sono difficili da leggere per chi
+						ha licenza media;
+						\item \textbf{inferiore a 40} sono difficili da leggere per chi
+						ha un diploma superiore.
+					\end{itemize}
+					Tale indice, però, non indica la comprensibilità del testo. Il
+					documento potrebbe contenere frasi incomprensibili ed avere comunque
+					un alto indice Gulpease. Per la tipologia dei documenti redatti, la
+					formalità nella scrittura e gli argomenti trattati risulta difficile
+					adeguare la stesura del testo ad un indice Gulpease ottimale. Ogni
+					documento sarà quindi controllato anche da un essere umano
+					che avrà il compito di valutare se parti di testo dovranno essere
+					semplificate o meno. Inoltre, i limiti imposti da tale indice
+					saranno sufficientemente rilassati per accettare anche frasi poco
+					più complesse.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 40 - 100;
+							\item \textbf{Range ottimale}: 50 - 100.
+						\end{itemize}
+			\subsubsection{Metriche per il codice}\label{MetrichePerIlCodice}
+				\paragraph{Rapporto linee di commento su linee di codice\\}
+					Indica il rapporto tra linee di commento e linee di codice in un
+					file (linee vuote escluse). Ritenendo importante la rapidità di
+					comprensione del codice, questa metrica è utile per stimare la
+					manutenibilità.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: $\geq$ 0.25;
+							\item \textbf{Range ottimale}: $\geq$ 0.30.
+						\end{itemize}
+				\paragraph{Numero di parametri\\}
+					Indica il numero di parametri formali di un metodo. Più alto è il
+					numero dei parametri formali, più aumenta la quantità di memoria
+					occupata nella pila dei processi.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 8;
+							\item \textbf{Range ottimale}: 0 - 5.
+						\end{itemize}
+				\paragraph{Numero di campi dati\\}
+					Indica il numero di campi dati interni ad una classe. Un numero
+					elevato può rendere difficile la manutenibilità del codice della
+					classe oltre ad essere indice di cattiva programmazione.\\
+					È possibile ridurre il numero di campi dati attraverso
+					l'incapsulamento di ulteriori classi.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 16;
+							\item \textbf{Range ottimale}: 0 - 10.
+						\end{itemize}
+				\paragraph{Complessità ciclomatica\\}
+					Indica il numero di cammini linearmente indipendenti attraverso il
+					grafo di controllo di flusso del metodo/funzione: i nodi del grafo
+					corrispondono a gruppi indivisibili di istruzioni mentre gli archi
+					connettono due nodi se il secondo gruppo può essere eseguito
+					immediatamente dopo il primo.\\
+					È possibile ridurre l'indice di complessità attraverso la
+					suddivisione del metodo/funzione in più parti.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 10;
+							\item \textbf{Range ottimale}: 0 - 6.
+						\end{itemize}
+						\par È accettato anche un valore più elevato, qualora
+						dovesse influire positivamente sulla velocità di esecuzione.
+				\paragraph{Livello di annidamento\\}
+					Indica quante strutture di controllo sono inserite l'una all'interno
+					dell'altra. Un alto livello di annidamento può portare ad una
+					complessità maggiore del codice causando difficoltà nella verifica,
+					comprensione e modifica dello stesso.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 6;
+							\item \textbf{Range ottimale}: 0 - 4.
+						\end{itemize}
+				\paragraph{Grado di accoppiamento\\}
+					Viene calcolato in base a due indici:
+					\begin{itemize}
+						\item Accoppiamento afferente: numero di classi esterne
+						al \gl{package} che dipendono da sue classi interne. Un numero
+						alto indica che troppe classi dipendono da tale package, quindi
+						eventuali modifiche provocherebbero forti ripercussioni
+						sull'esterno. Se il numero è basso il package risulta poco
+						utile;
+						\item Accoppiamento efferente: numero di classi interne
+						al package dipendenti da classi esterne. Un numero alto può
+						essere sintomo di una scarsa progettazione.
+					\end{itemize}
+				\paragraph{Grado di instabilità\\}
+					Tale metrica viene utilizzata per misurare l'instabilità delle
+					componenti di un sistema basandosi sul grado di accoppiamento sopra
+					descritto. Un valore alto indica alta instabilità e quindi bassa
+					libertà di modifica del codice in quanto ogni modifica ha effetti
+					su più classi. Tale indice viene calcolato con la seguente formula:
+					\begin{equation*}
+						I=\frac{C \ped{e} }{C \ped{a}  +C \ped{e} }
+					\end{equation*}
+					dove:
+					\begin{itemize}
+						\item C\ped a: rappresenta l'accoppiamento afferente;
+						\item C\ped e: rappresenta l'accoppiamento efferente.
+					\end{itemize}
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 0.8;
+							\item \textbf{Range ottimale}: 0.3 - 0.7.
+						\end{itemize}
+				\paragraph{Chiamate innestate di metodi\\}
+					Indica quante chiamate innestate di metodi sono inserite l'una
+					all'interno dell'altra. Un alto valore può portare a una saturazione
+					dello \gl{stack}.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 6;
+							\item \textbf{Range ottimale}: 0 - 4.
+						\end{itemize}
+				\paragraph{Copertura del codice\\}
+					Rappresenta la percentuale di codice eseguita durante i test.
+					Maggiore è questo valore, più esaurienti saranno i test e maggiori
+					sono le probabilità di individuare gli eventuali errori.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 80\% - 100\%;
+							\item \textbf{Range ottimale}: 90\% - 100\%.
+						\end{itemize}
+				\paragraph{Numero di linee per metodo\\}
+					Indica il numero di \gl{statement} che compongono un metodo.
+					Se un metodo risulta troppo lungo il suo funzionamento risulterà più
+					complicato da comprendere, quindi può essere opportuno dividerlo in
+					più sotto-funzioni. Un metodo troppo lungo potrebbe addirittura essere
+					sintomo di cattiva progettazione della classe.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: $\leq$ 60;
+							\item \textbf{Range ottimale}: $\leq$ 40.
+						\end{itemize}
+				\paragraph{Validazione W3C\\}
+					L'applicativo web deve superare il test di validazione offerto da
+					W3C con 0 errori gravi.
+					Sono accettati avvisi ed inesattezze che non compromettano le
+					funzionalità del sito fino a un massimo di 10 per pagina.
+					\subparagraph{Parametri utilizzati}
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 10 (per pagina);
+							\item \textbf{Range ottimale}: 0 - 0 (per pagina).
+						\end{itemize}
+			\subsubsection{Tabella riepilogativa}
+				\begin{table}[H]
+					\begin{tabular}{!{\VRule[1.4pt]}l!{\VRule}c!{\VRule}c!{\VRule[1.4pt]}}
+						\noalign{\hrule height 1.4pt}
+						\rowcolor{blue!30}\textbf{Metriche} & \textbf{Range di accettazione} & \textbf{Range ottimale} \\
+						\noalign{\hrule height 1.4pt}
+						\rowcolor{blue!20}\textbf{Metriche per i processi} & & \\ \hline
+						Schedule Variance & $\geq -(preventivo*5\%)$ & $\geq 0$ \\ \hline
+						Budget Variance & $\geq -(preventivo*10\%)$ & $\geq 0$ \\ \hline
+						\noalign{\hrule height 1.4pt}
+						\rowcolor{blue!20}\textbf{Metriche per i documenti} & & \\ \hline
+						Indice Gulpease & 40 - 100 & 50 - 100 \\
+						\noalign{\hrule height 1.4pt}
+						\rowcolor{blue!20}\textbf{Metriche per il codice} &  &  \\ \hline
+						Linee di commento su linee di codice & $\geq$ 0.25 & $\geq$ 0.30 \\ \hline
+						Numero di parametri & 0 - 8 & 0 - 5  \\ \hline
+						Numero di campi dati & 0 - 16 & 0 - 10 \\ \hline
+						Complessità ciclomatica & 0 - 10 & 0 - 6  \\ \hline
+						Livello di annidamento & 0 - 6 & 0 - 4 \\ \hline
+						Grado di instabilità & 0 - 0.8 & 0.3 - 0.7 \\ \hline
+						Chiamate innestate di metodi & 0 - 6 & 0 - 4 \\ \hline
+						Copertura del codice & 80\% - 100\% & 90\% - 100\% \\ \hline
+						Numero di linee per metodo & $\leq$ 60 & $\leq$ 40 \\ \hline
+						Validazione W3C & 0 - 10 (per pagina) & 0 - 0 (per pagina) \\
+						\noalign{\hrule height 1.4pt}
+					\end{tabular}
+					\caption{Riepilogo misure e metriche}
+				\end{table}
+\end{document}
