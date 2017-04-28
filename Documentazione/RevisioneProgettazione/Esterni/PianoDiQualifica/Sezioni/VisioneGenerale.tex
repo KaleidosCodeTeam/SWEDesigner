@@ -11,8 +11,8 @@
 			\item Definizione accurata di norme che regolamentano e standardizzano i
 			processi coinvolti nel progetto in termini di:
 				\begin{itemize}
-					\item Processi di fornitura;
-					\item Processi di sviluppo;
+					\item Processo di fornitura;
+					\item Processo di sviluppo;
 					\item Processi di supporto;
 					\item Processi organizzativi.
 				\end{itemize}
@@ -28,155 +28,144 @@
 					\item Consuntivo, durante lo sviluppo del progetto, delle risorse
 					impiegate.
 				\end{itemize}
-			\item Ad ogni processo coinvolto nello sviluppo del progetto verrà applicato
-			il principio \gl{PDCA} affiancato dal modello \gl{CMM}. Essi permettono il
-			controllo, la valutazione e il miglioramento continuo dei processi nonché
-			la determinazione del livello di maturità dell'organizzazione nel gestirli.
+			\item Ad ogni processo coinvolto nello sviluppo del progetto è stato scelto
+			di applicare il ciclo di \gl{PDCA} affiancato dal CMM.\footnote{Per maggiori informazioni,
+			consultare le appendici \ref{app:CMM} e \ref{app:PDCA}}
+			Essi infatti permettono il controllo, la valutazione e il miglioramento
+			continuo dei processi nonché la determinazione del livello di maturità
+			dell'organizzazione nel gestirli.
 		\end{itemize}
-		\subsection{Obiettivi di qualità}
-			Prendendo come riferimento lo standard [ISO/IEC 9126] e lo
-			standard [ISO/IEC 12207], il gruppo \kaleidoscode\ si impegna a
-			garantire che il prodotto \progetto\ abbia le seguenti qualità:
+		\subsection{Obiettivi di qualità di processo}
+			Prendendo come riferimento la normativa [ISO/IEC 12207], il gruppo \kaleidoscode\ ha
+			definito i seguenti obiettivi di qualità di processo che si impegna a perseguire.
+			\subsubsection{Rispetto della pianificazione concordata}
+				È necessario pianificare le attività per la realizzazione del progetto ed è
+				quindi fondamentale rispettare tale pianificazione per garantire la consegna
+				del prodotto secondo le tempistiche concordate.\\
+				Misura e metrica adottate sono descritte nella sezione \ref{MetrichePerIProcessi}.
+			\subsubsection{Rispetto del budget concordato}
+				È necessario stabilire un budget per il costo della realizzazione del prodotto ed è
+				quindi fondamentale far rientrare i costi per le risorse nella spesa prevista.\\
+				Misura e metrica adottate sono descritte nella sezione \ref{MetrichePerIProcessi}.
+			\subsubsection{Leggibilità della documentazione prodotta}
+				Durante la realizzazione del prodotto è necessario redigere la documentazione
+				delle attività di pianificazione, gestione, sviluppo, verifica e validazione oltre
+				che i loro prodotti.\\
+				È quindi fondamentale che i documenti prodotti siano, per quanto tecnici,
+				facilmente leggibili.\\
+				Misura e metrica adottate sono descritte nella sezione \ref{MetrichePerIDocumenti}.
+			\subsubsection{Rispetto delle norme di progettazione}
+				In progettazione si definiranno i moduli e le componenti del prodotto. Sarà necessario
+				rispettare le norme di progettazione definite nel documento \normediprogetto\
+				mantenendone un valore ideale di $0$ violazioni.\\
+				Inoltre, sarà utilizzata una misura e metrica, descritte nella sezione
+				\ref{MetricheProgettuali}, per valutarne la qualità.
+			\subsubsection{Rispetto delle norme di codifica}
+				Nel periodo di codifica, bisognerà sviluppare le unità software ideate in
+				progettazione. Per questo motivo, sarà necessario rispettare le norme di codifica
+				concordate nel documento \normediprogetto\ mantenendone un valore ideale di $0$
+				violazioni.
+			\subsubsection{Corretto funzionamento delle componenti del sistema}
+				Sarà necessario sottoporre le unità software sviluppate ad una serie di test\footnote{Definiti nella sezione \ref{Test}}
+				per valutarne il corretto funzionamento;
+				l'obiettivo è di effettuare il $100\%$ dei test indicati per ogni tipologia.
+		\subsection{Obiettivi di qualità di prodotto}
+			Prendendo come riferimento la normativa [ISO/IEC 9001] ed in particolare
+			[ISO/IEC 9126]\footnote{Per maggiori informazioni, consultare l'appendice
+			\ref{app:ISO9126}}, il gruppo \kaleidoscode\ ha definito i seguenti obiettivi di
+			qualità che si impegna a far raggiungere al prodotto \progetto.
 			\subsubsection{Funzionalità}
-				Si garantisce che il sistema prodotto abbia tutte le funzionalità
-				indicate nel documento \analisideirequisitiv. L'implementazione di
+				Si garantisce che \progetto\ abbia tutte le funzionalità
+				definite e concordate con il \proponente\ nel documento
+				\analisideirequisitiv. L'implementazione di
 				ogni requisito deve essere quanto più completa ed economica.
 				\begin{itemize}
-					\item \textbf{Misura}: l'unità di misura utilizzata sarà la
-					quantità di requisiti mappati in componenti del sistema create
-					e funzionanti.
+					\item \textbf{Misura}: si è deciso di utilizzare il numero totale di
+					funzionalità del prodotto che soddisfano i requisiti definiti.
 					\item \textbf{Metrica}: la sufficienza è raggiunta quando
-					vengono soddisfatti tutti i requisiti obbligatori.
-					\item \textbf{Strumenti}: il sistema deve superare tutti i
-					test che saranno previsti in fase di progettazione.
+					vengono soddisfatti almeno tutti i requisiti obbligatori.
 				\end{itemize}
 			\subsubsection{Affidabilità}
-				Il sistema deve essere quanto più possibile robusto. Nel caso di
-				eventuali errori deve essere di facile ripristino.
+				Il sistema deve funzionare nella sua completezza.
 				\begin{itemize}
-					\item \textbf{Misura}: l'unità di misura utilizzata sarà la
-					quantità di esecuzioni che vanno a buon fine.
-					\item \textbf{Metrica}: poiché non è possibile valutare ancora
-					tutte le casistiche di utilizzo, le esecuzioni dovranno
-					coprire al meglio la gamma di possibilità. Risulta quindi
-					impossibile stabilire oggettivamente una soglia di
-					sufficienza.
-					\item \textbf{Strumenti}: da definire.
-				\end{itemize}
-			\subsubsection{Usabilità}
-				Il sistema deve coniugare la facilità di apprendimento e
-				utilizzo con il soddisfacimento di tutte le necessità dell'utente.
-				\begin{itemize}
-					\item \textbf{Misura}: vista la mancanza di una metrica
-					oggettiva adatta, l'unità di misura utilizzata sarà una
-					valutazione soggettiva dell'usabilità.
-					\item \textbf{Metrica}: non esistendo una metrica oggettiva
-					adatta, è impossibile stabilire una soglia di sufficienza.
-					I membri del gruppo si impegneranno comunque a garantire
-					un'elevata esperienza d'uso.
-					\item \textbf{Strumenti}: ci si affiderà ad un piccolo
-					campione di utilizzatori esterni per avere un riscontro
-					quantomeno realistico dell'usabilità. Per maggiori
-					informazioni si vedano \normediprogettov.
+					\item \textbf{Misura}: sono stati definiti dei test a cui sottoporre
+					il prodotto realizzato\footnote{Consultabili nella sezione \ref{Test}};
+					l'unità di misura sarà quindi il numero di test	superati dal sistema.
+					\item \textbf{Metrica}: la sufficienza è raggiunta quando il sistema supera
+					almeno l'$80$\% dei test.
 				\end{itemize}
 			\subsubsection{Efficienza}
-				Il sistema deve ridurre al minimo l'utilizzo delle risorse
-				impiegate e deve fornire le funzionalità richieste nel minor tempo
-				possibile.
-				\begin{itemize}
-					\item \textbf{Misura}: il tempo di latenza dell'editor per
-					eseguire un comando.
-					\item \textbf{Metrica}: la sufficienza viene definita come un
-					tempo di latenza inferiore ai 2 secondi.
-					\item \textbf{Strumenti}: da definire.
-				\end{itemize}
+				Il sistema deve minimizzare l'utilizzo delle risorse impiegate e
+				fornire le funzionalità richieste nel minor tempo possibile.\\
+				Misure e metriche adottate sono descritte nella sezione \ref{MetrichePerIlCodice}.
 			\subsubsection{Manutenibilità}
-				Il sistema deve essere comprensibile ed estensibile.
-				\begin{itemize}
-					\item \textbf{Misura}: le unità di misura utilizzate saranno
-					quelle descritte nella sezione \ref{MetrichePerIlCodice}.
-					\item \textbf{Metrica}: il prodotto deve ottenere la
-					sufficienza in tutte le metriche descritte nella sezione
-					\ref{MetrichePerIlCodice}.
-					\item \textbf{Strumenti}: consultare sezione ``Norme di codifica''
-					in \normediprogettov.
-				\end{itemize}
+				Il codice prodotto per realizzare il sistema deve essere comprensibile
+				ed estensibile.\\
+				Misure e metriche adottate sono descritte nella sezione \ref{MetrichePerIlCodice}.
 			\subsubsection{Portabilità}
-				Il sistema deve essere più portabile possibile. Il \gl{front-end}
-				deve essere utilizzabile dal maggior numero di \gl{browser}
-				possibili.
-				\begin{itemize}
-					\item \textbf{Misura}: il front-end deve rispettare gli
-					standard del \gl{W3C}.
-					\item \textbf{Metrica}: il software deve avere le
-					caratteristiche di portabilità descritte. È necessario che il
-					prodotto raggiunga la sufficienza in tutte le metriche
-					descritte nella sezione \ref{MetrichePerIlCodice}.
-					\item \textbf{Strumenti}: consultare \normediprogettov.	
-				\end{itemize}
-			\subsubsection{Altre qualità}
-				Saranno importanti per il prodotto anche le seguenti proprietà:
-				\begin{itemize}
-					\item \textbf{Incapsulamento}: aumenta il riuso e la
-					manutenibilità del codice. Saranno utilizzate interfacce ove
-					possibile;
-					\item \textbf{Coesione}: le funzionalità che hanno gli stessi
-					obiettivi devono risiedere nello stesso componente in modo da
-					favorire semplicità e manutenibilità, oltre a ridurre l'indice
-					di dipendenza.
-				\end{itemize}		
+				Il sistema è un applicativo web. Per questo motivo, si garantisce che
+				il \gl{front-end} sarà completamente funzionante ed utilizzabile
+				almeno dal \gl{browser}	Google Chrome, dove verrà testato il prodotto
+				durante lo sviluppo. Inoltre, si perseguirà l'obiettivo di garantire la
+				completa funzionalità del prodotto anche su altri browser, in particolare:
+				Mozilla Firefox e Microsoft Edge.\\
+				Misure e metriche adottate sono descritte nella sezione \ref{MetrichePerIlCodice}.
 		\subsection{Organizzazione}
 			La gestione della strategia di verifica si basa sull'attuazione delle
 			relative attività descritte nelle \normediprogettov. Tali attività vengono
 			eseguite per ogni processo attuato allo scopo di verifica della qualità del
 			processo stesso e dell'eventuale prodotto ottenuto facendo riferimento
-			anche alle metriche definite nella sezione \ref{Misure&Metriche}.
-			Ogni documento prevede un diario delle modifiche che permette di concentrare
-			l'attività di verifica solo nelle parti modificate dopo l'ultima eseguita.
-			Data la diversa natura dei prodotti ottenuti dalle fasi del progetto si
+			anche alle metriche definite nella sezione \ref{Misure&Metriche}.\\
+			In ogni documento è presente un diario delle modifiche che permette di concentrare
+			l'attività di verifica solo nelle parti modificate dopo l'ultima eseguita.\\
+			Data la diversa natura dei prodotti ottenuti dai periodi del progetto si
 			applicherà, per ognuno di essi, una diversa procedura di verifica:
 			\begin{itemize}
-				\item \textbf{Analisi e Analisi di dettaglio}: in questa fase si effettuerà
-				una prima stesura dei documenti illustrati nel \pianodiprogettov.
+				\item \textbf{Analisi e Analisi di dettaglio}: si effettuerà
+				una prima stesura dei documenti illustrati nel \pianodiprogettov;
 				\begin{itemize}
 					\item Verrà controllata la correttezza ortografica con \textit{LanguageTool 3.6},
 					opportunamente integrato in \textit{TexStudio};
 					\item Verrà controllata la correttezza lessicale con un'attenta ed accurata
 					rilettura affiancata dal controllo di \textit{LanguageTool 3.6};
 					\item Verrà controllata la correttezza dei contenuti rispetto alle aspettative
-					del documento;
-					\item Verrà controllata la corrispondenza di ciascun caso d'uso con un requisito,
-					mediante l'utilizzo dell'applicativo web creato appositamente;
-					\item Verrà controllato il rispetto delle \normediprogettov\ da parte di ciascun
-					documento;
+					del documento con un'attenta rilettura;
+					\item Verrà controllato il corretto tracciamento e la corrispondenza di ciascun
+					requisito con un caso d'uso, mediante l'utilizzo dell'applicativo web creato
+					appositamente\footnote{Consultare \normediprogettov\ per maggiori informazioni
+					sullo strumento di tracciamento utilizzato.};
+					\item Verrà controllato che la stesura di ciascun documento rispetti le
+					norme definite in \normediprogettov;
 					\item Verranno controllate le rappresentazioni grafiche, figure e tabelle
-					assicurandosi che per ciascuna di esse sia presente un'opportuna didascalia;
+					assicurandosi che per ciascuna di esse sia presente un'opportuna didascalia e
+					un relativo indice nel corrispondente documento;
 				\end{itemize}
 				\item \textbf{Progettazione architetturale}: verrà controllato che tutti i requisiti
-				corrispondano ad un componente individuato in questa fase e se ne assicurerà la
+				corrispondano ad un componente individuato in questo periodo e se ne assicurerà la
 				tracciabilità;
 				\item \textbf{Progettazione di dettaglio e Codifica}: durante ciascuna delle
-				iterazioni di questa fase si svolgeranno i test per la verifica del codice. Tali
-				attività avverranno nel modo più automatizzato possibile. I \verificatori\
-				supervisioneranno questa fase controllando la presenza di eventuali errori;
-				\item \textbf{Validazione e verifica}: in questa fase verrà effettuato il collaudo
-				del prodotto, in modo da assicurare il suo corretto funzionamento al momento
+				iterazioni in questo periodo i \programmatori\ svolgeranno l'attività di codifica e di
+				esecuzione dei test previsti per la verifica del codice prodotto.
+				Tali attività avverranno nel modo più automatizzato possibile seguendo le norme
+				descritte in \normediprogettov.
+				I \verificatori\ avranno il compito di supervisionare le attività
+				controllando la presenza di eventuali errori;
+				\item \textbf{Validazione e verifica}: verrà effettuato il collaudo
+				del prodotto, in modo da assicurarne il corretto funzionamento al momento
 				della consegna.
-			\end{itemize} 
+			\end{itemize}
+			Per ogni periodo a partire dalla progettazione architetturale verranno inoltre effettuati
+			tutti i controlli opportuni descritti al primo punto di questo paragrafo nei nuovi
+			documenti redatti e in presenza	di modifiche o integrazioni	ai documenti
+			precedentemente stesi.
 		\subsection{Scadenze temporali}
 			Dato l'obiettivo di rispettare le scadenze fissate nel \pianodiprogettov, è
-			indispensabile pianificare l'attività di verifica della documentazione e del
+			indispensabile pianificare anche l'attività di verifica della documentazione e del
 			codice prodotto in modo che risulti sistematica e organizzata. Grazie
 			all'applicazione di tale strategia l'individuazione e la correzione degli
 			errori avverrà il prima possibile, impedendo la loro rapida diffusione e
 			mitigando la possibilità che gli stessi si ripresentino in futuro,
 			diminuendo così il rischio di ritardi. Tale pianificazione è documentata nel
-			\pianodiprogettov\ il quale contiene, nella sottosezione 1.4, anche le
+			\pianodiprogettov\ il quale contiene, nella sottosezione ``Scadenze'', le
 			scadenze temporali che il gruppo \kaleidoscode\ si impegna a rispettare.
-		\subsection{Responsabilità}
-			I ruoli responsabili delle attività di verifica sono il
-			\responsabilediprogetto\ e il \verificatore. I loro compiti e
-			responsabilità, descritti nelle \normediprogettov, permettono alle attività
-			di verifica di essere efficienti e sistematiche.
-			Ogni componente del team è responsabile del materiale da lui prodotto.
 \end{document}

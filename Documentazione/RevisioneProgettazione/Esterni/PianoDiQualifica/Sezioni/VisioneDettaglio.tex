@@ -53,13 +53,45 @@
 				questa condizione non pregiudica l'accettazione del prodotto, ma
 				richiede verifiche più approfondite in merito.
 			\end{itemize}
-			\subsubsection{Metriche per i processi}
+			\subsubsection{Metriche per i processi}\label{MetrichePerIProcessi}
+				Per poter tenere continuamente sotto controllo il progresso e lo stato del progetto,
+				si è deciso di utilizzare le seguenti metriche.
 				\paragraph{\gl{Schedule Variance}\\}
 					È una metrica di progetto standard, indica se si è in linea, in
 					anticipo o in ritardo rispetto alla schedulazione pianificata delle
 					attività di progetto. È pari alla differenza tra il valore delle
 					attività realizzate ed il valore delle attività pianificate alla
-					data corrente.
+					data corrente; più precisamente:
+					\begin{equation*}
+						\textit{Schedule Variance (SV)} = \textit{Earned Value (BCWP)} - \textit{Planned Value (BCWS)}
+					\end{equation*}
+					Dove:
+					\begin{itemize}
+						\item Earned Value o BCWP (Budgeted Cost of Work Performed) è il valore
+						(denaro) delle attività realizzate alla data corrente;
+						\item Planned Value o BCWS (Budgeted Cost of Work Scheduled) è il costo
+						pianificato (denaro) per realizzare le attività di progetto alla
+						data corrente.
+					\end{itemize}
+					Per avere una migliore visione sull'utilizzo del tempo a disposizione, verrà
+					calcolato anche lo Schedule Performance Indicator ed il To Complete Schedule
+					Performance Indicator\footnote{I due indici verranno calcolati periodicamente
+					durante lo sviluppo, ma non saranno presenti nei resoconti di verifica.}.\\
+					Lo Schedule Performance Indicator,
+					\begin{equation*}
+						\textit{SPI} = \frac{\textit{BCWP}}{\textit{BCWS}}
+					\end{equation*}
+					mostra l'efficienza del team nell'utilizzo del tempo allocato per il progetto;
+					un SPI > 1 indica che il team di lavoro è molto efficiente,
+					viceversa, un SPI < 1 indica che non lo è.\\
+					Il To Complete Schedule Performance Indicator,
+					\begin{equation*}
+						\textit{TSPI} = \frac{( \textit{Budget Totale} - \textit{BCWP} )}{( \textit{Budget Totale} - \textit{BCWS} )}
+					\end{equation*}
+					mostra quanto il team dovrà essere efficiente nel tempo rimasto per la
+					realizzazione del progetto; un TSPI < 1 indica che il team può rilassare
+					l'attività lavorativa nel tempo rimasto; viceversa, un TSPI > 1 indica che il
+					team ha bisogno di lavorare più duramente.
 					\subparagraph{Parametri utilizzati}
 						\begin{itemize}
 							\item \textbf{Range di accettazione}: $\geq -(preventivo*5\%)$;
@@ -69,13 +101,20 @@
 					È una metrica di progetto standard, indica se si è speso di più o
 					di meno rispetto a quanto preventivato alla data corrente. È pari
 					alla differenza tra costo pianificato e costo effettivamente
-					sostenuto alla data corrente.
+					sostenuto alla data corrente; più precisamente:
+					\begin{equation*}
+						\textit{Budget Variance (BV)} = \textit{Planned Value (BCWS)} - \textit{Actual Cost (ACWP)}
+					\end{equation*}
+					Dove l'Actual Cost o ACWP (Actual Cost of Work Performed) è il costo
+					effettivamente sostenuto (denaro) alla data corrente.
 					\subparagraph{Parametri utilizzati}
 						\begin{itemize}
 							\item \textbf{Range di accettazione}: $\geq -(preventivo*10\%)$;
 							\item \textbf{Range ottimale}: $\geq 0$.
 						\end{itemize}
-			\subsubsection{Metriche per i documenti}
+			\subsubsection{Metriche per i documenti}\label{MetrichePerIDocumenti}
+				Per poter misurare la documentazione realizzata, è stato scelto di adottare
+				il calcolo di un indice di leggibilità per la lingua italiana.
 				\paragraph{Indice Gulpease\\}
 					Definito nel 1988 all'Università degli Studi di Roma ``La
 					Sapienza'' per valutare la leggibilità di un documento redatto in
@@ -112,6 +151,26 @@
 						\begin{itemize}
 							\item \textbf{Range di accettazione}: 40 - 100;
 							\item \textbf{Range ottimale}: 50 - 100.
+						\end{itemize}
+			\subsubsection{Metriche progettuali}\label{MetricheProgettuali}
+				\paragraph{Grado di accoppiamento\\}
+					Viene calcolato in base a due indici:
+					\begin{itemize}
+						\item Accoppiamento afferente: numero di classi esterne
+						al \gl{package} che dipendono da sue classi interne. Un numero
+						alto indica che troppe classi dipendono da tale package, quindi
+						eventuali modifiche provocherebbero forti ripercussioni
+						sull'esterno. Se il numero è basso il package risulta poco
+						utile;
+						\item Accoppiamento efferente: numero di classi interne
+						al package dipendenti da classi esterne. Un numero alto può
+						essere sintomo di una scarsa progettazione.
+					\end{itemize}
+					\subparagraph{Parametri utilizzati}
+						(valgono per entrambe le tipologie di grado di accoppiamento)
+						\begin{itemize}
+							\item \textbf{Range di accettazione}: 0 - 7;
+							\item \textbf{Range ottimale}: 0 - 5.
 						\end{itemize}
 			\subsubsection{Metriche per il codice}\label{MetrichePerIlCodice}
 				\paragraph{Rapporto linee di commento su linee di codice\\}
@@ -169,38 +228,6 @@
 							\item \textbf{Range di accettazione}: 0 - 6;
 							\item \textbf{Range ottimale}: 0 - 4.
 						\end{itemize}
-				\paragraph{Grado di accoppiamento\\}
-					Viene calcolato in base a due indici:
-					\begin{itemize}
-						\item Accoppiamento afferente: numero di classi esterne
-						al \gl{package} che dipendono da sue classi interne. Un numero
-						alto indica che troppe classi dipendono da tale package, quindi
-						eventuali modifiche provocherebbero forti ripercussioni
-						sull'esterno. Se il numero è basso il package risulta poco
-						utile;
-						\item Accoppiamento efferente: numero di classi interne
-						al package dipendenti da classi esterne. Un numero alto può
-						essere sintomo di una scarsa progettazione.
-					\end{itemize}
-				\paragraph{Grado di instabilità\\}
-					Tale metrica viene utilizzata per misurare l'instabilità delle
-					componenti di un sistema basandosi sul grado di accoppiamento sopra
-					descritto. Un valore alto indica alta instabilità e quindi bassa
-					libertà di modifica del codice in quanto ogni modifica ha effetti
-					su più classi. Tale indice viene calcolato con la seguente formula:
-					\begin{equation*}
-						I=\frac{C \ped{e} }{C \ped{a}  +C \ped{e} }
-					\end{equation*}
-					dove:
-					\begin{itemize}
-						\item C\ped a: rappresenta l'accoppiamento afferente;
-						\item C\ped e: rappresenta l'accoppiamento efferente.
-					\end{itemize}
-					\subparagraph{Parametri utilizzati}
-						\begin{itemize}
-							\item \textbf{Range di accettazione}: 0 - 0.8;
-							\item \textbf{Range ottimale}: 0.3 - 0.7.
-						\end{itemize}
 				\paragraph{Chiamate innestate di metodi\\}
 					Indica quante chiamate innestate di metodi sono inserite l'una
 					all'interno dell'altra. Un alto valore può portare a una saturazione
@@ -230,7 +257,7 @@
 							\item \textbf{Range di accettazione}: $\leq$ 60;
 							\item \textbf{Range ottimale}: $\leq$ 40.
 						\end{itemize}
-				\paragraph{Validazione W3C\\}
+				\paragraph{Validazione \gl{W3C}\\}
 					L'applicativo web deve superare il test di validazione offerto da
 					W3C con 0 errori gravi.
 					Sono accettati avvisi ed inesattezze che non compromettano le
@@ -253,19 +280,22 @@
 						\rowcolor{blue!20}\textbf{Metriche per i documenti} & & \\ \hline
 						Indice Gulpease & 40 - 100 & 50 - 100 \\
 						\noalign{\hrule height 1.4pt}
+						\rowcolor{blue!20}\textbf{Metriche progettuali} &  &  \\ \hline
+						Grado di accoppiamento afferente & 0 - 7 & 0 - 5 \\ \hline
+						Grado di accoppiamento efferente & 0 - 7 & 0 - 5 \\ \hline
+						\noalign{\hrule height 1.4pt}
 						\rowcolor{blue!20}\textbf{Metriche per il codice} &  &  \\ \hline
 						Linee di commento su linee di codice & $\geq$ 0.25 & $\geq$ 0.30 \\ \hline
 						Numero di parametri & 0 - 8 & 0 - 5  \\ \hline
 						Numero di campi dati & 0 - 16 & 0 - 10 \\ \hline
 						Complessità ciclomatica & 0 - 10 & 0 - 6  \\ \hline
 						Livello di annidamento & 0 - 6 & 0 - 4 \\ \hline
-						Grado di instabilità & 0 - 0.8 & 0.3 - 0.7 \\ \hline
 						Chiamate innestate di metodi & 0 - 6 & 0 - 4 \\ \hline
 						Copertura del codice & 80\% - 100\% & 90\% - 100\% \\ \hline
 						Numero di linee per metodo & $\leq$ 60 & $\leq$ 40 \\ \hline
 						Validazione W3C & 0 - 10 (per pagina) & 0 - 0 (per pagina) \\
 						\noalign{\hrule height 1.4pt}
 					\end{tabular}
-					\caption{Riepilogo misure e metriche}
+					\caption{Riepilogo misure e metriche adottate}
 				\end{table}
 \end{document}
