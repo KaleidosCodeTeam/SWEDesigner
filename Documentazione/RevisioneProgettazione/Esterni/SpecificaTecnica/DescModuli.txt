@@ -1,0 +1,180 @@
+ClientSubsystem
+	Descrizione
+		Componente del programma che viene scaricato in locale ed eseguito dal browser dell'utente.
+	Interazione con altri componenti
+		Comunica con la parte server in un primo momento per scaricare le informazioni necessarie alla costruzione dell'editor, ed in seguito per inviare e ricevere rispettivamente i dati sul diagramma disegnato e il codice sorgente generato.
+	Figli
+		View
+			Descrizione
+				Rappresenta in modo astratto il componente del programma che disegna l'interfaccia grafica e gestisce gli input dell'utente.
+			Interazione con altri componenti
+				Comunica con il Model mantenendone la coerenza con quanto mostrato graficamente;
+				Comunica con il RequestHandler per gli scambi di dati necessari con il ServerSubsystem.
+			Figli
+				ViewPackage
+					Descrizione
+						Svolge il ruolo di View per l'editor del diagramma dei package.
+						Interazione con altri componenti
+						Comunica con il ModelPackage mantenendone la coerenza con quanto mostrato graficamente.
+				ViewClass
+					Descrizione
+						Svolge il ruolo di View per l'editor del diagramma delle classi.
+					Interazione con altri componenti
+						Comunica con il ModelClass mantenendone la coerenza con quanto mostrato graficamente.
+				ViewActivity
+					Descrizione
+						Svolge il ruolo di View per l'editor del diagramma delle attività.
+					Interazione con altri componenti
+						Comunica con il ModelActivity mantenendone la coerenza con quanto mostrato graficamente.
+				ViewBFlowchart
+					Descrizione
+						Svolge il ruolo di View per l'editor del bubble flowchart.
+					Interazione con altri componenti	
+						Comunica con il ModelBFlowchart mantenendone la coerenza con quanto mostrato graficamente;
+						Comunica con il RequestHandler per interrogare il ServerSubsystem sul database di bubble a disposizione.
+		Model
+			Descrizione
+				Rappresenta in modo astratto il componente del programma che manipola e gestisce i dati mostrati dal View.
+			Interazione con altri componenti
+				È aggiornato dal View ma non dipende da altri componenti esterni.
+			Figli
+				ModelPackage
+					Descrizione
+						Svolge il ruolo di Model per l'editor del diagramma dei package.
+					Interazione con altri componenti
+						È aggiornato dal ViewPackage ma non dipende da altri componenti esterni.
+					Figli
+				ModelClass
+					Descrizione
+						Svolge il ruolo di Model per l'editor del diagramma delle classi.
+					Interazione con altri componenti
+						È aggiornato dal ViewClass ma non dipende da altri componenti esterni.
+					Figli
+				ModelActivity
+					Descrizione
+						Svolge il ruolo di Model per l'editor del diagramma delle attività.
+					Interazione con altri componenti
+						È aggiornato dal ViewActivity ma non dipende da altri componenti esterni.
+					Figli
+				ModelBFlowchart
+					Descrizione
+						Svolge il ruolo di Model per l'editor del bubble flowchart.
+					Interazione con altri componenti
+						È aggiornato dal ViewBFlowchart ma non dipende da altri componenti esterni.
+					Figli
+				State
+					Descrizione
+						Registra le informazioni sullo stato del Model e sulle operazioni svolte per permettere le operazioni di unDo e reDo.
+					Interazione con altri componenti
+						Comunica con DAOStorageHandler per permettere di aprire o salvare un progetto esistente, oppure crearne uno nuovo.
+					Figli
+						StPackage
+							Descrizione
+								Svolge il ruolo di State per l'editor del diagramma dei package.
+							Interazione con altri componenti
+							Figli
+						StClass
+							Descrizione
+								Svolge il ruolo di State per l'editor del diagramma delle classi.
+							Interazione con altri componenti
+							Figli
+						StActivity
+							Descrizione
+								Svolge il ruolo di State per l'editor del diagramma delle attività.
+							Interazione con altri componenti
+							Figli
+						StBFlowchart
+							Descrizione
+								Svolge il ruolo di State per l'editor del bubble flowchart.
+							Interazione con altri componenti
+							Figli
+		DAOStorageHandler
+			Descrizione
+				Gestisce la persistenza delle informazioni.
+			Interazione con altri componenti
+				Comunica con State per la gestione in locale dei dati.
+			Figli
+		RequestHandler
+			Descrizione
+				Gestisce la comunicazione con il ServerSubsystem.
+			Interazione con altri componenti
+				Comunica con View per rispondere agli input dell'utente e fornire i dati provenienti dal server.
+			Figli
+				Sender
+					Descrizione
+						Gestisce le comunicazioni in uscita.
+					Interazione con altri componenti
+					Figli
+				Receiver
+					Descrizione
+						Gestisce le comunicazioni in entrata.
+					Interazione con altri componenti
+					Figli
+ServerSubsystem
+	Descrizione
+		Componente del programma che viene installato nel server.
+	Interazione con altri componenti
+		Invia i dati necessari all'esecuzione del ClientSubsystem al browser dell'utente;
+		Riceve i dati relativi al progetto dal ClientSubsystem e restituisce il codice sorgente prodotto.
+	Figli
+		RequestHandler
+			Descrizione
+				Gestisce la comunicazione con il ClientSubsystem.
+			Interazione con altri componenti
+				Comunica con il DAOStorageHandler per fornire al ClientSubsystem i dati necessari sul database di bubble;
+				Comunica con il Facade per richiedere e ricevere ad elaborazione conclusa il codice sorgente desiderato.
+			Figli
+				Sender
+					Descrizione
+						Gestisce le comunicazioni in uscita.
+					Interazione con altri componenti
+					Figli
+				Receiver
+					Descrizione
+						Gestisce le comunicazioni in entrata.
+					Interazione con altri componenti
+					Figli
+		Compiler
+			Descrizione
+				Crea il codice sorgente corrispondente al diagramma disegnato dall'utente.
+			Interazione con altri componenti
+				Riceve i dati sul diagramma dal RequestHandler e restituisce allo stesso un file .zip contenente i sorgenti desiderati.
+			Figli
+				Facade
+					Descrizione
+						Fornisce un'interfaccia per il sistema di classi sottostante come previsto dal design pattern Facade.
+					Interazione con altri componenti
+						Riceve i dati sul diagramma dal RequestHandler e restituisce allo stesso un file .zip contenente i sorgenti desiderati.
+					Figli
+				Parser
+					Descrizione
+						Legge il file .json ricevuto dal Facade e ne estrae una struttura logica ad oggetti rappresentate il programma disegnato dall'utente.
+					Interazione con altri componenti
+						Riceve il file .json dal Facade e restituisce la struttura ad oggetti creata al Coder.
+					Figli
+				Coder
+					Descrizione
+						Attraversa la struttura ad oggetti fornita e ne ricava il codice sorgente corrispondente.
+					Interazione con altri componenti
+						Riceve la struttura ad oggetti dal Parser e restituisce i file sorgenti al Builder;
+						Comunica con il DAOStorageHandler per ricevere i dati necessari alla corretta codifica delle bubble.
+					Figli
+				Builder
+					Descrizione
+						Costruisce la gerarchia di cartelle corretta per i file sorgenti generati.
+					Interazione con altri componenti
+						Riceve i file sorgenti dal Coder e restituisce la cartella creata, con relative sottocartelle, allo Zipper.
+					Figli
+				Zipper
+					Descrizione
+						Comprime la cartella ricevuta dal Builder.
+					Interazione con altri componenti
+						Riceve la cartella dal Builder e restituisce lo .zip creato al Facade.
+					Figli
+		DAOStorageHandler
+			Descrizione
+				Gestisce il database delle bubble.
+			Interazione con altri componenti
+				Comunica con il RequestHandler per fornire le informazioni necessarie al Client sul database delle bubble;
+				Comunica con il Coder per fornire i dati necessari alla corretta codifica delle bubble.
+			Figli
