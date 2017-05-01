@@ -427,54 +427,7 @@
 				\responsabilediprogetto\ controlla eventuali errori o mancanze.
 				Nel caso se ne identifichino, si devono segnalare le criticità ai
 				redattori che provvederanno a correggerle.
-		\subsection{Strumento di coordinamento}
-			\begin{figure} [h!]
-				\centering
-				\includegraphics[scale=0.2]{./Immagini/Asana.png}
-				\caption{Lista di Task in Asana}\label{}
-			\end{figure}
-			Come piattaforma di gestione del gruppo è stato scelto \gl{\textbf{Asana}}. Asana fornisce:
-			\begin{itemize}
-				\item Un sistema di gestione dei task;
-				\item Un calendario per organizzare i compiti;
-				\item La visualizzazione del repository associato al progetto;
-				\item Un sistema di rendicontazione del tempo;
-				\item La possibilità di integrare Google Drive, GitHub e web app come Instagantt.
-			\end{itemize}
-			Sono state valutate diverse alternative ma, dopo un'attenta fase di test, nessuna di queste è
-			stata ritenuta all'altezza di Asana per quantità e qualità delle caratteristiche proposte.\\
-			Sono stati provati i seguenti software:
-			\begin{itemize}
-				\item \textbf{Wrike}: scartato perché la versione free gestisce solo fino a cinque utenti;
-				\item \textbf{Trello}: scartato perché carente in funzionalità rispetto alle alternative;  
-				\item \textbf{Teamwork}: scartato perché pur raggiungendo la completezza di Asana in quanto
-				a caratteristiche non fornisce un'interfaccia altrettanto immediata, aumentando il tempo
-				speso dal team nell'apprendimento dell'uso degli strumenti.
-			\end{itemize}
-			La gestione delle attività sarà effettuata utilizzando i task di Asana.
-			Ogni attività è rappresentata da uno o più task che devono essere creati dal
-			\responsabilediprogetto, il	quale provvederà ad assegnarne lo svolgimento ciascuno ad un mambro del gruppo. Il \responsabilediprogetto\ provvederà anche ad assegnare un \verificatore\ ad
-			ogni attività, che avrà il compito di svolgere il task di verifica rispettivamente dedicato
-			(da iniziare solamente al termine di quelli di "produzione").
-			Qualora un membro svolga un task di un'attività assegnatagli, dovrà segnalarne il completamento
-			spuntandolo dalla rispettiva lista.\\
-			Per ogni task il \responsabilediprogetto\ deve inserire il tempo previsto per completarlo e al
-			completamento di quest'ultimo, deve essere segnato in quanto tempo
-			è effettivamente stato svolto.\\
-			Al termine di tutti i task di un'attività, il \responsabilediprogetto\ può chiuderne la lista.
-			\begin{figure} [h!]
-				\centering
-				\includegraphics[scale=0.2]{./Immagini/Instagantt.png}
-				\caption{Schermata principale dell'estensione Instagantt per Asana}\label{}
-			\end{figure}
-			\subsubsection{Consigli di utilizzo}
-				\paragraph{Visualizzazione dei Task\\}
-					Per vedere i task assegnati basta spostarsi nella pagina ``MY
-					TASKS'' presente tra i link in alto a sinistra.\\
-					Per avere una visione d'insieme sui task dell'intero gruppo basta
-					spostarsi nella pagina ``Team Calendar'' presente nella tendina
-					laterale. Da qui è possibile vedere le scadenze indicative disposte
-					in un calendario.
+		
 		\subsection{Strumento di versionamento}\label{StrumentoDiVersionamento}
 			Sono stati presi in considerazione diversi software di versionamento (\gl{Git}, SVN, Mercurial)
 			prima di decidere di usare \textbf{Git}. I motivi principali della scelta sono: 
@@ -498,6 +451,13 @@
 			Al completamento di un incremento, è possibile effettuare una richiesta di \gl{merge}.
 			Un \verificatore\ avrà in compito di controllare il merge e di accettarlo oppure di segnalare
 			la presenza di eventuali errori come descritto in sezione \ref{GestioneErroriCodice}.
+			\subsubsection{Descrizione dei commit}
+			La cronologia dei commit sarà utilizzata dal \responsabilediprogetto\ come log per determinare l'effettivo stato di avanzamento del progetto. Ogni commit effettuato dovrà perciò riportare una descrizione chiara e concisa di quanto fatto. Nel titolo del commit si consiglia di usare le seguenti notazioni:
+			\begin{itemize}
+				\item \textbf{$+$ [nomefile, nomesezione, nomeoggetto]} indica l'aggiunta del file \textit{nomefile}, oppure la stesura della sezione \textit{nomesezione} o in generale la creazione dell'oggetto \textit{nomeoggetto};
+				\item \textbf{$-$ [nomefile, nomesezione, nomeoggetto]} indica la rimozione del file \textit{nomefile}, della sezione \textit{nomesezione} o dell'oggetto \textit{nomeoggetto};
+				\item \textbf{$\sim$ [nomefile, nomesezione, nomeoggetto]} indica la modifica del file \textit{nomefile}, della sezione \textit{nomesezione} o dell'oggetto \textit{nomeoggetto}. In questo caso è obbligatorio inserire una descrizione più approfondita della modifica effettuata.
+			\end{itemize}
 		\subsection{Altri strumenti}
 			\subsubsection{Google Drive}
 			\begin{figure} [h!]
