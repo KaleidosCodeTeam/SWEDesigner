@@ -74,6 +74,56 @@
 						\item Controllare che le regole stabilite dalle \normediprogetto\ siano
 						rispettate durante ogni attività di progetto.
 					\end{itemize}
+				
+				
+				
+				\subsection{Strumento di coordinamento}
+				\begin{figure} [h!]
+					\centering
+					\includegraphics[scale=0.2]{./Immagini/Asana.png}
+					\caption{Lista di Task in Asana}\label{}
+				\end{figure}
+				Come piattaforma di gestione del gruppo è stato scelto \gl{\textbf{Asana}}. Asana fornisce:
+				\begin{itemize}
+					\item Un sistema di gestione dei task;
+					\item Un calendario per organizzare i compiti;
+					\item La visualizzazione del repository associato al progetto;
+					\item Un sistema di rendicontazione del tempo;
+					\item La possibilità di integrare Google Drive, GitHub e web app come Instagantt.
+				\end{itemize}
+				Sono state valutate diverse alternative ma, dopo un'attenta fase di test, nessuna di queste è
+				stata ritenuta all'altezza di Asana per quantità e qualità delle caratteristiche proposte.\\
+				Sono stati provati i seguenti software:
+				\begin{itemize}
+					\item \textbf{Wrike}: scartato perché la versione free gestisce solo fino a cinque utenti;
+					\item \textbf{Trello}: scartato perché carente in funzionalità rispetto alle alternative;  
+					\item \textbf{Teamwork}: scartato perché pur raggiungendo la completezza di Asana in quanto
+					a caratteristiche non fornisce un'interfaccia altrettanto immediata, aumentando il tempo
+					speso dal team nell'apprendimento dell'uso degli strumenti.
+				\end{itemize}
+				\begin{figure} [h!]
+					\centering
+					\includegraphics[scale=0.2]{./Immagini/Instagantt.png}
+					\caption{Schermata principale dell'estensione Instagantt per Asana}\label{}
+				\end{figure}
+				\subsubsection{Norme di utilizzo}
+				\paragraph{Creazione e assegnazione dei task\\}
+					La gestione delle attività sarà effettuata utilizzando i task di Asana.
+					All'inizio di ogni periodo del progetto, il \responsabilediprogetto\ si occuperà di creare i task corrispondenti alle attività individuate in fase di progettazione. Ciascun task riporterà una breve descrizione dell'attività rappresentata e l'indicazione sul periodo temporale ad essa assegnata. Durante l'avanzamento della progettazione si divideranno ricorsivamente i task in sotto-attività più semplici, fino a quando ciascun task potrà essere assegnato ad un'unica persona, prevedendone lo svolgimento in un periodo massimo di due giornate.
+				\paragraph{Controllo dell'avanzamento delle attività\\}
+					Con cadenza giornaliera il \responsabilediprogetto\ è tenuto a verificare l'avanzamento delle attività durante il giorno, aiutandosi utilizzando come strumento di log la cronologia dei commit su GitHub. Solo qualora l'attività svolta non sia associabile a dei commit, egli è tenuto a sincerarsi dello stato della stessa tramite comunicazione diretta con l'addetto.\\
+					Ad attività conclusa, è compito del \responsabilediprogetto\ segnare come completato il task corrispondente in Asana.
+				\paragraph{Attività di verifica\\}
+					Con la creazione dei task corrispondenti alle macro-attività di periodo, il \responsabilediprogetto\ assegnerà opportunamente uno o più \verificatori, in base al carico di lavoro atteso e alle disponibilità di ciascuno. \\
+					I \verificatori\ sono gli unici componenti del gruppo, oltre al \responsabilediprogetto\ a cui è concesso creare dei task su Asana. Al termine della loro attività di verifica infatti sarà compito loro creare i task corrispondenti alle attività di correzione e associarvi i redattori corrispondenti. Saranno sempre i \verificatori\ ad indicare come completati questi task dopo aver accertato la bontà delle correzioni al termine della loro successiva verifica.
+				\paragraph{Visualizzazione dei Task\\}
+				Per vedere i task assegnati basta spostarsi nella pagina ``MY
+				TASKS'' presente tra i link in alto a sinistra.\\
+				Per avere una visione d'insieme sui task dell'intero gruppo basta
+				spostarsi nella pagina ``Team Calendar'' presente nella tendina
+				laterale. Da qui è possibile vedere le scadenze indicative disposte
+				in un calendario.
+				
 		\subsection{Comunicazioni}
 			\subsubsection{Esterne}
 				Per le comunicazioni esterne è stata creata la casella di posta
