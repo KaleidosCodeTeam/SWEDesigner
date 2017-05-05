@@ -452,12 +452,13 @@
 			Un \verificatore\ avrà in compito di controllare il merge e di accettarlo oppure di segnalare
 			la presenza di eventuali errori come descritto in sezione \ref{GestioneErroriCodice}.
 		\subsubsection{Norme di commit}
-			Al termine di ogni modifica significativa apportata ad uno dei documenti versionabili caricati nel repository GitHub è obbligatorio effettuare un commit.	Ogni commit deve essere corredato di descrizione sintetica ma precisa di quanto modificato, in modo da permettere al \responsabilediprogetto\ una verifica accurata dello stato di avanzamento delle attività.\\
-			Per permettere una più agevole lettura della cronologia dei commit, si definiscono le seguenti convenzioni per la scrittura del titolo:
+			Al termine di ogni modifica significativa apportata ad uno dei documenti versionabili caricati nel repository GitHub è obbligatorio effettuare un commit. Ogni commit deve essere corredato di descrizione sintetica ma precisa di quanto modificato, in modo da permettere una agevole lettura della cronologia qualora fosse necessario.\\
+			Si definiscono le seguenti convenzioni per la scrittura del titolo:
 			\begin{itemize}
 				\item \textbf{$ + $ [NomeDocumento | NomeSezione | NomeOggetto]} indica la creazione del documento \textit{NomeDocumento}, la stesura della sezione \textit{NomeSezione} o in generale la creazione di \textit{NomeOggetto};
 				\item \textbf{$ - $ [NomeDocumento | NomeSezione | NomeOggetto]} indica l'eliminazione del documento \textit{NomeDocumento}, la cancellazione della sezione \textit{NomeSezione} o in generale la rimozione di \textit{NomeOggetto};
 				\item \textbf{$ \sim $ [NomeDocumento | NomeSezione | NomeOggetto]} indica la modifica del documento \textit{NomeDocumento}, della sezione \textit{NomeSezione} o in generale di \textit{NomeOggetto}. In particolare in questo caso è necessario che la descrizione associata sia chiara e sufficiente a spiegare l'effettiva natura della modifica apportata.
+				\item \textbf{TASK: [NomeTask]} è il titolo che deve essere utilizzato al completamento dell'attività associata al task NomeTask di Asana. Questo verrà automaticamente aggiornato e segnato come completato da Zapier (sezione \ref{Zapier}).
 			\end{itemize}
 		\subsection{Altri strumenti}
 			\subsubsection{Google Drive}
@@ -527,13 +528,15 @@
 				web accessibile attraverso \gl{browser} ed ospitata su un server dedicato: SWEgo.
 				Tale applicativo permette di aggiungere casi d'uso, attori partecipanti e requisiti.
 				Casi d'uso e requisiti sono automaticamente identificati attraverso i codici auto-generati
-				dall'applicazione; È inoltre possibile esportare il codice \LaTeX\ elenca casi d'uso,
+				dall'applicazione; È inoltre possibile esportare il codice \LaTeX\ che elenca casi d'uso,
 				requisiti e le loro relazioni.
 				\begin{figure} [h!]
 					\centering
 					\includegraphics[scale=0.42]{./Immagini/SWEgo.jpg}
 					\caption{Schermata di tracciamento requisiti in SWEgo}\label{}
 				\end{figure}
+			\subsubsection{Zapier} \label{Zapier}
+				Per permettere un'efficace gestione dei task di Asana, si è scelto di utilizzare Zapier. Si tratta di un servizio web che permette di integrare altre applicazioni web. Sarà usato in particolare per collegare Asana e GitHub in modo che al commit GitHub con titolo: \emph{TASK: [NomeTask]} venga automaticamente aggiornato a "completato" lo stato dell'omonimo task Asana.
 			\subsubsection{Strumenti per l'usabilità}
 				L'usabilità descritta nel \pianodiqualificav, verrà testata attraverso la prova del prodotto
 				ad un piccolo numero di volontari fornendo consigli al gruppo su come effettuare
