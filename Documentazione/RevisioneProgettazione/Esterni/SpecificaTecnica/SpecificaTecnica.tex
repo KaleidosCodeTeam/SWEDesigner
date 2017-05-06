@@ -30,11 +30,11 @@
 		\line(1,0){240}\\
 		% compilare i campi per ogni documento
 		\begin{tabular}{r|l}
-			{\hfill \textbf{Versione}} 			& 2.0.0\\
+			{\hfill \textbf{Versione}} 			& 1.0.0\\
 			{\hfill \textbf{Data Redazione}} 	& 01/05/2017\\	% aggiornare la data
-			{\hfill \textbf{Redazione}} 		& aaa\\ & aao\\ & aaa\\ & aaa\\
-			{\hfill \textbf{Verifica}} 			& aaa\\
-			{\hfill \textbf{Approvazione}} 		& aaa\\
+			{\hfill \textbf{Redazione}} 		& Bonolo Marco\\ & Pace Giulio\\ & Pezzuto Francesco\\ & Sanna Giovanni\\
+			{\hfill \textbf{Verifica}} 			& Sovilla Matteo\\
+			{\hfill \textbf{Approvazione}} 		& Bonato Enrico\\
 			{\hfill \textbf{Uso}} 				& Esterno\\
 			{\hfill \textbf{Distribuzione}} 	& \vardanega \\ & \cardin \\ & \proponente\\
 		\end{tabular}\\
@@ -50,10 +50,17 @@
 	\newpage
 		\listoftables
 	\newpage
+		\listoffigures
+	\newpage
 	\pagestyle{mymain}
 		\subfile{Sezioni/IntroduzioneST}
-	
-	%\appendix
-	
+	\newpage
+		\subfile{Sezioni/TecnologieUtilizzate}
+	\newpage
+		\subfile{Sezioni/ArchitetturaGenerale}
+	% DA INSERIRE DESCRIZIONE DELLE COMPONENTI
+	\appendix
+	\newpage
+		\subfile{Sezioni/PatternUtilizzati}
 	\label{LastPage}
 \end{document}
