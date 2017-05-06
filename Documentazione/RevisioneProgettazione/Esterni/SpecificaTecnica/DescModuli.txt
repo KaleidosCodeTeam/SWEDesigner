@@ -178,3 +178,17 @@ ServerSubsystem
 				Comunica con il RequestHandler per fornire le informazioni necessarie al Client sul database delle bubble;
 				Comunica con il Coder per fornire i dati necessari alla corretta codifica delle bubble.
 			Figli
+
+
+
+
+Nome: struttura gerarchica padre::figlio::nipote
+Descrizione
+Relazioni con altre classi
+	Dipendenze IN (breve descrizione della classe collegata)
+	Dipendenze OUT (breve descrizione della classe collegata)
+Superclasse (solo nel caso delle classi)
+Lista sottoclassi (solo nel caso delle classi, senza descrizione)
+Padre (solo nel caso dei package)
+Package contenuti (solo nel caso dei package)
+	breve descrizione del figlio
