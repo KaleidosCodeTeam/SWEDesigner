@@ -596,7 +596,7 @@
 	\subsubsection{Test TS7} 
 	\paragraph{Descrizione:} Viene verificato che il sistema notifichi quando si verificano problemi di connessione con il server.
 	\paragraph{Stato} Non implementato.
-		
+	
 	\subsubsection{Test TS8} 
 	\paragraph{Descrizione:} Viene verificato che la home page venga visualizzata interamente entro 3 secondi, in assenza di problemi di connessione.
 	\paragraph{Stato} Non implementato.
@@ -642,5 +642,115 @@
 	
 	
 	\subsection{Test di integrazione} 
-	%    \subsection{Test di unità}  DA INSERIRE IN PROGETTAZIONE DI DETTAGLIO 
+	In questa sezione vengono descritti i test di integrazione, da utilizzare per testare i vari componenti descritti nella progettazione ad alto livello, che permettono di verificare la corretta integrazione ed il corretto flusso dei dati all'interno del sistema.
+	
+	Si è deciso di utilizzare una strategia di integrazione incrementale che permette di verificare più componenti in parallelo.
+	
+	Seguendo questa strategia eventuali difetti rilevati da un test sono da attribuirsi, con maggior probabilità, all’ultima parte aggiunta,ciò permette, a patto di tenere i vari passi reversibili, di retrocedere verso uno stato noto e sicuro.
+	
+	È stato utilizzato il metodo bottom-up per poter integrare prima le parti con minore dipendenza funzionale e maggiore funzionalità che corrispondono ai componenti per requisiti obbligatori, in questo modo è possibile avere una versione funzionante delle parti obbligatorie dell’applicazione il prima possibile.
+	
+	Inoltre con questo metodo i componenti legati a parti obbligatorie vengono testate ad ogni integrazione diminuendo la possibilità che si presentino errori in essi.
+	
+	
+	
+	%%%sistema
+	\subsubsection{Test TI1}
+	\paragraph{Descrizione:} Test di integrazione finale per le componenti del sistema, in particolate tra Server e Client.
+	\paragraph{Stato} Non implementato.
+	
+	%client
+	\subsubsection{Test TI1.1}
+	\paragraph{Descrizione:} Test di integrazione finale per le componenti del client, in particolare tra  Model e View.
+	\paragraph{Stato} Non implementato.
+	%view
+	\subsubsection{Test TI1.1.1}
+	\paragraph{Descrizione:} Test di integrazione per verificare che il sistema gestisca correttamente le componenti della View in particolare l'integrazione tra TitleBarView, la ToolBarView, l'AddressView, l'EditPannelView e il Paper.
+	\paragraph{Stato} Non implementato.
+	
+	
+	\subsubsection{Test TI1.1.1}
+	\paragraph{Descrizione:} Test di integrazione per verificare che il sistema gestisca correttamente le componenti della View in particolare l'integrazione dei vari moduli con la libreria esterna \gl{Joint.JS} . %da aggiungere
+	\paragraph{Stato} Non implementato.
+	
+	
+	Diagramm Tree, la TitleBarModel, la ToolBarModel, l'AddressModel e l'EditPannelModel
+	%model
+	\subsubsection{Test TI1.1.2}
+	\paragraph{Descrizione:} Test di integrazione per le componenti del model, in particolare command, Dao, RequestHendler, Main Model e state.
+	\paragraph{Stato} Non implementato.
+	%command
+	\subsubsection{Test TI1.1.2.1}
+	\paragraph{Descrizione:} Test per verificare che il modulo command gestisca correttamente i vari comandi impartiti dai moduli della View ai rispettivi moduli del Model.
+	\paragraph{Stato} Non implementato.
+	%Dao 1.1.2.2
+	\subsubsection{Test TI1.1.2.2.1}
+	\paragraph{Descrizione:} Test per verificare che il DAO all'interno del model carichi correttamente un progetto.
+	\paragraph{Stato} Non implementato.
+	
+	\subsubsection{Test TI1.1.2.2.2}
+	\paragraph{Descrizione:} Test per verificare che il DAO all'interno del model salvi correttamente un progetto.
+	\paragraph{Stato} Non implementato.
+	%RequestHandler 1.1.2.3
+	\subsubsection{Test TI1.1.2.3}
+	\paragraph{Descrizione:} Test di integrazione per le componenti del RequestHandler, in particolare sender, reciver e JsonCoder.
+	\paragraph{Stato} Non implementato.
+	%sender			1.1.2.3.1
+	\subsubsection{Test TI1.1.2.3.1.1}
+	\paragraph{Descrizione:} Test per verificare che il sender all'interno del client invii le richieste per bubble correttamente al server.
+	\paragraph{Stato} Non implementato.
+	
+	\subsubsection{Test TI1.1.2.3.1.2}
+	\paragraph{Descrizione:} Test per verificare che il sender all'interno del client invii  correttamente al server le richieste per la creazione di codice a partire dal file Json.
+	%reciver	1.1.2.3.2
+	\subsubsection{Test TI1.1.2.3.2}
+	\paragraph{Descrizione:} Test per verificare che il reciver all'interno del client riceva correttamente le bubble dal server.
+	\paragraph{Stato} Non implementato.
+	%jsonCoder	1.1.2.3.3
+	\subsubsection{Test TI1.1.2.3.3}
+	\paragraph{Descrizione:} Test d'integrazione per il JsonCoder all'interno del client con il metodo \gl{JSON.Stringify()} di Javascript. %da aggiungere
+	\paragraph{Stato} Non implementato.
+	%MainModel 		1.1.2.4
+	\subsubsection{Test TI1.1.2.3.4}
+	\paragraph{Descrizione:} Test d'integrazione per il MainModel all'interno del client con in vari moduli del Model collegati ai moduli della View, in particolare con il Diagramm Tree, la TitleBarModel, la ToolBarModel, l'AddressModel e l'EditPannelModel . 
+	\paragraph{Stato} Non implementato.
+	%Diagram 1.1.2.4.1
+	\subsubsection{Test TI1.1.2.3.4.1}
+	\paragraph{Descrizione:} Test d'integrazione per il modulo Diagram all'interno del client con il framework \gl{JointJS}s. 
+	\paragraph{Stato} Non implementato.
+	%state 1.2.3.5
+	\subsubsection{Test TI1.1.2.3.5}
+	\paragraph{Descrizione:} Test per verificare che lo state del client interagisca correttamente con . 
+	\paragraph{Stato} Non implementato.
+	
+	%server 1.2
+	\subsubsection{Test TI1.2}
+	\paragraph{Descrizione:} Test di integrazione per le componenti del Server, in particolare RequestHandler, Dao e compiler.
+	\paragraph{Stato} Non implementato.
+	
+	%RequestHandler
+	\subsubsection{Test TI1.2.1}
+	\paragraph{Descrizione:} Test di integrazione per le componenti del RequestHandler, in particolare sender e reciver.
+	\paragraph{Stato} Non implementato.
+	%sender
+	\subsubsection{Test TI1.2.1.1.1}
+	\paragraph{Descrizione:} Test per verificare che il sender all'interno del server invii le bubble correttamente al client.
+	\paragraph{Stato} Non implementato.
+	
+	\subsubsection{Test TI1.2.1.1.2}
+	\paragraph{Descrizione:} Test per verificare che il sender all'interno del server invii  correttamente al server il pacchetto zip contenente il codice generato.
+	%reciver	1.2.1.2
+	\subsubsection{Test TI1.2.1.2}
+	\paragraph{Descrizione:} Test per verificare che il reciver all'interno del server riceva correttamente il file JSON necessario alla generazione del codice dal client.
+	\paragraph{Stato} Non implementato.
+	%Dao 
+	\subsubsection{Test TI1.2.2.1}
+	\paragraph{Descrizione:} Test per verificare che il DAO all'interno del Server restituisca correttamente una bubble.
+	\paragraph{Stato} Non implementato.
+	
+	\subsubsection{Test TI1.2.2.2}
+	\paragraph{Descrizione:} Test per verificare che il DAO all'interno del Server salvi correttamente una bubble.
+	\paragraph{Stato} Non implementato.
+	%Compiler
+	%parte di Giovanni
 \end{document} 
