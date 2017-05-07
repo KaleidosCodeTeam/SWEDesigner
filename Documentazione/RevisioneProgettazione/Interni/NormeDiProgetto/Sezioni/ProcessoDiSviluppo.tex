@@ -148,22 +148,39 @@
 			\paragraph{\gl{Design pattern}\\}
 				I \progettisti\ devono descrivere i design pattern utilizzati per realizzare l'architettura.
 				È necessario fornire una breve descrizione ed un diagramma semplificato per ognuno di essi.
-			\paragraph{Classificazione dei Test}
-			Ciascun test sarà identificato univocamente con la seguente dicitura:
-			\begin{center}
-				T[Tipo].[Codice identificativo]
-			\end{center}
-			In questa codifica
-			\begin{itemize}
-				\item \textbf{Tipo} può assumente i valori:
+			\paragraph{Classificazione dei test\\}
+				Ciascun test sarà identificato univocamente con la seguente dicitura:
+				\begin{center}
+					T[Tipo][Codice identificativo]
+				\end{center}
+				In questa codifica:
 				\begin{itemize}
-					\item \textbf{I} indica i test di integrazione;
-					\item \textbf{S} indica i test di sistema;
-					\item \textbf{U} indica i test di unità;
-					\item \textbf{V} indica i test di validazione;
+					\item \textbf{Tipo} può assumente i valori:
+					\begin{itemize}
+						\item \textbf{I} indica i test di integrazione;
+						\item \textbf{S} indica i test di sistema;
+						\item \textbf{U} indica i test di unità;
+						\item \textbf{V} indica i test di validazione;
+					\end{itemize}
+					\item \textbf{Codice identificativo} rappresenta il codice univoco e progressivo del
+					corrispondente test.
 				\end{itemize}
-				\item \textbf{Codice identificativo} rappresenta il codice univoco e progressivo del corrispondente test.
-			\end{itemize}
+				Tutti i test devono essere inseriti nell'apposito sistema di tracciamento ``SWEgo''
+				realizzato all'interno del gruppo, che provvederà alla generazione
+				dei codici identificativi univoci.
+			\paragraph{Specifica tecnica\\}
+				Per la redazione del documento è necessario effettuare la progettazione architetturale ad
+				alto livello, utilizzando i diagrammi UML sopra elencati. Ogni requisito deve essere tracciato
+				al un componente che lo soddisfa mediante il software utilizzato in modo tale da garantire
+				il soddisfacimento dei requisiti.\\
+				Per la progettazione ad alto livello è necessario definire i test di integrazione, sistema e
+				validazione.
+			\paragraph{Definizione di prodotto\\}
+				Per la redazione del documento è necessario effettuare la progettazione architetturale di
+				dettaglio, utilizzando i diagrammi UML sopra elencati. Ogni requisito deve essere tracciato
+				alla/e classe/i che lo soddisfano mediante il software utilizzato in modo tale da garantire
+				che ogni classe soddisfi almeno un requisito.\\
+				È necessario definire i test di unità mancanti.
 		\subsubsection{Codifica}
 			\paragraph{Scopo\\}
 				Lo scopo della fase di codifica è quello di implementare il prodotto costruendo
