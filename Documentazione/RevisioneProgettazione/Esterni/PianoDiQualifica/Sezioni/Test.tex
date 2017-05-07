@@ -652,8 +652,14 @@
 	
 	Inoltre con questo metodo i componenti legati a parti obbligatorie vengono testate ad ogni integrazione diminuendo la possibilità che si presentino errori in essi.
 	
+	Il seguente diagramma, che non segue il formalismo UML, è utilizzato per semplificare la spiegazione della strategia di integrazione.
 	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.4]{../../../Immagini/TestIntegr.pdf}
+	\end{figure}
 	
+		
 	%%%sistema
 	\subsubsection{Test TI1}
 	\paragraph{Descrizione:} Test di integrazione finale per le componenti del sistema, in particolate tra Server e Client.
@@ -673,8 +679,6 @@
 	\paragraph{Descrizione:} Test di integrazione per verificare che il sistema gestisca correttamente le componenti della View in particolare l'integrazione dei vari moduli con la libreria esterna \gl{Joint.JS} . %da aggiungere
 	\paragraph{Stato} Non implementato.
 	
-	
-	Diagramm Tree, la TitleBarModel, la ToolBarModel, l'AddressModel e l'EditPannelModel
 	%model
 	\subsubsection{Test TI1.1.2}
 	\paragraph{Descrizione:} Test di integrazione per le componenti del model, in particolare command, Dao, RequestHendler, Main Model e state.
