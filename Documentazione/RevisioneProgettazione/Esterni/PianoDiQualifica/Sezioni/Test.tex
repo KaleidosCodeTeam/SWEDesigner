@@ -19,551 +19,699 @@
 		effettuarlo correttamente.  
 	
 	
-	%%%%%test progetto 
+%%%%%test progetto 
+
+
+\subsubsection{Test TV1}  
+\hypertarget{TV1}
+L'utente vuole verificare che il sistema permetta la creazione di un nuovo progetto. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Comunicare l'intenzione di voler creare un nuovo progetto; 
+	\item Inserire un nome per il nuovo progetto; 
+	\item Confermare la creazione del progetto;
+	\item Verificare che venga creato e aperto un nuovo progetto vuoto;
+\end{itemize} 
+
+\subsubsection{Test TV2} 
+\hypertarget{TV2}
+L'utente vuole verificare che si possa caricare un progetto precedentemente creato. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Comunicare l'intenzione di voler aprire un progetto precedentemente salvato; 
+	\item Selezionare il progetto che intende caricare; 
+	\item Confermare il caricamento;
+	\item Verificare che il progetto venga aperto correttamente.
+\end{itemize}     
+
+\subsubsection{Test TV3} 
+\hypertarget{TV3}
+L'utente vuole verificare che si possa salvare il progetto corrente. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Effettuare almeno una modifica al progetto corrente;
+	\item Comunicare l'intenzione di voler salvare il progetto corrente; 
+	\item Verificare che il progetto sia stato correttamente salvato.
+\end{itemize}     
+% da decidere/implementare in adr % 
+\subsubsection{Test TV3.1} 
+\hypertarget{TV3.1}
+L'utente vuole verificare che si possa salvare il progetto corrente specificandone il nome. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Effettuare almeno una modifica al progetto corrente;  
+	\item Comunicare l'intenzione di voler salvare il progetto corrente con un nuovo nome; 
+	\item Inserire il nome con cui si intende salvare il progetto; 
+	\item Confermare il salvataggio con il nome specificato. 
+	\item Verificare che il progetto sia stato correttamente salvato.
+\end{itemize}     
+
+
+%test generali 
+
+
+
+\subsubsection{Test TV4}
+\hypertarget{TV4}
+L'utente vuole verificare la possibilità di poter annullare un'azione appena eseguita. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato (TV2) o crearne uno nuovo (TV1); 
+	\item Effettuare almeno una modifica al progetto corrente; 
+	\item Comunicare l'intenzione di voler annullare l'ultima azione eseguita;
+	\item Verificare che il progetto si trovi nello stato precedente all'ultima azione eseguita.
+\end{itemize}    
+
+\subsubsection{Test TV5} 
+\hypertarget{TV5}
+L'utente vuole verificare la possibilità di poter ripristinare un'azione appena annullata. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato (TV2) o crearne uno nuovo (TV1); 
+	\item Effettuare almeno una modifica al progetto; 
+	\item Annullare l'ultima azione eseguita (TV6); 
+	\item Comunicare l'intenzione di voler ripristinare l'azione appena annullata; 
+	\item Verificare che gli effetti dell'azione precedentemente annullata siano stati ripristinati.
+\end{itemize}    
+
+
+
+
+%test package 
+
+\subsubsection{Test TV6} 
+\hypertarget{TV6}
+L'utente vuole verificare le funzionalità del diagramma dei package aggiungendo un nuovo package. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato o crearne uno nuovo; 
+	\item Aggiungere un nuovo package al diagramma dei package; 
+	\item Inserire il nome e specificare la visibilità per il package; %%%proprietà termine esatto?
+	\item Confermare la creazione del package;
+	\item verificare che il package sia presente nel diagramma dei package, e che abbia le proprietà specificate.
+\end{itemize} 
+
+\subsubsection{Test TV7} 
+\hypertarget{TV7}
+L'utente vuole verificare le funzionalità del diagramma dei package modificando un package. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contiene almeno un package o crearne un nuovo nuovo progetto e aggiungere un package; 
+	\item Selezionare un package dal diagramma dei package; 
+	\item Comunicare di voler modificare il package selezionato; 
+	\item Modificare il nome e la visibilità del package;
+	\item Confermare la modifica;
+	\item Verificare che il package selezionato presenti le modifiche apportate.
+\end{itemize} 
+
+\subsubsection{Test TV8} 
+\hypertarget{TV8}
+L'utente vuole verificare le funzionalità del diagramma dei package eliminando un package. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contiene almeno un package  o crearne uno nuovo e aggiungere un package; 
+	\item Selezionare un package dal diagramma dei package; 
+	\item Comunicare l'intenzione di eliminare il package selezionato; 
+	\item Confermare la cancellazione del package; 
+	\item Verificare che vengano eliminate anche le relazioni associate al package. 
+\end{itemize} 
+
+
+\subsubsection{Test TV9} 
+\hypertarget{TV9}
+L'utente vuole verificare le funzionalità del diagramma dei package aggiungendo una nuova relazione tra package. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno 2 package o crearne uno nuovo e aggiungere 2 package; 
+	\item Aggiungere un nuova nuova relazione tra due package al diagramma dei package; 
 	
-	
-	\subsubsection{Test TV1}  
-	L'utente vuole verificare che si possa creare un nuovo progetto. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Premere sul pulsante per la creazione di un progetto; 
-		\item Inserire un nome per il nuovo progetto; 
-		\item Confermare la creazione del progetto.
+	Per fare ciò all'utente è richiesto di: 
+	\begin{itemize}  
+		\item Selezionare un primo package; 
+		\item Selezionare un altro package; 
+		\item Selezionare la tipologia di relazione; 
+		\item Inserire molteplicità o eventuali parametri. 
 	\end{itemize} 
-	
-	\subsubsection{Test TV2} 
-	L'utente vuole verificare che si possa caricare un progetto precedentemente creato. 
+	\item Confermare la creazione della relazione. 
+\end{itemize} 
+
+\subsubsection{Test TV10} %%%%CULO CULO CULO serve o implementiamo solo crea,elimina
+\hypertarget{TV10} 
+L'utente vuole verificare le funzionalità del diagramma dei package apportando una modifica ad una relazione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno una relazione tra package o crearne uno nuovo e aggiungere una relazione tra package; 
+	\item Selezionare una relazione dal diagramma dei package; 
+	\item Comunicare l'intenzione di voler modificare la relazione selezionata;
+	\item Apportare tutte le possibili modifiche alla relazione selezionata; 
+	\item Confermare le modifiche alla relazione;
+	\item Verificare che tutte le modifiche apportate siano state applicate correttamente.
+\end{itemize}
+
+
+\subsubsection{Test TV11} 
+\hypertarget{TV11}
+L'utente vuole verificare le funzionalità del diagramma dei package eliminando una relazione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno una relazione tra package o crearne uno nuovo e aggiungere una relazione tra package; 
+	\item Selezionare una relazione dal diagramma dei package; 
+	\item Comunicare l'intenzione di voler eliminare la relazione selezionata;
+	\item Confermare la cancellazione della relazione selezionata. 
+\end{itemize} 
+
+%%%%%test classi 
+
+\subsubsection{Test TV12} 
+\hypertarget{TV12}
+L'utente vuole verificare le funzionalità del diagramma delle classi aggiungendo una nuova classe. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno un package o crearne uno nuovo e aggiungere un package;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Aggiungere una nuova classe al diagramma delle classi; 
+	\item Inserire il nome per la classe appena creata; 
+	\item Confermare la creazione della classe. 
+\end{itemize} 
+
+\subsubsection{Test TV13} 
+\hypertarget{TV13}
+L'utente vuole verificare le funzionalità del diagramma delle classi apportando una modifica ad una classe. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno una classe o crearne uno nuovo e aggiungere una classe;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe dal diagramma delle classi; 
+	\item Comunicare l'intenzione di voler modificare la classe selezionata;
+	\item Apportare tutte le possibili modifiche alla classe selezionata; 
+	\item Confermare le modifiche apportate alla classe;
+	\item Verificare che tutte le modifiche apportate siano state applicate correttamente.
+\end{itemize} 
+
+
+\subsubsection{Test TV14} 
+\hypertarget{TV14}
+L'utente vuole verificare le funzionalità del diagramma delle classi eliminando una classe. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno una classe o crearne uno nuovo e aggiungere una classe;
+	\item Selezionare un package al diagramma dei package; 
+	\item Selezionare una classe dal diagramma delle classi; 
+	\item Comunicare l'intenzione di voler eliminare la classe o premere il tasto Canc; 
+	\item Confermare la cancellazione della classe; 
+	\item Verificare che vengano eliminate anche le relazioni associate alla classe. %% CULO CULO CULO come prima 
+\end{itemize} 
+
+
+
+\subsubsection{Test TV15} 
+\hypertarget{TV15}
+L'utente vuole verificare le funzionalità del diagramma delle classi aggiungendo una nuova interfaccia. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno un package o crearne uno nuovo e aggiungere un package;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Aggiungere una nuova interfaccia al diagramma delle classi; 
+	\item Inserire il nome per l'interfaccia appena creata; 
+	\item Confermare la creazione dell'interfaccia. 
+\end{itemize} 
+
+
+\subsubsection{Test TV16} 
+\hypertarget{TV16}
+L'utente vuole verificare le funzionalità del diagramma delle classi apportando una modifica ad un' interfaccia. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno un'interfaccia o crearne uno nuovo e aggiungere un'interfaccia;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare un'interfaccia dal diagramma delle classi; 
+	\item Comunicare l'intenzione di voler modificare l'interfaccia selezionata;
+	\item Apportare tutte le possibili modifiche all'interfaccia selezionata; 
+	\item Confermare le modifiche all'interfaccia. 
+\end{itemize} 
+
+
+\subsubsection{Test TV17} 
+\hypertarget{TV17}
+L'utente vuole verificare le funzionalità del diagramma delle classi eliminando un'interfaccia. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno un'interfaccia o crearne uno nuovo e aggiungere un'interfaccia;
+	\item Selezionare un package al diagramma dei package; 
+	\item Selezionare un'interfaccia al diagramma delle classi; 
+	\item Comunicare l'intenzione di voler eliminare l'interfaccia selezionata o premendo il tasto Canc; 
+	\item Confermare la cancellazione dell'interfaccia 
+	\item Verificare che vengano eliminate anche le relazioni associate all'interfaccia. 
+\end{itemize} 
+
+
+\subsubsection{Test TV18} 
+\hypertarget{TV18}
+L'utente vuole verificare le funzionalità del diagramma delle classi aggiungendo una nuova relazione tra classi o interfacce. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno 2 tra classi e/o interfacce nello stesso package o crearne uno nuovo e aggiungere 2 elementi tra classi e/o interfacce;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Aggiungere un nuova nuova relazione tra classi o interfacce;  
 	All'utente è richiesto di: 
 	\begin{itemize} 
-		\item Premere sul pulsante per l'apertura di un progetto; 
-		\item Selezionare il progetto che intende caricare; 
-		\item Confermare il caricamento. 
-	\end{itemize}     
-	
-	\subsubsection{Test TV3} 
-	L'utente vuole verificare che si possa salvare un progetto precedentemente creato. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Premere sul pulsante per l'apertura di un progetto; 
-		\item Effettuare alcune modifiche al progetto; 
-		\item Premere il bottone per salvare il progetto. 
-	\end{itemize}   
-  
-	% implementato!! 
-	\subsubsection{Test TV4} 
-	L'utente vuole verificare che si possa salvare con nome un progetto precedentemente creato. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Premere sul pulsante per l'apertura di un progetto; 
-		\item Effettuare almeno una modifica al progetto; 
-		\item Premere il pulsante per salvare con nome il progetto; 
-		\item Inserire il percorso dove salvare in progetto; 
-		\item Inserire il nome con cui si intende salvare il progetto; 
-		\item Confermare il percorso e il nome con il bottone salva.
-	\end{itemize}     
-	
-	
-	%test generali 
-	
-	
-	\subsubsection{Test TV5} 
-	L'utente vuole verificare la possibilità riposizionare un elemento all'interno di un diagramma. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contiene almeno un elemento o creare un nuovo progetto e aggiungere un nuovo elemento; 
-		\item Tenere premuto col puntatore su un elemento e trascinarlo. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV6}
-	L'utente vuole verificare la possibilità di poter annullare un'azione appena eseguita. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato o crearne uno nuovo; 
-		\item Effettuare almeno una modifica al progetto; 
-		\item Annullare la modifica appena eseguita con l'apposito bottone o tramite la scorciatoia da tastiera Ctrl+z. 
-	\end{itemize}    
-	
-	\subsubsection{Test TV7} 
-	L'utente vuole verificare la possibilità di poter ripristinare un'azione appena annullata. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato o crearne uno nuovo; 
-		\item Effettuare almeno una modifica al progetto; 
-		\item Annullare l'ultima modifica eseguita con l'apposito bottone o tramite la scorciatoia da tastiera Ctrl+z; 
-		\item Ripristinare la modifica annullata con l'apposito bottone o tramite la scorciatoia da tastiera Ctrl+y. 
-	\end{itemize}    
-	
-	%%%%%% CULO CULO CULO aggiungere un package CULO CULO CULO %%%%%% 
-	
-	
-	%test package 
-	
-	\subsubsection{Test TV8} 
-	L'utente vuole verificare le funzionalità del diagramma dei package aggiungendo un nuovo package. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato o crearne uno nuovo; 
-		\item Aggiungere un nuovo package al diagramma dei package; 
-		\item Inserire il nome e eventuali proprietà per il package nel menù sul lato; %%%proprietà termine esatto?si!
-		\item Confermare la creazione del package. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV9} 
-	L'utente vuole verificare le funzionalità del diagramma dei package modificando un package. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contiene almeno un package o crearne uno nuovo e aggiungerci un package; 
-		\item Selezionare un package dal diagramma dei package; 
-		\item Modificare una o più proprietà del package selezionato tramite il menù sul lato; %%%%CULO CULO attributi? no proprietà! CULO CULO 
-		\item Confermare la modifica del package. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV10} 
-	L'utente vuole verificare le funzionalità del diagramma dei package eliminando un package. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contiene almeno un package  o crearne uno nuovo e aggiungere un package; 
-		\item Selezionare un package dal diagramma dei package; 
-		\item Cancellare il package premendo il bottone apposito o con il tasto Canc; 
-		\item Confermare la cancellazione del package; 
-		\item Verificare che vengano eliminate anche le relazioni associate al package. 
-	\end{itemize}  %%% eliminate in automatico?si!!! CULO CULO CULO 
-	
-	
-	\subsubsection{Test TV11} 
-	L'utente vuole verificare le funzionalità del diagramma dei package aggiungendo una nuova relazione tra package. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno 2 package o crearne uno nuovo e aggiungere 2 package; 
-		\item Aggiungere un nuova nuova relazione tra due package al diagramma dei package; 
-		
-		Per fare ciò all'utente è richiesto di: 
-		\begin{itemize}  
-			\item Selezionare un primo package; 
-			\item Selezionare un altro package; 
-			\item Selezionare la tipologia di relazione; 
-			\item Inserire molteplicità o eventuali parametri. 
-		\end{itemize} 
+		\item Selezionare una prima classe o interfaccia; 
+		\item Selezionare un'altra classe o interfaccia;
+		\item Comunicare l'intenzione di voler aggiungere una relazione fra i due elementi selezionati;  
+		\item Selezionare la tipologia di relazione; 
+		\item Inserire molteplicità o eventuali parametri. 
 		\item Confermare la creazione della relazione. 
 	\end{itemize} 
-	
-	\subsubsection{Test TV12} %%%%CULO CULO CULO serve o implementiamo solo crea,elimina 
-	L'utente vuole verificare le funzionalità del diagramma dei package apportando una modifica ad una relazione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno una relazione tra package o crearne uno nuovo e aggiungere 2 package e una relazione; 
-		\item Selezionare una relazione dal diagramma dei package; 
-		\item Apportare almeno una modifica alla relazione tramite l'apposito menù sul lato; 
-		\item Confermare le modifiche alla relazione. 
-	\end{itemize} %%%%% alla va bene?
-	
-	
-	\subsubsection{Test TV13} 
-	L'utente vuole verificare le funzionalità del diagramma dei package eliminando una relazione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno una relazione tra package o crearne uno nuovo e aggiungere 2 package e una relazione; 
-		\item Selezionare una relazione dal diagramma dei package; 
-		\item Eliminare la relazione selezionata tramite l'apposito bottone o con il tasto Canc; 
-		%\item Confermare la cancellazione della relazione. 
-	\end{itemize} 
-	
-	%%%%%test classi 
-	
-	\subsubsection{Test TV14} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi aggiungendo una nuova classe. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno un package o crearne uno nuovo e aggiungere un package;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Aggiungere una nuova classe al diagramma delle classi; 
-		\item Inserire il nome per la classe appena creata; 
-		\item Confermare la creazione della classe. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV15} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi apportando una modifica ad una classe. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno una classe o crearne uno nuovo e aggiungere una classe;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe dal diagramma delle classi; 
-		\item Apportare modifiche alla classe selezionata tramite l'apposito menù sul lato; 
-		\item Confermare le modifiche apportate alla classe. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV16} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi eliminando una classe. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno una classe o crearne uno nuovo e aggiungere una classe;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare una classe dal diagramma delle classi; 
-		\item Cancellare la classe premendo il bottone apposito o con il tasto Canc; 
-		\item Confermare la cancellazione della classe; 
-		\item Verificare che vengano eliminate anche le relazioni associate alla classe. %% CULO CULO CULO come prima ?Si!
-	\end{itemize} 
-	
-	
-	
-	\subsubsection{Test TV17} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi aggiungendo una nuova interfaccia. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno un package o crearne uno nuovo e aggiungere un package;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Aggiungere una nuova interfaccia al diagramma delle classi; 
-		\item Inserire il nome per l'interfaccia appena creata; 
-		\item Confermare la creazione dell'interfaccia. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV18} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi apportando una modifica ad un'interfaccia. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno un'interfaccia o crearne uno nuovo e aggiungere un'interfaccia;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare un'interfaccia dal diagramma delle classi; 
-		\item Apportare modifiche all'interfaccia selezionata tramite l'apposito menù sul lato; 
-		\item Confermare le modifiche all'interfaccia. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV19} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi eliminando un'interfaccia. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno un'interfaccia o crearne uno nuovo e aggiungere un'interfaccia;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare un'interfaccia al diagramma delle classi; 
-		\item Cancellare l'interfaccia premendo il bottone apposito o con il tasto Canc; 
-		\item Confermare la cancellazione dell'interfaccia;
-		\item Verificare che vengano eliminate anche le relazioni associate all'interfaccia. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV20} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi aggiungendo una nuova relazione tra classi o interfacce. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno 2 tra classi e interfacce nello stesso package o crearne uno nuovo e aggiungere 2 elementi tra classi e interfacce;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Aggiungere un nuova nuova relazione tra classi o interfacce;  
-		All'utente è richiesto di: 
-		\begin{itemize} 
-			\item Selezionare una prima classe o interfaccia; 
-			\item Selezionare un'altra classe o interfaccia; 
-			\item Selezionare la tipologia di relazione; 
-			\item Inserire molteplicità o eventuali parametri. 
-		\end{itemize} 
-		\item Confermare la creazione della relazione. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV21} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi apportando una modifica ad una relazione. 
-	All'utente è richiesto di: 
-	\begin{itemize}  
-		\item Aprire un progetto precedentemente creato che contenga almeno 2 tra classi e interfacce connessi da una relazione o crearne uno nuovo e aggiungere 2 elementi tra classi e interfacce e una relazione;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una relazione dal diagramma delle classi; 
-		\item Apportare modifiche alla relazione tramite l'apposito menù sul lato destro; 
-		\item Confermare le modifiche alla relazione. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV22} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi eliminando una relazione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno 2 tra classi e interfacce connessi da una relazione o crearne uno nuovo e aggiungere 2 elementi tra classi e interfacce e una relazione;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una relazione dal diagramma delle classi; 
-		\item Cancellare la relazione mediante l'apposito bottone o il tasto canc; 
-	%	\item Confermare la cancellazione della relazione. %%%%forse inutile ma per sicurezza meglio lasciare!no
-	\end{itemize} 
-	
-	%%%%%%%%%%%%%%%%%%%% Diagramma attivita 
-	
-	
-	\subsubsection{Test TV23} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo una nuova attività. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga una classe con un metodo o crearne uno nuovo e aggiungere una classe che abbia un metodo;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
-		\item Aggiungere una nuova attività al diagramma delle attività collegandola a un altro elemento del diagramma; 
-		\item Inserire eventuali parametri per l'attività appena creata; %%%serve il nome? o qualche altro parametro 
-		\item Confermare la creazione dell'attività. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV24} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad un'attività. 
-	All'utente è richiesto di: 
-	\begin{itemize}  
-		\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
-		\item Selezionare un'attività del diagramma delle attività; 
-		\item Apportare modifiche all'attività selezionata tramite il suo bubble flowchart o tramite il menù sul lato; %% menu sul lato? si
-		\item Confermare le modifiche apportate all'attività. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV25} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività eliminando un'attività. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
-		\item Selezionare un'attività dal diagramma delle attività; 
-		\item Cancellare l'attività premendo il bottone apposito o con il tasto Canc; 
-		\item Confermare la cancellazione dell'attività; 
-	\end{itemize} 
-	
-	\subsubsection{Test TV26} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo un nuovo elemento di decisione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga una classe con un metodo o crearne uno nuovo e aggiungere una classe che abbia un metodo;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
-		\item Aggiungere un nuovo elemento di decisione al diagramma delle attività collegandolo a un altro elemento del diagramma; 
-		\item Inserire i parametri per l'elemento di decisione appena creato; %%%serve il nome? o qualche altro parametro 
-		\item Confermare la creazione dell'elemento di decisione. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV27} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad un elemento di decisione. 
-	All'utente è richiesto di: 
-	\begin{itemize}  
-		\item Aprire un progetto precedentemente creato che contenga un elemento di decisione o crearne uno nuovo e aggiungere un elemento di decisione;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
-		\item Selezionare un elemento di decisione del diagramma delle attività; 
-		\item Apportare modifiche all'elemento di decisione selezionato tramite il menù sul lato; %% menu sul lato? non credo ma è cosi!
-		\item Confermare le modifiche apportate all'elemento di decisione. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV28} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività eliminando un elemento di decisione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un elemento di decisione o crearne uno nuovo e aggiungere un elemento di decisione;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
-		\item Selezionare un elemento di decisione dal diagramma delle attività; 
-		\item Cancellare l'elemento di decisione premendo il bottone apposito o con il tasto Canc; 
-		\item Confermare la cancellazione dell'elemento di decisione;%%%cosa ne faccio dei 2 o + rami?   Li elimino!
-		\item Verificare che vengano eliminati i rami in cui l'elemento di decisione divideva il diagramma fino al punto in cui si riuniscono.
-	\end{itemize} 	
-	
-	\subsubsection{Test TV29} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo un nuovo evento temporale. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? metodo
-		\item Aggiungere un nuovo evento temporale al diagramma delle attività collegandolo a un altro elemento del diagramma; 
-		\item Inserire la durata per l'evento temporale appena creata; %%%serve il nome o qualche altro parametro, nome no
-		\item Confermare la creazione della classe. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV30} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad un evento temporale. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un evento temporale o crearne uno nuovo e aggiungere un evento temporale;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
-		\item Selezionare un evento temporale del diagramma delle attività;
-		\item Modificare la durata dell'evento temporale; 
-		\item Confermare le modifiche apportate all'evento temporale. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV31} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi eliminando un evento temporale. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un evento temporale o crearne uno nuovo e aggiungere un evento temporale;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
-		\item Selezionare un evento temporale dal diagramma delle attività; 
-		\item Cancellare l'evento temporale premendo il bottone apposito o il pulsante Canc; 
-		\item Confermare la cancellazione dell'evento temporale; 
-	\end{itemize} 
-	
-	
-	
-	\subsubsection{Test TV32} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo una nuova trasformazione tra pin . 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga una classe con un metodo o crearne uno nuovo e aggiungere una classe che abbia un metodo;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? metodo
-		\item Aggiungere una nuova trasformazione tra pin al diagramma delle attività attività collegandola a un altro elemento del diagramma; 
-		\item Inserire i dati richiesti e forniti dalle varie attività;
-		\item Confermare la creazione della trasformazione tra pin.%%%%Cosa devo inserire ?? culo culo 
-	\end{itemize} 
-	
-	\subsubsection{Test TV33} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad una trasformazione tra pin. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un trasformazione di pin o crearne uno nuovo e aggiungere un trasformazione di pin;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
-		\item Selezionare una trasformazione tra pin del diagramma delle attività;
-		\item Modificare i dati richiesti o forniti della trasformazione tra pin;%%%%CULO CULO non ne ho idea 
-		\item Confermare le modifiche apportate alla trasformazione tra pin. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV34} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi eliminando una trasformazione tra pin . 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un trasformazione di pin o crearne uno nuovo e aggiungere un trasformazione di pin;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
-		\item Selezionare una trasformazione tra pin dal diagramma delle attività; 
-		\item Cancellare la trasformazione tra pin premendo il bottone apposito o il pulsante Canc; 
-		\item Confermare la cancellazione della trasformazione tra pin. 
-	\end{itemize} 
-	
-	
-	
-	\subsubsection{Test TV35} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo una nuova regione d'espansione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga una classe con un metodo o crearne uno nuovo e aggiungere una classe che abbia un metodo;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
-		\item Aggiungere una nuova  regione d'espansione al diagramma delle attività; 
-		\item Inserire il numero di pin
-		\item Confermare la creazione della regione d'espansione.%%%%Cosa devo inserire ?? culo culo 
-	\end{itemize} 
-	
-	\subsubsection{Test TV36} 
-	L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad una regione d'espansione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un una regione d'espansione o crearne uno nuovo e aggiungere una regione d'espansione;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
-		\item Selezionare una regione d'espansione del diagramma delle attività ;
-		\item Modificare il numero di pin della regione d'espansione;%%%%CULO CULO non ne ho idea 
-		\item Confermare le modifiche apportate alla regione d'espansione. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV37} 
-	L'utente vuole verificare le funzionalità del diagramma delle classi eliminando una regione d'espansione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un una regione d'espansione o crearne uno nuovo e aggiungere una regione d'espansione;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
-		\item Selezionare una regione d'espansione dal diagramma delle attività; 
-		\item Cancellare la regione d'espansione premendo il bottone apposito o il pulsante Canc; 
-		\item Confermare la cancellazione della regione d'espansione. 
-	\end{itemize} 
-	
-	
-	
-	%%%%%%%%%%%%%%%%%%%%%%%bubble Flow chart
-	
-	
-	
-	\subsubsection{Test TV38} 
-	L'utente vuole verificare le funzionalità del bubble flowchart aggiungendo una nuova bubble. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
-		\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
-		\item Aggiungere una nuova bubble tra quelle disponibili al diagramma delle attività; 
-		\item Inserire eventuali parametri per la bubble; 
-		\item Confermare la creazione della bubble. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV39} 
-	L'utente vuole verificare le funzionalità del bubble flowchart apportando una modifica ad una bubble. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga una bubble o crearne uno nuovo e aggiungere una bubble;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
-		\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
-		\item Selezionare una bubble del bubble flowchart; 
-		\item Modificare i parametri della bubble tramite il menù sul lato;%%%%CULO CULO non ne ho idea 1s1k
-		\item Confermare le modifiche apportate alla bubble. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV40} 
-	L'utente vuole verificare le funzionalità del bubble flowchart eliminando una bubble. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga una bubble o crearne uno nuovo e aggiungere una bubble;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
-		\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
-		\item Selezionare una bubble dal bubble flowchart; 
-		\item Cancellare la bubble premendo il bottone apposito o il tasto Canc; 
-		\item Confermare la cancellazione della bubble. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV41} 
-	L'utente vuole verificare le funzionalità del bubble flowchart aggiungendo un nuovo elemento di decisione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
-		\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
-		\item Aggiungere un nuovo evento temporale al bubble flowchart; 
-		\item Inserire la durata per l'evento temporale appena creata; %%%serve il nome o qualche altro parametro 
-		\item Confermare la creazione dell'elemento di decisione. 
-	\end{itemize} 
-	
-	\subsubsection{Test TV42} 
-	L'utente vuole verificare le funzionalità del bubble flowchart apportando una modifica ad un elemento di decisione;
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga almeno un elemento di decisione o crearne uno nuovo e aggiungere un elemento di decisione;
-		\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
-		\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
-		\item Selezionare un evento temporale del bubble flowchart; 
-		\item Modificare almeno un parametro dell'elemento di decisione dal menù al lato; 
-		\item Confermare le modifiche apportate all'elemento di decisione. 
-	\end{itemize} 
-	
-	
-	\subsubsection{Test TV43} 
-	L'utente vuole verificare le funzionalità del bubble flowchart eliminando un elemento di decisione. 
-	All'utente è richiesto di: 
-	\begin{itemize} 
-		\item Aprire un progetto precedentemente creato che contenga un elemento di decisione o crearne uno nuovo e aggiungere un elemento di decisione;
-		\item Selezionare un package al diagramma dei package; 
-		\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
-		\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
-		\item Selezionare un elemento di decisione dal bubble flowchart; 
-		\item Cancellare l'elemento di decisione premendo il bottone apposito o il pulsante Canc; 
-		\item Confermare la cancellazione dell'elemento di decisione.
-	\end{itemize}
+\end{itemize} 
+
+
+\subsubsection{Test TV19} 
+\hypertarget{TV19}
+L'utente vuole verificare le funzionalità del diagramma delle classi apportando una modifica ad una relazione. 
+All'utente è richiesto di: 
+\begin{itemize}  
+	\item Aprire un progetto precedentemente creato che contenga almeno una relazione o crearne uno nuovo e creare una relazione;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una relazione dal diagramma delle classi; 
+	\item Comunicare l'intenzione di voler modificare la relazione selezionata;
+	\item Apportare modifiche alla relazione; 
+	\item Confermare le modifiche alla relazione;
+	\item Verificare che le modifiche apportate siano state applicate correttamente.
+\end{itemize} 
+
+\subsubsection{Test TV20} 
+\hypertarget{TV20}
+L'utente vuole verificare le funzionalità del diagramma delle classi eliminando una relazione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno una relazione o crearne uno nuovo e creare una relazione; 
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una relazione dal diagramma delle classi; 
+	\item Comunicare l'intenzione di eliminare la relazione selezionata o premere il tasto canc; 
+	\item Confermare la cancellazione della relazione. 
+\end{itemize} 
+
+%%%%%%%%%%%%%%%%%%%% Diagramma attivita 
+
+
+\subsubsection{Test TV21} 
+\hypertarget{TV21}
+L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo una nuova attività. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga una classe con un metodo o crearne uno nuovo e aggiungere una classe con un metodo;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe con un metodo;
+	\item Selezionare un metodo e visualizzare il diagramma delle attività relativo; 
+	\item Aggiungere una nuova attività al diagramma delle attività; 
+	\item Inserire il nome per l'attività appena creata; 
+	\item Confermare la creazione dell'attività. 
+\end{itemize} 
+
+\subsubsection{Test TV22} 
+\hypertarget{TV22}
+L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad un'attività. 
+All'utente è richiesto di: 
+\begin{itemize}  
+	\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe con un metodo;
+	\item Selezionare un metodo e visualizzare il diagramma delle attività relativo;  
+	\item Comunicare l'intenzione di voler modificare l'attività;
+	\item Apportare modifiche all'attività selezionata; 
+	\item Confermare le modifiche apportate all'attività;
+	\item Verificare che le modifiche apportate siano state applicate correttamente;
+\end{itemize} 
+
+
+\subsubsection{Test TV23} 
+\hypertarget{TV23}
+L'utente vuole verificare le funzionalità del diagramma delle attività eliminando un'attività. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe con un metodo;
+	\item Selezionare un metodo e visualizzare il diagramma delle attività relativo;  
+	\item Comunicare l'intenzione di voler eliminare l'attività selezionata o premere il tasto Canc;
+	\item Confermare la cancellazione dell'attività.
+\end{itemize} 
+
+\subsubsection{Test TV24} 
+\hypertarget{TV24}
+L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo un nuovo elemento di decisione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
+	\item Aggiungere un nuovo elemento di decisione al diagramma delle attività collegandolo a un'altro elemento del diagramma; 
+	\item Inserire i parametri per l'elemento di decisione appena creato; 
+	\item Confermare la creazione dell'elemento di decisione. 
+\end{itemize} 
+
+\subsubsection{Test TV25} 
+\hypertarget{TV25}
+L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad un'elemento di decisione. 
+All'utente è richiesto di: 
+\begin{itemize}  
+	\item Aprire un progetto precedentemente creato che contenga un'attività con un elemento di decisione o crearne uno nuovo e aggiungere un'attività con un elemento di decisione;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
+	\item Selezionare un'elemento di decisione del diagramma delle attività; 
+	\item Apportare modifiche all'elemento di decisione selezionato tramite il menù sul lato; %% menu sul lato? non credo
+	\item Confermare le modifiche apportate all'elemento di decisione. 
+\end{itemize} 
+
+
+\subsubsection{Test TV26} 
+\hypertarget{TV26}
+L'utente vuole verificare le funzionalità del diagramma delle attività eliminando un'elemento di decisione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'attività con un elemento di decisione o crearne uno nuovo e aggiungere un'attività con un elemento di decisione;
+	\item Selezionare un package al diagramma dei package; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
+	\item Selezionare un'elemento di decisione dal diagramma delle attività; 
+	\item Cancellare l'elemento di decisione premendo il bottone apposito o con il tasto Canc; 
+	\item Confermare la cancellazione dell'elemento di decisione;%%%cosa ne faccio dei 2 o + rami? 
+\end{itemize} 	
+
+\subsubsection{Test TV27} 
+\hypertarget{TV27}
+L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo un nuovo evento temporale. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
+	\item Aggiungere un nuovo evento temporale al diagramma delle attività collegandolo a un'altro elemento del diagramma; 
+	\item Inserire tutti i possibili attributi per l'evento temporale appena creato;  
+	\item Confermare la creazione dell'evento. 
+\end{itemize} 
+
+\subsubsection{Test TV28} 
+\hypertarget{TV28}
+L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad un evento temporale. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'evento temporale o crearne uno nuovo e aggiungere un'evento temporale;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
+	\item Selezionare un'evento temporale del diagramma delle attività;
+	\item Modificare i possibili attributi dell'evento temporale; 
+	\item Confermare le modifiche apportate all'evento temporale;
+	\item Verificare che le modifiche apportate siano state applicate correttamente.
+\end{itemize} 
+
+
+\subsubsection{Test TV29} 
+\hypertarget{TV29}
+L'utente vuole verificare le funzionalità del diagramma delle classi eliminando un'evento temporale. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'evento temporale o crearne uno nuovo e aggiungere un'evento temporale;
+	\item Selezionare un package al diagramma dei package; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
+	\item Selezionare un'evento temporale dal diagramma delle attività; 
+	\item Comunicare l'intenzione di cancellare l'evento temporale selezionato o premere il pulsante Canc; 
+	\item Confermare la cancellazione dell'evento temporale; 
+\end{itemize} 
+
+
+
+\subsubsection{Test TV30} 
+\hypertarget{TV30}
+L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo una nuova trasformazione tra pin . 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
+	\item Aggiungere una nuova trasformazione tra pin al diagramma delle attività attività collegandola a un'altro elemento del diagramma; 
+	\item Inserire i possibili attributi del pin;
+	\item Confermare la creazione della trasformazione tra pin.
+\end{itemize} 
+
+\subsubsection{Test TV31} 
+\hypertarget{TV31}
+L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad una trasformazione tra pin. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un trasformazione di pin o crearne uno nuovo e aggiungere un trasformazione di pin;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
+	\item Selezionare una trasformazione tra pin del diagramma delle attività;
+	\item Comunicare l'intenzione di modificare la trasformazione tra pin selezionata;
+	\item Apportare modifiche alla trasformazione tra pin;
+	\item Confermare le modifiche apportate; 
+	\item Verificare che le modifiche apportate siano state appliccate correttamente.
+\end{itemize} 
+
+
+\subsubsection{Test TV32} 
+\hypertarget{TV32}
+L'utente vuole verificare le funzionalità del diagramma delle classi eliminando una trasformazione tra pin . 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un trasformazione di pin o crearne uno nuovo e aggiungere un trasformazione di pin;
+	\item Selezionare un package al diagramma dei package; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
+	\item Selezionare una trasformazione tra pin dal diagramma delle attività; 
+	\item Comunicare l'intenzione di cancellare la trasformazione selezionata o premere il pulsante Canc; 
+	\item Confermare la cancellazione della trasformazione tra pin. 
+\end{itemize} 
+
+
+
+\subsubsection{Test TV33} 
+\hypertarget{TV33}
+L'utente vuole verificare le funzionalità del diagramma delle attività aggiungendo una nuova regione d'espansione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
+	\item Aggiungere una nuova regione d'espansione al diagramma delle attività; 
+	\item Confermare la creazione della regione d'espansione.
+\end{itemize} 
+
+\subsubsection{Test TV34} 
+\hypertarget{TV34}
+L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad una regione d'espansione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un una regione d'espansione o crearne uno nuovo e aggiungere una regione d'espansione;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo, che contenga una regione d'espansione; 
+	\item Selezionare una regione d'espansione del diagramma delle attività 
+	\item Comunicare l'intenzione di modificare la regione d'espansione;
+	\item Apportare modifiche alla regione d'espansione; 
+	\item Confermare le modifiche apportate alla regione d'espansione;
+	\item Verificare che le modifiche apportate siano state applicate.
+\end{itemize} 
+
+
+\subsubsection{Test TV35} 
+\hypertarget{TV35}
+L'utente vuole verificare le funzionalità del diagramma delle classi eliminando una regione d'espansione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un una regione d'espansione o crearne uno nuovo e aggiungere una regione d'espansione;
+	\item Selezionare un package al diagramma dei package; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi contenente una regione d'espansione; 
+	\item Selezionare una regione d'espansione dal diagramma delle attività; 
+	\item Comunicare l'intenzione di eliminare la regione d'espansione selezionata o premere il pulsante Canc; 
+	\item Confermare la cancellazione della regione d'espansione. 
+\end{itemize} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%bubble Flow chart
+
+
+
+\subsubsection{Test TV36} 
+\hypertarget{TV36}
+L'utente vuole verificare le funzionalità del bubble flowchart aggiungendo una nuova bubble. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
+	\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
+	\item Aggiungere una nuova bubble al diagramma delle attività; 
+	\item Inserire eventuali parametri per la bubble; 
+	\item Confermare la creazione della bubble.%%%%Cosa devo inserire ?? culo culo 
+\end{itemize} 
+
+\subsubsection{Test TV37} 
+\hypertarget{TV37}
+L'utente vuole verificare le funzionalità del bubble flowchart apportando una modifica ad una bubble. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga una bubble o crearne uno nuovo e aggiungere una bubble;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
+	\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
+	\item Selezionare una bubble del bubble flowchart; 
+	\item Modificare i parametri della bubble tramite il menù sul lato;%%%%CULO CULO non ne ho idea 
+	\item Confermare le modifiche apportate alla bubble. 
+\end{itemize} 
+
+
+\subsubsection{Test TV38} 
+\hypertarget{TV38}
+L'utente vuole verificare le funzionalità del bubble flowchart eliminando una bubble. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga una bubble o crearne uno nuovo e aggiungere una bubble;
+	\item Selezionare un package al diagramma dei package; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
+	\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
+	\item Selezionare una bubble dal bubble flowchart; 
+	\item Cancellare la bubble premendo il bottone apposito o il tasto Canc; 
+	\item Confermare la cancellazione della bubble. 
+\end{itemize} 
+
+
+\subsubsection{Test TV39} 
+\hypertarget{TV39}
+L'utente vuole verificare le funzionalità del bubble flowchart aggiungendo un nuovo elemento di decisione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'attività o crearne uno nuovo e aggiungere un'attività;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; %%%CULO metodo, funzione o cosa? 
+	\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
+	\item Aggiungere un nuovo evento temporale al bubble flowchart; 
+	\item Inserire il nome e la durata per l'evento temporale appena creata; %%%serve il nome o qualche altro parametro 
+	\item Confermare la creazione dell'elemento di decisione. 
+\end{itemize} 
+
+\subsubsection{Test TV40} 
+\hypertarget{TV40}
+L'utente vuole verificare le funzionalità del bubble flowchart apportando una modifica ad un elemento di decisione;
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga almeno un'elemento di decisione o crearne uno nuovo e aggiungere un'elemento di decisione;
+	\item Selezionare un package e visualizzare il relativo diagramma delle classi; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività relativo a un suo metodo; 
+	\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
+	\item Selezionare un'evento temporale del bubble flowchart; 
+	\item Modificare almeno un parametro dell'elemento di decisione dal menù al lato; 
+	\item Confermare le modifiche apportate all'elemento di decisione. 
+\end{itemize} 
+
+
+\subsubsection{Test TV41} 
+\hypertarget{TV41}
+L'utente vuole verificare le funzionalità del bubble flowchart eliminando un elemento di decisione. 
+All'utente è richiesto di: 
+\begin{itemize} 
+	\item Aprire un progetto precedentemente creato che contenga un'elemento di decisione o crearne uno nuovo e aggiungere un'elemento di decisione;
+	\item Selezionare un package al diagramma dei package; 
+	\item Selezionare una classe e visualizzare il diagramma delle attività di uno dei suoi metodi; 
+	\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
+	\item Selezionare un'elemento di decisione dal bubble flowchart; 
+	\item Cancellare l'elemento di decisione premendo il bottone apposito o il pulsante Canc; 
+	\item Confermare la cancellazione dell'elemento di decisione.
+\end{itemize} 
+
+\subsection{Tracciamento test di Validazione}
+\normalsize
+\begin{longtable}{|c|c|}
+	\hline
+	\textbf{Test di validazione} & \textbf{Requisito}\\
+	\hline
+	\endhead
+	\hyperlink{TV1}{TV1} & R0F14.1  \\
+	\hline
+	\hyperlink{TV2}{TV2} & R0F14.2  \\
+	\hline
+	\hyperlink{TV3}{TV3} & R0F14.8   \\
+	\hline
+	\hyperlink{TV3.1}{TV3.1} & R0F14.8.2   \\
+	\hline
+	\hyperlink{TV4}{TV4} & R0F14.4   \\
+	\hline
+	\hyperlink{TV5}{TV5} & R0F14.5   \\
+	\hline
+	\hyperlink{TV6}{TV6} & R1F18.1   \\
+	\hline
+	\hyperlink{TV7}{TV7} & R1F18.2   \\
+	\hline
+	\hyperlink{TV8}{TV8} & R1F18.3   \\
+	\hline
+	\hyperlink{TV9}{TV9} & R1F18.5   \\
+	\hline
+	\hyperlink{TV10}{TV10} & R0F15.5   \\
+	\hline
+	\hyperlink{TV11}{TV11} & R1F18.6   \\
+	\hline
+	\hyperlink{TV12}{TV12} & R0F15.1   \\
+	\hline
+	\hyperlink{TV13}{TV13} & R0F15.2   \\
+	\hline
+	\hyperlink{TV14}{TV14} & R0F15.3   \\
+	\hline
+	\hyperlink{TV15}{TV15} & R0F15.7   \\
+	\hline
+	\hyperlink{TV16}{TV16} & R0F15.8   \\
+	\hline
+	\hyperlink{TV17}{TV17} & R0F15.9   \\
+	\hline
+	\hyperlink{TV18}{TV18} & R0F15.4   \\
+	\hline
+	\hyperlink{TV19}{TV19} & R0F15.5   \\
+	\hline
+	\hyperlink{TV20}{TV20} & R0F15.6   \\
+	\hline
+	\hyperlink{TV21}{TV21} & R0F19.1   \\
+	\hline
+	\hyperlink{TV22}{TV22} & R0F19.2   \\
+	\hline
+	\hyperlink{TV23}{TV23} & R0F19.3   \\
+	\hline
+	\hyperlink{TV24}{TV24} & R0F19.4   \\
+	\hline
+	\hyperlink{TV25}{TV25} & R0F19.5   \\
+	\hline
+	\hyperlink{TV26}{TV26} & R0F19.6   \\
+	\hline
+	\hyperlink{TV27}{TV27} & R0F19.14   \\
+	\hline
+	\hyperlink{TV28}{TV28} & R0F19.15   \\
+	\hline
+	\hyperlink{TV29}{TV29} & R0F19.16   \\
+	\hline
+	\hyperlink{TV30}{TV30} & R0F19.11   \\
+	\hline
+	\hyperlink{TV31}{TV31} & R0F19.12   \\
+	\hline
+	\hyperlink{TV32}{TV32} & R0F19.13   \\
+	\hline
+	\hyperlink{TV33}{TV33} & R0F19.7   \\
+	\hline
+	\hyperlink{TV34}{TV34} & R0F19.8   \\
+	\hline
+	\hyperlink{TV35}{TV35} & R0F19.9   \\
+	\hline
+	\hyperlink{TV36}{TV36} & R0F20.1   \\
+	\hline
+	\hyperlink{TV37}{TV37} & R0F20.2   \\
+	\hline
+	\hyperlink{TV38}{TV38} & R0F20.3   \\
+	\hline
+	\hyperlink{TV39}{TV39} & R0F20.4   \\
+	\hline
+	\hyperlink{TV40}{TV40} & R0F20.5   \\
+	\hline
+	\hyperlink{TV41}{TV41} & R0F20.6  \\
+	\hline
+	\caption[Tracciamento test di validazione]{Tracciamento test di validazione}
+	\label{tabella:TracciamentoTestValidazione}
+\end{longtable}
 	
 	% TEST DI SISTEMA
 \newpage
