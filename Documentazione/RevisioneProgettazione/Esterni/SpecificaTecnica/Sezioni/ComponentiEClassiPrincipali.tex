@@ -9,6 +9,12 @@
 		\end{itemize}
 		Questo package non contiene delle classi.
 		\subsection{SWEDesigner::Client}
+			% IMMAGINE ARCHITETTURA CLIENT GENERALE
+			\begin{figure}[H]\label{fig:ClientSubsystem}
+				\centering
+				\includegraphics[scale=0.46]{Immagini/DiagrammaArchitettura/ClientSubsystem.png}
+				\caption{Architettura del client}
+			\end{figure}
 		I package contenuti al suo interno sono:
 		\begin{itemize}
 			\item SWEDesigner::Client::Model;
@@ -52,6 +58,12 @@
 		\end{itemize}
 		Non ci sono dipendenze OUT.
 		\subsubsection{SWEDesigner::Client::Model::MainModel}
+			% IMMAGINE ARCHITETTURA MAINMODEL
+			\begin{figure}[H]\label{fig:MainModel}
+				\centering
+				\includegraphics[scale=0.46]{Immagini/DiagrammaArchitettura/MainModel.png}
+				\caption{Architettura di MainModel}
+			\end{figure}
 		È il componente del programma che si occupa di gestire la parte logica dell’editor.\\
 		FAN-IN:
 		\begin{itemize}
@@ -177,6 +189,12 @@
 		Questo package non contiene dei sottopackage.
 		Le classi contenute al suo interno verranno elencate qui di seguito.
 		\subsubsection{SWEDesigner::Client::View::MainView}
+			% IMMAGINE ARCHITETTURA MAINVIEW
+			\begin{figure}[H]\label{fig:MainModel}
+				\centering
+				\includegraphics[scale=0.44]{Immagini/DiagrammaArchitettura/MainView.png}
+				\caption{Architettura di MainView}
+			\end{figure}
 		È il componente del programma che si occupa di gestire l'interfaccia grafica. Nella particolare declinazione MVC adottata da Backbone.js, si occupa anche di gestire gli input dell'utente e si interfaccia con il model attraverso dei command. È un aggregatore di altre classi View specializzate nella gestione dei diversi elementi dell'interfaccia grafica, in particolare TitleBarView, ToolBarView, AddressView, EditPanelView e Paper.\\
 		Non ci sono dipendenze IN.\\
 		Non ci sono dipendenze OUT.
@@ -216,6 +234,12 @@
 		\end{itemize}
 		Non ci sono dipendenze OUT.
 		\subsection{SWEDesigner::Server}
+			% IMMAGINE ARCHITETTURA SERVER GENERALE
+			\begin{figure}[H]\label{fig:ServerSubsystem}
+				\centering
+				\includegraphics[scale=0.4]{Immagini/DiagrammaArchitettura/ServerSubsystem.png}
+				\caption{Architettura del server}
+			\end{figure}
 		I package contenuti al suo interno sono:
 		\begin{itemize}
 			\item SWEDesigner::Server::CodeGenerator;
@@ -248,6 +272,12 @@
 		Non ci sono dipendenze IN.\\
 		Non ci sono dipendenze OUT.
 		\subsection{SWEDesigner::Server::CodeGenerator::Coder}
+			% IMMAGINE ARCHITETTURA CODER
+			\begin{figure}[H]\label{fig:Coder}
+				\centering
+				\includegraphics[scale=0.46]{Immagini/DiagrammaArchitettura/Coder.png}
+				\caption{Architettura di Coder}
+			\end{figure}
 		Questo package non contiene dei sottopackage.\\
 		Le classi contenute al suo interno verranno elencate qui di seguito.
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}
