@@ -44,7 +44,7 @@
 		\begin{itemize}
 			\item Command;
 			\item MainModel.
-		\end{itemize}\\
+		\end{itemize}
 		\subsubsection{SWEDesigner::Client::Model::State}
 		\hypertarget{SWEDesigner::Client::Model::State}
 		Gestisce la cronologia delle operazioni svolte permettendo le operazioni di unDo e reDo.\\
@@ -153,7 +153,7 @@
 			\item ItemPanel;
 			\item MainModel;
 		\end{itemize}
-		Non ci sono dipendenze OUT.
+		Non ci sono dipendenze OUT.\\
 		\subsubsection{SWEDesigner::Client::Model::ItemPanel}
 		Estende la funzionalità di EditPanelModel specificamente per ciascun oggetto selezionato.\\
 		Non ci sono dipendenze IN.\\
@@ -197,10 +197,10 @@
 		\hypertarget{SWEDesigner::Client::Model::ClassDiagram}
 		Estende le funzionalità di Diagram per rappresentare un diagramma delle classi.\\
 		Non ci sono dipendenze IN.\\
-			FAN-OUT:
-			\begin{itemize}
-				\item Diagram.
-			\end{itemize}
+		FAN-OUT:
+		\begin{itemize}
+			\item Diagram.
+		\end{itemize}
 		\subsubsection{SWEDesigner::Client::Model::ActivityDiagram}
 		\hypertarget{SWEDesigner::Client::Model::ActivityDiagram}
 		Estende le funzionalità di Diagram per rappresentare un diagramma delle attività.\\
@@ -272,38 +272,38 @@
 		\begin{itemize}
 			\item MainView;
 		\end{itemize}
-		Non ci sono dipendenze OUT.
+		Non ci sono dipendenze OUT.\\
 		\subsubsection{SWEDesigner::Client::View::ToolBarView}
 		È il componente del programma che fa la funzione di view per la toolbar dove saranno collocati gli strumenti per editare i diagrammi.\\
 		FAN-IN:
 		\begin{itemize}
 			\item MainView;
 		\end{itemize}
-		Non ci sono dipendenze OUT.
+		Non ci sono dipendenze OUT.\\
 		\subsubsection{SWEDesigner::Client::View::AddressView}
 		È il componente del programma che fa la funzione di view per il cosiddetto breadcrumb dove viene inserita la posizione corrente.\\
 		FAN-IN:
 		\begin{itemize}
 			\item MainView;
 		\end{itemize}
-		Non ci sono dipendenze OUT.
+		Non ci sono dipendenze OUT.\\
 		\subsubsection{SWEDesigner::Client::View::EditPanelView}
 		È il componente del programma che fa la funzione di view per le informazioni editabili degli elementi che fanno parte dei diversi diagrammi.\\
 		FAN-IN:
 		\begin{itemize}
 			\item MainView;
 		\end{itemize}
-		Non ci sono dipendenze OUT.
+		Non ci sono dipendenze OUT.\\
 		\subsubsection{SWEDesigner::Client::View::Paper}
 		È il componente del programma che fa la funzione di view per i diversi diagrammi.\\
 		FAN-IN:
 		\begin{itemize}
 			\item MainView;
 		\end{itemize}
-			FAN-OUT:
-			\begin{itemize}
-				\item joint.dia.Paper.
-			\end{itemize}
+		FAN-OUT:
+		\begin{itemize}
+			\item joint.dia.Paper.
+		\end{itemize}
 		\subsection{SWEDesigner::Server}
 			% IMMAGINE ARCHITETTURA SERVER GENERALE
 			\begin{figure}[H]\label{fig:ServerSubsystem}
@@ -348,7 +348,7 @@
 			FAN-IN:
 			\begin{itemize}
 				\item Zipper.
-			\end{itemize}\\
+			\end{itemize}
 			FAN-OUT:
 			\begin{itemize}
 				\item Coder.
@@ -368,7 +368,7 @@
 		\begin{itemize}
 			\item JavaCoder;
 			\item JavaScriptCoder.
-		\end{itemize}\\
+		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
 			\item CodedProg;
@@ -429,7 +429,7 @@
 		FAN-IN:
 		\begin{itemize}
 			\item Coder.
-		\end{itemize}\\
+		\end{itemize}
 		Non ci sono dipendenze OUT.
 		
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderElement}
@@ -463,18 +463,19 @@
 		FAN-IN:
 		\begin{itemize}
 			\item CodeGenerator.
-		\end{itemize}\\
+		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
 			\item Builder.
 		\end{itemize}
 		\subsubsection{SWEDesigner::Server::DAO}
 		\hypertarget{SWEDesigner::Server::DAO}
-		Questa classe si occupa di gestire il database delle bubble.
+		Questa classe si occupa di gestire il database delle bubble.\\
 		FAN-IN:
 		\begin{itemize}
 			\item Coder.
 		\end{itemize}
+		Non ci sono dipendenze OUT.
 		\subsection{SWEDesigner::Server::RequestHandler}
 		\hypertarget{SWEDesigner::Server::RequestHandler}
 		Questo package non contiene dei sottopackage.\\
