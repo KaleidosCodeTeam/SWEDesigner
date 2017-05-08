@@ -1,23 +1,22 @@
-
 \documentclass[../PianoDiQualifica.tex]{subfiles} 
 \begin{document} 
 	\section{Test}\label{Test} 
-	Sono state individuate quattro tipologie di test: 
-	Sono state individuate quattro tipologie di test: 
-	\begin{itemize} 
-		\item \textbf{Test di unità}: servono alla verifica della correttezza degli algoritmi; 
-		\item \textbf{Test di integrazione}: servono alla verifica della correttezza delle 
-		componenti individuate; 
-		\item \textbf{Test di sistema}: servono alla verifica del corretto funzionamento 
-		dell'architettura e della soddisfazione dei requisiti descritti nell'\analisideirequisiti; 
-		\item \textbf{Test di validazione}: servono per accertarsi che il prodotto sia conforme 
-		con quanto concordato con il Proponente. 
-	\end{itemize} 
-	La classificazione ed il tracciamento dei test è definito nelle \normediprogettov. 
+		Sono state individuate quattro tipologie di test: 
+		\begin{itemize} 
+			\item \textbf{Test di unità}: servono alla verifica della correttezza degli algoritmi; 
+			\item \textbf{Test di integrazione}: servono alla verifica della correttezza delle 
+			componenti individuate; 
+			\item \textbf{Test di sistema}: servono alla verifica del corretto funzionamento 
+			dell'architettura e della soddisfazione dei requisiti descritti nell'\analisideirequisiti; 
+			\item \textbf{Test di validazione}: servono per accertarsi che il prodotto sia conforme 
+			con quanto concordato con il Proponente. 
+		\end{itemize} 
+		La classificazione ed il tracciamento dei test è definito nelle \normediprogettov. 
 	\subsection{Test di validazione} 
-	I test di validazione vengono effettuati con il Proponente e servono per accertarsi che il prodotto realizzato sia conforme alle attese. \\ 
-	Per ogni test è descritta 
-	una serie di passi che l'utente deve seguire in modo tale da effettuarlo correttamente.  
+		I test di validazione vengono effettuati con il Proponente e servono per accertarsi che
+		il prodotto realizzato sia conforme alle attese.\\ 
+		Per ogni test è descritta una serie di passi che l'utente deve seguire in modo tale da
+		effettuarlo correttamente.  
 	
 	
 	%%%%%test progetto 
@@ -560,1404 +559,715 @@
 		\item Selezionare un elemento di decisione dal bubble flowchart; 
 		\item Cancellare l'elemento di decisione premendo il bottone apposito o il pulsante Canc; 
 		\item Confermare la cancellazione dell'elemento di decisione.
-	\end{itemize} 
-\subsection{Test di Sistema}
-\begin{longtabu} to \textwidth {
-		X[2,l,p]
-		X[8,l,p]
-		X[1,l,p]}
-	\toprule
-	\rowcolor{blue!20} Codice Test & Descrizione & Stato \\
-	\midrule
-	\endhead
-	\arrayrulecolor{gray}
-	\midrule
-	\addlinespace[0.2em]
-	TS1 & Verificare che il sistema permetta di generare codice compilabile correttamente & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2 & Verificare che il sistema permetta di gestire un progetto & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2.1 & Verificare che il sistema permetta di creare un nuovo progetto & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2.1.1 & Verificare che il sistema permetta di definire il nome del progetto & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2.2 & Verificare che il sistema permetta di caricare un progetto & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2.3 & Verificare che il sistema permetta di chiudere un progetto & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2.3.1 & Verificare che il sistema permetta al momento della chiusura di salvare le modifiche effettuate successivamente all'ultimo salvataggio & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2.4 & Verificare che il sistema permetta di salvare un progetto & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2.4.1 & Verificare che il sistema permetta di salvare il progetto attuale sovrascrivendolo & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS2.4.2 & Verificare che il sistema permetta di salvare il progetto in una directory scelta dall'utente & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3 & Verificare che il sistema permetta di editare diagrammi UML & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1 & Verificare che il sistema permetta di editare il diagramma dei package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.1 & Verificare che il sistema permetta di creare un nuovo package vuoto nel diagramma dei package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.2 & Verificare che il sistema permetta di modificare un package presente nel diagramma dei package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.2.1 & Verificare che il sistema permetta di rinominare un package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.2.2 & Verificare che il sistema permetta di impostare la visibilità del package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.2.3 & Verificare che il sistema permetta di rimuovere un elemento dal package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.3 & Verificare che il sistema permetta di eliminare un package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.4 & Verificare che il sistema permetta di passare dal diagramma dei package al diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.5 & Verificare che il sistema permetta di definire una dipendenza tra package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.6 & Verificare che il sistema permetta rimuovere una dipendenza tra package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.1.7 & Verificare che il sistema permetta di riposizionare un elemento all'interno del diagramma dei package & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2 & Verificare che il sistema permetta di editare il diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.1 & Verificare che il sistema permetta di aggiungere una nuova classe al diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2 & Verificare che il sistema permetta di modificare una classe presente nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.1 & Verificare che il sistema permetta di rinominare una classe presente nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.10 & Verificare che il sistema permetta di aggiungere una nuova interfaccia al diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11 & Verificare che il sistema permetta di modificare un'interfaccia presente nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.1 & Verificare che il sistema permetta di rinominare un'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.10 & Verificare che il sistema permetta di visualizzare il layer superiore & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.11 & Verificare che il sistema permetta di visualizzare il layer inferiore & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.2 & Verificare che il sistema permetta di impostare l'importanza di un'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.2.1 & Verificare che il sistema permetta di modificare l'importanza di un'interfaccia a bassa & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.2.2 & Verificare che il sistema permetta di modificare l'importanza di un'interfaccia a media & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.2.3 & Verificare che il sistema permetta di modificare l'importanza di un'interfaccia a alta & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.3 & Verificare che il sistema permetta di aprire la schermata di modifica di un'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.4 & Verificare che il sistema permetta di eliminare un'interfaccia presente nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.5 & Verificare che il sistema permetta di aggiungere un commento all'interno del diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.6 & Verificare che il sistema permetta di collegare un commento ad un elemento presente nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.7 & Verificare che il sistema permetta di modificare un commento presente nel diagramma delel classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.8 & Verificare che il sistema permetta di eliminare un commento presente nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.11.9 & Verificare che il sistema permetta di cambiare layer di visualizzazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.2 & Verificare che il sistema permetta di innestare una classe all'interno di un'altra classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.3 & Verificare che il sistema permetta di impostare l'importanza di una classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.4 & Verificare che il sistema permetta di modificare l'importanza di una classa & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.4.1 & Verificare che il sistema permetta di modificare l'importanza di una classe a bassa & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.4.2 & Verificare che il sistema permetta di modificare l'importanza di una classe a media & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.4.3 & Verificare che il sistema permetta di modificare l'importanza di una classe a alta & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.5 & Verificare che il sistema permetta di passare alla schermata di modifica di una classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.6 & Verificare che il sistema permetta di eliminare una classe presente nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.7 & Verificare che il sistema permetta di definire una relazione tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.7.1 & Verificare che il sistema permetta di definire una dipendenza tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.7.2 & Verificare che il sistema permetta di definire un'associazione tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.7.3 & Verificare che il sistema permetta di definire un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.7.4 & Verificare che il sistema permetta di definire un'aggregazione tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.7.5 & Verificare che il sistema permetta di definire una composizione tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.7.6 & Verificare che il sistema permetta di raffinare una classe parametrica & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.7.7 & Verificare che il sistema permetta di definire la realizzazione di un'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.8 & Verificare che il sistema permetta di modificare una relazione tra due elementi del diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.8.1 & Verificare che il sistema permetta di modificare una dipendenza tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.8.2 & Verificare che il sistema permetta di modificare un'associazione tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.8.3 & Verificare che il sistema permetta di modificare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.8.4 & Verificare che il sistema permetta di modificare un'aggregazione tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.8.5 & Verificare che il sistema permetta di modificare una composizione tra due elementi presenti nel diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.8.6 & Verificare che il sistema permetta di modificare il raffinamento di una classe parametrica & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.8.7 & Verificare che il sistema permetta di modificare la realizzazione di un'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.2.9 & Verificare che il sistema permetta di eliminare una relazione tra due elementi del diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3 & Verificare che il sistema permetta di modificare una classe mediante la schermata di modifica di una classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.1 & Verificare che il sistema permetta di aggiungere un nuovo attributo alla classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.10 & Verificare che il sistema permetta di marchiare una classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.10.1 & Verificare che il sistema permetta di marchiare una classe come statica & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.10.2 & Verificare che il sistema permetta di marchiare una classe come astratta & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.10.3 & Verificare che il sistema permetta di marchiare una classe come finale & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.10.4 & Verificare che il sistema permetta di marchiare una classe come frozen & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.10.5 & Verificare che il sistema permetta di marchiare una classe come readOnly & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.10.6 & Verificare che il sistema permetta di marchiare una classa come enum & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.10.7 & Verificare che il sistema permetta di marchiare una classe parametrica & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.2 & Verificare che il sistema permetta di modificare un attributo della classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.2.1 & Verificare che il sistema permetta di definire la direzione dell'attributo & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.2.2 & Verificare che il sistema permetta di rinominare l'attributo & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.2.3 & Verificare che il sistema permetta di cambiare il tipo dell'attributo & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.2.4 & Verificare che il sistema permetta di definire un valore di default per l'attributo & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.3 & Verificare che il sistema permetta di eliminare un attributo della classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.4 & Verificare che il sistema permetta di aggiungere una nuova operazione alla classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5 & Verificare che il sistema permetta di modificare un'operazione della classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.1 & Verificare che il sistema permetta di impostare la visibilità dell'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.2 & Verificare che il sistema permetta di rinominare un'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.3 & Verificare che il sistema permetta di definire la lista dei parametri dell'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.3.1 & Verificare che il sistema permetta di aggiungere un nuovo parametro alla lista & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.3.2 & Verificare che il sistema permetta di modificare un parametro della lista & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.3.2.1 & Verificare che il sistema permetta di definire la direzione del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.3.2.2 & Verificare che il sistema permetta di rinominare il parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.3.2.3 & Verificare che il sistema permetta di definire il tipo del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.3.2.4 & Verificare che il sistema permetta di definire il valore di default del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.3.3 & Verificare che il sistema permetta di eliminare un parametro della lista & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.5.4 & Verificare che il sistema permetta di definire proprietà aggiuntive dell'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.6 & Verificare che il sistema permetta di eliminare un'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.7 & Verificare che il sistema permetta di impostare la visibilità della classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.8 & Verificare che il sistema permetta di commentare una classe & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.3.9 & Verificare che il sistema permetta di passare dalla modifica di una classe al diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4 & Verificare che il sistema permetta di modificare un'interfaccia mediante la schermata di modifica di un'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.1 & Verificare che il sistema permetta di aggiungere una nuova operazione all'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2 & Verificare che il sistema permetta di modificare un'operazione dell'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.1 & Verificare che il sistema permetta di impostare la visibilità dell'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.2 & Verificare che il sistema permetta di rinominare un'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.3 & Verificare che il sistema permetta di definire la lista dei parametri dell'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.3.1 & Verificare che il sistema permetta di aggiungere un nuovo parametro alla lista & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.3.2 & Verificare che il sistema permetta di modificare un parametro della lista & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.3.2.1 & Verificare che il sistema permetta di definire la direzione del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.3.2.2 & Verificare che il sistema permetta di rinominare il parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.3.2.3 & Verificare che il sistema permetta di definire il tipo del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.3.2.4 & Verificare che il sistema permetta di definire il valore di default del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.3.3 & Verificare che il sistema permetta di eliminare un parametro della lista & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.4 & Verificare che il sistema permetta di definire il tipo di ritorno dell'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.5 & Verificare che il sistema permetta di definire proprietà aggiuntive dell'operazione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.2.6 & Verificare che il sistema permetta di aprire il diagramma delle attività corrispondente & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.3 & Verificare che il sistema permetta di eliminare un'operazione dal'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.4 & Verificare che il sistema permetta di rinominare l'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.5 & Verificare che il sistema permetta di impostare la visibilità dell'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.6 & Verificare che il sistema permetta di marchiare l'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.7 & Verificare che il sistema permetta di passare dalla modifica di un'interfaccia al diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.2.4.8 & Verificare che il sistema permetta di commentare l'interfaccia & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3 & Verificare che il sistema permetta di editare il diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.1 & Verificare che il sistema permetta di creare una nuova attività nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.10 & Verificare che il sistema permetta di eliminare una regione di espansione del diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.11 & Verificare che il sistema permetta di riposizionare un elemento all'interno del diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.12 & Verificare che il sistema permetta di aggiungere una trasformazione tra pin nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.13 & Verificare che il sistema permetta di modificare una trasformazione tra pin presente nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.14 & Verificare che il sistema permetta di eliminare una trasformazione tra pin presente nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.15 & Verificare che il sistema permetta di aggiungere un nuovo evento temporale nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.16 & Verificare che il sistema permetta di modificare un evento temporale presente nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.17 & Verificare che il sistema permetta di eliminare un evento temporale presente nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.18 & Verificare che il sistema permetta di passare dal diagramma delle attività al diagramma delle classi & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19 & Verificare che il sistema permetta di editare il bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19.1 & Verificare che il sistema permetta di aggiungere una nuova bubble al bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19.2 & Verificare che il sistema permetta di modificare una bubble presente nel bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19.3 & Verificare che il sistema permetta di eliminare una bubble presente nel bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19.4 & Verificare che il sistema permetta di aggiungere un nuovo elemento di decisione al bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19.5 & Verificare che il sistema permetta di modificare un elemento di decisione presente nel bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19.6 & Verificare che il sistema permetta di eliminare un elemento di decisione presente nel bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19.7 & Verificare che il sistema permetta di passare dal bubble flowchart al diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.19.8 & Verificare che il sistema permetta di riposizionare un elemento all'interno del bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2 & Verificare che il sistema permetta di modificare un'attività presente nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.1 & Verificare che il sistema permetta di rinominare l'attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.2 & Verificare che il sistema permetta di commentare l'attivitià & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.3 & Verificare che il sistema permetta di aggiungere un nuovo pin all'attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.4 & Verificare che il sistema permetta di modificare un pin presente nell'attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.4.1 & Verificare che il sistema permetta di definire la direzione del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.4.2 & Verificare che il sistema permetta di rinominare il parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.4.3 & Verificare che il sistema permetta di definire il tipo del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.4.4 & Verificare che il sistema permetta di definire i valori di default del parametro & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.2.5 & Verificare che il sistema permetta di eliminare un pin dall'attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.3 & Verificare che il sistema permetta di aprire l'editor del bubble flowchart & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.4 & Verificare che il sistema permetta di eliminare un'attività presente nel diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.5Verificare che il sistema permetta di aggiu & Sistema & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.6 & Verificare che il sistema permetta di modificare un nuovo elemento di decisione del diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.7 & Verificare che il sistema permetta di eliminare un elemento di decisione del diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.8 & Verificare che il sistema permetta di aggiungere una nuova regione di espansione al diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.9 & Verificare che il sistema permetta di modificare una regione di espansione del diagramma delle attività & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.9.1 & Verificare che il sistema permetta di innestare un elemento nella regione di espansione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.9.2 & Verificare che il sistema permetta di editare la lista degli argomenti della regione di espansione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.9.2.1 & Verificare che il sistema permetta di aggiungere un nuovo argomento & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.9.2.2 & Verificare che il sistema permetta di modificare un argomento & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.9.2.3 & Verificare che il sistema permetta di rimuovere un argomento & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS3.3.9.3 & Verificare che il sistema permetta di rimuovere un elemento dalla regione di espansione & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS4 & Verificare che il sistema permetta di gestire gli errori dell'utente & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS4.1 & Verificare che il sistema permetta di annullare l'ultimo comando eseguito & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS4.2 & Verificare che il sistema permetta di ripristinare l'ultimo comando annullato & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS5 & Verificare che il sistema permetta di gestire il codice generato & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS5.1 & Verificare che il sistema permetta di leggere il codice generato & N.I. \\
-	\addlinespace[0.2em]
-	\midrule
-	\addlinespace[0.2em]
-	TS5.2 & Verificare che il sistema permetta di esportare il codice generato & N.I. \\
-	\addlinespace[0.2em]
-	\arrayrulecolor{black}
-	\addlinespace[0.4em]
-	\bottomrule
-\end{longtabu}
-
-	\subsection{Tracciamento test di Sistema}
-	\begin{longtabu} to \textwidth {
-			X[4,l,p]
-			X[8,l,p]}
-		\toprule
-		\rowcolor{blue!20} Codice Test & Codice Requisito   \\
-		\midrule
-		\endhead
-		\arrayrulecolor{gray}
-		\midrule
-		\addlinespace[0.2em]
-		TS1 & R0Q3  \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2 & R0F14  \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2.1 & R0F14.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2.1.1 & R0F14.1.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2.2 & R0F14.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2.3 & R0F14.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2.3.1 & R0F14.3.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2.4 & R0F14.8   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2.4.1 & R0F14.8.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS2.4.2 & R0F14.8.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3 & R0F1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1 & R1F18   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.1 & R1F18.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.2 & R1F18.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.2.1 & R1F18.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.2.2 & R1F18.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.2.3 & R1F18.2.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.3 & R1F18.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.4 & R1F18.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.5 & R1F18.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.6 & R1F18.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.1.7 & R1F18.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2 & R0F15   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.1 & R0F15.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2 & R0F15.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.1 & R0F15.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.10 & R0F15.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11 & R0F15.8   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.1 & R0F15.8.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.10 & R0F15.14.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.11 & R0F15.14.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.2 & R0F15.8.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.2.1 & R0F15.8.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.2.2 & R0F15.8.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.2.3 & R0F15.8.2.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.3 & R0F15.8.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.4 & R0F15.9   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.5 & R0F15.10   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.6 & R0F15.11   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.7 & R0F15.12   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.8 & R0F15.13   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.11.9 & R0F15.14   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.2 & R0F15.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.3 & R0F15.2.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.4 & R0F15.2.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.4.1 & R0F15.2.4.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.4.2 & R0F15.2.4.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.4.3 & R0F15.2.4.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.5 & R0F15.2.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.6 & R0F15.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.7 & R0F15.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.7.1 & R0F15.4.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.7.2 & R0F15.4.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.7.3 & R0F15.4.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.7.4 & R0F15.4.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.7.5 & R0F15.4.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.7.6 & R0F15.4.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.7.7 & R0F15.4.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.8 & R0F15.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.8.1 & R0F15.5.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.8.2 & R0F15.5.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.8.3 & R0F15.5.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.8.4 & R0F15.5.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.8.5 & R0F15.5.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.8.6 & R0F15.5.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.8.7 & R0F15.5.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.2.9 & R0F15.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3 & R0F16   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.1 & R0F16.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.10 & R0F16.10   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.10.1 & R0F16.10.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.10.2 & R0F16.10.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.10.3 & R0F16.10.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.10.4 & R0F16.10.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.10.5 & R0F16.10.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.10.6 & R0F16.10.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.10.7 & R0F16.10.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.2 & R0F16.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.2.1 & R0F16.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.2.2 & R0F16.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.2.3 & R0F16.2.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.2.4 & R0F16.2.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.3 & R0F16.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.4 & R0F16.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5 & R0F16.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.1 & R0F16.5.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.2 & R0F16.5.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.3 & R0F16.5.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.3.1 & R0F16.5.3.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.3.2 & R0F16.5.3.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.3.2.1 & R0F16.5.3.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.3.2.2 & R0F16.5.3.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.3.2.3 & R0F16.5.3.2.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.3.2.4 & R0F16.5.3.2.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.3.3 & R0F16.5.3.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.5.4 & R0F16.5.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.6 & R0F16.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.7 & R0F16.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.8 & R0F16.8   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.3.9 & R0F16.9   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4 & R0F17   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.1 & R0F17.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2 & R0F17.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.1 & R0F17.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.2 & R0F17.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.3 & R0F17.2.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.3.1 & R0F17.2.3.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.3.2 & R0F17.2.3.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.3.2.1 & R0F17.2.3.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.3.2.2 & R0F17.2.3.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.3.2.3 & R0F17.2.3.2.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.3.2.4 & R0F17.2.3.2.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.3.3 & R0F17.2.3.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.4 & R0F17.2.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.5 & R0F17.2.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.2.6 & R0F17.2.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.3 & R0F17.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.4 & R0F17.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.5 & R0F17.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.6 & R0F17.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.7 & R0F17.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.2.4.8 & R0F17.8   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3 & R0F19   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.1 & R0F19.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.10 & R0F19.9   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.11 & R0F19.10   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.12 & R0F19.11   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.13 & R0F19.12   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.14 & R0F19.13   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.15 & R0F19.14   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.16 & R0F19.15   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.17 & R0F19.16   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.18 & R0F19.17   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19 & R0F20   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19.1 & R0F20.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19.2 & R0F20.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19.3 & R0F20.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19.4 & R0F20.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19.5 & R0F20.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19.6 & R0F20.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19.7 & R0F20.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.19.8 & R0F20.8   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2 & R0F19.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.1 & R0F19.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.2 & R0F19.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.3 & R0F19.2.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.4 & R0F19.2.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.4.1 & R0F19.2.4.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.4.2 & R0F19.2.4.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.4.3 & R0F19.2.4.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.4.4 & R0F19.2.4.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.2.5 & R0F19.2.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.3 & R0F19.2.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.4 & R0F19.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.5 & R0F19.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.6 & R0F19.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.7 & R0F19.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.8 & R0F19.7   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.9 & R0F19.8   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.9.1 & R0F19.8.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.9.2 & R0F19.8.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.9.2.1 & R0F19.8.2.1   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.9.2.2 & R0F19.8.2.2   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.9.2.3 & R0F19.8.2.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS3.3.9.3 & R0F19.8.3   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS4 & R0F21   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS4.1 & R0F14.4   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS4.2 & R0F14.5   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS5 & R0F22   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS5.1 & R0F14.6   \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
-		TS5.2 & R0F14.7   \\
-		\addlinespace[0.2em]
-		\arrayrulecolor{black}
-		\addlinespace[0.4em]
-		\bottomrule
-	\end{longtabu}
+	\end{itemize}
 	
+	% TEST DI SISTEMA
+\subsection{Test di Sistema}
+\normalsize
+\begin{longtable}{|c|>{\centering}p{10cm}|c|}
+	\hline
+	\textbf{Test} & \textbf{Descrizione} & \textbf{Stato}\\
+	\hline
+	\endhead
+	
+	TS1 & Verificare che il sistema permetta di generare codice compilabile correttamente & N.I. \\
+	\hline
+	TS2 & Verificare che il sistema permetta di gestire un progetto & N.I. \\
+	\hline
+	TS2.1 & Verificare che il sistema permetta di creare un nuovo progetto & N.I. \\
+	\hline
+	TS2.1.1 & Verificare che il sistema permetta di definire il nome del progetto & N.I. \\
+	\hline
+	TS2.2 & Verificare che il sistema permetta di caricare un progetto & N.I. \\
+	\hline
+	TS2.3 & Verificare che il sistema permetta di chiudere un progetto & N.I. \\
+	\hline
+	TS2.3.1 & Verificare che il sistema permetta al momento della chiusura di salvare le modifiche effettuate successivamente all'ultimo salvataggio & N.I. \\
+	\hline
+	TS2.4 & Verificare che il sistema permetta di salvare un progetto & N.I. \\
+	\hline
+	TS2.4.1 & Verificare che il sistema permetta di salvare il progetto attuale sovrascrivendolo & N.I. \\
+	\hline
+	TS2.4.2 & Verificare che il sistema permetta di salvare il progetto in una directory scelta dall'utente & N.I. \\
+	\hline
+	TS3 & Verificare che il sistema permetta di editare diagrammi UML & N.I. \\
+	\hline
+	TS3.1 & Verificare che il sistema permetta di editare il diagramma dei package & N.I. \\
+	\hline
+	TS3.1.1 & Verificare che il sistema permetta di creare un nuovo package vuoto nel diagramma dei package & N.I. \\
+	\hline
+	TS3.1.2 & Verificare che il sistema permetta di modificare un package presente nel diagramma dei package & N.I. \\
+	\hline
+	TS3.1.2.1 & Verificare che il sistema permetta di rinominare un package & N.I. \\
+	\hline
+	TS3.1.2.2 & Verificare che il sistema permetta di impostare la visibilità del package & N.I. \\
+	\hline
+	TS3.1.2.3 & Verificare che il sistema permetta di rimuovere un elemento dal package & N.I. \\
+	\hline
+	TS3.1.3 & Verificare che il sistema permetta di eliminare un package & N.I. \\
+	\hline
+	TS3.1.4 & Verificare che il sistema permetta di passare dal diagramma dei package al diagramma delle classi & N.I. \\
+	\hline
+	TS3.1.5 & Verificare che il sistema permetta di definire una dipendenza tra package & N.I. \\
+	\hline
+	TS3.1.6 & Verificare che il sistema permetta rimuovere una dipendenza tra package & N.I. \\
+	\hline
+	TS3.1.7 & Verificare che il sistema permetta di riposizionare un elemento all'interno del diagramma dei package & N.I. \\
+	\hline
+	TS3.2 & Verificare che il sistema permetta di editare il diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.1 & Verificare che il sistema permetta di aggiungere una nuova classe al diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2 & Verificare che il sistema permetta di modificare una classe presente nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.1 & Verificare che il sistema permetta di rinominare una classe presente nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.10 & Verificare che il sistema permetta di aggiungere una nuova interfaccia al diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.11 & Verificare che il sistema permetta di modificare un'interfaccia presente nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.11.1 & Verificare che il sistema permetta di rinominare un'interfaccia & N.I. \\
+	\hline
+	TS3.2.2.11.10 & Verificare che il sistema permetta di visualizzare il layer superiore & N.I. \\
+	\hline
+	TS3.2.2.11.11 & Verificare che il sistema permetta di visualizzare il layer inferiore & N.I. \\
+	\hline
+	TS3.2.2.11.2 & Verificare che il sistema permetta di impostare l'importanza di un'interfaccia & N.I. \\
+	\hline
+	TS3.2.2.11.2.1 & Verificare che il sistema permetta di modificare l'importanza di un'interfaccia a bassa & N.I. \\
+	\hline
+	TS3.2.2.11.2.2 & Verificare che il sistema permetta di modificare l'importanza di un'interfaccia a media & N.I. \\
+	\hline
+	TS3.2.2.11.2.3 & Verificare che il sistema permetta di modificare l'importanza di un'interfaccia a alta & N.I. \\
+	\hline
+	TS3.2.2.11.3 & Verificare che il sistema permetta di aprire la schermata di modifica di un'interfaccia & N.I. \\
+	\hline
+	TS3.2.2.11.4 & Verificare che il sistema permetta di eliminare un'interfaccia presente nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.11.5 & Verificare che il sistema permetta di aggiungere un commento all'interno del diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.11.6 & Verificare che il sistema permetta di collegare un commento ad un elemento presente nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.11.7 & Verificare che il sistema permetta di modificare un commento presente nel diagramma delel classi & N.I. \\
+	\hline
+	TS3.2.2.11.8 & Verificare che il sistema permetta di eliminare un commento presente nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.11.9 & Verificare che il sistema permetta di cambiare layer di visualizzazione & N.I. \\
+	\hline
+	TS3.2.2.2 & Verificare che il sistema permetta di innestare una classe all'interno di un'altra classe & N.I. \\
+	\hline
+	TS3.2.2.3 & Verificare che il sistema permetta di impostare l'importanza di una classe & N.I. \\
+	\hline
+	TS3.2.2.4 & Verificare che il sistema permetta di modificare l'importanza di una classa & N.I. \\
+	\hline
+	TS3.2.2.4.1 & Verificare che il sistema permetta di modificare l'importanza di una classe a bassa & N.I. \\
+	\hline
+	TS3.2.2.4.2 & Verificare che il sistema permetta di modificare l'importanza di una classe a media & N.I. \\
+	\hline
+	TS3.2.2.4.3 & Verificare che il sistema permetta di modificare l'importanza di una classe a alta & N.I. \\
+	\hline
+	TS3.2.2.5 & Verificare che il sistema permetta di passare alla schermata di modifica di una classe & N.I. \\
+	\hline
+	TS3.2.2.6 & Verificare che il sistema permetta di eliminare una classe presente nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.7 & Verificare che il sistema permetta di definire una relazione tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.7.1 & Verificare che il sistema permetta di definire una dipendenza tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.7.2 & Verificare che il sistema permetta di definire un'associazione tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.7.3 & Verificare che il sistema permetta di definire un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.7.4 & Verificare che il sistema permetta di definire un'aggregazione tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.7.5 & Verificare che il sistema permetta di definire una composizione tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.7.6 & Verificare che il sistema permetta di raffinare una classe parametrica & N.I. \\
+	\hline
+	TS3.2.2.7.7 & Verificare che il sistema permetta di definire la realizzazione di un'interfaccia & N.I. \\
+	\hline
+	TS3.2.2.8 & Verificare che il sistema permetta di modificare una relazione tra due elementi del diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.8.1 & Verificare che il sistema permetta di modificare una dipendenza tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.8.2 & Verificare che il sistema permetta di modificare un'associazione tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.8.3 & Verificare che il sistema permetta di modificare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.8.4 & Verificare che il sistema permetta di modificare un'aggregazione tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.8.5 & Verificare che il sistema permetta di modificare una composizione tra due elementi presenti nel diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.2.8.6 & Verificare che il sistema permetta di modificare il raffinamento di una classe parametrica & N.I. \\
+	\hline
+	TS3.2.2.8.7 & Verificare che il sistema permetta di modificare la realizzazione di un'interfaccia & N.I. \\
+	\hline
+	TS3.2.2.9 & Verificare che il sistema permetta di eliminare una relazione tra due elementi del diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.3 & Verificare che il sistema permetta di modificare una classe mediante la schermata di modifica di una classe & N.I. \\
+	\hline
+	TS3.2.3.1 & Verificare che il sistema permetta di aggiungere un nuovo attributo alla classe & N.I. \\
+	\hline
+	TS3.2.3.10 & Verificare che il sistema permetta di marchiare una classe & N.I. \\
+	\hline
+	TS3.2.3.10.1 & Verificare che il sistema permetta di marchiare una classe come statica & N.I. \\
+	\hline
+	TS3.2.3.10.2 & Verificare che il sistema permetta di marchiare una classe come astratta & N.I. \\
+	\hline
+	TS3.2.3.10.3 & Verificare che il sistema permetta di marchiare una classe come finale & N.I. \\
+	\hline
+	TS3.2.3.10.4 & Verificare che il sistema permetta di marchiare una classe come frozen & N.I. \\
+	\hline
+	TS3.2.3.10.5 & Verificare che il sistema permetta di marchiare una classe come readOnly & N.I. \\
+	\hline
+	TS3.2.3.10.6 & Verificare che il sistema permetta di marchiare una classa come enum & N.I. \\
+	\hline
+	TS3.2.3.10.7 & Verificare che il sistema permetta di marchiare una classe parametrica & N.I. \\
+	\hline
+	TS3.2.3.2 & Verificare che il sistema permetta di modificare un attributo della classe & N.I. \\
+	\hline
+	TS3.2.3.2.1 & Verificare che il sistema permetta di definire la direzione dell'attributo & N.I. \\
+	\hline
+	TS3.2.3.2.2 & Verificare che il sistema permetta di rinominare l'attributo & N.I. \\
+	\hline
+	TS3.2.3.2.3 & Verificare che il sistema permetta di cambiare il tipo dell'attributo & N.I. \\
+	\hline
+	TS3.2.3.2.4 & Verificare che il sistema permetta di definire un valore di default per l'attributo & N.I. \\
+	\hline
+	TS3.2.3.3 & Verificare che il sistema permetta di eliminare un attributo della classe & N.I. \\
+	\hline
+	TS3.2.3.4 & Verificare che il sistema permetta di aggiungere una nuova operazione alla classe & N.I. \\
+	\hline
+	TS3.2.3.5 & Verificare che il sistema permetta di modificare un'operazione della classe & N.I. \\
+	\hline
+	TS3.2.3.5.1 & Verificare che il sistema permetta di impostare la visibilità dell'operazione & N.I. \\
+	\hline
+	TS3.2.3.5.2 & Verificare che il sistema permetta di rinominare un'operazione & N.I. \\
+	\hline
+	TS3.2.3.5.3 & Verificare che il sistema permetta di definire la lista dei parametri dell'operazione & N.I. \\
+	\hline
+	TS3.2.3.5.3.1 & Verificare che il sistema permetta di aggiungere un nuovo parametro alla lista & N.I. \\
+	\hline
+	TS3.2.3.5.3.2 & Verificare che il sistema permetta di modificare un parametro della lista & N.I. \\
+	\hline
+	TS3.2.3.5.3.2.1 & Verificare che il sistema permetta di definire la direzione del parametro & N.I. \\
+	\hline
+	TS3.2.3.5.3.2.2 & Verificare che il sistema permetta di rinominare il parametro & N.I. \\
+	\hline
+	TS3.2.3.5.3.2.3 & Verificare che il sistema permetta di definire il tipo del parametro & N.I. \\
+	\hline
+	TS3.2.3.5.3.2.4 & Verificare che il sistema permetta di definire il valore di default del parametro & N.I. \\
+	\hline
+	TS3.2.3.5.3.3 & Verificare che il sistema permetta di eliminare un parametro della lista & N.I. \\
+	\hline
+	TS3.2.3.5.4 & Verificare che il sistema permetta di definire proprietà aggiuntive dell'operazione & N.I. \\
+	\hline
+	TS3.2.3.6 & Verificare che il sistema permetta di eliminare un'operazione & N.I. \\
+	\hline
+	TS3.2.3.7 & Verificare che il sistema permetta di impostare la visibilità della classe & N.I. \\
+	\hline
+	TS3.2.3.8 & Verificare che il sistema permetta di commentare una classe & N.I. \\
+	\hline
+	TS3.2.3.9 & Verificare che il sistema permetta di passare dalla modifica di una classe al diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.4 & Verificare che il sistema permetta di modificare un'interfaccia mediante la schermata di modifica di un'interfaccia & N.I. \\
+	\hline
+	TS3.2.4.1 & Verificare che il sistema permetta di aggiungere una nuova operazione all'interfaccia & N.I. \\
+	\hline
+	TS3.2.4.2 & Verificare che il sistema permetta di modificare un'operazione dell'interfaccia & N.I. \\
+	\hline
+	TS3.2.4.2.1 & Verificare che il sistema permetta di impostare la visibilità dell'operazione & N.I. \\
+	\hline
+	TS3.2.4.2.2 & Verificare che il sistema permetta di rinominare un'operazione & N.I. \\
+	\hline
+	TS3.2.4.2.3 & Verificare che il sistema permetta di definire la lista dei parametri dell'operazione & N.I. \\
+	\hline
+	TS3.2.4.2.3.1 & Verificare che il sistema permetta di aggiungere un nuovo parametro alla lista & N.I. \\
+	\hline
+	TS3.2.4.2.3.2 & Verificare che il sistema permetta di modificare un parametro della lista & N.I. \\
+	\hline
+	TS3.2.4.2.3.2.1 & Verificare che il sistema permetta di definire la direzione del parametro & N.I. \\
+	\hline
+	TS3.2.4.2.3.2.2 & Verificare che il sistema permetta di rinominare il parametro & N.I. \\
+	\hline
+	TS3.2.4.2.3.2.3 & Verificare che il sistema permetta di definire il tipo del parametro & N.I. \\
+	\hline
+	TS3.2.4.2.3.2.4 & Verificare che il sistema permetta di definire il valore di default del parametro & N.I. \\
+	\hline
+	TS3.2.4.2.3.3 & Verificare che il sistema permetta di eliminare un parametro della lista & N.I. \\
+	\hline
+	TS3.2.4.2.4 & Verificare che il sistema permetta di definire il tipo di ritorno dell'operazione & N.I. \\
+	\hline
+	TS3.2.4.2.5 & Verificare che il sistema permetta di definire proprietà aggiuntive dell'operazione & N.I. \\
+	\hline
+	TS3.2.4.2.6 & Verificare che il sistema permetta di aprire il diagramma delle attività corrispondente & N.I. \\
+	\hline
+	TS3.2.4.3 & Verificare che il sistema permetta di eliminare un'operazione dal'interfaccia & N.I. \\
+	\hline
+	TS3.2.4.4 & Verificare che il sistema permetta di rinominare l'interfaccia & N.I. \\
+	\hline
+	TS3.2.4.5 & Verificare che il sistema permetta di impostare la visibilità dell'interfaccia & N.I. \\
+	\hline
+	TS3.2.4.6 & Verificare che il sistema permetta di marchiare l'interfaccia & N.I. \\
+	\hline
+	TS3.2.4.7 & Verificare che il sistema permetta di passare dalla modifica di un'interfaccia al diagramma delle classi & N.I. \\
+	\hline
+	TS3.2.4.8 & Verificare che il sistema permetta di commentare l'interfaccia & N.I. \\
+	\hline
+	TS3.3 & Verificare che il sistema permetta di editare il diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.1 & Verificare che il sistema permetta di creare una nuova attività nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.10 & Verificare che il sistema permetta di eliminare una regione di espansione del diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.11 & Verificare che il sistema permetta di riposizionare un elemento all'interno del diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.12 & Verificare che il sistema permetta di aggiungere una trasformazione tra pin nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.13 & Verificare che il sistema permetta di modificare una trasformazione tra pin presente nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.14 & Verificare che il sistema permetta di eliminare una trasformazione tra pin presente nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.15 & Verificare che il sistema permetta di aggiungere un nuovo evento temporale nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.16 & Verificare che il sistema permetta di modificare un evento temporale presente nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.17 & Verificare che il sistema permetta di eliminare un evento temporale presente nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.18 & Verificare che il sistema permetta di passare dal diagramma delle attività al diagramma delle classi & N.I. \\
+	\hline
+	TS3.3.19 & Verificare che il sistema permetta di editare il bubble flowchart & N.I. \\
+	\hline
+	TS3.3.19.1 & Verificare che il sistema permetta di aggiungere una nuova bubble al bubble flowchart & N.I. \\
+	\hline
+	TS3.3.19.2 & Verificare che il sistema permetta di modificare una bubble presente nel bubble flowchart & N.I. \\
+	\hline
+	TS3.3.19.3 & Verificare che il sistema permetta di eliminare una bubble presente nel bubble flowchart & N.I. \\
+	\hline
+	TS3.3.19.4 & Verificare che il sistema permetta di aggiungere un nuovo elemento di decisione al bubble flowchart & N.I. \\
+	\hline
+	TS3.3.19.5 & Verificare che il sistema permetta di modificare un elemento di decisione presente nel bubble flowchart & N.I. \\
+	\hline
+	TS3.3.19.6 & Verificare che il sistema permetta di eliminare un elemento di decisione presente nel bubble flowchart & N.I. \\
+	\hline
+	TS3.3.19.7 & Verificare che il sistema permetta di passare dal bubble flowchart al diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.19.8 & Verificare che il sistema permetta di riposizionare un elemento all'interno del bubble flowchart & N.I. \\
+	\hline
+	TS3.3.2 & Verificare che il sistema permetta di modificare un'attività presente nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.2.1 & Verificare che il sistema permetta di rinominare l'attività & N.I. \\
+	\hline
+	TS3.3.2.2 & Verificare che il sistema permetta di commentare l'attivitià & N.I. \\
+	\hline
+	TS3.3.2.3 & Verificare che il sistema permetta di aggiungere un nuovo pin all'attività & N.I. \\
+	\hline
+	TS3.3.2.4 & Verificare che il sistema permetta di modificare un pin presente nell'attività & N.I. \\
+	\hline
+	TS3.3.2.4.1 & Verificare che il sistema permetta di definire la direzione del parametro & N.I. \\
+	\hline
+	TS3.3.2.4.2 & Verificare che il sistema permetta di rinominare il parametro & N.I. \\
+	\hline
+	TS3.3.2.4.3 & Verificare che il sistema permetta di definire il tipo del parametro & N.I. \\
+	\hline
+	TS3.3.2.4.4 & Verificare che il sistema permetta di definire i valori di default del parametro & N.I. \\
+	\hline
+	TS3.3.2.5 & Verificare che il sistema permetta di eliminare un pin dall'attività & N.I. \\
+	\hline
+	TS3.3.3 & Verificare che il sistema permetta di aprire l'editor del bubble flowchart & N.I. \\
+	\hline
+	TS3.3.4 & Verificare che il sistema permetta di eliminare un'attività presente nel diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.5 & Verificare che il sistema permetta di aggiungere un nuovo elemento di decisione al diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.6 & Verificare che il sistema permetta di modificare un nuovo elemento di decisione del diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.7 & Verificare che il sistema permetta di eliminare un elemento di decisione del diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.8 & Verificare che il sistema permetta di aggiungere una nuova regione di espansione al diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.9 & Verificare che il sistema permetta di modificare una regione di espansione del diagramma delle attività & N.I. \\
+	\hline
+	TS3.3.9.1 & Verificare che il sistema permetta di innestare un elemento nella regione di espansione & N.I. \\
+	\hline
+	TS3.3.9.2 & Verificare che il sistema permetta di editare la lista degli argomenti della regione di espansione & N.I. \\
+	\hline
+	TS3.3.9.2.1 & Verificare che il sistema permetta di aggiungere un nuovo argomento & N.I. \\
+	\hline
+	TS3.3.9.2.2 & Verificare che il sistema permetta di modificare un argomento & N.I. \\
+	\hline
+	TS3.3.9.2.3 & Verificare che il sistema permetta di rimuovere un argomento & N.I. \\
+	\hline
+	TS3.3.9.3 & Verificare che il sistema permetta di rimuovere un elemento dalla regione di espansione & N.I. \\
+	\hline
+	TS4 & Verificare che il sistema permetta di gestire gli errori dell'utente & N.I. \\
+	\hline
+	TS4.1 & Verificare che il sistema permetta di annullare l'ultimo comando eseguito & N.I. \\
+	\hline
+	TS4.2 & Verificare che il sistema permetta di ripristinare l'ultimo comando annullato & N.I. \\
+	\hline
+	TS5 & Verificare che il sistema permetta di gestire il codice generato & N.I. \\
+	\hline
+	TS5.1 & Verificare che il sistema permetta di leggere il codice generato & N.I. \\
+	\hline
+	TS5.2 & Verificare che il sistema permetta di esportare il codice generato & N.I. \\
+	\hline
+\caption[Test di sistema]{Test di sistema}
+\label{tabella:TestSistema}
+\end{longtable}
+
+\subsection{Tracciamento test di Sistema}
+	\normalsize
+	\begin{longtable}{|c|c|}
+		\hline
+		\textbf{Test di sistema} & \textbf{Requisito}\\
+		\hline
+		\endhead
+		TS1 & R0Q3  \\
+		\hline
+		TS2 & R0F14  \\
+		\hline
+		TS2.1 & R0F14.1   \\
+		\hline
+		TS2.1.1 & R0F14.1.1   \\
+		\hline
+		TS2.2 & R0F14.2   \\
+		\hline
+		TS2.3 & R0F14.3   \\
+		\hline
+		TS2.3.1 & R0F14.3.1   \\
+		\hline
+		TS2.4 & R0F14.8   \\
+		\hline
+		TS2.4.1 & R0F14.8.1   \\
+		\hline
+		TS2.4.2 & R0F14.8.2   \\
+		\hline
+		TS3 & R0F1   \\
+		\hline
+		TS3.1 & R1F18   \\
+		\hline
+		TS3.1.1 & R1F18.1   \\
+		\hline
+		TS3.1.2 & R1F18.2   \\
+		\hline
+		TS3.1.2.1 & R1F18.2.1   \\
+		\hline
+		TS3.1.2.2 & R1F18.2.2   \\
+		\hline
+		TS3.1.2.3 & R1F18.2.4   \\
+		\hline
+		TS3.1.3 & R1F18.3   \\
+		\hline
+		TS3.1.4 & R1F18.4   \\
+		\hline
+		TS3.1.5 & R1F18.5   \\
+		\hline
+		TS3.1.6 & R1F18.6   \\
+		\hline
+		TS3.1.7 & R1F18.7   \\
+		\hline
+		TS3.2 & R0F15   \\
+		\hline
+		TS3.2.1 & R0F15.1   \\
+		\hline
+		TS3.2.2 & R0F15.2   \\
+		\hline
+		TS3.2.2.1 & R0F15.2.1   \\
+		\hline
+		TS3.2.2.10 & R0F15.7   \\
+		\hline
+		TS3.2.2.11 & R0F15.8   \\
+		\hline
+		TS3.2.2.11.1 & R0F15.8.1   \\
+		\hline
+		TS3.2.2.11.10 & R0F15.14.1   \\
+		\hline
+		TS3.2.2.11.11 & R0F15.14.2   \\
+		\hline
+		TS3.2.2.11.2 & R0F15.8.2   \\
+		\hline
+		TS3.2.2.11.2.1 & R0F15.8.2.1   \\
+		\hline
+		TS3.2.2.11.2.2 & R0F15.8.2.2   \\
+		\hline
+		TS3.2.2.11.2.3 & R0F15.8.2.3   \\
+		\hline
+		TS3.2.2.11.3 & R0F15.8.3   \\
+		\hline
+		TS3.2.2.11.4 & R0F15.9   \\
+		\hline
+		TS3.2.2.11.5 & R0F15.10   \\
+		\hline
+		TS3.2.2.11.6 & R0F15.11   \\
+		\hline
+		TS3.2.2.11.7 & R0F15.12   \\
+		\hline
+		TS3.2.2.11.8 & R0F15.13   \\
+		\hline
+		TS3.2.2.11.9 & R0F15.14   \\
+		\hline
+		TS3.2.2.2 & R0F15.2.2   \\
+		\hline
+		TS3.2.2.3 & R0F15.2.3   \\
+		\hline
+		TS3.2.2.4 & R0F15.2.4   \\
+		\hline
+		TS3.2.2.4.1 & R0F15.2.4.1   \\
+		\hline
+		TS3.2.2.4.2 & R0F15.2.4.2   \\
+		\hline
+		TS3.2.2.4.3 & R0F15.2.4.3   \\
+		\hline
+		TS3.2.2.5 & R0F15.2.5   \\
+		\hline
+		TS3.2.2.6 & R0F15.3   \\
+		\hline
+		TS3.2.2.7 & R0F15.4   \\
+		\hline
+		TS3.2.2.7.1 & R0F15.4.1   \\
+		\hline
+		TS3.2.2.7.2 & R0F15.4.2   \\
+		\hline
+		TS3.2.2.7.3 & R0F15.4.3   \\
+		\hline
+		TS3.2.2.7.4 & R0F15.4.4   \\
+		\hline
+		TS3.2.2.7.5 & R0F15.4.5   \\
+		\hline
+		TS3.2.2.7.6 & R0F15.4.6   \\
+		\hline
+		TS3.2.2.7.7 & R0F15.4.7   \\
+		\hline
+		TS3.2.2.8 & R0F15.5   \\
+		\hline
+		TS3.2.2.8.1 & R0F15.5.1   \\
+		\hline
+		TS3.2.2.8.2 & R0F15.5.2   \\
+		\hline
+		TS3.2.2.8.3 & R0F15.5.3   \\
+		\hline
+		TS3.2.2.8.4 & R0F15.5.4   \\
+		\hline
+		TS3.2.2.8.5 & R0F15.5.5   \\
+		\hline
+		TS3.2.2.8.6 & R0F15.5.6   \\
+		\hline
+		TS3.2.2.8.7 & R0F15.5.7   \\
+		\hline
+		TS3.2.2.9 & R0F15.6   \\
+		\hline
+		TS3.2.3 & R0F16   \\
+		\hline
+		TS3.2.3.1 & R0F16.1   \\
+		\hline
+		TS3.2.3.10 & R0F16.10   \\
+		\hline
+		TS3.2.3.10.1 & R0F16.10.1   \\
+		\hline
+		TS3.2.3.10.2 & R0F16.10.2   \\
+		\hline
+		TS3.2.3.10.3 & R0F16.10.3   \\
+		\hline
+		TS3.2.3.10.4 & R0F16.10.4   \\
+		\hline
+		TS3.2.3.10.5 & R0F16.10.5   \\
+		\hline
+		TS3.2.3.10.6 & R0F16.10.6   \\
+		\hline
+		TS3.2.3.10.7 & R0F16.10.7   \\
+		\hline
+		TS3.2.3.2 & R0F16.2   \\
+		\hline
+		TS3.2.3.2.1 & R0F16.2.1   \\
+		\hline
+		TS3.2.3.2.2 & R0F16.2.2   \\
+		\hline
+		TS3.2.3.2.3 & R0F16.2.3   \\
+		\hline
+		TS3.2.3.2.4 & R0F16.2.4   \\
+		\hline
+		TS3.2.3.3 & R0F16.3   \\
+		\hline
+		TS3.2.3.4 & R0F16.4   \\
+		\hline
+		TS3.2.3.5 & R0F16.5   \\
+		\hline
+		TS3.2.3.5.1 & R0F16.5.1   \\
+		\hline
+		TS3.2.3.5.2 & R0F16.5.2   \\
+		\hline
+		TS3.2.3.5.3 & R0F16.5.3   \\
+		\hline
+		TS3.2.3.5.3.1 & R0F16.5.3.1   \\
+		\hline
+		TS3.2.3.5.3.2 & R0F16.5.3.2   \\
+		\hline
+		TS3.2.3.5.3.2.1 & R0F16.5.3.2.1   \\
+		\hline
+		TS3.2.3.5.3.2.2 & R0F16.5.3.2.2   \\
+		\hline
+		TS3.2.3.5.3.2.3 & R0F16.5.3.2.3   \\
+		\hline
+		TS3.2.3.5.3.2.4 & R0F16.5.3.2.4   \\
+		\hline
+		TS3.2.3.5.3.3 & R0F16.5.3.3   \\
+		\hline
+		TS3.2.3.5.4 & R0F16.5.4   \\
+		\hline
+		TS3.2.3.6 & R0F16.6   \\
+		\hline
+		TS3.2.3.7 & R0F16.7   \\
+		\hline
+		TS3.2.3.8 & R0F16.8   \\
+		\hline
+		TS3.2.3.9 & R0F16.9   \\
+		\hline
+		TS3.2.4 & R0F17   \\
+		\hline
+		TS3.2.4.1 & R0F17.1   \\
+		\hline
+		TS3.2.4.2 & R0F17.2   \\
+		\hline
+		TS3.2.4.2.1 & R0F17.2.1   \\
+		\hline
+		TS3.2.4.2.2 & R0F17.2.2   \\
+		\hline
+		TS3.2.4.2.3 & R0F17.2.3   \\
+		\hline
+		TS3.2.4.2.3.1 & R0F17.2.3.1   \\
+		\hline
+		TS3.2.4.2.3.2 & R0F17.2.3.2   \\
+		\hline
+		TS3.2.4.2.3.2.1 & R0F17.2.3.2.1   \\
+		\hline
+		TS3.2.4.2.3.2.2 & R0F17.2.3.2.2   \\
+		\hline
+		TS3.2.4.2.3.2.3 & R0F17.2.3.2.3   \\
+		\hline
+		TS3.2.4.2.3.2.4 & R0F17.2.3.2.4   \\
+		\hline
+		TS3.2.4.2.3.3 & R0F17.2.3.3   \\
+		\hline
+		TS3.2.4.2.4 & R0F17.2.4   \\
+		\hline
+		TS3.2.4.2.5 & R0F17.2.5   \\
+		\hline
+		TS3.2.4.2.6 & R0F17.2.6   \\
+		\hline
+		TS3.2.4.3 & R0F17.3   \\
+		\hline
+		TS3.2.4.4 & R0F17.4   \\
+		\hline
+		TS3.2.4.5 & R0F17.5   \\
+		\hline
+		TS3.2.4.6 & R0F17.6   \\
+		\hline
+		TS3.2.4.7 & R0F17.7   \\
+		\hline
+		TS3.2.4.8 & R0F17.8   \\
+		\hline
+		TS3.3 & R0F19   \\
+		\hline
+		TS3.3.1 & R0F19.1   \\
+		\hline
+		TS3.3.10 & R0F19.9   \\
+		\hline
+		TS3.3.11 & R0F19.10   \\
+		\hline
+		TS3.3.12 & R0F19.11   \\
+		\hline
+		TS3.3.13 & R0F19.12   \\
+		\hline
+		TS3.3.14 & R0F19.13   \\
+		\hline
+		TS3.3.15 & R0F19.14   \\
+		\hline
+		TS3.3.16 & R0F19.15   \\
+		\hline
+		TS3.3.17 & R0F19.16   \\
+		\hline
+		TS3.3.18 & R0F19.17   \\
+		\hline
+		TS3.3.19 & R0F20   \\
+		\hline
+		TS3.3.19.1 & R0F20.1   \\
+		\hline
+		TS3.3.19.2 & R0F20.2   \\
+		\hline
+		TS3.3.19.3 & R0F20.3   \\
+		\hline
+		TS3.3.19.4 & R0F20.4   \\
+		\hline
+		TS3.3.19.5 & R0F20.5   \\
+		\hline
+		TS3.3.19.6 & R0F20.6   \\
+		\hline
+		TS3.3.19.7 & R0F20.7   \\
+		\hline
+		TS3.3.19.8 & R0F20.8   \\
+		\hline
+		TS3.3.2 & R0F19.2   \\
+		\hline
+		TS3.3.2.1 & R0F19.2.1   \\
+		\hline
+		TS3.3.2.2 & R0F19.2.2   \\
+		\hline
+		TS3.3.2.3 & R0F19.2.3   \\
+		\hline
+		TS3.3.2.4 & R0F19.2.4   \\
+		\hline
+		TS3.3.2.4.1 & R0F19.2.4.1   \\
+		\hline
+		TS3.3.2.4.2 & R0F19.2.4.2   \\
+		\hline
+		TS3.3.2.4.3 & R0F19.2.4.3   \\
+		\hline
+		TS3.3.2.4.4 & R0F19.2.4.4   \\
+		\hline
+		TS3.3.2.5 & R0F19.2.5   \\
+		\hline
+		TS3.3.3 & R0F19.2.6   \\
+		\hline
+		TS3.3.4 & R0F19.3   \\
+		\hline
+		TS3.3.5 & R0F19.4   \\
+		\hline
+		TS3.3.6 & R0F19.5   \\
+		\hline
+		TS3.3.7 & R0F19.6   \\
+		\hline
+		TS3.3.8 & R0F19.7   \\
+		\hline
+		TS3.3.9 & R0F19.8   \\
+		\hline
+		TS3.3.9.1 & R0F19.8.1   \\
+		\hline
+		TS3.3.9.2 & R0F19.8.2   \\
+		\hline
+		TS3.3.9.2.1 & R0F19.8.2.1   \\
+		\hline
+		TS3.3.9.2.2 & R0F19.8.2.2   \\
+		\hline
+		TS3.3.9.2.3 & R0F19.8.2.3   \\
+		\hline
+		TS3.3.9.3 & R0F19.8.3   \\
+		\hline
+		TS4 & R0F21   \\
+		\hline
+		TS4.1 & R0F14.4   \\
+		\hline
+		TS4.2 & R0F14.5   \\
+		\hline
+		TS5 & R0F22   \\
+		\hline
+		TS5.1 & R0F14.6   \\
+		\hline
+		TS5.2 & R0F14.7   \\
+		\hline
+		\caption[Tracciamento test di sistema]{Tracciamento test di sistema}
+		\label{tabella:TracciamentoTestSistema}
+	\end{longtable}
 	
 	\subsection{Test di integrazione} 
 	In questa sezione vengono descritti i test di integrazione, da utilizzare per testare i vari componenti descritti nella progettazione ad alto livello, che permettono di verificare la corretta integrazione ed il corretto flusso dei dati all'interno del sistema.\\	
@@ -2126,125 +1436,67 @@
 	
 	
 	\subsection{Tracciamento test di Integrazione}
-	\begin{longtabu} to \textwidth {
-			X[4,l,p]
-			X[8,l,p]}
-		\toprule
-		\rowcolor{blue!1} Codice Test & Codice Requisito \\
-		\midrule
+	\normalsize
+	\begin{longtable}{|c|l|}
+		\hline
+		\textbf{Test di integrazione} & \textbf{Componente}\\
+		\hline
 		\endhead
-		\arrayrulecolor{gray}
-		\arrayrulecolor{black}
-		\addlinespace[0.4em]
-		\midrule
-		\addlinespace[0.2em]
 		TI1 & SweDesigner \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1 & SweDesigner::Client \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.1 & SweDesigner::Client::View \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.2 & SweDesigner::Client::View \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3 & SweDesigner::Client::Model \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.1 & SweDesigner::Client::Model::Command \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.2 & SweDesigner::Client::Model::DAO \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.3 & SweDesigner::Client::Model::DAO \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.4 & SweDesigner::Client::Model::RequestHandler \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.4.1 & SweDesigner::Client::Model::RequestHandler::Sender \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.4.2 & SweDesigner::Client::Model::RequestHandler::Sender \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.5 & SweDesigner::Client::Model::RequestHandler::Receiver \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.6 & SweDesigner::Client::Model::MainModel \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.7 & SweDesigner::Client::Model::Diagram \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.1.3.8 & SweDesigner::Client::Model::State \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2 & SweDesigner::Server \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.1 & SweDesigner::Server::RequestHandler \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.1.1 & SweDesigner::Server::RequestHandler::Sender \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.1.2 & SweDesigner::Server::RequestHandler::Sender \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.1.3 & SweDesigner::Server::RequestHandler::Receiver \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.2 & SweDesigner::Server::DAO \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.3 & SweDesigner::Server::DAO \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.4 & SweDesigner::Server \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.5 & SweDesigner::Server::CodeGenerator \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.6 & SweDesigner::Server::CodeGenerator::Coder \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.7 & SweDesigner::Server::CodeGenerator::Builder \\
-		\addlinespace[0.2em]
-		\midrule
-		\addlinespace[0.2em]
+		\hline
 		TI1.2.8 & SweDesigner::Server::CodeGenerator::Zipper \\
-		\addlinespace[0.2em]
-		\midrule
-		\bottomrule
-	\end{longtabu}
+		\hline
+		\caption[Tracciamento test di integrazione]{Tracciamento test di integrazione}
+		\label{tabella:TracciamentoTestIntegrazione}
+	\end{longtable}
 \end{document} 
