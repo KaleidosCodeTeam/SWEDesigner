@@ -63,30 +63,29 @@
 				\paragraph{Utilizzo nel progetto\\}
 					Utilizzato, ad esempio, lato client per fornire un'unica esistenza della
 					classe State interna al Model.
-			\subsubsection{Factory}
-				\begin{figure}[H] \label{fig:Factory}
+			\subsubsection{Builder}
+				\begin{figure}[H] \label{fig:Builder}
 					\centering
-					\includegraphics[scale=0.8]{Immagini/FactoryEx.png}
+					\includegraphics[scale=0.8]{Immagini/Builder.png}
 					\caption{Esempio pattern Factory}
 				\end{figure}
 				\paragraph{Scopo\\}
-					Permettere la creazione di oggetti senza esporre la logica creazionale al client
-					mediante l'utilizzo di un'interfaccia.
+					Separa la costruzione di un oggetto complesso dalla
+					sua rappresentazione.
 				\paragraph{Problema\\}
-					Un'applicazione per essere portabile ha bisogno di incapsulare le dipendenze
-					delle componenti del sistema in modo efficace ed efficiente.
+					Necessità di riutilizzare un medesimo algoritmo di
+					costruzione per più oggetti di tipo differente.
 				\paragraph{Struttura\\}
-					Sono individuabili tre componenti principali:
+					Sono individuabili quattro componenti principali:
 					\begin{itemize}
-						\item Product: interfaccia di creazione dei prodotti;
-						\item ConcreteProduct: implementa l'interfaccia secondo i metodi
-						definiti;
-						\item ConcreteCreator: definisce il factory method che ritornerà l'oggetto
-						appropriato.
+						\item Director: Costruisce un oggetto utilizzando il builder (procedura) ;
+						\item Builder: Specifica l’interfaccia da utilizzare per assemblare il prodotto;
+						\item ConcreteBuilder: Costruisce e assembla le parti del
+						prodotto. Tiene traccia dell’istanza costruita. Fornisce un’interfaccia per recuperare il prodotto finale;
+						\item Product: Prodotto da costruire.
 					\end{itemize}
 				\paragraph{Utilizzo nel progetto\\}
-					Utilizzato, ad esempio, lato server nella componente Coder per separare la
-					costruzione degli oggetti generati.
+					Utilizzato, ad esempio, lato server nella componente Coder per costruire i vari elementi codificati di una classe.
 		\subsection{Comportamentali}
 			\subsubsection{Observer}
 				\begin{figure}[H] \label{fig:Observer}
