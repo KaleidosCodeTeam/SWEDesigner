@@ -1,0 +1,249 @@
+\documentclass[../PianoDiQualifica.tex]{subfiles}
+\begin{document}
+	\section{Componenti e classi principali}
+		\subsection{SweDesigner}
+		I package contenuti al suo interno sono:
+		\begin{itemize}
+			\item SweDesigner::Client;
+			\item SweDesigner::Server;
+		\end{itemize}
+		Questo package non contiene delle classi.
+		\subsection{SweDesigner::Client}
+		I package contenuti al suo interno sono:
+		\begin{itemize}
+			\item SweDesigner::Client::Model;
+			\item SweDesigner::Client::View;
+		\end{itemize}
+		Questo package non contiene delle classi.
+		\subsection{SweDesigner::Client::Model}
+		I package contenuti al suo interno sono:
+		\begin{itemize}
+			\item SweDesigner::Client::Model::RequestHandler;
+		\end{itemize}
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Client::Model::Command}
+		È l'interfaccia che rappresenta un generico comando impartito dai moduli View ai Model.
+		FAN-IN:
+		\begin{itemize}
+			\item ConcreteCommand;
+			\item MainView;
+			\item State;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::ConcreteCommand}
+		Implementa l'interfaccia Command per la rappresentazione concreta dei singoli comandi impartiti dai moduli View ai Model.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::State}
+		Gestisce la cronologia delle operazioni svolte permettendo le operazioni di unDo e reDo.
+		FAN-IN:
+		\begin{itemize}
+			\item MainView;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::DAO}
+		Si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto già esistente.
+		FAN-IN:
+		\begin{itemize}
+			\item MainView;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::MainModel}
+		È il componente del programma che si occupa di gestire la parte logica dell’editor.
+		FAN-IN:
+		\begin{itemize}
+			\item ConcreteCommand;
+			\item DAO;
+			\item MainView;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::TitleBarModel}
+		È il componente del programma che si occupa di gestire la parte logica della barra del titolo.
+		FAN-IN:
+		\begin{itemize}
+			\item MainModel;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::ToolBarModel}
+		È il componente del programma che si occupa di gestire la parte logica delle toolbar.
+		FAN-IN:
+		\begin{itemize}
+			\item MainModel;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::PackageToolbar}
+		Rappresenta la particolare toolbar legata all’editor del diagramma dei package.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::ClassToolbar}
+		Rappresenta la particolare toolbar legata all’editor del diagramma delle classi.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::ActivityToolbar}
+		Rappresenta la particolare toolbar legata all’editor del diagramma delle attività.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::BubbleToolbar}
+		Rappresenta la particolare toolbar legata all’editor del bubble flowchart.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::AddressModel}
+		È il componente del programma che si occupa di gestire la parte logica della barra degli indirizzi.
+		FAN-IN:
+		\begin{itemize}
+			\item MainModel;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::EditPanelModel}
+		È il componente del programma che si occupa di gestire la parte logica del pannello di editing later
+		FAN-IN:
+		\begin{itemize}
+			\item ItemPanel;
+			\item MainModel;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::ItemPanel}
+		Estende la funzionalità di EditPanelModel specificamente per ciascun oggetto selezionato.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::DiagramTree}
+		È la collezione di tutti i model associati a ciascun diagramma.
+		FAN-IN:
+		\begin{itemize}
+			\item MainModel;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::Diagram}
+		Si occupa di gestire la parte logica di un diagramma.
+		FAN-IN:
+		\begin{itemize}
+			\item ActivityDiagram;
+			\item BubbleDiagram;
+			\item ClassDiagram;
+			\item DiagramTree;
+			\item PackageDiagram;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::PackageDiagram}
+		Estende le funzionalità di Diagram per rappresentare un diagramma dei package.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::ClassDiagram}
+		Estende le funzionalità di Diagram per rappresentare un diagramma delle classi.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::ActivityDiagram}
+		Estende le funzionalità di Diagram per rappresentare un diagramma delle attività.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::BubbleDiagram}
+		Estende le funzionalità di Diagram per rappresentare un bubble flowchart.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsection{SweDesigner::Client::Model::RequestHandler}
+		Questo package non contiene dei sottopackage.
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Client::Model::RequestHandler::Sender}
+		Si occupa di gestire le comunicazioni in uscita verso il server.
+		FAN-IN:
+		\begin{itemize}
+			\item MainModel;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::Model::RequestHandler::Receiver}
+		Si occupa di gestire le comunicazioni in entrata dal server.
+		FAN-IN:
+		\begin{itemize}
+			\item Sender;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsection{SweDesigner::Client::View}
+		Questo package non contiene dei sottopackage.
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Client::View::MainView}
+		È il componente del programma che si occupa di gestire l'interfaccia grafica. Nella particolare declinazione MVC adottata da Backbone.js, si occupa anche di gestire gli input dell'utente e si interfaccia con il model attraverso dei command. È un aggregatore di altre classi View specializzate nella gestione dei diversi elementi dell'interfaccia grafica, in particolare TitleBarView, ToolBarView, AddressView, EditPanelView e Paper.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::View::TitleBarView}
+		È il componente del programma che fa la funzione di view per la barra del titolo, dove saranno collocati il menu dell’applicazione e gli shortcut.
+		FAN-IN:
+		\begin{itemize}
+			\item MainView;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::View::ToolBarView}
+		È il componente del programma che fa la funzione di view per la toolbar dove saranno collocati gli strumenti per editare i diagrammi.
+		FAN-IN:
+		\begin{itemize}
+			\item MainView;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::View::AddressView}
+		È il componente del programma che fa la funzione di view per il cosiddetto breadcrumb dove viene inserita la posizione corrente.
+		FAN-IN:
+		\begin{itemize}
+			\item MainView;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::View::EditPanelView}
+		È il componente del programma che fa la funzione di view per le informazioni editabili degli elementi che fanno parte dei diversi diagrammi.
+		FAN-IN:
+		\begin{itemize}
+			\item MainView;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Client::View::Paper}
+		È il componente del programma che fa la funzione di view per i diversi diagrammi.
+		FAN-IN:
+		\begin{itemize}
+			\item MainView;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsection{SweDesigner::Server}
+		I package contenuti al suo interno sono:
+		\begin{itemize}
+			\item SweDesigner::Server::CodeGenerator;
+			\item SweDesigner::Server::DAORequestHandler;
+			\item SweDesigner::Server::RequestHandler;
+		\end{itemize}
+		Questo package non contiene delle classi.
+		\subsection{SweDesigner::Server::CodeGenerator}
+		I package contenuti al suo interno sono:
+		\begin{itemize}
+			\item SweDesigner::Server::CodeGenerator::Builder;
+			\item SweDesigner::Server::CodeGenerator::Coder;
+			\item SweDesigner::Server::CodeGenerator::Parser;
+			\item SweDesigner::Server::CodeGenerator::Zipper;
+		\end{itemize}
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Server::CodeGenerator::CodeGenerator}
+		E' il componente che rende disponibile la funzionalità per cui, dato un file valido in formato JSON, restituisce un pacchetto in formato .zip contenente i file del codice sorgente che costituiscono il programma rappresentato dal file in input; i file prodotti sono strutturati in packages, come indicato nel file JSON in input.
+		FAN-IN:
+		\begin{itemize}
+			\item Sender;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsection{SweDesigner::Server::CodeGenerator::Builder}
+		Questo package non contiene dei sottopackage.
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Server::CodeGenerator::Builder::Builder}
+		È il componente che rende disponibile la funzionalità, dato un file JSON in input che rappresenti un programma, di ottenere un oggetto contenitore del codice sorgente corrispondente al contenuto del file di input. Tale codice è suddiviso e strutturato come indicato nel file di input.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsection{SweDesigner::Server::CodeGenerator::Coder}
+		Questo package non contiene dei sottopackage.
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Server::CodeGenerator::Coder::JavaCoder}
+		È il componente che rende disponibile la funzionalità, dato un oggetto in input che rappresenta un file JSON parsificato, di ottenere un oggetto contenente il codice sorgente, in linguaggio Java, corrispondente all'oggetto in input.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::CodeGenerator::Coder::JavascriptCoder}
+		È il componente che rende disponibile la funzionalità, dato un oggetto in input che rappresenta un file JSON parsificato, di ottenere un oggetto contenente il codice sorgente, in linguaggio Javascript, corrispondente all'oggetto in input.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::CodeGenerator::Coder::CoderClass}
+		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta una classe valida, di ottenere il corrispondente codice sorgente di tale classe.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::CodeGenerator::Coder::CoderOperation}
+		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un'operazione valida, di ottenere il corrispondente codice sorgente di tale operazione.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::CodeGenerator::Coder::CodeParameter}
+		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un parametro di una lista valido, di ottenere il corrispondente codice sorgente di tale parametro. È possibile scegliere fra la codifica in Java o Javascript.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::CodeGenerator::Coder::CoderActivity}
+		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un diagramma delle attività valido, di ottenere il corrispondente codice sorgente di tale attività. È possibile scegliere fra la codifica in Java o Javascript.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::CodeGenerator::Coder::CodedProgram}
+		È il componente che contiene il codice sorgente prodotto dal Coder.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::CodeGenerator::Coder::Coder}
+		Componente che funge da interfaccia alle operazioni di codifica di una stringa, in formato JSON che rappresenta un programma valido; tali operazioni permettono di ottenere un oggetto contenente il codice sorgente, in Java o Javascript, corrispondente alla stringa in input.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::CodeGenerator::Coder::CoderElement}
+		Componente astratta che offre la funzionalità di ottenere, data una stringa in input in formato JSON che rappresenta un elemento di classe valido, il corrispondente codice sorgente, in Java o Javascript.
+		FAN-IN:
+		\begin{itemize}
+			\item Coder;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsection{SweDesigner::Server::CodeGenerator::Parser}
+		Questo package non contiene dei sottopackage.
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Server::CodeGenerator::Parser::Parser}
+		È il componente che rende disponibile la funzionalità, dato un file JSON valido in input, di ottenere un oggetto contenente le informazioni che costituiscono il file in input.
+		FAN-IN:
+		\begin{itemize}
+			\item CodeGenerator;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsection{SweDesigner::Server::CodeGenerator::Zipper}
+		Questo package non contiene dei sottopackage.
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Server::CodeGenerator::Zipper::Zipper}
+		E' il componente che rende disponibile la funzionalità per cui, dato un file valido in formato JSON, restituisce un pacchetto in formato .zip contenente i file del codice sorgente che costituiscono il programma rappresentato dal file in input; i file prodotti sono strutturati in packages, come indicato nel file JSON in input.
+		Non ci sono dipendenze IN.Non ci sono dipendenze OUT.\subsection{SweDesigner::Server::DAORequestHandler}
+		Questo package non contiene dei sottopackage.
+		Questo package non contiene delle classi.
+		\subsection{SweDesigner::Server::RequestHandler}
+		Questo package non contiene dei sottopackage.
+		Le classi contenute al suo interno verranno elencate qui di seguito.
+		\subsubsection{SweDesigner::Server::RequestHandler::Sender}
+		Si occupa di gestire le comunicazioni in uscita verso il client.
+		FAN-IN:
+		\begin{itemize}
+			\item Zipper;
+		\end{itemize}
+		Non ci sono dipendenze OUT.\subsubsection{SweDesigner::Server::RequestHandler::Receiver}
+		Si occupa di gestire le comunicazioni in entrata dal client.
+		FAN-IN:
+		\begin{itemize}
+			\item Sender;
+		\end{itemize}
+		Non ci sono dipendenze OUT.
+\end{document}
