@@ -1,0 +1,181 @@
+\documentclass[../PianoDiQualifica.tex]{subfiles}
+\begin{document}
+	\section{Resoconto delle attività di verifica}
+		\subsection{Periodo di Analisi e Analisi di dettaglio}
+			\subsubsection{Processi}
+				\begin{table}[H]
+				\center
+				\begin{tabular}{!{\VRule[1.4pt]}l!{\VRule}c!{\VRule}c!{\VRule[1.4pt]}}
+					\noalign{\hrule height 1.4pt}
+					\rowcolor{blue!30}\textbf{Documento} & \textbf{Schedule variance} & \textbf{Budget variance} \\
+					\noalign{\hrule height 1.4pt}
+					\analisideirequisitiRR & 0\% & N.D. \\ \hline
+					\glossarioRR & 0\% & N.D. \\ \hline
+					\normediprogettoRR & 0\% & N.D. \\ \hline
+					\pianodiprogettoRR & 0\% & N.D. \\ \hline
+					\pianodiqualificaRR & 0\% & N.D. \\ \hline
+					\studiodifattibilitaRR & 0\% & N.D. \\ \hline
+					\noalign{\hrule height 1.4pt}
+				\end{tabular}
+				\caption{RR - Schedule e budget variance}
+				\end{table}
+			\subsubsection{Indici di Gulpease}
+				\begin{table}[H]
+				\center
+				\begin{tabular}{!{\VRule[1.4pt]}l!{\VRule}c!{\VRule}c!{\VRule[1.4pt]}}
+					\noalign{\hrule height 1.4pt}
+					\rowcolor{blue!30}\textbf{Documento} & \textbf{Valutazione} & \textbf{Esito} \\
+					\noalign{\hrule height 1.4pt}
+					\analisideirequisitiRR & 41.08 & Accettabile \\ \hline
+					\glossarioRR & 45.95 & Accettabile \\ \hline
+					\normediprogettoRR & 46.95 & Accettabile \\ \hline
+					\pianodiprogettoRR & 48.23 & Accettabile \\ \hline
+					\pianodiqualificaRR & 53.99 & Ottimale \\ \hline
+					\studiodifattibilitaRR & 46.73 & Accettabile \\ \hline
+					\noalign{\hrule height 1.4pt}
+				\end{tabular}
+				\caption{RR - Indici di Gulpease calcolati sulla documentazione prodotta}
+				\end{table}
+		\subsection{Periodo di Progettazione architetturale}
+			\subsubsection{Processi}
+				\begin{table}[H]
+				\center
+				\begin{tabular}{!{\VRule[1.4pt]}l!{\VRule}c!{\VRule}c!{\VRule[1.4pt]}}
+					\noalign{\hrule height 1.4pt}
+					\rowcolor{blue!30}\textbf{Documento} & \textbf{Schedule variance} & \textbf{Budget variance} \\
+					\noalign{\hrule height 1.4pt}
+					\analisideirequisitiRP & 7\% & 0\% \\ \hline
+					\glossarioRP & 0\% & 0\% \\ \hline
+					\normediprogettoRP & 0\% & 0\% \\ \hline
+					\pianodiprogettoRP & 0\% & 0\% \\ \hline
+					\pianodiqualificaRP & -10\% & 0\% \\ \hline
+					\specificatecnicaRP & 8\% & -5\% \\ \hline
+					\noalign{\hrule height 1.4pt}
+				\end{tabular}
+				\caption{RP - Schedule e budget variance}
+				\end{table}
+			\subsubsection{Indici di Gulpease}
+				\begin{table}[H]
+				\center
+				\begin{tabular}{!{\VRule[1.4pt]}l!{\VRule}c!{\VRule}c!{\VRule[1.4pt]}}
+					\noalign{\hrule height 1.4pt}
+					\rowcolor{blue!30}\textbf{Documento} & \textbf{Valutazione} & \textbf{Esito} \\
+					\noalign{\hrule height 1.4pt}
+					\analisideirequisitiRP & 44.03 & Accettabile \\ \hline
+					\glossarioRP & 44.98 & Accettabile \\ \hline
+					\normediprogettoRP & 46.69 & Accettabile \\ \hline
+					\pianodiprogettoRP & 50.42 &  Ottimale\\ \hline
+					\pianodiqualificaRP & 52.64 & Ottimale \\ \hline
+					\specificatecnicaRP & 42.84 & Accettabile \\ \hline
+					\noalign{\hrule height 1.4pt}
+				\end{tabular}
+				\caption{RP - Indici di Gulpease calcolati sulla documentazione prodotta}
+				\end{table}
+			\subsubsection{Progettazione}
+			% GRADO DI ACCOPPIAMENTO AFFERENTE
+			\begin{longtable}{|r|c|}
+				\hline
+				\rowcolor{blue!30}\textbf{Componente} & \textbf{Accoppiamento afferente} \\
+				\hline
+				\endhead
+				Client::View::MainView &  0 \\ \hline
+				Client::View::TitleBarView & 1 \\ \hline
+				Client::View::ToolBarView & 1 \\ \hline
+				Client::View::AddressView & 1 \\ \hline
+				Client::View::EditPanelView & 1 \\ \hline
+				Client::View::Paper & 1 \\ \hline
+				Client::Model::Command & 3\\ \hline
+				Client::Model::ConcreteCommand & 0 \\ \hline
+				Client::Model::State & 1 \\ \hline
+				Client::Model::DAO & 1 \\ \hline
+				Client::Model::MainModel &4 \\ \hline
+				Client::Model::TitleBarModel & 1 \\ \hline
+				Client::Model::ToolBarModel & 5 \\ \hline
+				Client::Model::PackageToolbar & 0 \\ \hline
+				Client::Model::ClassToolbar & 0 \\ \hline
+				Client::Model::ActivityToolbar & 0 \\ \hline
+				Client::Model::BubbleToolbar & 0 \\ \hline
+				Client::Model::AddressModel & 1 \\ \hline
+				Client::Model::EditPanelModel & 2 \\ \hline
+				Client::Model::ItemPanel & 0 \\ \hline
+				Client::Model::DiagramTree & 1 \\ \hline
+				Client::Model::Diagram & 5 \\ \hline
+				Client::Model::PackageDiagram & 0 \\ \hline
+				Client::Model::ClassDiagram & 0 \\ \hline
+				Client::Model::ActivityDiagram & 0 \\ \hline
+				Client::Model::BubbleDiagram & 0 \\ \hline
+				Client::Model::RequestHandler::Sender & 1 \\ \hline
+				Client::Model::RequestHandler::Receiver & 1 \\ \hline
+				Server::RequestHandler::Sender & 1 \\ \hline
+				Server::RequestHandler::Receiver & 1 \\ \hline
+				Server::CodeGenerator::CodeGenerator & 1 \\ \hline
+				Server::CodeGenerator::Parser::Parser & 2 \\ \hline
+				Server::CodeGenerator::Coder::Coder & 2 \\ \hline
+				Server::CodeGenerator::Coder::JavaCoder & 0 \\ \hline
+				Server::CodeGenerator::Coder::JavaScriptCoder & 0 \\ \hline
+				Server::CodeGenerator::Coder::CoderClass & 0 \\ \hline
+				Server::CodeGenerator::Coder::CoderOperation & 0 \\ \hline
+				Server::CodeGenerator::Coder::CoderParameter & 0 \\ \hline
+				Server::CodeGenerator::Coder::CoderAttribute & 0 \\ \hline
+				Server::CodeGenerator::Coder::CoderActivity & 0 \\ \hline
+				Server::CodeGenerator::Coder::CodedProg & 1 \\ \hline
+				Server::CodeGenerator::Coder::CoderElement & 6 \\ \hline
+				Server::CodeGenerator::Builder::Builder & 1 \\ \hline
+				Server::CodeGenerator::Zipper::Zipper & 1 \\ \hline
+				Server::DAO & 1 \\ \hline
+				\caption{RP - Grado di accoppiamento afferente}
+			\end{longtable}
+			% GRADO DI ACCOPPIAMENTO EFFERENTE
+			\begin{longtable}{|r|c|}
+				\hline
+				\rowcolor{blue!30}\textbf{Componente} & \textbf{Accoppiamento efferente} \\
+				\hline
+				\endhead
+				Client::View::MainView & 9 \\ \hline
+				Client::View::TitleBarView & 0 \\ \hline
+				Client::View::ToolBarView & 0 \\ \hline
+				Client::View::AddressView & 0 \\ \hline
+				Client::View::EditPanelView & 0 \\ \hline
+				Client::View::Paper & 1 \\ \hline
+				Client::Model::Command & 0\\ \hline
+				Client::Model::ConcreteCommand & 2 \\ \hline
+				Client::Model::State & 1 \\ \hline
+				Client::Model::DAO & 1 \\ \hline
+				Client::Model::MainModel & 1 \\ \hline
+				Client::Model::TitleBarModel & 0 \\ \hline
+				Client::Model::ToolBarModel & 0 \\ \hline
+				Client::Model::PackageToolbar & 1 \\ \hline
+				Client::Model::ClassToolbar & 1 \\ \hline
+				Client::Model::ActivityToolbar & 1 \\ \hline
+				Client::Model::BubbleToolbar & 1 \\ \hline
+				Client::Model::AddressModel & 0 \\ \hline
+				Client::Model::EditPanelModel & 0 \\ \hline
+				Client::Model::ItemPanel & 1 \\ \hline
+				Client::Model::DiagramTree & 1 \\ \hline
+				Client::Model::Diagram & 1 \\ \hline
+				Client::Model::PackageDiagram & 1 \\ \hline
+				Client::Model::ClassDiagram & 1 \\ \hline
+				Client::Model::ActivityDiagram & 1 \\ \hline
+				Client::Model::BubbleDiagram & 1 \\ \hline
+				Client::Model::RequestHandler::Sender & 1 \\ \hline
+				Client::Model::RequestHandler::Receiver & 1 \\ \hline
+				Server::RequestHandler::Sender & 1 \\ \hline
+				Server::RequestHandler::Receiver & 1 \\ \hline
+				Server::CodeGenerator::CodeGenerator & 3 \\ \hline
+				Server::CodeGenerator::Parser::Parser & 0 \\ \hline
+				Server::CodeGenerator::Coder::Coder & 2 \\ \hline
+				Server::CodeGenerator::Coder::JavaCoder & 1\\ \hline
+				Server::CodeGenerator::Coder::JavaScriptCoder & 1\\ \hline
+				Server::CodeGenerator::Coder::CoderClass & 1\\ \hline
+				Server::CodeGenerator::Coder::CoderOperation & 1\\ \hline
+				Server::CodeGenerator::Coder::CoderParameter & 1\\ \hline
+				Server::CodeGenerator::Coder::CoderAttribute & 1\\ \hline
+				Server::CodeGenerator::Coder::CoderActivity & 2\\ \hline
+				Server::CodeGenerator::Coder::CodedProg & 0\\ \hline
+				Server::CodeGenerator::Coder::CoderElement & 0\\ \hline
+				Server::CodeGenerator::Builder::Builder & 1 \\ \hline
+				Server::CodeGenerator::Zipper::Zipper & 1 \\ \hline
+				Server::DAO & 0 \\ \hline
+				\caption{RP - Grado di accoppiamento efferente}
+			\end{longtable}
+\end{document}

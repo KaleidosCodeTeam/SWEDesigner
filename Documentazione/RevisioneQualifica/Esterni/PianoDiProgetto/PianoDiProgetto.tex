@@ -1,0 +1,72 @@
+
+% Document-Author: KaleidosCode
+% Document-Date: 03/03/2017 aggiornare la data
+% Document-Description: Documento contenente le Piano di Progetto per SWEDesigner
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{../../../Templates/kaleidos}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\renewcommand{\abstractname}{Tabella contenuti}
+\newcommand{\roles}{\begin{tabular}{c}AN \\  AND \\PA \\ PDC \\ V \\ \hline \textbf{Totale}\end{tabular}}
+\newcommand{\roleshours}[6]{\begin{tabular}{c} #1 \\  #2 \\ #3 \\ #4 \\ #5 \\ \hline #6 \end{tabular}}
+\author{KaleidosCode}
+\date{03/03/2017}	% aggiornare la data
+\intestazioni{Piano di Progetto}
+\pagestyle{myheadings}
+    
+\begin{document}
+	\begin{titlepage}
+		\centering Università degli Studi di Padova
+		\line(1,0){350}\\
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE KaleidosCode\\}
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE SWEDesigner\\}
+		{\scshape\Large Software per diagrammi UML\\}
+		\vspace{1cm}
+		{\scshape\Large \pianodiprogettoi\ \\}		% cambiare il titolo per ogni documento
+		\vspace{1.4cm}
+		\logo
+		\vspace{1.2cm}
+		\centering{\bfseries Informazioni sul documento\\}
+		\line(1,0){240}\\
+		% compilare i campi per ogni documento
+		\begin{tabular}{r|l}
+			{\hfill \textbf{Versione}} 			& 2.0.0\\
+			{\hfill \textbf{Data Redazione}} 	& 03/03/2017\\	% aggiornare la data
+			{\hfill \textbf{Redazione}} 		& Bonato Enrico \\ & Pace Giulio \\
+			{\hfill \textbf{Verifica}} 			& Sovilla Matteo\\
+			{\hfill \textbf{Approvazione}} 		& Bonato Enrico\\
+			{\hfill \textbf{Uso}} 				& Esterno\\
+			{\hfill \textbf{Distribuzione}} 	& \vardanega \\ & \cardin \\ & \proponente\\
+		\end{tabular}\\
+		\vspace{2cm}
+		\texttt{kaleidos.codec6@gmail.com}
+	\end{titlepage}
+
+	\pagestyle{myfront}
+	\newpage
+		\subfile{DiarioModifichePdP}
+	\newpage
+		\tableofcontents
+	\newpage
+		\listoffigures
+	\newpage
+		\listoftables
+	\newpage
+	\pagestyle{mymain}
+		\subfile{Sezioni/Introduzione}
+	\newpage
+		\subfile{Sezioni/AnalisiDeiRischi}
+	\newpage
+		\subfile{Sezioni/Pianificazione}
+	\newpage
+		\subfile{Sezioni/Preventivo}
+	\newpage
+		\subfile{Sezioni/Consuntivo}
+	\newpage
+		\subfile{Sezioni/Organigramma}
+	\label{LastPage}
+\end{document}
