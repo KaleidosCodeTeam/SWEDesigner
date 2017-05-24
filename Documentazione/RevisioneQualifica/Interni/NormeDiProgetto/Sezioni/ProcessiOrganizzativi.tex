@@ -74,6 +74,55 @@
 						\item Controllare che le regole stabilite dalle \normediprogetto\ siano
 						rispettate durante ogni attività di progetto.
 					\end{itemize}
+			\subsection{Metriche di processo}
+				Per poter tenere continuamente sotto controllo il progresso e lo stato del progetto,
+				si è deciso di utilizzare le seguenti metriche.
+				\paragraph{\gl{Schedule Variance}\\}
+					È una metrica di progetto standard, indica se si è in linea, in
+					anticipo o in ritardo rispetto alla schedulazione pianificata delle
+					attività di progetto. È pari alla differenza tra il valore delle
+					attività realizzate ed il valore delle attività pianificate alla
+					data corrente; più precisamente:
+					\begin{equation*}
+						\textit{Schedule Variance (SV)} = \textit{Earned Value (BCWP)} - \textit{Planned Value (BCWS)}
+					\end{equation*}
+					Dove:
+					\begin{itemize}
+						\item Earned Value o BCWP (Budgeted Cost of Work Performed) è il valore
+						(denaro) delle attività realizzate alla data corrente;
+						\item Planned Value o BCWS (Budgeted Cost of Work Scheduled) è il costo
+						pianificato (denaro) per realizzare le attività di progetto alla
+						data corrente.
+					\end{itemize}
+					Per avere una migliore visione sull'utilizzo del tempo a disposizione, verrà
+					calcolato anche lo Schedule Performance Indicator ed il To Complete Schedule
+					Performance Indicator\footnote{I due indici verranno calcolati periodicamente
+						durante lo sviluppo, ma non saranno presenti nei resoconti di verifica.}.\\
+					Lo Schedule Performance Indicator,
+					\begin{equation*}
+						\textit{SPI} = \frac{\textit{BCWP}}{\textit{BCWS}}
+					\end{equation*}
+					mostra l'efficienza del team nell'utilizzo del tempo allocato per il progetto;
+					un SPI > 1 indica che il team di lavoro è molto efficiente,
+					viceversa, un SPI < 1 indica che non lo è.\\
+					Il To Complete Schedule Performance Indicator,
+					\begin{equation*}
+						\textit{TSPI} = \frac{( \textit{Budget Totale} - \textit{BCWP} )}{( \textit{Budget Totale} - \textit{BCWS} )}
+					\end{equation*}
+					mostra quanto il team dovrà essere efficiente nel tempo rimasto per la
+					realizzazione del progetto; un TSPI < 1 indica che il team può rilassare
+					l'attività lavorativa nel tempo rimasto; viceversa, un TSPI > 1 indica che il
+					team ha bisogno di lavorare più duramente.
+				\paragraph{\gl{Budget Variance}\\}
+					È una metrica di progetto standard, indica se si è speso di più o
+					di meno rispetto a quanto preventivato alla data corrente. È pari
+					alla differenza tra costo pianificato e costo effettivamente
+					sostenuto alla data corrente; più precisamente:
+					\begin{equation*}
+						\textit{Budget Variance (BV)} = \textit{Planned Value (BCWS)} - \textit{Actual Cost (ACWP)}
+					\end{equation*}
+					Dove l'Actual Cost o ACWP (Actual Cost of Work Performed) è il costo
+					effettivamente sostenuto (denaro) alla data corrente.
 			\subsection{Strumento di coordinamento}
 				Come piattaforma di gestione del gruppo è stato scelto \gl{\textbf{Asana}}. Asana fornisce:
 				\begin{itemize}
