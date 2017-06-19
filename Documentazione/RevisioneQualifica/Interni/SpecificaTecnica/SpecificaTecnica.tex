@@ -1,0 +1,69 @@
+% Document-Author: KaleidosCode
+% Document-Date: 09/03/2017 aggiornare la data
+% Document-Description: Documento contenente la Specifica Tecnica per SWEDesigner
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{../../../Templates/kaleidos}
+\renewcommand{\abstractname}{Tabella contenuti}
+\newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}
+
+\author{KaleidosCode}
+\date{09/03/2017}	% aggiornare la data
+\intestazioni{Specifica Tecnica}
+\pagestyle{myheadings}
+    
+\begin{document}
+	\begin{titlepage}
+		\centering Università degli Studi di Padova
+		\line(1,0){350}\\
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE KaleidosCode\\}
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE SWEDesigner\\}
+		{\scshape\Large Software per diagrammi UML\\}
+		\vspace{1cm}
+		{\scshape\Large \specificatecnicai\ \\}		% cambiare il titolo per ogni documento
+		\vspace{1.4cm}
+		\logo
+		\vspace{1.2cm}
+		\centering{\bfseries Informazioni sul documento\\}
+		\line(1,0){240}\\
+		% compilare i campi per ogni documento	
+		\begin{tabular}{r|l}
+			{\hfill \textbf{Versione}} 			& 1.0.0\\
+			{\hfill \textbf{Data Redazione}} 	& 01/05/2017\\	% aggiornare la data
+			{\hfill \textbf{Redazione}} 		& Bonolo Marco\\ & Pace Giulio\\ & Pezzuto Francesco\\ & Sovilla Matteo\\
+			{\hfill \textbf{Verifica}} 			& Sanna Giovanni\\
+			{\hfill \textbf{Approvazione}} 		& Bonato Enrico\\
+			{\hfill \textbf{Uso}} 				& Interno\\
+			{\hfill \textbf{Distribuzione}} 	& \vardanega \\ & \cardin \\ & \proponente\\
+		\end{tabular}\\
+		\vspace{2cm}
+		\texttt{kaleidos.codec6@gmail.com}
+	\end{titlepage}
+
+	\pagestyle{myfront}
+	\newpage
+		\subfile{DiarioModificheST}
+	\newpage
+		\tableofcontents
+	\newpage
+		\listoftables
+	\newpage
+		\listoffigures
+	\newpage
+	\pagestyle{mymain}
+		\subfile{Sezioni/IntroduzioneST}
+	\newpage
+		\subfile{Sezioni/TecnologieUtilizzate}
+	\newpage
+		\subfile{Sezioni/ArchitetturaGenerale}
+	\newpage
+		\subfile{Sezioni/ComponentiEClassiPrincipali}
+	\newpage
+		\subfile{Sezioni/Tracciamenti}
+	\appendix
+	\newpage
+		\subfile{Sezioni/PatternUtilizzati}
+	\label{LastPage}
+\end{document}

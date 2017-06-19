@@ -136,6 +136,33 @@
 					complessità trattabile;
 					\item Riconoscere le componenti terminali.
 				\end{itemize}
+			\paragraph{Metriche\\}
+				Nello sviluppo del codice i \progettisti\ devono tenere sotto controllo i seguenti indicatori e accertarsi che i loro valori siano conformi a quanto indicato nel \pianodiqualificav:
+				\begin{itemize}
+					\item \textbf{Grado di accoppiamento\\}
+					Viene calcolato in base a due indici:
+						\begin{itemize}
+							\item Accoppiamento afferente: numero di classi esterne
+							al \gl{package} che dipendono da sue classi interne. Un numero
+							alto indica che troppe classi dipendono da tale package, quindi
+							eventuali modifiche provocherebbero forti ripercussioni
+							sull'esterno. Se il numero è basso il package risulta poco
+							utile;
+							\item Accoppiamento efferente: numero di classi interne
+							al package dipendenti da classi esterne. Un numero alto può
+							essere sintomo di una scarsa progettazione;
+						\end{itemize}
+					\item \textbf{Numero di parametri\\}
+						Indica il numero di parametri formali di un metodo. Più alto è il
+						numero dei parametri formali, più aumenta la quantità di memoria
+						occupata nella pila dei processi;
+					\item \textbf{Numero di campi dati\\}
+						Indica il numero di campi dati interni ad una classe. Un numero
+						elevato può rendere difficile la manutenibilità del codice della
+						classe oltre ad essere indice di cattiva programmazione.\\
+						È possibile ridurre il numero di campi dati attraverso
+						l'incapsulamento di ulteriori classi.	
+				\end{itemize}
 			\paragraph{Diagrammi UML\\}
 				Per definire l'architettura logica del sistema nella fase di progettazione,
 				verranno utilizzati	diversi tipi di diagrammi UML 2.0:
@@ -238,4 +265,45 @@
 					È preferibile evitare lo sviluppo di metodi e funzioni ricorsive. Qualora fossero
 					comunque usate si deve dimostrarne la corretta terminazione e valutarne l'impatto sulle
 					performace del prodotto in termini di memoria utilizzata.\\
+			\paragraph{Metriche\\}
+				Nello sviluppo del codice i \programmatori\ devono tenere sotto controllo i seguenti indicatori e accertarsi che i loro valori siano conformi a quanto indicato nel \pianodiqualificav:
+				\begin{itemize}
+					\item \textbf{Rapporto linee di commento su linee di codice\\}
+						Indica il rapporto tra linee di commento e linee di codice in un
+						file (linee vuote escluse). Ritenendo importante la rapidità di
+						comprensione del codice, questa metrica è utile per stimare la
+						manutenibilità;
+					\item \textbf{Complessità ciclomatica\\}
+						Indica il numero di cammini linearmente indipendenti attraverso il
+						grafo di controllo di flusso del metodo/funzione: i nodi del grafo
+						corrispondono a gruppi indivisibili di istruzioni mentre gli archi
+						connettono due nodi se il secondo gruppo può essere eseguito
+						immediatamente dopo il primo.\\
+						È possibile ridurre l'indice di complessità attraverso la
+						suddivisione del metodo/funzione in più parti;
+					\item \textbf{Livello di annidamento\\}
+						Indica quante strutture di controllo sono inserite l'una all'interno
+						dell'altra. Un alto livello di annidamento può portare ad una
+						complessità maggiore del codice causando difficoltà nella verifica,
+						comprensione e modifica dello stesso;
+					\item \textbf{Chiamate innestate di metodi\\}
+						Indica quante chiamate innestate di metodi sono inserite l'una
+						all'interno dell'altra. Un alto valore può portare a una saturazione
+						dello \gl{stack};
+					\item \textbf{Copertura del codice\\}
+						Rappresenta la percentuale di codice eseguita durante i test.
+						Maggiore è questo valore, più esaurienti saranno i test e maggiori
+						sono le probabilità di individuare gli eventuali errori;
+					\item \textbf{Numero di linee per metodo\\}
+						Indica il numero di \gl{statement} che compongono un metodo.
+						Se un metodo risulta troppo lungo il suo funzionamento risulterà più
+						complicato da comprendere, quindi può essere opportuno dividerlo in
+						più sotto-funzioni. Un metodo troppo lungo potrebbe addirittura essere
+						sintomo di cattiva progettazione della classe;
+					\item \textbf{Validazione \gl{W3C}\\}
+						L'applicativo web deve superare il test di validazione offerto da
+						W3C con 0 errori gravi.
+						Sono accettati avvisi ed inesattezze che non compromettano le
+						funzionalità del sito fino a un massimo di 10 per pagina;
+				\end{itemize}
 \end{document}
