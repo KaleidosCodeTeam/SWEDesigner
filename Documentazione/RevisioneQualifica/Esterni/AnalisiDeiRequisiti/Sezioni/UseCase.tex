@@ -210,7 +210,7 @@
 			\item L'utente può modificare una relazione (UC2.2.5);
 			\item L'utente può eliminare una relazione (UC2.2.6);
 			\item L'utente può creare una nuova interfaccia (UC2.2.7);
-			\item L'utente può modificare un'interfaccia (UC2.2.8);
+			\item L'utente può modificare un'interfaccia mediante la schermata di modifica dell'interfaccia (UC2.2.8);
 			\item L'utente può eliminare un'interfaccia (UC2.2.9);
 			\item L'utente può creare un commento (UC2.2.10);
 			\item L'utente può collegare un commento (UC2.2.11);
@@ -218,8 +218,7 @@
 			\item L'utente può eliminare un commento (UC2.2.13);
 			\item L'utente può aprire l'editor del diagramma dei package (UC2.2.14);
 			\item L'utente può riposizionare un elemento (UC2.2.15);
-			\item L'utente può modificare una classe mediante la schermata di modifica di una classe (UC2.2.16);
-			\item L'utente può modificare un'interfaccia mediante la schermata di modifica dell'interfaccia (UC2.2.17).
+			\item L'utente può modificare una classe mediante la schermata di modifica di una classe (UC2.2.16).
 		\end{itemize}
 		\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
 		\item \textbf{Postcondizione}: Il sistema apporta le modifiche desiderate al diagramma delle classi.
@@ -421,30 +420,119 @@
 				\item \textbf{Flusso principale degli eventi}: L'utente crea un'interfaccia;
 				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi l'interfaccia è correttamente visualizzato il diagramma nel quale è stata creata l'interfaccia.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.8: Modificare un'interfaccia}
+			\subsection{Caso d'uso UC2.2.8: Modificare un'interfaccia mediante la schermata di modifica dell'interfaccia}
 			\begin{figure} [H]
 				\centering
-				\includegraphics[scale=0.45]{./Figures/UC2-2-8.png}
-				\caption{Diagramma UC2.2.8}\label{}
+				\includegraphics[scale=0.45]{./Figures/UC2-2-17.png}
+				\caption{Diagramma UC2.2.17}\label{}
 			\end{figure}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
-				\item \textbf{Descrizione}: L'utente sceglie di modificare un'interfaccia all'interno dell'editor del diagramma delle classi;
-				\item \textbf{Precondizione}: Nell'editor del diagramma delle classi è stata selezionata l'interfaccia che l'utente desidera modificare;
+				\item \textbf{Descrizione}: L'utente vuole modificare un'interfaccia;
+				\item \textbf{Precondizione}: L'utente si trova nell'editor delle classi ed il sistema è pronto per ricevere un comando;
 				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
-					\item L'utente può apportare modifiche minori all'interfaccia;
-					\item L'utente può aprire la schermata di modifica dell'interfaccia corrispondente (UC2.2.8.1).
+					\item L'utente può aggiungere un'operazione (UC2.2.8.1);
+					\item L'utente può modificare un'operazione (UC2.2.8.2);
+					\item L'utente può rimuovere un'operazione (UC2.2.8.3);
+					\item L'utente può commentare l'interfaccia (UC2.2.8.4);
+					\item L'utente può marchiare l'interfaccia (UC2.2.8.5);
+					\item L'utente può passare dalla modifica dell'interfaccia al diagramma delle classi (UC2.2.8.6).
 				\end{itemize}
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, l'interfaccia rimane nello stato precedente al tentativo di modifica;
-				\item \textbf{Postcondizione}: Nell'editor del diagramma delle classi è visualizzato il diagramma dove sono state apportate le modifiche all'interfaccia.
+				\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate all'interfaccia;
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.8.1: Aprire la schermata di modifica dell'interfaccia corrispondente}
+			\subsection{Caso d'uso UC2.2.8.1: Aggiungere un'operazione}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
-				\item \textbf{Descrizione}: L'utente vuole modificare nel dettaglio un'interfaccia;
-				\item \textbf{Precondizione}: L'utente ha avviato il programma, ha aperto il diagramma delle classi e ha selezionato l'interfaccia che vuole modificare;
-				\item \textbf{Flusso principale degli eventi}: L'utente modifica nel dettaglio un'interfaccia;
-				\item \textbf{Postcondizione}: Il sistema visualizza la schermata di modifica di interfaccia corrispondente all'interfaccia selezionata dall'utente.
+				\item \textbf{Descrizione}: L'utente vuole aggiungere un'operazione all'interfaccia;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un'operazione all'interfaccia;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzata la classe a cui è stata aggiunta l'operazione desiderata;
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.2: Modificare un'operazione}
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.45]{./Figures/UC2-2-17-2.png}
+				\caption{Diagramma UC2.2.17.2}\label{}
+			\end{figure}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole modificare un'operazione già inserita in un'interfaccia;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+					\item L'utente può apportare modifiche minori;
+					\item L'utente può aprire il diagramma delle attività corrispondente (UC2.2.8.2.1);
+					\item L'utente può aggiungere un parametro (UC2.2.8.2.2);
+					\item L'utente può modificare un parametro (UC2.2.8.2.3);
+					\item L'utente può eliminare un parametro (UC2.2.8.2.4).
+				\end{itemize}
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata modificata l'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.2.1: Aprire il diagramma delle attività corrispondente}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole aprire il diagramma delle attività associato all'operazione che vuole modificare;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente apre il diagramma delle attività associato all'operazione che vuole modificare;
+				\item \textbf{Postcondizione}: Il sistema visualizza il diagramma delle attività corrispondente all'operazione che l'utente vuole modificare;
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.2.2: Aggiungere un parametro}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole aggiungere un parametro alla lista parametri dell'operazione;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un parametro alla lista parametri dell'operazione;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato aggiunto un parametro alla lista parametri dell'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.2.3: Modificare un parametro}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole modificare un parametro della lista parametri dell'operazione;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente modifica il parametro;
+				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il parametro rimane nello stato precedente al tentativo di modifica;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato modificato un parametro nella lista parametri dell'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.2.4: Eliminare un parametro}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole eliminare un parametro;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionato il parametro da rimuovere e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente elimina un parametro;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato rimosso il parametro dalla lista parametri dell'operazione.	
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.3: Rimuovere un'operazione}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole rimuovere un'operazione;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da rimuovere e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente rimuove l'operazione;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata rimossa l'operazione.
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.4: Commentare l'interfaccia}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole commentare l'interfaccia;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'interfaccia da commentare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente commenta l'interfaccia;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata commentata l'interfaccia.
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.5: Marchiare l'interfaccia}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole marchiare l'interfaccia;
+				\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'interfaccia da marchiare e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente marchia l'interfaccia;
+				\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata marchiata l'interfaccia.
+			\end{itemize}
+			\subsection{Caso d'uso UC2.2.8.6: Passare dalla modifica di interfaccia al diagramma delle classi}
+			\begin{itemize}
+				\item \textbf{Attori}: Utente
+				\item \textbf{Descrizione}: L'utente vuole tornare al diagramma delle classi dalla schermata di modifica di interfaccia;
+				\item \textbf{Precondizione}: Il sistema visualizza la schermata di modifica di interfaccia;
+				\item \textbf{Flusso principale degli eventi}: L'utente torna al diagramma delle classi dalla schermata di modifica di interfaccia;
+				\item \textbf{Postcondizione}: Il sistema visualizza l'editor del diagramma delle classi
 			\end{itemize}
 			\subsection{Caso d'uso UC2.2.9: Eliminare un'interfaccia}
 			\begin{itemize}
@@ -486,23 +574,7 @@
 				\item \textbf{Flusso principale degli eventi}: L'utente elimina un commento dal diagramma delle classi;
 				\item \textbf{Postcondizione}: Il commento viene eliminato dal diagramma delle classi.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.14: Aprire l'editor del diagramma dei package}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente
-				\item \textbf{Descrizione}: L'utente vuole aprire l'editor del diagramma dei package;
-				\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi e il sistema è pronto a ricevere un comando dall'utente;
-				\item \textbf{Flusso principale degli eventi}: L'utente apre l'editor del diagramma dei package;
-				\item \textbf{Postcondizione}: Il sistema visualizza la schermata dell'editor del diagramma dei package;
-			\end{itemize}
-			\subsection{Caso d'uso UC2.2.15: Riposizionare un elemento}
-			\begin{itemize}
-				\item \textbf{Attori}: Utente
-				\item \textbf{Descrizione}: L'utente vuole cambiare la posizione di un elemento all'interno del diagramma;
-				\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi e il sistema è pronto a ricevere un comando dall'utente;
-				\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento;
-				\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
-			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16: Modificare una classe mediante la schermata di modifica di una classe}
+			\subsection{Caso d'uso UC2.2.14: Modificare una classe mediante la schermata di modifica di una classe}
 			\begin{figure} [H]
 				\centering
 				\includegraphics[scale=0.45]{./Figures/UC2-2-16.png}
@@ -513,20 +585,20 @@
 				\item \textbf{Descrizione}: L'utente vuole modificare una classe;
 				\item \textbf{Precondizione}: L'utente ha selezionato una classe all'interno del diagramma delle classi che vuole modificare;
 				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
-					\item L'utente può aggiungere un attributo (UC2.2.16.1);
-					\item L'utente può modificare un attributo (UC2.2.16.2);
-					\item L'utente può eliminare un attributo (UC2.2.16.3);
-					\item L'utente può aggiungere un'operazione (UC2.2.16.4);
-					\item L'utente può modificare un'operazione (UC2.2.16.5);
-					\item L'utente può rimuovere un'operazione (UC2.2.16.6);
-					\item L'utente può commentare una classe (UC2.2.16.7);
-					\item L'utente può marchiare una classe (UC2.2.16.8);
-					\item L'utente può tornare al diagramma delle classi (UC2.2.16.9).
+					\item L'utente può aggiungere un attributo (UC2.2.14.1);
+					\item L'utente può modificare un attributo (UC2.2.14.2);
+					\item L'utente può eliminare un attributo (UC2.2.14.3);
+					\item L'utente può aggiungere un'operazione (UC2.2.14.4);
+					\item L'utente può modificare un'operazione (UC2.2.14.5);
+					\item L'utente può rimuovere un'operazione (UC2.2.14.6);
+					\item L'utente può commentare una classe (UC2.2.14.7);
+					\item L'utente può marchiare una classe (UC2.2.14.8);
+					\item L'utente può tornare al diagramma delle classi (UC2.2.14.9).
 				\end{itemize}
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di modifica;
 				\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate alla classe.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.1: Aggiungere un attributo}
+			\subsection{Caso d'uso UC2.2.14.1: Aggiungere un attributo}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole aggiungere un attributo ad una classe;
@@ -535,7 +607,7 @@
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di aggiunta;
 				\item \textbf{Postcondizione}: L'attributo viene aggiunto alla classe con i parametri decisi dall'utente.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.2: Modificare un attributo}
+			\subsection{Caso d'uso UC2.2.14.2: Modificare un attributo}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole modificare un attributo di una classe;
@@ -544,7 +616,7 @@
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, il campo dati rimane nello stato precedente al tentativo di modifica;
 				\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate all'attributo all'interno della classe.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.3: Eliminare un attributo}
+			\subsection{Caso d'uso UC2.2.14.3: Eliminare un attributo}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole eliminare un attributo all'interno di una classe;
@@ -553,7 +625,7 @@
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di eliminazione;
 				\item \textbf{Postcondizione}: L'attributo viene eliminato dalla classe dopo eventuali avvisi nel caso ci siano dipendenze da controllare.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.4: Aggiungere un'operazione}
+			\subsection{Caso d'uso UC2.2.14.4: Aggiungere un'operazione}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole aggiungere un'operazione ad una classe;
@@ -562,7 +634,7 @@
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di aggiunta;
 				\item \textbf{Postcondizione}: L'operazione viene aggiunta alla classe con i parametri decisi dall'utente.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.5: Modificare un'operazione}
+			\subsection{Caso d'uso UC2.2.14.5: Modificare un'operazione}
 			\begin{figure} [H]
 				\centering
 				\includegraphics[scale=0.45]{./Figures/UC2-2-16-5.png}
@@ -573,15 +645,15 @@
 				\item \textbf{Descrizione}: L'utente vuole modificare un' operazione all'interno di una classe;
 				\item \textbf{Precondizione}: L'utente ha selezionato l'operazione che vuole modificare all'interno di una classe;
 				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
-					\item L'utente può aggiungere un parametro (UC2.2.16.5.1);
-					\item L'utente può modificare un parametro (UC2.2.16.5.2);
-					\item L'utente può eliminare un parametro (UC2.2.16.5.3);
+					\item L'utente può aggiungere un parametro (UC2.2.14.5.1);
+					\item L'utente può modificare un parametro (UC2.2.14.5.2);
+					\item L'utente può eliminare un parametro (UC2.2.14.5.3);
 					\item L'utente può apportare modifiche minori.
 				\end{itemize}
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, l'operazione rimane nello stato precedente al tentativo di modifica;
 				\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate all'operazione all'interno della classe.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.5.1: Aggiungere un parametro}
+			\subsection{Caso d'uso UC2.2.14.5.1: Aggiungere un parametro}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole aggiungere un parametro alla lista parametri dell'operazione;
@@ -589,7 +661,7 @@
 				\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un parametro alla lista parametri dell'operazione;
 				\item \textbf{Postcondizione}: Nella schermata di modifica delle classi è visualizzato il parametro che è stato aggiunto alla lista parametri dell'operazione.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.5.2: Modificare un parametro}
+			\subsection{Caso d'uso UC2.2.14.5.2: Modificare un parametro}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole modificare un parametro della lista parametri dell'operazione;
@@ -597,7 +669,7 @@
 				\item \textbf{Flusso principale degli eventi}: \begin{itemize} \item L'utente può definire la direzione del parametro; \item L'utente può rinominare il parametro; \item L'utente può definire il tipo del parametro; \item L'utente può definire il valore di default del parametro. \end{itemize}
 				\item \textbf{Postcondizione}: Nella schermata di modifica delle classi è visualizzato il parametro che è stato modificato nella lista parametri dell'operazione.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.5.3: Rimuovere un parametro}
+			\subsection{Caso d'uso UC2.2.14.5.3: Rimuovere un parametro}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole rimuovere un parametro;
@@ -605,7 +677,7 @@
 				\item \textbf{Flusso principale degli eventi}: L'utente rimuove un parametro;
 				\item \textbf{Postcondizione}: Nella schermata di modifica delle classi è visualizzato il parametro che è stato rimosso dalla lista parametri dell'operazione.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.6: Rimuovere un'operazione}
+			\subsection{Caso d'uso UC2.2.14.6: Rimuovere un'operazione}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole rimuovere un'operazione all'interno di una classe;
@@ -614,7 +686,7 @@
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di rimozione;
 				\item \textbf{Postcondizione}: L'operazione viene rimossa dalla classe dopo eventuali avvisi nel caso ci siano dipendenze da controllare.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.7: Commentare una classe}
+			\subsection{Caso d'uso UC2.2.14.7: Commentare una classe}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole commentare una classe;
@@ -623,7 +695,7 @@
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di modifica;
 				\item \textbf{Postcondizione}: Il commento relativo alla classe viene impostato.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.8: Marchiare una classe}
+			\subsection{Caso d'uso UC2.2.14.8: Marchiare una classe}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole marchiare una classe con un attributo;
@@ -632,7 +704,7 @@
 				\item \textbf{Scenari alternativi}: Viene annullata la modifica, la classe rimane nello stato precedente al tentativo di modifica;
 				\item \textbf{Postcondizione}: La classe è stata marchiata con un attributo.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.16.9: Passare dalla modifica di una classe al diagramma delle classi}
+			\subsection{Caso d'uso UC2.2.14.9: Passare dalla modifica di una classe al diagramma delle classi}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
 				\item \textbf{Descrizione}: L'utente vuole spostarsi nella schermata del diagramma delle classi;
@@ -640,121 +712,15 @@
 				\item \textbf{Flusso principale degli eventi}: L'utente si sposta nella schermata del diagramma delle classi;
 				\item \textbf{Postcondizione}: L'utente si trova nella schermata del diagramma delle classi.
 			\end{itemize}
-			\subsection{Caso d'uso UC2.2.17: Modificare un'interfaccia mediante la schermata di modifica dell'interfaccia}
-			\begin{figure} [H]
-				\centering
-				\includegraphics[scale=0.45]{./Figures/UC2-2-17.png}
-				\caption{Diagramma UC2.2.17}\label{}
-			\end{figure}
+			\subsection{Caso d'uso UC2.2.15: Riposizionare un elemento}
 			\begin{itemize}
 				\item \textbf{Attori}: Utente
-				\item \textbf{Descrizione}: L'utente vuole modificare un'interfaccia;
-				\item \textbf{Precondizione}: L'utente si trova nell'editor delle classi ed il sistema è pronto per ricevere un comando;
-				\item \textbf{Flusso principale degli eventi}: \begin{itemize}
-					\item L'utente può aggiungere un'operazione (UC2.2.17.1);
-					\item L'utente può modificare un'operazione (UC2.2.17.2);
-					\item L'utente può rimuovere un'operazione (UC2.2.17.3);
-					\item L'utente può commentare l'interfaccia (UC2.2.17.4);
-					\item L'utente può marchiare l'interfaccia (UC2.2.17.5);
-					\item L'utente può passare dalla modifica dell'interfaccia al diagramma delle classi (UC2.2.17.6).
-				\end{itemize}
-					\item \textbf{Scenari alternativi}: Viene annullata la modifica, l'interfaccia rimane nello stato precedente al tentativo di modifica;
-					\item \textbf{Postcondizione}: Le modifiche decise dall'utente vengono applicate all'interfaccia;
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.1: Aggiungere un'operazione}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole aggiungere un'operazione all'interfaccia;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un'operazione all'interfaccia;
-					\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzata la classe a cui è stata aggiunta l'operazione desiderata;
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.2: Modificare un'operazione}
-				\begin{figure} [H]
-					\centering
-					\includegraphics[scale=0.45]{./Figures/UC2-2-17-2.png}
-					\caption{Diagramma UC2.2.17.2}\label{}
-				\end{figure}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole modificare un'operazione già inserita in un'interfaccia;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: \begin{itemize}
-						\item L'utente può apportare modifiche minori;
-						\item L'utente può aprire il diagramma delle attività corrispondente (UC2.2.17.2.1);
-						\item L'utente può aggiungere un parametro (UC2.2.17.2.2);
-						\item L'utente può modificare un parametro (UC2.2.17.2.3);
-						\item L'utente può eliminare un parametro (UC2.2.17.2.4).
-					\end{itemize}
-					\item \textbf{Scenari alternativi}: Viene annullata la modifica, il sistema rimane nello stato precedente al tentativo di modifica;
-					\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata modificata l'operazione.
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.2.1: Aprire il diagramma delle attività corrispondente}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole aprire il diagramma delle attività associato all'operazione che vuole modificare;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: L'utente apre il diagramma delle attività associato all'operazione che vuole modificare;
-					\item \textbf{Postcondizione}: Il sistema visualizza il diagramma delle attività corrispondente all'operazione che l'utente vuole modificare;
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.2.2: Aggiungere un parametro}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole aggiungere un parametro alla lista parametri dell'operazione;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: L'utente aggiunge un parametro alla lista parametri dell'operazione;
-					\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato aggiunto un parametro alla lista parametri dell'operazione.
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.2.3: Modificare un parametro}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole modificare un parametro della lista parametri dell'operazione;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da modificare e il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: L'utente modifica il parametro;
-					\item \textbf{Scenari alternativi}: Viene annullata la modifica, il parametro rimane nello stato precedente al tentativo di modifica;
-					\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato modificato un parametro nella lista parametri dell'operazione.
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.2.4: Eliminare un parametro}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole eliminare un parametro;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionato il parametro da rimuovere e il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: L'utente elimina un parametro;
-					\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stato rimosso il parametro dalla lista parametri dell'operazione.	
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.3: Rimuovere un'operazione}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole rimuovere un'operazione;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'operazione da rimuovere e il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: L'utente rimuove l'operazione;
-					\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata rimossa l'operazione.
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.4: Commentare l'interfaccia}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole commentare l'interfaccia;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'interfaccia da commentare e il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: L'utente commenta l'interfaccia;
-					\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata commentata l'interfaccia.
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.5: Marchiare l'interfaccia}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole marchiare l'interfaccia;
-					\item \textbf{Precondizione}: Nella schermata di modifica di interfaccia è stata selezionata l'interfaccia da marchiare e il sistema è pronto a ricevere un comando dall'utente;
-					\item \textbf{Flusso principale degli eventi}: L'utente marchia l'interfaccia;
-					\item \textbf{Postcondizione}: Nella schermata di modifica di interfaccia è visualizzato il diagramma dove è stata marchiata l'interfaccia.
-				\end{itemize}
-				\subsection{Caso d'uso UC2.2.17.6: Passare dalla modifica di interfaccia al diagramma delle classi}
-				\begin{itemize}
-					\item \textbf{Attori}: Utente
-					\item \textbf{Descrizione}: L'utente vuole tornare al diagramma delle classi dalla schermata di modifica di interfaccia;
-					\item \textbf{Precondizione}: Il sistema visualizza la schermata di modifica di interfaccia;
-					\item \textbf{Flusso principale degli eventi}: L'utente torna al diagramma delle classi dalla schermata di modifica di interfaccia;
-					\item \textbf{Postcondizione}: Il sistema visualizza l'editor del diagramma delle classi
-				\end{itemize}
-				\subsection{Caso d'uso UC2.3: Editare il diagramma delle attività}
+				\item \textbf{Descrizione}: L'utente vuole cambiare la posizione di un elemento all'interno del diagramma;
+				\item \textbf{Precondizione}: L'utente si trova nella schermata dell'editor del diagramma delle classi e il sistema è pronto a ricevere un comando dall'utente;
+				\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento;
+				\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
+			\end{itemize}
+			\subsection{Caso d'uso UC2.3: Editare il diagramma delle attività}
 				\begin{figure} [H]
 					\centering
 					\includegraphics[scale=0.45]{./Figures/UC2-3a.png}
