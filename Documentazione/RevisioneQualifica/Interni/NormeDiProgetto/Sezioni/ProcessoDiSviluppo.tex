@@ -33,6 +33,40 @@
 				specifica del capitolato e la convocazione di riunioni con il proponente
 				\proponente\ volte al chiarimento di eventuali dubbi o all'approfondimento di
 				requisiti già noti.
+			\paragraph{Studio di Fattibilità\\}
+				Alla pubblicazione dei capitolati, è compito del \responsabilediprogetto\ organizzare riunioni interne allo scopo di confrontare le opinioni dei componenti riguardo i capitolati proposti. Queste riunioni forniranno agli \analisti\ una base riguardante
+				le conoscenze e preferenze di ogni membro del gruppo. È compito degli \analisti\, sulla
+				base di quanto deciso, redigere uno \studiodifattibilita\ dei capitolati basandosi su:
+				\begin{itemize}
+					\item \textbf{Dominio tecnologico e applicativo}: conoscenza delle tecnologie richieste,
+					esperienze precedenti con le problematiche poste dal capitolato, conoscenza del
+					dominio applicativo;
+					\item \textbf{Rapporto Costi/Benefici}: competitori e prodotti simili già presenti sul mercato
+					, quantità di requisiti obbligatori, costo della realizzazione rapportato al
+					risultato previsto;
+					\item \textbf{Individuazione dei rischi}: Comprensione dei punti critici della realizzazione,
+					individuazione di eventuali lacune tecniche o di conoscenza del dominio applicativo
+					dei membri del gruppo, analisi delle difficoltà nell’individuazione dei requisiti e loro
+					verificabilità.
+				\end{itemize}
+				Un’ultima riunione interna al gruppo \kaleidoscode\ presenterà la decisione finale sul
+				capitolato scelto.
+				
+			\paragraph{Analisi dei requisiti\\}
+				Dopo aver concluso lo studio di fattibilità, sarà compito degli \analisti redigere e/o incrementare il
+				documento \analisideirequisiti.
+				Lo scopo principale di questa attività è quella di produrre dei requisiti semplici e di
+				facile comprensione, a partire da tutte le informazioni recuperabili.
+				Per automatizzare e velocizzare il più possibile questa attività, è stato creato dal
+				team il software \hyperlink{SWEgo}{SWEgo} , in cui andranno inseriti i requisiti, casi d'uso e relativo tracciamento.
+				Le risorse che si possono analizzare per ottenere informazioni sui requisiti, ordinate
+				per importanza in ordine decrescente, sono le seguenti:
+				\begin{enumerate}
+					\item Il capitolato d’appalto;
+					\item Incontri con il Proponente;
+					\item Incontri con il Committente.
+				\end{enumerate}
+			
 			\paragraph{Classificazione dei requisiti\\}
 				Viene stilata una lista dei requisiti individuati nel capitolato e nelle
 				riunioni avvenute con il Proponente. La classificazione
@@ -69,12 +103,13 @@
 					\end{itemize}
 					\item \textbf{Descrizione} breve e chiara.
 				\end{itemize}
-				Tutti i requisiti devono essere inseriti nell'apposito sistema di tracciamento ``SWEgo''
+				Tutti i requisiti devono essere inseriti nell'apposito sistema di tracciamento \hyperlink{SWEgo}{SWEgo} 
 				realizzato all'interno del gruppo, che provvederà alla generazione
 				dei codici identificativi univoci.
+				
 			\paragraph{Classificazione dei casi d'uso\\}
-				L'analisi e l'identificazione dei casi d'uso, o use case (UC), deve
-				procedere dal generale al particolare.\\
+				È richiesta agli \analisti\ l'analisi e l'identificazione dei casi d'uso, o use case (UC), procedendo dal generale al particolare,
+				e il loro inserimento nel software di tracciamento \hyperlink{SWEgo}{SWEgo} .\\
 				Ciascun caso d'uso sarà classificato gerarchicamente con la seguente dicitura:
 				\begin{center}
 					UC[Codice del padre].[Codice identificativo]
@@ -106,9 +141,10 @@
 					\item \textbf{Postcondizione}.
 				\end{itemize}
 				Infine, tutti i principali casi d'uso devono essere rappresentati da un diagramma UML.\\
-				Tutti i casi d'uso devono essere inseriti nell'apposito sistema di tracciamento ``SWEgo''
+				Tutti i casi d'uso devono essere inseriti nell'apposito sistema di tracciamento \hyperlink{SWEgo}{SWEgo} 
 				realizzato all'interno del gruppo, che provvederà alla generazione
 				dei codici identificativi univoci.
+				
 		\subsubsection{Progettazione}
 			\paragraph{Scopo\\}
 				In questa fase viene descritta una soluzione del problema soddisfacente per tutti
@@ -136,33 +172,30 @@
 					complessità trattabile;
 					\item Riconoscere le componenti terminali.
 				\end{itemize}
-			\paragraph{Metriche\\}
-				Nello sviluppo del codice i \progettisti\ devono tenere sotto controllo i seguenti indicatori e accertarsi che i loro valori siano conformi a quanto indicato nel \pianodiqualificav:
-				\begin{itemize}
-					\item \textbf{Grado di accoppiamento\\}
-					Viene calcolato in base a due indici:
-						\begin{itemize}
-							\item Accoppiamento afferente: numero di classi esterne
-							al \gl{package} che dipendono da sue classi interne. Un numero
-							alto indica che troppe classi dipendono da tale package, quindi
-							eventuali modifiche provocherebbero forti ripercussioni
-							sull'esterno. Se il numero è basso il package risulta poco
-							utile;
-							\item Accoppiamento efferente: numero di classi interne
-							al package dipendenti da classi esterne. Un numero alto può
-							essere sintomo di una scarsa progettazione;
-						\end{itemize}
-					\item \textbf{Numero di parametri\\}
-						Indica il numero di parametri formali di un metodo. Più alto è il
-						numero dei parametri formali, più aumenta la quantità di memoria
-						occupata nella pila dei processi;
-					\item \textbf{Numero di campi dati\\}
-						Indica il numero di campi dati interni ad una classe. Un numero
-						elevato può rendere difficile la manutenibilità del codice della
-						classe oltre ad essere indice di cattiva programmazione.\\
-						È possibile ridurre il numero di campi dati attraverso
-						l'incapsulamento di ulteriori classi.	
-				\end{itemize}
+			
+			\paragraph{Specifica tecnica\\}
+				I \progettisti\ devono produrre la \specificatecnica, dove viene descritta la progettazione architetturale ad
+				alto livello del sistema. \\ Ogni requisito deve essere tracciato
+				ad un componente che lo soddisfa mediante l'apposito sistema di tracciamento \hyperlink{SWEgo}{SWEgo},
+				 in modo tale da garantire
+				il soddisfacimento dei requisiti.\\
+				Per la progettazione ad alto livello è necessario definire i test di integrazione, sistema e
+				validazione che verranno descritti nel \pianodiqualifica.
+			
+			\paragraph{Definizione di prodotto\\}
+				I \progettisti\ devono produrre la \definizionediprodotto, dove viene descritta la progettazione di dettaglio del sistema ampliando quanto scritto nella \specificatecnica.
+				Lo scopo di questo documento è quello di definire dettagliatamente ogni singola unità
+				di cui è composto il sistema in modo da semplificare l’attività di codifica dei \programmatori.
+				Parallelamente alla progettazione di dettaglio dei componenti software dovranno essere
+				progettati i relativi test di unità che verranno descritti nel \pianodiqualifica. \\
+				Ogni requisito deve essere tracciato alla/e classe/i che lo soddisfano mediante l'apposito sistema di tracciamento \hyperlink{SWEgo}{SWEgo}, in modo tale da garantire
+				che ogni classe soddisfi almeno un requisito.\\
+			
+			\paragraph{Definizione di classe}  %%%%%%%%%%%%    TODO     %%%%%%%%%%%%%%%
+				Ogni classe progettata deve essere descritta all’interno della \definizionediprodotto;
+				tale descrizione deve comprendere gli attributi e i metodi con relativi parametri, una spiegazione sullo
+				scopo della classe e deve specificare quale funzionalità essa modella.
+				
 			\paragraph{Diagrammi UML\\}
 				Per definire l'architettura logica del sistema nella fase di progettazione,
 				verranno utilizzati	diversi tipi di diagrammi UML 2.0:
@@ -172,9 +205,30 @@
 					\item Diagrammi dei \gl{package};
 					\item Diagrammi di sequenza.
 				\end{itemize}
+			
 			\paragraph{\gl{Design pattern}\\}
 				I \progettisti\ devono descrivere i design pattern utilizzati per realizzare l'architettura.
-				È necessario fornire una breve descrizione ed un diagramma semplificato per ognuno di essi.
+				È necessario fornire una breve descrizione ed un diagramma che ne esemplifichi il funzionamento e la struttura per ognuno di essi.
+				
+			\paragraph{Test di integrazione\\}   
+				I \progettisti\ dovranno definire i test di integrazione da utilizzare per testare i vari
+				componenti descritti nella progettazione ad alto livello, che permettono di verificare la
+				corretta integrazione ed il corretto flusso dei dati all’interno del sistema.
+				
+			\paragraph{Test di sistema\\}       
+			    I \progettisti\ dovranno definire i test di sistema, allo scopo di verificare se una collezione intera
+			     di moduli funzioni correttamente, assumendo che i singoli moduli abbiamo, individualmente, un comportamento accettabile.
+			    
+			\paragraph{Test di validazione\\}    
+				I \progettisti\ dovranno definire i test di validazione, i quali vengono effettuati con il Proponente e servono per accertarsi che il
+				prodotto realizzato sia conforme alle attese. \\
+				Per ogni test è descritta una serie di passi che l’utente deve seguire in modo tale da
+				effettuarlo correttamente.
+				
+			\paragraph{Test di unità\\}     
+				I \progettisti dovranno definire i test di unità, ovvero le procedure utilizzate per verificare che un particolare frammento di codice presenti il comportamento aspettato; in altre parole, i test necessari per verificare che le singole
+				componenti del sistema funzionino nel modo previsto.
+				
 			\paragraph{Classificazione dei test\\}
 				Ciascun test sarà identificato univocamente con la seguente dicitura:
 				\begin{center}
@@ -195,19 +249,18 @@
 				Tutti i test devono essere inseriti nell'apposito sistema di tracciamento ``SWEgo''
 				realizzato all'interno del gruppo, che provvederà alla generazione
 				dei codici identificativi univoci.
-			\paragraph{Specifica tecnica\\}
-				Per la redazione del documento è necessario effettuare la progettazione architetturale ad
-				alto livello, utilizzando i diagrammi UML sopra elencati. Ogni requisito deve essere tracciato
-				al un componente che lo soddisfa mediante il software utilizzato in modo tale da garantire
-				il soddisfacimento dei requisiti.\\
-				Per la progettazione ad alto livello è necessario definire i test di integrazione, sistema e
-				validazione.
-			\paragraph{Definizione di prodotto\\}
-				Per la redazione del documento è necessario effettuare la progettazione architetturale di
-				dettaglio, utilizzando i diagrammi UML sopra elencati. Ogni requisito deve essere tracciato
-				alla/e classe/i che lo soddisfano mediante il software utilizzato in modo tale da garantire
-				che ogni classe soddisfi almeno un requisito.\\
-				È necessario definire i test di unità mancanti.
+				
+			\paragraph{Tracciamento}  
+			\begin{itemize}
+				\item Ogni requisito deve essere tracciato al componente che lo soddisfa. In questo modo sarà possibile garantire che ogni requisito venga soddisfatto e,
+				al tempo stesso, misurare il progresso nell’attività di progettazione. Tale tracciamento è riportato nella \specificatecnica;
+				\item Ogni test di validazione deve essere tracciato con il requisito che valida. Tale tracciamento è riportato nel \pianodiqualifica;
+				\item Ogni test di sistema deve essere tracciato con il requisito che valida. Tale tracciamento è riportato nel \pianodiqualifica;
+				\item Ogni test di integrazione deve essere tracciato con la componente del sistema che valida. Tale tracciamento è riportato nel \pianodiqualifica;
+				\item Ogni test di unità deve essere tracciato con la classe che valida. Tale tracciamento è riportato nel \pianodiqualifica;
+			\end{itemize}
+		
+		
 		\subsubsection{Codifica}
 			\paragraph{Scopo\\}
 				Lo scopo della fase di codifica è quello di implementare il prodotto costruendo
@@ -264,7 +317,7 @@
 					i blocchi. L'indentazione deve essere effettuata utilizzando il tasto di tabulazione.\\
 					È preferibile evitare lo sviluppo di metodi e funzioni ricorsive. Qualora fossero
 					comunque usate si deve dimostrarne la corretta terminazione e valutarne l'impatto sulle
-					performace del prodotto in termini di memoria utilizzata.\\
+					performance del prodotto in termini di memoria utilizzata.\\
 			\paragraph{Metriche\\}
 				Nello sviluppo del codice i \programmatori\ devono tenere sotto controllo i seguenti indicatori e accertarsi che i loro valori siano conformi a quanto indicato nel \pianodiqualificav:
 				\begin{itemize}
