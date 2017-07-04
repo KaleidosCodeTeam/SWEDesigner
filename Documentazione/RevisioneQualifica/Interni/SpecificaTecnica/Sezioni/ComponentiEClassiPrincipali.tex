@@ -32,9 +32,9 @@
 		È l'interfaccia che rappresenta un generico comando impartito dai moduli View ai Model.\\
 		FAN-IN:
 		\begin{itemize}
-			\item ConcreteCommand;
-			\item MainView;
-			\item State.
+			\item ConcreteCommand: implementa l'interfaccia Command per la rappresentazione concreta dei singoli comandi impartiti dai moduli View ai Model;
+			\item View: il componente del programma che si occupa di gestire l'interfaccia grafica;
+			\item State: gestisce la cronologia delle operazioni svolte permettendo le operazioni di unDo e reDo.
 		\end{itemize}
 		Non ci sono dipendenze OUT.
 		\subsubsection{SWEDesigner::Client::Model::ConcreteCommand}
@@ -42,181 +42,74 @@
 		Non ci sono dipendenze IN.\\
 		FAN-OUT:
 		\begin{itemize}
-			\item Command;
-			\item MainModel.
+			\item Command: è l'interfaccia che rappresenta un generico comando impartito dai moduli View ai Model;
+			\item projectModel: si occupa di gestire la parte logica dell'editor.
 		\end{itemize}
 		\subsubsection{SWEDesigner::Client::Model::State}
 		\hypertarget{SWEDesigner::Client::Model::State}
 		Gestisce la cronologia delle operazioni svolte permettendo le operazioni di unDo e reDo.\\
 		FAN-IN:
 		\begin{itemize}
-			\item MainView.
+			\item View: il componente del programma che si occupa di gestire l'interfaccia grafica.
 		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
-			\item Command.
+			\item Command: è l'interfaccia che rappresenta un generico comando impartito dai moduli View ai Model.
 		\end{itemize}.
-		\subsubsection{SWEDesigner::Client::Model::DAO}
-		\hypertarget{SWEDesigner::Client::Model::DAO}
+		\subsubsection{SWEDesigner::Client::Model::dataManager}
+		\hypertarget{SWEDesigner::Client::Model::dataManager}
 		Si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto già esistente.\\
 		FAN-IN:
 		\begin{itemize}
-			\item MainView.
+			\item View: il componente del programma che si occupa di gestire l'interfaccia grafica.
 		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
-			\item MainModel.
+			\item projectModel: si occupa di gestire la parte logica dell'editor;
+			\item project: si occupa di gestire gli elementi contenuti nel diagramma.
 		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::MainModel}
+		\subsubsection{SWEDesigner::Client::Model::projectModel}
 			% IMMAGINE ARCHITETTURA MAINMODEL
-			\begin{figure}[H]\label{fig:MainModel}
+			\begin{figure}[H]\label{fig:Model}
 				\centering
 				\includegraphics[scale=0.46]{Immagini/DiagrammaArchitettura/MainModel.png}
-				\caption{Architettura di MainModel}
+				\caption{Architettura di Model}
 			\end{figure}
 		È il componente del programma che si occupa di gestire la parte logica dell’editor.\\
 		FAN-IN:
 		\begin{itemize}
-			\item ConcreteCommand;
-			\item DAO;
-			\item MainView;
-			\item Client::RequestHandler::Receiver.
+			\item ConcreteCommand: rappresenta i comandi inviati dalle View ed eseguiti poi da Model;
+			\item dataManager: si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto e del caricamento di un progetto già esistente;
+			\item View: invoca il metodo execCommand;
+			\item Client::RequestHandler::Receiver: si occupa di gestire i dati ricevuti dal server.
 		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
-			\item Client::RequestHandler::Sender.
+			\item Client::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il server.
 		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::TitleBarModel}
-		\hypertarget{SWEDesigner::Client::Model::TitleBarModel}
-		Si occupa di gestire la parte logica della barra del titolo.\\
+		
+		\subsubsection{SWEDesigner::Client::Model::toolbarModel}
+		È il componente del programma che si occupa di gestire la parte logica della toolbar.\\
+		FAN-IN:\\
+		Non ci sono dipendenze IN. \\
+		FAN-OUT:
+		\begin{itemize}
+			\item projectModel: si occupa di gestire la parte logica dell'editor;
+			\item swedesignerItems: definisce il comportamento degli oggetti contenuti nel diagramma.
+		\end{itemize}
+	
+		
+		\subsubsection{SWEDesigner::Client::Model::project}
+		si occupa di gestire gli elementi contenuti nel diagramma.\\
 		FAN-IN:
 		\begin{itemize}
-			\item MainModel.
+			\item projectModel: si occupa di gestire la parte logica dell'editor;
+			\item dataManager: Si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto già esistente;
+			\item requestHandler: Si occupa di gestire le comunicazioni con il server.
 		\end{itemize}
-		Non ci sono dipendenze OUT.
-		\subsubsection{SWEDesigner::Client::Model::ToolBarModel}
-		È il componente del programma che si occupa di gestire la parte logica delle toolbar.\\
-		FAN-IN:
-		\begin{itemize}
-			\item MainModel;
-			\item PackageToolbar;
-			\item ClassToolbar;
-			\item ActivityToolbar;
-			\item BubbleToolbar.
-		\end{itemize}
-		Non ci sono dipendenze OUT.
-		\subsubsection{SWEDesigner::Client::Model::PackageToolbar}
-		\hypertarget{SWEDesigner::Client::Model::PackageToolbar}
-		Rappresenta la particolare toolbar legata all’editor del diagramma dei package.\\
-		Non ci sono dipendenze IN.\\
-		FAN-OUT:
-		\begin{itemize}
-			\item ToolbarModel.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::ClassToolbar}
-		\hypertarget{SWEDesigner::Client::Model::ClassToolbar}
-		Rappresenta la particolare toolbar legata all’editor del diagramma delle classi.\\
-		Non ci sono dipendenze IN.\\
-		FAN-OUT:
-		\begin{itemize}
-			\item ToolbarModel.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::ActivityToolbar}
-		\hypertarget{SWEDesigner::Client::Model::ActivityToolbar}
-		Rappresenta la particolare toolbar legata all’editor del diagramma delle attività.\\
-		Non ci sono dipendenze IN.\\
-		FAN-OUT:
-		\begin{itemize}
-			\item ToolbarModel.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::BubbleToolbar}
-		\hypertarget{SWEDesigner::Client::Model::BubbleToolbar}
-		Rappresenta la particolare toolbar legata all’editor del bubble flowchart.\\
-		Non ci sono dipendenze IN.\\
-		FAN-OUT:
-		\begin{itemize}
-			\item ToolbarModel.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::AddressModel}
-		\hypertarget{SWEDesigner::Client::Model::AddressModel}
-		Si occupa di gestire la parte logica della barra degli indirizzi.\\
-		FAN-IN:
-		\begin{itemize}
-			\item MainModel.
-		\end{itemize}
-		Non ci sono dipendenze OUT.
-		\subsubsection{SWEDesigner::Client::Model::EditPanelModel}
-		\hypertarget{SWEDesigner::Client::Model::EditPanelModel}
-		Si occupa di gestire la parte logica del pannello di editing laterale.\\
-		FAN-IN:
-		\begin{itemize}
-			\item ItemPanel;
-			\item MainModel.
-		\end{itemize}
-		Non ci sono dipendenze OUT.\\
-		\subsubsection{SWEDesigner::Client::Model::ItemPanel}
-		Estende la funzionalità di EditPanelModel specificamente per ciascun oggetto selezionato.\\
-		Non ci sono dipendenze IN.\\
-		FAN-OUT:
-		\begin{itemize}
-			\item EditPanelModel.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::DiagramTree}
-		È la collezione di tutti i model associati a ciascun diagramma.\\
-		FAN-IN:
-		\begin{itemize}
-			\item MainModel.
-		\end{itemize}
-		FAN-OUT:
-		\begin{itemize}
-			\item Diagram.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::Diagram}
-		Si occupa di gestire la parte logica di un diagramma.\\
-		FAN-IN:
-		\begin{itemize}
-			\item ActivityDiagram;
-			\item BubbleDiagram;
-			\item ClassDiagram;
-			\item DiagramTree;
-			\item PackageDiagram.
-		\end{itemize}
-		FAN-OUT:
-		\begin{itemize}
-			\item joint.dia.Graph.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::PackageDiagram}
-		\hypertarget{SWEDesigner::Client::Model::PackageDiagram}
-		Estende le funzionalità di Diagram per rappresentare un diagramma dei package.\\
-		Non ci sono dipendenze IN.\\
-		FAN-OUT:
-		\begin{itemize}
-			\item Diagram.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::ClassDiagram}
-		\hypertarget{SWEDesigner::Client::Model::ClassDiagram}
-		Estende le funzionalità di Diagram per rappresentare un diagramma delle classi.\\
-		Non ci sono dipendenze IN.\\
-		FAN-OUT:
-		\begin{itemize}
-			\item Diagram.
-		\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::ActivityDiagram}
-		\hypertarget{SWEDesigner::Client::Model::ActivityDiagram}
-		Estende le funzionalità di Diagram per rappresentare un diagramma delle attività.\\
-		Non ci sono dipendenze IN.\\
-			FAN-OUT:
-			\begin{itemize}
-				\item Diagram.
-			\end{itemize}
-		\subsubsection{SWEDesigner::Client::Model::BubbleDiagram}
-		\hypertarget{SWEDesigner::Client::Model::BubbleDiagram}
-		Estende le funzionalità di Diagram per rappresentare un bubble flowchart.\\
-		Non ci sono dipendenze IN.\\
-			FAN-OUT:
-			\begin{itemize}
-				\item Diagram.
-			\end{itemize}
+		FAN-OUT:\\
+		Non ci sono dipendenze OUT. \\
+		
 		\subsection{SWEDesigner::Client::Model::RequestHandler}
 		\hypertarget{SWEDesigner::Client::Model::RequestHandler}
 		Questo package non contiene dei sottopackage.\\
@@ -225,85 +118,86 @@
 		Si occupa di gestire le comunicazioni in uscita verso il server.\\
 		FAN-IN:
 		\begin{itemize}
-			\item MainModel.
+			\item View: ne invoca i metodi.
 		\end{itemize}
-			FAN-OUT:
-			\begin{itemize}
-				\item Server::RequestHandler::Receiver.
-			\end{itemize}
+		FAN-OUT:
+		\begin{itemize}
+			\item projectModel: si occupa di gestire la parte logica dell'editor;
+			\item project: si occupa di gestire gli elementi contenuti nel diagramma;
+			\item Server::RequestHandler::Receiver: si occupa di gestire le comunicazioni in entrata dal Client.
+		\end{itemize}
 		\subsubsection{SWEDesigner::Client::Model::RequestHandler::Receiver}
 		Si occupa di gestire le comunicazioni in entrata dal server.\\
 		FAN-IN:
 		\begin{itemize}
-			\item Server::RequestHandler::Sender.
+			\item Server::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il Client.
 		\end{itemize}
-			FAN-OUT:
-			\begin{itemize}
-				\item MainModel.
-			\end{itemize}
+		FAN-OUT:
+		\begin{itemize}
+			\item projectModel: si occupa di gestire la parte logica dell'editor;
+			\item project: si occupa di gestire gli elementi contenuti nel diagramma.
+		\end{itemize}
 		\subsection{SWEDesigner::Client::View}
 		\hypertarget{SWEDesigner::Client::View}
 		Questo package non contiene dei sottopackage.
 		Le classi contenute al suo interno verranno elencate qui di seguito.
-		\subsubsection{SWEDesigner::Client::View::MainView}
+		\subsubsection{SWEDesigner::Client::View::projectView}
 			% IMMAGINE ARCHITETTURA MAINVIEW
 			\begin{figure}[H]\label{fig:MainModel}
 				\centering
 				\includegraphics[scale=0.44]{Immagini/DiagrammaArchitettura/MainView.png}
-				\caption{Architettura di MainView}
+				\caption{Architettura di projectView}
 			\end{figure}
-		È il componente del programma che si occupa di gestire l'interfaccia grafica. Nella particolare declinazione MVC adottata da Backbone.js, si occupa anche di gestire gli input dell'utente e si interfaccia con il model attraverso dei command. È un aggregatore di altre classi View specializzate nella gestione dei diversi elementi dell'interfaccia grafica, in particolare TitleBarView, ToolBarView, AddressView, EditPanelView e Paper.\\
-		Non ci sono dipendenze IN.\\
+		È il componente del programma che si occupa di gestire l'interfaccia grafica. Nella particolare declinazione MVC adottata da Backbone.js, si occupa anche di gestire gli input dell'utente.\\
+			FAN-IN:
+			\begin{itemize}
+				\item pathView: gestisce l'interfaccia grafica della barra di indirizzo;
+				\item editPanelView: gestisce l'interfaccia grafica del pannello di editing.
+			\end{itemize}
 			FAN-OUT:
 			\begin{itemize}
-				\item State;
-				\item DAO;
-				\item MainModel;
-				\item Command;
-				\item TitleBarView;
-				\item ToolbarView;
-				\item AddressView;
-				\item EditPanelView;
-				\item Paper.
+				\item projectModel: si occupa di gestire la parte logica dell'editor;
+				\item Paper: gestisce l'interfaccia grafica dell'area dei diagrammi.
 			\end{itemize}
-		\subsubsection{SWEDesigner::Client::View::TitleBarView}
+		\subsubsection{SWEDesigner::Client::View::titlebarView}
 		È il componente del programma che fa la funzione di view per la barra del titolo, dove saranno collocati il menu dell’applicazione e gli shortcut.\\
-		FAN-IN:
-		\begin{itemize}
-			\item MainView.
-		\end{itemize}
-		Non ci sono dipendenze OUT.\\
-		\subsubsection{SWEDesigner::Client::View::ToolBarView}
+			FAN-IN:\\
+			Non ci sono dipendenze IN.\\
+			FAN-OUT:
+			\begin{itemize}
+				\item requestHandler: gestisce la comunicazione con il server;
+				\item dataManager: gestisce la persistenza dei dati su file system.
+			\end{itemize}
+
+		\subsubsection{SWEDesigner::Client::View::toolbarView}
 		È il componente del programma che fa la funzione di view per la toolbar dove saranno collocati gli strumenti per editare i diagrammi.\\
-		FAN-IN:
-		\begin{itemize}
-			\item MainView.
-		\end{itemize}
-		Non ci sono dipendenze OUT.\\
-		\subsubsection{SWEDesigner::Client::View::AddressView}
+			FAN-IN:\\
+			Non ci sono dipendenze IN.\\
+			FAN-OUT:
+			\begin{itemize}
+				\item projectModel: si occupa di gestire la parte logica dell'editor;
+				\item toolbarModel: si occupa di gestire la parte logica della toolbar.
+			\end{itemize}
+
+		\subsubsection{SWEDesigner::Client::View::pathView}
 		È il componente del programma che fa la funzione di view per il cosiddetto breadcrumb dove viene inserita la posizione corrente.\\
 		FAN-IN:
-		\begin{itemize}
-			\item MainView.
-		\end{itemize}
-		Non ci sono dipendenze OUT.\\
-		\subsubsection{SWEDesigner::Client::View::EditPanelView}
-		È il componente del programma che fa la funzione di view per le informazioni editabili degli elementi che fanno parte dei diversi diagrammi.\\
-		FAN-IN:
-		\begin{itemize}
-			\item MainView.
-		\end{itemize}
-		Non ci sono dipendenze OUT.\\
-		\subsubsection{SWEDesigner::Client::View::Paper}
-		È il componente del programma che fa la funzione di view per i diversi diagrammi.\\
-		FAN-IN:
-		\begin{itemize}
-			\item MainView.
-		\end{itemize}
+		Non ci sono dipendenze IN. \\
 		FAN-OUT:
 		\begin{itemize}
-			\item joint.dia.Paper.
+			\item projectModel: si occupa di gestire la parte logica dell'editor;
+			\item projectView: si occupa di gestire la parte grafica del model.
 		\end{itemize}
+	
+		\subsubsection{SWEDesigner::Client::View::EditPanelView}
+		È il componente del programma che fa la funzione di view per le informazioni editabili degli elementi che fanno parte dei diversi diagrammi.\\
+		FAN-IN:\\
+		Non ci sono dipendenze IN. \\
+		FAN-OUT:
+		\begin{itemize}
+			\item projectView: si occupa di gestire la parte grafica del model.
+		\end{itemize}
+	
 		\subsection{SWEDesigner::Server}
 			% IMMAGINE ARCHITETTURA SERVER GENERALE
 			\begin{figure}[H]\label{fig:ServerSubsystem}
@@ -332,13 +226,15 @@
 		E' il componente che rende disponibile la funzionalità per cui, dato un file valido in formato JSON, restituisce un pacchetto in formato .zip contenente i file del codice sorgente che costituiscono il programma rappresentato dal file in input. I file prodotti sono strutturati in packages, come indicato nel file JSON in input.\\
 		FAN-IN:
 		\begin{itemize}
-			\item Server::RequestHandler::Receiver.
+			\item Server::RequestHandler::Receiver: si occupa di gestire le comunicazioni in entrata dal client.
 		\end{itemize}
 			FAN-OUT:
 			\begin{itemize}
-				\item Server::RequestHandler::Sender;
-				\item Parser;
-				\item Zipper.
+				\item Server::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il client;
+				\item Parser: si occupa di creare un oggetto che contiene le informazioni ricevute in input;
+				\item Coder: si occupa della traduzione in codice dell'oggetto ottenuto dal Parser;
+				\item Builder: si occupa di organizzare in maniera organica il codice generato dal Coder;
+				\item Zipper: si occupa di creare un archivio .zip contenente in codici sorgente precedentemente creati.
 			\end{itemize}
 		\subsection{SWEDesigner::Server::CodeGenerator::Builder}
 		Questo package non contiene dei sottopackage.\\
@@ -347,11 +243,11 @@
 		È il componente che rende disponibile la funzionalità, dato un file JSON in input che rappresenti un programma, di ottenere un oggetto contenitore del codice sorgente corrispondente al contenuto del file di input. Tale codice è suddiviso e strutturato come indicato nel file di input.\\
 			FAN-IN:
 			\begin{itemize}
-				\item Zipper.
+				\item Zipper: si occupa di creare un archivio .zip contenente in codici sorgente precedentemente creati.
 			\end{itemize}
 			FAN-OUT:
 			\begin{itemize}
-				\item Coder.
+				\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
 			\end{itemize}
 		\subsection{SWEDesigner::Server::CodeGenerator::Coder}
 			% IMMAGINE ARCHITETTURA CODER
@@ -366,69 +262,69 @@
 		Componente che funge da interfaccia alle operazioni di codifica di una stringa, in formato JSON che rappresenta un programma valido; tali operazioni permettono di ottenere un oggetto contenente il codice sorgente, in Java o Javascript, corrispondente alla stringa in input.\\
 		FAN-IN:
 		\begin{itemize}
-			\item JavaCoder;
-			\item JavaScriptCoder.
+			\item JavaCoder: si occupa di trasformare un oggetto JSON ricevuto in input in un oggetto contenente il codice sorgente scritto in java;
+			\item JavaScriptCoder: si occupa di trasformare un oggetto JSON ricevuto in input in un oggetto contenente il codice sorgente scritto in javascript.
 		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
-			\item CodedProg;
-			\item CoderElement.
+			\item CodedProg: componente che contiene il codice prodotto dal Coder;
+			\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
 		\end{itemize}
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}
 		È il componente che rende disponibile la funzionalità, dato un oggetto in input che rappresenta un file JSON parsificato, di ottenere un oggetto contenente il codice sorgente, in linguaggio Java, corrispondente all'oggetto in input.\\
 		Non ci sono dipendenze IN.\\
 			FAN-OUT:
 			\begin{itemize}
-				\item Coder.
+				\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
 			\end{itemize}
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}
 		È il componente che rende disponibile la funzionalità, dato un oggetto in input che rappresenta un file JSON parsificato, di ottenere un oggetto contenente il codice sorgente, in linguaggio Javascript, corrispondente all'oggetto in input.\\
 		Non ci sono dipendenze IN.\\
 		FAN-OUT:
 		\begin{itemize}
-			\item Coder.
+			\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
 		\end{itemize}
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderClass}
 		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta una classe valida, di ottenere il corrispondente codice sorgente di tale classe.\\
 		Non ci sono dipendenze IN.\\
 	FAN-OUT:
 	\begin{itemize}
-		\item CoderElement.
+		\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
 	\end{itemize}
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderOperation}
 		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un'operazione valida, di ottenere il corrispondente codice sorgente di tale operazione.\\
 		Non ci sono dipendenze IN.\\
 		FAN-OUT:
 		\begin{itemize}
-			\item CoderElement.
+			\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
 		\end{itemize}
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderParameter}
 		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un parametro di una lista valido, di ottenere il corrispondente codice sorgente di tale parametro. È possibile scegliere fra la codifica in Java o Javascript.\\
 		Non ci sono dipendenze IN.\\
 		FAN-OUT:
 		\begin{itemize}
-			\item CoderElement.
+			\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
 		\end{itemize}
 			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderAttribute}
 			È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un attributo valido, di ottenere il corrispondente codice sorgente di tale attributo. È possibile scegliere fra la codifica in Java o Javascript.\\
 			Non ci sono dipendenze IN.\\
 			FAN-OUT:
 			\begin{itemize}
-				\item CoderElement.
+				\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
 			\end{itemize}
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderActivity}
 		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un diagramma delle attività valido, di ottenere il corrispondente codice sorgente di tale attività. È possibile scegliere fra la codifica in Java o Javascript.\\
 		Non ci sono dipendenze IN.\\
 		FAN-OUT:
 		\begin{itemize}
-			\item CoderElement;
-			\item DAO.
+			\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente;
+			\item DAO: si occupa di gestire il database delle bubble.
 		\end{itemize}
 		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CodedProg}
 		È il componente che contiene il codice sorgente prodotto dal Coder.\\
 		FAN-IN:
 		\begin{itemize}
-			\item Coder.
+			\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
 		\end{itemize}
 		Non ci sono dipendenze OUT.
 		
@@ -436,12 +332,12 @@
 		Componente astratta che offre la funzionalità di ottenere, data una stringa in input in formato JSON che rappresenta un elemento di classe valido, il corrispondente codice sorgente, in Java o Javascript.\\
 		FAN-IN:
 		\begin{itemize}
-			\item Coder;
-			\item CoderClass;
-			\item CoderOperations;
-			\item CoderAttributes;
-			\item CoderActivity;
-			\item CoderParameter.
+			\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente;
+			\item CoderClass: componente che permette data una stringa in input in formato JSON che rappresenta un diagramma delle classi valido, di ottenere il corrispondente codice sorgente di tale classe;
+			\item CoderOperations: componente che permette data una stringa in input in formato JSON che rappresenta un'operazione valida, di ottenere il corrispondente codice sorgente di tale operazione;
+			\item CoderAttributes: componente che permette data una stringa in input in formato JSON che rappresenta un attributo valido, di ottenere il corrispondente codice sorgente di tale attributo;
+			\item CoderActivity: componente che permette data una stringa in input in formato JSON che rappresenta un diagramma delle attività valido, di ottenere il corrispondente codice sorgente di tale attività;
+			\item CoderParameter: componente che permette data una stringa in input in formato JSON che rappresenta un parametro valido, di ottenere il corrispondente codice sorgente di tale parametro.
 		\end{itemize}
 		Non ci sono dipendenze OUT.
 		\subsection{SWEDesigner::Server::CodeGenerator::Parser}
@@ -451,8 +347,8 @@
 		È il componente che rende disponibile la funzionalità, dato un file JSON valido in input, di ottenere un oggetto contenente le informazioni che costituiscono il file in input.\\
 		FAN-IN:
 		\begin{itemize}
-			\item CodeGenerator;
-			\item Coder.
+			\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input;
+			\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
 		\end{itemize}
 		Non ci sono dipendenze OUT.
 		\subsection{SWEDesigner::Server::CodeGenerator::Zipper}
@@ -462,18 +358,18 @@
 		E' il componente che rende disponibile la funzionalità per cui, dato un file valido in formato JSON, restituisce un pacchetto in formato .zip contenente i file del codice sorgente che costituiscono il programma rappresentato dal file in input. I file prodotti sono strutturati in packages, come indicato nel file JSON in input.\\
 		FAN-IN:
 		\begin{itemize}
-			\item CodeGenerator.
+			\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input.
 		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
-			\item Builder.
+			\item Builder: componente che si occupa di creare un oggetto contenitore con il codice sorgente, partendo dalle informazioni prese dal file JSON ricevuto in input che rappresenta un programma.
 		\end{itemize}
 		\subsubsection{SWEDesigner::Server::DAO}
 		\hypertarget{SWEDesigner::Server::DAO}
 		Questa classe si occupa di gestire il database delle bubble.\\
 		FAN-IN:
 		\begin{itemize}
-			\item Coder.
+			\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
 		\end{itemize}
 		Non ci sono dipendenze OUT.
 		\subsection{SWEDesigner::Server::RequestHandler}
@@ -484,20 +380,20 @@
 		Si occupa di gestire le comunicazioni in uscita verso il client.\\
 		FAN-IN:
 		\begin{itemize}
-			\item CodeGenerator.
+			\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input.
 		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
-			\item Client::Model::RequestHandler::Receiver.
+			\item Client::Model::RequestHandler::Receiver: si occupa di gestire le comunicazioni in entrata dal server.
 		\end{itemize}
 		\subsubsection{SWEDesigner::Server::RequestHandler::Receiver}
 		Si occupa di gestire le comunicazioni in entrata dal client.\\
 		FAN-IN:
 		\begin{itemize}
-			\item Client::Model::RequestHandler::Sender.
+			\item Client::Model::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il server.
 		\end{itemize}
 		FAN-OUT:
 		\begin{itemize}
-			\item CodeGenerator.
+			\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input.
 		\end{itemize}
 \end{document}
