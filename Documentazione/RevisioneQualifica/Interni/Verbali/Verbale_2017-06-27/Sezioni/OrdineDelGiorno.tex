@@ -1,0 +1,26 @@
+\documentclass[../AnalisiDeiRequisiti.tex]{subfiles}
+\begin{document}
+	\section*{Ordine del giorno}
+		\begin{enumerate}
+			\item Ridiscussione requisiti in virtù delle modifiche apportate durante la progettazione;
+			\item Organizzare un incontro con \proponente per discutere di eventuali cambiamenti;
+			\item Fare il punto della situazione per quanto riguarda i requisiti ancora da soddisfare: decidere se soddisfarli per la \revisionediqualifica\ o se posticiparne la realizzazione in sede di \revisionediaccettazione;
+			\item Varie ed eventuali.
+		\end{enumerate}
+		Di seguito, il riassunto delle discussioni fatte.
+		\begin{enumerate}
+		\item Alcuni requisiti individuati nell'\analisideirequisiti\ sono frutto di scelte poco lungimiranti. In particolare dopo una prima analisi appariva necessario avere un diagramma delle attività che fosse distinto dal diagramma delle bubble. Successivamente però ci siamo resi conto che avere entrambi i diagrammi risultava dispersivo e macchinoso senza aggiungere nessuna funzionalità che non potesse essere inclusa in un unico diagramma. \\La soluzione che abbiamo individuato è quella di rivedere i requisiti riguardanti il diagramma delle attività per accorparlo a quello delle bubble. I requisiti strettamente legati al diagramma delle attività verranno eliminati. Quelli che possono essere ricondotti al bubble diagram, invece, vedranno cambiato il loro codice al fine di essere logicamente collegati ai corrispondenti requisiti.\\
+		Le modifiche saranno presenti in \analisideirequisitiv.
+		\item È evidente la necessità di avere un incontro con \proponente per discutere le variazioni ai requisiti. L'incontro viene fissato per il 3 luglio alle 10.00 nella Sede di \proponente in via Giovanni Cittadella, 7, PD.
+		\item La riunione prosegue con un controllo di quali requisiti sono già stati soddisfatti e quali verranno momentaneamente tralasciati per la \revisionediqualifica.\\
+		In particolare viene delegata al periodo successivo l'implementazione delle seguenti funzionalità:
+		\begin{itemize}
+			\item Command unDo e reDo;
+			\item Layer di visualizzazione per importanza;
+			\item Bubble custom predefinite (in particolare quelle legate all'ambiente dei giochi da tavolo);
+			\item Gestione di errori nel codice prodotto;
+			\item Quando si tenta di aprire un nuovo progetto deve essere chiesto se si vuole salvare l'attuale.
+		\end{itemize}
+		\end{enumerate}
+
+\end{document}
