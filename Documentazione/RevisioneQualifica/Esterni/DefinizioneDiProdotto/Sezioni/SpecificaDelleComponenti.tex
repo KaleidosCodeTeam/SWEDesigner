@@ -1453,219 +1453,707 @@
 					\end{itemize}
 
 			\subsection{SWEDesigner::Server}
-				% IMMAGINE ARCHITETTURA SERVER GENERALE
-				\begin{figure}[H]\label{fig:ServerSubsystem}
-					\centering
-					\includegraphics[scale=0.4]{Immagini/DiagrammaArchitettura/ServerSubsystem.png}
-					\caption{Architettura del server}
-				\end{figure}
-				I package contenuti al suo interno sono:
-				\begin{itemize}
-					\item SWEDesigner::Server::CodeGenerator;
-					\item SWEDesigner::Server::DAORequestHandler;
-					\item SWEDesigner::Server::RequestHandler.
-				\end{itemize}
-				Questo package non contiene delle classi.
-
+			% IMMAGINE ARCHITETTURA SERVER GENERALE
+			\begin{figure}[H]\label{fig:ServerSubsystem}
+				\centering
+				\includegraphics[scale=0.4]{Immagini/DiagrammaArchitettura/ServerSubsystem.png}
+				\caption{Architettura del server}
+			\end{figure}
+			I package contenuti al suo interno sono:
+			\begin{itemize}
+				\item SWEDesigner::Server::CodeGenerator;
+				\item SWEDesigner::Server::DAORequestHandler;
+				\item SWEDesigner::Server::RequestHandler.
+			\end{itemize}
+			Questo package non contiene delle classi.
+			
 			\subsection{SWEDesigner::Server::CodeGenerator}
-				I package contenuti al suo interno sono:
+			I package contenuti al suo interno sono:
+			\begin{itemize}
+				\item SWEDesigner::Server::CodeGenerator::Builder;
+				\item SWEDesigner::Server::CodeGenerator::Coder;
+				\item SWEDesigner::Server::CodeGenerator::Parser;
+				\item SWEDesigner::Server::CodeGenerator::Zipper.
+			\end{itemize}
+			Le classi contenute al suo interno verranno elencate qui di seguito.
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::CodeGenerator}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::CodeGenerator}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};\\
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità per cui, dato un file in formato JSON che contiene le informazioni necessarie a codificare un programma, restituisce un pacchetto in formato .zip contenente i file del codice sorgente che costituiscono il programma rappresentato dal file in input. I file prodotti sono organizzati in packages, come indicato nel file JSON in input;\\
+				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item SWEDesigner::Server::CodeGenerator::Builder;
-					\item SWEDesigner::Server::CodeGenerator::Coder;
-					\item SWEDesigner::Server::CodeGenerator::Parser;
-					\item SWEDesigner::Server::CodeGenerator::Zipper.
-				\end{itemize}
-				Le classi contenute al suo interno verranno elencate qui di seguito.
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::CodeGenerator}
-				\hypertarget{SWEDesigner::Server::CodeGenerator::CodeGenerator}
-				E' il componente che rende disponibile la funzionalità per cui, dato un file valido in formato JSON, restituisce un pacchetto in formato .zip contenente i file del codice sorgente che costituiscono il programma rappresentato dal file in input. I file prodotti sono strutturati in packages, come indicato nel file JSON in input.\\
-					FAN-IN:
+					\item \emph{generateJsProgram(jsonProgram:JSON, nomeZip:string):void} \\ 
+					Funzione statica che codifica, in Javascript, il programma corrispondente al contenuto del JSON in input e costruisce un pacchetto compresso in formato .zip contenente
+					il programma codificato e strutturato in file e directory come specificato nel file JSON di input; \\
+					Parametri:
 					\begin{itemize}
-						\item Server::RequestHandler::Receiver: si occupa di gestire le comunicazioni in entrata dal client.
-					\end{itemize}
-					FAN-OUT:
+						\item \emph{jsonProgram:JSON}: Contiene le informazioni, in formato JSON, necessarie a codificare un programma.\\
+						\item \emph{nomeZip:string}: Specifica il nome con cui verrà nominato il pacchetto zip prodotto.\\
+					\end{itemize}					
+					\item \emph{generateJavaProgram(jsonProgram:JSON, nomeZip:string):void} \\ 
+					Funzione statica che codifica, in Java, il programma corrispondente al contenuto del JSON in input e costruisce un pacchetto compresso in formato .zip contenente il programma codificato e strutturato in file e directory come specificato nel file JSON di input; \\							
+					Parametri:
 					\begin{itemize}
-						\item Server::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il client;
-						\item Parser: si occupa di creare un oggetto che contiene le informazioni ricevute in input;
-						\item Coder: si occupa della traduzione in codice dell'oggetto ottenuto dal Parser;
-						\item Builder: si occupa di organizzare in maniera organica il codice generato dal Coder;
-						\item Zipper: si occupa di creare un archivio .zip contenente in codici sorgente precedentemente creati.
+						\item \emph{jsonProgram:JSON}: Contiene le informazioni, in formato JSON, necessarie a codificare un programma.\\
+						\item \emph{nomeZip:string}:ì Specifica il nome con cui verrà nominato il pacchetto zip prodotto.\\
 					\end{itemize}
-
-			\subsection{SWEDesigner::Server::CodeGenerator::Builder}
-				Questo package non contiene dei sottopackage.\\
-				Le classi contenute al suo interno verranno elencate qui di seguito.
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Builder::Builder}
-				È il componente che rende disponibile la funzionalità, dato un file JSON in input che rappresenti un programma, di ottenere un oggetto contenitore del codice sorgente corrispondente al contenuto del file di input. Tale codice è suddiviso e strutturato come indicato nel file di input.\\
-					FAN-IN:
-					\begin{itemize}
-						\item Zipper: si occupa di creare un archivio .zip contenente in codici sorgente precedentemente creati.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
-					\end{itemize}
-
-			\subsection{SWEDesigner::Server::CodeGenerator::Coder}
-				% IMMAGINE ARCHITETTURA CODER
-				\begin{figure}[H]\label{fig:Coder}
-					\centering
-					\includegraphics[scale=0.46]{Immagini/DiagrammaArchitettura/Coder.png}
-					\caption{Architettura di Coder}
-				\end{figure}
-
-				Questo package non contiene dei sottopackage.\\
-				Le classi contenute al suo interno verranno elencate qui di seguito.
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::Coder}
-				Componente che funge da interfaccia alle operazioni di codifica di una stringa, in formato JSON che rappresenta un programma valido; tali operazioni permettono di ottenere un oggetto contenente il codice sorgente, in Java o Javascript, corrispondente alla stringa in input.\\
-					FAN-IN:
-					\begin{itemize}
-						\item JavaCoder: si occupa di trasformare un oggetto JSON ricevuto in input in un oggetto contenente il codice sorgente scritto in java;
-						\item JavaScriptCoder: si occupa di trasformare un oggetto JSON ricevuto in input in un oggetto contenente il codice sorgente scritto in javascript.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item CodedProg: componente che contiene il codice prodotto dal Coder;
-						\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}
-				È il componente che rende disponibile la funzionalità, dato un oggetto in input che rappresenta un file JSON parsificato, di ottenere un oggetto contenente il codice sorgente, in linguaggio Java, corrispondente all'oggetto in input.\\
-					Non ci sono dipendenze IN.\\
-					FAN-OUT:
-					\begin{itemize}
-						\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}
-				È il componente che rende disponibile la funzionalità, dato un oggetto in input che rappresenta un file JSON parsificato, di ottenere un oggetto contenente il codice sorgente, in linguaggio Javascript, corrispondente all'oggetto in input.\\
-					Non ci sono dipendenze IN.\\
-					FAN-OUT:
-					\begin{itemize}
-						\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderClass}
-				È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta una classe valida, di ottenere il corrispondente codice sorgente di tale classe.\\
-					Non ci sono dipendenze IN.\\
-					FAN-OUT:
-					\begin{itemize}
-						\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderOperation}
-				È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un'operazione valida, di ottenere il corrispondente codice sorgente di tale operazione.\\
-					Non ci sono dipendenze IN.\\
-					FAN-OUT:
-					\begin{itemize}
-						\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderParameter}
-				È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un parametro di una lista valido, di ottenere il corrispondente codice sorgente di tale parametro. È possibile scegliere fra la codifica in Java o Javascript.\\
-					Non ci sono dipendenze IN.\\
-					FAN-OUT:
-					\begin{itemize}
-						\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderAttribute}
-				È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un attributo valido, di ottenere il corrispondente codice sorgente di tale attributo. È possibile scegliere fra la codifica in Java o Javascript.\\
-				Non ci sono dipendenze IN.\\
-					FAN-OUT:
-					\begin{itemize}
-						\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderActivity}
-				È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta un diagramma delle attività valido, di ottenere il corrispondente codice sorgente di tale attività. È possibile scegliere fra la codifica in Java o Javascript.\\
-					Non ci sono dipendenze IN.\\
-					FAN-OUT:
-					\begin{itemize}
-						\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente;
-						\item DAO: si occupa di gestire il database delle bubble.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CodedProg}
-				È il componente che contiene il codice sorgente prodotto dal Coder.\\
-					FAN-IN:
-					\begin{itemize}
-						\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
-					\end{itemize}
-					Non ci sono dipendenze OUT.
+				\end{itemize}				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Parser::Parser}{\emph{SWEDesigner::Server::CodeGenerator::Parser::Parser}}\\
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}}\\
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}}\\
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Builder::Builder}{\emph{SWEDesigner::Server::CodeGenerator::Builder::Builder}}\\
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Zipper::Zipper}{\emph{SWEDesigner::Server::CodeGenerator::Zipper::Zipper}}\\
+					\item IN \hyperlink{SWEDesigner::Server::RequestHandler::RequestHandler}{\emph{SWEDesigner::Server::RequestHandler::RequestHandler}}\\
+				\end{itemize}	
+			\end{itemize}
+			
 				
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderElement}
-				Componente astratta che offre la funzionalità di ottenere, data una stringa in input in formato JSON che rappresenta un elemento di classe valido, il corrispondente codice sorgente, in Java o Javascript.\\
-					FAN-IN:
-					\begin{itemize}
-						\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente;
-						\item CoderClass: componente che permette data una stringa in input in formato JSON che rappresenta un diagramma delle classi valido, di ottenere il corrispondente codice sorgente di tale classe;
-						\item CoderOperations: componente che permette data una stringa in input in formato JSON che rappresenta un'operazione valida, di ottenere il corrispondente codice sorgente di tale operazione;
-						\item CoderAttributes: componente che permette data una stringa in input in formato JSON che rappresenta un attributo valido, di ottenere il corrispondente codice sorgente di tale attributo;
-						\item CoderActivity: componente che permette data una stringa in input in formato JSON che rappresenta un diagramma delle attività valido, di ottenere il corrispondente codice sorgente di tale attività;
-						\item CoderParameter: componente che permette data una stringa in input in formato JSON che rappresenta un parametro valido, di ottenere il corrispondente codice sorgente di tale parametro.
-					\end{itemize}
-					Non ci sono dipendenze OUT.
-
+			
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
 			\subsection{SWEDesigner::Server::CodeGenerator::Parser}
-				Questo package non contiene dei sottopackage.
-				Le classi contenute al suo interno verranno elencate qui di seguito.
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Parser::Parser}
-				È il componente che rende disponibile la funzionalità, dato un file JSON valido in input, di ottenere un oggetto contenente le informazioni che costituiscono il file in input.\\
-					FAN-IN:
+			Questo package non contiene dei sottopackage.
+			Le classi contenute al suo interno verranno elencate qui di seguito.
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Parser::Parser}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Parser::Parser}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità, dato un file JSON valido in input, di ottenere un oggetto contenente le informazioni che costituiscono il file JSON di input;\\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{parse(jsonFile:JSON):Object} \\ 
+					Trasforma il file JSON ricevuto in input in un oggetto Javascript contenente tutte le sue informazioni; \\
+					Parametri:
 					\begin{itemize}
-						\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input;
-						\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
+						\item \emph{jsonFile:JSON} Contiene le informazioni, in formato JSON, necessarie a codificare un programma.
 					\end{itemize}
-					Non ci sono dipendenze OUT.
-
-			\subsection{SWEDesigner::Server::CodeGenerator::Zipper}
-				Questo package non contiene dei sottopackage.\\
-				Le classi contenute al suo interno verranno elencate qui di seguito.
-				\subsubsection{SWEDesigner::Server::CodeGenerator::Zipper::Zipper}
-				E' il componente che rende disponibile la funzionalità per cui, dato un file valido in formato JSON, restituisce un pacchetto in formato .zip contenente i file del codice sorgente che costituiscono il programma rappresentato dal file in input. I file prodotti sono strutturati in packages, come indicato nel file JSON in input.\\
-					FAN-IN:
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::CodeGenerator}{\emph{SWEDesigner::Server::CodeGenerator::CodeGenerator}}
+				\end{itemize}	
+			\end{itemize}
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			
+			\subsection{SWEDesigner::Server::CodeGenerator::Coder}
+			% IMMAGINE ARCHITETTURA CODER
+			\begin{figure}[H]\label{fig:Coder}
+				\centering
+				\includegraphics[scale=0.46]{Immagini/DiagrammaArchitettura/Coder.png}
+				\caption{Architettura di Coder}
+			\end{figure}
+			
+			Questo package non contiene dei sottopackage.\\
+			Le classi contenute al suo interno verranno elencate qui di seguito.
+			
+			%		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::Coder}
+			%		Componente che funge da interfaccia alle operazioni di codifica di una stringa, in formato JSON che rappresenta un programma valido; tali operazioni permettono di ottenere un %	oggetto contenente il codice sorgente, in Java o Javascript, corrispondente alla stringa in input.\\
+			%		FAN-IN:
+			%		\begin{itemize}
+			%			\item JavaCoder: si occupa di trasformare un oggetto JSON ricevuto in input in un oggetto contenente il codice sorgente scritto in java;
+			%			\item JavaScriptCoder: si occupa di trasformare un oggetto JSON ricevuto in input in un oggetto contenente il codice sorgente scritto in javascript.
+			%		\end{itemize}
+			%		FAN-OUT:
+			%			\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
+			%		\end{itemize}
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità, dato un oggetto in input che che contiene le informazioni necessarie a codificare un programma, di ottenere un oggetto contenente il codice sorgente, in linguaggio Java, corrispondente all'oggetto in input;\\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{coderParameters(operationObj:Object):string} \\ 
+					Riceve in input operationObj, un oggetto che contiene le informazioni necessarie a codificare una operazione; 
+					restituisce la stringa del codice sorgente, in Java, della lista dei parametri dell'operazione operationObj di input; \\
+					Parametri:
 					\begin{itemize}
-						\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item Builder: componente che si occupa di creare un oggetto contenitore con il codice sorgente, partendo dalle informazioni prese dal file JSON ricevuto in input che rappresenta un programma.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Server::DAO}
-				\hypertarget{SWEDesigner::Server::DAO}
-				Questa classe si occupa di gestire il database delle bubble.\\
-					FAN-IN:
-					\begin{itemize}
-						\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente.
-					\end{itemize}
-					Non ci sono dipendenze OUT.
-
-			\subsection{SWEDesigner::Server::RequestHandler}
-				\hypertarget{SWEDesigner::Server::RequestHandler}
-				Questo package non contiene dei sottopackage.\\
-				Le classi contenute al suo interno verranno elencate qui di seguito.
-				\subsubsection{SWEDesigner::Server::RequestHandler::Sender}
-				Si occupa di gestire le comunicazioni in uscita verso il client.\\
-					FAN-IN:
-					\begin{itemize}
-						\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item Client::Model::RequestHandler::Receiver: si occupa di gestire le comunicazioni in entrata dal server.
+						\item \emph{operationObj:Object} Contiene le informazioni necessarie a codificare una operazione.
 					\end{itemize}
 					
-				\subsubsection{SWEDesigner::Server::RequestHandler::Receiver}
-				Si occupa di gestire le comunicazioni in entrata dal client.\\
-					FAN-IN:
+					\item \emph{coderAttributes(classObj:Object):string} \\ 
+					Riceve in input classObj, un oggetto che contiene le informazioni necessarie a codificare una classe; 
+					restituisce la stringa del codice sorgente, in Java, di tutti gli attributi della classe classObj di input; \\
+					Parametri:
 					\begin{itemize}
-						\item Client::Model::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il server.
+						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe.
 					\end{itemize}
-					FAN-OUT:
+					
+					\item \emph{coderOperations(classObj,operations):string} \\ 
+					Riceve in input classObj, un oggetto che le informazioni necessarie a codificare una classe; 
+					restituisce la stringa del codice sorgente, in Java, relativa alla definizione e implementazione di tutte le operazioni di classObj di input; \\
+					Parametri:
 					\begin{itemize}
-						\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input.
+						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe;
+						\item \emph{operations:Object} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
 					\end{itemize}
+					
+					\item \emph{getCodedProgram(parsedProgram:Object):CodedProgram} \\ 
+					Riceve in input parsedProgram, un oggetto che contiene le informazioni necessarie a codificare un programma; 
+					restituisce un oggetto istanza di CodedProgram, contente il codice sorgente in Java di tutte le classi presenti nell'oggetto 
+					parsedProgram di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{parsedProgram:Object} Contiene le informazioni necessarie a codificare un programma.
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::CodeGenerator}{\emph{SWEDesigner::Server::CodeGenerator::CodeGenerator}}
+				\end{itemize}	
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità, dato un oggetto in input che contiene le informazioni necessarie a codificare un programma, di ottenere un oggetto contenente il codice sorgente, in linguaggio Javascript, corrispondente all'oggetto in input;\\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{coderParameters(operationObj:Object):string} \\ 
+					Riceve in input operationObj, un oggetto che contiene le informazioni necessarie a codificare una operazione; 
+					restituisce la stringa del codice sorgente, in Javascript, della lista dei parametri dell'operazione operationObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{operationObj:Object} Contiene le informazioni necessarie a codificare una operazione.
+					\end{itemize}
+					
+					\item \emph{coderInstanceAttributes(classObj:Object):string} \\ 
+					Riceve in input classObj, un oggetto che contiene le informazioni necessarie a codificare una classe; 
+					restituisce la stringa del codice sorgente, in Javascript, di tutti gli attributi non statici della classe classObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe.
+					\end{itemize}
+					
+					\item \emph{coderInstanceOperations(classObj,operations):string} \\ 
+					Riceve in input classObj, un oggetto che le informazioni necessarie a codificare una classe; 
+					restituisce la stringa del codice sorgente, in Javascript, relativa alla definizione e implementazione di tutte le operazioni non statiche di classObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe;
+						\item \emph{operations:Object} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
+					\end{itemize}
+					
+					\item \emph{coderStaticAttributes(classObj:Object):string} \\ 
+					Riceve in input classObj, un oggetto che contiene le informazioni necessarie a codificare una classe; 
+					restituisce la stringa del codice sorgente, in Javascript, di tutti gli attributi statici della classe classObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe.
+					\end{itemize}
+					
+					\item \emph{coderStaticOperations(classObj,operations):string} \\ 
+					Riceve in input classObj, un oggetto che le informazioni necessarie a codificare una classe; 
+					restituisce la stringa del codice sorgente, in Javascript, relativa alla definizione e implementazione di tutte le operazioni statiche di classObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe;
+						\item \emph{operations:Object} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
+					\end{itemize}
+					
+					\item \emph{getCodedProgram(parsedProgram:Object):CodedProgram} \\ 
+					Riceve in input parsedProgram, un oggetto che contiene le informazioni necessarie a codificare un programma; 
+					restituisce un oggetto istanza di CodedProgram, contente il codice sorgente in Javascript di tutte le classi presenti nell'oggetto 
+					parsedProgram di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{parsedProgram:Object} Contiene le informazioni necessarie a codificare un programma.
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::CodeGenerator}{\emph{SWEDesigner::Server::CodeGenerator::CodeGenerator}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			%		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderClass}
+			%		È il componente che mette a disposizione la funzionalità, data una stringa in input in formato JSON che rappresenta una classe valida, di ottenere il corrispondente codice %		sorgente di tale classe.\\
+			%		Non ci sono dipendenze IN.\\
+			%		FAN-OUT:
+			%		\begin{itemize}
+			%			\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
+			%		\end{itemize}
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderOperation}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::CoderOperation}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di codificare l'intestazione dell'operazione corrispondente al contenuto dell'oggetto operationObj di input; \\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{codeElementJava(operationObj:Object):string} \\ 
+					Riceve in input operationObj, un oggetto che contiene le informazioni necessarie a codificare una operazione; 
+					restituisce la stringa codice sorgente in Java relativa all'intestazione dell'operazione operationObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{operationObj:Object} Contiene le informazioni necessarie a codificare una operazione.
+					\end{itemize}
+					
+					
+					
+					\item \emph{codeElementJavascript(operationObj:Object, className:string):string} \\ 
+					Riceve in input operationObj, un oggetto che contiene le informazioni necessarie a codificare una operazione; 
+					restituisce la stringa codice sorgente in Javascript relativa all'intestazione dell'operazione operationObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{operationObj:Object} Contiene le informazioni necessarie a codificare una operazione;
+						\item \emph{className:string} Il nome della classe che possiede l'operazione operationObj. Necessaria solo sè tale operazione è statica;
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderParameter}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::CoderParameter}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di codificare un parametro, corrispondente al contenuto dell'oggetto parameterObj di input;\\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{codeElementJava(parameterObj:Object):string} \\ 
+					Riceve in input parameterObj, un oggetto che contiene le informazioni necessarie a codificare un parametro di operazione; 
+					restituisce la stringa codice sorgente in Java relativa al parametro parameterObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{parameterObj:Object} Contiene le informazioni necessarie a codificare un parametro di operazione.
+					\end{itemize}
+					
+					
+					
+					\item \emph{codeElementJavascript(parameterObj:Object):string} \\ 
+					Riceve in input parameterObj, un oggetto che contiene le informazioni necessarie a codificare un parametro di operazione; 
+					restituisce la stringa codice sorgente in Javascript relativa al parametro parameterObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{parameterObj:Object} Contiene le informazioni necessarie a codificare un parametro di operazione.
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderAttribute}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::CoderAttribute}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di codificare un attributo corrispondente al contenuto dell'oggetto attributeObj di input;\\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{codeElementJava(attributeObj:Object):string} \\ 
+					Riceve in input attributeObj, un oggetto che contiene le informazioni necessarie a codificare un attributo di classe; 
+					restituisce la stringa codice sorgente in Java relativa all'attributo attributeObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{attributeObj:Object} Contiene le informazioni necessarie a codificare un attributo di classe.
+					\end{itemize}
+					
+					
+					
+					\item \emph{codeElementJavascript(attributeObj:Object, className:string):string} \\ 
+					Riceve in input attributeObj, un oggetto che contiene le informazioni necessarie a codificare un attributo; 
+					restituisce la stringa codice sorgente in Javascript relativa all'attributo attributeObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{attributeObj:Object} Contiene le informazioni necessarie a codificare un attributo di classe;
+						\item \emph{className:string} Il nome della classe che possiede l'attributo attributeObj. Necessaria solo sè tale attributo è statico;
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderActivity}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::CoderActivity}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di codificare l'implementazione di un'operazione, corrispondente al contenuto dell'oggetto activityObj di input; \\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{getBubbleLinks(activityObj:Object):Array} \\ 
+					Estrae, per ogni elemento in activityObj, le informazioni relative al collegamento con un'altro elemento (se esiste) contenuto in ActivityObj e
+					le inserisce in un array che viene restituito; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+					\end{itemize}
+					
+					\item \emph{getBubbleId(bubbleId:string, activityObj:Object):Object} \\ 
+					Ritorna la bubble (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di activityObj) contenuta in activityObj e il cui identificativo corrisponde al bubbleId di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{bubbleId:string} Stringa identificativa della bubble che si vuole ottenere;
+						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+					\end{itemize}
+					
+					\item \emph{getNextBubble(bubbleObj:Object, activityObj:Object):Object} \\ 
+					Ritorna la bubble (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di activityObj) contenuta in activityObj, successiva alla bubble di input anch'essa contenuta in activityObj; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{bubbleObj:Object} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
+						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+					\end{itemize}	
+					
+					\item \emph{getStartBubble(bubbleArray:Array, parent:string):Object} \\ 
+					Ritorna la bubble (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di una operazione) contenuta in bubbleArray, corrispondente alla bubble iniziale, ovvero la bubble da cui comincia la sotto attività rappresentata da bubbleArray; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{bubbleArray:Array} Contiene le informazioni necessarie a codificare una sotto attività di un'operazione;
+						\item \emph{parent:string} Contiene l'identificativo della bubble in cui sono innestate le bubble presenti in bubbleArray.	
+					\end{itemize}		
+					
+					\item \emph{codeEmbeddedBubbles(bubbleObj:Object, activityObj:Object):Object} \\ 
+					Codifica la bubbleObj (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di una operazione) di input e tutte le bubble innestate in essa; tale bubbleObj dev'essere contenuta in activityObj \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{bubbleObj:Object} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
+						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+					\end{itemize}
+					
+					\item \emph{codeBubble(bubbleObj:Object, activityObj:Object, parent:string):Object} \\ 
+					Codifica la bubbleObj (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di una operazione) di input; tale bubbleObj dev'essere contenuta in activityObj \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{bubbleObj:Object} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
+						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+						\item \emph{parent:string} Contiene l'identificativo della bubble in cui è innestata la bubbleObj di input.
+					\end{itemize}
+					
+					\item \emph{codeElementJava(activityObj:Object):string} \\ 
+					Riceve in input activityObj, un oggetto che contiene le informazioni necessarie a codificare l'implementazione di un operazione; 
+					restituisce la stringa codice sorgente in Java corrispondente all'implementazione della activityObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+					\end{itemize}
+					
+					
+					\item \emph{codeElementJavascript(activityObj:Object):string} \\ 
+					Riceve in input activityObj, un oggetto che contiene le informazioni necessarie a codificare l'implementazione di un operazione; 
+					restituisce la stringa codice sorgente in Javascript corrispondente all'implementazione della activityObj di input; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CodedProg}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::CodedProg}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: È il componente che contiene il codice sorgente prodotto dal Coder; \\
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{_classes: Array}: Array contenente le informazioni di ogni classe codificata dal Coder. Tali informazioni comprendono il nome della classe, il suo codice sorgente, il nome del package in cui è contenuta e l'array delle dipendenze OUT;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{add(_class:Object):void} \\ 
+					Inserisce nell'array _classes le informazioni della classe _class codificata dal Coder; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{_class:Object} Contiene il nome della classe, il suo codice sorgente, il nome del package in cui è contenuta e l'array delle dipendenze OUT.
+					\end{itemize}
+					
+					\item \emph{getSource(i:int):string} \\ 
+					Restituisce il codice sorgente della classe contenuta nell'attributo _classes all'indice i; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{i:int} Indice della classe, contenuta nell'attributo _classes, di cui si vuole il codice sorgente;
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			%		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CoderElement}
+			%		Componente astratta che offre la funzionalità di ottenere, data una stringa in input in formato JSON che rappresenta un elemento di classe valido, il corrispondente codice 	sorgente, in Java o Javascript.\\
+			%		FAN-IN:
+			%		\begin{itemize}
+			%			\item Coder: componente che funge da interfaccia alle operazioni di codifica di una stringa permettendo quindi di trasformare le informazioni del file in formato JSON in codice sorgente;
+			%			\item CoderClass: componente che permette data una stringa in input in formato JSON che rappresenta un diagramma delle classi valido, di ottenere il corrispondente codice sorgente di tale classe;
+			%			\item CoderOperations: componente che permette data una stringa in input in formato JSON che rappresenta un'operazione valida, di ottenere il corrispondente codice sorgente di tale operazione;
+			%			\item CoderAttributes: componente che permette data una stringa in input in formato JSON che rappresenta un attributo valido, di ottenere il corrispondente codice sorgente di tale attributo;
+			%			\item CoderActivity: componente che permette data una stringa in input in formato JSON che rappresenta un diagramma delle attività valido, di ottenere il corrispondente codice sorgente di tale attività;
+			%			\item CoderParameter: componente che permette data una stringa in input in formato JSON che rappresenta un parametro valido, di ottenere il corrispondente codice sorgente di tale parametro.
+			%		\end{itemize}
+			%		Non ci sono dipendenze OUT.
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			\subsection{SWEDesigner::Server::CodeGenerator::Builder}
+			Questo package non contiene dei sottopackage.\\
+			Le classi contenute al suo interno verranno elencate qui di seguito.
+			
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Builder::Builder}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Builder::Builder}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di creare su disco la directory contenente il programma corrispondente all'oggetto program di tipo CodedProgram; \\
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{generalPath: string}: Contiene il path alla directory dove vengono creati tutti i programmi (directories, file sorgenti, ...);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{deleteFolderRecursive(path:string):void} \\ 
+					Rimuove la directory passata in input se esistente e tutto il suo contenuto ricorsivamente; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{path:string} Il percorso alla directory da rimuovere.
+					\end{itemize}
+					
+					\item \emph{mkJavaFile(progDir:string, name:string, pkg:string, dependencies:Array, source:string):void} \\ 
+					Crea un file sorgente in Java e/o scrive ulteriore codice in append se già esistente; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{progDir:string} La directory indicante dove creare i file sorgenti del programma;
+						\item \emph{name:string} Il nome del file;
+						\item \emph{pkg:string} Il package in cui è contenuto il file;
+						\item \emph{dependencies:Array} L'array delle dipendenze del package;
+						\item \emph{source:string} Il codice sorgente da scrivere nel file;
+					\end{itemize}
+					
+					\item \emph{mkJavascriptFile(progDir:string, name:string, pkg:string, dependencies:Array, source:string):void} \\ 
+					Crea un file sorgente in Javascript e/o scrive ulteriore codice in append se già esistente; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{progDir:string} La directory indicante dove creare i file sorgenti del programma;
+						\item \emph{name:string} Il nome del file;
+						\item \emph{pkg:string} Il package in cui è contenuto il file;
+						\item \emph{dependencies:Array} L'array delle dipendenze del package;
+						\item \emph{source:string} Il codice sorgente da scrivere nel file;
+					\end{itemize}
+					
+					\item \emph{javaBuild(program:CodedProgram):Object} \\ 
+					Crea directory e file su disco contenente il programma in linguaggio java corrispondente all'oggetto program di input di tipo CodedProgram;; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{program:CodedProgram} L'oggetto che contiene il codice sorgente prodotto dal Coder;.
+					\end{itemize}
+					
+					\item \emph{javascriptBuild(program:CodedProgram):Object} \\ 
+					Crea directory e file su disco contenente il programma in linguaggio javascript corrispondente all'oggetto program di input di tipo CodedProgram;; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{program:CodedProgram} L'oggetto che contiene il codice sorgente prodotto dal Coder;.
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::CodeGenerator}{\emph{SWEDesigner::Server::CodeGenerator::CodeGenerator}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			
+			\subsection{SWEDesigner::Server::CodeGenerator::Zipper}
+			Questo package non contiene dei sottopackage.\\
+			Le classi contenute al suo interno verranno elencate qui di seguito.
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Zipper::Zipper}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Builder::Builder}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di creare un pacchetto in formato zip della directory specificata in input; \\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{mkJavaFile(progDir:string, name:string, pkg:string, dependencies:Array, source:string):void} \\ 
+					Crea un file sorgente in Java e/o scrive ulteriore codice in append se già esistente; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{name:string} Il nome dell'archivio da creare;
+						\item \emph{namepath:string} Il percorso alla directory del progetto da comprimere;
+						\item \emph{callback:function} Callback di risposta;
+					\end{itemize}
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::CodeGenerator}{\emph{SWEDesigner::Server::CodeGenerator::CodeGenerator}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			\subsection{SWEDesigner::Server::DAO}
+			Questo package non contiene dei sottopackage.\\
+			Le classi contenute al suo interno verranno elencate qui di seguito.
+			\subsubsection{SWEDesigner::Server::DAO::DAO}
+			\hypertarget{SWEDesigner::Server::DAO::DAO}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Espone le funzionalità che permettono di interagire con il database delle bubbles; \\
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{host_:string}: L'hostname del database a cui connettersi;
+					\item \emph{user:string}: L'username per il login al database;
+					\item \emph{password:string}: La password per il login al database ;
+					\item \emph{database:string}: Il nome del database a cui connettersi;
+					\item \emph{connection:Object}: La connessione al database;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{setConnection(host:string, user:string, psw:string, db:string):void} \\ 
+					Setta gli attributi necessari a creare una connessione; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{host_:string}: L'hostname del database a cui connettersi;
+						\item \emph{user:string}: L'username per il login al database;
+						\item \emph{psw:string}: La password per il login al database ;
+						\item \emph{db:string}: Il nome del database a cui connettersi;
+					\end{itemize}
+					
+					\item \emph{_startConnection():void} \\ 
+					Inizializza l'attributo connection e esegue la connessione al database; \\
+					
+					\item \emph{insertBubble(name:string, source:string, language:string, descr:string):void} \\ 
+					Inserisce una nuova bubble nel database; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{name:string}: Attributo 'Name' della bubble da inserire;
+						\item \emph{source:string}: Attributo 'Source' della bubble da inserire;
+						\item \emph{language:string}: Attributo 'Language' della bubble da inserire ;
+						\item \emph{descr:string}: Attributo 'Description' della bubble da inserire;
+					\end{itemize}
+					
+					\item \emph{deleteBubble(name:string, source:string, language:string, descr:string):void} \\ 
+					Elimina una bubble se presente nel database; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{name:string}: Attributo 'Name' della bubble da rimuovere;
+						\item \emph{source:string}: Attributo 'Source' della bubble da rimuovere;
+						\item \emph{language:string}: Attributo 'Language' della bubble da rimuovere ;
+					\end{itemize}
+					
+					\item \emph{getBubble(name:string, language:string):void} \\ 
+					Restituisce le informazioni di una bubble se presente nel database; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{name:string}: Attributo 'Name' della bubble che si vuole ottenere;
+						\item \emph{language:string}: Attributo 'Language' della bubble che si vuole ottenere;
+					\end{itemize}
+					
+					\item \emph{getAllBubble():void} \\ 
+					Restituisce le informazioni di tutte le bubble presenti nel database; \\
+				\end{itemize}
+				
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::RequestHandler::RequestHandler}{\emph{SWEDesigner::Server::CodeGenerator::CodeGenerator}}
+				\end{itemize}	
+			\end{itemize}
+			
+			
+			\subsection{SWEDesigner::Server::RequestHandler}
+			Questo package non contiene dei sottopackage.\\
+			Le classi contenute al suo interno verranno elencate qui di seguito
+			
+			\subsection{SWEDesigner::Server::RequestHandler}::RequestHandler
+			\hypertarget{SWEDesigner::Server::RequestHandler::RequestHandler}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Espone le funzionalità che permettono di interagire con il database delle bubbles; \\
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{getIndex(req:string, res:string):void} \\ 
+					Invia il file index della Single Page Application; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{res:string}: Risposta alla richiesta descritta in req;
+						\item \emph{req:string}: Contiene informazioni sulla richiesta HTTP;
+					\end{itemize}
+					
+					\item \emph{caricaJs(req:string, res:string):void} \\ 
+					Carica il file json nel server e ne genera il codice Javascript restituendo il nome della cartella compressa; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{res:string}: Risposta alla richiesta descritta in req;
+						\item \emph{req:string}: Contiene informazioni sulla richiesta HTTP;
+					\end{itemize}
+					
+					\item \emph{caricaJa(req:string, res:string):void} \\ 
+					Carica il file json nel server e ne genera il codice Java restituendo il nome della cartella compressa; \\
+					Parametri:
+					\begin{itemize}
+						\item \emph{res:string}: Risposta alla richiesta descritta in req;
+						\item \emph{req:string}: Contiene informazioni sulla richiesta HTTP;
+					\end{itemize}	
+					
+				\end{itemize}
+				
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Client::Model::RequestHandler}{\emph{SWEDesigner::Client::Model::RequestHandler}}
+				\end{itemize}	
+			\end{itemize}
+			
+			%				\subsubsection{SWEDesigner::Server::RequestHandler::Sender}
+			%				Si occupa di gestire le comunicazioni in uscita verso il client.\\
+			%					FAN-IN:
+			%					\begin{itemize}
+			%						\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input.
+			%					\end{itemize}
+			%					FAN-OUT:
+			%					\begin{itemize}
+			%						\item Client::Model::RequestHandler::Receiver: si occupa di gestire le comunicazioni in entrata dal server.
+			%					\end{itemize}
+			%					
+			%				\subsubsection{SWEDesigner::Server::RequestHandler::Receiver}
+			%%					FAN-IN:
+			%					\begin{itemize}
+			%%					\end{itemize}
+			%%%%				\end{itemize}
+			
+		
+				
 \end{document}
