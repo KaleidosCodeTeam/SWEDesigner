@@ -146,6 +146,10 @@
 
 				\subsubsection{SWEDesigner::Client::Model::ToolbarModel}
 				\hypertarget{SWEDesigner::Client::Model::ToolbarModel}{}
+				È il componente del programma che si occupa di gestire la parte logica della toolbar.\\
+					FAN-IN:\\
+					Non ci sono dipendenze IN. \\
+					FAN-OUT:
 					\begin{itemize}
 						\item \textbf{Tipo}: \emph{Classe};
 						\item \textbf{Descrizione}: È il componente del programma che si occupa di gestire la parte logica della toolbar;
@@ -252,6 +256,866 @@
 						\end{itemize}
 					\end{itemize}
 
+				\subsubsection{SWEDesigner::Client::Model::RequestHandler::Receiver}
+				Si occupa di gestire le comunicazioni in entrata dal server.\\
+					FAN-IN:
+					\begin{itemize}
+						\item Server::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il Client.
+					\end{itemize}
+					FAN-OUT:
+					\begin{itemize}
+						\item projectModel: si occupa di gestire la parte logica dell'editor;
+						\item project: si occupa di gestire gli elementi contenuti nel diagramma.
+					\end{itemize}
+		
+			%inizio parte Giulio
+			
+			\subsection{SWEDesigner::Client::Model::Items}
+			\hypertarget{SWEDesigner::Client::Model::Items}{}
+			Questo package non contiene dei sottopackage. Le classi contenute al suo interno verranno
+			elencate qui di seguito.
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Collezione di oggetti che si possono inserire all'interno di un diagramma suddivisi per tipo di diagramma;
+				\item \textbf{Relazioni con le altre classi}:
+				\begin{itemize}
+					\item IN SWEDesigner::Client::Model::ProjectModel
+					\item IN SWEDesigner::Client::Model::toolbarModel
+				\end{itemize}
+			\end{itemize}
+			
+			%--------------------------------------PACKAGE DIAGRAM--------------------------------------
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.Base}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.Base}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Elemento base generico per diagramma dei package UML;
+				\item \textbf{Padre}: \emph{joint.shapes.basic.Generic};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{toolMarkup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Object}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di Base: imposta evento al verificarsi del cambio dei valori e chiama il metodo per la renderizzazione dell'item;
+					\item \emph{updateRectangles(): void}\\
+					Render dell'item;
+					\item \emph{getValues(): Object}\\
+					Ritorna i valori dell'item;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.BaseView}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.BaseView}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: View per item "Base";
+				\item \textbf{Padre}: \emph{joint.dia.ElementView};
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di BaseView: chiama il metodo "initialize" della classe "Base" e imposta un evento alla reazione del model chiamando sequenzialmente i metodi "update" e "resize";
+					\item \emph{render(): Object}\\
+					Render dell'item;
+					\item \emph{renderTools(): Object}\\
+					Assistenza al metodo "render" per la renderizzazione dell'item;
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.Package}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.Package}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Elemento package per diagramma dei package UML;
+				\item \textbf{Padre}: \emph{Swedesigner.model.packageDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto Package (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di Package: chiama il metodo "initialize" della classe base e crea l'istanza di Diagram associata al diagramma delle classi relativo al package;
+					\item \emph{getPackageName(): string}\\
+					Ritorna il nome del Package;
+					\item \emph{updateRectangles(): void}\\
+					Render del package;
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.PkgComment}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.PkgComment}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Commento per diagramma dei package UML;
+				\item \textbf{Padre}: \emph{joint.shapes.basic.TextBlock};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{toolMarkup: string}\\ 
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto PkgComment;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di PkgComment;
+					\item \emph{getPackageName(): string}\\
+					Ritorna il nome del Package;
+					\item \emph{getValues(): Objects}\\
+					Ritorna i valori dell'item PkgComment;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+					\item \emph{updateContent(): void}\\
+					Aggiorna il contenuto dell'item PkgComment;
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.PkgCommentView}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.PkgCommentView}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: View per oggetto "PkgComment";
+				\item \textbf{Padre}: \emph{joint.shapes.basic.TextBlockView};
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di PkgCommentView;
+					\item \emph{render(): Object}\\
+					Render dell'item PkgCommentView;
+					\item \emph{renderTools(): Objects}\\
+					Assistenza al metodo "render" per la renderizzazione dell'item;
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.packageDiagramLink}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.packageDiagramLink}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Collegamento tra due componenti di un diagramma dei package UML;
+				\item \textbf{Padre}: \emph{joint.dia.Link};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di PackageDiagramLink;
+					\item \emph{getValues(): Object}\\
+					Ritorna i valori del collegamento;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.PkgCommentLink}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.PkgCommentLink}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Link tra un commento e un componente UML del diagramma dei package;
+				\item \textbf{Padre}: \emph{Swedesigner.model.packageDiagram.items.packageDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.PkgDependency}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.packageDiagram.items.PkgDependency}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Dipendenza tra due package UML del diagramma dei package;
+				\item \textbf{Padre}: \emph{Swedesigner.model.packageDiagram.items.packageDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+			\end{itemize}
+			
+			%--------------------------------CLASS DIAGRAM-----------------------------------
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Base}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Base}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Elemento base generico per diagramma dei package UML;
+				\item \textbf{Padre}: \emph{joint.shapes.basic.Generic};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Object}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di Base: imposta evento al verificarsi del cambio dei valori e chiama il metodo per la renderizzazione dell'item;
+					\item \emph{getValues(): Object}\\
+					Ritorna i valori dell'item;
+					\item \emph{updateRectangles(): void}\\
+					Render dell'item;	
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+					\item \emph{executeMethod(met: function): void}\\
+					Esegue il metodo avente il nome passato in input;
+					Parametri:
+					\begin{itemize}
+						\item \emph{met: function} \\
+						Metodo da essere eseguito;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.BaseView}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.BaseView}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: View per oggetto "Base";
+				\item \textbf{Padre}: \emph{joint.dia.ElementView};
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di BaseView: chiama il metodo "initialize" della classe base e imposta un evento alla reazione del model chiamando sequenzialmente i metodi "update" e "resize";
+					\item \emph{render(): Object}\\
+					Render dell'item;
+					\item \emph{renderTools(): Object}\\
+					Assistenza al metodo "render" per la renderizzazione dell'item;
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Class}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Class}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Elemento classe per diagramma delle classi UML;
+				\item \textbf{Padre}: \emph{Swedesigner.model.classDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto Class (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di Class: chiama il metodo "initialize" della classe base;
+					\item \emph{updateRectangles(): void}\\
+					Render della classe;
+					\item \emph{addAttribute(): void}\\
+					Aggiunge un nuovo attributo alla classe;
+					\item \emph{addOperation(): void}\\
+					Aggiunge una nuova operazione alla classe;	
+					\item \emph{addParameter(ind: Number): void}\\
+					Aggiunge un nuovo parametro alla classe;
+					Parametri:
+					\begin{itemize}
+						\item \emph{ind: Number} \\
+						Indice dell'operazione;
+					\end{itemize}
+					\item \emph{deleteParameter(ind: Number): void}\\
+					Rimuove un parametro dall'operazione passata in input;
+					Parametri:
+					\begin{itemize}
+						\item \emph{ind: Number} \\
+						Indice dell'operazione;
+					\end{itemize}
+					\item \emph{deleteAttribute(ind: Number): void}\\
+					Rimuove un attributo alla classe;
+					Parametri:
+					\begin{itemize}
+						\item \emph{ind: Number} \\
+						Indice dell'operazione;
+					\end{itemize}
+					\item \emph{deleteOperation(ind: Number): void}\\
+					Rimuove un'operazione dalla classe;
+					Parametri:
+					\begin{itemize}
+						\item \emph{ind: Number} \\
+						Indice dell'operazione;
+					\end{itemize}
+					\item \emph{getAttrsDesc(): Object[]}\\
+					Ritorna la lista di attributi della classe;
+					\item \emph{getOpDesc(): Object[]}\\
+					Ritorna la lista di operazioni della classe;
+					\item \emph{getItemDesc(): Object[]}\\
+					Ritorna le informazioni della classe;		
+					\item \emph{getWidth(): Number}\\
+					Ritorna la larghezza dell'oggetto grafico;	
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Interface}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Interface}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Interfaccia UML;
+				\item \textbf{Padre}: \emph{Swedesigner.model.classDiagram.items.Class};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di Interface;
+					\item \emph{updateRectangles(): void}\\
+					Render dell'interfaccia;
+					\item \emph{addOperation(): void}\\
+					Aggiunge una nuova operazione alla classe;	
+					\item \emph{addParameter(ind: Number): void}\\
+					Aggiunge un parametro all'operazione passata in input;
+					Parametri:
+					\begin{itemize}
+						\item \emph{ind: Number} \\
+						Indice dell'operazione;
+					\end{itemize}
+					\item \emph{deleteParameter(ind: Number): void}\\
+					Rimuove un parametro dall'operazione passata in input;
+					Parametri:
+					\begin{itemize}
+						\item \emph{ind: Number} \\
+						Indice dell'operazione;
+					\end{itemize}
+					\item \emph{deleteOperation(ind: Number): void}\\
+					Rimuove un'operazione dalla classe;
+					Parametri:
+					\begin{itemize}
+						\item \emph{ind: Number} \\
+						Indice dell'operazione;
+					\end{itemize}
+					\item \emph{getOpDesc(): Object[]}\\
+					Ritorna la lista di operazioni della classe;
+					\item \emph{getItemDesc(): Object[]}\\
+					Ritorna le informazioni della classe;		
+					\item \emph{getWidth(): Number}\\
+					Ritorna la larghezza dell'oggetto grafico;	
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.ClComment}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.ClComment}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Commento per diagramma delle classi UML;
+				\item \textbf{Padre}: \emph{joint.shapes.basic.TextBlock};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{toolMarkup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto ClComment 1211
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di ClComment;
+					\item \emph{getValues(): void}\\
+					Ritorna i valori dell'item ClComment;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+					\item \emph{updateContent(): void}\\
+					Aggiorna il contenuto dell'item ClComment;	
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.ClCommentView}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.ClCommentView}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: View per oggetto "ClComment";
+				\item \textbf{Padre}: \emph{joint.shapes.basic.TextBlockView};
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di ClCommentView;
+					\item \emph{render(): Object}\\
+					Render dell'item ClCommentView;
+					\item \emph{renderTools(): Objects}\\
+					Assistenza al metodo "render" per la renderizzazione dell'item;
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.classDiagramLink}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.classDiagramLink}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Collegamento tra due componenti di un diagramma delle classi UML;
+				\item \textbf{Padre}: \emph{joint.dia.Link};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di classDiagramLink;
+					\item \emph{getValues(): Object}\\
+					Ritorna i valori del collegamento;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.ClCommentLink}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.ClCommentLink}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Link tra un commento e un componente UML del diagramma delle classi;
+				\item \textbf{Padre}: \emph{Swedesigner.model.classDiagram.items.classDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+			\end{itemize}
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Generalization}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Generalization}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Generalizzazione tra due componenti UML;
+				\item \textbf{Padre}: \emph{Swedesigner.model.classDiagram.items.classDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+			\end{itemize}
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Implementation}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Implementation}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Implementazione tra due componenti UML;
+				\item \textbf{Padre}: \emph{Swedesigner.model.classDiagram.items.classDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+			\end{itemize}
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Aggregation}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Aggregation}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Aggregazione tra due componenti UML;
+				\item \textbf{Padre}: \emph{Swedesigner.model.classDiagram.items.classDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+			\end{itemize}
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Composition}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Composition}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Composizione tra due componenti UML;
+				\item \textbf{Padre}: \emph{Swedesigner.model.classDiagram.items.classDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+			\end{itemize}
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Association}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.classDiagram.items.Association}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Associazione tra due componenti UML;
+				\item \textbf{Padre}: \emph{Swedesigner.model.classDiagram.items.classDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+					\item \textbf{Metodi}:
+					\begin{itemize}
+						\item \emph{updatelabel(): void}\\
+						Aggiornamento della label;
+						\item \emph{getcard(): Number}\\
+						Ritorna la cardinalità della label;
+						\item \emph{getAttribute(): string}\\
+						Ritorna l'attributo della label;
+						\item \emph{initialize(): void}\\
+						Inizializzazione della Association;
+						\item \emph{setToValue(value: Object, path: string): void}\\
+						Imposta "values.path" a "value";
+						Parametri:
+						\begin{itemize}
+							\item \emph{value: Object} \\
+							Valore da assegnare;
+							\item \emph{path: string} \\
+							Percorso al membro;
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			%------------------------------------------BUBBLE DIAGRAM------------------------------------------
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.Base}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.Base}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Elemento base generico per il diagramma delle bubble;
+				\item \textbf{Padre}: \emph{joint.shapes.basic.Generic};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Object}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di Base: imposta evento al verificarsi del cambio dei valori e chiama il metodo per la renderizzazione dell'item;
+					\item \emph{getValues(): Object}\\
+					Ritorna i valori dell'item;
+					\item \emph{updateRectangles(): void}\\
+					Render dell'item;	
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.BaseView}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.BaseView}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Elemento view base generico per il diagramma delle bubble;
+				\item \textbf{Padre}: \emph{joint.dia.ElementView};
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di BaseView: chiama il metodo "initialize" della classe base e imposta un evento alla reazione del model chiamando sequenzialmente i metodi "update" e "resize";
+					\item \emph{render(): Object}\\
+					Render dell'item;
+					\item \emph{renderTools(): Object}\\
+					Assistenza al metodo "render" per la renderizzazione dell'item;
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.customBubble}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.customBubble}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Elemento custom bubble per il diagramma delle bubble;
+				\item \textbf{Padre}: \emph{Swedesigner.model.bubbleDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto customBubble (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di customBubble: chiama il metodo "initialize" della classe base e crea l'istanza dell'oggetto customBubble;
+					\item \emph{updateRectangles(): void}\\
+					Render della custom bubble;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleIf}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleIf}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rappresenta un'istruzione condizionale;
+				\item \textbf{Padre}: \emph{Swedesigner.model.bubbleDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto bubbleIf (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di bubbleIf: chiama il metodo "initialize" della classe base e crea l'istanza dell'oggetto bubbleIf;
+					\item \emph{updateRectangles(): void}\\
+					Render della bubbleIf;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleElse}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleElse}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rappresenta il ramo 'else' di un'istruzione condizionale;
+				\item \textbf{Padre}: \emph{Swedesigner.model.bubbleDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto bubbleElse (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di bubbleIf: chiama il metodo "initialize" della classe base e crea l'istanza dell'oggetto bubbleElse;
+					\item \emph{updateRectangles(): void}\\
+					Render della bubbleElse;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleFor}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleFor}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rappresenta un'iterazione lungo una sequenza di istruzioni;
+				\item \textbf{Padre}: \emph{Swedesigner.model.bubbleDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto bubbleFor (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di bubbleFor: chiama il metodo "initialize" della classe base e crea l'istanza dell'oggetto bubbleFor;
+					\item \emph{updateRectangles(): void}\\
+					Render della bubbleFor;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleReturn}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleReturn}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rappresenta un'istruzione per uscire da un metodo e ritornare degli argomenti al chiamante;
+				\item \textbf{Padre}: \emph{Swedesigner.model.bubbleDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto bubbleReturn (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di bubbleReturn: chiama il metodo "initialize" della classe base e crea l'istanza dell'oggetto bubbleReturn;
+					\item \emph{updateRectangles(): void}\\
+					Render della bubbleReturn;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleStart}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleStart}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rappresenta la prima istruzione di un metodo;
+				\item \textbf{Padre}: \emph{Swedesigner.model.bubbleDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto bubbleStart (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di bubbleStart: chiama il metodo "initialize" della classe base e crea l'istanza dell'oggetto bubbleStart;
+					\item \emph{updateRectangles(): void}\\
+					Render della bubbleStart;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleWhile}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleWhile}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Rappresenta un loop con controllo di condizione lungo una sequenza di istruzioni;
+				\item \textbf{Padre}: \emph{Swedesigner.model.bubbleDiagram.items.Base};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{markup: string}\\
+					Markup HTML per la rappresentazione grafica;
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto bubbleWhile (tipo, posizione, dimensione, attributi CSS, stato e contenuto dell'oggetto);
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di bubbleWhile: chiama il metodo "initialize" della classe base e crea l'istanza dell'oggetto bubbleWhile;
+					\item \emph{updateRectangles(): void}\\
+					Render della bubbleWhile;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleDiagramLink}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleDiagramLink}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Collegamento tra due componenti di un diagramma delle bubble;
+				\item \textbf{Padre}: \emph{joint.dia.Link};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}
+				\item \textbf{Metodi}:
+				\begin{itemize}
+					\item \emph{initialize(): void}\\
+					Inizializzazione di bubbleDiagramLink;
+					\item \emph{setToValue(value: Object, path: string): void}\\
+					Imposta "values.path" a "value";
+					Parametri:
+					\begin{itemize}
+						\item \emph{value: Object} \\
+						Valore da assegnare;
+						\item \emph{path: string} \\
+						Percorso al membro;
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleLink}
+			\hypertarget{SWEDesigner::Client::Model::Items::Swedesigner.model.bubbleDiagram.items.bubbleLink}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Link tra due elementi del diagramma delle bubble;
+				\item \textbf{Padre}: \emph{Swedesigner.model.bubbleDiagram.items.bubbleDiagramLink};
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{defaults: Objects}\\
+					Attributi di default per l'oggetto;
+				\end{itemize}\
+			\end{itemize}
+					
+			%fine parte Giulio
 			\subsection{SWEDesigner::Client::View}
 				\hypertarget{SWEDesigner::Client::View}{}
 				È il componente del programma che si occupa di gestire l'interfaccia grafica. Nella particolare declinazione MVC adottata da Backbone.js, si occupa anche di gestire gli input dell'utente.
