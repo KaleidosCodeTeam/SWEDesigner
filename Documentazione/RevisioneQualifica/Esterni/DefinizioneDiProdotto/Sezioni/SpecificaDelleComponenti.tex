@@ -25,54 +25,40 @@
 				\hypertarget{SWEDesigner::Client::Model}
 				I package contenuti al suo interno sono:
 				\begin{itemize}
-					\item SWEDesigner::Client::Model::RequestHandler.
+					\item SWEDesigner::Client::Model::Items.
 				\end{itemize}
 				Le classi contenute al suo interno verranno elencate qui di seguito.
-				\subsubsection{SWEDesigner::Client::Model::Command}
-				È l'interfaccia che rappresenta un generico comando impartito dai moduli View ai Model.\\
-					FAN-IN:
-					\begin{itemize}
-						\item ConcreteCommand: implementa l'interfaccia Command per la rappresentazione concreta dei singoli comandi impartiti dai moduli View ai Model;
-						\item View: il componente del programma che si occupa di gestire l'interfaccia grafica;
-						\item State: gestisce la cronologia delle operazioni svolte permettendo le operazioni di unDo e reDo.
-					\end{itemize}
-					Non ci sono dipendenze OUT.
 
-				\subsubsection{SWEDesigner::Client::Model::ConcreteCommand}
-				Implementa l'interfaccia Command per la rappresentazione concreta dei singoli comandi impartiti dai moduli View ai Model.\\
-					Non ci sono dipendenze IN.\\
-					FAN-OUT:
+				\subsubsection{SWEDesigner::Client::Model::DataManager}
+				\hypertarget{SWEDesigner::Client::Model::DataManager}
 					\begin{itemize}
-						\item Command: è l'interfaccia che rappresenta un generico comando impartito dai moduli View ai Model;
-						\item projectModel: si occupa di gestire la parte logica dell'editor.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Client::Model::State}
-				\hypertarget{SWEDesigner::Client::Model::State}
-				Gestisce la cronologia delle operazioni svolte permettendo le operazioni di unDo e reDo.\\
-					FAN-IN:
-					\begin{itemize}
-						\item View: il componente del programma che si occupa di gestire l'interfaccia grafica.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item Command: è l'interfaccia che rappresenta un generico comando impartito dai moduli View ai Model.
+						\item \textbf{Tipo}: \emph{Classe statica};
+						\item \textbf{Descrizione}: Si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto già esistente.\\;
+						\item \textbf{Metodi}:
+						\begin{itemize}
+							\item \emph{newProject(): void} \\
+							Dopo aver chiesto conferma all'utente, crea un nuovo progetto sovrascrivendo quello correntemente aperto; \\
+							\item \emph{openProject(): void} \\
+							Legge un file JSON e ne salva il contenuto in project e nel projectModel come progetto attualmente aperto; \\
+							\item \emph{save(fileName: String): void} \\
+							Salva i dati del progetto, li converte in formato JSON e avvia la procedura di download in locale del browser; \\
+							\textbf{Parametri}:
+							\begin{itemize}
+								\item \emph{fileName: String}
+								Nome del file generato da scaricare; \\
+							\end{itemize}
+							\item \emph{saveAs(): void}\\
+							Estrae la stringa inserita dall'utente nella schermata per il salvataggio con nome e invoca la il metodo per il salvataggio del progetto corrente in un file con il nome desiderato; \\
+						\end{itemize}
+						\item \textbf{Relazioni con le altre classi}:
+						\begin{itemize}
+							\item OUT \hyperlink{SWEDesigner::Client::Model::ProjectModel}{\emph{SWEDesigner::Client::Model::ProjectModel}}: si occupa di gestire la parte logica dell'editor;
+							\item OUT \hyperlink{SWEDesigner::Client::Model::Project}{\emph{SWEDesigner::Client::Model::Project}}: si occupa di gestire gli elementi contenuti nel diagramma.
+						\end{itemize}
 					\end{itemize}
 
-				\subsubsection{SWEDesigner::Client::Model::dataManager}
-				\hypertarget{SWEDesigner::Client::Model::dataManager}
-				Si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto già esistente.\\
-					FAN-IN:
-					\begin{itemize}
-						\item View: il componente del programma che si occupa di gestire l'interfaccia grafica.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item projectModel: si occupa di gestire la parte logica dell'editor;
-						\item project: si occupa di gestire gli elementi contenuti nel diagramma.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Client::Model::projectModel}
+				\subsubsection{SWEDesigner::Client::Model::ProjectModel}
+				\hypertarget{SWEDesigner::Client::Model::ProjectModel}
 					% IMMAGINE ARCHITETTURA MAINMODEL
 					\begin{figure}[H]\label{fig:Model}
 						\centering
@@ -80,67 +66,190 @@
 						\caption{Architettura di Model}
 					\end{figure}
 
-				È il componente del programma che si occupa di gestire la parte logica dell’editor.\\
-					FAN-IN:
 					\begin{itemize}
-						\item ConcreteCommand: rappresenta i comandi inviati dalle View ed eseguiti poi da Model;
-						\item dataManager: si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto e del caricamento di un progetto già esistente;
-						\item View: invoca il metodo execCommand;
-						\item Client::RequestHandler::Receiver: si occupa di gestire i dati ricevuti dal server.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item Client::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il server.
+						\item \textbf{Tipo}: \emph{Classe};
+						\item \textbf{Descrizione}: Model del progetto corrente. Si occupa di gestire il graph (joint.dia.Graph) e tutti gli eventi ad esso associati;
+						\item \textbf{Padre}: \emph{Backbone.model};
+						\item \textbf{Attributi}:
+						\begin{itemize}
+							\item \emph{currentDiagram: String} \\
+							L'id del diagramma correntemente caricato nel graph (null se è il diagramma dei package); \\
+							\item \emph{currentDiagramType: String} \\
+							Il tipo del diagramma correntemente caricato nel graph ("packageDiagram", "classDiagram" o "bubbleDiagram"); \\
+							\item \emph{graph: joint.dia.Graph} \\
+							Il model dell'area di disegno associata al paper della \hyperlink{SWEDesigner::Client::View::ProjectView}{\emph{SWEDesigner::Client::View::ProjectView}}; \\
+							\item \emph{itemToBeAdded: String} \\
+							Salvataggio temporaneo dell'elemento da aggiungere al graph corrente; \\
+						\end{itemize}
+						\item \textbf{Metodi}:
+						\begin{itemize}
+							\item \emph{addItem(item: Object): void} \\
+							Salva in itemToBeAdded l'elemento passato in input che è un oggetto di Swedesigner::Client::Model::Items; \\
+								\textbf{Parametri}:
+								\begin{itemize}
+									\item \emph{item: Object}
+									Elemento del diagramma; \\
+								\end{itemize}
+							\item \emph{addItemToGraph(): void} \\
+							Aggiunge un elemento al grafo del diagramma corrente; \\
+							\item \emph{changedPosition(graph: joint.dia.Graph, cell: joint.dia.Cell, newPosition: Object, opt: Object): void} \\
+							Gestisce la traslazione di un elemento selezionato nel grafo; \\
+								\textbf{Parametri}:
+								\begin{itemize}
+									\item \emph{graph: joint.dia.Graph}
+									Grafo del diagramma corrente; \\
+									\item \emph{cell: joint.dia.Cell}
+									Elemento correntemente selezionato; \\
+									\item \emph{newPosition: Object}
+									Posizione attuale dell'oggetto nel grafo; \\
+									\item \emph{opt: Object}
+									Traslazione dell'oggetto dalla posizione iniziale alla posizione "newPosition"; \\
+								\end{itemize}
+							\item \emph{deleteCell(): void} \\
+							Rimuove un elemento dal grafo eliminando anche gli eventuali diagrammi derivati (classi o bubble); \\
+							\item \emph{deleteOperation(): void} \\
+							Rimuove un'operazione ed eventualmente anche il diagramma delle bubble associato; \\
+							\item \emph{getCellFromId(cellId: String): void} \\
+							Ritorna l'elemento del graph avente l'id passato come parametro in input; \\
+								\textbf{Parametri}:
+								\begin{itemize}
+									\item \emph{cellId: String}
+									Identificativo dell'elemento nel graph; \\
+								\end{itemize}
+							\item \emph{graphSwitched(): void} \\
+							Genera l'evento "switchgraph"; \\
+							\item \emph{initialize(): void} \\
+							Inizializzazione del ProjectModel: inizializzazione del graph, del currentDiagramType, degli eventi verificabili; \\
+							\item \emph{resizeParent(parent: Object): void} \\
+							Esegue il resize di un elemento del diagramma ingrandendolo; \\
+								\textbf{Parametri}:
+								\begin{itemize}
+									\item \emph{parent: Object}
+									Elemento del diagramma; \\
+								\end{itemize}
+							\item \emph{saveCurrentDiagram(): void} \\
+							Salva il diagramma correntemente aperto all'interno della struttura definita nella classe Project; \\
+							\item \emph{switchInGraph(): void} \\
+							Esegue lo switch in profondità al diagramma selezionato svuotando il graph dagli elementi correntemente presenti e caricando gli eventuali nuovi elementi; \\
+							\item \emph{switchOutGraph(): void} \\
+							Esegue lo switch all'antistante tipo di diagramma selezionato svuotando il graph dagli elementi correntemente presenti e caricando gli eventuali nuovi elementi; \\
+						\end{itemize}
+						\item \textbf{Relazioni con le altre classi}:
+						\begin{itemize}
+							\item IN \hyperlink{SWEDesigner::Client::Model::DataManager}{\emph{SWEDesigner::Client::Model::DataManager}}: si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto e del caricamento di un progetto già esistente;
+							\hyperlink{SWEDesigner::Client::Model::ToolbarModel}{\emph{SWEDesigner::Client::Model::ToolbarModel}}: È il componente del programma che si occupa di gestire la parte logica della toolbar;
+							\item IN \hyperlink{SWEDesigner::Client::Model::RequestHandler}{\emph{SWEDesigner::Client::Model::RequestHandler}}: si occupa di gestire i dati ricevuti dal server;
+							\item OUT \hyperlink{SWEDesigner::Client::Model::Project}{\emph{SWEDesigner::Client::Model::Project}}: si occupa di gestire gli elementi contenuti nel diagramma;
+							\item OUT \hyperlink{SWEDesigner::Client::Model::Items::Swedesigner}{\emph{SWEDesigner::Client::Model::Items::Swedesigner}}: è il contenitore degli elementi che si possono inserire in un diagramma.
+						\end{itemize}
 					\end{itemize}
 
-				\subsubsection{SWEDesigner::Client::Model::toolbarModel}
-				È il componente del programma che si occupa di gestire la parte logica della toolbar.\\
-					FAN-IN:\\
-					Non ci sono dipendenze IN. \\
-					FAN-OUT:
+				\subsubsection{SWEDesigner::Client::Model::ToolbarModel}
+				\hypertarget{SWEDesigner::Client::Model::ToolbarModel}
 					\begin{itemize}
-						\item projectModel: si occupa di gestire la parte logica dell'editor;
-						\item swedesignerItems: definisce il comportamento degli oggetti contenuti nel diagramma.
+						\item \textbf{Tipo}: \emph{Classe};
+						\item \textbf{Descrizione}: È il componente del programma che si occupa di gestire la parte logica della toolbar;
+						\item \textbf{Padre}: \emph{Backbone.model};
+						\item \textbf{Attributi}:
+						\begin{itemize}
+							\item \emph{items: Object} \\
+							Contiene tutti gli elementi definibili nel diagramma corrente; \\
+						\end{itemize}
+						\item \textbf{Metodi}:
+						\begin{itemize}
+							\item \emph{addElement(id: String): void} \\
+							Salva lo strumento selezionato interagendo con il \hyperlink{SWEDesigner::Client::Model::ProjectModel}{\emph{SWEDesigner::Client::Model::ProjectModel}}; \\
+							\textbf{Parametri}:
+							\begin{itemize}
+								\item \emph{id: String}
+								Identificativo del tipo di strumento/elemento da inserire; \\
+							\end{itemize}
+							\item \emph{createItems(): void} \\
+							Assegna al campo dati "items" il set di strumenti utilizzabili nel diagramma corrente; \\
+							\item \emph{currentDiagram(): String} \\
+							Ritorna il tipo del diagramma corrente; \\
+							\item \emph{initialize(): void} \\
+							Inizializzazione del ToolbarModel: chiama il metodo ToolbarModel#createItems;
+						\end{itemize}
+						\item \textbf{Relazioni con le altre classi}:
+						\begin{itemize}
+							\item OUT \hyperlink{SWEDesigner::Client::Model::ProjectModel}{\emph{SWEDesigner::Client::Model::ProjectModel}}: si occupa di gestire la parte logica dell'editor;
+							\item OUT \hyperlink{SWEDesigner::Client::Model::Items::Swedesigner}{\emph{SWEDesigner::Client::Model::Items::Swedesigner}}: è il contenitore degli elementi che si possono inserire in un diagramma.
+						\end{itemize}
 					\end{itemize}
 
-				\subsubsection{SWEDesigner::Client::Model::project}
-				si occupa di gestire gli elementi contenuti nel diagramma.\\
-					FAN-IN:
+				\subsubsection{SWEDesigner::Client::Model::Project}
+				\hypertarget{SWEDesigner::Client::Model::Project}
 					\begin{itemize}
-						\item projectModel: si occupa di gestire la parte logica dell'editor;
-						\item dataManager: Si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto già esistente;
-						\item requestHandler: Si occupa di gestire le comunicazioni con il server.
+						\item \textbf{Tipo}: \emph{Classe};
+						\item \textbf{Descrizione}: Contenitore di tutti gli elementi del progetto correntemente aperto nella Single Page Application;
+						\item \textbf{Padre}: \emph{Backbone.model};
+						\item \textbf{Attributi}:
+						\begin{itemize}
+							\item \emph{classes: Object} \\
+							Contiene: classesArray (array contentente diagrammi delle classi; in ogni indice è presente un oggetto {id: idPackagePadre, items: [arrayClassiDelDiagramma]}) e dependenciesArray (array contenente i link del corrispondente diagramma delle classi; in ogni indice è presente un oggetto {id: idPackagePadre, items: [arrayLinkDelDiagramma]}); \\
+							\item \emph{operations: Array<Object>} \\
+							Contiene un array di oggetti; in ogni indice è presente un oggetto {id: id dell'operazione, items: [arrayBubbleDelDiagramma]}); \\
+							\item \emph{packages: Object} \\
+							Contiene: packagesArray (array contenente i package item del diagramma dei package) e dependenciesArray (array contenente i link del diagramma dei package); \\
+						\end{itemize}
+						\item \textbf{Metodi}:
+						\begin{itemize}
+							\item \emph{deleteClassesDiagramOfPkg(id: String): void} \\
+							Elimina il diagramma delle classi associato al package e tutti i diagrammi delle bubble associati alle operazioni delle relative classi; \\
+							\textbf{Parametri}:
+							\begin{itemize}
+								\item \emph{id: String}
+								Identificativo del package; \\
+							\end{itemize}
+							\item \emph{deleteOperationDiagram(id: String): void} \\
+							Elimina il diagramma delle bubble associato all'operazione; \\
+							\textbf{Parametri}:
+							\begin{itemize}
+								\item \emph{id: String}
+								Identificativo dell'operazione; \\
+							\end{itemize}
+							\item \emph{getClassIndex(id: String): Number} \\
+							Cerca ed eventualmente ritorna l'indice dell'array classesArray del diagramma delle classi associato al package; \\
+							\textbf{Parametri}:
+							\begin{itemize}
+								\item \emph{id: String}
+								Identificativo del package; \\
+							\end{itemize}
+							\item \emph{getOperationIndex(id: String): Number} \\
+							Cerca ed eventualmente ritorna l'indice dell'array operations del diagramma delle bubble associato all'operazione; \\
+							\textbf{Parametri}:
+							\begin{itemize}
+								\item \emph{id: String}
+								Identificativo dell'operazione; \\
+							\end{itemize}
+						\end{itemize}
+						\item \textbf{Relazioni con le altre classi}:
+						\begin{itemize}
+							\item IN \hyperlink{SWEDesigner::Client::Model::ProjectModel}{\emph{SWEDesigner::Client::Model::ProjectModel}}: si occupa di gestire la parte logica dell'editor;
+							\item IN \hyperlink{SWEDesigner::Client::Model::DataManager}{\emph{SWEDesigner::Client::Model::DataManager}}: si occupa della persistenza dei dati, in particolare del salvataggio su file system locale del progetto e del caricamento di un progetto già esistente;
+							\item IN \hyperlink{SWEDesigner::Client::Model::RequestHandler}{\emph{SWEDesigner::Client::Model::RequestHandler}}: si occupa di gestire i dati ricevuti dal server;
+						\end{itemize}
 					\end{itemize}
-					FAN-OUT:\\
-					Non ci sono dipendenze OUT. \\
 				
-			\subsection{SWEDesigner::Client::Model::RequestHandler}
+				\subsubsection{SWEDesigner::Client::Model::RequestHandler}
 				\hypertarget{SWEDesigner::Client::Model::RequestHandler}
-				Questo package non contiene dei sottopackage.\\
-				Le classi contenute al suo interno verranno elencate qui di seguito.
-				\subsubsection{SWEDesigner::Client::Model::RequestHandler::Sender}
-				Si occupa di gestire le comunicazioni in uscita verso il server.\\
-					FAN-IN:
 					\begin{itemize}
-						\item View: ne invoca i metodi.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item projectModel: si occupa di gestire la parte logica dell'editor;
-						\item project: si occupa di gestire gli elementi contenuti nel diagramma;
-						\item Server::RequestHandler::Receiver: si occupa di gestire le comunicazioni in entrata dal Client.
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Client::Model::RequestHandler::Receiver}
-				Si occupa di gestire le comunicazioni in entrata dal server.\\
-					FAN-IN:
-					\begin{itemize}
-						\item Server::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il Client.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item projectModel: si occupa di gestire la parte logica dell'editor;
-						\item project: si occupa di gestire gli elementi contenuti nel diagramma.
+						\item \textbf{Tipo}: \emph{Classe};
+						\item \textbf{Descrizione}: Si occupa della gestione delle comunicazioni tra client e server (lato client);
+						\item \textbf{Padre}: \emph{Backbone.model};
+						\item \textbf{Metodi}:
+						\begin{itemize}
+							\item \emph{caricaJa(): void} \\
+							Carica il file json nel server e ne genera il codice Java restituendo il nome della cartella compressa; \\
+							\item \emph{caricaJs(): void} \\
+							Carica il file json nel server e ne genera il codice Javascript restituendo il nome della cartella compressa; \\
+						\end{itemize}
+						\item \textbf{Relazioni con le altre classi}:
+						\begin{itemize}
+							\item OUT \hyperlink{SWEDesigner::Client::Model::ProjectModel}{\emph{SWEDesigner::Client::Model::ProjectModel}}: si occupa di gestire la parte logica dell'editor;
+							\item OUT \hyperlink{SWEDesigner::Client::Model::Project}{\emph{SWEDesigner::Client::Model::Project}}: si occupa di gestire gli elementi contenuti nel diagramma.
+						\end{itemize}
 					\end{itemize}
 
 			\subsection{SWEDesigner::Client::View}
