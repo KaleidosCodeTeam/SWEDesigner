@@ -1,0 +1,35 @@
+\documentclass[../AnalisiDeiRequisiti.tex]{subfiles}
+\begin{document}
+	\section*{Ordine del giorno}
+		\begin{enumerate}
+			\item Rinegoziazione di alcuni requisiti secondo quanto scritto nel verbale interno del 27/06/2017;
+			\item Presentazione di una demo del prodotto e panoramica completa delle funzionalità già implementate.
+		\end{enumerate}
+		
+		\section*{Riassunto dei contenuti}
+		Come prima cosa il gruppo ha esposto le motivazioni secondo le quali si ritenesse opportuno eliminare alcuni requisiti. Il proponente è stato completamente d'accordo sia per quanto riguarda la fusione tra activity diagram e bubble diagram che per l'eliminazione della possibilità di creare classi parametriche.\\
+		Il gruppo ha mostrato al proponente una demo del prodotto. Il proponente si è mostrato in linea generale soddisfatto dell'applicazione ma ha espresso alcune perplessità.\\
+		Le prime critiche sono state rivolte alla grafica, ritenuta un po' retrò. Inoltre per come è stata progettata l'interfaccia utente ci sono delle zone di schermo inutilmente occupate da cornici o bottoni troppo grandi che rubano spazio alla canvas. Inoltre non c'è un'indicazione visiva durante alcune azioni come la selezione di un elemento nella canvas. Questo va a incidere sull'usabilità del prodotto.\\
+		Il proponente ha quindi chiesto al gruppo quali funzionalità ritenessero più importanti da sviluppare entro la revisione di qualifica e quali invece venissero delegate alla revisione di accettazione.\\
+		Le funzionalità ancora da sviluppare, vista l'imminente scadenza, sono tutte delegate alla RA e sono le seguenti:
+		\begin{itemize}
+			\item implementazione della base di dati per le bubble personalizzate;
+			\item command pattern per le funzionalità undo-redo;
+			\item generazione di un report degli errori in compilazione durante la generazione dello stesso;
+			\item visualizzazione dei layer per grado di importanza;
+			\item alla creazione di un nuovo progetto viene chiesto di salvare il corrente.
+		\end{itemize}
+		
+		Per quanto riguarda il report degli errori e il salvataggio del progetto corrente il proponente non ha avuto nulla da aggiungere. \\
+		Riguardo il database il proponente ha espresso alcune perplessità sulla scelta di MySQL e ha consigliato l'utilizzo di Arango o di Postgress. 
+		Il proponente ha inoltre dichiarato di non essere interessato al command pattern per la funzionalità di undo-redo in quanto preferisce che il tempo che il gruppo avrebbe dedicato allo sviluppo di questa funzionalità (giudicata relativamente complessa) venga speso nel miglioramento delle funzionalità già presenti.
+		Inoltre ha consigliato di utilizzare colori diversi per la visualizzazione dei layer.\\
+	
+	
+	\section*{Conclusioni}
+	
+		Visto il riscontro positivo il gruppo ha deciso di eliminare definitivamente i requisiti in questione dal documento \analisideirequisiti.
+		Per quanto riguarda le critiche ricevute il gruppo si impegna a miglorare l'interfaccia utente per renderla più conforme ai desideri del proponente.
+		Come concordato vengono inoltre eliminati dall'\analisideirequisiti anche i requisiti riguardanti la funzionalità di undo-redo. 
+		Infine verrà presa in considerazione la possibilità di cambiare database.
+\end{document}
