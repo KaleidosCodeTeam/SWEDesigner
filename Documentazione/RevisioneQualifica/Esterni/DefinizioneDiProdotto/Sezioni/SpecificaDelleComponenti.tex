@@ -144,28 +144,139 @@
 					\end{itemize}
 
 			\subsection{SWEDesigner::Client::View}
-				\hypertarget{SWEDesigner::Client::View}
+				\hypertarget{SWEDesigner::Client::View}{}
+				È il componente del programma che si occupa di gestire l'interfaccia grafica. Nella particolare declinazione MVC adottata da Backbone.js, si occupa anche di gestire gli input dell'utente.
+				% IMMAGINE ARCHITETTURA VIEW
+					\begin{figure}[H]\label{fig:View}
+						\centering
+						\includegraphics[scale=0.44]{Immagini/DiagrammaArchitettura/View.png}
+						\caption{Architettura di View}
+					\end{figure}
 				Questo package non contiene dei sottopackage.
 				Le classi contenute al suo interno verranno elencate qui di seguito.
-				\subsubsection{SWEDesigner::Client::View::projectView}
-					% IMMAGINE ARCHITETTURA MAINVIEW
-					\begin{figure}[H]\label{fig:MainModel}
-						\centering
-						\includegraphics[scale=0.44]{Immagini/DiagrammaArchitettura/MainView.png}
-						\caption{Architettura di projectView}
-					\end{figure}
 
-				È il componente del programma che si occupa di gestire l'interfaccia grafica. Nella particolare declinazione MVC adottata da Backbone.js, si occupa anche di gestire gli input dell'utente.\\
-					FAN-IN:
-					\begin{itemize}
-						\item pathView: gestisce l'interfaccia grafica della barra di indirizzo;
-						\item editPanelView: gestisce l'interfaccia grafica del pannello di editing.
+				\subsubsection{SWEDesigner::Client::View::projectView}
+					\hypertarget{SWEDesigner::Client::View::projectView}{}
+						\begin{itemize}
+						\item \textbf{Tipo}: \emph{Class};
+						\item \textbf{Descrizione}: Questa classe gestisce il diagramma disegnato e le interazioni dell'utente con esso;
+						\item \textbf{Padre}: \hyperlink{SWEDesigner::Client::View}{\emph{SWEDesigner::Client::View}};
+						\item \textbf{Attributi}:
+						\begin{itemize}
+							\item \emph{model} \\
+							Istanza di \hyperlink{SWEDesigner::Model::projectModel}{\emph{projectModel}} del programma;
+							\item \emph{paper} \\
+							Oggetto joint.dia.Paper della libreria esterna JointJS;
+						\end{itemize}
+						\item \textbf{Metodi}:
+						\begin{itemize}
+							\item \emph{resetSelectedCell(): void} \\
+							Pone this.paper.selectedCell a null e genera l'evento "changed-selected-cell";
+							\item \emph{mouseMoveFunction(event: JavaScriptEvent): void} \\
+							Provoca la traslazione del paper nella direzione del trascinamento del mouse; \\
+							Parametri:
+							\begin{itemize}
+								\item \emph{event: JavaScriptEvent}: Evento;
+							\end{itemize}
+							\item \emph{blankPointerDown(elem: cellView, event: JavaScriptEvent, x: double, y: double): void} \\
+							Salva le correnti coordinate al click del mouse nello spazio vuoto del paper; \\
+							Parametri:
+							\begin{itemize}
+								\item \emph{elem: cellView}: Elemento cellView;
+								\item \emph{event: JavaScriptEvent}: Evento;
+								\item \emph{x: double}: Coordinata dell'asse delle ascisse;
+								\item \emph{y: double}: Coordinata dell'asse delle ordinate;
+							\end{itemize}
+							\item \emph{blankPointerUp(elem: cellView, event: JavaScriptEvent, x: double, y: double): void} \\
+							Elimina le coordinate iniziali al click del mouse nello spazio vuoto del paper; \\
+							Parametri:
+							\begin{itemize}
+								\item \emph{elem: cellView}: Elemento cellView;
+								\item \emph{event: JavaScriptEvent}: Evento;
+								\item \emph{x: double}: Coordinata dell'asse delle ascisse;
+								\item \emph{y: double}: Coordinata dell'asse delle ordinate;
+							\end{itemize}
+							\item \emph{onMouseWheel(elem: cellView, event: JavaScriptEvent): void} \\
+							Trasla verticalmente il paper effettuando uno zoom in avanti o indietro a seconda della rotazione della ruota del mouse; \\
+							Parametri:
+							\begin{itemize}
+								\item \emph{elem: cellView}: Elemento cellView;
+								\item \emph{event: JavaScriptEvent}: Evento;
+							\end{itemize}
+							\item \emph{render(): void} \\
+							Provoca il render della projectVIew;
+							\item \emph{addCell(elem: cellView, event: JavaScriptEvent, x: double, y: double): void} \\
+							Aggiunge un nuovo elemento al graph chiamando il relativo metodo di \hyperlink{SWEDesigner::Model::projectModel}{\emph{projectModel}}; \\
+							Parametri:
+							\begin{itemize}
+								\item \emph{elem: cellView}: Elemento cellView;
+								\item \emph{event: JavaScriptEvent}: Evento;
+								\item \emph{x: double}: Coordinata dell'asse delle ascisse;
+								\item \emph{y: double}: Coordinata dell'asse delle ordinate;
+							\end{itemize}
+							\item \emph{deleteCell(event: JavaScriptEvent): void} \\
+							Elimina un elemento dal graph chiamando il relativo metodo di ProjectModel;\\
+							Parametri:
+							\begin{itemize}
+								\item \emph{event: JavaScriptEvent}: Evento;
+							\end{itemize}
+							\item \emph{unembedCell(event: JavaScriptEvent): void} \\
+							Rimuove l'innestamento della cella selezionata;\\
+							Parametri:
+							\begin{itemize}
+								\item \emph{event: JavaScriptEvent}: Evento;
+							\end{itemize}
+							\item \emph{pointerDownFunction(prView: \hyperlink{SWEDesigner::Client::View::projectView}{\emph{projectView}}, elem: cellView, event: JavaScriptEvent, x: double, y: double): void} \\
+							Gestice l'evento generato dal click (non rilasciato) del mouse nel paper. Se viene cliccato un elemento, genera a sua volta l'evento "changed-selected-cell" gestito da \hyperlink{SWEDesigner::Client::View::EditPanelView}{\emph{EditPanelView}};\\
+							Parametri:
+							\begin{itemize}
+								\item \emph{prView: \hyperlink{SWEDesigner::Client::View::projectView}{\emph{projectView}}}: Istanza di projectView;
+								\item \emph{elem: cellView}: Elemento cellView;
+								\item \emph{event: JavaScriptEvent}: Evento;
+								\item \emph{x: double}: Coordinata dell'asse delle ascisse;
+								\item \emph{y: double}: Coordinata dell'asse delle ordinate;
+							\end{itemize}
+							\item \emph{pointerUpFunction(prView: \hyperlink{SWEDesigner::Client::View::projectView}{\emph{projectView}}, elem: cellView, event: JavaScriptEvent, x: double, y: double): void} \\
+							Gestice l'evento generato dal click (al rilascio) del mouse nel paper (rimozione di un elemento, nesting di un elemento in un'altro, collegamento di una relazione tra elementi);\\
+							Parametri:
+							\begin{itemize}
+								\item \emph{prView: \hyperlink{SWEDesigner::Client::View::projectView}{\emph{projectView}}}: Istanza di projectView;
+								\item \emph{elem: cellView}: Elemento cellView;
+								\item \emph{event: JavaScriptEvent}: Evento;
+								\item \emph{x: double}: Coordinata dell'asse delle ascisse;
+								\item \emph{y: double}: Coordinata dell'asse delle ordinate;
+							\end{itemize}
+							\item \emph{switchIn(id: string): void} \\
+							Gestisce lo switch in profondità (dall'elemento selezionato il cui id è parametro in input) invocando il relativo metodo di \hyperlink{SWEDesigner::Model::projectModel}{\emph{projectModel}};\\
+							Parametri:
+							\begin{itemize}
+								\item \emph{id: string}: Identificativo dell'elemento;
+							\end{itemize}
+							\item \emph{switchOut(diagramType: string): void} \\
+							Gestisce lo switch verso un diagramma (il cui tipo è parametro in input) antistante da quello corrente invocando il relativo metodo di \hyperlink{SWEDesigner::Model::projectModel}{\emph{projectModel}}.\\
+							Parametri:
+							\begin{itemize}
+								\item \emph{diagramType: string}: Tipo di diagramma di destinazione;
+							\end{itemize}
+							\item \emph{deleteOperationAt(ind: int): void} \\
+							Gestisce l'eliminazione di un diagramma delle bubble invocando il relativo metodo di \hyperlink{SWEDesigner::Model::projectModel}{\emph{projectModel}}.\\
+							Parametri:
+							\begin{itemize}
+								\item \emph{ind: int}: Indice dell'array di operazioni del diagramma delle bubble da eliminare;
+							\end{itemize}
+						\end{itemize}
+						FAN-IN:
+						\begin{itemize}
+							\item pathView: gestisce l'interfaccia grafica della barra di indirizzo;
+							\item editPanelView: gestisce l'interfaccia grafica del pannello di editing.
+						\end{itemize}
+						FAN-OUT:
+						\begin{itemize}
+							\item projectModel: si occupa di gestire la parte logica dell'editor;
+							\item Paper: gestisce l'interfaccia grafica dell'area dei diagrammi.
+						\end{itemize}
 					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item projectModel: si occupa di gestire la parte logica dell'editor;
-						\item Paper: gestisce l'interfaccia grafica dell'area dei diagrammi.
-					\end{itemize}
+					
 
 				\subsubsection{SWEDesigner::Client::View::titlebarView}
 				È il componente del programma che fa la funzione di view per la barra del titolo, dove saranno collocati il menu dell’applicazione e gli shortcut.\\
