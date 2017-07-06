@@ -327,7 +327,7 @@ All'utente è richiesto di:
 	\item Inserire il nome per l'attività appena creata; 
 	\item Confermare la creazione dell'attività. 
 \end{itemize} 
-
+%%%eliminare
 \subsubsection{Test TV22} 
 \hypertarget{TV22}
 L'utente vuole verificare le funzionalità del diagramma delle attività apportando una modifica ad un'attività. 
@@ -525,7 +525,7 @@ All'utente è richiesto di:
 	\item Confermare la cancellazione della regione d'espansione. 
 \end{itemize} 
 
-
+%%% fine inutili%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%bubble Flow chart
 
@@ -723,7 +723,7 @@ All'utente è richiesto di:
 	\hline
 	\endhead
 	
-	\hypertarget{TS1}{TS1} & Verificare che il s istema permetta di generare codice compilabile correttamente & Superato \\
+	\hypertarget{TS1}{TS1} & Verificare che il sistema permetta di generare codice compilabile correttamente & Superato \\
 	\hline
 	\hypertarget{TS2}{TS2} & Verificare che il sistema permetta di gestire un progetto & Superato \\
 	\hline
@@ -752,8 +752,8 @@ All'utente è richiesto di:
 	\hypertarget{TS3.1.2}{TS3.1.2} & Verificare che il sistema permetta di modificare un package presente nel diagramma dei package & Superato\\
 	\hline
 	\hypertarget{TS3.1.2.1}{TS3.1.2.1} & Verificare che il sistema permetta di rinominare un package & Superato \\
-	\hline
-	\hypertarget{TS3.1.2.2}{TS3.1.2.2} & Verificare che il sistema permetta di impostare la visibilità del package & Superato \\
+	%\hline
+	%\hypertarget{TS3.1.2.2}{TS3.1.2.2} & Verificare che il sistema permetta di impostare la visibilità del package & Superato \\
 	\hline
 	\hypertarget{TS3.1.2.3}{TS3.1.2.3} & Verificare che il sistema permetta di rimuovere un elemento dal package & Superato \\
 	\hline
@@ -806,8 +806,8 @@ All'utente è richiesto di:
 	\hypertarget{TS3.2.2.11.8}{TS3.2.2.11.8} & Verificare che il sistema permetta di eliminare un commento presente nel diagramma delle classi & Superato\\
 	\hline
 	\hypertarget{TS3.2.2.11.9}{TS3.2.2.11.9} & Verificare che il sistema permetta di cambiare layer di visualizzazione & Non Superato \\
-	\hline
-	\hypertarget{TS3.2.2.2}{TS3.2.2.2} & Verificare che il sistema permetta di innestare una classe all'interno di un'altra classe & N.I. \\
+	%\hline
+	%\hypertarget{TS3.2.2.2}{TS3.2.2.2} & Verificare che il sistema permetta di innestare una classe all'interno di un'altra classe & N.I. \\
 	\hline
 	\hypertarget{TS3.2.2.3}{TS3.2.2.3} & Verificare che il sistema permetta di impostare l'importanza di una classe & Superato \\
 	\hline
@@ -967,7 +967,7 @@ All'utente è richiesto di:
 	\hline
 	\hypertarget{TS3.2.4.8}{TS3.2.4.8} & Verificare che il sistema permetta di commentare l'interfaccia & Superato \\
 
- % bubble diagramm %
+	% bubble diagramm %
 	
 	\hline
 	\hypertarget{TS3.3}{TS3.3} & Verificare che il sistema permetta di editare il bubble diagram & Superato \\
@@ -1475,6 +1475,218 @@ All'utente è richiesto di:
 		\includegraphics[scale=0.4]{Figures/Integrazione.pdf}
 		\caption{Diagramma test di integrazione}\label{}
 	\end{figure}
+	\begin{longtable}{|c|>{\centering}p{8cm}|l|l|}
+		
+		\hline
+		% Sistema
+		%Test TI1}
+		\hypertarget{TI1}{TI1} &Viene verificata l'integrazione finale per le componenti del sistema, in particolare tra Server e Client.
+		& Non implementato.
+		& SweDesigner.
+		
+		% Client
+		\\%Test TI1.1}
+		
+		\hline
+		\hypertarget{TI1.1} {TI1.1} &Viene verificata l'integrazione finale per le componenti del Client, in particolare tra  Model e View.
+		& Non implementato.
+		& SweDesigner::Client.
+		
+		% View
+		\\%Test TI1.1.1}
+		
+		\hline
+		\hypertarget{TI1.1.1}{TI1.1.1} &Viene verificato che il sistema gestisca correttamente le componenti della View in particolare l'integrazione tra la TitleBarView, la ToolBarView, l'AddressView, l'EditPanelView e il Paper.
+		& Non implementato.
+		& SweDesigner::Client::View.
+		
+		
+		\\%Test TI1.1.2}
+		
+		\hline
+		\hypertarget{TI1.1.2}{TI1.1.2} &Viene verificato che il sistema gestisca correttamente le componenti della View in particolare l'integrazione dei vari moduli con la libreria esterna \gl{JointJS}.
+		& Non implementato.
+		& SweDesigner::Client::View.
+		
+		% Model
+		\\%Test TI1.1.3}
+		
+		\hline
+		\hypertarget{TI1.1.3}{TI1.1.3} &Viene verificata l'integrazione per le componenti del Model, in particolare Command, Dao, RequestHendler, Main Model e State.
+		& Non implementato.
+		& SweDesigner::Client::Model.
+		
+		% Command
+		\\%Test TI1.1.3.1}
+		
+		\hline
+		\hypertarget{TI1.1.3.1}{TI1.1.3.1} &Viene verificato che il modulo Command gestisca correttamente i vari comandi impartiti dai moduli della View ai rispettivi moduli del Model.
+		& Non implementato.
+		& SweDesigner::Client::Model::Command.
+		
+		% Dao 1.1.2.2
+		\\%Test TI1.1.3.2}
+		
+		\hline
+		\hypertarget{TI1.1.3.2} {TI1.1.3.2} &Viene verificato che il DAO all'interno del Model carichi correttamente un progetto.
+		& DAO.
+		& Superato.
+		
+		\\%Test TI1.1.3.3}
+		
+		\hline
+		\hypertarget{TI1.1.3.3}{TI1.1.3.3}& Viene verificato che il DAO all'interno del Model salvi correttamente un progetto.
+		&DAO.
+		& Superato.
+		% RequestHandler 1.1.2.3
+		\\%Test TI1.1.3.4}
+		
+		\hline
+		\hypertarget{TI1.1.3.4}{TI1.1.3.4}& Viene verificata l'integrazione per le componenti del RequestHandler del Client, in particolare Sender e Receiver.
+		& RequestHandler.
+		& Superato.
+		% Sender 1.1.2.3.1
+		\\%Test TI1.1.3.4.1}
+		
+		\hline
+		\hypertarget{TI1.1.3.4.1}{TI1.1.3.4.1}& Viene verificato che il Sender all'interno del Client invii le richieste per bubble correttamente al Server.
+		& Sender.
+		& Superato.
+		
+		\\%Test TI1.1.3.4.2}
+		
+		\hline
+		\hypertarget{TI1.1.3.4.2}{TI1.1.3.4.2}& Viene verificato che il Sender all'interno del Client invii  correttamente al Server le richieste per la creazione di codice a partire dal file \gl{JSON}.
+		& Sender.
+		& Superato.
+		
+		% Receiver 1.1.2.3.2
+		\\%Test TI1.1.3.5}
+		
+		\hline
+		\hypertarget{TI1.1.3.5}{TI1.1.3.5}& Viene verificato che il Receiver all'interno del Client riceva correttamente le bubble dal Server.
+		& Receiver.
+		& Superato.
+		
+		% MainModel 1.1.2.4
+		\\%Test TI1.1.3.6}
+		
+		\hline
+		\hypertarget{TI1.1.3.6}{TI1.1.3.6}& Viene verificata l'integrazione per il MainModel all'interno del Client con i vari moduli del Model collegati ai moduli della View, in particolare con il DiagramTree, la TitleBarModel, la ToolBarModel, l'AddressModel e l'EditPanelModel. 
+		& MainModel.
+		& Superato.
+		
+		% Diagram 1.1.2.4.1
+		\\%Test TI1.1.3.7}
+		
+		\hline
+		\hypertarget{TI1.1.3.7}{TI1.1.3.7}& Viene verificata l'integrazione per il modulo Diagram all'interno del Client con il framework JointJS. 
+		& Diagram.
+		& Superato.
+		
+		% State 1.2.3.5
+		\\%Test TI1.1.3.8}
+	
+	\hline
+		\hypertarget{TI1.1.3.8}{TI1.1.3.8}& Viene verificato che lo State del Client memorizzi correttamente la sequenza dei vari Command. 
+		& State.
+		& Superato.
+		
+		% Server 1.2
+		\\%Test TI1.2}
+		
+		\hline
+		\hypertarget{TI1.2}{TI1.2}& Viene verificata l'integrazione per le componenti del Server, in particolare RequestHandler, DAO e CodeGenerator.
+		& Server.
+		& Superato.
+		
+		% RequestHandler
+		\\%Test TI1.2.1}
+		
+		\hline
+		\hypertarget{TI1.2.1}{TI1.2.1}& Viene verificata l'integrazione per le componenti del RequestHandler del Server.
+		& RequestHandler.
+		& Superato.
+		
+		% Sender
+		\\%Test TI1.2.1.1}
+		
+		\hline
+		\hypertarget{TI1.2.1.1}{TI1.2.1.1}& Viene verificata l'integrazione tra RequestHandler del server e il DAO.
+		& RequestHandler.
+		& Non Implementato.
+		
+		\\%Test TI1.2.1.2}
+		
+		\hline
+		\hypertarget{TI1.2.1.2}{TI1.2.1.2}& Viene verificato che il Sender all'interno del Server invii correttamente al Client il file .zip contenente il codice generato.
+		& RequestHandler.
+		& Non implementato.
+				
+		% Receiver 1.2.1.2
+		\\%Test TI1.2.1.3}
+		\hline
+		\hypertarget{TI1.2.1.3}{TI1.2.1.3}& Viene verificato che il RequestHandler all'interno del Server riceva correttamente dal Client il file JSON necessario alla generazione del codice.
+		& Non implementato.
+		& RequestHandler.
+		
+		% Dao 
+		\\%Test TI1.2.2}
+		
+		\hline
+		\hypertarget{TI1.2.2}{TI1.2.2}& Viene verificato che il DAO all'interno del Server restituisca correttamente una bubble.
+		& Non Implementato.
+		& DAO.
+		
+		\\%Test TI1.2.3}
+	
+	\hline
+		\hypertarget{TI1.2.3}{TI1.2.3}& Viene verificato che il DAO all'interno del Server salvi correttamente una bubble.
+		& Non Implementato.
+		& DAO.
+		
+		%CodeGenerator
+		\\%Test TI1.2.4}
+		
+		\hline
+		\hypertarget{TI1.2.4}{TI1.2.4}& Viene verificata l'integrazione per le componenti del CodeGenerator del Server, in particolare Coder, Builder e Zipper.
+		& CodeGenerator.
+		& Superato.
+		
+		% JSON.Parse()
+		\\%Test TI1.2.5}
+		
+		\hline
+		\hypertarget{TI1.2.5}{TI1.2.5}& Viene verificata l'integrazione per le componenti del CodeGenerator del Server con il metodo Javascript JSON.parse().
+		&CodeGenerator.
+		& Superato.
+		
+		% Coder
+		\\%Test TI1.2.6}
+		
+		\hline
+		\hypertarget{TI1.2.6}{TI1.2.6}& Viene verificato che il Coder all'interno del Server costruisca correttamente i file a partire dagli oggetti costruiti tramite il metodo JSON.parse().
+		& Coder.
+		& Superato.
+		
+		% Builder
+		\\%Test TI1.2.7}
+		
+		\hline
+		\hypertarget{TI1.2.7}{TI1.2.7}& Viene verificato che il Builder all'interno del Server organizzi i file in cartelle seguendo le istruzioni contenute nel file JSON inviato dal Client.
+		& Builder.
+		& Superato.
+		
+		% JSZip
+		\\%Test TI1.2.8}
+		
+		\hline
+		\hypertarget{TI1.2.8}{TI1.2.8}& Viene verificato che lo Zipper del Server crei correttamente il file .zip a partire da file sorgenti e cartelle generati.
+		& Zipper.
+		& Non implementato.\\
+		
+	\end{longtable}
+	
 	
 	\
 	% Sistema
@@ -1590,13 +1802,13 @@ All'utente è richiesto di:
 	% Receiver 1.2.1.2
 	\subsubsection{Test TI1.2.1.3}
 	\paragraph{Descrizione:}\hypertarget{TI1.2.1.3} Viene verificato che il RequestHandler all'interno del Server riceva correttamente dal Client il file JSON necessario alla generazione del codice.
-	\paragraph{Stato} Non implementato.
+	\paragraph{Stato} Superato.
 	\paragraph{Componente} SweDesigner::Server::RequestHandler.
 	
 	% Dao 
 	\subsubsection{Test TI1.2.2}
 	\paragraph{Descrizione:}\hypertarget{TI1.2.2} Viene verificato che il DAO all'interno del Server restituisca correttamente una bubble.
-	\paragraph{Stato} Superato.
+	\paragraph{Stato} Non Implementato.
 	\paragraph{Componente} SweDesigner::Server::DAO.
 	
 	\subsubsection{Test TI1.2.3}
