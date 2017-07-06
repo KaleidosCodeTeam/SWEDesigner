@@ -1142,14 +1142,14 @@ All'utente è richiesto di:
 		\includegraphics[scale=0.4]{Figures/Integrazione.pdf}
 		\caption{Diagramma test di integrazione}\label{}
 	\end{figure}
-	\begin{longtable}{|c|>{\centering}p{8cm}|l|l|}
+	\begin{longtable}{|c|>{\centering}p{6cm}|>{\centering}p{3cm}|l|}
 		
 		\hline
 		% Sistema
 		%Test TI1}
 		\hypertarget{TI1}{TI1} &Viene verificata l'integrazione finale per le componenti del sistema, in particolare tra Server e Client.
-		& SweDesigner.
-		& Non implementato.
+		& SweDesigner
+		& Non implementato
 		
 		% Client
 		\\%Test TI1.1}
@@ -1204,14 +1204,14 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.1.3.4.1}{TI1.1.3.4.1}& Viene verificato che il RequestHandler all'interno del Client invii le richieste per bubble correttamente al Server.
-		& RequestHandler.
-		& Superato.
+		& RequestHandler
+		& Superato
 		
 		\\%Test TI1.1.3.4.2}
 		
 		\hline
-		\hypertarget{TI1.1.3.4.2}{TI1.1.3.4.2}& Viene verificato che il RequestHandler all'interno del Client invii  correttamente al Server le richieste per la creazione di codice a partire dal file \gl{JSON}.
-		& RequestHandler.
+		\hypertarget{TI1.1.3.4.2}{TI1.1.3.4.2}& Viene verificato che il RequestHandler all'interno del Client invii  correttamente al Server le richieste per la creazione di codice a partire dal file \gl{JSON}
+		& RequestHandler
 		& Superato.
 		
 		% Receiver 1.1.2.3.2
@@ -1219,8 +1219,9 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.1.3.5}{TI1.1.3.5}& Viene verificato che il RequestHandler all'interno del Client riceva correttamente le bubble dal Server.
-		& RequestHandler.
-		& Superato.
+		& RequestHandler
+		& Superato
+		\\		
 		
 		\\
 		
@@ -1235,8 +1236,8 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.2}{TI1.2}& Viene verificata l'integrazione per le componenti del Server, in particolare RequestHandler, DAO e CodeGenerator.
-		& Server.
-		& Superato.
+		& Server
+		& Superato
 		
 		
 		% Sender
@@ -1244,22 +1245,23 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.2.1.1}{TI1.2.1.1}& Viene verificata l'integrazione tra RequestHandler del server e il DAO.
-		& RequestHandler.
-		& Non Implementato.
+		& RequestHandler
+		& Non Implementato
 		
 		\\%Test TI1.2.1.2}
 		
 		\hline
 		\hypertarget{TI1.2.1.2}{TI1.2.1.2}& Viene verificato che il RequestHandler all'interno del Server invii correttamente al Client il file .zip contenente il codice generato.
-		& RequestHandler.
-		& Non implementato.
+		& RequestHandler
+		& Non implementato
 				
 		% Receiver 1.2.1.2
 		\\%Test TI1.2.1.3}
 		\hline
 		\hypertarget{TI1.2.1.3}{TI1.2.1.3}& Viene verificato che il RequestHandler all'interno del Server riceva correttamente dal Client il file JSON necessario alla generazione del codice.
-		& Non implementato.
-		& RequestHandler.
+	
+		& RequestHandler
+		& Non implementato
 		
 		% Dao 
 		\\%Test TI1.2.2}
@@ -1281,8 +1283,8 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.2.4}{TI1.2.4}& Viene verificata l'integrazione per le componenti del CodeGenerator del Server, in particolare Coder, Builder e Zipper.
-		& CodeGenerator.
-		& Superato.
+		& CodeGenerator
+		& Superato
 		
 		% JSON.Parse()
 		\\%Test TI1.2.5}
@@ -1297,16 +1299,16 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.2.6}{TI1.2.6}& Viene verificato che il Coder all'interno del Server costruisca correttamente i file a partire dagli oggetti costruiti tramite il metodo JSON.parse().
-		& Coder.
-		& Superato.
+		& Coder
+		& Superato
 		
 		% Builder
 		\\%Test TI1.2.7}
 		
 		\hline
 		\hypertarget{TI1.2.7}{TI1.2.7}& Viene verificato che il Builder all'interno del Server organizzi i file in cartelle seguendo le istruzioni contenute nel file JSON inviato dal Client.
-		& Builder.
-		& Superato.
+		& Builder
+		& Superato
 		
 		% JSZip
 		\\%Test TI1.2.8}
