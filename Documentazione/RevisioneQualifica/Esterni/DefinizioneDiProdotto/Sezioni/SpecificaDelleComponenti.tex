@@ -1434,7 +1434,7 @@
 			I package contenuti al suo interno sono:
 			\begin{itemize}
 				\item SWEDesigner::Server::CodeGenerator;
-				\item SWEDesigner::Server::DAORequestHandler;
+				\item SWEDesigner::Server::DataManager;
 				\item SWEDesigner::Server::RequestHandler.
 			\end{itemize}
 			Questo package non contiene delle classi.
@@ -1996,11 +1996,11 @@
 			\end{itemize}
 			
 			
-			\subsection{SWEDesigner::Server::DAO}
+			\subsection{SWEDesigner::Server::DataManager}
 			Questo package non contiene dei sottopackage.\\
 			Le classi contenute al suo interno verranno elencate qui di seguito.
-			\subsubsection{SWEDesigner::Server::DAO::DAO}
-			\hypertarget{SWEDesigner::Server::DAO::DAO}{}
+			\subsubsection{SWEDesigner::Server::DataManager::DataManager}
+			\hypertarget{SWEDesigner::Server::DataManager::DataManager}{}
 			\begin{itemize}
 				\item \textbf{Tipo}: \emph{Class};
 				\item \textbf{Descrizione}: Espone le funzionalità che permettono di interagire con il database delle bubbles; \\
@@ -2108,24 +2108,7 @@
 					\item IN \hyperlink{SWEDesigner::Client::Model::RequestHandler}{\emph{SWEDesigner::Client::Model::RequestHandler}}
 				\end{itemize}	
 			\end{itemize}
-			
-			%				\subsubsection{SWEDesigner::Server::RequestHandler::Sender}
-			%				Si occupa di gestire le comunicazioni in uscita verso il client.\\
-			%					FAN-IN:
-			%					\begin{itemize}
-			%						\item CodeGenerator: si occupa di restituire in output un archivio zip contenente i codici sorgenti generati a partire dal file JSON ricevuto in input.
-			%					\end{itemize}
-			%					FAN-OUT:
-			%					\begin{itemize}
-			%						\item Client::Model::RequestHandler::Receiver: si occupa di gestire le comunicazioni in entrata dal server.
-			%					\end{itemize}
-			%					
-			%				\subsubsection{SWEDesigner::Server::RequestHandler::Receiver}
-			%%					FAN-IN:
-			%					\begin{itemize}
-			%%					\end{itemize}
-			%%%%				\end{itemize}
-			
+
 		
 				
 \end{document}
