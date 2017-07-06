@@ -820,38 +820,41 @@
 						\item \textbf{Flusso principale degli eventi}: L'utente riposiziona l'elemento;
 						\item \textbf{Postcondizione}: Il sistema visualizza il diagramma con l'elemento riposizionato correttamente;
 					\end{itemize}
-					\subsection{Caso d'uso UC3: Gestire gli errori dell'utente}
-					\begin{figure} [H]
-						\centering
-						\includegraphics[scale=0.45]{./Figures/UC3.png}
-						\caption{Diagramma UC3}\label{}
-					\end{figure}
-					\begin{itemize}
-						\item \textbf{Attori}: Utente
-						\item \textbf{Descrizione}: L'utente vuole gestire un errore che ha commesso utilizzando il programma;
-						\item \textbf{Precondizione}: L'utente ha commesso un errore;
-						\item \textbf{Flusso principale degli eventi}: \begin{itemize}
-							\item L'utente può annullare l'ultimo comando eseguito (UC3.1);
-							\item L'utente può ripristinare l'ultimo comando annullato (UC3.2);
-						\end{itemize}
-						\item \textbf{Postcondizione}: L'errore è stato gestito correttamente.
-					\end{itemize}
-					\subsection{Caso d'uso UC3.1: Annullare l'ultimo comando eseguito}
-					\begin{itemize}
-						\item \textbf{Attori}: Utente
-						\item \textbf{Descrizione}: L'utente vuole annullare l'effetto dell'ultimo comando eseguito nell'editor del diagramma correntemente in uso;
-						\item \textbf{Precondizione}: L'utente sta utilizzando l'editor di un diagramma tra quelli disponibili, ha eseguito almeno un comando e il sistema lo ha memorizzato;
-						\item \textbf{Flusso principale degli eventi}: L'utente annulla l'effetto dell'ultimo comando eseguito nell'editor del diagramma correntemente in uso;
-						\item \textbf{Postcondizione}: Il sistema ha ripristinato lo stato in cui si trovava il diagramma, correntemente in uso, prima che venisse eseguito il comando che è stato annullato; Il sistema ha memorizzato tale comando.
-					\end{itemize}
-					\subsection{Caso d'uso UC3.2: Ripristinare l'ultimo comando annullato}
-					\begin{itemize}
-						\item \textbf{Attori}: Utente
-						\item \textbf{Descrizione}: L'utente vuole ripristinare l'effetto dell'ultimo comando precedentemente annullato nell'editor del diagramma correntemente in uso;
-						\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto ed è appena stato annullato un comando;
-						\item \textbf{Flusso principale degli eventi}: L'utente ripristina l'effetto dell'ultimo comando precedentemente annullato nell'editor del diagramma correntemente in uso;
-						\item \textbf{Postcondizione}: Il programma è tornato nello stato precedente all'annullamento.
-					\end{itemize}
+					
+					
+%					\subsection{Caso d'uso UC3: Gestire gli errori dell'utente}
+%					\begin{figure} [H]
+%						\centering
+%						\includegraphics[scale=0.45]{./Figures/UC3.png}
+%						\caption{Diagramma UC3}\label{}
+%					\end{figure}
+%					\begin{itemize}
+%						\item \textbf{Attori}: Utente
+%						\item \textbf{Descrizione}: L'utente vuole gestire un errore che ha commesso utilizzando il programma;
+%						\item \textbf{Precondizione}: L'utente ha commesso un errore;
+%						\item \textbf{Flusso principale degli eventi}: \begin{itemize}
+%							\item L'utente può annullare l'ultimo comando eseguito (UC3.1);
+%							\item L'utente può ripristinare l'ultimo comando annullato (UC3.2);
+%						\end{itemize}
+%						\item \textbf{Postcondizione}: L'errore è stato gestito correttamente.
+%					\end{itemize}
+%					\subsection{Caso d'uso UC3.1: Annullare l'ultimo comando eseguito}
+%					\begin{itemize}
+%						\item \textbf{Attori}: Utente
+%						\item \textbf{Descrizione}: L'utente vuole annullare l'effetto dell'ultimo comando eseguito nell'editor del diagramma correntemente in uso;
+%						\item \textbf{Precondizione}: L'utente sta utilizzando l'editor di un diagramma tra quelli disponibili, ha eseguito almeno un comando e il sistema lo ha memorizzato;
+%						\item \textbf{Flusso principale degli eventi}: L'utente annulla l'effetto dell'ultimo comando eseguito nell'editor del diagramma correntemente in uso;
+%						\item \textbf{Postcondizione}: Il sistema ha ripristinato lo stato in cui si trovava il diagramma, correntemente in uso, prima che venisse eseguito il comando che è stato annullato; Il sistema ha memorizzato tale comando.
+%					\end{itemize}
+%					\subsection{Caso d'uso UC3.2: Ripristinare l'ultimo comando annullato}
+%					\begin{itemize}
+%						\item \textbf{Attori}: Utente
+%						\item \textbf{Descrizione}: L'utente vuole ripristinare l'effetto dell'ultimo comando precedentemente annullato nell'editor del diagramma correntemente in uso;
+%						\item \textbf{Precondizione}: Il programma è in esecuzione con un progetto aperto ed è appena stato annullato un comando;
+%						\item \textbf{Flusso principale degli eventi}: L'utente ripristina l'effetto dell'ultimo comando precedentemente annullato nell'editor del diagramma correntemente in uso;
+%						\item \textbf{Postcondizione}: Il programma è tornato nello stato precedente all'annullamento.
+%					\end{itemize}
+
 					\subsection{Caso d'uso UC4: Gestire il codice generato}
 					\begin{figure} [H]
 						\centering
