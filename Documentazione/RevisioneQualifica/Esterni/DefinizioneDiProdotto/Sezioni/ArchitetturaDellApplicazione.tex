@@ -5,7 +5,7 @@
 			\progetto\ è realizzato utilizzando un'architettura client-server, in particolare:
 			\begin{itemize}
 				\item Il \textbf{client} corrisponde alla parte dell'applicativo che funzionerà nel
-				browser dell'utente;
+				\gl{browser} dell'utente;
 				\item Il \textbf{server} avrà il compito di fornire la pagina dell'applicativo al client
 				e ne gestirà le richieste ricevute riguardanti la generazione del codice sorgente o le
 				attività "bubble" da inserire nell'editor.
@@ -13,8 +13,8 @@
 			% INSERIRE IMMAGINE ARCHITETTURA CLIENT-SERVER GENERALE
 			\subsection{Architettura client}
 				Il client (parte \gl{front-end}) è una Single Page Application (\gl{SPA}) scritta con i linguaggi
-				HTML5, \gl{CSS} e Javascript.\\
-				La sua architettura è costruita utilizzando il framework Backbone.js che offre
+				\gl{HTML5}, \gl{CSS} e Javascript.\\
+				La sua architettura è costruita utilizzando il \gl{framework} Backbone.js che offre
 				un'architettura di tipo Model-View ed è quindi principalmente suddivisa nei seguenti moduli:
 				\begin{itemize}
 					\item \textbf{Model}: organizza la logica alla base dei diagrammi dell'editor.
@@ -46,7 +46,7 @@
 					costituito solamente da bubble (diagramma delle bubble) che verranno fornite nell'editor
 					come se fossero delle attività specifiche.
 			\subsection{Architettura server}
-				Il server (parte \gl{back-end}) è sviluppato in Node.js ed offre i seguenti servizi:
+				Il server (parte \gl{back-end}) è sviluppato in \gl{Node.js} ed offre i seguenti servizi:
 				\begin{itemize}
 					\item Fornire la Single Page Application ai client che la richiedono;
 					\item Fornire la lista di bubble utilizzabili nell'editor;
