@@ -25,21 +25,21 @@
 				\paragraph{Utilizzo nel progetto\\}
 				Pattern architetturale utilizzato nella componente di front-end, ovvero SWEDesigner::Client. Tale pattern è stato adattato per rispecchiare il modello architetturale previsto da Backbone, il framework utilizzato per sviluppare la parte di front-end.
 				
-			\subsubsection{Data Access Object}
-			\begin{figure}[H] \label{fig:DAO}
-				\centering
-				\includegraphics[scale=0.8]{Immagini/DAO.png}
-				\caption{Esempio pattern DAO}
-			\end{figure}
-			\paragraph{Scopo\\}
-			 Pattern architetturale per la gestione della persistenza: si tratta fondamentalmente di una classe con relativi metodi che rappresenta un'entità tabellare di un RDBMS, usata per stratificare e isolare l'accesso ad una tabella tramite query (poste all'interno dei metodi della classe) ovvero al data layer da parte della business logic creando un maggiore livello di astrazione ed una più facile manutenibilità.
-			\paragraph{Problema\\}
-			Necessità di separare le logiche di business da quelle di accesso ai dati; incapsulare l'accesso ai dati persistenti in un oggetto e fornire un'interfaccia 
-			per la manipolazione di tali dati.
-			\paragraph{Struttura\\}
-			Composto da un'unica componente, DAO, che espone le funzionalità per accedere ai dati persistenti.			
-			\paragraph{Utilizzo nel progetto\\}
-			Utilizzato nella parte di back-end, per gestire la persistenza e gestione delle bubble.
+%			\subsubsection{Data Access Object}
+%			\begin{figure}[H] \label{fig:DAO}
+%				\centering
+%				\includegraphics[scale=0.8]{Immagini/DAO.png}
+%				\caption{Esempio pattern DAO}
+%			\end{figure}
+%			\paragraph{Scopo\\}
+%			 Pattern architetturale per la gestione della persistenza: si tratta fondamentalmente di una classe con relativi metodi che rappresenta un'entità tabellare di un RDBMS, usata per stratificare e isolare l'accesso ad una tabella tramite query (poste all'interno dei metodi della classe) ovvero al data layer da parte della business logic creando un maggiore livello di astrazione ed una più facile manutenibilità.
+%			\paragraph{Problema\\}
+%			Necessità di separare le logiche di business da quelle di accesso ai dati; incapsulare l'accesso ai dati persistenti in un oggetto e fornire un'interfaccia 
+%			per la manipolazione di tali dati.
+%			\paragraph{Struttura\\}
+%			Composto da un'unica componente, DAO, che espone le funzionalità per accedere ai dati persistenti.			
+%			\paragraph{Utilizzo nel progetto\\}
+%			Utilizzato nella parte di back-end, per gestire la persistenza e gestione delle bubble.
 			
 		\subsection{Strutturali}
 %			\subsubsection{Decorator}
@@ -90,7 +90,7 @@
 			\subsubsection{Builder}
 				\begin{figure}[H] \label{fig:Builder}
 					\centering
-					\includegraphics[scale=0.8]{Immagini/Builder.png}
+					\includegraphics[scale=0.5]{Immagini/Builder.png}
 					\caption{Esempio pattern Builder}
 				\end{figure}
 				\paragraph{Scopo\\}
@@ -145,29 +145,29 @@
 				\paragraph{Utilizzo nel progetto\\}
 					Utilizzato, ad esempio, lato client dalla View per osservare i cambiamenti del
 					Model; la sua implementazione è fornita da Backbone.js.
-			\subsubsection{Command}
-				\begin{figure}[H] \label{fig:Command}
-					\centering
-					\includegraphics[scale=0.8]{Immagini/CommandEx.png}
-					\caption{Esempio pattern Command}
-				\end{figure}
-				\paragraph{Scopo\\}
-					Incapsulare il codice che effettua un'azione separandolo dall'oggetto che ne
-					richiede l'esecuzione. Incapsula una richiesta all’interno di un oggetto, cosicché i client siano indipendenti dalle richieste; questo consente la parametrizzazione dei client con diverse tipologie di richieste, accodare o rintracciare le richieste, oppure supportare operazioni di undo.
-				\paragraph{Problema\\}
-					Necessità di gestire richieste di cui non si conoscono i particolari; ovvero le effettive operazioni che verranno richieste e/o i ricevitori di
-					tali richieste. \\
-					Necessità di fornire operazioni di undo.
-				\paragraph{Struttura\\}
-					Sono individuabili quattro componenti principali:
-					\begin{itemize}
-						\item Receiver: conosce l'effettiva implementazione dell'operazione/i associata con la gestione di una richiesta. Nella figura, tale componente è rappresentata da SWEDesigner::Client::Model::MainModel;
-						\item Invoker: effettua l'invocazione del comando necessario a portare a termine la richiesta. Nella figura, tale componente è rappresentata dal modulo SWEDesigner::Client::View;
-						\item Command: dichiara un'interfaccia per l'esecuzione di un'operazione. Nella figura, tale componente è rappresentata da  SWEDesigner::Client::Model::Command;
-						\item ConcreteCommand: definisce un legame tra l'oggetto Receiver e un'azione. Implementa l'esecuzione del comando invocando la
-								corrispondente operazione/i sull'oggetto Receiver. Nella figura, tale componente è rappresentata da  SWEDesigner::Client::Model::ConcreteCommand.
-					\end{itemize}
-				\paragraph{Utilizzo nel progetto\\}
-					Utilizzato, ad esempio, lato client dove ogni intervento della View sul Model sarà
-					trasmesso a quest'ultimo attraverso un command avente metodi di "exec()" e "undo()".	
+%			\subsubsection{Command}
+%				\begin{figure}[H] \label{fig:Command}
+%					\centering
+%					\includegraphics[scale=0.5]{Immagini/CommandEx.png}
+%					\caption{Esempio pattern Command}
+%				\end{figure}
+%				\paragraph{Scopo\\}
+%					Incapsulare il codice che effettua un'azione separandolo dall'oggetto che ne
+%					richiede l'esecuzione. Incapsula una richiesta all’interno di un oggetto, cosicché i client siano indipendenti dalle richieste; questo consente la parametrizzazione dei client con diverse tipologie di richieste, accodare o rintracciare le richieste, oppure supportare operazioni di undo.
+%				\paragraph{Problema\\}
+%					Necessità di gestire richieste di cui non si conoscono i particolari; ovvero le effettive operazioni che verranno richieste e/o i ricevitori di
+%					tali richieste. \\
+%					Necessità di fornire operazioni di undo.
+%				\paragraph{Struttura\\}
+%					Sono individuabili quattro componenti principali:
+%					\begin{itemize}
+%						\item Receiver: conosce l'effettiva implementazione dell'operazione/i associata con la gestione di una richiesta. Nella figura, tale componente è rappresentata da SWEDesigner::Client::Model::MainModel;
+%						\item Invoker: effettua l'invocazione del comando necessario a portare a termine la richiesta. Nella figura, tale componente è rappresentata dal modulo SWEDesigner::Client::View;
+%						\item Command: dichiara un'interfaccia per l'esecuzione di un'operazione. Nella figura, tale componente è rappresentata da  SWEDesigner::Client::Model::Command;
+%						\item ConcreteCommand: definisce un legame tra l'oggetto Receiver e un'azione. Implementa l'esecuzione del comando invocando la
+%								corrispondente operazione/i sull'oggetto Receiver. Nella figura, tale componente è rappresentata da  SWEDesigner::Client::Model::ConcreteCommand.
+%					\end{itemize}
+%				\paragraph{Utilizzo nel progetto\\}
+%					Utilizzato, ad esempio, lato client dove ogni intervento della View sul Model sarà
+%					trasmesso a quest'ultimo attraverso un command avente metodi di "exec()" e "undo()".	
 \end{document}
