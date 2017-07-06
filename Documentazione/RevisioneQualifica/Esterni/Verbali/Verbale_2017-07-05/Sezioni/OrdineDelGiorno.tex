@@ -1,35 +1,57 @@
 \documentclass[../AnalisiDeiRequisiti.tex]{subfiles}
 \begin{document}
 	\section*{Ordine del giorno}
-		\begin{enumerate}
-			\item Rinegoziazione di alcuni requisiti secondo quanto scritto nel verbale interno del 27/06/2017;
-			\item Presentazione di una demo del prodotto e panoramica completa delle funzionalità già implementate.
-		\end{enumerate}
-		
-		\section*{Riassunto dei contenuti}
-		Come prima cosa il gruppo ha esposto le motivazioni secondo le quali si ritenesse opportuno eliminare alcuni requisiti. Il proponente è stato completamente d'accordo sia per quanto riguarda la fusione tra activity diagram e bubble diagram che per l'eliminazione della possibilità di creare classi parametriche.\\
-		Il gruppo ha mostrato al proponente una demo del prodotto. Il proponente si è mostrato in linea generale soddisfatto dell'applicazione ma ha espresso alcune perplessità.\\
-		Le prime critiche sono state rivolte alla grafica, ritenuta un po' retrò. Inoltre per come è stata progettata l'interfaccia utente ci sono delle zone di schermo inutilmente occupate da cornici o bottoni troppo grandi che rubano spazio alla canvas. Inoltre non c'è un'indicazione visiva durante alcune azioni come la selezione di un elemento nella canvas. Questo va a incidere sull'usabilità del prodotto.\\
-		Il proponente ha quindi chiesto al gruppo quali funzionalità ritenessero più importanti da sviluppare entro la revisione di qualifica e quali invece venissero delegate alla revisione di accettazione.\\
-		Le funzionalità ancora da sviluppare, vista l'imminente scadenza, sono tutte delegate alla RA e sono le seguenti:
 		\begin{itemize}
-			\item implementazione della base di dati per le bubble personalizzate;
-			\item command pattern per le funzionalità undo-redo;
-			\item generazione di un report degli errori in compilazione durante la generazione dello stesso;
-			\item visualizzazione dei layer per grado di importanza;
-			\item alla creazione di un nuovo progetto viene chiesto di salvare il corrente.
+			\item Rinegoziazione di alcuni requisiti secondo quanto scritto nel verbale interno del 27/06/2017;
+			\item Presentazione del prodotto e panoramica completa delle funzionalità già implementate;
+			\item Accordo con il Proponente sul da farsi per la consegna in fase di \revisionediaccettazione.
 		\end{itemize}
+		Di seguito, il riassunto delle discussioni fatte.\\
 		
-		Per quanto riguarda il report degli errori e il salvataggio del progetto corrente il proponente non ha avuto nulla da aggiungere. \\
-		Riguardo il database il proponente ha espresso alcune perplessità sulla scelta di MySQL e ha consigliato l'utilizzo di Arango o di Postgress. 
-		Il proponente ha inoltre dichiarato di non essere interessato al command pattern per la funzionalità di undo-redo in quanto preferisce che il tempo che il gruppo avrebbe dedicato allo sviluppo di questa funzionalità (giudicata relativamente complessa) venga speso nel miglioramento delle funzionalità già presenti.
-		Inoltre ha consigliato di utilizzare colori diversi per la visualizzazione dei layer.\\
-	
-	
-	\section*{Conclusioni}
-	
-		Visto il riscontro positivo il gruppo ha deciso di eliminare definitivamente i requisiti in questione dal documento \analisideirequisiti.
-		Per quanto riguarda le critiche ricevute il gruppo si impegna a miglorare l'interfaccia utente per renderla più conforme ai desideri del proponente.
-		Come concordato vengono inoltre eliminati dall'\analisideirequisiti anche i requisiti riguardanti la funzionalità di undo-redo. 
-		Infine verrà presa in considerazione la possibilità di cambiare database.
+		Come prima cosa il gruppo ha esposto le motivazioni secondo le quali si ritenesse opportuno eliminare
+		alcuni requisiti. Il Proponente è stato completamente d'accordo sia per quanto riguarda la fusione tra
+		activity diagram e bubble diagram che per l'eliminazione della possibilità di creare classi parametriche.\\
+		Il gruppo ha mostrato al Proponente quanto del prodotto realizzato finora. Il Proponente è rimasto
+		soddisfatto dell'applicazione ma ha comunque fatto alcune osservazioni:
+		\begin{itemize}
+			\item La grafica potrebbe essere migliorabile adeguandola ad uno stile più moderno.;
+			\item Nell'interfaccia utente ci sono delle porzioni di schermo inutilmente occupate da margini o
+			bottoni troppo grandi che sottraggono spazio all'area di lavoro;
+			\item Non è presente un'indicazione visiva immediata (come il cambio del tipo di puntatore-mouse)
+			durante alcune azioni come l'inserimento di una relazione tra due elementi di un diagramma.
+		\end{itemize}
+		Tutto ciò andrebbe ad incidere sull'usabilità del prodotto.\\
+		Il gruppo ha quindi ordinato per priorità assieme al Proponente, le cose ancora da fare per il periodo di
+		\revisionediaccettazione, visto il ridotto numero di ore (produttive e non) da dedicare ulteriormente al
+		progetto:
+		\begin{enumerate}
+			\item Ottimizzare e rifinire il prodotto fin'ora realizzato, seguendo anche i suggerimenti forniti;
+			\item Implementazione della base dati per le custom bubble predefinite lato server;
+			\item Implementazione della funzionalità di Undo-Redo (ritenuta dal proponente, complessa e soprattutto
+			dispendiosa in termini di tempo).
+		\end{enumerate}
+		Per la realizzazione della base dati, il Proponente ha suggerito di valutare l'utilizzo di PostgreSQL o
+		ArangoDB.\\
+		
+		Lista di cose da ottimizzare/rifinire nel prodotto, emerse durante l'incontro:
+		\begin{itemize}
+			\item Cambiare il tipo di cursore in base all'azione che si sta compiendo;
+			\item Specificare il nome del package, classe, operazione nel percorso attuale;
+			\item Evidenziare l'elemento selezionato nell'area di lavoro;
+			\item Ridimensionare i contenuti su schermo per massimizzare lo spazio occupato dall'area di lavoro;
+			\item Se possibile, inserire la lista di attributi e metodi della classe corrente, all'interno di un
+			diagramma delle bubble;
+			\item Sostituire le icone dei bottoni attuali, facenti parte del pannello strumenti, con altre più
+			significative per tipo di strumento;
+			\item Implementare un cambio di colore per l'elemento nell'area di lavoro al quale viene cambiato il
+			grado di importanza, al posto di avere un filtro di visualizzazione ``a layer'';
+			\item Alla generazione del codice sorgente, compilarlo lato server ed inviare eventualmente il report
+			degli errori emersi;
+			\item Quando si sta per creare un nuovo progetto, chiedere se si vuole il lavoro corrente.
+		\end{itemize}
+		Documenti di riferimento alle decisioni prese:
+		\begin{itemize}
+			\item \analisideirequisitiv;
+			\item \pianodiprogettov.
+		\end{itemize}
 \end{document}
