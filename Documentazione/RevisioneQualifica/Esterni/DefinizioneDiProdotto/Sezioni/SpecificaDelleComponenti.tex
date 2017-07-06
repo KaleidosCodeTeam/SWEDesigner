@@ -146,10 +146,6 @@
 
 				\subsubsection{SWEDesigner::Client::Model::ToolbarModel}
 				\hypertarget{SWEDesigner::Client::Model::ToolbarModel}{}
-				È il componente del programma che si occupa di gestire la parte logica della toolbar.\\
-					FAN-IN:\\
-					Non ci sono dipendenze IN. \\
-					FAN-OUT:
 					\begin{itemize}
 						\item \textbf{Tipo}: \emph{Classe};
 						\item \textbf{Descrizione}: È il componente del programma che si occupa di gestire la parte logica della toolbar;
@@ -254,18 +250,6 @@
 							\item OUT \hyperlink{SWEDesigner::Client::Model::ProjectModel}{\emph{SWEDesigner::Client::Model::ProjectModel}}: si occupa di gestire la parte logica dell'editor;
 							\item OUT \hyperlink{SWEDesigner::Client::Model::Project}{\emph{SWEDesigner::Client::Model::Project}}: si occupa di gestire gli elementi contenuti nel diagramma.
 						\end{itemize}
-					\end{itemize}
-
-				\subsubsection{SWEDesigner::Client::Model::RequestHandler::Receiver}
-				Si occupa di gestire le comunicazioni in entrata dal server.\\
-					FAN-IN:
-					\begin{itemize}
-						\item Server::RequestHandler::Sender: si occupa di gestire le comunicazioni in uscita verso il Client.
-					\end{itemize}
-					FAN-OUT:
-					\begin{itemize}
-						\item projectModel: si occupa di gestire la parte logica dell'editor;
-						\item project: si occupa di gestire gli elementi contenuti nel diagramma.
 					\end{itemize}
 		
 			%inizio parte Giulio
@@ -1238,15 +1222,12 @@
 								\item \emph{ind: Int}: Indice dell'array di operazioni del diagramma delle bubble da eliminare;
 							\end{itemize}
 						\end{itemize}
-						FAN-IN:
+						\item \textbf{Relazioni con le altre classi}:
 						\begin{itemize}
-							\item \hyperlink{SWEDesigner::View::PathView}{\emph{PathView}}: gestisce l'interfaccia grafica della barra di indirizzo;
-							\item \hyperlink{SWEDesigner::View::EditPanelView}{\emph{EditPanelView}}: gestisce l'interfaccia grafica del pannello di editing.
-						\end{itemize}
-						FAN-OUT:
-						\begin{itemize}
-							\item \hyperlink{SWEDesigner::Model::ProjectModel}{\emph{ProjectModel}}: si occupa di gestire la parte logica dell'editor;
-							\item joint.dia.Paper: gestisce l'interfaccia grafica dell'area dei diagrammi.
+							\item IN \hyperlink{SWEDesigner::View::PathView}{\emph{PathView}}: gestisce l'interfaccia grafica della barra di indirizzo;
+							\item IN \hyperlink{SWEDesigner::View::EditPanelView}{\emph{EditPanelView}}: gestisce l'interfaccia grafica del pannello di editing.
+							\item OUT \hyperlink{SWEDesigner::Model::ProjectModel}{\emph{ProjectModel}}: si occupa di gestire la parte logica dell'editor;
+							\item OUT joint.dia.Paper: gestisce l'interfaccia grafica dell'area dei diagrammi.
 						\end{itemize}
 					\end{itemize}
 					
@@ -1302,12 +1283,10 @@
 								\item \emph{event: JavaScriptEvent}: Evento;
 							\end{itemize}
 						\end{itemize}
-						FAN-IN:\\
-						Non ci sono dipendenze IN.\\
-						FAN-OUT:
+						\item \textbf{Relazioni con le altre classi}:
 						\begin{itemize}
-							\item \hyperlink{SWEDesigner::Model::RequestHandler}{\emph{RequestHandler}}: gestisce la comunicazione con il server;
-							\item \hyperlink{SWEDesigner::Model::DataManager}{\emph{DataManager}}: gestisce la persistenza dei dati su file system.
+							\item OUT \hyperlink{SWEDesigner::Model::RequestHandler}{\emph{RequestHandler}}: gestisce la comunicazione con il server;
+							\item OUT \hyperlink{SWEDesigner::Model::DataManager}{\emph{DataManager}}: gestisce la persistenza dei dati su file system.
 						\end{itemize}
 					\end{itemize}
 
@@ -1317,7 +1296,6 @@
 						\item \textbf{Tipo}: \emph{Class};
 						\item \textbf{Descrizione}: È il componente del programma che fa la funzione di view per la toolbar dove saranno collocati gli strumenti per editare i diagrammi;
 						\item \textbf{Padre}: \emph{Backbone.View};
-						\item \textbf{Attributi}:
 						\item \textbf{Attributi}:
 						\begin{itemize}
 							\item \emph{el: String} \\
@@ -1338,12 +1316,10 @@
 							\item \emph{render(): void} \\
 							Provoca il render della toolbar in base al diagramma correntemente visualizzato; 
 						\end{itemize}
-						FAN-IN:\\
-						Non ci sono dipendenze IN.\\
-						FAN-OUT:
+						\item \textbf{Relazioni con le altre classi}:
 						\begin{itemize}
-							\item \hyperlink{SWEDesigner::Model::ProjectModel}{\emph{ProjectModel}}: si occupa di gestire la parte logica dell'editor;
-							\item \hyperlink{SWEDesigner::Model::ToolbarModel}{\emph{ToolbarModel}}: si occupa di gestire la parte logica della toolbar.
+							\item OUT \hyperlink{SWEDesigner::Model::ProjectModel}{\emph{ProjectModel}}: si occupa di gestire la parte logica dell'editor;
+							\item OUT \hyperlink{SWEDesigner::Model::ToolbarModel}{\emph{ToolbarModel}}: si occupa di gestire la parte logica della toolbar.
 						\end{itemize}
 					\end{itemize}
 
@@ -1373,12 +1349,10 @@
 								\item \emph{event: JavaScriptEvent}: Evento;
 							\end{itemize}
 						\end{itemize}
-						FAN-IN:
-						Non ci sono dipendenze IN. \\
-						FAN-OUT:
+						\item \textbf{Relazioni con le altre classi}:
 						\begin{itemize}
-							\item \hyperlink{SWEDesigner::Model::ProjectModel}{\emph{ProjectModel}}: si occupa di gestire la parte logica dell'editor;
-							\item \hyperlink{SWEDesigner::View::ProjectView}{\emph{ProjectView}}: si occupa di gestire la parte grafica del model.
+							\item OUT \hyperlink{SWEDesigner::Model::ProjectModel}{\emph{ProjectModel}}: si occupa di gestire la parte logica dell'editor;
+							\item OUT \hyperlink{SWEDesigner::View::ProjectView}{\emph{ProjectView}}: si occupa di gestire la parte grafica del model.
 						\end{itemize}
 					\end{itemize}
 
@@ -1444,11 +1418,9 @@
 								\item \emph{event: JavaScriptEvent}: Evento;
 							\end{itemize}
 						\end{itemize}
-						FAN-IN:\\
-						Non ci sono dipendenze IN. \\
-						FAN-OUT:
+						\item \textbf{Relazioni con le altre classi}:
 						\begin{itemize}
-							\item \hyperlink{SWEDesigner::View::ProjectView}{\emph{ProjectView}}: si occupa di gestire la parte grafica del model.
+							\item OUT \hyperlink{SWEDesigner::View::ProjectView}{\emph{ProjectView}}: si occupa di gestire la parte grafica del model.
 						\end{itemize}
 					\end{itemize}
 
