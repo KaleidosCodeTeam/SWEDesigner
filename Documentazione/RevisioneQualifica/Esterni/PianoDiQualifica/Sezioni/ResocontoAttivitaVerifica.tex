@@ -179,16 +179,18 @@
 						\begin{tabular}{|l|c|c|}
 							\hline
 							\rowcolor{blue!30}\textbf{Documento} & \textbf{Schedule variance} & \textbf{Budget variance} \\ \hline
-							\analisideirequisitiRQ & \% & \% \\ \hline
-							\glossarioRQ & \% & \% \\ \hline
-							\normediprogettoRQ & \% & \% \\ \hline
-							\pianodiprogettoRQ & \% & \% \\ \hline
-							\pianodiqualificaRQ & \% & \% \\ \hline
-							\specificatecnicaRQ & \% & \% \\ \hline
-							\definizionediprodottoRQ & \% & \% \\ \hline
+							\analisideirequisitiRQ & 0\% & 0\% \\ \hline
+							\glossarioRQ & 0\% & 0\% \\ \hline
+							\normediprogettoRQ & 0\% & 0\% \\ \hline
+							\pianodiprogettoRQ & 0\% & 0\% \\ \hline
+							\pianodiqualificaRQ & -5\% & 0\% \\ \hline
+							\specificatecnicaRQ & 5\% & 0\% \\ \hline
+							\definizionediprodottoRQ & -3\% & 8\% \\ \hline
+							Codifica e Debug & -10\% & -15\% \\ \hline
 						\end{tabular}
 					\caption{RQ - Schedule e budget variance}
 					\end{table}
+					Si individua una forte anomalia nella budget variance per la codifica e debug. L'avanzo sulle attività di progettazione è sufficiente a mantenere in bilancio il preventivo, ma questo valore è indice di ingenuità significative durante la pianificazione.
 				\subsubsection{Indici di Gulpease}
 					\begin{table}[H]
 					\center
@@ -364,7 +366,7 @@
 								Linee di commento su linee di codice &$\geq 0.25$& $\geq 0.30$ &min 26\%-max 47\% &Accettabile\\ \hline
 								Numero di parametri &$0$ - $8$&$0$ - $5$&min 0- max 5 & Ottimale\\ \hline
 								Numero di campi dati &$0$ - $16$&$0$ - $10$&min 0 - max6&Ottimale\\ \hline
-								Complessità ciclomatica &$0$ - $10$&$0$ - $6$ &&\\ \hline
+								Complessità ciclomatica &$0$ - $10$&$0$ - $6$ &&\\\hline
 								Livello di annidamento &$0$ - $6$&$0$ - $4$&&\\ \hline
 								Chiamate innestate di metodi &$0$ - $6$&$0$ - $4$ &&\\ \hline
 								Copertura del codice & $80\%$ - $100\%$&$90\%$ - $100\%$ &&\\ \hline
