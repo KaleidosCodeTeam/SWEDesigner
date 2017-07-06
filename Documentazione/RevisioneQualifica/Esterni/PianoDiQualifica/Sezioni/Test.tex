@@ -328,7 +328,7 @@ All'utente è richiesto di:
 	\item Selezionare un'attività e visualizzare il suo bubble flowchart; 
 	\item Aggiungere una nuova bubble al diagramma delle attività; 
 	\item Inserire eventuali parametri per la bubble; 
-	\item Confermare la creazione della bubble.%%%%Cosa devo inserire ?? culo culo 
+	\item Confermare la creazione della bubble. 
 \end{itemize} 
 
 \subsubsection{Test TV37} 
@@ -785,7 +785,7 @@ All'utente è richiesto di:
 	%\hypertarget{TS3.3.17}{TS3.3.17} & Verificare che il sistema permetta di eliminare un evento temporale presente nel diagramma delle attività & N.I. \\
 	\hline
 	\hypertarget{TS3.3.18}{TS3.3.18} & Verificare che il sistema permetta di passare dal bubble diagram al diagramma delle classi & Superato \\
-	%\hline
+	\hline
 	\hypertarget{TS3.3.19}{TS3.3.19} & Verificare che il sistema permetta di lavorare con custom bubble sul bubble digram & Superato \\
 	\hline
 	\hypertarget{TS3.3.19.1}{TS3.3.19.1} & Verificare che il sistema permetta di aggiungere una nuova custom bubble al bubble diagram & Superato \\
@@ -1110,8 +1110,8 @@ All'utente è richiesto di:
 		\textbf{Numero di Test} & \textbf{Percentuale Successo} & \textbf{Percentuale Implementati}\\
 		\hline
 		\endhead
-		142 & %133/142
-		94\% & %133+4/142
+		137 & %127/137
+		92\% & %127+3/137
 		96\%\\
 		\hline
 		\caption[Stato implementazione test sistema]{Stato implementazione test sistema}
@@ -1156,16 +1156,16 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.1} {TI1.1} &Viene verificata l'integrazione finale per le componenti del Client, in particolare tra  Model e View.
-		& Client.
-		& Superato.
+		& Client
+		& Superato
 		
 		% View
 		\\%Test TI1.1.1}
 		
 		\hline
 		\hypertarget{TI1.1.1}{TI1.1.1} &Viene verificato che il sistema gestisca correttamente le componenti della View in particolare l'integrazione tra la TitlebarView, la ToolbarView, l'PathView, l'EditPanelView e la ProjectView.
-		& View.
-		& Superato.
+		& View
+		& Superato
 		
 		
 		\\%Test TI1.1.2}
@@ -1196,8 +1196,8 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.1.3.3}{TI1.1.3.3}& Viene verificato che il DataManager all'interno del Model salvi correttamente un progetto.
-		& DataManager.
-		& Superato.
+		& DataManager
+		& Superato
 		% RequestHandler 1.1.2.3
 		\\%Test TI1.1.3.4}
 		
@@ -1210,9 +1210,9 @@ All'utente è richiesto di:
 		\\%Test TI1.1.3.4.2}
 		
 		\hline
-		\hypertarget{TI1.1.3.4.2}{TI1.1.3.4.2}& Viene verificato che il RequestHandler all'interno del Client invii  correttamente al Server le richieste per la creazione di codice a partire dal file \gl{JSON}
+		\hypertarget{TI1.1.3.4.2}{TI1.1.3.4.2}& Viene verificato che il RequestHandler all'interno del Client invii  correttamente al Server le richieste per la creazione di codice a partire dal file \gl{JSON}.
 		& RequestHandler
-		& Superato.
+		& Superato
 		
 		% Receiver 1.1.2.3.2
 		\\%Test TI1.1.3.5}
@@ -1221,14 +1221,13 @@ All'utente è richiesto di:
 		\hypertarget{TI1.1.3.5}{TI1.1.3.5}& Viene verificato che il RequestHandler all'interno del Client riceva correttamente le bubble dal Server.
 		& RequestHandler
 		& Superato
-		\\		
 		
 		\\
 		
 		\hline
 		\hypertarget{TI1.1.3.6}{TI1.1.3.6}& Viene verificata l'integrazione all'interno del Client con i vari moduli del Model collegati ai moduli della View, in particolare con il Project, il ProjectModel, il DataManager, il RequestHandler e la ToolbarModel. 
-		& Client.
-		& Superato.
+		& Client
+		& Superato
 		
 			
 		% Server 1.2
@@ -1268,15 +1267,15 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.2.2}{TI1.2.2}& Viene verificato che il DAO all'interno del Server restituisca correttamente una bubble.
-		& DAO.
-		& Non implementato.
+		& DAO
+		& Non implementato
 		
 		\\%Test TI1.2.3}
 	
 	\hline
 		\hypertarget{TI1.2.3}{TI1.2.3}& Viene verificato che il DAO all'interno del Server salvi correttamente una bubble.
-		& DAO.
-		& Non Implementato.
+		& DAO
+		& Non Implementato
 		
 		%CodeGenerator
 		\\%Test TI1.2.4}
@@ -1291,8 +1290,8 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.2.5}{TI1.2.5}& Viene verificata l'integrazione per le componenti del CodeGenerator del Server con il metodo Javascript JSON.parse().
-		& CodeGenerator.
-		& Superato.
+		& CodeGenerator
+		& Superato
 		
 		% Coder
 		\\%Test TI1.2.6}
@@ -1315,7 +1314,7 @@ All'utente è richiesto di:
 		
 		\hline
 		\hypertarget{TI1.2.8}{TI1.2.8}& Viene verificato che lo Zipper del Server crei correttamente il file .zip a partire da file sorgenti e cartelle generati.
-		& Zipper.
+		& Zipper
 		& Superato\\
 		
 	\end{longtable}
@@ -1385,7 +1384,8 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 	\textbf{Numero di Test} & \textbf{Percentuale Successo} & \textbf{Percentuale Implementati}\\
 	\hline
 	\endhead
-	27 & 100\% & 100\%\\
+	% 3 ni 19 su  22 tot
+	22 & 86\% & 86\%\\
 	\hline
 	\caption[Stato implementazione test integrazione]{Stato implementazione test integrazione}
 	\label{tabella:Stato implementazione test integrazione}
@@ -1417,7 +1417,6 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 		\hypertarget{TU8}{TU8} &Si vuole verificare che l'unità ProjectView sia in grado di visualizzare un modello di progetto.& ProjectView &Superato\\
 		\hline
 		\hypertarget{TU9}{TU9} &Si vuole verificare che l'unità TitlebarView sia in grado di visualizzare il modello di una titlebar.& TitlebarView &Superato\\
-		
 		\hline
 		
 		\hypertarget{TU10}{TU10}&Si vuole verificare che l'unità ToolbarView sia in grado di visualizzare il modello di una toolbar.&ToolbarView&Superato\\
@@ -1604,7 +1603,7 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 				\textbf{Numero di Test} & \textbf{Percentuale Successo} & \textbf{Percentuale Implementati}\\
 				\hline
 				\endhead
-				46 &100\% &100\%\\
+				45 &100\% &100\%\\
 				\hline
 				\caption[Stato implementazione test unit\'a]{Stato implementazione test unit\'a}
 				\label{tabella:Stato implementazione test unit\'a}
@@ -1619,13 +1618,13 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 			\textbf{Tipo di Test}&\textbf{numero di Test} & \textbf{Percentuale Successo} & \textbf{Percentuale Implementati}\\
 			\hline
 			\endhead
-			Test di integrazione & 27&100\% &100\%\\
+			Test di integrazione & 22 & 86\% & 86\%\\
 			\hline
 			Test di sistema & 142&94\% &96\%\\
 			\hline
-			Test di unit\'a & 46 &100\% &100\%\\
+			Test di unit\'a & 45 &100\% &100\%\\
 			\hline
-			Totale &215 &96\% &98\%\\
+			Totale &215 &95\% &96\%\\
 			\hline
 			\caption[Riassunto stato implementazione test ]{Riassunto stato implementazione test }
 			\label{tabella:Riassunto stato implementazione Test }
