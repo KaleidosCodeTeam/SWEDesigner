@@ -1,0 +1,602 @@
+\documentclass[../AnalisiDeiRequisiti.tex]{subfiles}	
+\begin{document}
+\section{Requisiti}
+In questa sezione verranno presentati i requisiti individuali che il team ha individuato durante l'analisi del capitolato e dei casi d'uso, quelli discussi con il proponente durante le riunioni esterne e quelli decisi durante le riunioni interne dal gruppo. 
+Ogni requisito avrà un codice identificativo univoco così formato:
+
+\begin{center} R[{Importanza}][{Tipo}][{Codice}] \end{center}
+
+dove:
+\begin{itemize}
+	\item \textbf{Importanza:} può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{0:} indica un requisito obbligatorio;
+		\item \textbf{1:} indica un requisito desiderabile;
+		\item \textbf{2:} indica un requisito facoltativo.
+	\end{itemize}
+	
+	\item \textbf{Tipo:} può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{F:} indica un requisito funzionale;
+		\item \textbf{Q:} indica un requisito di qualità;
+		\item \textbf{P:} indica un requisito prestazionale;
+		\item \textbf{V:} indica un requisito di vincolo.
+	\end{itemize}
+	
+	\item \textbf{Codice:} indica il codice identificativo del requisito. Deve essere univoco e deve essere identificato in forma gerarchica.
+\end{itemize}
+Per ogni requisito verranno inoltre riportate:
+\begin{itemize}
+	\item \textbf{Descrizione:} breve testo che dovrà descrivere in modo completo il requisito;
+	\item \textbf{Fonte:} che potrà essere una tra le seguenti:
+	\begin{itemize}
+		\item \textbf{Capitolato:} requisito dedotto direttamente dallo studio e dall'analisi del capitolato di appalto;
+		\item \textbf{Verbale Esterno:} requisito emerso da un verbale esterno;
+		\item \textbf{Caso d'uso:} requisito derivato  da un caso d'uso; in questo caso deve essere riportato il codice identificativo del caso d'uso associato.
+		\item \textbf{Interno:} requisito identificato dagli \textit{Analisti}.
+	\end{itemize}
+\end{itemize}
+
+\newpage
+\subsection{Requisiti Funzionali}
+\normalsize
+\begin{longtable}{|c|>{\centering}p{7cm}|c|}
+	\hline
+	\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Stato}\\
+	\hline
+	\endhead
+	\hypertarget{R0F1}{R0F1} & Il sistema deve essere in grado di realizzare diagrammi UML. & Capitolato \\ \hline
+	\hypertarget{R0F2}{R0F2} & Deve essere presente un disegnatore per il diagramma delle classi. & Capitolato \\ \hline
+	\hypertarget{R0F3}{R0F3} & Il sistema deve essere in grado di realizzare il diagramma delle attività. & Capitolato \\ \hline
+	\hypertarget{R0F4}{R0F4} & Il sistema deve essere in grado di realizzare il diagramma delle classi. & Capitolato \\ \hline
+	\hypertarget{R0F4.1}{R0F4.1} & Il sistema deve permettere l'inserimento di una classe all'interno dell'editor. & Capitolato \\ \hline
+	\hypertarget{R0F5}{R0F5} & Il sistema deve essere in grado di produrre codice sorgente in linguaggio Java. & Capitolato \\ \hline
+	\hypertarget{R0F6}{R0F6} & Il sistema deve essere in grado di produrre codice sorgente in linguaggio Javascript. & Capitolato \\ \hline
+	\hypertarget{R0F7}{R0F7} & Il sistema deve essere in grado di indicare quando non è possibile realizzare codice sorgente. & Capitolato \\ \hline
+	\hypertarget{R1F8}{R1F8} & Il sistema deve essere in grado di realizzare un diagramma flowchart. & Capitolato \\ \hline
+	\hypertarget{R1F9}{R1F9} & Introdurre nei disegnatori la possibilità di creare dei "Pattern". & Capitolato \\ \hline
+	\hypertarget{R2F10}{R2F10} & Il sistema deve essere in grado di realizzare un sequence diagram. & Capitolato \\ \hline
+	\hypertarget{R0F11}{R0F11} & Il sistema deve essere in grado di realizzare un diagramma dei package. & Caso d'uso \\ \hline
+	\hypertarget{R2F12}{R2F12} & Estendere o modificare i diagrammi già presenti al fine di migliorare la qualità del codice. & Capitolato \\ \hline
+	\hypertarget{R2F13}{R2F13} & Creare un sistema che permetta la realizzazione di piccole modifiche al sorgente generato. & Capitolato \\ \hline
+	\hypertarget{R0F14}{R0F14} & Il sistema deve permettere di gestire un progetto. & Caso d'uso \\ \hline
+	\hypertarget{R0F14.1}{R0F14.1} & Il sistema deve permettere di creare un nuovo progetto. & Caso d'uso \\ \hline
+	\hypertarget{R0F14.1.1}{R0F14.1.1} & Il sistema deve permettere di definire il nome del nuovo progetto. & Caso d'uso \\ \hline
+	\hypertarget{R0F14.2}{R0F14.2} & Il sistema deve permettere di caricare un progetto.
+
+& Caso d'uso \\ \hline
+\hypertarget{R0F14.3}{R0F14.3} & Il sistema deve permettere di chiudere il progetto attuale. & Caso d'uso \\ \hline
+\hypertarget{R0F14.3.1}{R0F14.3.1} & Il sistema deve chiedere se al momento della chiusura si desidera  salvare le modifiche effettuate successivamente all'ultimo salvataggio. & Caso d'uso \\ \hline
+\hypertarget{R0F14.4}{R0F14.4} & Il sistema deve permettere di annullare l'effetto dell'ultimo comando eseguito. & Caso d'uso \\ \hline
+\hypertarget{R0F14.5}{R0F14.5} & Il sistema deve permettere di ripristinare l'effetto dell'ultimo comando annullato. & Caso d'uso \\ \hline
+\hypertarget{R0F14.6}{R0F14.6} & Il sistema deve permettere di leggere il codice prodotto. & Caso d'uso \\ \hline
+\hypertarget{R0F14.7}{R0F14.7} & Il sistema deve permettere di esportare il codice prodotto. & Caso d'uso \\ \hline
+\hypertarget{R0F14.8}{R0F14.8} & Il sistema deve permettere di salvare il progetto attuale. & Caso d'uso \\ \hline
+\hypertarget{R0F14.8.1}{R0F14.8.1} & Il sistema deve permettere di salvare il progetto attuale sovrascrivendolo. & Caso d'uso \\ \hline
+\hypertarget{R0F14.8.2}{R0F14.8.2} & Il sistema deve permettere di salvare con nome il progetto in una directory scelta. & Caso d'uso \\ \hline
+\hypertarget{R0F15}{R0F15} & Il sistema deve permettere di editare il diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.1}{R0F15.1} & Il sistema deve permettere di aggiungere una nuova classe al diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.2}{R0F15.2} & Il sistema deve permettere la modifica di una classe presente nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.2.1}{R0F15.2.1} & Il sistema deve permettere di rinominare una classe presente nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.2.2}{R0F15.2.2} & Il sistema deve permettere di innestare una classe all'interno di un'altra classe. & Caso d'uso \\ \hline
+\hypertarget{R0F15.2.3}{R0F15.2.3} & Il sistema deve permettere di impostare l'importanza di una classe. & Caso d'uso \\ \hline
+\hypertarget{R0F15.2.4}{R0F15.2.4} & Il sistema deve permettere di modificare l'importanza di una classe. & Caso d'uso \\ \hline
+\hypertarget{R0F15.2.4.1}{R0F15.2.4.1} & Il sistema deve permettere di modificare l'importanza di una classe a "bassa". & Caso d'uso \\ \hline
+\hypertarget{R0F15.2.4.2}{R0F15.2.4.2} & Il sistema deve permettere di modificare l'importanza di una classe a "media". & Caso d'uso \\ \hline
+\hypertarget{R0F15.2.4.3}{R0F15.2.4.3} & Il sistema deve permettere di modificare l'importanza di una classe ad "alta". & Caso d'uso \\ \hline
+\hypertarget{R0F15.2.5}{R0F15.2.5} & Il sistema deve permettere di passare alla schermata di modifica di classe. & Caso d'uso \\ \hline
+\hypertarget{R0F15.3}{R0F15.3} & Il sistema deve permettere l'eliminazione di una classe presente nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.4}{R0F15.4} & Il sistema deve permettere la definizione di una relazione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.4.1}{R0F15.4.1} & Il sistema deve permettere di definire una dipendenza tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.4.2}{R0F15.4.2} & Il sistema deve permettere di definire un'associazione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.4.3}{R0F15.4.3} & Il sistema deve permettere di definire un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.4.4}{R0F15.4.4} & Il sistema deve permettere di definire un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.4.5}{R0F15.4.5} & Il sistema deve permettere di definire un vincolo di composizione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.4.6}{R0F15.4.6} & Il sistema deve permettere il raffinamento di una classe parametrica. & Caso d'uso \\ \hline
+\hypertarget{R0F15.4.7}{R0F15.4.7} & Il sistema deve permettere di definire la realizzazione di un'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F15.5}{R0F15.5} & Il sistema deve permettere la modifica di una relazione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.5.1}{R0F15.5.1} & Il sistema deve permettere di modificare una dipendenza tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.5.2}{R0F15.5.2} & Il sistema deve permettere di modificare un'associazione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.5.3}{R0F15.5.3} & Il sistema deve permettere di modificare un vincolo di ereditarietà tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.5.4}{R0F15.5.4} & Il sistema deve permettere di modificare un vincolo di aggregazione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.5.5}{R0F15.5.5} & Il sistema deve permettere di modificare un vincolo di composizione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.5.6}{R0F15.5.6} & Il sistema deve permettere di modificare il raffinamento di una classe parametrica.  & Caso d'uso \\ \hline
+\hypertarget{R0F15.5.7}{R0F15.5.7} & Il sistema deve permettere di modificare la realizzazione di un'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F15.6}{R0F15.6} & Il sistema deve permettere l'eliminazione di una relazione tra due elementi presenti nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.7}{R0F15.7} & Il sistema deve permettere di aggiungere una nuova interfaccia al diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.8}{R0F15.8} & Il sistema deve permettere la modifica di un'interfaccia presente nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.8.1}{R0F15.8.1} & Il sistema deve permettere di rinominare un'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F15.8.2}{R0F15.8.2} & Il sistema deve permettere di impostare l'importanza dell'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F15.8.2.1}{R0F15.8.2.1} & Il sistema deve permettere di modificare l'importanza di una classe a a "bassa". & Caso d'uso \\ \hline
+\hypertarget{R0F15.8.2.2}{R0F15.8.2.2} & Il sistema deve permettere di modificare l'importanza di una classe a "media". & Caso d'uso \\ \hline
+\hypertarget{R0F15.8.2.3}{R0F15.8.2.3} & Il sistema deve permettere di modificare l'importanza di una classe ad "alta". & Caso d'uso \\ \hline
+\hypertarget{R0F15.8.3}{R0F15.8.3} & Il sistema deve permettere di aprire la schermata di modifica di un'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F15.9}{R0F15.9} & Il sistema deve permettere l'eliminazione di un'interfaccia presente nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.10}{R0F15.10} & Il sistema deve permettere di aggiungere un commento all'interno del diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.11}{R0F15.11} & Il sistema deve permettere il collegamento di un commento ad un elemento presente nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.12}{R0F15.12} & Il sistema deve permettere la modifica di un commento presente nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.13}{R0F15.13} & Il sistema deve permettere l'eliminazione di un commento presente nel diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F15.14}{R0F15.14} & Il sistema deve permettere di cambiare layer di visualizzazione. & Caso d'uso \\ \hline
+\hypertarget{R0F15.14.1}{R0F15.14.1} & Il sistema deve permettere di visualizzare il layer superiore. & Caso d'uso \\ \hline
+\hypertarget{R0F15.14.2}{R0F15.14.2} & Il sistema deve permettere di visualizzare il layer inferiore. & Caso d'uso \\ \hline
+\hypertarget{R0F15.15}{R0F15.15} & Il sistema deve permettere di aprire l'editor del diagramma dei package. & Caso d'uso \\ \hline
+\hypertarget{R0F15.16}{R0F15.16} & Il sistema deve permettere di riposizionare un elemento all'interno del diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F16}{R0F16} & IL sistema deve permettere di modificare una classe mediante la schermata di modifica di classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.1}{R0F16.1} & Il sistema deve permettere di aggiungere un nuovo attributo alla classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.2}{R0F16.2} & Il sistema deve permettere di modificare un attributo della classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.2.1}{R0F16.2.1} & Il sistema deve permettere di definire la direzione dell'attributo. & Caso d'uso \\ \hline
+\hypertarget{R0F16.2.2}{R0F16.2.2} & Il sistema deve permettere di rinominare l'attributo. & Caso d'uso \\ \hline
+\hypertarget{R0F16.2.3}{R0F16.2.3} & Il sistema deve permettere di cambiare il tipo dell'attributo. & Caso d'uso \\ \hline
+\hypertarget{R0F16.2.4}{R0F16.2.4} & Il sistema deve permettere di definire un valore di default per l'attributo. & Caso d'uso \\ \hline
+\hypertarget{R0F16.3}{R0F16.3} & Il sistema deve permettere di eliminare un attributo della classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.4}{R0F16.4} & Il sistema deve permettere di aggiungere una nuova operazione alla classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5}{R0F16.5} & Il sistema deve permettere di modificare un'operazione della classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.1}{R0F16.5.1} & Il sistema deve permettere di impostare la visibilità dell'operazione. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.2}{R0F16.5.2} & Il sistema deve permettere di rinominare un'operazione.  & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.3}{R0F16.5.3} & Il sistema deve permettere di definire la lista dei parametri dell'operazione. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.3.1}{R0F16.5.3.1} & Il sistema deve permettere di aggiungere un nuovo parametro alla lista. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.3.2}{R0F16.5.3.2} & Il sistema deve permettere di modificare un parametro della lista. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.3.2.1}{R0F16.5.3.2.1} & Il sistema deve permettere di definire la direzione del parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.3.2.2}{R0F16.5.3.2.2} & Il sistema deve permettere di rinominare il parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.3.2.3}{R0F16.5.3.2.3} & Il sistema deve permettere di definire il tipo del parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.3.2.4}{R0F16.5.3.2.4} & Il sistema deve permettere di definire il valore di default del parametro.  & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.3.3}{R0F16.5.3.3} & Il sistema deve permettere di eliminare un parametro della lista. & Caso d'uso \\ \hline
+\hypertarget{R0F16.5.4}{R0F16.5.4} & Il sistema deve permettere di definire proprietà aggiuntive dell'operazione. & Caso d'uso \\ \hline
+\hypertarget{R0F16.6}{R0F16.6} & Il sistema deve permettere di eliminare un'operazione.  & Caso d'uso \\ \hline
+\hypertarget{R0F16.7}{R0F16.7} & Il sistema deve permettere di impostare la visibilità della classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.8}{R0F16.8} & Il sistema deve permettere di commentare una classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.9}{R0F16.9} & Il sistema deve permettere di passare dalla modifica di una classe al diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F16.10}{R0F16.10} & Il sistema deve permettere di marchiare una classe. & Caso d'uso \\ \hline
+\hypertarget{R0F16.10.1}{R0F16.10.1} & Il sistema deve permettere di marchiare una classe statica. & Caso d'uso \\ \hline
+\hypertarget{R0F16.10.2}{R0F16.10.2} & Il sistema deve permettere di marchiare una classe astratta. & Caso d'uso \\ \hline
+\hypertarget{R0F16.10.3}{R0F16.10.3} & Il sistema deve permettere di marchiare una classe finale. & Caso d'uso \\ \hline
+\hypertarget{R0F16.10.4}{R0F16.10.4} & Il sistema deve permettere di marchiare una classe "frozen". & Caso d'uso \\ \hline
+\hypertarget{R0F16.10.5}{R0F16.10.5} & Il sistema deve permettere di marchiare una classe "readOnly". & Caso d'uso \\ \hline
+\hypertarget{R0F16.10.6}{R0F16.10.6} & Il sistema deve permettere di marchiare una classe "enum". & Caso d'uso \\ \hline
+\hypertarget{R0F16.10.7}{R0F16.10.7} & Il sistema deve permettere di marchiare una classe parametrica. & Caso d'uso \\ \hline
+\hypertarget{R0F17}{R0F17} & Il sistema deve permettere di modificare un'interfaccia mediante la schermata di modifica di interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F17.1}{R0F17.1} & Il sistema deve permettere di aggiungere un'operazione all'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2}{R0F17.2} & Il sistema deve permettere di modificare un'operazione all'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.1}{R0F17.2.1} & Il sistema deve permettere di impostare la visibilità dell'operazione. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.2}{R0F17.2.2} & Il sistema deve permettere di rinominare l'operazione. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.3}{R0F17.2.3} & Il sistema deve permettere di definire la lista dei parametri dell'operazione. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.3.1}{R0F17.2.3.1} & Il sistema deve permettere di aggiungere un nuovo parametro alla lista. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.3.2}{R0F17.2.3.2} & Il sistema deve permettere di modificare un parametro della lista. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.3.2.1}{R0F17.2.3.2.1} & Il sistema deve permettere di definire la direzione del parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.3.2.2}{R0F17.2.3.2.2} & Il sistema deve permettere di rinominare il parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.3.2.3}{R0F17.2.3.2.3} & Il sistema deve permettere di definire il tipo del parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.3.2.4}{R0F17.2.3.2.4} & Il sistema deve permettere di definire il valore di default del parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.3.3}{R0F17.2.3.3} & Il sistema deve permettere di eliminare il parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.4}{R0F17.2.4} & Il sistema deve permettere di definire il tipo di ritorno dell'operazione. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.5}{R0F17.2.5} & Il sistema deve permettere di definire proprietà aggiuntive dell'operazione. & Caso d'uso \\ \hline
+\hypertarget{R0F17.2.6}{R0F17.2.6} & Il sistema deve permettere di aprire il diagramma delle attività corrispondente. & Caso d'uso \\ \hline
+\hypertarget{R0F17.3}{R0F17.3} & Il sistema deve permettere di eliminare un'operazione dall'interfaccia. 
+
+& Caso d'uso \\ \hline
+\hypertarget{R0F17.4}{R0F17.4} & Il sistema deve permettere di rinominare l'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F17.5}{R0F17.5} & Il sistema deve permettere di impostare la visibilità dell'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F17.6}{R0F17.6} & Il sistema deve permettere di marchiare l'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R0F17.7}{R0F17.7} & Il sistema deve permettere di passare dalla modifica di un'interfaccia al diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F17.8}{R0F17.8} & Il sistema deve permettere di commentare l'interfaccia. & Caso d'uso \\ \hline
+\hypertarget{R1F18}{R1F18} & Il sistema deve permettere di editare il diagramma dei package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.1}{R1F18.1} & Il sistema deve permettere di creare un nuovo package vuoto nel diagramma dei package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.2}{R1F18.2} & Il sistema deve permettere di modificare un package presente nel diagramma dei package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.2.1}{R1F18.2.1} & Il sistema deve permettere di rinominare il package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.2.2}{R1F18.2.2} & Il sistema deve permettere di impostare la visibilità del package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.2.3}{R1F18.2.3} & Il sistema deve permettere di innestare un elemento nel package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.2.4}{R1F18.2.4} & Il sistema deve permettere di rimuovere un elemento dal package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.3}{R1F18.3} & Il sistema deve permettere di eliminare un package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.4}{R1F18.4} & Il sistema deve permettere di passare dal diagramma dei package al diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R1F18.5}{R1F18.5} & Il sistema deve permettere di definire una dipendenza tra package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.6}{R1F18.6} & Il sistema deve permettere di rimuovere una dipendenza tra package. & Caso d'uso \\ \hline
+\hypertarget{R1F18.7}{R1F18.7} & Il sistema deve permettere di riposizionare un elemento all'interno del diagramma dei package. & Caso d'uso \\ \hline
+\hypertarget{R0F19}{R0F19} & Il sistema deve permettere di editare il diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.1}{R0F19.1} & Il sistema deve permettere di creare una nuova attività nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2}{R0F19.2} & Il sistema deve permettere di modificare un'attività presente nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.1}{R0F19.2.1} & Il sistema deve permettere di rinominare l'attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.2}{R0F19.2.2} & Il sistema deve permettere di commentare l'attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.3}{R0F19.2.3} & Il sistema deve permettere di aggiungere un nuovo pin all'attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.4}{R0F19.2.4} & Il sistema deve permettere di modificare un pin presente nell'attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.4.1}{R0F19.2.4.1} & Il sistema deve permettere di definire la direzione del parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.4.2}{R0F19.2.4.2} & Il sistema deve permettere di rinominare il parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.4.3}{R0F19.2.4.3} & Il sistema deve permettere di definire il tipo del parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.4.4}{R0F19.2.4.4} & Il sistema deve permettere di definire i valori di default del parametro. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.5}{R0F19.2.5} & Il sistema deve permettere di rimuovere un pin dall'attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.2.6}{R0F19.2.6} & Il sistema deve permettere di aprire l'editor del bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F19.3}{R0F19.3} & Il sistema deve permettere di eliminare un'attività presente nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.4}{R0F19.4} & Il sistema deve permettere di aggiungere un nuovo elemento di decisione al diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.5}{R0F19.5} & Il sistema deve permettere di modificare un elemento di decisione del diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.6}{R0F19.6} & Il sistema deve permettere di eliminare un elemento di decisione del diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.7}{R0F19.7} & Il sistema deve permettere di aggiungere una nuova regione di espansione al diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.8}{R0F19.8} & Il sistema deve permettere di modificare una regione di espansione del diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.8.1}{R0F19.8.1} & Il sistema deve permettere di innestare un elemento nella regione di espansione. & Caso d'uso \\ \hline
+\hypertarget{R0F19.8.2}{R0F19.8.2} & Il sistema deve permettere di editare la lista degli argomenti della regione di espansione. & Caso d'uso \\ \hline
+\hypertarget{R0F19.8.2.1}{R0F19.8.2.1} & Il sistema deve permettere di aggiungere un nuovo argomento. & Caso d'uso \\ \hline
+\hypertarget{R0F19.8.2.2}{R0F19.8.2.2} & Il sistema deve permettere di modificare un argomento. & Caso d'uso \\ \hline
+\hypertarget{R0F19.8.2.3}{R0F19.8.2.3} & Il sistema deve permettere di rimuovere un argomento. & Caso d'uso \\ \hline
+\hypertarget{R0F19.8.3}{R0F19.8.3} & Il sistema deve permettere di rimuovere un elemento dalla regione di espansione. & Caso d'uso \\ \hline
+\hypertarget{R0F19.9}{R0F19.9} & Il sistema deve permettere di eliminare una regione di espansione del diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.10}{R0F19.10} & Il sistema deve permettere di riposizionare un elemento all'interno del diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.11}{R0F19.11} & Il sistema deve permettere di aggiungere una nuova trasformazione tra pin nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.12}{R0F19.12} & Il sistema deve permettere di modificare una trasformazione tra pin presente nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.13}{R0F19.13} & Il sistema deve permettere di eliminare una trasformazione tra pin presente nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.14}{R0F19.14} & Il sistema deve permettere di aggiungere un nuovo evento temporale nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.15}{R0F19.15} & Il sistema deve permettere di modificare un evento temporale presente nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.16}{R0F19.16} & Il sistema deve permettere di eliminare un elemento temporale presente nel diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F19.17}{R0F19.17} & Il sistema deve permettere di passare dal diagramma delle attività al diagramma delle classi. & Caso d'uso \\ \hline
+\hypertarget{R0F20}{R0F20} & Il sistema deve permettere di editare il bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F20.1}{R0F20.1} & Il sistema deve permettere di aggiungere una nuova bubble al bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F20.2}{R0F20.2} & Il sistema deve permettere di modificare una bubble presente nel bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F20.3}{R0F20.3} & Il sistema deve permettere di eliminare una bubble presente nel bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F20.4}{R0F20.4} & Il sistema deve permettere di aggiungere un nuovo elemento di decisione al bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F20.5}{R0F20.5} & Il sistema deve permettere di modificare un elemento di decisione presente nel bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F20.6}{R0F20.6} & Il sistema deve permettere di eliminare un elemento di decisione presente nel bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F20.7}{R0F20.7} & Il sistema deve permettere di passare dal bubble flowchart al diagramma delle attività. & Caso d'uso \\ \hline
+\hypertarget{R0F20.8}{R0F20.8} & Il sistema deve permettere di riposizionare un elemento all'interno del bubble flowchart. & Caso d'uso \\ \hline
+\hypertarget{R0F21}{R0F21} & Il sistema deve permettere di gestire gli errori. & Caso d'uso \\ \hline
+\hypertarget{R0F22}{R0F22} & Il sistema deve permettere di gestire il codice generato. & Caso d'uso \\ \hline
+\caption[Requisiti]{Requisiti}
+\label{tabella:req0}
+\end{longtable}
+\clearpage
+\subsection{Requisiti di Qualità}
+\normalsize
+\begin{longtable}{|c|>{\centering}p{7cm}|c|}
+	\hline
+	\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Stato}\\
+	\hline
+	\endhead
+	\hypertarget{R0Q1}{R0Q1} & Dovrà essere fornito un manuale d'utilizzo dell'applicazione. & Capitolato \\ \hline
+	\hypertarget{R0Q2}{R0Q2} & Dovrà essere fornito un manuale per estendere l'applicazione. & Capitolato \\ \hline
+	\hypertarget{R0Q3}{R0Q3} & Il codice generato deve compilare correttamente. & Capitolato \\ \hline
+	\hypertarget{R1Q4}{R1Q4} & Realizzare un gioco Hex utilizzando l'editor creato. & Capitolato \\ \hline
+	\caption[Requisiti]{Requisiti}
+	\label{tabella:req1}
+\end{longtable}
+\clearpage
+\subsection{Requisiti Prestazionali}
+\normalsize
+\begin{longtable}{|c|>{\centering}p{7cm}|c|}
+	\hline
+	\textbf{Codice Requisito} & \textbf{Descrizione} & \textbf{Fonte}\\
+	\hline
+	\endhead
+	\hypertarget{R0P1}{R0P1} & Le bubble devono essere traducibili in codice senza errori & Interno \\ \hline
+	\caption[Requisiti Prestazionali]{Requisiti Prestazionali}
+	\label{tabella:req2}
+\end{longtable}
+\clearpage
+\subsection{Requisiti di Vincolo}
+\normalsize
+\begin{longtable}{|c|>{\centering}p{7cm}|c|}
+	\hline
+	\textbf{Codice Requisito} & \textbf{Descrizione} & \textbf{Fonte}\\
+	\hline
+	\endhead
+	\hypertarget{R0V1}{R0V1} & La parte server deve essere realizzata in Java con server Tomcat o Javascript con server Node.Js & Capitolato \\ \hline
+	\hypertarget{R0V2}{R0V2} & Il prodotto deve essere hostato su un server & Riunione \\ \hline
+	\hypertarget{R1V3}{R1V3} & Una sessione di lavoro deve essere salvata in local storage & Riunione \\ \hline
+	\hypertarget{R1V4}{R1V4} & L'applicazione deve essere opensource
+	& Capitolato \\ \hline
+	\caption[Requisiti di Vincolo]{Requisiti di Vincolo}
+	\label{tabella:req3}
+\end{longtable}
+\clearpage
+\subsection{Tracciamento usecase-requisiti}
+\normalsize
+\begin{longtable}{|c|c|}
+	\hline
+	\textbf{Codice Use case} & \textbf{Codice Requisiti} \\
+	\hline
+	\endhead
+	UC1 & \hyperlink{R0F14}{R0F14}\\\hline
+	UC1.1 & \hyperlink{R0F14.1}{R0F14.1}\\& \hyperlink{R0F14.1.1}{R0F14.1.1}\\\hline
+	UC1.2 & \hyperlink{R0F14.2}{R0F14.2}\\\hline
+	UC1.3 & \hyperlink{R0F14.3}{R0F14.3}\\& \hyperlink{R0F14.3.1}{R0F14.3.1}\\\hline
+	UC1.4 & \hyperlink{R0F14.8}{R0F14.8}\\& \hyperlink{R0F14.8.1}{R0F14.8.1}\\& \hyperlink{R0F14.8.2}{R0F14.8.2}\\\hline
+	UC2 & \hyperlink{R0F1}{R0F1}\\\hline
+	UC2.1 & \hyperlink{R1F18}{R1F18}\\\hline
+	UC2.1.1 & \hyperlink{R1F18.1}{R1F18.1}\\\hline
+	UC2.1.2 & \hyperlink{R1F18.2}{R1F18.2}\\& \hyperlink{R1F18.2.1}{R1F18.2.1}\\& \hyperlink{R1F18.2.2}{R1F18.2.2}\\\hline
+	UC2.1.2.1 & \hyperlink{R1F18.2.3}{R1F18.2.3}\\\hline
+	UC2.1.2.2 & \hyperlink{R1F18.2.4}{R1F18.2.4}\\\hline
+	UC2.1.3 & \hyperlink{R1F18.3}{R1F18.3}\\\hline
+	UC2.1.4 & \hyperlink{R1F18.5}{R1F18.5}\\\hline
+	UC2.1.5 & \hyperlink{R1F18.6}{R1F18.6}\\\hline
+	UC2.1.6 & \hyperlink{R1F18.4}{R1F18.4}\\\hline
+	UC2.1.7 & \hyperlink{R1F18.7}{R1F18.7}\\\hline
+	UC2.2 & \hyperlink{R0F15}{R0F15}\\& \hyperlink{R0F15.14}{R0F15.14}\\& \hyperlink{R0F15.14.1}{R0F15.14.1}\\& \hyperlink{R0F15.14.2}{R0F15.14.2}\\\hline
+	UC2.2.1 & \hyperlink{R0F15.1}{R0F15.1}\\\hline
+	UC2.2.2 & \hyperlink{R0F15.2}{R0F15.2}\\& \hyperlink{R0F15.2.1}{R0F15.2.1}\\& \hyperlink{R0F15.2.2}{R0F15.2.2}\\& \hyperlink{R0F15.2.3}{R0F15.2.3}\\& \hyperlink{R0F15.2.4}{R0F15.2.4}\\& \hyperlink{R0F15.2.4.1}{R0F15.2.4.1}\\& \hyperlink{R0F15.2.4.2}{R0F15.2.4.2}\\& \hyperlink{R0F15.2.4.3}{R0F15.2.4.3}\\\hline
+	UC2.2.3 & \hyperlink{R0F15.3}{R0F15.3}\\\hline
+	UC2.2.4 & \hyperlink{R0F15.4}{R0F15.4}\\\hline
+	UC2.2.4.1 & \hyperlink{R0F15.4.1}{R0F15.4.1}\\\hline
+	UC2.2.4.2 & \hyperlink{R0F15.4.2}{R0F15.4.2}\\\hline
+	UC2.2.4.3 & \hyperlink{R0F15.4.3}{R0F15.4.3}\\\hline
+	UC2.2.4.4 & \hyperlink{R0F15.4.4}{R0F15.4.4}\\\hline
+	UC2.2.4.5 & \hyperlink{R0F15.4.5}{R0F15.4.5}\\\hline
+	UC2.2.4.6 & \hyperlink{R0F15.4.6}{R0F15.4.6}\\\hline
+	UC2.2.4.7 & \hyperlink{R0F15.4.7}{R0F15.4.7}\\\hline
+	UC2.2.5 & \hyperlink{R0F15.5}{R0F15.5}\\\hline
+	UC2.2.5.1 & \hyperlink{R0F15.5.1}{R0F15.5.1}\\\hline
+	UC2.2.5.2 & \hyperlink{R0F15.5.2}{R0F15.5.2}\\\hline
+	UC2.2.5.3 & \hyperlink{R0F15.5.3}{R0F15.5.3}\\\hline
+	UC2.2.5.4 & \hyperlink{R0F15.5.4}{R0F15.5.4}\\\hline
+	UC2.2.5.5 & \hyperlink{R0F15.5.5}{R0F15.5.5}\\\hline
+	UC2.2.5.6 & \hyperlink{R0F15.5.6}{R0F15.5.6}\\\hline
+	UC2.2.5.7 & \hyperlink{R0F15.5.7}{R0F15.5.7}\\\hline
+	UC2.2.6 & \hyperlink{R0F15.6}{R0F15.6}\\\hline
+	UC2.2.7 & \hyperlink{R0F15.7}{R0F15.7}\\\hline
+	UC2.2.8 & \hyperlink{R0F15.8}{R0F15.8}\\& \hyperlink{R0F15.8.1}{R0F15.8.1}\\& \hyperlink{R0F15.8.2}{R0F15.8.2}\\& \hyperlink{R0F15.8.2.1}{R0F15.8.2.1}\\& \hyperlink{R0F15.8.2.2}{R0F15.8.2.2}\\& \hyperlink{R0F15.8.2.3}{R0F15.8.2.3}\\\hline
+	UC2.2.8.1 & \hyperlink{R0F15.8.3}{R0F15.8.3}\\\hline
+	UC2.2.9 & \hyperlink{R0F15.9}{R0F15.9}\\\hline
+	UC2.2.10 & \hyperlink{R0F15.10}{R0F15.10}\\\hline
+	UC2.2.11 & \hyperlink{R0F15.11}{R0F15.11}\\\hline
+	UC2.2.12 & \hyperlink{R0F15.12}{R0F15.12}\\\hline
+	UC2.2.13 & \hyperlink{R0F15.13}{R0F15.13}\\\hline
+	UC2.2.14 & \hyperlink{R0F15.15}{R0F15.15}\\\hline
+	UC2.2.15 & \hyperlink{R0F15.16}{R0F15.16}\\\hline
+	UC2.2.16 & \hyperlink{R0F15.2.5}{R0F15.2.5}\\& \hyperlink{R0F16}{R0F16}\\& \hyperlink{R0F16.8}{R0F16.8}\\\hline
+	UC2.2.16.1 & \hyperlink{R0F16.1}{R0F16.1}\\\hline
+	UC2.2.16.2 & \hyperlink{R0F16.2}{R0F16.2}\\& \hyperlink{R0F16.2.1}{R0F16.2.1}\\& \hyperlink{R0F16.2.2}{R0F16.2.2}\\& \hyperlink{R0F16.2.3}{R0F16.2.3}\\& \hyperlink{R0F16.2.4}{R0F16.2.4}\\\hline
+	UC2.2.16.3 & \hyperlink{R0F16.3}{R0F16.3}\\\hline
+	UC2.2.16.4 & \hyperlink{R0F16.4}{R0F16.4}\\\hline
+	UC2.2.16.5 & \hyperlink{R0F16.5}{R0F16.5}\\& \hyperlink{R0F16.5.1}{R0F16.5.1}\\& \hyperlink{R0F16.5.2}{R0F16.5.2}\\& \hyperlink{R0F16.5.3}{R0F16.5.3}\\& \hyperlink{R0F16.5.4}{R0F16.5.4}\\\hline
+	UC2.2.16.5.1 & \hyperlink{R0F16.5.3.1}{R0F16.5.3.1}\\\hline
+	UC2.2.16.5.2 & \hyperlink{R0F16.5.3.2}{R0F16.5.3.2}\\& \hyperlink{R0F16.5.3.2.1}{R0F16.5.3.2.1}\\& \hyperlink{R0F16.5.3.2.2}{R0F16.5.3.2.2}\\& \hyperlink{R0F16.5.3.2.3}{R0F16.5.3.2.3}\\& \hyperlink{R0F16.5.3.2.4}{R0F16.5.3.2.4}\\\hline
+	UC2.2.16.5.3 & \hyperlink{R0F16.5.3.3}{R0F16.5.3.3}\\\hline
+	UC2.2.16.6 & \hyperlink{R0F16.6}{R0F16.6}\\\hline
+	UC2.2.16.7 & \hyperlink{R0F16.8}{R0F16.8}\\\hline
+	UC2.2.16.8 & \hyperlink{R0F16.10}{R0F16.10}\\& \hyperlink{R0F16.10.1}{R0F16.10.1}\\& \hyperlink{R0F16.10.2}{R0F16.10.2}\\& \hyperlink{R0F16.10.3}{R0F16.10.3}\\& \hyperlink{R0F16.10.4}{R0F16.10.4}\\& \hyperlink{R0F16.10.5}{R0F16.10.5}\\& \hyperlink{R0F16.10.6}{R0F16.10.6}\\& \hyperlink{R0F16.10.7}{R0F16.10.7}\\\hline
+	UC2.2.16.9 & \hyperlink{R0F16.9}{R0F16.9}\\\hline
+	UC2.2.17 & \hyperlink{R0F17}{R0F17}\\& \hyperlink{R0F17.4}{R0F17.4}\\& \hyperlink{R0F17.5}{R0F17.5}\\\hline
+	UC2.2.17.1 & \hyperlink{R0F17.1}{R0F17.1}\\\hline
+	UC2.2.17.2 & \hyperlink{R0F17.2}{R0F17.2}\\& \hyperlink{R0F17.2.1}{R0F17.2.1}\\& \hyperlink{R0F17.2.2}{R0F17.2.2}\\& \hyperlink{R0F17.2.3}{R0F17.2.3}\\& \hyperlink{R0F17.2.4}{R0F17.2.4}\\& \hyperlink{R0F17.2.5}{R0F17.2.5}\\\hline
+	UC2.2.17.2.1 & \hyperlink{R0F17.2.6}{R0F17.2.6}\\\hline
+	UC2.2.17.2.2 & \hyperlink{R0F17.2.3.1}{R0F17.2.3.1}\\\hline
+	UC2.2.17.2.3 & \hyperlink{R0F17.2.3.2}{R0F17.2.3.2}\\& \hyperlink{R0F17.2.3.2.1}{R0F17.2.3.2.1}\\& \hyperlink{R0F17.2.3.2.2}{R0F17.2.3.2.2}\\& \hyperlink{R0F17.2.3.2.3}{R0F17.2.3.2.3}\\& \hyperlink{R0F17.2.3.2.4}{R0F17.2.3.2.4}\\\hline
+	UC2.2.17.2.4 & \hyperlink{R0F17.2.3.3}{R0F17.2.3.3}\\\hline
+	UC2.2.17.3 & \hyperlink{R0F17.3}{R0F17.3}\\\hline
+	UC2.2.17.4 & \hyperlink{R0F17.8}{R0F17.8}\\\hline
+	UC2.2.17.5 & \hyperlink{R0F17.6}{R0F17.6}\\\hline
+	UC2.2.17.6 & \hyperlink{R0F17.7}{R0F17.7}\\\hline
+	UC2.3 & \hyperlink{R0F19}{R0F19}\\\hline
+	UC2.3.1 & \hyperlink{R0F19.1}{R0F19.1}\\\hline
+	UC2.3.2 & \hyperlink{R0F19.2}{R0F19.2}\\& \hyperlink{R0F19.2.1}{R0F19.2.1}\\& \hyperlink{R0F19.2.2}{R0F19.2.2}\\\hline
+	UC2.3.2.1 & \hyperlink{R0F19.2.6}{R0F19.2.6}\\\hline
+	UC2.3.2.2 & \hyperlink{R0F19.2.3}{R0F19.2.3}\\\hline
+	UC2.3.2.3 & \hyperlink{R0F19.2.4}{R0F19.2.4}\\& \hyperlink{R0F19.2.4.1}{R0F19.2.4.1}\\& \hyperlink{R0F19.2.4.2}{R0F19.2.4.2}\\& \hyperlink{R0F19.2.4.3}{R0F19.2.4.3}\\& \hyperlink{R0F19.2.4.4}{R0F19.2.4.4}\\\hline
+	UC2.3.2.4 & \hyperlink{R0F19.2.5}{R0F19.2.5}\\\hline
+	UC2.3.3 & \hyperlink{R0F19.3}{R0F19.3}\\\hline
+	UC2.3.4 & \hyperlink{R0F19.4}{R0F19.4}\\\hline
+	UC2.3.5 & \hyperlink{R0F19.5}{R0F19.5}\\\hline
+	UC2.3.6 & \hyperlink{R0F19.6}{R0F19.6}\\\hline
+	UC2.3.7 & \hyperlink{R0F19.7}{R0F19.7}\\\hline
+	UC2.3.8 & \hyperlink{R0F19.8}{R0F19.8}\\& \hyperlink{R0F19.8.1}{R0F19.8.1}\\& \hyperlink{R0F19.8.2}{R0F19.8.2}\\& \hyperlink{R0F19.8.2.1}{R0F19.8.2.1}\\& \hyperlink{R0F19.8.2.2}{R0F19.8.2.2}\\& \hyperlink{R0F19.8.2.3}{R0F19.8.2.3}\\& \hyperlink{R0F19.8.3}{R0F19.8.3}\\\hline
+	UC2.3.9 & \hyperlink{R0F19.9}{R0F19.9}\\\hline
+	UC2.3.10 & \hyperlink{R0F19.11}{R0F19.11}\\\hline
+	UC2.3.11 & \hyperlink{R0F19.12}{R0F19.12}\\\hline
+	UC2.3.12 & \hyperlink{R0F19.13}{R0F19.13}\\\hline
+	UC2.3.13 & \hyperlink{R0F19.14}{R0F19.14}\\\hline
+	UC2.3.14 & \hyperlink{R0F19.15}{R0F19.15}\\\hline
+	UC2.3.15 & \hyperlink{R0F19.16}{R0F19.16}\\\hline
+	UC2.3.16 & \hyperlink{R0F19.17}{R0F19.17}\\\hline
+	UC2.3.17 & \hyperlink{R0F19.10}{R0F19.10}\\\hline
+	UC2.3.18 & \hyperlink{R0F20}{R0F20}\\\hline
+	UC2.3.18.1 & \hyperlink{R0F20.1}{R0F20.1}\\\hline
+	UC2.3.18.2 & \hyperlink{R0F20.2}{R0F20.2}\\\hline
+	UC2.3.18.3 & \hyperlink{R0F20.3}{R0F20.3}\\\hline
+	UC2.3.18.4 & \hyperlink{R0F20.4}{R0F20.4}\\\hline
+	UC2.3.18.5 & \hyperlink{R0F20.5}{R0F20.5}\\\hline
+	UC2.3.18.6 & \hyperlink{R0F20.6}{R0F20.6}\\\hline
+	UC2.3.18.7 & \hyperlink{R0F20.7}{R0F20.7}\\\hline
+	UC2.3.18.8 & \hyperlink{R0F20.8}{R0F20.8}\\\hline
+	UC3 & \hyperlink{R0F21}{R0F21}\\\hline
+	UC3.1 & \hyperlink{R0F14.4}{R0F14.4}\\\hline
+	UC3.2 & \hyperlink{R0F14.5}{R0F14.5}\\\hline
+	UC4 & \hyperlink{R0F22}{R0F22}\\\hline
+	UC4.1 & \hyperlink{R0F14.6}{R0F14.6}\\\hline
+	UC4.2 & \hyperlink{R0F14.7}{R0F14.7}\\\hline
+	\caption[Tracciamento Use case-Requisiti]{Tracciamento Use case-Requisiti}
+	\label{tabella:fonti-requi}
+\end{longtable}
+\clearpage
+\subsection{Tracciamento requisiti-usecase}
+\normalsize
+\begin{longtable}{|c|c|}
+	\hline
+	\textbf{Codice Requisiti} & \textbf{Codice Use case} \\
+	\hline
+	\endhead
+	R0F1 & \hyperlink{UC2}{UC2}\\\hline
+	R0F14 & \hyperlink{UC1}{UC1}\\\hline
+	R0F14.1 & \hyperlink{UC1.1}{UC1.1}\\\hline
+	R0F14.1.1 & \hyperlink{UC1.1}{UC1.1}\\\hline
+	R0F14.2 & \hyperlink{UC1.2}{UC1.2}\\\hline
+	R0F14.3 & \hyperlink{UC1.3}{UC1.3}\\\hline
+	R0F14.3.1 & \hyperlink{UC1.3}{UC1.3}\\\hline
+	R0F14.4 & \hyperlink{UC3.1}{UC3.1}\\\hline
+	R0F14.5 & \hyperlink{UC3.2}{UC3.2}\\\hline
+	R0F14.6 & \hyperlink{UC4.1}{UC4.1}\\\hline
+	R0F14.7 & \hyperlink{UC4.2}{UC4.2}\\\hline
+	R0F14.8 & \hyperlink{UC1.4}{UC1.4}\\\hline
+	R0F14.8.1 & \hyperlink{UC1.4}{UC1.4}\\\hline
+	R0F14.8.2 & \hyperlink{UC1.4}{UC1.4}\\\hline
+	R0F15 & \hyperlink{UC2.2}{UC2.2}\\\hline
+	R0F15.1 & \hyperlink{UC2.2.1}{UC2.2.1}\\\hline
+	R0F15.10 & \hyperlink{UC2.2.10}{UC2.2.10}\\\hline
+	R0F15.11 & \hyperlink{UC2.2.11}{UC2.2.11}\\\hline
+	R0F15.12 & \hyperlink{UC2.2.12}{UC2.2.12}\\\hline
+	R0F15.13 & \hyperlink{UC2.2.13}{UC2.2.13}\\\hline
+	R0F15.14 & \hyperlink{UC2.2}{UC2.2}\\\hline
+	R0F15.14.1 & \hyperlink{UC2.2}{UC2.2}\\\hline
+	R0F15.14.2 & \hyperlink{UC2.2}{UC2.2}\\\hline
+	R0F15.15 & \hyperlink{UC2.2.14}{UC2.2.14}\\\hline
+	R0F15.16 & \hyperlink{UC2.2.15}{UC2.2.15}\\\hline
+	R0F15.2 & \hyperlink{UC2.2.2}{UC2.2.2}\\\hline
+	R0F15.2.1 & \hyperlink{UC2.2.2}{UC2.2.2}\\\hline
+	R0F15.2.2 & \hyperlink{UC2.2.2}{UC2.2.2}\\\hline
+	R0F15.2.3 & \hyperlink{UC2.2.2}{UC2.2.2}\\\hline
+	R0F15.2.4 & \hyperlink{UC2.2.2}{UC2.2.2}\\\hline
+	R0F15.2.4.1 & \hyperlink{UC2.2.2}{UC2.2.2}\\\hline
+	R0F15.2.4.2 & \hyperlink{UC2.2.2}{UC2.2.2}\\\hline
+	R0F15.2.4.3 & \hyperlink{UC2.2.2}{UC2.2.2}\\\hline
+	R0F15.2.5 & \hyperlink{UC2.2.16}{UC2.2.16}\\\hline
+	R0F15.3 & \hyperlink{UC2.2.3}{UC2.2.3}\\\hline
+	R0F15.4 & \hyperlink{UC2.2.4}{UC2.2.4}\\\hline
+	R0F15.4.1 & \hyperlink{UC2.2.4.1}{UC2.2.4.1}\\\hline
+	R0F15.4.2 & \hyperlink{UC2.2.4.2}{UC2.2.4.2}\\\hline
+	R0F15.4.3 & \hyperlink{UC2.2.4.3}{UC2.2.4.3}\\\hline
+	R0F15.4.4 & \hyperlink{UC2.2.4.4}{UC2.2.4.4}\\\hline
+	R0F15.4.5 & \hyperlink{UC2.2.4.5}{UC2.2.4.5}\\\hline
+	R0F15.4.6 & \hyperlink{UC2.2.4.6}{UC2.2.4.6}\\\hline
+	R0F15.4.7 & \hyperlink{UC2.2.4.7}{UC2.2.4.7}\\\hline
+	R0F15.5 & \hyperlink{UC2.2.5}{UC2.2.5}\\\hline
+	R0F15.5.1 & \hyperlink{UC2.2.5.1}{UC2.2.5.1}\\\hline
+	R0F15.5.2 & \hyperlink{UC2.2.5.2}{UC2.2.5.2}\\\hline
+	R0F15.5.3 & \hyperlink{UC2.2.5.3}{UC2.2.5.3}\\\hline
+	R0F15.5.4 & \hyperlink{UC2.2.5.4}{UC2.2.5.4}\\\hline
+	R0F15.5.5 & \hyperlink{UC2.2.5.5}{UC2.2.5.5}\\\hline
+	R0F15.5.6 & \hyperlink{UC2.2.5.6}{UC2.2.5.6}\\\hline
+	R0F15.5.7 & \hyperlink{UC2.2.5.7}{UC2.2.5.7}\\\hline
+	R0F15.6 & \hyperlink{UC2.2.6}{UC2.2.6}\\\hline
+	R0F15.7 & \hyperlink{UC2.2.7}{UC2.2.7}\\\hline
+	R0F15.8 & \hyperlink{UC2.2.8}{UC2.2.8}\\\hline
+	R0F15.8.1 & \hyperlink{UC2.2.8}{UC2.2.8}\\\hline
+	R0F15.8.2 & \hyperlink{UC2.2.8}{UC2.2.8}\\\hline
+	R0F15.8.2.1 & \hyperlink{UC2.2.8}{UC2.2.8}\\\hline
+	R0F15.8.2.2 & \hyperlink{UC2.2.8}{UC2.2.8}\\\hline
+	R0F15.8.2.3 & \hyperlink{UC2.2.8}{UC2.2.8}\\\hline
+	R0F15.8.3 & \hyperlink{UC2.2.8.1}{UC2.2.8.1}\\\hline
+	R0F15.9 & \hyperlink{UC2.2.9}{UC2.2.9}\\\hline
+	R0F16 & \hyperlink{UC2.2.16}{UC2.2.16}\\\hline
+	R0F16.1 & \hyperlink{UC2.2.16.1}{UC2.2.16.1}\\\hline
+	R0F16.10 & \hyperlink{UC2.2.16.8}{UC2.2.16.8}\\\hline
+	R0F16.10.1 & \hyperlink{UC2.2.16.8}{UC2.2.16.8}\\\hline
+	R0F16.10.2 & \hyperlink{UC2.2.16.8}{UC2.2.16.8}\\\hline
+	R0F16.10.3 & \hyperlink{UC2.2.16.8}{UC2.2.16.8}\\\hline
+	R0F16.10.4 & \hyperlink{UC2.2.16.8}{UC2.2.16.8}\\\hline
+	R0F16.10.5 & \hyperlink{UC2.2.16.8}{UC2.2.16.8}\\\hline
+	R0F16.10.6 & \hyperlink{UC2.2.16.8}{UC2.2.16.8}\\\hline
+	R0F16.10.7 & \hyperlink{UC2.2.16.8}{UC2.2.16.8}\\\hline
+	R0F16.2 & \hyperlink{UC2.2.16.2}{UC2.2.16.2}\\\hline
+	R0F16.2.1 & \hyperlink{UC2.2.16.2}{UC2.2.16.2}\\\hline
+	R0F16.2.2 & \hyperlink{UC2.2.16.2}{UC2.2.16.2}\\\hline
+	R0F16.2.3 & \hyperlink{UC2.2.16.2}{UC2.2.16.2}\\\hline
+	R0F16.2.4 & \hyperlink{UC2.2.16.2}{UC2.2.16.2}\\\hline
+	R0F16.3 & \hyperlink{UC2.2.16.3}{UC2.2.16.3}\\\hline
+	R0F16.4 & \hyperlink{UC2.2.16.4}{UC2.2.16.4}\\\hline
+	R0F16.5 & \hyperlink{UC2.2.16.5}{UC2.2.16.5}\\\hline
+	R0F16.5.1 & \hyperlink{UC2.2.16.5}{UC2.2.16.5}\\\hline
+	R0F16.5.2 & \hyperlink{UC2.2.16.5}{UC2.2.16.5}\\\hline
+	R0F16.5.3 & \hyperlink{UC2.2.16.5}{UC2.2.16.5}\\\hline
+	R0F16.5.3.1 & \hyperlink{UC2.2.16.5.1}{UC2.2.16.5.1}\\\hline
+	R0F16.5.3.2 & \hyperlink{UC2.2.16.5.2}{UC2.2.16.5.2}\\\hline
+	R0F16.5.3.2.1 & \hyperlink{UC2.2.16.5.2}{UC2.2.16.5.2}\\\hline
+	R0F16.5.3.2.2 & \hyperlink{UC2.2.16.5.2}{UC2.2.16.5.2}\\\hline
+	R0F16.5.3.2.3 & \hyperlink{UC2.2.16.5.2}{UC2.2.16.5.2}\\\hline
+	R0F16.5.3.2.4 & \hyperlink{UC2.2.16.5.2}{UC2.2.16.5.2}\\\hline
+	R0F16.5.3.3 & \hyperlink{UC2.2.16.5.3}{UC2.2.16.5.3}\\\hline
+	R0F16.5.4 & \hyperlink{UC2.2.16.5}{UC2.2.16.5}\\\hline
+	R0F16.6 & \hyperlink{UC2.2.16.6}{UC2.2.16.6}\\\hline
+	R0F16.8 & \hyperlink{UC2.2.16}{UC2.2.16}\\& \hyperlink{UC2.2.16.7}{UC2.2.16.7}\\\hline
+	R0F16.9 & \hyperlink{UC2.2.16.9}{UC2.2.16.9}\\\hline
+	R0F17 & \hyperlink{UC2.2.17}{UC2.2.17}\\\hline
+	R0F17.1 & \hyperlink{UC2.2.17.1}{UC2.2.17.1}\\\hline
+	R0F17.2 & \hyperlink{UC2.2.17.2}{UC2.2.17.2}\\\hline
+	R0F17.2.1 & \hyperlink{UC2.2.17.2}{UC2.2.17.2}\\\hline
+	R0F17.2.2 & \hyperlink{UC2.2.17.2}{UC2.2.17.2}\\\hline
+	R0F17.2.3 & \hyperlink{UC2.2.17.2}{UC2.2.17.2}\\\hline
+	R0F17.2.3.1 & \hyperlink{UC2.2.17.2.2}{UC2.2.17.2.2}\\\hline
+	R0F17.2.3.2 & \hyperlink{UC2.2.17.2.3}{UC2.2.17.2.3}\\\hline
+	R0F17.2.3.2.1 & \hyperlink{UC2.2.17.2.3}{UC2.2.17.2.3}\\\hline
+	R0F17.2.3.2.2 & \hyperlink{UC2.2.17.2.3}{UC2.2.17.2.3}\\\hline
+	R0F17.2.3.2.3 & \hyperlink{UC2.2.17.2.3}{UC2.2.17.2.3}\\\hline
+	R0F17.2.3.2.4 & \hyperlink{UC2.2.17.2.3}{UC2.2.17.2.3}\\\hline
+	R0F17.2.3.3 & \hyperlink{UC2.2.17.2.4}{UC2.2.17.2.4}\\\hline
+	R0F17.2.4 & \hyperlink{UC2.2.17.2}{UC2.2.17.2}\\\hline
+	R0F17.2.5 & \hyperlink{UC2.2.17.2}{UC2.2.17.2}\\\hline
+	R0F17.2.6 & \hyperlink{UC2.2.17.2.1}{UC2.2.17.2.1}\\\hline
+	R0F17.3 & \hyperlink{UC2.2.17.3}{UC2.2.17.3}\\\hline
+	R0F17.4 & \hyperlink{UC2.2.17}{UC2.2.17}\\\hline
+	R0F17.5 & \hyperlink{UC2.2.17}{UC2.2.17}\\\hline
+	R0F17.6 & \hyperlink{UC2.2.17.5}{UC2.2.17.5}\\\hline
+	R0F17.7 & \hyperlink{UC2.2.17.6}{UC2.2.17.6}\\\hline
+	R0F17.8 & \hyperlink{UC2.2.17.4}{UC2.2.17.4}\\\hline
+	R1F18 & \hyperlink{UC2.1}{UC2.1}\\\hline
+	R1F18.1 & \hyperlink{UC2.1.1}{UC2.1.1}\\\hline
+	R1F18.2 & \hyperlink{UC2.1.2}{UC2.1.2}\\\hline
+	R1F18.2.1 & \hyperlink{UC2.1.2}{UC2.1.2}\\\hline
+	R1F18.2.2 & \hyperlink{UC2.1.2}{UC2.1.2}\\\hline
+	R1F18.2.3 & \hyperlink{UC2.1.2.1}{UC2.1.2.1}\\\hline
+	R1F18.2.4 & \hyperlink{UC2.1.2.2}{UC2.1.2.2}\\\hline
+	R1F18.3 & \hyperlink{UC2.1.3}{UC2.1.3}\\\hline
+	R1F18.4 & \hyperlink{UC2.1.6}{UC2.1.6}\\\hline
+	R1F18.5 & \hyperlink{UC2.1.4}{UC2.1.4}\\\hline
+	R1F18.6 & \hyperlink{UC2.1.5}{UC2.1.5}\\\hline
+	R1F18.7 & \hyperlink{UC2.1.7}{UC2.1.7}\\\hline
+	R0F19 & \hyperlink{UC2.3}{UC2.3}\\\hline
+	R0F19.1 & \hyperlink{UC2.3.1}{UC2.3.1}\\\hline
+	R0F19.10 & \hyperlink{UC2.3.17}{UC2.3.17}\\\hline
+	R0F19.11 & \hyperlink{UC2.3.10}{UC2.3.10}\\\hline
+	R0F19.12 & \hyperlink{UC2.3.11}{UC2.3.11}\\\hline
+	R0F19.13 & \hyperlink{UC2.3.12}{UC2.3.12}\\\hline
+	R0F19.14 & \hyperlink{UC2.3.13}{UC2.3.13}\\\hline
+	R0F19.15 & \hyperlink{UC2.3.14}{UC2.3.14}\\\hline
+	R0F19.16 & \hyperlink{UC2.3.15}{UC2.3.15}\\\hline
+	R0F19.17 & \hyperlink{UC2.3.16}{UC2.3.16}\\\hline
+	R0F19.2 & \hyperlink{UC2.3.2}{UC2.3.2}\\\hline
+	R0F19.2.1 & \hyperlink{UC2.3.2}{UC2.3.2}\\\hline
+	R0F19.2.2 & \hyperlink{UC2.3.2}{UC2.3.2}\\\hline
+	R0F19.2.3 & \hyperlink{UC2.3.2.2}{UC2.3.2.2}\\\hline
+	R0F19.2.4 & \hyperlink{UC2.3.2.3}{UC2.3.2.3}\\\hline
+	R0F19.2.4.1 & \hyperlink{UC2.3.2.3}{UC2.3.2.3}\\\hline
+	R0F19.2.4.2 & \hyperlink{UC2.3.2.3}{UC2.3.2.3}\\\hline
+	R0F19.2.4.3 & \hyperlink{UC2.3.2.3}{UC2.3.2.3}\\\hline
+	R0F19.2.4.4 & \hyperlink{UC2.3.2.3}{UC2.3.2.3}\\\hline
+	R0F19.2.5 & \hyperlink{UC2.3.2.4}{UC2.3.2.4}\\\hline
+	R0F19.2.6 & \hyperlink{UC2.3.2.1}{UC2.3.2.1}\\\hline
+	R0F19.3 & \hyperlink{UC2.3.3}{UC2.3.3}\\\hline
+	R0F19.4 & \hyperlink{UC2.3.4}{UC2.3.4}\\\hline
+	R0F19.5 & \hyperlink{UC2.3.5}{UC2.3.5}\\\hline
+	R0F19.6 & \hyperlink{UC2.3.6}{UC2.3.6}\\\hline
+	R0F19.7 & \hyperlink{UC2.3.7}{UC2.3.7}\\\hline
+	R0F19.8 & \hyperlink{UC2.3.8}{UC2.3.8}\\\hline
+	R0F19.8.1 & \hyperlink{UC2.3.8}{UC2.3.8}\\\hline
+	R0F19.8.2 & \hyperlink{UC2.3.8}{UC2.3.8}\\\hline
+	R0F19.8.2.1 & \hyperlink{UC2.3.8}{UC2.3.8}\\\hline
+	R0F19.8.2.2 & \hyperlink{UC2.3.8}{UC2.3.8}\\\hline
+	R0F19.8.2.3 & \hyperlink{UC2.3.8}{UC2.3.8}\\\hline
+	R0F19.8.3 & \hyperlink{UC2.3.8}{UC2.3.8}\\\hline
+	R0F19.9 & \hyperlink{UC2.3.9}{UC2.3.9}\\\hline
+	R0F20 & \hyperlink{UC2.3.18}{UC2.3.18}\\\hline
+	R0F20.1 & \hyperlink{UC2.3.18.1}{UC2.3.18.1}\\\hline
+	R0F20.2 & \hyperlink{UC2.3.18.2}{UC2.3.18.2}\\\hline
+	R0F20.3 & \hyperlink{UC2.3.18.3}{UC2.3.18.3}\\\hline
+	R0F20.4 & \hyperlink{UC2.3.18.4}{UC2.3.18.4}\\\hline
+	R0F20.5 & \hyperlink{UC2.3.18.5}{UC2.3.18.5}\\\hline
+	R0F20.6 & \hyperlink{UC2.3.18.6}{UC2.3.18.6}\\\hline
+	R0F20.7 & \hyperlink{UC2.3.18.7}{UC2.3.18.7}\\\hline
+	R0F20.8 & \hyperlink{UC2.3.18.8}{UC2.3.18.8}\\\hline
+	R0F21 & \hyperlink{UC3}{UC3}\\\hline
+	R0F22 & \hyperlink{UC4}{UC4}\\\hline
+	\caption[Tracciamento Requisiti-Use case]{Tracciamento Requisiti-Use case}
+	\label{tabella:requi-usecase}
+\end{longtable}
+\clearpage
+\subsection{Tracciamento fonti-requisiti}
+\normalsize
+\begin{longtable}{|c|c|}
+	\hline
+	\textbf{Fonte} & \textbf{Codice Requisiti} \\
+	\hline
+	\endhead
+	\hyperlink{Capitolato}{Capitolato} & \hyperlink{R0F1}{R0F1}\\& \hyperlink{R0F2}{R0F2}\\& \hyperlink{R0F3}{R0F3}\\& \hyperlink{R0F4}{R0F4}\\& \hyperlink{R0F4.1}{R0F4.1}\\& \hyperlink{R0F5}{R0F5}\\& \hyperlink{R0F6}{R0F6}\\& \hyperlink{R0F7}{R0F7}\\& \hyperlink{R0Q1}{R0Q1}\\& \hyperlink{R0Q2}{R0Q2}\\& \hyperlink{R0Q3}{R0Q3}\\& \hyperlink{R0V1}{R0V1}\\& \hyperlink{R1F8}{R1F8}\\& \hyperlink{R1F9}{R1F9}\\& \hyperlink{R1Q4}{R1Q4}\\& \hyperlink{R1V4}{R1V4}\\& \hyperlink{R2F10}{R2F10}\\& \hyperlink{R2F12}{R2F12}\\& \hyperlink{R2F13}{R2F13}\\\hline
+	\hyperlink{Caso d'uso}{Caso d'uso} & \hyperlink{R0F11}{R0F11}\\& \hyperlink{R0F14}{R0F14}\\& \hyperlink{R0F14.1}{R0F14.1}\\& \hyperlink{R0F14.1.1}{R0F14.1.1}\\& \hyperlink{R0F14.2}{R0F14.2}\\& \hyperlink{R0F14.3}{R0F14.3}\\& \hyperlink{R0F14.3.1}{R0F14.3.1}\\& \hyperlink{R0F14.4}{R0F14.4}\\& \hyperlink{R0F14.5}{R0F14.5}\\& \hyperlink{R0F14.6}{R0F14.6}\\& \hyperlink{R0F14.7}{R0F14.7}\\& \hyperlink{R0F14.8}{R0F14.8}\\& \hyperlink{R0F14.8.1}{R0F14.8.1}\\& \hyperlink{R0F14.8.2}{R0F14.8.2}\\& \hyperlink{R0F15}{R0F15}\\& \hyperlink{R0F15.1}{R0F15.1}\\& \hyperlink{R0F15.10}{R0F15.10}\\& \hyperlink{R0F15.11}{R0F15.11}\\& \hyperlink{R0F15.12}{R0F15.12}\\& \hyperlink{R0F15.13}{R0F15.13}\\& \hyperlink{R0F15.14}{R0F15.14}\\& \hyperlink{R0F15.14.1}{R0F15.14.1}\\& \hyperlink{R0F15.14.2}{R0F15.14.2}\\& \hyperlink{R0F15.15}{R0F15.15}\\& \hyperlink{R0F15.16}{R0F15.16}\\& \hyperlink{R0F15.2}{R0F15.2}\\& \hyperlink{R0F15.2.1}{R0F15.2.1}\\& \hyperlink{R0F15.2.2}{R0F15.2.2}\\& \hyperlink{R0F15.2.3}{R0F15.2.3}\\& \hyperlink{R0F15.2.4}{R0F15.2.4}\\& \hyperlink{R0F15.2.4.1}{R0F15.2.4.1}\\& \hyperlink{R0F15.2.4.2}{R0F15.2.4.2}\\& \hyperlink{R0F15.2.4.3}{R0F15.2.4.3}\\& \hyperlink{R0F15.2.5}{R0F15.2.5}\\& \hyperlink{R0F15.3}{R0F15.3}\\& \hyperlink{R0F15.4}{R0F15.4}\\& \hyperlink{R0F15.4.1}{R0F15.4.1}\\& \hyperlink{R0F15.4.2}{R0F15.4.2}\\& \hyperlink{R0F15.4.3}{R0F15.4.3}\\& \hyperlink{R0F15.4.4}{R0F15.4.4}\\& \hyperlink{R0F15.4.5}{R0F15.4.5}\\& \hyperlink{R0F15.4.6}{R0F15.4.6}\\& \hyperlink{R0F15.4.7}{R0F15.4.7}\\& \hyperlink{R0F15.5}{R0F15.5}\\& \hyperlink{R0F15.5.1}{R0F15.5.1}\\& \hyperlink{R0F15.5.2}{R0F15.5.2}\\& \hyperlink{R0F15.5.3}{R0F15.5.3}\\& \hyperlink{R0F15.5.4}{R0F15.5.4}\\& \hyperlink{R0F15.5.5}{R0F15.5.5}\\& \hyperlink{R0F15.5.6}{R0F15.5.6}\\& \hyperlink{R0F15.5.7}{R0F15.5.7}\\& \hyperlink{R0F15.6}{R0F15.6}\\& \hyperlink{R0F15.7}{R0F15.7}\\& \hyperlink{R0F15.8}{R0F15.8}\\& \hyperlink{R0F15.8.1}{R0F15.8.1}\\& \hyperlink{R0F15.8.2}{R0F15.8.2}\\& \hyperlink{R0F15.8.2.1}{R0F15.8.2.1}\\& \hyperlink{R0F15.8.2.2}{R0F15.8.2.2}\\& \hyperlink{R0F15.8.2.3}{R0F15.8.2.3}\\& \hyperlink{R0F15.8.3}{R0F15.8.3}\\& \hyperlink{R0F15.9}{R0F15.9}\\& \hyperlink{R0F16}{R0F16}\\& \hyperlink{R0F16.1}{R0F16.1}\\& \hyperlink{R0F16.10}{R0F16.10}\\& \hyperlink{R0F16.10.1}{R0F16.10.1}\\& \hyperlink{R0F16.10.2}{R0F16.10.2}\\& \hyperlink{R0F16.10.3}{R0F16.10.3}\\& \hyperlink{R0F16.10.4}{R0F16.10.4}\\& \hyperlink{R0F16.10.5}{R0F16.10.5}\\& \hyperlink{R0F16.10.6}{R0F16.10.6}\\& \hyperlink{R0F16.10.7}{R0F16.10.7}\\& \hyperlink{R0F16.2}{R0F16.2}\\& \hyperlink{R0F16.2.1}{R0F16.2.1}\\& \hyperlink{R0F16.2.2}{R0F16.2.2}\\& \hyperlink{R0F16.2.3}{R0F16.2.3}\\& \hyperlink{R0F16.2.4}{R0F16.2.4}\\& \hyperlink{R0F16.3}{R0F16.3}\\& \hyperlink{R0F16.4}{R0F16.4}\\& \hyperlink{R0F16.5}{R0F16.5}\\& \hyperlink{R0F16.5.1}{R0F16.5.1}\\& \hyperlink{R0F16.5.2}{R0F16.5.2}\\& \hyperlink{R0F16.5.3}{R0F16.5.3}\\& \hyperlink{R0F16.5.3.1}{R0F16.5.3.1}\\& \hyperlink{R0F16.5.3.2}{R0F16.5.3.2}\\& \hyperlink{R0F16.5.3.2.1}{R0F16.5.3.2.1}\\& \hyperlink{R0F16.5.3.2.2}{R0F16.5.3.2.2}\\& \hyperlink{R0F16.5.3.2.3}{R0F16.5.3.2.3}\\& \hyperlink{R0F16.5.3.2.4}{R0F16.5.3.2.4}\\& \hyperlink{R0F16.5.3.3}{R0F16.5.3.3}\\& \hyperlink{R0F16.5.4}{R0F16.5.4}\\& \hyperlink{R0F16.6}{R0F16.6}\\& \hyperlink{R0F16.7}{R0F16.7}\\& \hyperlink{R0F16.8}{R0F16.8}\\& \hyperlink{R0F16.9}{R0F16.9}\\& \hyperlink{R0F17}{R0F17}\\& \hyperlink{R0F17.1}{R0F17.1}\\& \hyperlink{R0F17.2}{R0F17.2}\\& \hyperlink{R0F17.2.1}{R0F17.2.1}\\& \hyperlink{R0F17.2.2}{R0F17.2.2}\\& \hyperlink{R0F17.2.3}{R0F17.2.3}\\& \hyperlink{R0F17.2.3.1}{R0F17.2.3.1}\\& \hyperlink{R0F17.2.3.2}{R0F17.2.3.2}\\& \hyperlink{R0F17.2.3.2.1}{R0F17.2.3.2.1}\\& \hyperlink{R0F17.2.3.2.2}{R0F17.2.3.2.2}\\& \hyperlink{R0F17.2.3.2.3}{R0F17.2.3.2.3}\\& \hyperlink{R0F17.2.3.2.4}{R0F17.2.3.2.4}\\& \hyperlink{R0F17.2.3.3}{R0F17.2.3.3}\\& \hyperlink{R0F17.2.4}{R0F17.2.4}\\& \hyperlink{R0F17.2.5}{R0F17.2.5}\\& \hyperlink{R0F17.2.6}{R0F17.2.6}\\& \hyperlink{R0F17.3}{R0F17.3}\\& \hyperlink{R0F17.4}{R0F17.4}\\& \hyperlink{R0F17.5}{R0F17.5}\\& \hyperlink{R0F17.6}{R0F17.6}\\& \hyperlink{R0F17.7}{R0F17.7}\\& \hyperlink{R0F17.8}{R0F17.8}\\& \hyperlink{R0F19}{R0F19}\\& \hyperlink{R0F19.1}{R0F19.1}\\& \hyperlink{R0F19.10}{R0F19.10}\\& \hyperlink{R0F19.11}{R0F19.11}\\& \hyperlink{R0F19.12}{R0F19.12}\\& \hyperlink{R0F19.13}{R0F19.13}\\& \hyperlink{R0F19.14}{R0F19.14}\\& \hyperlink{R0F19.15}{R0F19.15}\\& \hyperlink{R0F19.16}{R0F19.16}\\& \hyperlink{R0F19.17}{R0F19.17}\\& \hyperlink{R0F19.2}{R0F19.2}\\& \hyperlink{R0F19.2.1}{R0F19.2.1}\\& \hyperlink{R0F19.2.2}{R0F19.2.2}\\& \hyperlink{R0F19.2.3}{R0F19.2.3}\\& \hyperlink{R0F19.2.4}{R0F19.2.4}\\& \hyperlink{R0F19.2.4.1}{R0F19.2.4.1}\\& \hyperlink{R0F19.2.4.2}{R0F19.2.4.2}\\& \hyperlink{R0F19.2.4.3}{R0F19.2.4.3}\\& \hyperlink{R0F19.2.4.4}{R0F19.2.4.4}\\& \hyperlink{R0F19.2.5}{R0F19.2.5}\\& \hyperlink{R0F19.2.6}{R0F19.2.6}\\& \hyperlink{R0F19.3}{R0F19.3}\\& \hyperlink{R0F19.4}{R0F19.4}\\& \hyperlink{R0F19.5}{R0F19.5}\\& \hyperlink{R0F19.6}{R0F19.6}\\& \hyperlink{R0F19.7}{R0F19.7}\\& \hyperlink{R0F19.8}{R0F19.8}\\& \hyperlink{R0F19.8.1}{R0F19.8.1}\\& \hyperlink{R0F19.8.2}{R0F19.8.2}\\& \hyperlink{R0F19.8.2.1}{R0F19.8.2.1}\\& \hyperlink{R0F19.8.2.2}{R0F19.8.2.2}\\& \hyperlink{R0F19.8.2.3}{R0F19.8.2.3}\\& \hyperlink{R0F19.8.3}{R0F19.8.3}\\& \hyperlink{R0F19.9}{R0F19.9}\\& \hyperlink{R0F20}{R0F20}\\& \hyperlink{R0F20.1}{R0F20.1}\\& \hyperlink{R0F20.2}{R0F20.2}\\& \hyperlink{R0F20.3}{R0F20.3}\\& \hyperlink{R0F20.4}{R0F20.4}\\& \hyperlink{R0F20.5}{R0F20.5}\\& \hyperlink{R0F20.6}{R0F20.6}\\& \hyperlink{R0F20.7}{R0F20.7}\\& \hyperlink{R0F20.8}{R0F20.8}\\& \hyperlink{R0F21}{R0F21}\\& \hyperlink{R0F22}{R0F22}\\& \hyperlink{R1F18}{R1F18}\\& \hyperlink{R1F18.1}{R1F18.1}\\& \hyperlink{R1F18.2}{R1F18.2}\\& \hyperlink{R1F18.2.1}{R1F18.2.1}\\& \hyperlink{R1F18.2.2}{R1F18.2.2}\\& \hyperlink{R1F18.2.3}{R1F18.2.3}\\& \hyperlink{R1F18.2.4}{R1F18.2.4}\\& \hyperlink{R1F18.3}{R1F18.3}\\& \hyperlink{R1F18.4}{R1F18.4}\\& \hyperlink{R1F18.5}{R1F18.5}\\& \hyperlink{R1F18.6}{R1F18.6}\\& \hyperlink{R1F18.7}{R1F18.7}\\\hline
+	\hyperlink{Interno}{Interno} & \hyperlink{R0P1}{R0P1}\\\hline
+	\hyperlink{Riunione}{Riunione} & \hyperlink{R0V2}{R0V2}\\& \hyperlink{R1V3}{R1V3}\\\hline
+	\caption[Tracciamento Fonti-Requisiti]{Tracciamento Fonti-Requisiti}
+	\label{tabella:fonti-requi}
+\end{longtable}
+\clearpage
+\end{document}
