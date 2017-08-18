@@ -1,0 +1,70 @@
+% Document-Author: KaleidosCode
+% Document-Date: 09/03/2017 aggiornare la data
+% Document-Description: Documento contenente il Piano di Qualifica per SWEDesigner
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{../../../Templates/kaleidos}
+\renewcommand{\abstractname}{Tabella contenuti}
+\newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}
+
+\author{KaleidosCode}
+\date{09/03/2017}	% aggiornare la data
+\intestazioni{Piano di Qualifica}
+\pagestyle{myheadings}
+
+\begin{document}
+	\begin{titlepage}
+		\centering Università degli Studi di Padova
+		\line(1,0){350}\\
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE KaleidosCode\\}
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE SWEDesigner\\}
+		{\scshape\Large Software per diagrammi UML\\}
+		\vspace{1cm}
+		{\scshape\Large \pianodiqualificai\ \\}		% cambiare il titolo per ogni documento
+		\vspace{1.4cm}
+		\logo
+		\vspace{1.2cm}
+		\centering{\bfseries Informazioni sul documento\\}
+		\line(1,0){240}\\
+		% compilare i campi per ogni documento
+		\begin{tabular}{r|l}
+			{\hfill \textbf{Versione}} 			& 2.0.0\\
+			{\hfill \textbf{Data Redazione}} 	& 09/03/2017\\	% aggiornare la data
+			{\hfill \textbf{Redazione}} 		& Pezzuto Francesco\\ & Sanna Giovanni\\
+			{\hfill \textbf{Verifica}} 			& Bonato Enrico\\
+			{\hfill \textbf{Approvazione}} 		& Pace Giulio\\
+			{\hfill \textbf{Uso}} 				& Esterno\\
+			{\hfill \textbf{Distribuzione}} 	& \vardanega \\ & \cardin \\ & \proponente\\
+		\end{tabular}\\
+		\vspace{2cm}
+		\texttt{kaleidos.codec6@gmail.com}
+	\end{titlepage}
+	
+	\pagestyle{myfront}
+	\newpage
+	\subfile{DiarioModifichePdQ}
+	\newpage
+	\tableofcontents
+	\newpage
+	\listoftables
+	\newpage
+	\listoffigures
+	\newpage
+	\pagestyle{mymain}
+	\subfile{Sezioni/IntroduzionePdQ}
+	\newpage
+	\subfile{Sezioni/VisioneGenerale}
+	\newpage
+	\subfile{Sezioni/VisioneDettaglio}
+	\newpage
+	\subfile{Sezioni/ResocontoAttivitaVerifica}
+	\appendix
+	\newpage
+	\subfile{Sezioni/Test}
+	\newpage
+	\subfile{Sezioni/StandardAdottati}
+	
+	\label{LastPage}
+\end{document}
