@@ -35,41 +35,41 @@
 			continuo dei processi nonché la determinazione del livello di maturità
 			dell'organizzazione nel gestirli.
 		\end{itemize}
-		\subsection{Obiettivi di qualità di processo}
+		\subsection{Obiettivi di qualità di processo}\label{sez:obiettiviQualitaProcesso}
 			Prendendo come riferimento la normativa [ISO/IEC 12207], il gruppo \kaleidoscode\ ha
 			definito i seguenti obiettivi di qualità di processo che si impegna a perseguire.
 			\subsubsection{Rispetto della pianificazione concordata}
 				È necessario pianificare le attività per la realizzazione del progetto ed è
 				quindi fondamentale rispettare tale pianificazione per garantire la consegna
 				del prodotto secondo le tempistiche concordate.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{MetrichePerIProcessi}.
+				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
 			\subsubsection{Rispetto del budget concordato}
 				È necessario stabilire un budget per il costo della realizzazione del prodotto ed è
 				quindi fondamentale far rientrare i costi per le risorse nella spesa prevista.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{MetrichePerIProcessi}.
+				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
 			\subsubsection{Leggibilità della documentazione prodotta}
 				Durante la realizzazione del prodotto è necessario redigere la documentazione
 				delle attività di pianificazione, gestione, sviluppo, verifica e validazione oltre
 				che i loro prodotti.\\
 				È quindi fondamentale che i documenti prodotti siano, per quanto tecnici,
 				facilmente leggibili.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{MetrichePerIDocumenti}.
+				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
 			\subsubsection{Rispetto delle norme di progettazione}
 				In progettazione si definiranno i moduli e le componenti del prodotto. Sarà necessario
-				rispettare le norme di progettazione definite nel documento \normediprogetto\
-				mantenendone un valore ideale di $0$ violazioni.\\
+				rispettare le norme di progettazione definite nel documento \normediprogetto.\\
+				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
 				Inoltre, sarà utilizzata una misura e metrica, descritte nella sezione
-				\ref{MetricheProgettuali}, per valutarne la qualità.
+				\ref{sez:MetrichePerQualitaDiProdotto}, per valutarne la qualità.
 			\subsubsection{Rispetto delle norme di codifica}
 				Nel periodo di codifica, bisognerà sviluppare le unità software ideate in
 				progettazione. Per questo motivo, sarà necessario rispettare le norme di codifica
-				concordate nel documento \normediprogetto\ mantenendone un valore ideale di $0$
-				violazioni.
+				concordate nel documento \normediprogetto.\\
+				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
 			\subsubsection{Corretto funzionamento delle componenti del sistema}
 				Sarà necessario sottoporre le unità software sviluppate ad una serie di test\footnote{Definiti nella sezione \ref{Test}}
-				per valutarne il corretto funzionamento;
-				l'obiettivo è di effettuare il $100\%$ dei test indicati per ogni tipologia.
-		\subsection{Obiettivi di qualità di prodotto}
+				per valutarne il corretto funzionamento.\\
+				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
+		\subsection{Obiettivi di qualità di prodotto}\label{sez:obiettiviQualitaProdotto}
 			Prendendo come riferimento la normativa [ISO/IEC 9001] ed in particolare
 			[ISO/IEC 9126]\footnote{Per maggiori informazioni, consultare l'appendice
 			\ref{app:ISO9126}}, il gruppo \kaleidoscode\ ha definito i seguenti obiettivi di
@@ -78,30 +78,19 @@
 				Si garantisce che \progetto\ abbia tutte le funzionalità
 				definite e concordate con il \proponente\ nel documento
 				\analisideirequisitiv. L'implementazione di
-				ogni requisito deve essere quanto più completa ed economica.
-				\begin{itemize}
-					\item \textbf{Misura}: si è deciso di utilizzare il numero totale di
-					funzionalità del prodotto che soddisfano i requisiti definiti.
-					\item \textbf{Metrica}: la sufficienza è raggiunta quando
-					vengono soddisfatti almeno tutti i requisiti obbligatori.
-				\end{itemize}
+				ogni requisito deve essere quanto più completa ed economica.\\
+				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
 			\subsubsection{Affidabilità}
-				Il sistema deve funzionare nella sua completezza.
-				\begin{itemize}
-					\item \textbf{Misura}: sono stati definiti dei test a cui sottoporre
-					il prodotto realizzato\footnote{Consultabili nella sezione \ref{Test}};
-					l'unità di misura sarà quindi il numero di test	superati dal sistema.
-					\item \textbf{Metrica}: la sufficienza è raggiunta quando il sistema supera
-					almeno l'$80$\% dei test.
-				\end{itemize}
+				Il sistema deve funzionare nella sua completezza.\\
+				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
 			\subsubsection{Efficienza}
 				Il sistema deve minimizzare l'utilizzo delle risorse impiegate e
 				fornire le funzionalità richieste nel minor tempo possibile.\\
-				Misure e metriche adottate sono descritte nella sezione \ref{MetrichePerIlCodice}.
+				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
 			\subsubsection{Manutenibilità}
 				Il codice prodotto per realizzare il sistema deve essere comprensibile
 				ed estensibile.\\
-				Misure e metriche adottate sono descritte nella sezione \ref{MetrichePerIlCodice}.
+				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
 			\subsubsection{Portabilità}
 				Il sistema è un applicativo web. Per questo motivo, si garantisce che
 				il \gl{front-end} sarà completamente funzionante ed utilizzabile
@@ -109,13 +98,13 @@
 				durante lo sviluppo. Inoltre, si perseguirà l'obiettivo di garantire la
 				completa funzionalità del prodotto anche su altri browser, in particolare:
 				Mozilla Firefox e Microsoft Edge.\\
-				Misure e metriche adottate sono descritte nella sezione \ref{MetrichePerIlCodice}.
+				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
 		\subsection{Organizzazione}
 			La gestione della strategia di verifica si basa sull'attuazione delle
 			relative attività descritte nelle \normediprogettov. Tali attività vengono
 			eseguite per ogni processo attuato allo scopo di verifica della qualità del
 			processo stesso e dell'eventuale prodotto ottenuto facendo riferimento
-			anche alle metriche definite nella sezione \ref{Misure&Metriche}.\\
+			anche alle metriche definite nella sezione \ref{sez:MisureEMetriche}.\\
 			In ogni documento è presente un diario delle modifiche che permette di concentrare
 			l'attività di verifica solo nelle parti modificate dopo l'ultima eseguita.\\
 			Data la diversa natura dei prodotti ottenuti dai periodi del progetto si

@@ -1,0 +1,66 @@
+% Document-Author: KaleidosCode
+% Document-Date: 15/06/2017 aggiornare la data
+% Document-Description: Documento contenente la Definizione di prodotto per SWEDesigner
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{../../../Templates/kaleidos}
+\renewcommand{\abstractname}{Tabella contenuti}
+\newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}
+
+\author{KaleidosCode}
+\date{15/06/2017}	% aggiornare la data
+\intestazioni{Definizione di Prodotto}
+\pagestyle{myheadings}
+    
+\begin{document}
+	\begin{titlepage}
+		\centering Università degli Studi di Padova
+		\line(1,0){350}\\
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE KaleidosCode\\}
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE SWEDesigner\\}
+		{\scshape\Large Software per diagrammi UML\\}
+		\vspace{1cm}
+		{\scshape\Large \definizionediprodottoi\ \\}		% cambiare il titolo per ogni documento
+		\vspace{1.4cm}
+		\logo
+		\vspace{1.2cm}
+		\centering{\bfseries Informazioni sul documento\\}
+		\line(1,0){240}\\
+		% compilare i campi per ogni documento	
+		\begin{tabular}{r|l}
+			{\hfill \textbf{Versione}} 			& 1.0.0\\
+			{\hfill \textbf{Data Redazione}} 	& 15/06/2017\\	% aggiornare la data
+			{\hfill \textbf{Redazione}} 		& Bonato Enrico\\ & Pace Giulio\\ & Pezzuto Francesco\\ & Sovilla Matteo\\
+			{\hfill \textbf{Verifica}} 			& Sanna Giovanni\\
+			{\hfill \textbf{Approvazione}} 		& Bonolo Marco\\
+			{\hfill \textbf{Uso}} 				& Esterno\\
+			{\hfill \textbf{Distribuzione}} 	& \vardanega \\ & \cardin \\ & \proponente\\
+		\end{tabular}\\
+		\vspace{2cm}
+		\texttt{kaleidos.codec6@gmail.com}
+	\end{titlepage}
+
+
+	\pagestyle{myfront}
+	\newpage
+		\subfile{DiarioModificheDDP}
+	\newpage
+		\tableofcontents
+	\newpage
+		\listoftables
+	\newpage
+		\listoffigures
+		
+	\newpage
+	\pagestyle{mymain}
+		\subfile{Sezioni/IntroduzioneDDP}
+	\newpage
+		\subfile{Sezioni/ArchitetturaDellApplicazione}
+	\newpage
+		\subfile{Sezioni/SpecificaDelleComponenti}
+	\newpage
+		\subfile{Sezioni/Tracciamenti}
+	\label{LastPage}
+\end{document}

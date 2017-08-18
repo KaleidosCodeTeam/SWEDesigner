@@ -1,0 +1,64 @@
+% Document-Author: KaleidosCode
+% Document-Date: 01/07/2017 aggiornare la data
+% Document-Description: Documento contenente il manuale utente per SWEDesigner
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{../../../Templates/kaleidos}
+\renewcommand{\abstractname}{Tabella contenuti}
+
+\author{KaleidosCode}
+\date{01/07/2017}	% aggiornare la data
+\intestazioni{Manuale Utente}
+\pagestyle{myheadings}
+    
+\begin{document}
+	\begin{titlepage}		
+		\centering Università degli Studi di Padova
+		\line(1,0){350}\\
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE KaleidosCode\\}
+		\vspace{0.4cm}
+		{\bfseries\scshape\LARGE SWEDesigner\\}
+		{\scshape\Large Software per diagrammi UML\\}
+		\vspace{1cm}
+		{\scshape\Large \manualeutentei\ \\}		% cambiare il titolo per ogni documento
+		\vspace{1.4cm}
+		\logo
+		\vspace{1.2cm}
+		\centering{\bfseries Informazioni sul documento\\}
+		\line(1,0){240}\\
+		% compilare i campi per ogni documento
+		\begin{tabular}{r|l}
+			{\hfill \textbf{Versione}} 			& 1.0.0\\
+			{\hfill \textbf{Data Redazione}} 	& 01/07/2017\\	% aggiornare la data
+			{\hfill \textbf{Redazione}} 		& Pezzuto Francesco\\
+			{\hfill \textbf{Verifica}} 			& Sovilla Matteo\\
+			{\hfill \textbf{Approvazione}} 		& Bonolo Marco\\
+			{\hfill \textbf{Uso}} 				& Esterno\\
+			{\hfill \textbf{Distribuzione}} 	& Utente\\
+		\end{tabular}\\
+		\vspace{2cm}
+		\texttt{kaleidos.codec6@gmail.com}
+	\end{titlepage}
+
+	\pagestyle{myfront}
+	\newpage
+		\subfile{DiarioModificheMU}
+	\newpage
+		\tableofcontents
+	\newpage
+		\listoffigures
+	\newpage
+	\pagestyle{mymain}
+		\subfile{Sezioni/IntroduzioneMU}
+	\newpage
+		\subfile{Sezioni/RequisitiFunzionamento}
+	\newpage
+		\subfile{Sezioni/GuidaUtilizzo}
+	\newpage
+		\subfile{Sezioni/RisoluzioneErrori}
+	\appendix
+	\newpage
+		\subfile{Sezioni/Glossario}
+	\label{LastPage}
+\end{document}

@@ -10,7 +10,7 @@
 				\begin{itemize}
 					\item Il documento viene redatto dai vari redattori;
 					\item I \verificatori\ procedono al controllo di eventuali errori o
-					imprecisioni;
+					imprecisioni, e verificano che i documenti rispettino i vincoli definiti nel \pianodiqualificav;
 					\item in caso di errori i \verificatori\ procedono a segnalarli ai redattori
 					i quali provvedono a correggere gli errori ripartendo dalla prima fase;
 					\item Se il documento passa la fase di verifica viene consegnato al
@@ -24,7 +24,40 @@
 					di stesura (frasi, soggetti, verbi, ecc.) andrebbe uniformato ma ci sono più redattori
 					all'opera, è necessario fissarne uno comune in modo tale da ottimizzare il lavoro.
 					Le decisioni sullo stile di stesura saranno prese all'interno del gruppo attraverso
-					gli strumenti di comunicazione adottati oppure riunioni.
+					gli strumenti di comunicazione adottati oppure riunioni.\\
+					\paragraph{Indice Gulpease\\}
+						Il \pianodiqualificav\ fornisce delle direttive in merito alla leggibilità richiesta ai documenti prodotti. Ciascun redattore deve quindi tenere sotto controllo l'indice Gulpease di quanto prodotto.
+						Definito nel 1988 all'Università degli Studi di Roma ``La
+						Sapienza'' per valutare la leggibilità di un documento redatto in
+						lingua italiana, l'indice Gulpease si basa sul calcolo del
+						numero di caratteri contenuto in una parola rapportato con altri
+						fattori quali il numero di parole e di frasi.
+						La formula per il calcolo dell'indice Gulpease è la seguente:
+						\begin{equation*}
+							89+\frac{300\left(\textit{numero di frasi}\right)-10\left(\textit{numero di lettere}\right)}{\textit{numero di parole}}
+						\end{equation*}
+						Il risultato indica	quindi la complessità del documento con un
+						valore compreso tra 0 e 100, dove 100 indica la più alta
+						leggibilità. Attraverso gli studi condotti,	risulta che testi con
+						un indice:
+						\begin{itemize}
+							\item \textbf{inferiore a 80} sono difficili da leggere per chi
+							ha la licenza elementare;
+							\item \textbf{inferiore a 60} sono difficili da leggere per chi
+							ha licenza media;
+							\item \textbf{inferiore a 40} sono difficili da leggere per chi
+							ha un diploma superiore.
+						\end{itemize}
+						Tale indice, però, non indica la comprensibilità del testo. Il
+						documento potrebbe contenere frasi incomprensibili ed avere comunque
+						un alto indice Gulpease. Per la tipologia dei documenti redatti, la
+						formalità nella scrittura e gli argomenti trattati risulta difficile
+						adeguare la stesura del testo ad un indice Gulpease ottimale. Ogni
+						documento sarà quindi controllato anche da un essere umano
+						che avrà il compito di valutare se parti di testo dovranno essere
+						semplificate o meno. Inoltre, i limiti imposti da tale indice
+						saranno sufficientemente rilassati per accettare anche frasi poco
+						più complesse.
 				\paragraph{Norme di codifica \LaTeX \\}
 					Tutti i file di documentazione devono avere la seguente intestazione:\\
 					\\
@@ -536,7 +569,10 @@
 				gratuitamente scaricabile.
 				I diagrammi dei casi d'uso presenti nel documento \analisideirequisitiv\ sono invece generati
 				automaticamente utilizzando PlantUML.
+			
+			
 			\subsubsection{SWEgo}
+			\hypertarget{SWEgo}
 				Per effettuare il tracciamento di casi d'uso, requisiti, componenti, classi e test è stato
 				scelto di realizzare un'applicazione web accessibile attraverso \gl{browser} ed ospitata
 				su un server dedicato: SWEgo.
