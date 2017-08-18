@@ -460,26 +460,63 @@
 				\responsabilediprogetto\ controlla eventuali errori o mancanze.
 				Nel caso se ne identifichino, si devono segnalare le criticità ai
 				redattori che provvederanno a correggerle.
-		\subsection{Strumento di versionamento}\label{StrumentoDiVersionamento}
-			Sono stati presi in considerazione diversi software di versionamento (\gl{Git}, SVN, Mercurial)
-			prima di decidere di usare \textbf{Git}. I motivi principali della scelta sono: 
-			\begin{itemize}
-				\item \textbf{Flessibilità}: Git è un repository distribuito con la possibilità di
-				\textit{commit} e \textit{revert} locali;
-				\item \textbf{Esperienza del team}: Git è già stato usato da alcuni componenti
-				del gruppo \kaleidoscode.
-			\end{itemize}
-			In particolare, si è deciso di utilizzare il servizio di hosting GitHub, vista la richiesta
-			del Proponente all'interno del capitolato d'appalto.
-			In ogni repository il \gl{branch} ``Master'' deve contenere solamente versioni di documentazione e/o
-			codice approvate dal \responsabilediprogetto. Per questo motivo deve essere creato almeno un
-			branch alternativo nel quale lavorare liberamente.
-			Nel caso di repository contenenti codice, i branch ``Master'' e di sviluppo devono essere
-			sottoposti ad analisi statica e dinamica; saranno rigettati se non conformi.
-			Qualora più persone debbano lavorare ad uno stesso file, dovranno creare dei nuovi branch ad ogni
-			implementazione di una modifica rilevante.
-			L'operazione di integrazione continua verrà svolta dallo strumento descritto in sezione
-			\ref{IntegrazioneContinua}.
+		\subsection{Configurazione}\label{Configurazione}
+			Di seguito viene normata la gestione della configurazione del software, intesa come l'insieme delle parti di cui si compone e il modo in cui esse interagiscono tra loro. \\
+			
+			Per gestire la configurazione si è deciso di appoggiarsi a due piattaforme:
+			\textbf{GitHub} per i file che hanno bisogno di versionamento, \textbf{Google Drive} per i file che non ne necessitano.
+			
+			\subsubsection{Strumento di versionamento}
+				Sono stati presi in considerazione diversi software di versionamento (\gl{Git}, SVN, Mercurial)
+				prima di decidere di usare \textbf{Git}. I motivi principali della scelta sono: 
+				\begin{itemize}
+					\item \textbf{Flessibilità}: Git è un repository distribuito con la possibilità di
+					\textit{commit} e \textit{revert} locali;
+					\item \textbf{Esperienza del team}: Git è già stato usato da alcuni componenti
+					del gruppo \kaleidoscode.
+				\end{itemize}
+				In particolare, si è deciso di utilizzare il servizio di hosting GitHub, vista la richiesta
+				del Proponente all'interno del capitolato d'appalto.
+			\subsubsection{Google Drive}
+				\begin{figure} [h!]
+					\centering
+					\includegraphics[scale=0.2]{./Immagini/Drive.png}
+					\caption{Schermata di presentazione di Google Drive}\label{}
+				\end{figure}
+				In questo servizio di condivisione vengono messi solo file che non necessitano di
+				controllo di versione.
+				
+				La possibilità di installare Drive sul proprio PC dà modo ad ogni componente del gruppo di
+				avere a disposizione documentazione e software anche offline.
+				Google Drive viene utilizzato come strumento di supporto allo sviluppo della
+				documentazione e del software presente su Git.
+			
+			\subsubsection{Stato della configurazione}
+				
+				Google Drive conterrà solo file che non necessitano di versionamento, ovvero:
+				\begin{itemize}
+					\item Documenti che sono recuperabili da altre fonti (es. \gl{internet});
+					\item File di installazione dei software utilizzati dal gruppo in modo da garantire l'uso della stessa versione software per ogni
+					componente del gruppo;
+					\item I manuali di consultazione (software, libri, pdf, ...), così da avere
+					uniformità di versione e di informazione;
+					\item I file pdf dei verbali redatti.
+				\end{itemize}
+				
+				Tutti i file prodotti dal gruppo (siano documentazione o codice) che necessitino di versionamento dovranno essere caricati nell'opportuno repository GitHub.\\
+			
+				È stato creato un account GitHub di tipo "organizzazione" chiamato KaleidosCodeTeam. 
+				Con esso sono stati creati i repository SWEDesigner e SWEDesigner-source dedicati rispettivamente alla documentazione e al codice prodotti dal gruppo.
+				\paragraph{Branching:}						
+					In ogni repository il \gl{branch} ``Master'' deve contenere solamente versioni di documentazione e/o
+					codice approvate dal \responsabilediprogetto. Per questo motivo deve essere creato almeno un
+					branch alternativo nel quale lavorare liberamente.
+					Nel caso di repository contenenti codice, i branch ``Master'' e di sviluppo devono essere
+					sottoposti ad analisi statica e dinamica; saranno rigettati se non conformi.
+					Qualora più persone debbano lavorare ad uno stesso file, dovranno creare dei nuovi branch ad ogni
+					implementazione di una modifica rilevante.
+					L'operazione di integrazione continua verrà svolta dallo strumento descritto in sezione \ref{IntegrazioneContinua}.\\
+					
 			Al completamento di un incremento, è possibile effettuare una richiesta di \gl{merge}.
 			Un \verificatore\ avrà in compito di controllare il merge e di accettarlo oppure di segnalare
 			la presenza di eventuali errori come descritto in sezione \ref{GestioneErroriCodice}.
@@ -502,31 +539,22 @@
 				sia chiara e sufficiente a spiegare l'effettiva natura della modifica apportata.
 				\item \textbf{TASK: [NomeTask]} è il titolo che deve essere utilizzato al completamento
 				dell'attività associata al task ``NomeTask'' di Asana. Questo verrà automaticamente aggiornato
-				e segnato come completato da Zapier (sezione \ref{Zapier}).
+				e segnato come completato da Zapier.
 			\end{itemize}
+				\subsubsection{Zapier}\label{Zapier}
+				Per permettere un'efficace gestione dei task di Asana, si è scelto di utilizzare Zapier. Si tratta
+				di un servizio web che permette di integrare altre applicazioni. Sarà usato in particolare per
+				collegare Asana e GitHub in modo tale che al commit GitHub con titolo ``TASK: [NomeTask]''
+				venga automaticamente aggiornato a "completato" lo stato dell'omonimo task Asana.
+			\subsubsection{Strumento per l'integrazione continua}\label{IntegrazioneContinua}
+			Per l'operazione di integrazione continua è stato scelto Jenkins.\\
+			Tale strumento permette di impostare la compilazione del codice e può essere utilizzato con
+			i principali strumenti di gestione del codice sorgente tra cui Git (sezione
+			\ref{StrumentoDiVersionamento}).
+			La sua esecuzione è azionata ad ogni commit.
+			Jenkins sarà utilizzato principalmente nella fase di codifica.
 		\subsection{Altri strumenti}
-			\subsubsection{Google Drive}
-			\begin{figure} [h!]
-				\centering
-				\includegraphics[scale=0.2]{./Immagini/Drive.png}
-				\caption{Schermata di presentazione di Google Drive}\label{}
-			\end{figure}
-				In questo servizio di condivisione vengono messi solo file che non necessitano di
-				controllo di versione.
-				Esso conterrà:
-				\begin{itemize}
-					\item Documenti che sono recuperabili da altre fonti (es. \gl{internet});
-					\item File di installazione dei software utilizzati dal gruppo.
-					In questo modo si punta a garantire l'uso della stessa versione software per ogni
-					componente del gruppo;
-					\item I manuali (software, libri, pdf, ...) di consultazione, così da avere
-					uniformità di versione e di informazione;
-					\item I file pdf dei verbali redatti.
-				\end{itemize}
-				La possibilità di installare Drive sul proprio PC dà modo ad ogni componente del gruppo di
-				avere a disposizione documentazione e software anche offline.
-				Google Drive viene utilizzato come strumento di supporto allo sviluppo della
-				documentazione e del software presente su Git.
+			
 			\subsubsection{ProjectLibre}
 			\begin{figure} [h!]
 				\centering
@@ -587,24 +615,14 @@
 					\includegraphics[scale=0.42]{./Immagini/SWEgo.jpg}
 					\caption{Schermata di tracciamento requisiti in SWEgo}\label{}
 				\end{figure}
-			\subsubsection{Zapier}\label{Zapier}
-				Per permettere un'efficace gestione dei task di Asana, si è scelto di utilizzare Zapier. Si tratta
-				di un servizio web che permette di integrare altre applicazioni. Sarà usato in particolare per
-				collegare Asana e GitHub in modo tale che al commit GitHub con titolo ``TASK: [NomeTask]''
-				venga automaticamente aggiornato a "completato" lo stato dell'omonimo task Asana.
+			
 %			\subsubsection{Strumenti per l'usabilità}
 %				L'usabilità descritta nel \pianodiqualificav, verrà testata attraverso la prova del prodotto
 %				ad un piccolo numero di volontari fornendo consigli al gruppo su come effettuare
 %				miglioramenti principalmente alle interfacce grafiche.\\
 %				Le persone volontarie dovranno rientrare nella categoria degli utenti target del prodotto
 %				descritti nell'\analisideirequisitiv.
-			\subsubsection{Strumenti per l'integrazione continua}\label{IntegrazioneContinua}
-				Per l'operazione di integrazione continua è stato scelto Jenkins.\\
-				Tale strumento permette di impostare la compilazione del codice e può essere utilizzato con
-				i principali strumenti di gestione del codice sorgente tra cui Git (sezione
-				\ref{StrumentoDiVersionamento}).
-				La sua esecuzione è azionata ad ogni commit.
-				Jenkins sarà utilizzato principalmente nella fase di codifica.
+			
 			\subsubsection{Strumenti per la validazione \gl{W3C}}
 				L'applicativo web verrà testato anche attraverso gli strumenti di validazione online:
 				\begin{itemize}
