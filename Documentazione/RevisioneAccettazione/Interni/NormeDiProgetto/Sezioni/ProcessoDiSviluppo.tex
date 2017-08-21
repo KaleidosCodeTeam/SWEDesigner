@@ -141,10 +141,24 @@
 					\item \textbf{Postcondizione}.
 				\end{itemize}
 				Infine, tutti i principali casi d'uso devono essere rappresentati da un diagramma UML.\\
-				Tutti i casi d'uso devono essere inseriti nell'apposito sistema di tracciamento \hyperlink{SWEgo}{SWEgo} 
-				realizzato all'interno del gruppo, che provvederà alla generazione
+				Tutti i casi d'uso devono essere inseriti nell'apposito sistema di tracciamento SWEgo realizzato all'interno del gruppo, che provvederà alla generazione
 				dei codici identificativi univoci.
-				
+				\paragraph{SWEgo\\}
+					\hypertarget{SWEgo}
+					Per effettuare il tracciamento di casi d'uso, requisiti, componenti, classi e test è stato
+					scelto di realizzare un'applicazione web accessibile attraverso \gl{browser} ed ospitata
+					su un server dedicato: SWEgo.
+					Tale applicativo permette di aggiungere casi d'uso, attori partecipanti, requisiti, componenti,
+					classi e test.
+					Casi d'uso e requisiti sono automaticamente identificati attraverso i codici auto-generati
+					dall'applicazione, lo stesso per componenti, classi e test;
+					È inoltre possibile esportare il codice \LaTeX\ che elenca casi d'uso,
+					requisiti, componenti, classi, test e le loro relazioni.
+					\begin{figure} [h!]
+						\centering
+						\includegraphics[scale=0.42]{./Immagini/SWEgo.jpg}
+						\caption{Schermata di tracciamento requisiti in SWEgo}\label{}
+					\end{figure}
 		\subsubsection{Progettazione}
 			\paragraph{Scopo\\}
 				In questa fase viene descritta una soluzione del problema soddisfacente per tutti
@@ -205,50 +219,16 @@
 					\item Diagrammi dei \gl{package};
 					\item Diagrammi di sequenza.
 				\end{itemize}
+				\paragraph{Strumenti per i diagrammi UML//}	
+					Per creare i diagrammi UML di package, classi, attività e sequenza relativi alla progettazione
+					è stato scelto di utilizzare Astah, vista la semplice interfaccia e la presenza di una versione
+					gratuitamente scaricabile.
+					I diagrammi dei casi d'uso presenti nel documento \analisideirequisitiv\ sono invece generati
+					automaticamente utilizzando PlantUML.
 			
 			\paragraph{\gl{Design pattern}\\}
 				I \progettisti\ devono descrivere i design pattern utilizzati per realizzare l'architettura.
 				È necessario fornire una breve descrizione ed un diagramma che ne esemplifichi il funzionamento e la struttura per ognuno di essi.
-				
-			\paragraph{Test di integrazione\\}   
-				I \progettisti\ dovranno definire i test di integrazione da utilizzare per testare i vari
-				componenti descritti nella progettazione ad alto livello, che permettono di verificare la
-				corretta integrazione ed il corretto flusso dei dati all’interno del sistema.
-				
-			\paragraph{Test di sistema\\}       
-			    I \progettisti\ dovranno definire i test di sistema, allo scopo di verificare se una collezione intera
-			     di moduli funzioni correttamente, assumendo che i singoli moduli abbiamo, individualmente, un comportamento accettabile.
-			    
-			\paragraph{Test di validazione\\}    
-				I \progettisti\ dovranno definire i test di validazione, i quali vengono effettuati con il Proponente e servono per accertarsi che il
-				prodotto realizzato sia conforme alle attese. \\
-				Per ogni test è descritta una serie di passi che l’utente deve seguire in modo tale da
-				effettuarlo correttamente.
-				
-			\paragraph{Test di unità\\}     
-				I \progettisti dovranno definire i test di unità, ovvero le procedure utilizzate per verificare che un particolare frammento di codice presenti il comportamento aspettato; in altre parole, i test necessari per verificare che le singole
-				componenti del sistema funzionino nel modo previsto.
-				
-			\paragraph{Classificazione dei test\\}
-				Ciascun test sarà identificato univocamente con la seguente dicitura:
-				\begin{center}
-					T[Tipo][Codice identificativo]
-				\end{center}
-				In questa codifica:
-				\begin{itemize}
-					\item \textbf{Tipo} può assumente i valori:
-					\begin{itemize}
-						\item \textbf{I} indica i test di integrazione;
-						\item \textbf{S} indica i test di sistema;
-						\item \textbf{U} indica i test di unità;
-						\item \textbf{V} indica i test di validazione;
-					\end{itemize}
-					\item \textbf{Codice identificativo} rappresenta il codice univoco e progressivo del
-					corrispondente test.
-				\end{itemize}
-				Tutti i test devono essere inseriti nell'apposito sistema di tracciamento ``SWEgo''
-				realizzato all'interno del gruppo, che provvederà alla generazione
-				dei codici identificativi univoci.
 				
 			\paragraph{Tracciamento}  
 			\begin{itemize}

@@ -3,8 +3,20 @@
 	\section{Processi di supporto}
 		\subsection{Documentazione}
 			\subsubsection{Descrizione}
-				Di seguito sono riportate le regole che si dovranno seguire per la scrittura
-				dei documenti.
+				Di seguito sono riportate le regole che si dovranno seguire per la scrittura dei documenti.
+				\subsubsection{\gl{\LaTeX}}
+					Per la stesura dei documenti è stato scelto di utilizzare il linguaggio \LaTeX.
+					La scelta è stata quasi obbligata in quanto \LaTeX\ permette di separare il contenuto dalla
+					formattazione, permettendo un versionamento più semplice e consentendo di definire template
+					condivisi per uniformare i documenti. Altre soluzioni come Microsoft Office, LibreOffice o
+					Google Docs non avrebbero consentito un livello altrettanto elevato di separazione portando
+					ad un aumento del lavoro da parte dei membri del gruppo e una maggior difficoltà di
+					uniformazione dei contenuti.
+					Per la scrittura di documenti \LaTeX\ l'editor consigliato è \textbf{TeXstudio}.
+				\paragraph{Strumenti per il controllo ortografico\\}
+					Per eseguire una verifica automatica dei documenti approssimativa,
+					viene usato il programma di controllo ortografico LanguageTool versione 3.6, integrabile
+					nell'editor \LaTeX\ TexStudio.
 			\subsubsection{Approvazione dei documenti}
 				Ogni documento deve seguire le seguenti fasi:
 				\begin{itemize}
@@ -58,6 +70,9 @@
 						semplificate o meno. Inoltre, i limiti imposti da tale indice
 						saranno sufficientemente rilassati per accettare anche frasi poco
 						più complesse.
+							
+							È stato deciso di usare uno \gl{script} dedicato al calcolo dell'indice Gulpease che provvede a fornire i valori calcolati per i vari documenti.
+
 				\paragraph{Norme di codifica \LaTeX \\}
 					Tutti i file di documentazione devono avere la seguente intestazione:\\
 					\\
@@ -378,15 +393,82 @@
 				Ogni termine presente nel \glossario\ deve aver associato una descrizione concisa.
 				I termini andranno inseriti parallelamente alla stesura degli altri documenti.
 		\subsection{Verifica}
-			\subsubsection{Scopo del processo}
+			\subsubsection{Scopo}
 				Scopo della verifica è quello di accertare che documenti e file di codice prodotti non
 				contengano errori e che rispettino le regole riportate in questo documento.
-			\subsubsection{Attività}
-				Compito dei \verificatori\ è quello di redigere una lista con gli errori più comuni trovati
+				Il compito dei \verificatori\ è quello di redigere una lista con gli errori più comuni trovati
 				durante lo svolgimento della loro attività nella documentazione, che verrà integrata
 				progressivamente. Tale lista si trova in appendice a questo documento e serve a
 				migliorare i processi di verifica successivi.
-				\paragraph{Gestione degli errori trovati in documentazione\\}
+				\subsubsection{Analisi Statica}
+				Una tecnica di verifica che si applica al codice sorgente e alla documentazione
+				e non richiede l'esecuzione del prodotto software.
+				Le principali strategie sono due:
+				\begin{itemize}
+					\item Inspection: questa tecnica si applica quando si conoscono le
+					problematiche oggetto di verifica. Consiste in una ricerca mirata attraverso il
+					documento per l'identificazione dei problemi, nel caso di documentazione,
+					basandosi su una lista di errori precedentemente stilata
+					(come scritto sopra, tale lista si trova in appendice).
+					\item Walkthrough: questa tecnica consiste nello scorrere l'intero
+					documento alla ricerca di errori generici. Viene applicata sopratutto nelle
+					prime fasi di stesura del documento o di codifica a causa dell'impegno
+					necessario per attuarla, che aumenta notevolmente con l'aumentare delle
+					dimensioni del documento da verificare.
+				\end{itemize}
+				Per eseguire una prima verifica automatica dei documenti, viene usato il controllo
+				ortografico	LanguageTool v3.6, integrabile nell'editor \LaTeX\ consigliato, TexStudio.
+				\subsubsection{Analisi Dinamica}
+				Questa tecnica può essere applicata solo al software, nella sua interezza o solo
+				in parte.
+				Consiste nell'usare una serie di test automatici creati dal gruppo che mettano
+				alla prova il software prodotto e restituiscano risultati relativi a eventuali
+				problemi rilevati.
+				I test devono essere ripetibili durante l'intero ciclo di vita e devono coprire
+				un insieme finito di casi, con valori di ingresso, uno stato iniziale ed esito
+				decidibile.
+				\subsubsection{Test}
+					\paragraph{Test di integrazione\\}   
+					I \progettisti\ dovranno definire i test di integrazione da utilizzare per testare i vari
+					componenti descritti nella progettazione ad alto livello, che permettono di verificare la
+					corretta integrazione ed il corretto flusso dei dati all’interno del sistema.
+					
+					\paragraph{Test di sistema\\}       
+					I \progettisti\ dovranno definire i test di sistema, allo scopo di verificare se una collezione intera
+					di moduli funzioni correttamente, assumendo che i singoli moduli abbiamo, individualmente, un comportamento accettabile.
+					
+					\paragraph{Test di validazione\\}    
+					I \progettisti\ dovranno definire i test di validazione, i quali vengono effettuati con il Proponente e servono per accertarsi che il
+					prodotto realizzato sia conforme alle attese. \\
+					Per ogni test è descritta una serie di passi che l’utente deve seguire in modo tale da
+					effettuarlo correttamente.
+					
+					\paragraph{Test di unità\\}     
+					I \progettisti dovranno definire i test di unità, ovvero le procedure utilizzate per verificare che un particolare frammento di codice presenti il comportamento aspettato; in altre parole, i test necessari per verificare che le singole
+					componenti del sistema funzionino nel modo previsto.
+					
+					\paragraph{Classificazione dei test\\}
+					Ciascun test sarà identificato univocamente con la seguente dicitura:
+					\begin{center}
+						T[Tipo][Codice identificativo]
+					\end{center}
+					In questa codifica:
+					\begin{itemize}
+						\item \textbf{Tipo} può assumente i valori:
+						\begin{itemize}
+							\item \textbf{I} indica i test di integrazione;
+							\item \textbf{S} indica i test di sistema;
+							\item \textbf{U} indica i test di unità;
+							\item \textbf{V} indica i test di validazione;
+						\end{itemize}
+						\item \textbf{Codice identificativo} rappresenta il codice univoco e progressivo del
+						corrispondente test.
+					\end{itemize}
+					Tutti i test devono essere inseriti nell'apposito sistema di tracciamento ``SWEgo''
+					realizzato all'interno del gruppo, che provvederà alla generazione
+					dei codici identificativi univoci.
+				
+				\subsubsection{Gestione degli errori trovati in documentazione\\}
 					Qualora i \verificatori\ trovassero degli errori all'interno dei documenti devono
 					identificare il tipo di errore trovato e agire di conseguenza
 					secondo la lista proposta in seguito:
@@ -400,7 +482,7 @@
 						redattori, attraverso lo strumento di comunicazione \gl{Slack}, i quali devono
 						provvedere alla correzione e sistemazione.
 					\end{itemize}
-				\paragraph{Gestione degli errori trovati nel codice\\}\label{GestioneErroriCodice}
+				\subsubsection{Gestione degli errori trovati nel codice\\}\label{GestioneErroriCodice}
 					Per tenere traccia degli errori al codice si deve usare il servizio ``Issues'' messo a
 					disposizione da GitHub.\\
 					Qualora i \verificatori\ trovassero degli errori all'interno del codice o attraverso il
@@ -413,41 +495,8 @@
 						\item Una volta risolta e verificata viene segnata come risolta da parte
 						del \responsabilediprogetto.
 					\end{itemize}
-				\paragraph{Analisi Statica\\}
-					Una tecnica di verifica che si applica al codice sorgente e alla documentazione
-					e non richiede l'esecuzione del prodotto software.
-					Le principali strategie sono due:
-					\begin{itemize}
-						\item Inspection: questa tecnica si applica quando si conoscono le
-						problematiche oggetto di verifica. Consiste in una ricerca mirata attraverso il
-						documento per l'identificazione dei problemi, nel caso di documentazione,
-						basandosi su una lista di errori precedentemente stilata
-						(come scritto sopra, tale lista si trova in appendice).
-						\item Walkthrough: questa tecnica consiste nello scorrere l'intero
-						documento alla ricerca di errori generici. Viene applicata sopratutto nelle
-						prime fasi di stesura del documento o di codifica a causa dell'impegno
-						necessario per attuarla, che aumenta notevolmente con l'aumentare delle
-						dimensioni del documento da verificare.
-					\end{itemize}
-					Per eseguire una prima verifica automatica dei documenti, viene usato il controllo
-					ortografico	LanguageTool v3.6, integrabile nell'editor \LaTeX\ consigliato, TexStudio.
-				\paragraph{Analisi Dinamica\\}
-					Questa tecnica può essere applicata solo al software, nella sua interezza o solo
-					in parte.
-					Consiste nell'usare una serie di test automatici creati dal gruppo che mettano
-					alla prova il software prodotto e restituiscano risultati relativi a eventuali
-					problemi rilevati.
-					I test devono essere ripetibili durante l'intero ciclo di vita e devono coprire
-					un insieme finito di casi, con valori di ingresso, uno stato iniziale ed esito
-					decidibile.
-				\paragraph{Analisi dei rischi\\}
-					Il \responsabilediprogetto\ deve monitorare i rischi indicati nel \pianodiprogettov.
-					Qualora ne identifichi di nuovi deve:
-					\begin{itemize}
-						\item Mettere al corrente il team;
-						\item Elaborare una nuova strategia per la gestione dei nuovi rischi;
-						\item Aggiornare il documento \pianodiprogetto.
-					\end{itemize}
+				
+				
 		\subsection{Validazione}
 			\subsubsection{Scopo del processo}
 				La validazione si occupa di accertare che il prodotto realizzato sia conforme
@@ -460,6 +509,12 @@
 				\responsabilediprogetto\ controlla eventuali errori o mancanze.
 				Nel caso se ne identifichino, si devono segnalare le criticità ai
 				redattori che provvederanno a correggerle.
+				\paragraph{Strumenti per la validazione \gl{W3C}}
+					L'applicativo web verrà testato anche attraverso gli strumenti di validazione online:
+					\begin{itemize}
+						\item \url{https://validator.w3.org/} (02/04/2017) per le pagine web;
+						\item \url{https://jigsaw.w3.org/css-validator/} (02/04/2017) per i fogli di stile.
+					\end{itemize}
 		\subsection{Configurazione}\label{Configurazione}
 			Di seguito viene normata la gestione della configurazione del software, intesa come l'insieme delle parti di cui si compone e il modo in cui esse interagiscono tra loro. \\
 			
@@ -550,89 +605,8 @@
 			Per l'operazione di integrazione continua è stato scelto Jenkins.\\
 			Tale strumento permette di impostare la compilazione del codice e può essere utilizzato con
 			i principali strumenti di gestione del codice sorgente tra cui Git (sezione
-			\ref{StrumentoDiVersionamento}).
+			\ref{Configurazione}).
 			La sua esecuzione è azionata ad ogni commit.
 			Jenkins sarà utilizzato principalmente nella fase di codifica.
-		\subsection{Altri strumenti}
-			
-			\subsubsection{ProjectLibre}
-			\begin{figure} [h!]
-				\centering
-				\includegraphics[scale=0.3]{./Immagini/Libre.png}
-				\caption{Logo di ProjectLibre}\label{}
-			\end{figure}
-				Per pianificare le attività legate allo sviluppo del progetto e la gestione delle risorse
-				si è scelto di utilizzare \textbf{ProjectLibre}.
-				ProjectLibre è un programma open source per il project management. È basato su Java ed è
-				quindi eseguibile su ogni sistema operativo. È il successore ufficiale di OpenProj. Tale
-				software è stato scelto in quanto:
-				\begin{itemize}
-					\item È portabile, essendo basato su Java;
-					\item È open-source;
-					\item Genera \gl{diagrammi Gantt};
-					\item Genera automaticamente diagrammi Program Evaluation and Review Technique (\gl{PERT})
-					a partire dal Gantt;
-					\item Genera automaticamente la \gl{Work Breakdown Structure} (WBS), a partire dal Gantt
-					con allocazione di risorse;
-					\item Calcola i parametri \gl{Schedule Variance}(SV) e \gl{Budget Variance} (BV);
-					\item Permette il salvataggio su file \gl{XML}: essendo un file testuale è possibile
-					fare il merge dei file in caso di conflitti su repository. 
-				\end{itemize}
-			\subsubsection{\gl{\LaTeX}}
-				Per la stesura dei documenti è stato scelto di utilizzare il linguaggio \LaTeX.
-				La scelta è stata quasi obbligata in quanto \LaTeX\ permette di separare il contenuto dalla
-				formattazione, permettendo un versionamento più semplice e consentendo di definire template
-				condivisi per uniformare i documenti. Altre soluzioni come Microsoft Office, LibreOffice o
-				Google Docs non avrebbero consentito un livello altrettanto elevato di separazione portando
-				ad un aumento del lavoro da parte dei membri del gruppo e una maggior difficoltà di
-				uniformazione dei contenuti.
-				Per la scrittura di documenti \LaTeX\ l'editor consigliato è \textbf{TeXstudio}.
-			\subsubsection{Strumenti per il controllo ortografico}
-				Per eseguire una verifica automatica dei documenti approssimativa,
-				viene usato il programma di controllo ortografico LanguageTool versione 3.6, integrabile
-				nell'editor \LaTeX\ TexStudio.
-			\subsubsection{Strumenti per i diagrammi UML}	
-				Per creare i diagrammi UML di package, classi, attività e sequenza relativi alla progettazione
-				è stato scelto di utilizzare Astah, vista la semplice interfaccia e la presenza di una versione
-				gratuitamente scaricabile.
-				I diagrammi dei casi d'uso presenti nel documento \analisideirequisitiv\ sono invece generati
-				automaticamente utilizzando PlantUML.
-			
-			
-			\subsubsection{SWEgo}
-			\hypertarget{SWEgo}
-				Per effettuare il tracciamento di casi d'uso, requisiti, componenti, classi e test è stato
-				scelto di realizzare un'applicazione web accessibile attraverso \gl{browser} ed ospitata
-				su un server dedicato: SWEgo.
-				Tale applicativo permette di aggiungere casi d'uso, attori partecipanti, requisiti, componenti,
-				classi e test.
-				Casi d'uso e requisiti sono automaticamente identificati attraverso i codici auto-generati
-				dall'applicazione, lo stesso per componenti, classi e test;
-				È inoltre possibile esportare il codice \LaTeX\ che elenca casi d'uso,
-				requisiti, componenti, classi, test e le loro relazioni.
-				\begin{figure} [h!]
-					\centering
-					\includegraphics[scale=0.42]{./Immagini/SWEgo.jpg}
-					\caption{Schermata di tracciamento requisiti in SWEgo}\label{}
-				\end{figure}
-			
-%			\subsubsection{Strumenti per l'usabilità}
-%				L'usabilità descritta nel \pianodiqualificav, verrà testata attraverso la prova del prodotto
-%				ad un piccolo numero di volontari fornendo consigli al gruppo su come effettuare
-%				miglioramenti principalmente alle interfacce grafiche.\\
-%				Le persone volontarie dovranno rientrare nella categoria degli utenti target del prodotto
-%				descritti nell'\analisideirequisitiv.
-			
-			\subsubsection{Strumenti per la validazione \gl{W3C}}
-				L'applicativo web verrà testato anche attraverso gli strumenti di validazione online:
-				\begin{itemize}
-					\item \url{https://validator.w3.org/} (02/04/2017) per le pagine web;
-					\item \url{https://jigsaw.w3.org/css-validator/} (02/04/2017) per i fogli di stile.
-				\end{itemize}
-			\subsubsection{Script}
-				È stato deciso di usare \gl{script} dedicati per le seguenti operazioni:
-				\begin{itemize}
-					\item Calcolo dell'indice Gulpease, dove uno script dedicato provvede a fornire i valori
-					calcolati per i vari documenti.
-				\end{itemize}
+
 \end{document}

@@ -12,7 +12,7 @@
 				\item Pianificare e calendarizzare l'esecuzione dei compiti programmati;
 				\item Produrre il \pianodiprogetto.
 			\end{itemize}
-		\subsection{Gestione organizzativa}
+		\subsection{Gestione organizzativa}	
 			\subsubsection{Ruoli di progetto}
 				L'assegnazione dei ruoli viene pianificata all'interno del \pianodiprogetto. Le ore di
 				lavoro devono essere distribuite in modo più possibile omogeneo tra i membri del
@@ -30,6 +30,7 @@
 						\item Assicurarsi che vengano rispettate le pianificazioni definite nel
 						\pianodiprogetto.
 					\end{itemize}
+					
 				\paragraph{Amministratore\\}
 					L'\amministratore\ è colui che si occupa di gestire l'efficienza dell'ambiente
 					di lavoro. In particolare si occupa di:
@@ -74,6 +75,107 @@
 						\item Controllare che le regole stabilite dalle \normediprogetto\ siano
 						rispettate durante ogni attività di progetto.
 					\end{itemize}
+					
+		\subsection{Pianificazione}
+				
+			\subsubsection{Strumento per la pianificazione}
+			\begin{figure} [h!]
+				\centering
+				\includegraphics[scale=0.3]{./Immagini/Libre.png}
+				\caption{Logo di ProjectLibre}\label{}
+			\end{figure}
+			Per pianificare le attività legate allo sviluppo del progetto e la gestione delle risorse
+			si è scelto di utilizzare \textbf{ProjectLibre}.
+			ProjectLibre è un programma open source per il project management. È basato su Java ed è
+			quindi eseguibile su ogni sistema operativo. È il successore ufficiale di OpenProj. Tale
+			software è stato scelto in quanto:
+			\begin{itemize}
+				\item È portabile, essendo basato su Java;
+				\item È open-source;
+				\item Genera \gl{diagrammi Gantt};
+				\item Genera automaticamente diagrammi Program Evaluation and Review Technique (\gl{PERT})
+				a partire dal Gantt;
+				\item Genera automaticamente la \gl{Work Breakdown Structure} (WBS), a partire dal Gantt
+				con allocazione di risorse;
+				\item Calcola i parametri \gl{Schedule Variance}(SV) e \gl{Budget Variance} (BV);
+				\item Permette il salvataggio su file \gl{XML}: essendo un file testuale è possibile
+				fare il merge dei file in caso di conflitti su repository. 
+			\end{itemize}
+			\subsubsection{Strumento di coordinamento}
+			Come piattaforma di gestione del gruppo è stato scelto \gl{\textbf{Asana}}. Asana fornisce:
+			\begin{itemize}
+				\item Un sistema di gestione dei task;
+				\item Un calendario per organizzare i compiti;
+				\item La visualizzazione del repository associato al progetto;
+				\item Un sistema di rendicontazione del tempo;
+				\item La possibilità di integrare Google Drive, GitHub e web app come Instagantt.
+			\end{itemize}
+			\begin{figure} [h!]
+				\centering
+				\includegraphics[scale=0.2]{./Immagini/Asana.png}
+				\caption{Lista di Task in Asana}\label{fig:TaskAsana}
+			\end{figure}
+			Sono state valutate diverse alternative ma, dopo un'attenta fase di test, nessuna di queste è
+			stata ritenuta all'altezza di Asana per quantità e qualità delle caratteristiche proposte.\\
+			Sono stati provati i seguenti software:
+			\begin{itemize}
+				\item \textbf{Wrike}: scartato perché la versione gratuita gestisce solo fino a cinque utenti;
+				\item \textbf{Trello}: scartato perché carente in funzionalità rispetto alle alternative;  
+				\item \textbf{Teamwork}: scartato perché pur raggiungendo la completezza di Asana in quanto
+				a caratteristiche non fornisce un'interfaccia altrettanto immediata, aumentando il tempo
+				speso dal team nell'apprendimento dell'uso degli strumenti.
+			\end{itemize}
+			\begin{figure} [h!]
+				\centering
+				\includegraphics[scale=0.2]{./Immagini/Instagantt.png}
+				\caption{Schermata principale dell'estensione Instagantt per Asana}\label{fig:InstExtAsana}
+			\end{figure}
+			
+				\subsubsection{Creazione e assegnazione dei task}
+				La gestione delle attività sarà effettuata utilizzando i task di Asana.
+				All'inizio di ogni periodo, il \responsabilediprogetto\ si occuperà di creare i
+				task corrispondenti alle attività da svolgere individuate. Ciascun task riporterà
+				una breve descrizione della corrispondente attività e l'indicazione sul periodo temporale di
+				svolgimento ad essa assegnata. Durante l'avanzamento dello sviluppo si divideranno
+				ricorsivamente i task in sotto-attività più semplici, fino a quando ciascuno di essi potrà
+				essere assegnato ad un'unica persona, prevedendone lo svolgimento in un periodo massimo di
+				due giornate.
+				\paragraph{Visualizzazione dei Task\\}
+				Per vedere i task assegnati basta spostarsi nella pagina ``MY
+				TASKS'' presente tra i link in alto a sinistra.\\
+				Per avere una visione d'insieme sui task dell'intero gruppo basta
+				spostarsi nella pagina ``Team Calendar'' presente nella tendina
+				laterale. Da qui è possibile vedere le scadenze indicative disposte
+				in un calendario.
+				
+				
+				\subsubsection{Avanzamento delle attività}
+				Al termine di ciascuna attività, il componente del gruppo ad essa assegnato è tenuto a
+				cambiare lo stato del corrispondente task per indicarne il completamento.
+				Per tutte le attività associabili a commit su GitHub, questo sarà fatto automaticamente
+				all'atto del rispettivo commit, configurando Zapier come indicato nella sezione \ref{Zapier}.
+				Per le attività non classificabili come sopra sarà il componente preposto a dover
+				aggiornare manualmente lo stato del task.
+				\subsubsection{Attività di verifica}
+				Con la creazione dei task corrispondenti alle macro-attività di periodo, il
+				\responsabilediprogetto\ assegnerà opportunamente ad ognuno di essi uno o più \verificatori\
+				in base al carico di lavoro atteso e alle disponibilità di ciascuno.\\
+				I \verificatori\ sono gli unici componenti del gruppo, oltre al \responsabilediprogetto, a
+				cui è concesso creare dei task su Asana. Al termine della loro attività di verifica, qualora
+				fossero riscontrati errori, dovranno creare i task corrispondenti alle attività di correzione
+				ed assegnarli a chi di dovere.\\
+				I \verificatori\ segnaleranno il completamento del task corrispondente alla loro attività di
+				verifica di un determinato prodotto nel momento in cui lo riterranno valido e conforme
+				alle norme definite.
+				\subsection{Analisi dei rischi}
+				Il \responsabilediprogetto\ deve monitorare i rischi indicati nel \pianodiprogettov.
+				Qualora ne identifichi di nuovi deve:
+				\begin{itemize}
+					\item Mettere al corrente il team;
+					\item Elaborare una nuova strategia per la gestione dei nuovi rischi;
+					\item Aggiornare il documento \pianodiprogetto.
+				\end{itemize}
+			
 			\subsection{Metriche di processo}
 				Per poter tenere continuamente sotto controllo il progresso e lo stato del progetto,
 				si è deciso di utilizzare le seguenti metriche.
@@ -123,70 +225,9 @@
 					\end{equation*}
 					Dove l'Actual Cost o ACWP (Actual Cost of Work Performed) è il costo
 					effettivamente sostenuto (denaro) alla data corrente.
-			\subsection{Strumento di coordinamento}
-				Come piattaforma di gestione del gruppo è stato scelto \gl{\textbf{Asana}}. Asana fornisce:
-				\begin{itemize}
-					\item Un sistema di gestione dei task;
-					\item Un calendario per organizzare i compiti;
-					\item La visualizzazione del repository associato al progetto;
-					\item Un sistema di rendicontazione del tempo;
-					\item La possibilità di integrare Google Drive, GitHub e web app come Instagantt.
-				\end{itemize}
-				\begin{figure} [h!]
-					\centering
-					\includegraphics[scale=0.2]{./Immagini/Asana.png}
-					\caption{Lista di Task in Asana}\label{fig:TaskAsana}
-				\end{figure}
-				Sono state valutate diverse alternative ma, dopo un'attenta fase di test, nessuna di queste è
-				stata ritenuta all'altezza di Asana per quantità e qualità delle caratteristiche proposte.\\
-				Sono stati provati i seguenti software:
-				\begin{itemize}
-					\item \textbf{Wrike}: scartato perché la versione gratuita gestisce solo fino a cinque utenti;
-					\item \textbf{Trello}: scartato perché carente in funzionalità rispetto alle alternative;  
-					\item \textbf{Teamwork}: scartato perché pur raggiungendo la completezza di Asana in quanto
-					a caratteristiche non fornisce un'interfaccia altrettanto immediata, aumentando il tempo
-					speso dal team nell'apprendimento dell'uso degli strumenti.
-				\end{itemize}
-				\begin{figure} [h!]
-					\centering
-					\includegraphics[scale=0.2]{./Immagini/Instagantt.png}
-					\caption{Schermata principale dell'estensione Instagantt per Asana}\label{fig:InstExtAsana}
-				\end{figure}
-			\subsubsection{Norme di utilizzo}
-				\paragraph{Creazione e assegnazione dei task\\}
-					La gestione delle attività sarà effettuata utilizzando i task di Asana.
-					All'inizio di ogni periodo, il \responsabilediprogetto\ si occuperà di creare i
-					task corrispondenti alle attività da svolgere individuate. Ciascun task riporterà
-					una breve descrizione della corrispondente attività e l'indicazione sul periodo temporale di
-					svolgimento ad essa assegnata. Durante l'avanzamento dello sviluppo si divideranno
-					ricorsivamente i task in sotto-attività più semplici, fino a quando ciascuno di essi potrà
-					essere assegnato ad un'unica persona, prevedendone lo svolgimento in un periodo massimo di
-					due giornate.
-				\paragraph{Avanzamento delle attività\\}
-					Al termine di ciascuna attività, il componente del gruppo ad essa assegnato è tenuto a
-					cambiare lo stato del corrispondente task per indicarne il completamento.
-					Per tutte le attività associabili a commit su GitHub, questo sarà fatto automaticamente
-					all'atto del rispettivo commit, configurando Zapier come indicato nella sezione \ref{Zapier}.
-					Per le attività non classificabili come sopra sarà il componente preposto a dover
-					aggiornare manualmente lo stato del task.
-				\paragraph{Attività di verifica\\}
-					Con la creazione dei task corrispondenti alle macro-attività di periodo, il
-					\responsabilediprogetto\ assegnerà opportunamente ad ognuno di essi uno o più \verificatori\
-					in base al carico di lavoro atteso e alle disponibilità di ciascuno.\\
-					I \verificatori\ sono gli unici componenti del gruppo, oltre al \responsabilediprogetto, a
-					cui è concesso creare dei task su Asana. Al termine della loro attività di verifica, qualora
-					fossero riscontrati errori, dovranno creare i task corrispondenti alle attività di correzione
-					ed assegnarli a chi di dovere.\\
-					I \verificatori\ segnaleranno il completamento del task corrispondente alla loro attività di
-					verifica di un determinato prodotto nel momento in cui lo riterranno valido e conforme
-					alle norme definite.
-				\paragraph{Visualizzazione dei Task\\}
-					Per vedere i task assegnati basta spostarsi nella pagina ``MY
-					TASKS'' presente tra i link in alto a sinistra.\\
-					Per avere una visione d'insieme sui task dell'intero gruppo basta
-					spostarsi nella pagina ``Team Calendar'' presente nella tendina
-					laterale. Da qui è possibile vedere le scadenze indicative disposte
-					in un calendario.
+			
+			
+		
 			\subsection{Comunicazioni esterne}
 				Per le comunicazioni esterne è stata creata la casella di posta
 				elettronica:
