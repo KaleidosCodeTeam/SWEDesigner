@@ -16,8 +16,13 @@ Le principali funzionalit\'a ed elementi fornite dalla libreria che vengono sfru
 \item zoom in/out.
 \end{itemize}
 
-La figura precedente mostra una esemplificazione della gerarchia di classi usata da SWEDesigner. Essa mostra tre package distinti, model, view e collection, per indicare che essi derivano da Backbone.Model, Backbone.View e
-Backbone.Collection rispettivamente.\\
+\begin{figure}[H] \label{fig:Joint}
+	\centering
+	\includegraphics[scale=1]{Immagini/joint.png}
+	\caption{Schema Joint}
+\end{figure}
+
+La figura precedente mostra un'esemplificazione del funzionamento di Joint.\\
 La creazione di un nuovo diagramma è piuttosto semplice: è sufficiente specificare un Graph sul quale un Paper deve rimanere in ascolto (observe).\\
 È possibile catturare eventi all’interno del Paper e gestirli di conseguenza.\\
 Il Graph possiede al suo interno una GraphCells. Questa rappresenta il raccoglitore di celle (Cell, che costituiscono gli elementi da cui è composto un Graph.\\
