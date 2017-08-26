@@ -1456,19 +1456,19 @@
 				\item \textbf{Descrizione}: Rende disponibile la funzionalità per cui, dato un file in formato JSON che contiene le informazioni necessarie a codificare un programma, restituisce un pacchetto in formato .zip contenente i file del codice sorgente che costituiscono il programma rappresentato dal file in input. I file prodotti sono organizzati in packages, come indicato nel file JSON in input;\\
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{generateJsProgram(jsonProgram:JSON, nomeZip:string):void} \\ 
-					Funzione statica che codifica, in Javascript, il programma corrispondente al contenuto del JSON in input e costruisce un pacchetto compresso in formato .zip contenente
+					\item \emph{generateJsProgram(jsonProgram:string, nomeZip:string):void} \\ 
+					Funzione statica che codifica, in Javascript, il programma corrispondente al contenuto della stringa in formato json di input e costruisce un pacchetto compresso in formato .zip contenente
 					il programma codificato e strutturato in file e directory come specificato nel file JSON di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{jsonProgram:JSON}: Contiene le informazioni, in formato JSON, necessarie a codificare un programma.\\
+						\item \emph{jsonProgram:string}: Contiene le informazioni, in formato JSON, necessarie a codificare un programma.\\
 						\item \emph{nomeZip:string}: Specifica il nome con cui verrà nominato il pacchetto zip prodotto.\\
 					\end{itemize}					
-					\item \emph{generateJavaProgram(jsonProgram:JSON, nomeZip:string):void} \\ 
-					Funzione statica che codifica, in Java, il programma corrispondente al contenuto del JSON in input e costruisce un pacchetto compresso in formato .zip contenente il programma codificato e strutturato in file e directory come specificato nel file JSON di input; \\							
+					\item \emph{generateJavaProgram(jsonProgram:string, nomeZip:string):void} \\ 
+					Funzione statica che codifica, in Java, il programma corrispondente al contenuto della stringa in formato json di input e costruisce un pacchetto compresso in formato .zip contenente il programma codificato e strutturato in file e directory come specificato nel file JSON di input; \\							
 					Parametri:
 					\begin{itemize}
-						\item \emph{jsonProgram:JSON}: Contiene le informazioni, in formato JSON, necessarie a codificare un programma.\\
+						\item \emph{jsonProgram:string}: Contiene le informazioni, in formato JSON, necessarie a codificare un programma.\\
 						\item \emph{nomeZip:string}:ì Specifica il nome con cui verrà nominato il pacchetto zip prodotto.\\
 					\end{itemize}
 				\end{itemize}				
@@ -1496,14 +1496,14 @@
 			\hypertarget{SWEDesigner::Server::CodeGenerator::Parser::Parser}{}
 			\begin{itemize}
 				\item \textbf{Tipo}: \emph{Class};
-				\item \textbf{Descrizione}: Rende disponibile la funzionalità, dato un file JSON valido in input, di ottenere un oggetto contenente le informazioni che costituiscono il file JSON di input;\\
+				\item \textbf{Descrizione}: Rende disponibile la funzionalità, data la stringa in formato JSON valido in input, di ottenere un oggetto contenente le informazioni della stringa json di input;\\
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{parse(jsonFile:JSON):Object} \\ 
-					Trasforma il file JSON ricevuto in input in un oggetto Javascript contenente tutte le sue informazioni; \\
+					\item \emph{parse(jsonFile:string):Object} \\ 
+					Trasforma la stringa json ricevuta in input in un oggetto Javascript contenente tutte le sue informazioni; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{jsonFile:JSON} Contiene le informazioni, in formato JSON, necessarie a codificare un programma.
+						\item \emph{jsonFile:string} Contiene le informazioni, in formato JSON, necessarie a codificare un programma.
 					\end{itemize}
 				\end{itemize}
 				
@@ -1526,17 +1526,422 @@
 			
 			Questo package non contiene dei sottopackage.\\
 			Le classi contenute al suo interno verranno elencate qui di seguito.
+
+			\subsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements}
+			In questa sottosezione vengono descritti gli oggetti usati come parametri in alcune funzioni delle classi presenti in SWEDesigner::Server::CodeGenerator::Coder; tali descrizioni hanno lo scopo di permettere allo sviluppatore di comprendere lo schema reale dell'oggetto che dovrà essere utilizzato.
 			
-			%		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::Coder}
-			%		Componente che funge da interfaccia alle operazioni di codifica di una stringa, in formato JSON che rappresenta un programma valido; tali operazioni permettono di ottenere un %	oggetto contenente il codice sorgente, in Java o Javascript, corrispondente alla stringa in input.\\
-			%		FAN-IN:
-			%		\begin{itemize}
-			%			\item JavaCoder: si occupa di trasformare un oggetto JSON ricevuto in input in un oggetto contenente il codice sorgente scritto in java;
-			%			\item JavaScriptCoder: si occupa di trasformare un oggetto JSON ricevuto in input in un oggetto contenente il codice sorgente scritto in javascript.
-			%		\end{itemize}
-			%		FAN-OUT:
-			%			\item CoderElement: componente astratto che offre la funzionalità che permette di associare ad ogni stringa contenuta nel file JSON il corrispondente codice sorgente.
-			%		\end{itemize}
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedProgram}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedProgram}{}
+				\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Oggetto restituito dalla funzione parse(jsonFile:string) di SWEDesigner::Server::CodeGenerator::Parser. Contiene le informazioni necessarie a codificare un programma;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{packages: ParsedPackage[]}\\
+					Array contenente gli oggetti che forniscono le informazioni sui packages del programma da codificare;
+					\item \emph{classes: ParsedClass[]} \\
+					Array contenente gli oggetti che forniscono le informazioni sulle classi del programma da codificare;
+					\item \emph{operations: ParsedActivity[]} \\
+					Array contenente gli oggetti che forniscono le informazioni sull'implementazione dei metodi/funzioni del programma da codificare.
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:
+				\begin{itemize}
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedPackage}{\emph{ParsedPackage}}: si occupa di fornire le informazioni di un package del programma da codificare;
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedClass}{\emph{ParsedClass}}: si occupa di fornire le informazioni di una classe del programma da codificare;
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedActivity}{\emph{ParsedActivity}}: si occupa di fornire le informazioni relative all'implementazione di un metodo/funzione del programma da codificare;
+				\end{itemize}
+			\end{itemize}
+
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedPackage}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedPackage}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Oggetto contenente le informazioni relative ad un package del programma da codificare;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{values.\_package: string}\\
+					Il nome del package;
+					\item \emph{values.id: string} \\
+					Stringa univoca identificativa del package;
+					\item \emph{dependenciesArray: string[]} \\
+					Array contenente le stringhe identificative dei ParsedPackage verso cui tale ParsedPackage ha una dipendenza.
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedProgram}{\emph{ParsedProgram}}: oggetto che contiene il ParsedPackage;
+				\end{itemize}
+			\end{itemize}
+
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedPackage}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedPackage}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Oggetto contenente le informazioni relative ad un package del programma da codificare;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{values.\_package: string}\\
+					Il nome del package;
+					\item \emph{values.id: string} \\
+					Stringa univoca identificativa del package;
+					\item \emph{dependenciesArray: string[]} \\
+					Array contenente le stringhe identificative dei ParsedPackage verso cui tale ParsedPackage ha una dipendenza.
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedProgram}{\emph{ParsedProgram}}: oggetto che contiene il ParsedPackage;
+				\end{itemize}
+			\end{itemize}	
+		
+				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedClass}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedClass}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Oggetto contenente le informazioni necessarie a codificare una classe del programma;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{values.\_name: string}\\
+					Il nome della classe;
+					\item \emph{values.\_visibility: string} \\
+					Specifica la visibilità della classe;
+					\item \emph{values.isAbstract: bool} \\
+					Specifica se la classe è astratta;
+					\item \emph{values.isInterface: bool} \\
+					Specifica se la classe è astratta;
+					\item \emph{values.attributes: ParsedAttribute[]} \\
+					Array degli attributi della ParsedClass;
+					\item \emph{values.operations: ParsedOperations[]} \\
+					Array dei metodi/funzioni della ParsedClass;
+					\item \emph{values.isStatic: bool} \\
+					Specifica se la classe è statica;
+					\item \emph{values.isFinal: bool} \\
+					Specifica se la classe dev'essere marcata final;
+					\item \emph{values.isFrozen: bool} \\
+					Specifica se la classe dev'essere marcata frozen;
+					\item \emph{values.isReadOnly: bool} \\
+					Specifica se la classe dev'essere resa read only;
+					\item \emph{values.id: string} \\
+					Stringa univoca identificativa della ParsedClass;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:	
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedProgram}{\emph{ParsedProgram}}: oggetto che contiene la ParsedClass;
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedAttribute}{\emph{ParsedAttribute}}: oggetto, contenuto nella ParsedClass, che rappresenta un attributo;
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedOperation}{\emph{ParsedOperation}}: oggetto contenuto nella ParsedClass che rappresenta un metodo/funzione;
+				\end{itemize}
+			\end{itemize}		
+		
+				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedAttribute}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedAttribute}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Oggetto contenente le informazioni necessarie a codificare un attributo di classe;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{\_name: string}\\
+					Il nome dell'attributo;
+					\item \emph{\_type: string}\\
+					Il tipo dell'attributo;
+					\item \emph{\_default: string}\\
+					L'eventuale valore di default dell'attributo;
+					\item \emph{\_visibility: string} \\
+					Specifica la visibilità dell'attributo;
+					\item \emph{isStatic: bool} \\
+					Specifica se l'attributo è statica;
+					\item \emph{isFinal: bool} \\
+					Specifica se l'attributo dev'essere marcato final;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedClass}{\emph{ParsedClass}}: oggetto che contiene il ParsedAttribute;
+				\end{itemize}
+			\end{itemize}
+		
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedOperation}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedOperation}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Oggetto contenente le informazioni necessarie a codificare l'intestazione di un metodo/funzione di classe;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{\_name: string}\\
+					Il nome del metodo/funzione;
+					\item \emph{returnType: string}\\
+					Il tipo di ritorno del metodo/funzione;
+					\item \emph{id: string}\\
+					Stringa univoca identificativa del metodo/funzione;
+					\item \emph{\_visibility: string} \\
+					Specifica la visibilità del metodo/funzione;
+					\item \emph{isStatic: bool} \\
+					Specifica se il metodo/funzione è statico;
+					\item \emph{isFinal: bool} \\
+					Specifica se il metodo/funzione dev'essere marcato final;
+					\item \emph{isAbstract: bool} \\
+					Specifica se il metodo/funzione è astratto;
+					\item \emph{parameters: ParsedParameter[]} \\
+					Array dei parametri della ParsedOperation;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedClass}{\emph{ParsedClass}}: oggetto che contiene la ParsedOperation;
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedParameter}{\emph{ParsedParameter}}: oggetto contenuto nella ParsedOperation;
+				\end{itemize}
+			\end{itemize}
+		
+				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedParameter}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedParameter}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: Oggetto contenente le informazioni necessarie a codificare un parametro di metodo/funzione;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{\_name: string}\\
+					Il nome del parametro;
+					\item \emph{\_type: string}\\
+					Il tipo del parametro;
+					\item \emph{\_default: string}\\
+					L'eventuale valore di default del parametro;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedOperation}{\emph{ParsedOperation}}: oggetto che contiene il ParsedParameter;
+				\end{itemize}
+			\end{itemize}
+		
+		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedActivity}
+		\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedActivity}{}
+		\begin{itemize}
+			\item \textbf{Tipo}: \emph{Class};
+			\item \textbf{Descrizione}: Oggetto contenente le informazioni necessarie a codificare l'implementazione di un metodo/funzione del programma;
+			\item \textbf{Attributi}:
+			\begin{itemize}
+				\item \emph{items: ParsedBubble[]} \\
+				Array contenente le ParsedBubble che specificano l'implementazione del metodo/funzione;
+				\item \emph{id: string} \\
+				Stringa univoca identificativa della ParsedActivity;
+			\end{itemize}
+			\item \textbf{Relazioni con le altre classi}:	
+			\begin{itemize}
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedProgram}{\emph{ParsedProgram}}: oggetto che contiene la ParsedActivity;
+				\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: oggetto, contenuto nella ParsedActivity, che rappresenta una porzione dell'implementazione;
+				\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedOperation}{\emph{ParsedOperation}}: oggetto contenuto nella ParsedClass che rappresenta un metodo/funzione;
+			\end{itemize}
+		\end{itemize}
+	
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}
+		\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{}
+		\begin{itemize}
+			\item \textbf{Tipo}: \emph{Class};
+			\item \textbf{Descrizione}: Oggetto contenente le informazioni comuni a tutti i tipi di bubble;
+			\item \textbf{Attributi}:
+			\begin{itemize}
+				\item \emph{values.\_type: ParsedBubble[]} \\
+				il tipo della bubble;
+				\item \emph{values.id: string} \\
+				Stringa univoca identificativa della ParsedBubble;
+			\end{itemize}
+			\item \textbf{Relazioni con le altre classi}:	
+			\begin{itemize}
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedActivity}{\emph{ParsedActivity}}: oggetto che contiene la ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleStart}{\emph{ParsedBubbleStart}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleIf}{\emph{ParsedBubbleIf}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleElse}{\emph{ParsedBubbleElse}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleFor}{\emph{ParsedBubbleFor}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleWhile}{\emph{ParsedBubbleWhile}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleCustom}{\emph{ParsedBubbleCustom}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleReturn}{\emph{ParsedBubbleReturn}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleDefinition}{\emph{ParsedBubbleDefinition}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleAssignment}{\emph{ParsedBubbleAssignment}}: classe ereditata da ParsedBubble;
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleLink}{\emph{ParsedBubbleLink}}: classe ereditata da ParsedBubble;  
+			\end{itemize}
+		\end{itemize}	
+	
+		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleIf}
+		\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleIf}{}
+		\begin{itemize}
+			\item \textbf{Tipo}: \emph{Class};
+			\item \textbf{Padre}: \emph{ParsedBubble};
+			\item \textbf{Descrizione}: Oggetto che rappresenta l'istruzione condizionale IF;
+			\item \textbf{Attributi}:
+			\begin{itemize}
+				\item \emph{condition: string} \\
+				Espressione condizionale dell'IF;
+				\item \emph{embeds: ParsedBubble} \\
+				Array delle ParsedBubble innestate nella ParsedBubbleIf;
+			\end{itemize}
+			\item \textbf{Relazioni con le altre classi}:	
+			\begin{itemize}
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleIf; 
+			\end{itemize}
+		\end{itemize}	
+	
+		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleStart}
+		\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleStart}{}
+		\begin{itemize}
+			\item \textbf{Tipo}: \emph{Class};
+			\item \textbf{Padre}: \emph{ParsedBubble};
+			\item \textbf{Descrizione}: Oggetto che rappresenta lo statement da cui inizia l'implementazione;
+			\item \textbf{Relazioni con le altre classi}:	
+			\begin{itemize}
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleStart; 
+			\end{itemize}
+		\end{itemize}
+	
+		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleElse}
+		\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleElse}{}
+		\begin{itemize}
+			\item \textbf{Tipo}: \emph{Class};
+			\item \textbf{Padre}: \emph{ParsedBubble};
+			\item \textbf{Descrizione}: Oggetto che rappresenta l'istruzione condizionale ELSE;
+			\item \textbf{Attributi}:
+			\begin{itemize}
+				\item \emph{embeds: ParsedBubble[]} \\
+				Array delle ParsedBubble innestate nella ParsedBubbleElse;
+			\end{itemize}
+			\item \textbf{Relazioni con le altre classi}:	
+			\begin{itemize}
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleElse; 
+			\end{itemize}
+		\end{itemize}
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleFor}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleFor}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Padre}: \emph{ParsedBubble};
+				\item \textbf{Descrizione}: Oggetto che rappresenta l'istruzione FOR;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{initiation: string} \\
+					Espressione di inizializzazione del ciclo FOR;
+					\item \emph{termination: string} \\
+					Espressione condizionale per la terminazione del ciclo FOR;
+					\item \emph{termination: string} \\
+					Istruzione di incremento del ciclo FOR;
+					\item \emph{embeds: ParsedBubble[]} \\
+					Array delle ParsedBubble innestate nella ParsedBubbleElse;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:	
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleFor; 
+				\end{itemize}
+			\end{itemize}
+			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleWhile}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleWhile}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Padre}: \emph{ParsedBubble};
+				\item \textbf{Descrizione}: Oggetto che rappresenta l'istruzione WHILE;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{condition: string} \\
+					Espressione condizionale del ciclo WHILE;
+					\item \emph{embeds: ParsedBubble[]} \\
+					Array delle ParsedBubble innestate nella ParsedBubbleWhile;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:	
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleIf; 
+				\end{itemize}
+			\end{itemize}
+		
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleCustom}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleCustom}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Padre}: \emph{ParsedBubble};
+				\item \textbf{Descrizione}: Oggetto che contiene codice sorgente inserito manualmente dall'utente;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{bubbleJavaCode: string} \\
+					Codice sorgente in linguaggio Java, inserito dall'utente;
+						\item \emph{bubbleJsCode: string} \\
+					Codice sorgente in linguaggio Javascript, inserito dall'utente;
+					\item \emph{embeds: ParsedBubble[]} \\
+					Array delle ParsedBubble innestate nella ParsedBubbleCustom;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:	
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleIf; 
+				\end{itemize}
+			\end{itemize}
+		
+				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleReturn}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleReturn}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Padre}: \emph{ParsedBubble};
+				\item \textbf{Descrizione}: Oggetto che rappresenta l'istruzione di ritorno da funzione;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{value: string} \\
+					Espressione restituita con l'istruzione RETURN;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:	
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleReturn; 
+				\end{itemize}
+			\end{itemize}
+		
+				\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleDefinition}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleDefinition}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Padre}: \emph{ParsedBubble};
+				\item \textbf{Descrizione}: Oggetto che rappresenta l'istruzione per definire una variabile;
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{name: string} \\
+					nome della variabile che viene definita;
+					\item \emph{\_value: string} \\
+					Valore con cui viene inizializzata la variabile;
+					\item \emph{valueType: string} \\
+					Tipo della variabile definita;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi}:	
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleDefinition; 
+				\end{itemize}
+			\end{itemize}
+		
+		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleAssignment}
+		\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleAssignment}{}
+		\begin{itemize}
+			\item \textbf{Tipo}: \emph{Class};
+			\item \textbf{Padre}: \emph{ParsedBubble};
+			\item \textbf{Descrizione}: Oggetto che rappresenta l'istruzione per assegnare un valore ad una variabile;
+			\item \textbf{Attributi}:
+			\begin{itemize}
+				\item \emph{name: string} \\
+				nome della variabile a cui viene assegnato un nuovo valore;
+				\item \emph{\_value: string} \\
+				Valore assegnato alla variabile;
+			\end{itemize}
+			\item \textbf{Relazioni con le altre classi}:	
+			\begin{itemize}
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleAssignment; 
+			\end{itemize}
+		\end{itemize}
+	
+		\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleLink}
+		\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubbleLink}{}
+		\begin{itemize}
+			\item \textbf{Tipo}: \emph{Class};
+			\item \textbf{Padre}: \emph{ParsedBubble};
+			\item \textbf{Descrizione}: Oggetto che contiene le informazioni sulle relazioni tra due ParsedBubble, ed specificano l'ordine fra loro;
+			\item \textbf{Attributi}:
+			\begin{itemize}
+				\item \emph{source: string} \\
+				Identificativo della ParsedBubble da cui parte la relazione;
+				\item \emph{target: string} \\
+				Identificativo della ParsedBubble target della relazione;
+			\end{itemize}
+			\item \textbf{Relazioni con le altre classi}:	
+			\begin{itemize}
+				\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::ParsedElements::ParsedBubble}{\emph{ParsedBubble}}: classe padre di ParsedBubbleLink; 
+			\end{itemize}
+		\end{itemize}
+			
 			
 			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}
 			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}{}
@@ -1545,38 +1950,38 @@
 				\item \textbf{Descrizione}: Rende disponibile la funzionalità, dato un oggetto in input che che contiene le informazioni necessarie a codificare un programma, di ottenere un oggetto contenente il codice sorgente, in linguaggio Java, corrispondente all'oggetto in input;\\
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{coderParameters(operationObj:Object):string} \\ 
+					\item \emph{coderParameters(operationObj:ParsedOperation):string} \\ 
 					Riceve in input operationObj, un oggetto che contiene le informazioni necessarie a codificare una operazione; 
 					restituisce la stringa del codice sorgente, in Java, della lista dei parametri dell'operazione operationObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{operationObj:Object} Contiene le informazioni necessarie a codificare una operazione.
+						\item \emph{operationObj:ParsedOperation} Contiene le informazioni necessarie a codificare una operazione.
 					\end{itemize}
 					
-					\item \emph{coderAttributes(classObj:Object):string} \\ 
+					\item \emph{coderAttributes(classObj:ParsedClass):string} \\ 
 					Riceve in input classObj, un oggetto che contiene le informazioni necessarie a codificare una classe; 
 					restituisce la stringa del codice sorgente, in Java, di tutti gli attributi della classe classObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe.
+						\item \emph{classObj:ParsedClass} Contiene le informazioni necessarie a codificare una classe.
 					\end{itemize}
 					
-					\item \emph{coderOperations(classObj,operations):string} \\ 
+					\item \emph{coderOperations(classObj:ParsedClass,operations:ParsedOperation[]):string} \\ 
 					Riceve in input classObj, un oggetto che le informazioni necessarie a codificare una classe; 
 					restituisce la stringa del codice sorgente, in Java, relativa alla definizione e implementazione di tutte le operazioni di classObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe;
-						\item \emph{operations:Object} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
+						\item \emph{classObj:ParsedClass} Contiene le informazioni necessarie a codificare una classe;
+						\item \emph{operations:ParsedOperation[]} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
 					\end{itemize}
 					
-					\item \emph{getCodedProgram(parsedProgram:Object):CodedProgram} \\ 
+					\item \emph{getCodedProgram(parsedProgram:ParsedProgram):CodedProgram} \\ 
 					Riceve in input parsedProgram, un oggetto che contiene le informazioni necessarie a codificare un programma; 
 					restituisce un oggetto istanza di CodedProgram, contente il codice sorgente in Java di tutte le classi presenti nell'oggetto 
 					parsedProgram di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{parsedProgram:Object} Contiene le informazioni necessarie a codificare un programma.
+						\item \emph{parsedProgram:ParsedProgram} Contiene le informazioni necessarie a codificare un programma.
 					\end{itemize}
 				\end{itemize}
 				
@@ -1593,55 +1998,55 @@
 				\item \textbf{Descrizione}: Rende disponibile la funzionalità, dato un oggetto in input che contiene le informazioni necessarie a codificare un programma, di ottenere un oggetto contenente il codice sorgente, in linguaggio Javascript, corrispondente all'oggetto in input;\\
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{coderParameters(operationObj:Object):string} \\ 
+					\item \emph{coderParameters(operationObj:ParsedOperation):string} \\ 
 					Riceve in input operationObj, un oggetto che contiene le informazioni necessarie a codificare una operazione; 
 					restituisce la stringa del codice sorgente, in Javascript, della lista dei parametri dell'operazione operationObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{operationObj:Object} Contiene le informazioni necessarie a codificare una operazione.
+						\item \emph{operationObj:ParsedOperation} Contiene le informazioni necessarie a codificare una operazione.
 					\end{itemize}
 					
-					\item \emph{coderInstanceAttributes(classObj:Object):string} \\ 
+					\item \emph{coderInstanceAttributes(classObj:ParsedClass):string} \\ 
 					Riceve in input classObj, un oggetto che contiene le informazioni necessarie a codificare una classe; 
 					restituisce la stringa del codice sorgente, in Javascript, di tutti gli attributi non statici della classe classObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe.
+						\item \emph{classObj:ParsedClass} Contiene le informazioni necessarie a codificare una classe.
 					\end{itemize}
 					
-					\item \emph{coderInstanceOperations(classObj,operations):string} \\ 
+					\item \emph{coderInstanceOperations(classObj:ParsedClass,operations:ParsedOperation):string} \\ 
 					Riceve in input classObj, un oggetto che le informazioni necessarie a codificare una classe; 
 					restituisce la stringa del codice sorgente, in Javascript, relativa alla definizione e implementazione di tutte le operazioni non statiche di classObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe;
-						\item \emph{operations:Object} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
+						\item \emph{classObj:ParsedClass} Contiene le informazioni necessarie a codificare una classe;
+						\item \emph{operations:ParsedOperation} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
 					\end{itemize}
 					
-					\item \emph{coderStaticAttributes(classObj:Object):string} \\ 
+					\item \emph{coderStaticAttributes(classObj:ParsedClass):string} \\ 
 					Riceve in input classObj, un oggetto che contiene le informazioni necessarie a codificare una classe; 
 					restituisce la stringa del codice sorgente, in Javascript, di tutti gli attributi statici della classe classObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe.
+						\item \emph{classObj:ParsedClass} Contiene le informazioni necessarie a codificare una classe.
 					\end{itemize}
 					
-					\item \emph{coderStaticOperations(classObj,operations):string} \\ 
+					\item \emph{coderStaticOperations(classObj:ParsedClass,operations:ParsedOperation[]):string} \\ 
 					Riceve in input classObj, un oggetto che le informazioni necessarie a codificare una classe; 
 					restituisce la stringa del codice sorgente, in Javascript, relativa alla definizione e implementazione di tutte le operazioni statiche di classObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{classObj:Object} Contiene le informazioni necessarie a codificare una classe;
-						\item \emph{operations:Object} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
+						\item \emph{classObj:ParsedClass} Contiene le informazioni necessarie a codificare una classe;
+						\item \emph{operations:ParsedOperation[]} Contiene le informazioni necessarie a codificare l'implementazione di tutte le operazioni di classObj.
 					\end{itemize}
 					
-					\item \emph{getCodedProgram(parsedProgram:Object):CodedProgram} \\ 
+					\item \emph{getCodedProgram(parsedProgram:ParsedProgram):CodedProgram} \\ 
 					Riceve in input parsedProgram, un oggetto che contiene le informazioni necessarie a codificare un programma; 
 					restituisce un oggetto istanza di CodedProgram, contente il codice sorgente in Javascript di tutte le classi presenti nell'oggetto 
 					parsedProgram di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{parsedProgram:Object} Contiene le informazioni necessarie a codificare un programma.
+						\item \emph{parsedProgram:ParsedProgram} Contiene le informazioni necessarie a codificare un programma.
 					\end{itemize}
 				\end{itemize}
 				
@@ -1667,22 +2072,22 @@
 				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di codificare l'intestazione dell'operazione corrispondente al contenuto dell'oggetto operationObj di input; \\
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{codeElementJava(operationObj:Object):string} \\ 
+					\item \emph{codeElementJava(operationObj:ParsedOperation):string} \\ 
 					Riceve in input operationObj, un oggetto che contiene le informazioni necessarie a codificare una operazione; 
 					restituisce la stringa codice sorgente in Java relativa all'intestazione dell'operazione operationObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{operationObj:Object} Contiene le informazioni necessarie a codificare una operazione.
+						\item \emph{operationObj:ParsedOperation} Contiene le informazioni necessarie a codificare una operazione.
 					\end{itemize}
 					
 					
 					
-					\item \emph{codeElementJavascript(operationObj:Object, className:string):string} \\ 
+					\item \emph{codeElementJavascript(operationObj:ParsedOperation, className:string):string} \\ 
 					Riceve in input operationObj, un oggetto che contiene le informazioni necessarie a codificare una operazione; 
 					restituisce la stringa codice sorgente in Javascript relativa all'intestazione dell'operazione operationObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{operationObj:Object} Contiene le informazioni necessarie a codificare una operazione;
+						\item \emph{operationObj:ParsedOperation} Contiene le informazioni necessarie a codificare una operazione;
 						\item \emph{className:string} Il nome della classe che possiede l'operazione operationObj. Necessaria solo sè tale operazione è statica;
 					\end{itemize}
 				\end{itemize}
@@ -1703,22 +2108,22 @@
 				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di codificare un parametro, corrispondente al contenuto dell'oggetto parameterObj di input;\\
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{codeElementJava(parameterObj:Object):string} \\ 
+					\item \emph{codeElementJava(parameterObj:ParsedParameter):string} \\ 
 					Riceve in input parameterObj, un oggetto che contiene le informazioni necessarie a codificare un parametro di operazione; 
 					restituisce la stringa codice sorgente in Java relativa al parametro parameterObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{parameterObj:Object} Contiene le informazioni necessarie a codificare un parametro di operazione.
+						\item \emph{parameterObj:ParsedParameter} Contiene le informazioni necessarie a codificare un parametro di operazione.
 					\end{itemize}
 					
 					
 					
-					\item \emph{codeElementJavascript(parameterObj:Object):string} \\ 
+					\item \emph{codeElementJavascript(parameterObj:ParsedParameter):string} \\ 
 					Riceve in input parameterObj, un oggetto che contiene le informazioni necessarie a codificare un parametro di operazione; 
 					restituisce la stringa codice sorgente in Javascript relativa al parametro parameterObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{parameterObj:Object} Contiene le informazioni necessarie a codificare un parametro di operazione.
+						\item \emph{parameterObj:ParsedParameter} Contiene le informazioni necessarie a codificare un parametro di operazione.
 					\end{itemize}
 				\end{itemize}
 				
@@ -1737,22 +2142,22 @@
 				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di codificare un attributo corrispondente al contenuto dell'oggetto attributeObj di input;\\
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{codeElementJava(attributeObj:Object):string} \\ 
+					\item \emph{codeElementJava(attributeObj:ParsedAttribute):string} \\ 
 					Riceve in input attributeObj, un oggetto che contiene le informazioni necessarie a codificare un attributo di classe; 
 					restituisce la stringa codice sorgente in Java relativa all'attributo attributeObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{attributeObj:Object} Contiene le informazioni necessarie a codificare un attributo di classe.
+						\item \emph{attributeObj:ParsedAttribute} Contiene le informazioni necessarie a codificare un attributo di classe.
 					\end{itemize}
 					
 					
 					
-					\item \emph{codeElementJavascript(attributeObj:Object, className:string):string} \\ 
+					\item \emph{codeElementJavascript(attributeObj:ParsedAttribute, className:string):string} \\ 
 					Riceve in input attributeObj, un oggetto che contiene le informazioni necessarie a codificare un attributo; 
 					restituisce la stringa codice sorgente in Javascript relativa all'attributo attributeObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{attributeObj:Object} Contiene le informazioni necessarie a codificare un attributo di classe;
+						\item \emph{attributeObj:ParsedAttribute} Contiene le informazioni necessarie a codificare un attributo di classe;
 						\item \emph{className:string} Il nome della classe che possiede l'attributo attributeObj. Necessaria solo sè tale attributo è statico;
 					\end{itemize}
 				\end{itemize}
@@ -1773,70 +2178,70 @@
 				\item \textbf{Descrizione}: Rende disponibile la funzionalità che permette di codificare l'implementazione di un'operazione, corrispondente al contenuto dell'oggetto activityObj di input; \\
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{getBubbleLinks(activityObj:Object):Array} \\ 
+					\item \emph{getBubbleLinks(activityObj:ParsedActivity):ParsedBubbleLink[]} \\ 
 					Estrae, per ogni elemento in activityObj, le informazioni relative al collegamento con un'altro elemento (se esiste) contenuto in ActivityObj e
 					le inserisce in un array che viene restituito; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+						\item \emph{activityObj:ParsedActivity} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
 					\end{itemize}
 					
-					\item \emph{getBubbleId(bubbleId:string, activityObj:Object):Object} \\ 
+					\item \emph{getBubbleId(bubbleId:string, activityObj:ParsedActivity):ParsedBubble} \\ 
 					Ritorna la bubble (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di activityObj) contenuta in activityObj e il cui identificativo corrisponde al bubbleId di input; \\
 					Parametri:
 					\begin{itemize}
 						\item \emph{bubbleId:string} Stringa identificativa della bubble che si vuole ottenere;
-						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+						\item \emph{activityObj:ParsedActivity} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
 					\end{itemize}
 					
-					\item \emph{getNextBubble(bubbleObj:Object, activityObj:Object):Object} \\ 
+					\item \emph{getNextBubble(bubbleObj:ParsedBubble, activityObj:ParsedActivity):ParsedBubble} \\ 
 					Ritorna la bubble (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di activityObj) contenuta in activityObj, successiva alla bubble di input anch'essa contenuta in activityObj; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{bubbleObj:Object} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
-						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+						\item \emph{bubbleObj:ParsedBubble} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
+						\item \emph{activityObj:ParsedActivity} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
 					\end{itemize}	
 					
-					\item \emph{getStartBubble(bubbleArray:Array, parent:string):Object} \\ 
+					\item \emph{getStartBubble(bubbleArray:ParsedBubble[], parent:string):ParsedBubbleStart} \\ 
 					Ritorna la bubble (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di una operazione) contenuta in bubbleArray, corrispondente alla bubble iniziale, ovvero la bubble da cui comincia la sotto attività rappresentata da bubbleArray; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{bubbleArray:Array} Contiene le informazioni necessarie a codificare una sotto attività di un'operazione;
+						\item \emph{bubbleArray:ParsedBubble[]} Contiene le informazioni necessarie a codificare una sotto attività di un'operazione;
 						\item \emph{parent:string} Contiene l'identificativo della bubble in cui sono innestate le bubble presenti in bubbleArray.	
 					\end{itemize}		
 					
-					\item \emph{codeEmbeddedBubbles(bubbleObj:Object, activityObj:Object):Object} \\ 
+					\item \emph{codeEmbeddedBubbles(bubbleObj:ParsedBubble, activityObj:ParsedActivity):string} \\ 
 					Codifica la bubbleObj (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di una operazione) di input e tutte le bubble innestate in essa; tale bubbleObj dev'essere contenuta in activityObj \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{bubbleObj:Object} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
-						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+						\item \emph{bubbleObj:ParsedBubble} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
+						\item \emph{activityObj:ParsedActivity} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
 					\end{itemize}
 					
-					\item \emph{codeBubble(bubbleObj:Object, activityObj:Object, parent:string):Object} \\ 
+					\item \emph{codeBubble(bubbleObj:ParsedBubble, activityObj:ParsedActivity, parent:string):string} \\ 
 					Codifica la bubbleObj (oggetto contenente le informazioni necessarie a codificare una porzione dell'implementazione di una operazione) di input; tale bubbleObj dev'essere contenuta in activityObj \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{bubbleObj:Object} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
-						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+						\item \emph{bubbleObj:ParsedBubble} Contiene le informazioni necessarie a codificare una porzione dell'implementazione di un'operazione;
+						\item \emph{activityObj:ParsedActivity} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
 						\item \emph{parent:string} Contiene l'identificativo della bubble in cui è innestata la bubbleObj di input.
 					\end{itemize}
 					
-					\item \emph{codeElementJava(activityObj:Object):string} \\ 
+					\item \emph{codeElementJava(activityObj:ParsedActivity):string} \\ 
 					Riceve in input activityObj, un oggetto che contiene le informazioni necessarie a codificare l'implementazione di un operazione; 
 					restituisce la stringa codice sorgente in Java corrispondente all'implementazione della activityObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+						\item \emph{activityObj:ParsedActivity} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
 					\end{itemize}
 					
 					
-					\item \emph{codeElementJavascript(activityObj:Object):string} \\ 
+					\item \emph{codeElementJavascript(activityObj:ParsedActivity):string} \\ 
 					Riceve in input activityObj, un oggetto che contiene le informazioni necessarie a codificare l'implementazione di un operazione; 
 					restituisce la stringa codice sorgente in Javascript corrispondente all'implementazione della activityObj di input; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{activityObj:Object} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
+						\item \emph{activityObj:ParsedActivity} Contiene le informazioni necessarie a codificare l'implementazione di un operazione. E costituito da elementi (bubble) ognuno contenente le informazioni necessarie a codificare una porzione dell'implementazione dell'operazione.
 					\end{itemize}
 				\end{itemize}
 				
@@ -1847,6 +2252,24 @@
 				\end{itemize}	
 			\end{itemize}
 			
+			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::Class}
+			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::Class}{}
+			\begin{itemize}
+				\item \textbf{Tipo}: \emph{Class};
+				\item \textbf{Descrizione}: È il componente che contiene le informazioni di una classe codificata; \\
+				\item \textbf{Attributi}:
+				\begin{itemize}
+					\item \emph{\_name: string}: nome della classe;
+					\item \emph{\_source: string}: codice sorgente relativo alla codifica della classe;
+					\item \emph{\_package: string}: nome del package in cui è contenuta la classe;
+					\item \emph{\_file: string}: nome del file in cui è contenuto il codice sorgente della classe;
+					\item \emph{\_dependencies: string[]}: ;
+				\end{itemize}
+				\item \textbf{Relazioni con le altre classi:}
+				\begin{itemize}
+					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::CodedProgram}}
+				\end{itemize}	
+			\end{itemize}
 			
 			\subsubsection{SWEDesigner::Server::CodeGenerator::Coder::CodedProg}
 			\hypertarget{SWEDesigner::Server::CodeGenerator::Coder::CodedProg}{}
@@ -1855,15 +2278,15 @@
 				\item \textbf{Descrizione}: È il componente che contiene il codice sorgente prodotto dal Coder; \\
 				\item \textbf{Attributi}:
 				\begin{itemize}
-					\item \emph{\_classes: Array}: Array contenente le informazioni di ogni classe codificata dal Coder. Tali informazioni comprendono il nome della classe, il suo codice sorgente, il nome del package in cui è contenuta e l'array delle dipendenze OUT;
+					\item \emph{\_classes: Class[]}: Array contenente le informazioni di ogni classe codificata dal Coder. Tali informazioni comprendono il nome della classe, il suo codice sorgente, il nome del package in cui è contenuta e l'array delle dipendenze OUT;
 				\end{itemize}
 				\item \textbf{Metodi}:
 				\begin{itemize}
-					\item \emph{add(\_class:Object):void} \\ 
+					\item \emph{add(\_class:Class):void} \\ 
 					Inserisce nell'array \_classes le informazioni della classe \_class codificata dal Coder; \\
 					Parametri:
 					\begin{itemize}
-						\item \emph{\_class:Object} Contiene il nome della classe, il suo codice sorgente, il nome del package in cui è contenuta e l'array delle dipendenze OUT.
+						\item \emph{\_class:Class} Contiene il nome della classe, il suo codice sorgente, il nome del package in cui è contenuta e l'array delle dipendenze OUT.
 					\end{itemize}
 					
 					\item \emph{getSource(i:int):string} \\ 
@@ -1878,6 +2301,7 @@
 				\begin{itemize}
 					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}}
 					\item IN \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::JavaCoder}}
+					\item OUT \hyperlink{SWEDesigner::Server::CodeGenerator::Coder::JavascriptCoder}{\emph{SWEDesigner::Server::CodeGenerator::Coder::Class}}
 				\end{itemize}	
 			\end{itemize}
 			
@@ -1920,25 +2344,25 @@
 						\item \emph{path:string} Il percorso alla directory da rimuovere.
 					\end{itemize}
 					
-					\item \emph{mkJavaFile(progDir:string, name:string, pkg:string, dependencies:Array, source:string):void} \\ 
+					\item \emph{mkJavaFile(progDir:string, name:string, pkg:string, dependencies:string[], source:string):void} \\ 
 					Crea un file sorgente in Java e/o scrive ulteriore codice in append se già esistente; \\
 					Parametri:
 					\begin{itemize}
 						\item \emph{progDir:string} La directory indicante dove creare i file sorgenti del programma;
 						\item \emph{name:string} Il nome del file;
 						\item \emph{pkg:string} Il package in cui è contenuto il file;
-						\item \emph{dependencies:Array} L'array delle dipendenze del package;
+						\item \emph{dependencies:string[]} L'array delle dipendenze del package;
 						\item \emph{source:string} Il codice sorgente da scrivere nel file;
 					\end{itemize}
 					
-					\item \emph{mkJavascriptFile(progDir:string, name:string, pkg:string, dependencies:Array, source:string):void} \\ 
+					\item \emph{mkJavascriptFile(progDir:string, name:string, pkg:string, dependencies:string[], source:string):void} \\ 
 					Crea un file sorgente in Javascript e/o scrive ulteriore codice in append se già esistente; \\
 					Parametri:
 					\begin{itemize}
 						\item \emph{progDir:string} La directory indicante dove creare i file sorgenti del programma;
 						\item \emph{name:string} Il nome del file;
 						\item \emph{pkg:string} Il package in cui è contenuto il file;
-						\item \emph{dependencies:Array} L'array delle dipendenze del package;
+						\item \emph{dependencies:string[]} L'array delle dipendenze del package;
 						\item \emph{source:string} Il codice sorgente da scrivere nel file;
 					\end{itemize}
 					
