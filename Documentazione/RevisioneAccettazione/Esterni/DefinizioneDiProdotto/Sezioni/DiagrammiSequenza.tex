@@ -1,0 +1,15 @@
+\documentclass[../DefinizioneDiProdotto.tex]{subfiles}
+\begin{document}
+\section{Diagrammi di Sequenza}
+Vengono qui riportati i diagrammi di sequenza delle operazioni principali dell’applicazione.
+\subsection{Server Generale}
+Di seguito viene riportato il diagramma di sequenza relativo al funzionamento del server per quanto riguarda la generazione del codice.
+In questo diagramma possiamo notare che in seguito alla chiamata ascincrona di generazione del codice da parte del client il Main  provvede a inoltrare la richiesta al Request Handler il quale richiama
+in ordine:
+\begin{itemize}
+	\item Parser;
+	\item Coder;
+	\item Builder;
+	\item Zipper.
+\end{itemize} 
+\end{document} 
