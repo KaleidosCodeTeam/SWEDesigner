@@ -37,68 +37,197 @@
 		\end{itemize}
 		\subsection{Obiettivi di qualità di processo}\label{sez:obiettiviQualitaProcesso}
 			Prendendo come riferimento la normativa [ISO/IEC 12207], il gruppo \kaleidoscode\ ha
-			definito i seguenti obiettivi di qualità di processo che si impegna a perseguire.
+			definito degli obiettivi di qualità di processo che si impegna a perseguire.
+			Per ciascun obiettivo di qualità si è deciso di adottare delle metriche, così da rendere
+			quantificabile il processo di verifica ed ottenere quindi delle informazioni utili.\\
+			Ciascuna di esse, è descritta approfonditamente nel documento \normediprogetto.
+			Per alcune si definiranno due intervalli di misure (\gl{range}):
+			\begin{itemize}
+				\item \textbf{Range di accettazione}: intervallo di valori
+				vincolante per l'accettazione del prodotto;
+				\item \textbf{Range ottimale}: intervallo di valori entro cui è
+				consigliabile rientri la misurazione. Il mancato rispetto di
+				questa condizione non pregiudica l'accettazione del prodotto, ma
+				richiede verifiche più approfondite in merito.
+			\end{itemize}
 			\subsubsection{Rispetto della pianificazione concordata}
 				È necessario pianificare le attività per la realizzazione del progetto ed è
 				quindi fondamentale rispettare tale pianificazione per garantire la consegna
 				del prodotto secondo le tempistiche concordate.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
+				\normalsize
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|p{6.5cm}|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale} \\ \hline
+						Schedule Variance & $\geq -(preventivo*10\%)$ & $\geq 0$ \\ \hline
+					\end{tabular}
+					\caption{Metriche per rispetto della pianificazione concordata}
+				\end{table}
 			\subsubsection{Rispetto del budget concordato}
 				È necessario stabilire un budget per il costo della realizzazione del prodotto ed è
 				quindi fondamentale far rientrare i costi per le risorse nella spesa prevista.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
+				\normalsize
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|p{6.5cm}|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale} \\ \hline
+						Budget Variance & $\geq -(preventivo*10\%)$ & $\geq 0$ \\ \hline
+					\end{tabular}
+					\caption{Metriche per rispetto del budget concordato}
+				\end{table}
 			\subsubsection{Leggibilità della documentazione prodotta}
 				Durante la realizzazione del prodotto è necessario redigere la documentazione
 				delle attività di pianificazione, gestione, sviluppo, verifica e validazione oltre
 				che i loro prodotti.\\
 				È quindi fondamentale che i documenti prodotti siano, per quanto tecnici,
 				facilmente leggibili.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
+				\normalsize
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|p{6.5cm}|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale} \\ \hline
+						Indice Gulpease & $40$ - $100$ & $50$ - $100$ \\ \hline
+					\end{tabular}
+					\caption{Metriche per leggibilità della documentazione prodotta}
+				\end{table}
 			\subsubsection{Rispetto delle norme di progettazione}
 				In progettazione si definiranno i moduli e le componenti del prodotto. Sarà necessario
 				rispettare le norme di progettazione definite nel documento \normediprogetto.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
-				Inoltre, sarà utilizzata una misura e metrica, descritte nella sezione
-				\ref{sez:MetrichePerQualitaDiProdotto}, per valutarne la qualità.
+				\normalsize
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|p{6.5cm}|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale} \\ \hline
+						Numero di violazioni delle norme di progettazione & $0$ - $10$ & $0$ - $5$\\ \hline
+					\end{tabular}
+					\caption{Metriche per rispetto delle norme di progettazione}
+				\end{table}
 			\subsubsection{Rispetto delle norme di codifica}
 				Nel periodo di codifica, bisognerà sviluppare le unità software ideate in
 				progettazione. Per questo motivo, sarà necessario rispettare le norme di codifica
 				concordate nel documento \normediprogetto.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
+				\normalsize
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|p{6.5cm}|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale} \\ \hline
+						Numero di violazioni delle norme di codifica & $0$ - $10$ & $0$ - $5$\\ \hline
+					\end{tabular}
+					\caption{Metriche per qualità di processo}
+				\end{table}
 			\subsubsection{Corretto funzionamento delle componenti del sistema}
 				Sarà necessario sottoporre le unità software sviluppate ad una serie di test\footnote{Definiti nella sezione \ref{Test}}
 				per valutarne il corretto funzionamento.\\
-				Misura e metrica adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProcesso}.
+				\normalsize
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|p{6.5cm}|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale} \\ \hline
+						Percentuale di test di validazione effettuati & $90\%$ - $100\%$ & $100\%$\\ \hline
+						Percentuale di test di integrazione effettuati & $90\%$ - $100\%$ & $100\%$\\ \hline
+						Percentuale di test di sistema effettuati & $90\%$ - $100\%$ & $100\%$\\ \hline
+						Percentuale di test di unità effettuati & $90\%$ - $100\%$ & $100\%$\\ \hline
+					\end{tabular}
+					\caption{Metriche per qualità di processo}
+				\end{table}
 		\subsection{Obiettivi di qualità di prodotto}\label{sez:obiettiviQualitaProdotto}
 			Prendendo come riferimento la normativa [ISO/IEC 9001] ed in particolare
 			[ISO/IEC 9126]\footnote{Per maggiori informazioni, consultare l'appendice
-			\ref{app:ISO9126}}, il gruppo \kaleidoscode\ ha definito i seguenti obiettivi di
+			\ref{app:ISO9126}}, il gruppo \kaleidoscode\ ha definito degli obiettivi di
 			qualità che si impegna a far raggiungere al prodotto \progetto.
+			Per ciascun obiettivo di qualità si è deciso di adottare delle metriche, così da rendere
+			quantificabile il processo di verifica ed ottenere quindi delle informazioni utili.\\
+			Ciascuna di esse, è descritta approfonditamente nel documento \normediprogetto.
+			Per alcune si definiranno due intervalli di misure (\gl{range}):
+			\begin{itemize}
+				\item \textbf{Range di accettazione}: intervallo di valori
+				vincolante per l'accettazione del prodotto;
+				\item \textbf{Range ottimale}: intervallo di valori entro cui è
+				consigliabile rientri la misurazione. Il mancato rispetto di
+				questa condizione non pregiudica l'accettazione del prodotto, ma
+				richiede verifiche più approfondite in merito.
+			\end{itemize}
 			\subsubsection{Funzionalità}
 				Si garantisce che \progetto\ abbia tutte le funzionalità
 				definite e concordate con il \proponente\ nel documento
 				\analisideirequisitiv. L'implementazione di
 				ogni requisito deve essere quanto più completa ed economica.\\
-				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|l|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Obiettivo} \\ \hline
+						Soddisfacimento dei requisiti obbligatori & $100\%$\\ \hline
+						Soddisfacimento dei requisiti desiderabili & $70\%$ - $100\%$\\ \hline
+					\end{tabular}
+					\caption{Metriche per funzionalità}
+				\end{table}
 			\subsubsection{Affidabilità}
 				Il sistema deve funzionare nella sua completezza.\\
-				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|l|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale}\\ \hline
+						Percentuale totale di test superati & $80\%$ - $100\%$ & $90\%$ - $100\%$ \\ \hline
+						Copertura del codice & $80\%$ - $100\%$ & $90\%$ - $100\%$ \\ \hline
+					\end{tabular}
+					\caption{Metriche per affidabilità}
+				\end{table}
 			\subsubsection{Efficienza}
 				Il sistema deve minimizzare l'utilizzo delle risorse impiegate e
 				fornire le funzionalità richieste nel minor tempo possibile.\\
-				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|l|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale}\\ \hline
+						Livello di annidamento & $0$ - $6$ & $0$ - $4$ \\ \hline
+						Chiamate innestate di metodi & $0$ - $6$ & $0$ - $4$ \\ \hline
+					\end{tabular}
+					\caption{Metriche per efficienza}
+				\end{table}
 			\subsubsection{Manutenibilità}
 				Il codice prodotto per realizzare il sistema deve essere comprensibile
 				ed estensibile.\\
-				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|l|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale}\\ \hline
+						Grado di accoppiamento afferente & $0$ - $7$ & $0$ - $5$ \\ \hline
+						Grado di accoppiamento efferente & $0$ - $7$ & $0$ - $5$ \\ \hline
+						Linee di commento su linee di codice & $\geq 0.25$ & $\geq 0.30$ \\ \hline
+						Numero di parametri & $0$ - $8$ & $0$ - $5$  \\ \hline
+						Numero di campi dati & $0$ - $16$ & $0$ - $10$ \\ \hline
+						Complessità ciclomatica & $0$ - $10$ & $0$ - $6$  \\ \hline
+						Livello di annidamento & $0$ - $6$ & $0$ - $4$ \\ \hline
+						Chiamate innestate di metodi & $0$ - $6$ & $0$ - $4$ \\ \hline
+						Numero di linee per metodo & $\leq 60$ & $\leq 40$ \\ \hline
+					\end{tabular}
+					\caption{Metriche per manutenibilità}
+				\end{table}
 			\subsubsection{Portabilità}
 				Il sistema è un applicativo web. Per questo motivo, si garantisce che
 				il \gl{front-end} sarà completamente funzionante ed utilizzabile
 				almeno dal \gl{browser}	Google Chrome, dove verrà testato il prodotto
 				durante lo sviluppo. Inoltre, si perseguirà l'obiettivo di garantire la
-				completa funzionalità del prodotto anche su altri browser, in particolare:
-				Mozilla Firefox e Microsoft Edge.\\
-				Misure e metriche adottate sono descritte nella sezione \ref{sez:MetrichePerQualitaDiProdotto}.
+				completa funzionalità del prodotto anche su altri browser, in particolare Microsoft Edge.\\
+				\begin{table}[H]
+				\center
+					\begin{tabular}{|l|c|c|}
+						\hline
+						\rowcolor{blue!30}\textbf{Metrica} & \textbf{Range di accettazione} & \textbf{Range ottimale}\\ \hline
+						Validazione W3C & $0$ - $10$ (per pagina) & $0$ - $0$ (per pagina) \\ \hline
+					\end{tabular}
+					\caption{Metriche per portabilità}
+				\end{table}
 		\subsection{Organizzazione}
 			La gestione della strategia di verifica si basa sull'attuazione delle
 			relative attività descritte nelle \normediprogettov. Tali attività vengono
