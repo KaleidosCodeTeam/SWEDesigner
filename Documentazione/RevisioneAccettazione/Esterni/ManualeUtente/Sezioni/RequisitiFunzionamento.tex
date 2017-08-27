@@ -6,4 +6,49 @@
 		tecnologie HTML5, CSS3 e che abbia attivato Javascript.\\
 		Il funzionamento del prodotto è assicurato sul browser Google Chrome (almeno v58).
 		L'applicazione funziona anche sul browser Microsoft Edge.
+	\section{Istruzioni per l'installazione}\label{sez:installIstr}
+		Per installare correttamente le componenti necessarie per il funzionamento di \progetto\ nel proprio computer,
+		bisogna eseguire la seguente procedura come Utente Amministratore.
+		\subsection{Per sistema operativo Linux/MacOS}
+			\begin{enumerate}
+				\item Scaricare ed installare Apache Web Server (usare configurazione della
+				Apache's Web Page Root di default)
+				\item Scaricare ed installare NodeJS (v6.11.1 o superiore)
+	 			\item Spostare la cartella SWEDesigner nella directory ./var/www/html (è necessario avere i permessi
+	 			di scrittura)
+	 			\item Da terminale, spostarsi nella directory ./var/www/html/SWEDesigner e digitare il comando
+	 			"./installaserver.sh"
+			\end{enumerate}
+		\subsection{Per sistema operativo Windows}
+			\begin{enumerate}
+				\item Scaricare ed installare Apache Web Server
+	 			\item Scaricare ed installare NodeJS (v6.11.1 o superiore)
+ 				\item Scaricare ed installare (globalmente) i seguenti pacchetti node:
+ 				\begin{itemize}
+ 					\item express
+ 					\item multer
+ 					\item mysql
+ 					\item json-fn
+ 					\item archiver
+ 					\item body-parser
+ 				\end{itemize}
+ 				\item Spostare la cartella SWEDesigner nella directory della Apache's Web Page Root
+ 				(è necessario avere i permessi di scrittura)
+			\end{enumerate}
+	\section{Istruzioni per il funzionamento}\label{sez:funcIstr}
+		\subsection{Per sistema operativo Linux/MacOS}
+		 	\begin{enumerate}
+		 		\item Da terminale, spostarsi nella directory ./var/www/html/SWEDesigner e digitare il comando
+		 		"./runserver.sh" per avviare il server
+	 			\item Aprire il browser e collegarsi all'indirizzo url\\
+	 			http://localhost/SWEDesigner/src/webapp/SWEDesigner.html
+		 	\end{enumerate}
+		\subsection{Per sistema operativo Windows}
+			\begin{enumerate}
+		 		\item Da Prompt dei Comandi, spostarsi nella directory della\\
+		 		Apache's Web Page Root\textbackslash SWEDesigner\textbackslash src\textbackslash server\textbackslash requestHandler e digitare il comando "node main.js"
+		 		per avviare il server
+		 		\item Aprire il browser e collegarsi all'indirizzo url\\
+		 		http://localhost/SWEDesigner/src/webapp/SWEDesigner.html
+		 	\end{enumerate}
 \end{document}
