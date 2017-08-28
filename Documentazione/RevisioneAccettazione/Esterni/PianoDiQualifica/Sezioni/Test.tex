@@ -576,8 +576,8 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 	\hypertarget{TS3.1.2}{TS3.1.2} & Verificare che il sistema permetta di modificare un package presente nel diagramma dei package & Superato\\
 	\hline
 	\hypertarget{TS3.1.2.1}{TS3.1.2.1} & Verificare che il sistema permetta di rinominare un package & Superato \\
-	%\hline
-	%\hypertarget{TS3.1.2.2}{TS3.1.2.2} & Verificare che il sistema permetta di impostare la visibilità del package & Superato \\
+	\hline
+	\hypertarget{TS3.1.2.2}{TS3.1.2.2} & Verificare che il sistema permetta di impostare la visibilità del package & Superato \\
 	\hline
 	\hypertarget{TS3.1.2.3}{TS3.1.2.3} & Verificare che il sistema permetta di rimuovere un elemento dal package & Superato \\
 	\hline
@@ -1255,7 +1255,7 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 		& Superato
 		
 		
-		% Dao 1.1.2.2
+		% Data Manager 1.1.2.2
 		\\%Test TI1.1.3.2}
 		
 		\hline
@@ -1305,25 +1305,17 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 		\\%Test TI1.2}
 		
 		\hline
-		\hypertarget{TI1.2}{TI1.2}& Viene verificata l'integrazione per le componenti del Server, in particolare RequestHandler, DAO e CodeGenerator.
+		\hypertarget{TI1.2}{TI1.2}& Viene verificata l'integrazione per le componenti del Server, in particolare RequestHandler, Data Manager e CodeGenerator.
 		& Server
 		& Superato
 		
-		
-		% Sender
-		\\%Test TI1.2.1.1}
-		
-		\hline
-		\hypertarget{TI1.2.1.1}{TI1.2.1.1}& Viene verificata l'integrazione tra RequestHandler del server e il DAO.
-		& RequestHandler
-		& Non Implementato
 		
 		\\%Test TI1.2.1.2}
 		
 		\hline
 		\hypertarget{TI1.2.1.2}{TI1.2.1.2}& Viene verificato che il RequestHandler all'interno del Server invii correttamente al Client il file .zip contenente il codice generato.
 		& RequestHandler
-		& Non implementato
+		& Superato
 				
 		% Receiver 1.2.1.2
 		\\%Test TI1.2.1.3}
@@ -1331,23 +1323,11 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 		\hypertarget{TI1.2.1.3}{TI1.2.1.3}& Viene verificato che il RequestHandler all'interno del Server riceva correttamente dal Client il file JSON necessario alla generazione del codice.
 	
 		& RequestHandler
-		& Non implementato
+		& Superato
 		
-		% Dao 
-		\\%Test TI1.2.2}
-		
-		\hline
-		\hypertarget{TI1.2.2}{TI1.2.2}& Viene verificato che il DAO all'interno del Server restituisca correttamente una bubble.
-		& DAO
-		& Non implementato
-		
-		\\%Test TI1.2.3}
 	
 	\hline
-		\hypertarget{TI1.2.3}{TI1.2.3}& Viene verificato che il DAO all'interno del Server salvi correttamente una bubble.
-		& DAO
-		& Non Implementato
-		
+
 		%CodeGenerator
 		\\%Test TI1.2.4}
 		
@@ -1429,10 +1409,6 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 		\hyperlink{TI1.2.1.2}{TI1.2.1.2} & SweDesigner::Server::RequestHandler \\
 		\hline
 		\hyperlink{TI1.2.1.3}{TI1.2.1.3} & SweDesigner::Server::RequestHandler \\
-		\hline
-		\hyperlink{TI1.2.2}{TI1.2.2} & SweDesigner::Server::DAO \\
-		\hline
-		\hyperlink{TI1.2.3}{TI1.2.3} & SweDesigner::Server::DAO \\
 		\hline
 		\hyperlink{TI1.2.4}{TI1.2.4} & SweDesigner::Server \\
 		\hline
@@ -1519,8 +1495,6 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 		\hypertarget{TU23}{TU23}& i vuole verificare che l'unità Zipper sia in grado di creare un pacchetto in formato zip su disco, corrispondente alla directory specificata dal path in input.& Zipper &Superato\\
 		\hline
 		\hypertarget{TU24}{TU24}& Si vuole verificare che l'unità RequestHandler sia in grado di gestire una richiesta di generazione di codice sorgente, restituendo un pacchetto in formato zip contenente il programma, corrispondente al contenuto del file JSON associato alla richiesta. &RequestHandler &Superato\\
-		\hline
-		\hypertarget{TU25}{TU25}&Si vuole verificare che l'unità DAO sia in grado di restituire le informazioni di una bubble memorizzata nel database.&DAO &Superato\\
 		\hline
 		\hypertarget{TU26}{TU26}&Si vuole verificare che l'unità Package sia in grado di creare il modello per un package del diagramma.&Package &Superato\\
 		\hline
@@ -1619,8 +1593,6 @@ Nella seguente tabella sono riportate le percentuali di successo e implementazio
 			\hyperlink{TU23}{TU23} & SWEDesigner::Server::CodeGenerator::Zipper::Zip\\
 			\hline
 			\hyperlink{TU24}{TU24} &SWEDesigner::Server::RequestHandler::RequestHandler \\
-			\hline
-			\hyperlink{TU25}{TU25} & SWEDesigner::Server::DAO::DAO\\
 			\hline
 			\hyperlink{TU26}{TU26} &SWEDesigner::Client::Model::Items::Package  \\
 			\hline
